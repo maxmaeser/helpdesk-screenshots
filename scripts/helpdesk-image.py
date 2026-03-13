@@ -10,11 +10,13 @@ Takes a raw screenshot and produces a consistent, horizontal image with:
 Usage:
     helpdesk-image.py <input> [output] [--cursor X,Y] [--width N]
     helpdesk-image.py <input_dir> [output_dir] [--cursor-map FILE]
+    helpdesk-image.py --pair <left> <right> <output> [--cursor X,Y] [--cursor2 X,Y]
 
 Examples:
     helpdesk-image.py raw/screenshot.png final/screenshot.png
     helpdesk-image.py raw/screenshot.png final/screenshot.png --cursor 450,320
     helpdesk-image.py raw/ final/
+    helpdesk-image.py --pair raw/left.png raw/right.png final/combined.png --round 36
 """
 
 import sys
@@ -41,6 +43,8 @@ INSET = 8                    # Crop from screenshot edges (4 CSS px)
 
 CURSOR_SIZE = 200            # Cursor height at 2x (clearly visible in articles, no extra shadow needed)
 CURSOR_HOTSPOT = (5, 5)      # Arrow tip offset (from AppKit NSCursor.arrow hotSpot)
+
+PAIR_GAP = 24                # Gap between cards in pair mode (12 CSS px)
 
 SUPERSAMPLE = 4              # Anti-aliasing factor
 
@@ -145,12 +149,12 @@ def process_image(src_path, dst_path, cursor_pos=None, canvas_width=CANVAS_WIDTH
             cursor_pos = (int(cursor_pos[0] * scale), int(cursor_pos[1] * scale))
         scr_w, scr_h = img.size
 
-    # Card always fills canvas width (screenshot centered inside on white)
-    card_w = canvas_width - CARD_PADDING * 2
+    # Card fits screenshot width (no internal white space)
+    card_w = scr_w
     card_h = scr_h
 
-    # Canvas dimensions (always fixed width)
-    c_w = canvas_width
+    # Canvas dimensions (fits card + padding)
+    c_w = card_w + CARD_PADDING * 2
     c_h = card_h + CARD_PADDING * 2
 
     # Card position (centered horizontally, centered vertically)
@@ -213,6 +217,106 @@ def process_image(src_path, dst_path, cursor_pos=None, canvas_width=CANVAS_WIDTH
     print(f"  {src_path.name} -> {dst_path.name} ({c_w}x{c_h})")
 
 
+def _prepare_screenshot(src_path):
+    """Load and inset-crop a screenshot, returning the RGBA image."""
+    img = Image.open(src_path).convert("RGBA")
+    if INSET > 0:
+        ow, oh = img.size
+        img = img.crop((INSET, INSET, ow - INSET, oh - INSET))
+    return img
+
+
+def _place_card(canvas, img, card_x, card_y, card_w, card_h, cursor_pos, cursor_type):
+    """Place a single card (shadow + image + rounded mask + cursor) onto canvas."""
+    # Shadow
+    shadow, shadow_pad = create_card_shadow(card_w, card_h)
+    canvas.paste(shadow, (card_x - shadow_pad, card_y - shadow_pad), shadow)
+
+    # Card with screenshot
+    card = Image.new("RGBA", (card_w, card_h), (255, 255, 255, 255))
+    img_x = (card_w - img.size[0]) // 2
+    img_y = (card_h - img.size[1]) // 2
+    card.paste(img, (img_x, img_y), img)
+
+    # Composite with rounded mask
+    mask = create_rounded_mask(card_w, card_h, CARD_RADIUS)
+    bg_region = canvas.crop((card_x, card_y, card_x + card_w, card_y + card_h))
+    composited = Image.composite(card, bg_region, mask)
+    canvas.paste(composited, (card_x, card_y))
+
+    # Cursor overlay
+    if cursor_pos is not None:
+        cx, cy = cursor_pos
+        cx -= INSET
+        cy -= INSET
+        cx += img_x + card_x
+        cy += img_y + card_y
+        cursor = load_cursor(cursor_type=cursor_type)
+        canvas.paste(cursor, (cx - CURSOR_HOTSPOT[0], cy - CURSOR_HOTSPOT[1]), cursor)
+
+    return canvas
+
+
+def process_pair(src1, src2, dst_path, cursor1=None, cursor2=None,
+                 canvas_width=CANVAS_WIDTH, cursor_type1="arrow", cursor_type2="arrow",
+                 round_radius=0):
+    """Place two screenshots side by side on one canvas."""
+    img1 = _prepare_screenshot(src1)
+    img2 = _prepare_screenshot(src2)
+
+    # Available width for each card
+    avail = canvas_width - CARD_PADDING * 2 - PAIR_GAP
+    half_w = avail // 2
+
+    # Scale each image to fit its half-width card
+    def fit(img, max_w, cursor_pos):
+        w, h = img.size
+        if w > max_w:
+            scale = max_w / w
+            img = img.resize((max_w, int(h * scale)), Image.LANCZOS)
+            if cursor_pos:
+                cursor_pos = (int(cursor_pos[0] * scale), int(cursor_pos[1] * scale))
+        return img, cursor_pos
+
+    img1, cursor1 = fit(img1, half_w, cursor1)
+    img2, cursor2 = fit(img2, half_w, cursor2)
+
+    # Card dimensions: each card is half_w wide, height matches its image
+    card1_w, card1_h = half_w, img1.size[1]
+    card2_w, card2_h = half_w, img2.size[1]
+
+    # Canvas height from tallest card
+    max_card_h = max(card1_h, card2_h)
+    c_w = canvas_width
+    c_h = max_card_h + CARD_PADDING * 2
+
+    # Card positions
+    card1_x = CARD_PADDING
+    card2_x = CARD_PADDING + half_w + PAIR_GAP
+    card1_y = CARD_PADDING + (max_card_h - card1_h) // 2
+    card2_y = CARD_PADDING + (max_card_h - card2_h) // 2
+
+    # Build canvas
+    canvas = create_grid_canvas(c_w, c_h)
+    _place_card(canvas, img1, card1_x, card1_y, card1_w, card1_h, cursor1, cursor_type1)
+    _place_card(canvas, img2, card2_x, card2_y, card2_w, card2_h, cursor2, cursor_type2)
+
+    # Rounded corners on final output
+    if round_radius and round_radius > 0:
+        s = 8
+        big = Image.new("L", (c_w * s, c_h * s), 0)
+        ImageDraw.Draw(big).rounded_rectangle(
+            [(0, 0), (c_w * s - 1, c_h * s - 1)], radius=round_radius * s, fill=255
+        )
+        final_mask = big.resize((c_w, c_h), Image.LANCZOS)
+        final_mask = final_mask.filter(ImageFilter.GaussianBlur(radius=0.5))
+        transparent = Image.new("RGBA", (c_w, c_h), (0, 0, 0, 0))
+        canvas = Image.composite(canvas, transparent, final_mask)
+
+    canvas.save(dst_path, "PNG")
+    print(f"  {src1.name} + {src2.name} -> {dst_path.name} ({c_w}x{c_h})")
+
+
 def main():
     if len(sys.argv) < 2:
         print("Usage: helpdesk-image.py <input> [output] [--cursor X,Y] [--width N]")
@@ -220,9 +324,12 @@ def main():
 
     args = list(sys.argv[1:])
     cursor_pos = None
+    cursor2_pos = None
     canvas_width = CANVAS_WIDTH
     cursor_type = "arrow"
+    cursor_type2 = "arrow"
     round_radius = 0
+    pair_mode = False
 
     # Parse flags
     filtered = []
@@ -231,6 +338,10 @@ def main():
         if args[i] == "--cursor" and i + 1 < len(args):
             parts = args[i + 1].split(",")
             cursor_pos = (int(parts[0]), int(parts[1]))
+            i += 2
+        elif args[i] == "--cursor2" and i + 1 < len(args):
+            parts = args[i + 1].split(",")
+            cursor2_pos = (int(parts[0]), int(parts[1]))
             i += 2
         elif args[i] == "--width" and i + 1 < len(args):
             canvas_width = int(args[i + 1])
@@ -241,9 +352,29 @@ def main():
         elif args[i] == "--hand":
             cursor_type = "hand"
             i += 1
+        elif args[i] == "--hand2":
+            cursor_type2 = "hand"
+            i += 1
+        elif args[i] == "--pair":
+            pair_mode = True
+            i += 1
         else:
             filtered.append(args[i])
             i += 1
+
+    if pair_mode:
+        # Pair mode: --pair <left> <right> <output>
+        if len(filtered) < 3:
+            print("Usage: helpdesk-image.py --pair <left> <right> <output> [--round N]")
+            sys.exit(1)
+        src1 = Path(filtered[0])
+        src2 = Path(filtered[1])
+        dst = Path(filtered[2])
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        process_pair(src1, src2, dst, cursor1=cursor_pos, cursor2=cursor2_pos,
+                     canvas_width=canvas_width, cursor_type1=cursor_type,
+                     cursor_type2=cursor_type2, round_radius=round_radius)
+        sys.exit(0)
 
     src = Path(filtered[0])
 
