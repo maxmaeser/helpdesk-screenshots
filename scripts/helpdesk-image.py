@@ -123,7 +123,7 @@ def load_cursor(size=CURSOR_SIZE, cursor_type="arrow"):
     return cursor.resize((new_w, size), Image.LANCZOS)
 
 
-def process_image(src_path, dst_path, cursor_pos=None, canvas_width=CANVAS_WIDTH, cursor_type="arrow"):
+def process_image(src_path, dst_path, cursor_pos=None, canvas_width=CANVAS_WIDTH, cursor_type="arrow", round_radius=0):
     """Process a single screenshot into a polished helpdesk image."""
     img = Image.open(src_path).convert("RGBA")
 
@@ -195,7 +195,13 @@ def process_image(src_path, dst_path, cursor_pos=None, canvas_width=CANVAS_WIDTH
         paste_y = cy - CURSOR_HOTSPOT[1]
         canvas.paste(cursor, (paste_x, paste_y), cursor)
 
-    # 6. Save as PNG
+    # 6. Apply rounded corners to final output (transparent corners)
+    if round_radius and round_radius > 0:
+        final_mask = create_rounded_mask(c_w, c_h, round_radius)
+        transparent = Image.new("RGBA", (c_w, c_h), (0, 0, 0, 0))
+        canvas = Image.composite(canvas, transparent, final_mask)
+
+    # 7. Save as PNG
     canvas.save(dst_path, "PNG")
     print(f"  {src_path.name} -> {dst_path.name} ({c_w}x{c_h})")
 
@@ -209,6 +215,7 @@ def main():
     cursor_pos = None
     canvas_width = CANVAS_WIDTH
     cursor_type = "arrow"
+    round_radius = 0
 
     # Parse flags
     filtered = []
@@ -220,6 +227,9 @@ def main():
             i += 2
         elif args[i] == "--width" and i + 1 < len(args):
             canvas_width = int(args[i + 1])
+            i += 2
+        elif args[i] == "--round" and i + 1 < len(args):
+            round_radius = int(args[i + 1])
             i += 2
         elif args[i] == "--hand":
             cursor_type = "hand"
@@ -237,7 +247,7 @@ def main():
         else:
             dst = src.parent / src.name
         dst.parent.mkdir(parents=True, exist_ok=True)
-        process_image(src, dst, cursor_pos, canvas_width, cursor_type)
+        process_image(src, dst, cursor_pos, canvas_width, cursor_type, round_radius)
 
     elif src.is_dir():
         # Batch mode
@@ -245,7 +255,7 @@ def main():
         out_dir.mkdir(parents=True, exist_ok=True)
         print(f"Processing {src} -> {out_dir}")
         for f in sorted(src.glob("*.png")):
-            process_image(f, out_dir / f.name, cursor_pos, canvas_width, cursor_type)
+            process_image(f, out_dir / f.name, cursor_pos, canvas_width, cursor_type, round_radius)
     else:
         print(f"Not found: {src}")
         sys.exit(1)
