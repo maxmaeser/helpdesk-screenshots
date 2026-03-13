@@ -6,7 +6,7 @@ import Frosted from './treatments/Frosted'
 import Framed from './treatments/Framed'
 import CroppedFocus from './treatments/CroppedFocus'
 
-export default function Preview({ image, treatment, settings }) {
+export default function Preview({ image, treatment, settings, onMouseDown, onMouseMove, onMouseUp, isDragging }) {
   const canvasRef = useRef(null)
 
   const handleExport = async () => {
@@ -16,9 +16,14 @@ export default function Preview({ image, treatment, settings }) {
         width: brand.cover.width,
         height: brand.cover.height,
         pixelRatio: 2,
+        style: {
+          transform: 'scale(2)',
+          transformOrigin: 'top left',
+        },
       })
       const link = document.createElement('a')
-      link.download = 'cover.png'
+      const timestamp = new Date().toISOString().slice(0, 10)
+      link.download = `cover-${timestamp}.png`
       link.href = dataUrl
       link.click()
     } catch (err) {
@@ -77,11 +82,16 @@ export default function Preview({ image, treatment, settings }) {
       <div
         ref={canvasRef}
         className="relative overflow-hidden"
+        onMouseDown={onMouseDown}
+        onMouseMove={onMouseMove}
+        onMouseUp={onMouseUp}
+        onMouseLeave={onMouseUp}
         style={{
           width: brand.cover.width / 2,
           height: brand.cover.height / 2,
           backgroundColor: settings.bgColor,
           borderRadius: '8px',
+          cursor: isDragging ? 'grabbing' : 'grab',
         }}
       >
         {renderTreatment()}

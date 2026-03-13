@@ -5,6 +5,8 @@ import Preview from './components/Preview'
 function App() {
   const [image, setImage] = useState(null)
   const [treatment, setTreatment] = useState('tilt')
+  const [isDragging, setIsDragging] = useState(false)
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 })
   const [settings, setSettings] = useState({
     bgColor: '#191919',
     shadowIntensity: 50,
@@ -41,6 +43,19 @@ function App() {
     setSettings(prev => ({ ...prev, [key]: value }))
   }
 
+  const handleMouseDown = (e) => {
+    setIsDragging(true)
+    setDragStart({ x: e.clientX - settings.positionX, y: e.clientY - settings.positionY })
+  }
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return
+    updateSetting('positionX', e.clientX - dragStart.x)
+    updateSetting('positionY', e.clientY - dragStart.y)
+  }
+
+  const handleMouseUp = () => setIsDragging(false)
+
   return (
     <div className="h-screen bg-gray-950 text-gray-200 flex overflow-hidden"
          style={{ fontFamily: "'Inter', sans-serif" }}>
@@ -60,6 +75,10 @@ function App() {
           image={image}
           treatment={treatment}
           settings={settings}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          isDragging={isDragging}
         />
       </div>
     </div>
