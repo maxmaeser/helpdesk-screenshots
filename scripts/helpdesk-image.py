@@ -197,7 +197,14 @@ def process_image(src_path, dst_path, cursor_pos=None, canvas_width=CANVAS_WIDTH
 
     # 6. Apply rounded corners to final output (transparent corners)
     if round_radius and round_radius > 0:
-        final_mask = create_rounded_mask(c_w, c_h, round_radius)
+        # Use 8x supersample + slight blur for buttery smooth corners
+        s = 8
+        big = Image.new("L", (c_w * s, c_h * s), 0)
+        ImageDraw.Draw(big).rounded_rectangle(
+            [(0, 0), (c_w * s - 1, c_h * s - 1)], radius=round_radius * s, fill=255
+        )
+        final_mask = big.resize((c_w, c_h), Image.LANCZOS)
+        final_mask = final_mask.filter(ImageFilter.GaussianBlur(radius=0.5))
         transparent = Image.new("RGBA", (c_w, c_h), (0, 0, 0, 0))
         canvas = Image.composite(canvas, transparent, final_mask)
 
