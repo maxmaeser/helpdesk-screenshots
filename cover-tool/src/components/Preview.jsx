@@ -1,6 +1,10 @@
 import { useRef } from 'react'
 import { toPng } from 'html-to-image'
 import { brand } from '../config/brand'
+import Tilt from './treatments/Tilt'
+import Frosted from './treatments/Frosted'
+import Framed from './treatments/Framed'
+import CroppedFocus from './treatments/CroppedFocus'
 
 export default function Preview({ image, treatment, settings }) {
   const canvasRef = useRef(null)
@@ -22,6 +26,52 @@ export default function Preview({ image, treatment, settings }) {
     }
   }
 
+  const renderTreatment = () => {
+    if (!image) {
+      return (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <p className="text-gray-500 text-sm">Pick an image to start</p>
+        </div>
+      )
+    }
+    switch (treatment) {
+      case 'tilt':
+        return <Tilt image={image} settings={settings} />
+      case 'frosted':
+        return <Frosted image={image} settings={settings} />
+      case 'framed':
+        return <Framed image={image} settings={settings} />
+      case 'croppedFocus':
+        return <CroppedFocus image={image} settings={settings} />
+      default:
+        return <Tilt image={image} settings={settings} />
+    }
+  }
+
+  const renderTitle = () => {
+    if (!settings.titleText) return null
+    const positionClasses = {
+      top: 'top-6 left-0 right-0',
+      center: 'top-1/2 left-0 right-0 -translate-y-1/2',
+      bottom: 'bottom-6 left-0 right-0',
+    }
+    return (
+      <div
+        className={`absolute text-center px-8 ${positionClasses[settings.titlePosition] || positionClasses.bottom}`}
+        style={{
+          fontFamily: brand.fonts.sans,
+          fontSize: `${settings.titleSize / 2}px`,
+          fontWeight: 600,
+          color: settings.titleColor,
+          textShadow: '0 2px 8px rgba(0,0,0,0.3)',
+          zIndex: 10,
+        }}
+      >
+        {settings.titleText}
+      </div>
+    )
+  }
+
   return (
     <div className="flex flex-col items-center gap-4">
       <div
@@ -34,15 +84,8 @@ export default function Preview({ image, treatment, settings }) {
           borderRadius: '8px',
         }}
       >
-        {image ? (
-          <div className="absolute inset-0 flex items-center justify-center">
-            <p className="text-gray-500 text-sm">Treatment: {treatment}</p>
-          </div>
-        ) : (
-          <div className="absolute inset-0 flex items-center justify-center">
-            <p className="text-gray-500 text-sm">Pick an image to start</p>
-          </div>
-        )}
+        {renderTreatment()}
+        {renderTitle()}
       </div>
 
       <button
