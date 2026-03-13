@@ -8,11 +8,11 @@ You control your own assignability settings from your profile.
 
 1. Click your profile picture at the bottom of the sidebar and select **Settings**.
 
-![Sidebar profile menu with Settings highlighted](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/auto-and-manual-assignment/assignment-nav-settings-v2.png)
+![Sidebar profile menu with Settings highlighted](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/auto-and-manual-assignment/assignment-nav-settings.png)
 
 2. On the **Profile** page, scroll to the **Assignable To Applicant Portal Leads** section.
 
-![Profile settings page showing Assignability section with radio buttons](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/auto-and-manual-assignment/assignment-profile-settings-v2.png)
+![Profile settings page showing Assignability section with radio buttons](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/auto-and-manual-assignment/assignment-profile-settings.png)
 
 For each brand you have access to, you see three radio buttons:
 
@@ -32,8 +32,8 @@ Auto-assignment only triggers when a new lead is created through the portal sign
 
 You can manually assign any lead to a specific sales rep from the leads table.
 
-![Sales Pipeline navigation to Leads tab](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/auto-and-manual-assignment/assignment-nav-leads-v2.png)
+![Sales Pipeline navigation to Leads tab](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/auto-and-manual-assignment/assignment-nav-leads.png)
 
 The **Assigned To** column displays a dropdown of all agents whose assignability is set to **Automatic** or **Manual** for the brand. Select an agent from the list to assign or reassign the lead.
 
-![Assigned To dropdown open showing available agents](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/auto-and-manual-assignment/assignment-manual-dropdown-v2.png)
+![Assigned To dropdown open showing available agents](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/auto-and-manual-assignment/assignment-manual-dropdown.png)
