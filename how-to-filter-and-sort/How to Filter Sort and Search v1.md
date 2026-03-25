@@ -1,5 +1,4 @@
 The prospect and lead tables both support filtering, sorting, and text search so you can find specific contacts or narrow your view to a working subset.
-
 ![Leads table toolbar with search bar, filter, sort, and views buttons](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-filter-and-sort/leads-toolbar.png)
 ### Searching
 
@@ -8,7 +7,6 @@ Type in the **search bar** at the top of the table to find contacts by name, ema
 ### Filtering
 
 Filters let you narrow the table to contacts matching specific criteria. You can apply multiple filters at the same time. All filters must be satisfied for a contact to appear (AND logic).
-
 ![Filter dropdown open showing available filter fields](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-filter-and-sort/filter-panel.png)
 **To add a filter:**
 
@@ -37,7 +35,6 @@ To remove a filter, click the active filter chip and clear it, or remove all fil
 ### Sorting
 
 You can sort the table by one or more fields to control the display order.
-
 ![Sort panel open with Created At descending](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-filter-and-sort/sort-panel.png)
 **To apply a sort:**
 
@@ -49,7 +46,6 @@ You can sort the table by one or more fields to control the display order.
 ### Saved Views (Leads Table)
 
 On the **Sales > Pipeline** table, you can save your current combination of filters, sorting, and column configuration as a named view. This lets you switch between different working contexts without reconfiguring the table each time.
-
 ![Saved views panel showing named view configurations](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-filter-and-sort/saved-views.png)
 **To create a saved view:**
 
