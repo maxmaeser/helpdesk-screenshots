@@ -1,45 +1,89 @@
 # CLAUDE.md
 
-Polished screenshot pipeline for FSAI helpdesk articles.
+Image pipeline and conventions for FSAI helpdesk article screenshots.
 
-## What This Is
+## Division of Labor (since 2026-07-07)
 
-Takes raw Playwright screenshots of the FSAI staging app and processes them into consistent, branded article images with grid canvas, white card, drop shadow, and optional cursor overlay.
+**Claude specs, Max shoots, Claude finishes.** Claude writes a shot list per article, Max captures the raw screenshots, Claude processes them into branded finals, places them in the article, and builds the importable `-git.md`. Claude-driven Playwright capture still exists as a **fallback** (Max unavailable, or a shot needs scripted UI state) — see the fallback appendix in `~/.claude/skills/fsai-helpdesk-articles/SKILL.md`.
 
-## Structure
+## Folder Conventions
 
 ```
-helpdesk-screenshots/
-├── scripts/helpdesk-image.py    # Post-processing pipeline
-├── assets/                      # Cursor PNGs (macOS arrow + hand)
-├── {article-name}/              # Output folders per article
-└── .venv/                       # Python venv (Pillow only)
+screenshots/  (repo: maxmaeser/helpdesk-screenshots, public — raw URLs must resolve)
+├── scripts/helpdesk-image.py      # Post-processing pipeline
+├── assets/                        # Cursor PNGs (macOS arrow + hand)
+├── .venv/                         # Python venv, Pillow only (gitignored; create per machine)
+├── {article-name}/                # Finals + the importable {article-name}-git.md
+│   └── raw/                       # Max's raw captures for this article (committed — git is the Mac→Leo transport)
+└── _fullpage/{surface}/           # Full-page reference shots for UI awareness, NOT article images
+                                   # Name: YYYY-MM-DD-{page}.png  (surface: brand-dashboard | franchisee-portal | applicant-portal)
 ```
 
-## Usage
+- ✅-prefixed folders are Max's finalized copies. Leave them alone.
+- Full-page shots feed the UI maps (`articles/navigation-map.md`, `articles/franchisee-portal-map.md`). They are never processed or embedded in articles.
+
+## Shot Spec Format
+
+Claude delivers this table per article before Max captures:
+
+| # | Shot | UI state to set up | Cursor | Filename | Width |
+|---|---|---|---|---|---|
+| 1 | Assigned To dropdown open | Open dropdown, hover "Maria" | arrow on hovered option | `leads-assign-click.png` | ~840 CSS |
+| 2 | Bulk toolbar with 3 selected | Select 3 rows via checkboxes | none | `leads-bulk-assign.png` | ~840 CSS |
+
+Cursor column = where the pointer should conceptually be. Max does NOT need to include a cursor in the capture — Claude overlays it in post. Max just sets up the UI state (real hover/open/selected states).
+
+## Capture Guidance (for Max)
+
+- **2x (Retina) captures.** A raw that comes in under ~1000px wide is probably 1x — recapture, or Claude rescues with `--scale2x` (lossy, last resort).
+- **Target ~840 CSS px crop width** (1680 real px at 2x). That fills the card 100%. Narrow UI (a lone dropdown, sidebar): include surrounding context instead of a tight crop. Very wide UI: crop to the relevant columns/region rather than the whole viewport.
+- **Set the real UI state first**: open the dropdown, hover the option, select the checkboxes. The screenshot should show the state, the cursor gets added in post.
+- **Full-page shots**: one uncropped capture of the entire page (scroll-stitched if needed), any width. These are for Claude's UI awareness, precision doesn't matter.
+
+## Processing
 
 ```bash
-# Single image
-.venv/bin/python scripts/helpdesk-image.py raw.png final.png [--cursor X,Y] [--hand] [--width N]
+# from screenshots/ — one-time per machine: python3 -m venv .venv && .venv/bin/pip install Pillow
 
-# Batch (all PNGs in a directory)
-.venv/bin/python scripts/helpdesk-image.py raw_dir/ output_dir/
+# Single image
+.venv/bin/python scripts/helpdesk-image.py {article}/raw/shot.png {article}/shot.png --cursor X,Y --round 36
+
+# Whole article batch with per-file cursors
+.venv/bin/python scripts/helpdesk-image.py {article}/raw/ {article}/ --cursor-map {article}/raw/cursors.json --round 36
+
+# Side-by-side pair
+.venv/bin/python scripts/helpdesk-image.py --pair raw/a.png raw/b.png final.png --round 36
 ```
 
-## Key Rules
+`cursors.json`: `{"shot.png": {"cursor": [450, 320], "type": "hand"}}` — files not listed get no cursor. Cursor coordinates are relative to the raw capture. `--hand` for the pointing hand (selection panels, links); arrow is default. Always `--round 36`.
 
-- All images 1800px canvas width, 1680px card width (at 2x)
-- Target ~840px CSS clip width for raw captures (= 1680px at 2x = 100% card fill)
-- Always use `page.screenshot({ clip, scale: 'device' })`, never element `.screenshot()`
-- Activate real UI states (hover, selection) before capture, then overlay cursor in post-processing
-- HeadlessUI uses ARIA roles (`[role="checkbox"]`, `[role="radio"]`), not standard HTML inputs
-- Wait 5+ seconds after navigation before capturing
+## Script Behavior
+
+- Canvas width tracks the screenshot: card hugs the image, canvas hugs the card, capped at 1800px (900 CSS). Narrow raws produce narrower canvases — that's why capture width matters.
+- Card: white, 24px radius, drop shadow, 8px inset crop from raw edges. Grid canvas #D2D2D2 with subtle lines.
+- Cursor overlay: real macOS arrow/hand at 200px height, hotspot-aligned.
+- Warns on likely-1x captures. PNG output is `optimize=True`.
+
+## Cursor Heuristics
+
+- **Add a cursor** when the image shows something the user clicks (dropdown, button, menu item) or a hover state.
+- **Skip it** for results/states (filled form, table view), read-only views, and bulk selections (the selection tells the story).
+- **Arrow**: buttons, dropdowns, checkboxes, nav. **Hand**: links, clickable text, selection panels.
+- Point the arrow tip at the exact element, slightly offset so it doesn't obscure the target. For dropdowns: on the trigger, not the open menu.
+
+## Importable Markdown (`{article}-git.md`)
+
+- Image URLs: `https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/{article-name}/{filename}.png`
+- **Push images before importing** — the platform's TipTap importer fetches the URLs at import time and rehosts to S3.
+- No `# H1` in the file (filename becomes the title). Blank line BEFORE each image, none after (a trailing blank line creates an empty TipTap paragraph).
+- Same-URL image updates hit GitHub's CDN cache (~5 min) — use fresh filenames (`-v2`, `-v3`).
+- No GFM tables, no base64 images (both break helpdesk-type import).
 
 ## Git
 
 - Default branch: `master`
-- Commit images when approved by Max
+- Commit raws when Max drops them; commit finals + `-git.md` when approved.
 
 ## Skill
 
-Full workflow details in `~/.claude/skills/helpdesk-images/SKILL.md` (invoke via `/helpdesk-images`).
+Full article lifecycle (writing, shot specs, import) lives in `~/.claude/skills/fsai-helpdesk-articles/SKILL.md` — source of truth in the suite repo at `skills/fsai-helpdesk-articles.md`.
