@@ -1,4 +1,16 @@
 {
-  "team-add-member.png": { "cursor": [70, 85], "type": "arrow" },
-  "team-role-controls.png": { "cursor": [1870, 465], "type": "arrow" }
+  "team-add-member.png": {
+    "cursor": [
+      70,
+      85
+    ],
+    "type": "arrow"
+  },
+  "team-role-controls.png": {
+    "cursor": [
+      2092,
+      1335
+    ],
+    "type": "arrow"
+  }
 }

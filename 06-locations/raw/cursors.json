@@ -1,3 +1,9 @@
 {
-  "locations-status.png": { "cursor": [1015, 315], "type": "arrow" }
+  "locations-status.png": {
+    "cursor": [
+      1528,
+      328
+    ],
+    "type": "arrow"
+  }
 }

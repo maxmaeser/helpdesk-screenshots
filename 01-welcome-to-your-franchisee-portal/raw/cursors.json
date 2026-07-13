@@ -1,15 +1,15 @@
 {
   "welcome-avatar-menu.png": {
     "cursor": [
-      148,
-      624
+      139,
+      1554
     ],
     "type": "arrow"
   },
   "welcome-help-menu.png": {
     "cursor": [
-      1486,
-      16
+      3111,
+      17
     ],
     "type": "hand"
   }

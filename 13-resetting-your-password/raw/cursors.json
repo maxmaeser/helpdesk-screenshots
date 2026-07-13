@@ -1,3 +1,9 @@
 {
-  "login-forgot-link.png": { "cursor": [647, 357], "type": "hand" }
+  "login-forgot-link.png": {
+    "cursor": [
+      760,
+      1463
+    ],
+    "type": "hand"
+  }
 }
