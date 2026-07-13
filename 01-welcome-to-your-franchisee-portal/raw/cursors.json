@@ -1,0 +1,16 @@
+{
+  "welcome-avatar-menu.png": {
+    "cursor": [
+      148,
+      624
+    ],
+    "type": "arrow"
+  },
+  "welcome-help-menu.png": {
+    "cursor": [
+      1486,
+      16
+    ],
+    "type": "hand"
+  }
+}
