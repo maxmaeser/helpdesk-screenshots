@@ -36,9 +36,9 @@ The **Organizations** tab shows which organizations you belong to, and lets you 
 
 The **Sales Assignability** tab controls how you receive leads from the applicant portal. For each brand you have access to, three radio buttons set your assignment:
 
-- **Automatic**: new portal leads are assigned to you automatically via round-robin, and you can also be assigned manually.
-- **Manual**: you can be assigned manually, but you will not receive automatic assignments.
-- **Not Assignable**: you are not assigned any leads for this brand.
+- **Automatic**: routes new leads to you.
+- **Manual**: lets teammates choose you when booking.
+- **Off**: keeps you out of lead assignment.
 
 ![Sales Assignability tab listing each brand with Automatic, Manual, and Off options](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/setting-up-your-profile/profile-assignability-v2.png)
 
