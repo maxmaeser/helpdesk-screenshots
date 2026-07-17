@@ -1,9 +1,16 @@
 {
-  "revision": 0,
+  "revision": 1,
   "shots": {
     "set-up-your-brand-and-team-overview.png": {
+      "status": "superseded",
+      "note": "Wide orientation shot for the 'Set Up Your Brand and Team' series hub. Settings > Brand > Profile with Lumon Fresh selected in the Single Brand Selector. Agent-captured 2026-07-17 at 1000x915 CSS viewport clip, 2x, dom-sanitize with freshenDates:false (no relative dates on page; avoids day-count copy rewrites). No cursor -- read-only orientation state. Superseded by -v2 (unselected 'Staging Test Brand' chip blemish).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "set-up-your-brand-and-team-overview-v2.png": {
       "status": "proposed",
-      "note": "Wide orientation shot for the 'Set Up Your Brand and Team' series hub. Settings > Brand > Profile with Lumon Fresh selected in the Single Brand Selector. Agent-captured 2026-07-17 at 1000x915 CSS viewport clip, 2x, dom-sanitize with freshenDates:false (no relative dates on page; avoids day-count copy rewrites). No cursor -- read-only orientation state.",
+      "note": "Reshoot 2026-07-17 to fix a seed-data blemish: the unselected 'Staging Test Brand' chip next to the Lumon Fresh selector was hidden via page.evaluate (display:none on the button) rather than renamed, to avoid an icon/label mismatch -- no fabricated brand or feature. Same route, viewport (1000x915 CSS, 2x), and dom-sanitize config (freshenDates:false) as the original. No cursor -- read-only orientation state.",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0

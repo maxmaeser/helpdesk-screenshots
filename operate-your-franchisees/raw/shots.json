@@ -1,10 +1,18 @@
 {
-  "revision": 0,
+  "revision": 1,
   "shots": {
     "operate-your-franchisees-overview.png": {
       "cursor": null,
+      "status": "superseded",
+      "note": "Wide orientation shot for the Operate Your Franchisees series hub. Operations > Locations list, Lumon Fresh brand selected, Total Locations: 20. Captured 2026-07-17 at 1440x975 CSS (2x) via bespoke Playwright; dom-sanitize run twice (9 phones replaced) plus a custom rule for the non-NANP staging number 09887112344; Missing Booking Profile badge hidden; bottom clipped at a clean row boundary after Dallas Lumon 2. No cursor: read-only orientation state. Superseded by -v2 (row 1 Store ID 'testst' and 'Lumon Floor Arlignton' typo blemishes).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "operate-your-franchisees-overview-v2.png": {
+      "cursor": null,
       "status": "proposed",
-      "note": "Wide orientation shot for the Operate Your Franchisees series hub. Operations > Locations list, Lumon Fresh brand selected, Total Locations: 20. Captured 2026-07-17 at 1440x975 CSS (2x) via bespoke Playwright; dom-sanitize run twice (9 phones replaced) plus a custom rule for the non-NANP staging number 09887112344; Missing Booking Profile badge hidden; bottom clipped at a clean row boundary after Dallas Lumon 2. No cursor: read-only orientation state.",
+      "note": "Reshoot 2026-07-17 to fix two seed-data blemishes via page.evaluate text-node replacement before sanitize: row 1 (Tulip Canteen) Store ID 'testst' -> 'TC4487215' (matches the column's 2-letter-prefix + 7-digit format used by other franchisee-linked rows, e.g. SE5554715, QQ8473340, JI8463950); 'Lumon Floor Arlignton' -> 'Lumon Floor Arlington'. Fixes re-applied defensively after sanitize in case React reverted them; verified absent via innerText before capture. Same route, viewport (1440x975 CSS, 2x), dom-sanitize config (custom rule for 09887112344), and Missing Booking Profile hide as the original.",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0

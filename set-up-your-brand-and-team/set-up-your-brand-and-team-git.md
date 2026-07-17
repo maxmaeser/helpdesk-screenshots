@@ -10,7 +10,7 @@ You are in this stage before any leads exist, so there is no rush.
 
 Get the foundation right and everything that follows has somewhere to land.
 
-![Set up your brand and team overview](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/set-up-your-brand-and-team/set-up-your-brand-and-team-overview.png)
+![Set up your brand and team overview](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/set-up-your-brand-and-team/set-up-your-brand-and-team-overview-v2.png)
 ### What to set up
 
 Work through these in roughly this order. Each one links to a full how-to.

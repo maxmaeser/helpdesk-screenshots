@@ -2,7 +2,7 @@ Operate is the stage after the deal is signed, when a prospect becomes a franchi
 
 You are in this stage once sites are opening and your franchisees need the location records, files, and documents that keep the day-to-day running.
 
-![Overview of the Operate section](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/operate-your-franchisees/operate-your-franchisees-overview.png)
+![Overview of the Operate section](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/operate-your-franchisees/operate-your-franchisees-overview-v2.png)
 Everything below lives under the **Operations** section of the sidebar, where you track each location and manage the assets you share out to the field.
 
 Work through these in order the first time, then come back to whichever piece you need.
