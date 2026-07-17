@@ -1,0 +1,126 @@
+{
+  "revision": 6,
+  "cover": {
+    "v": 2,
+    "background": "mist",
+    "title": null,
+    "scale": 85,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "background",
+        "x": 0,
+        "y": 30,
+        "w": 560,
+        "h": 490,
+        "contentZoom": 1.35,
+        "children": [
+          {
+            "id": "text-manuals-eyebrow-a",
+            "type": "text",
+            "props": {
+              "variant": "eyebrow",
+              "value": "LIBRARY"
+            }
+          },
+          {
+            "id": "text-manuals-heading-a",
+            "type": "text",
+            "props": {
+              "variant": "heading",
+              "value": "Every manual"
+            }
+          },
+          {
+            "id": "listRow-manuals-1",
+            "type": "listRow",
+            "props": {
+              "label": "Daily Opening Procedures",
+              "sublabel": "Operations 101 · 4 min"
+            }
+          },
+          {
+            "id": "listRow-manuals-2",
+            "type": "listRow",
+            "props": {
+              "label": "Royalty Reporting Procedure",
+              "sublabel": "Operations 101 · 3 min"
+            }
+          },
+          {
+            "id": "listRow-manuals-3",
+            "type": "listRow",
+            "props": {
+              "label": "Severed Workforce Placement Procedure",
+              "sublabel": "Operations 101 · 4 min"
+            }
+          },
+          {
+            "id": "listRow-manuals-4",
+            "type": "listRow",
+            "props": {
+              "label": "Hiring Practices and Onboarding",
+              "sublabel": "Operations 101 · 4 min"
+            }
+          }
+        ]
+      },
+      {
+        "id": "b",
+        "role": "foreground",
+        "x": 450,
+        "y": 15,
+        "w": 580,
+        "h": 340,
+        "children": [
+          {
+            "id": "text-manuals-eyebrow-b",
+            "type": "text",
+            "props": {
+              "variant": "eyebrow",
+              "value": "OPERATIONS 101"
+            }
+          },
+          {
+            "id": "text-manuals-heading-b",
+            "type": "text",
+            "props": {
+              "variant": "heading",
+              "value": "Daily Opening Procedures"
+            }
+          },
+          {
+            "id": "listRow-phase-1",
+            "type": "listRow",
+            "props": {
+              "label": "Phase 1: Arrival and First Prep Window",
+              "sublabel": "The morning prep window opens the unit.",
+              "highlighted": true
+            }
+          },
+          {
+            "id": "card-phase-1-steps",
+            "type": "card",
+            "props": {
+              "body": "1. Unlock, disarm the alarm, and switch on overhead lighting and HVAC. 2. Wash hands, change into a clean apron, and confirm the team is in uniform. 3. Walk the floor. Check for overnight issues, leaks, pests, or anything out of place."
+            }
+          },
+          {
+            "id": "listRow-phase-2",
+            "type": "listRow",
+            "props": {
+              "label": "Phase 2: Equipment Power-On"
+            }
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 6
+  }
+}

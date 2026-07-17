@@ -1,0 +1,102 @@
+{
+  "revision": 37,
+  "cover": {
+    "v": 2,
+    "background": "ember",
+    "title": null,
+    "scale": 106,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -80,
+        "y": -45,
+        "w": 1200,
+        "h": 630,
+        "preset": "bare",
+        "children": [
+          {
+            "id": "poster-eyebrow",
+            "type": "text",
+            "props": {
+              "variant": "posterEyebrow",
+              "value": "WORK IN MOTION"
+            },
+            "offset": [
+              139,
+              116
+            ]
+          },
+          {
+            "id": "poster-title",
+            "type": "text",
+            "props": {
+              "variant": "poster",
+              "value": "Projects"
+            },
+            "offset": [
+              132,
+              128
+            ]
+          },
+          {
+            "id": "gantt-cascade",
+            "type": "ganttBand",
+            "props": {
+              "height": 630,
+              "bars": [
+                {
+                  "label": "Design",
+                  "off": 0,
+                  "w": 140,
+                  "tone": "light"
+                },
+                {
+                  "label": "Build",
+                  "off": 80,
+                  "w": 150,
+                  "tone": "light"
+                },
+                {
+                  "label": "Launch",
+                  "off": 170,
+                  "w": 140,
+                  "tone": "mid"
+                },
+                {
+                  "label": "QA",
+                  "off": 250,
+                  "w": 175,
+                  "tone": "mid"
+                },
+                {
+                  "label": "Rollout",
+                  "off": 340,
+                  "w": 175,
+                  "tone": "deep"
+                },
+                {
+                  "label": "Review",
+                  "off": 420,
+                  "w": 120,
+                  "tone": "deep"
+                }
+              ]
+            },
+            "offset": [
+              39,
+              -131
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "",
+    "lastTouchedBy": "max",
+    "editing": false,
+    "rev": 37
+  }
+}

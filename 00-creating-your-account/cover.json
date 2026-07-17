@@ -1,0 +1,62 @@
+{
+  "revision": 34,
+  "cover": {
+    "v": 2,
+    "background": "bloom",
+    "title": null,
+    "scale": 85,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "background",
+        "x": 0,
+        "y": 50,
+        "w": 600,
+        "children": [
+          {
+            "id": "emailCard-37042",
+            "type": "emailCard",
+            "props": {
+              "sender": "Lumon Fresh",
+              "subject": "You're invited to join Lumon Fresh",
+              "snippet": "Mark Scout has invited you to join Aspen United. Accept your invite to create your account.",
+              "cta": "Accept Invitation"
+            }
+          }
+        ]
+      },
+      {
+        "id": "b",
+        "role": "foreground",
+        "x": 520,
+        "y": 10,
+        "w": 480,
+        "children": [
+          {
+            "id": "authSplit-11927",
+            "type": "authSplit",
+            "props": {
+              "brandName": "Lumon Fresh",
+              "heading": "Create your account",
+              "subheading": "Set a password to finish joining Aspen United.",
+              "fields": [
+                "Full name",
+                "Email",
+                "Password"
+              ],
+              "cta": "Create account",
+              "pastel": "green"
+            }
+          }
+        ]
+      }
+    ],
+    "status": "approved",
+    "note": "",
+    "lastTouchedBy": "max",
+    "editing": false,
+    "rev": 34
+  }
+}

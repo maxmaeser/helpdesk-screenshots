@@ -1,0 +1,26 @@
+{
+  "revision": 0,
+  "shots": {
+    "forgot-password-form.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "login-forgot-link.png": {
+      "cursor": {
+        "pos": [
+          845,
+          1507
+        ],
+        "type": "hand"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

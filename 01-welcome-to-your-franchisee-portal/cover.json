@@ -1,0 +1,57 @@
+{
+  "revision": 4,
+  "cover": {
+    "v": 2,
+    "background": "cloud",
+    "title": null,
+    "scale": 85,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "background",
+        "x": 0,
+        "y": 60,
+        "w": 560,
+        "children": [
+          {
+            "id": "portalCard-88576",
+            "type": "portalCard",
+            "props": {
+              "eyebrow": "GET STARTED",
+              "title": "Welcome to your franchisee portal",
+              "body": "Everything you need to open and operate, in one place.",
+              "accent": "green",
+              "stats": [
+                {
+                  "value": "8",
+                  "label": "Modules"
+                },
+                {
+                  "value": "24",
+                  "label": "Tasks"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "b",
+        "role": "foreground",
+        "x": 480,
+        "y": 0,
+        "w": 320,
+        "h": 460,
+        "preset": "portal-shell",
+        "children": []
+      }
+    ],
+    "status": "approved",
+    "note": "",
+    "lastTouchedBy": "max",
+    "editing": false,
+    "rev": 4
+  }
+}

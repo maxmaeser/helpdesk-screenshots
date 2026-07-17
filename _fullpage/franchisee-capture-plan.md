@@ -1,5 +1,7 @@
 # Franchisee Onboarding — Capture Plan
 
+> Synced with tracker v2 and placement map, 2026-07-13. Re-specs from capture-playbook-DRAFT adopted.
+
 For the 12 franchisee onboarding articles (v1 text is drafted and importable now; images retrofit at v2). Capture on staging (`https://staging.app.franchisesystems.ai/`) as a franchisee, brand Lumon (super-admin impersonation preferred). All shots 2x (Retina).
 
 Two things to capture:
@@ -26,86 +28,114 @@ Two things to capture:
 
 ## Per-article shot lists
 
-Cursor column = where the pointer should conceptually sit (Claude overlays it). Skip a shot if the UI doesn't exist yet or matches another article's shot.
+Cursor column = where the pointer should conceptually sit (Claude overlays it). Placement = where the shot lands in the article (`## Section → after "quoted first words…"`). Skip a shot if the UI doesn't exist yet or matches another article's shot.
+
+### 00 Creating Your Account
+| # | Shot | UI state | Cursor | Filename | Placement |
+|---|---|---|---|---|---|
+| 1 | Account creation form (locked Invite Code and Email, name and phone fields) | logged out, open /franchisees/signup with no query params (renders the empty form shape) | none | `account-signup-form.png` | `## Accepting your invite → after "Your brand sends an invite email with…"` |
 
 ### 01 Welcome
-| # | Shot | UI state | Cursor | Filename |
-|---|---|---|---|---|
-| 1 | Full sidebar, all items visible | Portal loaded, sidebar expanded | none | `welcome-sidebar.png` |
-| 2 | Avatar menu open (Help desk, Settings) | Click avatar at bottom of sidebar | arrow on avatar | `welcome-avatar-menu.png` |
+| # | Shot | UI state | Cursor | Filename | Placement |
+|---|---|---|---|---|---|
+| 1 | Full sidebar, all items visible | Portal loaded, sidebar expanded | none | `welcome-sidebar.png` | `## What's in the sidebar → directly under heading, before the bullet list` |
+| 2 | Avatar menu open (Settings, Log Out) | Click avatar at bottom of sidebar | arrow | `welcome-avatar-menu.png` | `## Your menu → after "Click your avatar at the bottom of…"` |
+| 3 | Need help? menu open in top bar (Submit a ticket, My tickets, Open Helpdesk) | top-bar Need help? menu open | hand | `welcome-help-menu.png` | `## Your menu → after the "For help, click the Need help?…" sentence` |
 
 ### 02 Home
-| # | Shot | UI state | Cursor | Filename |
-|---|---|---|---|---|
-| 1 | Home page overview | Home loaded, panels visible | none | `home-overview.png` |
-| 2 | Task hovered showing due date + status | Hover an active task card | arrow on task | `home-task-hover.png` |
+| # | Shot | UI state | Cursor | Filename | Placement |
+|---|---|---|---|---|---|
+| 1 | Home top: greeting hero and Chat panel | Home, fully loaded | none | `home-overview.png` | `intro → after "Home is the snapshot of your business…", before ## What you'll find` |
+| 2 | Your Tasks panel (header, task rows with due dates and status) | Home, tasks panel in view | none | `home-tasks.png` | `## What you'll find → after the Tasks bullet` |
+| 3 | Home panel stack: Manuals, Brand Feed, Assets, Team | Home, mid-page panels in view | none | `home-panels.png` | `## What you'll find → after the Quick links bullet (end of list)` |
+| 4 | A task opened from Home with the Details popover (status, due date, type) | task open from Home, Details popover expanded | arrow | `home-task-open.png` | `## How to use it → after "Start your day here. Open a task…"` |
 
 ### 03 What Projects Are
-| # | Shot | UI state | Cursor | Filename |
-|---|---|---|---|---|
-| 1 | Projects index list | Projects page loaded | none | `projects-index.png` |
-| 2 | Open project: phases + tasks | A project open | none | `projects-detail.png` |
-| 3 | New project template gallery | Click New project | arrow on a template | `projects-templates.png` |
-| 4 | Task with Blocked status + reason | Open a blocked task | none | `projects-blocked.png` |
+| # | Shot | UI state | Cursor | Filename | Placement |
+|---|---|---|---|---|---|
+| 1 | Projects index list | Projects page loaded | none | `projects-index.png` | `## Finding your way around → after "The Projects page lists your projects in…"` |
+| 2 | Open project: task list grouped by status | A project open | none | `projects-detail.png` | `## Finding your way around → after "Click a project to open it and…"` |
+| 3 | Project Overview popover (summary, start date, linked locations) | project open, Overview popover expanded | hand | `projects-overview.png` | `## The project overview → after "Open a project and click Overview…"` |
+| 4 | A Locked task row (dependency-gated, lock icon) | project with a dependency-gated task seeded | none | `projects-locked.png` | `## Task status → after "Some tasks depend on others finishing first…"` |
 
 ### 04 Completing a Task
-| # | Shot | UI state | Cursor | Filename |
-|---|---|---|---|---|
-| 1 | Task card with chip + action button called out | Any task card | none | `task-anatomy.png` |
-| 2 | A File Upload task card | Open a File Upload task | arrow on drop zone | `task-file-upload.png` |
-| 3 | A completed task with green check | Task marked complete | none | `task-complete.png` |
+| # | Shot | UI state | Cursor | Filename | Placement |
+|---|---|---|---|---|---|
+| 1 | Task panel: type, due date, action button | Any task card | none | `task-anatomy.png` | `intro → after "Task panels work the same way across…", before ## The seven task types` |
+| 2 | Task attachments area (upload + attach from library) | task open, attachments area visible | arrow | `task-attachments.png` | `## Attachments → after "Tasks have an attachments area where you…"` |
+| 3 | A completed task with green check | Task marked complete | none | `task-complete.png` | `intro → after "Once you finish, the task gets a Task complete confirmation…", before ## The seven task types` |
 
 ### 05 Working with Approvers
-| # | Shot | UI state | Cursor | Filename |
-|---|---|---|---|---|
-| 1 | Task with approver roles shown | Task detail with RACI-A | none | `approvers-roles.png` |
-| 2 | Pending approval badge + approver avatar | Finished task pending approval | none | `approvers-pending.png` |
+| # | Shot | UI state | Cursor | Filename | Placement |
+|---|---|---|---|---|---|
+| 1 | Task with approver roles shown | Task detail with RACI-A | none | `approvers-roles.png` | `## The five roles → after the RACI-A bullet list, before ## How approval works` |
+| 2 | Pending approval badge + approver avatar | Finished task pending approval | none | `approvers-pending.png` | `## Tracking a pending task → after "When you finish a task that has…"` |
 
 ### 06 Locations
-| # | Shot | UI state | Cursor | Filename |
-|---|---|---|---|---|
-| 1 | Locations list with status chips | Locations loaded | none | `locations-list.png` |
-| 2 | Location detail + status history timeline | Open a location | none | `locations-detail.png` |
-| 3 | Status dropdown open | Click status dropdown | arrow on new value | `locations-status.png` |
+| # | Shot | UI state | Cursor | Filename | Placement |
+|---|---|---|---|---|---|
+| 1 | Locations list with status chips | Locations loaded | none | `locations-list.png` | `intro → after "Locations is the live record of each…", before ## The location detail` |
+| 2 | Location detail + status history timeline | Open a location | none | `locations-detail.png` | `## The location detail → after "Click into a location and the detail…"` |
+| 3 | Status dropdown open | Click status dropdown | arrow | `locations-status.png` | `## Updating a status → after "Status updates happen right from the detail…"` |
 
 ### 07 Vendors
-| # | Shot | UI state | Cursor | Filename |
-|---|---|---|---|---|
-| 1 | Vendor grid of cards | Vendors loaded | none | `vendors-grid.png` |
-| 2 | Vendor detail with 3 action buttons | Open a vendor | none | `vendors-detail.png` |
-| 3 | Report Issue form | Click Report Issue | arrow on submit | `vendors-report-issue.png` |
+| # | Shot | UI state | Cursor | Filename | Placement |
+|---|---|---|---|---|---|
+| 1 | Vendor table (name, usage badge, category, location assignments, contacts) | Vendors loaded | none | `vendors-grid.png` | `## The vendor list → after "The main view is a table…"` |
+| 2 | Vendor detail: tabs Details / Contacts / Locations / Manuals / Assets | Open a vendor | none | `vendors-detail.png` | `## The vendor list → after "Click a row and the detail view opens…"` |
+| 3 | Vendor Setup Status menu (Not Implemented / Implementing / Implemented) | vendor detail, setup status menu open | hand | `vendors-setup-status.png` | `## Setup status → after "The Locations tab tracks where this vendor…"` |
 
 ### 08 Team and Roles
-| # | Shot | UI state | Cursor | Filename |
-|---|---|---|---|---|
-| 1 | Team roster | Team loaded | none | `team-roster.png` |
-| 2 | Add Team Member form | Click Add Team Member | arrow on Send invite | `team-add-member.png` |
-| 3 | Role dropdown open on member detail | Open role dropdown | arrow on a role | `team-role-dropdown.png` |
+| # | Shot | UI state | Cursor | Filename | Placement |
+|---|---|---|---|---|---|
+| 1 | Team roster | Team loaded | none | `team-roster.png` | `intro → after "Team is your roster of the people…", before ## Inviting a team member` |
+| 2 | Invite teammate modal (name, email, title, reason) | Click Add Team Member | arrow | `team-add-member.png` | `## Inviting a team member → at step 1` |
+| 3 | Role controls on a roster row (Primary radio / Consulted toggle) or the promote-to-Primary modal | Team roster visible, a member's role controls in view | arrow | `team-role-controls.png` | `## Roles → after "Roles are defined by your brand, and…"` |
+| 4 | Member detail panel (Primary/Consulted badge, email, phone, joined date) | member detail open | none | `team-member-detail.png` | `## The member detail → after its lead paragraph` |
 
 ### 09 Brand Standards
-| # | Shot | UI state | Cursor | Filename |
-|---|---|---|---|---|
-| 1 | Brand overview page | Brand loaded | none | `brand-overview.png` |
-| 2 | Visual standards reference | Open Visual standards | none | `brand-visual-standards.png` |
-| 3 | Request approval form | Click Request approval | arrow on submit | `brand-request-approval.png` |
+| # | Shot | UI state | Cursor | Filename | Placement |
+|---|---|---|---|---|---|
+| 1 | Brand overview page | Brand loaded | none | `brand-overview.png` | `intro → after "Brand is your identity reference: a read…", before ## One page, up to six tabs` |
+| 2 | Identity tab (logos, color palette with hex values) | Open Visual standards | none | `brand-identity.png` | `## One page, up to six tabs → after the Identity bullet` |
+
+`brand-request-approval.png` dropped: no approval flow exists on Brand pages, article 09 already correct without it.
 
 ### 10 Learning
-| # | Shot | UI state | Cursor | Filename |
-|---|---|---|---|---|
-| 1 | Courses tab with catalog | Learning loaded, Courses tab | none | `learning-courses.png` |
-| 2 | A course card (started, Continue Course) | Hover a started course | none | `learning-course-card.png` |
-| 3 | Course view: chapters, player, Resources | Open a course | none | `learning-course-view.png` |
+| # | Shot | UI state | Cursor | Filename | Placement |
+|---|---|---|---|---|---|
+| 1 | Courses tab with catalog | Learning loaded, Courses tab | none | `learning-courses.png` | `## The Courses tab → after "The tab opens on Pick up where…"` |
+| 2 | Started course card with Continue Course (list view; needs a started course) | Hover a started course | none | `learning-course-card.png` | `## The Courses tab → after "Each course card shows the cover, the…"` |
+| 3 | Course view: chapters, player, Resources | Open a course | none | `learning-course-view.png` | `## Inside a course → after "Open a course and the course view…"` |
 
 ### 11 Manuals
-| # | Shot | UI state | Cursor | Filename |
-|---|---|---|---|---|
-| 1 | Manuals home: categories + document list | Manuals loaded | none | `manuals-home.png` |
-| 2 | Document view with table of contents | Open a manual | none | `manuals-document.png` |
-| 3 | Search results with highlighted matches | Run a search | arrow on a result | `manuals-search.png` |
+| # | Shot | UI state | Cursor | Filename | Placement |
+|---|---|---|---|---|---|
+| 1 | Manuals home: tabs (Browse, My List, Recommended...) with category filter pills | Browse tab, fully loaded | none | `manuals-home.png` | `## Browsing and categories → after "Manuals opens on tabs across the top…"` |
+| 2 | Document view with table of contents | Open a manual | none | `manuals-document.png` | `## Reading a manual → after "Each manual opens in a clean document…"` |
+| 3 | Search results for a phrase (result card with title and snippet) | Run a search | none | `manuals-search.png` | `## Search → after "Search runs across the whole library, not…"` |
 
 ### 12 Assets
-| # | Shot | UI state | Cursor | Filename |
-|---|---|---|---|---|
-| 1 | Assets home: five category tiles | Assets loaded | none | `assets-home.png` |
-| 2 | Photos grid | Open Photos | none | `assets-photos.png` |
-| 3 | File detail with Download | Open a file | arrow on Download | `assets-file-detail.png` |
+| # | Shot | UI state | Cursor | Filename | Placement |
+|---|---|---|---|---|---|
+| 1 | Assets home: Collections/Files toggle with collection cards | Assets loaded | none | `assets-home.png` | `intro → after "Assets is your brand's file library…", before ## Collections and files` |
+| 2 | An opened collection grid (nearest populated collection) | a populated collection open | none | `assets-collection.png` | `## Collections and files → after "Collections shows cards your brand has put together…"` |
+| 3 | File detail with Download | Open a file | arrow | `assets-file-detail.png` | `## Downloading a file → after "The flow is the same whether you're…"` |
+
+### 13 Resetting Your Password
+| # | Shot | UI state | Cursor | Filename | Placement |
+|---|---|---|---|---|---|
+| 1 | Log In page with the Forgot Password? Reset here. link | logged out, /login | hand | `login-forgot-link.png` | `## Requesting a reset → at its first sentence, after "On the Log In page, click Forgot Password? Reset here."` |
+| 2 | Reset your Password page (email field, Reset Password button) | logged out, /forgot-password | none | `forgot-password-form.png` | `## Requesting a reset → after "Enter the email attached to your account and press Reset Password."` |
+
+## Verify at capture
+
+These claims in the drafts are script-derived or were just corrected against code, not confirmed on a live screen. While capturing, check each one against the real UI and flag any mismatch so the article text gets fixed before import.
+
+- **Button labels (exact casing):** **New project** (article 03), **Mark Complete** / **Submit** / **Open Link** (article 04), **Send invite** (article 08). Confirm each label reads exactly as bolded in the article.
+- **Chat page (article 01):** confirm the one-line descriptor ("your message threads") matches what the page actually is.
+- **Home panels (articles 02 and 05):** confirm what the Home page panels are actually named. Article 02 says brand feed; article 05 now says approvals surface "from Home". Note the real panel titles.
+- **Avatar menu (article 01):** confirm the avatar menu shows only **Settings** and **Log Out**, and that help lives in the top-bar **Need help?** menu with **Submit a ticket**, **My tickets**, and **Open Helpdesk**.
+- **Single-location sidebar label (articles 01 and 06):** with a one-unit franchisee, confirm the sidebar item reads **Location** singular.
+- **Task-type picker (article 04):** confirm exactly 7 types: To Do, Form, Link, Meeting, Video, Slides, eSignature.
+- **Locations statuses (article 06):** confirm the status set has 5 values including **Inactive**.

@@ -1,0 +1,86 @@
+{
+  "revision": 3,
+  "cover": {
+    "v": 2,
+    "background": "sky",
+    "title": null,
+    "scale": 85,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "background",
+        "x": 0,
+        "y": 0,
+        "w": 640,
+        "h": 460,
+        "preset": "portal-shell",
+        "children": [
+          {
+            "id": "text-140023114242992",
+            "type": "text",
+            "props": {
+              "variant": "eyebrow",
+              "value": "MONDAY, JULY 13"
+            }
+          },
+          {
+            "id": "text-140023114243120",
+            "type": "text",
+            "props": {
+              "variant": "heading",
+              "value": "Good afternoon, Creed."
+            }
+          },
+          {
+            "id": "text-140023114243248",
+            "type": "text",
+            "props": {
+              "variant": "body",
+              "value": "Welcome to Lumon Fresh"
+            }
+          }
+        ]
+      },
+      {
+        "id": "b",
+        "role": "foreground",
+        "x": 560,
+        "y": 40,
+        "w": 460,
+        "children": [
+          {
+            "id": "homeModuleCard-30528",
+            "type": "homeModuleCard",
+            "props": {
+              "icon": "checklist",
+              "tone": "orange",
+              "eyebrow": "YOUR TASKS",
+              "title": "Due today",
+              "rows": [
+                {
+                  "title": "Confirm your opening details",
+                  "sub": "Due today",
+                  "badgeLabel": "High",
+                  "badgeTone": "orange"
+                },
+                {
+                  "title": "Get ServSafe certified",
+                  "sub": "Overdue · Jun 1",
+                  "badgeLabel": "High",
+                  "badgeTone": "red"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "status": "approved",
+    "note": "",
+    "lastTouchedBy": "max",
+    "editing": false,
+    "rev": 3
+  }
+}

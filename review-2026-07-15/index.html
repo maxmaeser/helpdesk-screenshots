@@ -1,0 +1,542 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FSAI Helpdesk Review — 2026-07-15</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #6b6b6b;
+    --border: #e2e2e2;
+    --card-bg: #f7f7f7;
+    --quote-bg: #eef4fb;
+    --quote-border: #4c7fb8;
+    --link: #1a5fb4;
+    --toc-bg: #fafafa;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14161a;
+      --fg: #e8e8e8;
+      --muted: #9a9a9a;
+      --border: #2c2f36;
+      --card-bg: #1c1f26;
+      --quote-bg: #17232f;
+      --quote-border: #4c8fd8;
+      --link: #7ab3f5;
+      --toc-bg: #1a1c22;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--fg);
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  .wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 20px 64px;
+  }
+  header.page-header {
+    padding: 20px 20px 8px;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  header.page-header h1 {
+    font-size: 22px;
+    margin: 0 0 4px;
+  }
+  header.page-header .sub {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 0;
+  }
+  nav.toc {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--toc-bg);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 20px;
+    margin-bottom: 24px;
+  }
+  nav.toc ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  nav.toc a {
+    color: var(--link);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  section.article {
+    margin-bottom: 56px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  section.article:last-child {
+    border-bottom: none;
+  }
+  h1 {
+    font-size: 26px;
+    line-height: 1.25;
+    margin: 0 0 16px;
+  }
+  h2 {
+    font-size: 20px;
+    margin: 32px 0 12px;
+  }
+  h3 {
+    font-size: 18px;
+    margin: 28px 0 10px;
+  }
+  p {
+    margin: 0 0 14px;
+  }
+  ul, ol {
+    margin: 0 0 14px;
+    padding-left: 22px;
+  }
+  li {
+    margin-bottom: 6px;
+  }
+  strong {
+    font-weight: 700;
+  }
+  a {
+    color: var(--link);
+  }
+  em { font-style: normal; }
+  blockquote {
+    margin: 0 0 16px;
+    padding: 12px 14px;
+    background: var(--quote-bg);
+    border-left: 4px solid var(--quote-border);
+    border-radius: 4px;
+    font-size: 15.5px;
+  }
+  .section-meta {
+    color: var(--muted);
+    font-size: 13px;
+    margin: -10px 0 20px;
+  }
+  .note-pending {
+    color: var(--muted);
+    background: var(--card-bg);
+    border: 1px dashed var(--border);
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 14px;
+    margin: 8px 0 24px;
+  }
+  .shot-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin: 10px 0 26px;
+  }
+  .shot-gallery figure {
+    margin: 0;
+  }
+  .shot-gallery img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+  }
+  .shot-gallery figcaption {
+    margin-top: 6px;
+    font-size: 12.5px;
+    color: var(--muted);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    word-break: break-all;
+  }
+  .batch-group {
+    margin-bottom: 30px;
+  }
+  footer.page-footer {
+    max-width: 680px;
+    margin: 40px auto 0;
+    padding: 0 20px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+</style>
+
+<header class="page-header">
+  <h1>FSAI Helpdesk Review — 2026-07-15</h1>
+  <p class="sub">Reading view for today's work. Regenerate with <code>regen.py</code> as more raws land.</p>
+</header>
+
+<nav class="toc">
+  <ul>
+    <li><a href="#lead">How to Work a Lead</a></li>
+    <li><a href="#analytics">About Sales Analytics</a></li>
+    <li><a href="#ticket">Submitting a Ticket (F14)</a></li>
+    <li><a href="#automations">About Automations and Runs</a></li>
+    <li><a href="#segments">About Segments</a></li>
+    <li><a href="#link-tracking">About Link Tracking</a></li>
+    <li><a href="#batch-a">Batch A shots</a></li>
+  </ul>
+</nav>
+
+<div class="wrap">
+
+  <section class="article" id="lead">
+    <h1>How to Work a Lead</h1>
+<p>The lead detail panel is where you do the day-to-day work of moving a single lead through your sales process in Franchise Systems Ai (FS Ai).</p>
+<p>It gives you their contact details, a message thread, tasks, a full activity history, and their documents in one panel, without leaving your pipeline.</p>
+<h3>Opening the lead panel</h3>
+<p>Go to <strong>Sales → Pipeline</strong> and click any lead in the table. Their detail panel slides in from the right with the lead's name, current status, brand, and location at the top.</p>
+<p>The panel opens on the <strong>Details</strong> tab, and you can switch between <strong>Details</strong>, <strong>Chat</strong>, <strong>Tasks</strong>, <strong>Activity</strong>, <strong>Deal</strong>, and <strong>Assets</strong> using the tabs below the header.</p>
+<p>The panel stays layered over your pipeline, so closing it (the <strong>X</strong> in the top left) drops you right back where you were.</p>
+<h3>Reviewing and editing details</h3>
+<div class="shot-gallery">
+<figure><a href="../how-to-work-a-lead/raw/lead-panel-details.png" target="_blank" rel="noopener"><img src="../how-to-work-a-lead/raw/lead-panel-details.png" alt="lead-panel-details.png" loading="lazy"></a><figcaption>lead-panel-details.png</figcaption></figure>
+<figure><a href="../how-to-work-a-lead/raw/lead-assign-rep.png" target="_blank" rel="noopener"><img src="../how-to-work-a-lead/raw/lead-assign-rep.png" alt="lead-assign-rep.png" loading="lazy"></a><figcaption>lead-assign-rep.png</figcaption></figure>
+</div>
+<p>The <strong>Details</strong> tab holds everything you know about the lead:</p>
+<ul><li><strong>Assigned To</strong>: click to assign the lead to a sales rep or reassign it to someone else.</li><li><strong>Steps Completed</strong>: how far the lead has progressed through the applicant portal.</li><li><strong>Date Joined</strong>: when the lead entered your pipeline.</li><li><strong>Contact Information</strong>: first name, last name, email, and phone.</li><li><strong>Lead Generation</strong>: the source and UTM data the lead came in with.</li><li>Any additional groups your brand collects through the applicant portal forms, such as onboarding questions.</li></ul>
+<p>Most fields are editable in place. Click a field, type your change, and click away to save.</p>
+<p>If the lead has signed documents on file, <strong>View Signed FDD</strong> and <strong>View Signed Franchise Agreement</strong> buttons appear at the top of this tab.</p>
+<h3>Changing status and segments</h3>
+<div class="shot-gallery">
+<figure><a href="../how-to-work-a-lead/raw/lead-status-change.png" target="_blank" rel="noopener"><img src="../how-to-work-a-lead/raw/lead-status-change.png" alt="lead-status-change.png" loading="lazy"></a><figcaption>lead-status-change.png</figcaption></figure>
+<figure><a href="../how-to-work-a-lead/raw/lead-segments.png" target="_blank" rel="noopener"><img src="../how-to-work-a-lead/raw/lead-segments.png" alt="lead-segments.png" loading="lazy"></a><figcaption>lead-segments.png</figcaption></figure>
+</div>
+<p>The status shown next to the lead's name (for example, <strong>Investigating</strong> or <strong>Fast-Track</strong>) is clickable. Select it to move the lead to a different stage.</p>
+<p>On the right side of the header, use the <strong>Segments</strong> area to add or remove segment tags, which is how you group leads for filtering and automations.</p>
+<h3>Messaging the lead</h3>
+<div class="shot-gallery">
+<figure><a href="../how-to-work-a-lead/raw/lead-chat.png" target="_blank" rel="noopener"><img src="../how-to-work-a-lead/raw/lead-chat.png" alt="lead-chat.png" loading="lazy"></a><figcaption>lead-chat.png</figcaption></figure>
+</div>
+<p>The <strong>Chat</strong> tab is a live message thread with the lead. Type in the <strong>Write a message</strong> box and click <strong>Send</strong>.</p>
+<p>You can attach files, add emoji, and record voice messages using the icons in the composer.</p>
+<p>The full back-and-forth stays here for anyone on your team who opens the lead.</p>
+<h3>Tracking tasks</h3>
+<div class="shot-gallery">
+<figure><a href="../how-to-work-a-lead/raw/lead-tasks.png" target="_blank" rel="noopener"><img src="../how-to-work-a-lead/raw/lead-tasks.png" alt="lead-tasks.png" loading="lazy"></a><figcaption>lead-tasks.png</figcaption></figure>
+</div>
+<p>The <strong>Tasks</strong> tab lists the to-dos tied to this lead, with columns for the task, status, who is responsible, and the due date.</p>
+<p>Click <strong>+ Create Task</strong> to add a new one so nothing slips between calls.</p>
+<h3>Reviewing activity</h3>
+<div class="shot-gallery">
+<figure><a href="../how-to-work-a-lead/raw/lead-activity.png" target="_blank" rel="noopener"><img src="../how-to-work-a-lead/raw/lead-activity.png" alt="lead-activity.png" loading="lazy"></a><figcaption>lead-activity.png</figcaption></figure>
+</div>
+<p>The <strong>Activity</strong> tab is a timeline of everything that has happened with the lead: emails delivered, chat messages, notes, videos watched, and signup events.</p>
+<p>Use <strong>Log Activity</strong> to add a note recording a call or a next step.</p>
+<p>Sort the timeline with the dropdown at the top left.</p>
+<h3>Reviewing assets</h3>
+<div class="shot-gallery">
+<figure><a href="../how-to-work-a-lead/raw/lead-assets.png" target="_blank" rel="noopener"><img src="../how-to-work-a-lead/raw/lead-assets.png" alt="lead-assets.png" loading="lazy"></a><figcaption>lead-assets.png</figcaption></figure>
+</div>
+<p>The <strong>Assets</strong> tab holds the documents attached to this lead, such as a signed FDD.</p>
+<p>Search by name, filter by file type with the icons above the list, or use the <strong>Actions</strong> menu to upload or link a document.</p>
+<h3>Handing off to a deal</h3>
+<div class="shot-gallery">
+<figure><a href="../how-to-work-a-lead/raw/lead-deal-tab-empty.png" target="_blank" rel="noopener"><img src="../how-to-work-a-lead/raw/lead-deal-tab-empty.png" alt="lead-deal-tab-empty.png" loading="lazy"></a><figcaption>lead-deal-tab-empty.png</figcaption></figure>
+<figure><a href="../how-to-work-a-lead/raw/lead-deal-tab-overview.png" target="_blank" rel="noopener"><img src="../how-to-work-a-lead/raw/lead-deal-tab-overview.png" alt="lead-deal-tab-overview.png" loading="lazy"></a><figcaption>lead-deal-tab-overview.png</figcaption></figure>
+</div>
+<p>The <strong>Deal</strong> tab shows the lead's deal without leaving the panel.</p>
+<p>If no deal exists yet, you'll see a <strong>No Deal Created</strong> message explaining that deals are created automatically after an applicant completes a step in the portal, or manually with the <strong>Create Deal</strong> button.</p>
+<p>Once a deal exists, this tab shows the deal overview in place, where you manage its details.</p>
+<p>If the deal hasn't been converted yet, a <strong>Convert To Franchisee</strong> button appears so you can move it forward without leaving the lead panel.</p>
+<p>For a full walkthrough of deals, see About Deals.</p>
+<h3>Quick actions</h3>
+<div class="shot-gallery">
+<figure><a href="../how-to-work-a-lead/raw/lead-actions-menu.png" target="_blank" rel="noopener"><img src="../how-to-work-a-lead/raw/lead-actions-menu.png" alt="lead-actions-menu.png" loading="lazy"></a><figcaption>lead-actions-menu.png</figcaption></figure>
+</div>
+<p>The <strong>...</strong> menu in the top right of the panel gathers the actions you take on a lead, including sending a portal invite, sending an email, sending an FDD for signature, converting the lead to a franchisee, locking or unlocking the portal, and downloading a PDF of the lead's profile.</p>
+<p>The pin icon keeps the lead in your saved tabs, and the link icon copies a direct link you can share with a teammate.</p>
+    <p class="section-meta">11 shot(s) embedded from <code>how-to-work-a-lead/raw/</code>.</p>
+  </section>
+
+  <section class="article" id="analytics">
+    <h1>About Sales Analytics</h1>
+<p>The Analytics page in Franchise Systems Ai (FS Ai) is your reporting view for one brand's sales and applicant portal performance.</p>
+<p>It shows how leads are coming in, where they are coming from, and how far applicants get through your onboarding portal, across a date range you choose.</p>
+<p>You find it under <strong>Sales → Analytics</strong>.</p>
+<p>The page has two tabs: <strong>Overview</strong> (default) and <strong>Portal Steps</strong>.</p>
+<h3>Picking your brand and date range</h3>
+<div class="shot-gallery">
+<figure><a href="../about-sales-analytics/raw/sales-analytics-overview-top.png" target="_blank" rel="noopener"><img src="../about-sales-analytics/raw/sales-analytics-overview-top.png" alt="sales-analytics-overview-top.png" loading="lazy"></a><figcaption>sales-analytics-overview-top.png</figcaption></figure>
+</div>
+<p>Analytics reports on one brand at a time.</p>
+<p>Use the <strong>brand selector</strong> at the top of the page to choose which brand you are looking at.</p>
+<blockquote><strong>Note:</strong> This brand selector is independent. It does not follow the brand you picked on <strong>Sales → Pipeline</strong> or elsewhere. If your numbers look wrong, check that the right brand is selected here first.</blockquote>
+<p>Set the reporting window with the controls on the Overview tab:</p>
+<ul><li><strong>View dropdown</strong>: choose <strong>Daily View</strong>, <strong>Weekly View</strong>, or <strong>Monthly View</strong>. This controls how the charts group data along the time axis.</li><li><strong>From</strong> and <strong>To</strong>: pick the start and end dates for the whole report.</li></ul>
+<p>Every widget on the Overview tab respects these settings.</p>
+<h3>Reading the Overview</h3>
+<div class="shot-gallery">
+<figure><a href="../about-sales-analytics/raw/sales-analytics-leads-by-source.png" target="_blank" rel="noopener"><img src="../about-sales-analytics/raw/sales-analytics-leads-by-source.png" alt="sales-analytics-leads-by-source.png" loading="lazy"></a><figcaption>sales-analytics-leads-by-source.png</figcaption></figure>
+</div>
+<p>At the top are five stat tiles giving you headline numbers for the selected range: <strong>Average Unique Visitors</strong>, <strong>New Portal Sessions</strong>, <strong>Returning Portal Sessions</strong>, <strong>Form Submissions</strong>, and <strong>Steps Completed</strong>.</p>
+<p>Each tile shows a percentage change, in green or red, comparing the current range against the prior period.</p>
+<p>Below the tiles are charts covering three areas.</p>
+<p>Most charts have a <strong>Bar</strong> and <strong>Line</strong> toggle so you can switch how the trend is drawn.</p>
+<p><strong>Where leads come from:</strong></p>
+<ul><li><strong>Leads Over Time</strong>: new leads across your date range.</li><li><strong>Leads By State</strong>: lead volume by state, with a <strong>Map</strong> and <strong>List</strong> toggle.</li><li><strong>Leads By Source</strong>: a donut chart plus a table breaking leads down by source, with counts and percentages. The <strong>Include Organic Leads?</strong> toggle controls whether leads with no attributed source are counted. Turn it off to see only leads that carry a known campaign or UTM source.</li></ul>
+<p><strong>Applicant portal engagement:</strong></p>
+<ul><li><strong>Unique Portal Visits</strong> and <strong>Applicant Portal Form Submissions</strong>: traffic and form activity in the portal.</li><li><strong>Steps Completed</strong>: onboarding steps applicants finished over time.</li><li><strong>Returning Applicant Portal Users</strong> and <strong>New Applicant Portal Users</strong>: how many applicants are coming back versus arriving for the first time.</li></ul>
+<p><strong>Deal and disclosure progress:</strong></p>
+<ul><li><strong>FDDs Sent</strong> and <strong>FDDs Signed</strong>: Franchise Disclosure Documents issued to and signed by applicants.</li><li><strong>Franchisees Converted</strong>: applicants who became franchisees in the range.</li></ul>
+<h3>The Portal Steps funnel</h3>
+<div class="shot-gallery">
+<figure><a href="../about-sales-analytics/raw/sales-analytics-portal-steps.png" target="_blank" rel="noopener"><img src="../about-sales-analytics/raw/sales-analytics-portal-steps.png" alt="sales-analytics-portal-steps.png" loading="lazy"></a><figcaption>sales-analytics-portal-steps.png</figcaption></figure>
+</div>
+<p>The <strong>Portal Steps</strong> tab breaks your applicant portal down step by step so you can see where applicants drop off.</p>
+<p>Two tiles sit at the top:</p>
+<ul><li><strong>Sample Size</strong>: the number of applicants counted in this funnel, meaning those who have completed at least one portal step in the selected range.</li><li><strong>Avg Completed</strong>: the average number of steps each of those applicants has finished.</li></ul>
+<p>Below the tiles is the funnel list.</p>
+<p>Each row is one onboarding step and shows:</p>
+<ul><li><strong>Step</strong>: the step name and the section it belongs to.</li><li><strong>Type</strong>: what the applicant does on that step, such as Watch Video, Complete Form, Sign a Document, Schedule Call, or Slides.</li><li><strong>Completions</strong>: how many applicants finished that step.</li><li><strong>Rate</strong>: completions as a percentage of the sample size.</li></ul>
+<p>Use the search box to find a step by name, the filter icon to narrow by type or completion rate, and the sort control to order the list.</p>
+<p>The range dropdown (defaulting to <strong>All time</strong>) sets the window this funnel is measured over.</p>
+<h3>Generating a report</h3>
+<div class="shot-gallery">
+<figure><a href="../about-sales-analytics/raw/sales-analytics-generate-report.png" target="_blank" rel="noopener"><img src="../about-sales-analytics/raw/sales-analytics-generate-report.png" alt="sales-analytics-generate-report.png" loading="lazy"></a><figcaption>sales-analytics-generate-report.png</figcaption></figure>
+</div>
+<p>Click <strong>Generate Report</strong> to open the reports panel.</p>
+<p>Any reports you have already generated are listed here to download again.</p>
+<p>To create a new one, choose <strong>Generate New Report</strong>, confirm the date range and view, and generate.</p>
+<p>FS Ai builds a PDF covering an executive summary of key metrics, detailed analytics tables and trends, and lead geography and source performance, ready to share.</p>
+<h3>Generating insights</h3>
+<div class="shot-gallery">
+<figure><a href="../about-sales-analytics/raw/sales-analytics-generate-insights.png" target="_blank" rel="noopener"><img src="../about-sales-analytics/raw/sales-analytics-generate-insights.png" alt="sales-analytics-generate-insights.png" loading="lazy"></a><figcaption>sales-analytics-generate-insights.png</figcaption></figure>
+</div>
+<p>The <strong>Generate Insights</strong> panel near the top of the page runs the AI Engine over your sales data and returns written findings: recommendations, trends, and key observations.</p>
+<p>Some insights include a shortcut button that takes you straight to the related area, such as your applicant portal, sales leads, or territories.</p>
+<p>Click <strong>Generate Insights</strong> to run it.</p>
+    <p class="section-meta">5 shot(s) embedded.</p>
+  </section>
+
+  <section class="article" id="ticket">
+    <h1>Submitting a Ticket</h1>
+<p>When something comes up in your unit that needs your brand's help, you can submit a ticket.</p>
+<p>It goes straight to your brand team, and you track their reply in the portal instead of losing it in email.</p>
+<h2>Finding the help menu</h2>
+<p>The <strong>Need help?</strong> button sits at the top right of the portal, marked with a question bubble icon.</p>
+<p>Click it for a short menu:</p>
+<ul><li><strong>Submit a ticket</strong>: start a new ticket.</li><li><strong>My tickets</strong>: see everything you've sent and your brand's replies.</li><li><strong>Open Helpdesk</strong>: browse these guides if you'd rather look something up first.</li></ul>
+<h2>Submitting a ticket</h2>
+<p>Click <strong>Submit a ticket</strong> and a short flow walks you through four steps:</p>
+<ol><li><strong>Type</strong>: pick the category that fits your issue. Your brand sets up these categories, so what you see depends on how they've set it up. There's also <strong>Something else</strong> for a general request, and <strong>Bug or technical issue</strong> for a problem with the portal itself.</li><li><strong>Details</strong>: add a short <strong>Subject</strong> and a <strong>Description</strong> of what's going on.</li><li><strong>Attachments</strong>: drag in screenshots, photos, or short videos. When you start a ticket from the <strong>Need help?</strong> button, the portal grabs a picture of the page you were on and attaches it for you. Remove it if you'd rather not share it.</li><li><strong>Review</strong>: check it over and press <strong>Submit</strong>. You'll get a confirmation that it's on its way.</li></ol>
+<h2>Tracking your tickets</h2>
+<p>Open <strong>My tickets</strong> from the same menu to see every ticket you've submitted.</p>
+<p>Filter along the top by category, and open any ticket to message back and forth with your brand team, like a conversation.</p>
+<p>Each ticket carries a status so you always know where it stands:</p>
+<ul><li><strong>Open</strong>: submitted and waiting to be picked up.</li><li><strong>In progress</strong>: your brand team is working on it.</li><li><strong>Waiting on you</strong>: they need something from you to move forward.</li><li><strong>Resolved</strong>: handled.</li><li><strong>Closed</strong>: wrapped up.</li></ul>
+    <p class="note-pending">Images pending capture.</p>
+  </section>
+
+  <section class="article" id="automations">
+    <h1>About Automations and Runs</h1>
+<p>The <strong>Automations</strong> and <strong>Runs</strong> tabs on the <strong>Workflows</strong> page are where you build event-driven workflows and watch them execute in Franchise Systems Ai (FS Ai).</p>
+<p>Automations do the work automatically when something happens to a lead, deal, or other record. Runs is the log of every time an automation has fired.</p>
+<p>You reach both from the sidebar under <strong>Sales → Workflows</strong>. The same tabs appear under Marketing and Operations, and each department has its own automations.</p>
+<blockquote><strong>Prerequisite:</strong> You need write access to the department (Sales, Marketing, or Operations) to create or publish an automation.</blockquote>
+<h3>Automations vs. sequences</h3>
+<p>An <strong>automation</strong> is an event-driven workflow you build in the workflow builder. It starts from a trigger, then runs steps like delays, conditions, and actions in the order you connect them.</p>
+<p>Sequences live on their own tab on the same page and are covered separately. For the full vocabulary of triggers, action steps, conditions, and branching, see <strong>Creating Content and Workflows</strong> and <strong>About Sequences and Workflows</strong>.</p>
+<p>This article covers the Automations list and the Runs log.</p>
+<h3>The Automations tab</h3>
+<div class="shot-gallery">
+<figure><a href="../about-automations-and-runs/automations-list.png" target="_blank" rel="noopener"><img src="../about-automations-and-runs/automations-list.png" alt="automations-list.png" loading="lazy"></a><figcaption>automations-list.png</figcaption></figure>
+</div>
+<p>The Automations tab lists every automation in the department, one row each. The columns are:</p>
+<ul><li><strong>Name</strong>: what you named the automation.</li><li><strong>Trigger</strong>: the event that starts it (for example, "Lead status changed" or "Lead submits a form").</li><li><strong>Status</strong>: <strong>Draft</strong> while you are still building, <strong>Active</strong> once it is published and listening for events.</li><li><strong>Last Edited</strong>: when the automation was last changed.</li></ul>
+<p>Use <strong>Search Workflows</strong> to find an automation by name or trigger. Use the filter to narrow the list to <strong>Published</strong> or <strong>Draft</strong>.</p>
+<p>Select one or more rows to <strong>Duplicate</strong> or <strong>Delete</strong> them.</p>
+<h3>Creating an automation</h3>
+<div class="shot-gallery">
+<figure><a href="../about-automations-and-runs/automations-create-modal.png" target="_blank" rel="noopener"><img src="../about-automations-and-runs/automations-create-modal.png" alt="automations-create-modal.png" loading="lazy"></a><figcaption>automations-create-modal.png</figcaption></figure>
+<figure><a href="../about-automations-and-runs/automations-publish-toggle.png" target="_blank" rel="noopener"><img src="../about-automations-and-runs/automations-publish-toggle.png" alt="automations-publish-toggle.png" loading="lazy"></a><figcaption>automations-publish-toggle.png</figcaption></figure>
+</div>
+<p>Click <strong>+ Create Workflow</strong>. You then choose how to start:</p>
+<ul><li><strong>Create from Template</strong>: pick a pre-built automation and customize its key settings before the builder opens.</li><li><strong>Create from Scratch</strong>: open an empty builder and set the trigger and steps yourself.</li></ul>
+<p>You can also click <strong>Import from JSON</strong> to load a saved automation file exported from elsewhere. It opens in the builder as a new draft.</p>
+<p>Every automation opens in the workflow builder, where you set the trigger, add steps, and connect them. New automations start in <strong>Draft</strong> and do not run until you publish them.</p>
+<p>To go live, open the automation and switch the publish toggle from <strong>Draft</strong> to <strong>Published</strong>. Published automations show as <strong>Active</strong> in the list.</p>
+<p>The builder checks the automation first. If a step is incomplete it flags the problem, and the status stays <strong>Draft</strong> until you fix it or choose to publish anyway.</p>
+<h3>What happens when an automation runs</h3>
+<p>Once an automation is <strong>Active</strong>, it listens for its trigger event.</p>
+<p>Each time a matching event happens, FS Ai starts a <strong>run</strong> for the single record that triggered it. One lead hitting the trigger creates one run for that lead; ten leads create ten separate runs.</p>
+<p>The run walks through the steps you built, in order. A <strong>Delay</strong> step holds the run open until its timer is up, so a run that includes a one-day delay stays in progress for a full day before it completes.</p>
+<h3>The Runs tab</h3>
+<div class="shot-gallery">
+<figure><a href="../about-automations-and-runs/runs-tab.png" target="_blank" rel="noopener"><img src="../about-automations-and-runs/runs-tab.png" alt="runs-tab.png" loading="lazy"></a><figcaption>runs-tab.png</figcaption></figure>
+</div>
+<p>The Runs tab is the log of every automation execution in the department. Four tiles at the top summarize the current view:</p>
+<ul><li><strong>Total Runs</strong>: how many runs are listed.</li><li><strong>Running</strong>: runs still in progress.</li><li><strong>Failed</strong>: runs that hit an error.</li><li><strong>Completed</strong>: runs that finished all their steps.</li></ul>
+<p>Below the tiles, each run is a row. The columns are:</p>
+<ul><li><strong>Workflow</strong>: which automation ran.</li><li><strong>Status</strong>: <strong>Completed</strong> (green), <strong>Running</strong> (blue), <strong>Failed</strong> (red), or <strong>Cancelled</strong> (gray).</li><li><strong>Entity</strong>: the record the run acted on, usually the lead or deal by name.</li><li><strong>Started</strong>: when the run began.</li><li><strong>Duration</strong>: how long it took, from a few seconds to hours when a delay is involved.</li><li><strong>Steps</strong>: how many steps the run executed.</li></ul>
+<p>Search runs by name, filter by status, and sort by date to focus the list.</p>
+<p>To stop runs that are still in progress, select them and choose <strong>Cancel Runs</strong>. Cancelling stops the remaining steps and cannot be undone.</p>
+<h3>Using Runs to debug</h3>
+<div class="shot-gallery">
+<figure><a href="../about-automations-and-runs/runs-detail-timeline.png" target="_blank" rel="noopener"><img src="../about-automations-and-runs/runs-detail-timeline.png" alt="runs-detail-timeline.png" loading="lazy"></a><figcaption>runs-detail-timeline.png</figcaption></figure>
+</div>
+<p>When someone asks "why didn't my lead get that email," the Runs tab is where you find out.</p>
+<p>Click a run to open its detail panel. The panel shows the trigger that started it, the record it acted on (click through to open that lead or deal), and an execution timeline of every step.</p>
+<p>Each step in the timeline carries its own outcome:</p>
+<ul><li><strong>Completed</strong>: the step ran successfully.</li><li><strong>Skipped</strong>: the run took a different path around this step.</li><li><strong>Failed</strong>: shows a <strong>View error</strong> link with the reason.</li></ul>
+<p>Read the timeline top to bottom to see exactly where the run stopped or which path it followed. If a run shows as <strong>Cancelled</strong>, the panel explains why, for example "Cancelled by automation rule," "Timed out," or that the record was deleted before the run finished.</p>
+    <p class="section-meta">5 shot(s) embedded from <code>about-automations-and-runs/</code>.</p>
+  </section>
+
+  <section class="article" id="segments">
+    <h1>About Segments</h1>
+<p>A segment is a group of leads in Franchise Systems Ai (FS Ai) that share something in common, such as a tag you have applied, their activity level, or their stage in your pipeline.</p>
+<p>You use segments to act on many leads at once: send them an email, enroll them in a sequence, or filter your pipeline down to just that group.</p>
+<p>Find them under <strong>Sales → Pipeline</strong> on the <strong>Segments</strong> tab.</p>
+<h3>Where segments come from</h3>
+<p>You don't create segments by hand. That's why the Segments tab has no create button.</p>
+<p>Each segment appears on its own as you work your pipeline. A segment comes from one of three places:</p>
+<ul><li><strong>Built-in groups</strong>: FS Ai maintains these for you. They include All Sales Leads, In Applicant Portal, Not In Applicant Portal, and No Activity in 7, 30, or 90 Days.</li><li><strong>Tags</strong>: every tag you create becomes its own segment. This is how you build custom segments.</li><li><strong>Custom statuses</strong>: every custom lead status you define also appears as a segment.</li></ul>
+<p>The built-in segments are there from the start, even before a brand has any leads. The tab grows as you add tags and custom statuses.</p>
+<h3>Create a custom segment by tagging leads</h3>
+<div class="shot-gallery">
+<figure><a href="../about-segments/segments-create-tag.png" target="_blank" rel="noopener"><img src="../about-segments/segments-create-tag.png" alt="segments-create-tag.png" loading="lazy"></a><figcaption>segments-create-tag.png</figcaption></figure>
+<figure><a href="../about-segments/segments-manage-tags.png" target="_blank" rel="noopener"><img src="../about-segments/segments-manage-tags.png" alt="segments-manage-tags.png" loading="lazy"></a><figcaption>segments-manage-tags.png</figcaption></figure>
+</div>
+<p>To create your own segment, tag a lead.</p>
+<ol><li>Go to <strong>Sales → Pipeline</strong> and click a lead to open its detail panel.</li><li>In the <strong>Segments</strong> area of the panel header, click the <strong>+</strong> button to open the Manage tags popover.</li><li>Select an existing tag, or click <strong>Create New Tag</strong>, name it, and save.</li></ol>
+<p>The moment a tag exists on a lead, it shows up on the Segments tab as a segment.</p>
+<p>To tag several leads at once, select them with the checkboxes in the <strong>Leads</strong> table and apply a tag from the bulk toolbar.</p>
+<p>Removing a tag from a lead removes that lead from the segment.</p>
+<h3>Read the Segments tab</h3>
+<p>Each row shows four things:</p>
+<ul><li><strong>Name</strong>: the segment name, which is the tag, the status, or the built-in group.</li><li><strong>Segments</strong>: a category label, such as Tagged Audience, Status, Activity, or Portal Status.</li><li><strong>Date Created</strong>: when the segment was created.</li><li><strong>Size</strong>: how many leads are currently in it.</li></ul>
+<p>Use <strong>Search Segments</strong>, the filter, and the sort controls to find a segment. <strong>Total Segments</strong> in the top right counts them all.</p>
+<h3>What segments unlock</h3>
+<p>Click any segment that has at least one lead to open the send flow. From there you can:</p>
+<ul><li>Send the whole segment a one-off email from a template.</li><li>Enroll the whole segment in a multi-step sequence with timed delays between messages.</li></ul>
+<p>Tagging a lead can also start a sequence automatically, since sequences can trigger off a tag.</p>
+<p>For how to build one, see <strong>Creating Content and Workflows</strong>.</p>
+<p>You can also filter the <strong>Leads</strong> table by segment to narrow your pipeline to a single group. For working an individual lead, see How to Work a Lead.</p>
+    <p class="section-meta">2 shot(s) embedded from <code>about-segments/</code>.</p>
+  </section>
+
+  <section class="article" id="link-tracking">
+    <h1>About Link Tracking</h1>
+<p>Link Tracking in Franchise Systems Ai (FS Ai) lets you create short, trackable links so you can see which campaigns, print pieces, and QR codes actually drive traffic to your applicant portal.</p>
+<p>Every time someone opens one of your links, FS Ai records the click and then forwards them to wherever you point the link. That gives you attribution: you learn which channel a visitor or lead came from instead of guessing.</p>
+<p>You find it under <strong>Studio → Link Tracking</strong>.</p>
+<p>The page has three tabs: <strong>Links</strong> (default), <strong>QR Templates</strong>, and <strong>Analytics</strong>.</p>
+<h3>Setting up your brand and domain</h3>
+<p>Link Tracking reports on one brand at a time.</p>
+<p>Use the <strong>brand selector</strong> at the top of the page to choose which brand you are working in.</p>
+<blockquote><strong>Note:</strong> This brand selector is independent. It does not follow the brand you picked elsewhere in the dashboard. If a brand looks empty or you cannot create a link, check that the right brand is selected here first.</blockquote>
+<p>Tracking links are built on your applicant portal domain, so you need a domain connected before you can create any.</p>
+<p>If you have not connected one yet, a red banner reads <strong>No domain connected to your Applicant Portal</strong> and the create action stays disabled. Connect a domain to your applicant portal first, then come back.</p>
+<h3>Creating a tracking link</h3>
+<div class="shot-gallery">
+<figure><a href="../about-link-tracking/link-tracking-actions.png" target="_blank" rel="noopener"><img src="../about-link-tracking/link-tracking-actions.png" alt="link-tracking-actions.png" loading="lazy"></a><figcaption>link-tracking-actions.png</figcaption></figure>
+<figure><a href="../about-link-tracking/link-tracking-create.png" target="_blank" rel="noopener"><img src="../about-link-tracking/link-tracking-create.png" alt="link-tracking-create.png" loading="lazy"></a><figcaption>link-tracking-create.png</figcaption></figure>
+</div>
+<p>On the <strong>Links</strong> tab, open <strong>Actions</strong> and choose <strong>Create Link</strong>. Fill in the dialog:</p>
+<ul><li><strong>Name</strong>: an internal label for the link, such as "Summer Campaign - Twitter". This is what you see in the table.</li><li><strong>Destination URL</strong>: the full web address the link sends people to, such as your applicant portal signup page or your main website.</li><li><strong>Slug</strong>: the short piece at the end of the tracking link. FS Ai fills this in from the Name automatically, and you can edit it. It must be unique, so the dialog warns you if the slug is already taken.</li><li><strong>Departments</strong>: pick at least one of Sales, Marketing, or Operations to tie the link to a team.</li><li><strong>Locations</strong>: optionally attach the link to one or more of your locations.</li><li><strong>UTM Source</strong>, <strong>UTM Medium</strong>, <strong>UTM Campaign</strong>: campaign tags added to the link so you can identify traffic later in reporting (for example, newsletter as the source or july-promo as the campaign). FS Ai appends these to the destination URL when someone follows the link.</li></ul>
+<p>Click <strong>Show advanced UTM parameters</strong> to add <strong>UTM Term</strong> and <strong>UTM Content</strong> as well.</p>
+<p>A live preview near the bottom shows the final tracking link as you type.</p>
+<p>Click <strong>Create</strong> to save it.</p>
+<h3>The tracking link and how it works</h3>
+<p>Your finished link looks like `https://your-portal-domain/t/your-slug`.</p>
+<p>When someone opens it, FS Ai logs the click, appends your UTM values to the destination URL, and forwards the visitor there.</p>
+<p>Because the click is tied to your applicant portal, FS Ai can also connect it to a prospect, applicant, or franchisee where it recognizes them.</p>
+<h3>Sharing and copying a link</h3>
+<div class="shot-gallery">
+<figure><a href="../about-link-tracking/link-tracking-copy.png" target="_blank" rel="noopener"><img src="../about-link-tracking/link-tracking-copy.png" alt="link-tracking-copy.png" loading="lazy"></a><figcaption>link-tracking-copy.png</figcaption></figure>
+</div>
+<p>In the <strong>Link</strong> column of the table, click the copy icon on any row to copy that link's full tracking URL to your clipboard.</p>
+<p>Paste it wherever you need it: an ad, an email, a social post, or a printed flyer.</p>
+<h3>Reading the Links table</h3>
+<div class="shot-gallery">
+<figure><a href="../about-link-tracking/link-tracking-links.png" target="_blank" rel="noopener"><img src="../about-link-tracking/link-tracking-links.png" alt="link-tracking-links.png" loading="lazy"></a><figcaption>link-tracking-links.png</figcaption></figure>
+<figure><a href="../about-link-tracking/link-tracking-detail-panel.png" target="_blank" rel="noopener"><img src="../about-link-tracking/link-tracking-detail-panel.png" alt="link-tracking-detail-panel.png" loading="lazy"></a><figcaption>link-tracking-detail-panel.png</figcaption></figure>
+</div>
+<p>Each row shows one tracking link:</p>
+<ul><li><strong>Name</strong>: your internal label.</li><li><strong>Link</strong>: the tracking URL, with the copy icon.</li><li><strong>Destination</strong>: where the link forwards to.</li><li><strong>Clicks</strong>: how many times the link has been opened.</li><li><strong>UTM</strong>: the source, medium, and campaign tags, combined.</li><li><strong>Created By</strong> and <strong>Created</strong>: who made the link and when.</li></ul>
+<p>Use <strong>Search Links</strong> and the sort control to find a link. <strong>Total Links</strong> in the top right counts them all.</p>
+<p>Click any row to open the link's detail panel, with its own overview, performance, and QR code views.</p>
+<h3>QR Templates</h3>
+<div class="shot-gallery">
+<figure><a href="../about-link-tracking/link-tracking-qr-templates.png" target="_blank" rel="noopener"><img src="../about-link-tracking/link-tracking-qr-templates.png" alt="link-tracking-qr-templates.png" loading="lazy"></a><figcaption>link-tracking-qr-templates.png</figcaption></figure>
+</div>
+<p>The <strong>QR Templates</strong> tab holds reusable QR code styles, including a Brand Default, so your printed codes share one look.</p>
+<p>A template stores colors and an optional logo. You then apply a template when you generate a QR code for a specific link from that link's detail panel.</p>
+<h3>The Analytics tab</h3>
+<div class="shot-gallery">
+<figure><a href="../about-link-tracking/link-tracking-analytics.png" target="_blank" rel="noopener"><img src="../about-link-tracking/link-tracking-analytics.png" alt="link-tracking-analytics.png" loading="lazy"></a><figcaption>link-tracking-analytics.png</figcaption></figure>
+</div>
+<p>The <strong>Analytics</strong> tab rolls up performance across all of a brand's links.</p>
+<p>It defaults to the trailing 30 days, and you can change the date range and switch the view between Hourly, Daily, Weekly, and Monthly.</p>
+<p>Four tiles give you the headline numbers: <strong>Total Clicks</strong>, <strong>Unique Visitors</strong>, <strong>Total Links</strong>, and <strong>Avg. Clicks per Link</strong>.</p>
+<p>Below them, the <strong>Total Clicks Over Time</strong> chart plots activity across your range, with a Bar and Line toggle.</p>
+<p>Alongside it are breakdowns by device, browser, referrer, and country.</p>
+<p>The UTM Source you set on a link is the same source dimension used elsewhere in reporting. When a tracking link points at your applicant portal, its source feeds lead attribution.</p>
+<p>For lead-level source reporting, see About Sales Analytics.</p>
+    <p class="section-meta">7 shot(s) embedded from <code>about-link-tracking/</code>.</p>
+  </section>
+
+  <section class="article" id="batch-a">
+    <h1>Settings refresh shots (Batch A)</h1>
+    <p class="section-meta">14 shot(s) captured today, grouped by article folder, not already shown above.</p>
+    <h3>setting-up-your-profile</h3>
+<div class="shot-gallery">
+<figure><a href="../setting-up-your-profile/raw/profile-details-v2.png" target="_blank" rel="noopener"><img src="../setting-up-your-profile/raw/profile-details-v2.png" alt="profile-details-v2.png" loading="lazy"></a><figcaption>profile-details-v2.png</figcaption></figure>
+<figure><a href="../setting-up-your-profile/raw/profile-menu-settings.png" target="_blank" rel="noopener"><img src="../setting-up-your-profile/raw/profile-menu-settings.png" alt="profile-menu-settings.png" loading="lazy"></a><figcaption>profile-menu-settings.png</figcaption></figure>
+<figure><a href="../setting-up-your-profile/raw/profile-organizations.png" target="_blank" rel="noopener"><img src="../setting-up-your-profile/raw/profile-organizations.png" alt="profile-organizations.png" loading="lazy"></a><figcaption>profile-organizations.png</figcaption></figure>
+<figure><a href="../setting-up-your-profile/raw/profile-preferences.png" target="_blank" rel="noopener"><img src="../setting-up-your-profile/raw/profile-preferences.png" alt="profile-preferences.png" loading="lazy"></a><figcaption>profile-preferences.png</figcaption></figure>
+<figure><a href="../setting-up-your-profile/raw/profile-security-2fa-api.png" target="_blank" rel="noopener"><img src="../setting-up-your-profile/raw/profile-security-2fa-api.png" alt="profile-security-2fa-api.png" loading="lazy"></a><figcaption>profile-security-2fa-api.png</figcaption></figure>
+<figure><a href="../setting-up-your-profile/raw/profile-security.png" target="_blank" rel="noopener"><img src="../setting-up-your-profile/raw/profile-security.png" alt="profile-security.png" loading="lazy"></a><figcaption>profile-security.png</figcaption></figure>
+<figure><a href="../setting-up-your-profile/raw/settings-scopes-nav.png" target="_blank" rel="noopener"><img src="../setting-up-your-profile/raw/settings-scopes-nav.png" alt="settings-scopes-nav.png" loading="lazy"></a><figcaption>settings-scopes-nav.png</figcaption></figure>
+</div>
+<h3>how-to-connect-your-calendar</h3>
+<div class="shot-gallery">
+<figure><a href="../how-to-connect-your-calendar/raw/calendar-settings-connected.png" target="_blank" rel="noopener"><img src="../how-to-connect-your-calendar/raw/calendar-settings-connected.png" alt="calendar-settings-connected.png" loading="lazy"></a><figcaption>calendar-settings-connected.png</figcaption></figure>
+<figure><a href="../how-to-connect-your-calendar/raw/calendar-settings-event-types-tab.png" target="_blank" rel="noopener"><img src="../how-to-connect-your-calendar/raw/calendar-settings-event-types-tab.png" alt="calendar-settings-event-types-tab.png" loading="lazy"></a><figcaption>calendar-settings-event-types-tab.png</figcaption></figure>
+</div>
+<h3>auto-and-manual-assignment</h3>
+<div class="shot-gallery">
+<figure><a href="../auto-and-manual-assignment/raw/assignment-profile-settings-v3.png" target="_blank" rel="noopener"><img src="../auto-and-manual-assignment/raw/assignment-profile-settings-v3.png" alt="assignment-profile-settings-v3.png" loading="lazy"></a><figcaption>assignment-profile-settings-v3.png</figcaption></figure>
+</div>
+<h3>how-to-view-your-invoice</h3>
+<div class="shot-gallery">
+<figure><a href="../how-to-view-your-invoice/raw/billing-nav-organization.png" target="_blank" rel="noopener"><img src="../how-to-view-your-invoice/raw/billing-nav-organization.png" alt="billing-nav-organization.png" loading="lazy"></a><figcaption>billing-nav-organization.png</figcaption></figure>
+</div>
+<h3>how-to-edit-your-portal</h3>
+<div class="shot-gallery">
+<figure><a href="../how-to-edit-your-portal/raw/portal-editor-landing-cards.png" target="_blank" rel="noopener"><img src="../how-to-edit-your-portal/raw/portal-editor-landing-cards.png" alt="portal-editor-landing-cards.png" loading="lazy"></a><figcaption>portal-editor-landing-cards.png</figcaption></figure>
+</div>
+<h3>how-to-import-audiences</h3>
+<div class="shot-gallery">
+<figure><a href="../how-to-import-audiences/raw/import-dropdown-menu.png" target="_blank" rel="noopener"><img src="../how-to-import-audiences/raw/import-dropdown-menu.png" alt="import-dropdown-menu.png" loading="lazy"></a><figcaption>import-dropdown-menu.png</figcaption></figure>
+</div>
+<h3>creating-content-and-workflows</h3>
+<div class="shot-gallery">
+<figure><a href="../creating-content-and-workflows/raw/workflows-five-tabs.png" target="_blank" rel="noopener"><img src="../creating-content-and-workflows/raw/workflows-five-tabs.png" alt="workflows-five-tabs.png" loading="lazy"></a><figcaption>workflows-five-tabs.png</figcaption></figure>
+</div>
+  </section>
+
+</div>
+
+<footer class="page-footer">
+  Generated 2026-07-16 16:36 by regen.py &middot; served from the screenshots repo root on port 4410.
+</footer>

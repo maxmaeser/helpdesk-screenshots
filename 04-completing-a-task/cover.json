@@ -1,0 +1,172 @@
+{
+  "revision": 18,
+  "cover": {
+    "v": 2,
+    "background": "mint",
+    "grain": false,
+    "title": null,
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "background",
+        "x": 0,
+        "y": 0,
+        "w": 540,
+        "h": 540,
+        "preset": "plain",
+        "contentZoom": 1.25,
+        "children": [
+          {
+            "id": "a-eyebrow",
+            "type": "text",
+            "props": {
+              "variant": "eyebrow",
+              "value": "THE SEVEN TASK TYPES"
+            }
+          },
+          {
+            "id": "a-0",
+            "type": "statusChip",
+            "props": {
+              "icon": "checklist",
+              "color": "#1f54de",
+              "label": "Todo checklist · Pre-open readiness"
+            }
+          },
+          {
+            "id": "a-1",
+            "type": "statusChip",
+            "props": {
+              "icon": "tableSpreadsheet",
+              "color": "#27a51d",
+              "label": "Form · Grand opening results"
+            }
+          },
+          {
+            "id": "a-2",
+            "type": "statusChip",
+            "props": {
+              "icon": "globe",
+              "color": "#d87203",
+              "label": "Visit link · Vendor portal signup"
+            }
+          },
+          {
+            "id": "a-3",
+            "type": "statusChip",
+            "props": {
+              "icon": "displayStudio",
+              "color": "#4f46e5",
+              "label": "View slides · Brand standards deck"
+            }
+          },
+          {
+            "id": "a-4",
+            "type": "statusChip",
+            "props": {
+              "icon": "playCircle",
+              "color": "#b7101b",
+              "label": "Watch video · POS training"
+            }
+          },
+          {
+            "id": "a-5",
+            "type": "statusChip",
+            "props": {
+              "icon": "pencilEdit",
+              "color": "#7c3aed",
+              "label": "Signature · Franchise addendum"
+            }
+          },
+          {
+            "id": "a-6",
+            "type": "statusChip",
+            "props": {
+              "icon": "calendarDays",
+              "color": "#0d9488",
+              "label": "Schedule a call · Launch review"
+            }
+          }
+        ]
+      },
+      {
+        "id": "b",
+        "role": "foreground",
+        "x": 430,
+        "y": 20,
+        "w": 600,
+        "h": 500,
+        "preset": "plain",
+        "contentZoom": 1,
+        "overflowMode": "whole",
+        "children": [
+          {
+            "id": "b-eyebrow",
+            "type": "text",
+            "props": {
+              "variant": "eyebrow",
+              "value": "LF ASPEN · TO-DO"
+            }
+          },
+          {
+            "id": "b-title",
+            "type": "text",
+            "props": {
+              "variant": "display",
+              "value": "Submit your menu pricing for corporate approval"
+            }
+          },
+          {
+            "id": "b-status",
+            "type": "taskStatusBadge",
+            "props": {
+              "status": "not_started"
+            }
+          },
+          {
+            "id": "b-c0",
+            "type": "statusChip",
+            "props": {
+              "color": "#27a51d",
+              "label": "Enter prices for all core menu items"
+            }
+          },
+          {
+            "id": "b-c1",
+            "type": "statusChip",
+            "props": {
+              "color": "#27a51d",
+              "label": "Match corporate pricing tiers"
+            }
+          },
+          {
+            "id": "b-c2",
+            "type": "statusChip",
+            "props": {
+              "color": "#6b7280",
+              "label": "Confirm totals with your GM"
+            }
+          },
+          {
+            "id": "b-upload",
+            "type": "formField",
+            "props": {
+              "label": "Upload your local menu pricing sheet",
+              "placeholder": "task-11-menu-pricing-sheet.xlsx",
+              "required": true,
+              "type": "text"
+            }
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 18
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "revision": 3,
+  "cover": {
+    "v": 2,
+    "background": "lavender",
+    "title": null,
+    "scale": 85,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "background",
+        "x": 0,
+        "y": 50,
+        "w": 560,
+        "children": [
+          {
+            "id": "text-140023114246832",
+            "type": "text",
+            "props": {
+              "variant": "eyebrow",
+              "value": "LOCATIONS"
+            }
+          },
+          {
+            "id": "table-31498",
+            "type": "table",
+            "props": {
+              "columns": [
+                "Location",
+                "Status"
+              ],
+              "rows": [
+                {
+                  "id": "1",
+                  "primary": "Lumon Fresh Hotchkiss",
+                  "secondary": "East Bridge Street, Hotchkiss",
+                  "badgeLabel": "Open",
+                  "badgeColor": "#3FC128"
+                },
+                {
+                  "id": "2",
+                  "primary": "LF - Aspen",
+                  "secondary": "South Garmisch Street, Aspen",
+                  "badgeLabel": "Developing",
+                  "badgeColor": "#FC9105"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "b",
+        "role": "foreground",
+        "x": 520,
+        "y": 20,
+        "w": 460,
+        "children": [
+          {
+            "id": "text-140023114247344",
+            "type": "text",
+            "props": {
+              "variant": "heading",
+              "value": "LF - Aspen"
+            }
+          },
+          {
+            "id": "formField-20190",
+            "type": "formField",
+            "props": {
+              "label": "Open Date",
+              "placeholder": "Jun 5, 2026",
+              "type": "text"
+            }
+          },
+          {
+            "id": "formField-59123",
+            "type": "formField",
+            "props": {
+              "label": "Building Type",
+              "placeholder": "Basement Facility",
+              "type": "text"
+            }
+          },
+          {
+            "id": "button-84489",
+            "type": "button",
+            "props": {
+              "label": "Save changes",
+              "variant": "primary"
+            }
+          }
+        ]
+      }
+    ],
+    "status": "approved",
+    "note": "",
+    "lastTouchedBy": "max",
+    "editing": false,
+    "rev": 3
+  }
+}

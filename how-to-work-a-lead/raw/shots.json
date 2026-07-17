@@ -1,0 +1,145 @@
+{
+  "revision": 0,
+  "shots": {
+    "lead-actions-menu.png": {
+      "cursor": {
+        "pos": [
+          1726,
+          106
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "lead-activity.png": {
+      "cursor": {
+        "pos": [
+          1645,
+          562
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "lead-assets.png": {
+      "cursor": {
+        "pos": [
+          1651,
+          556
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "lead-assign-rep.png": {
+      "cursor": {
+        "pos": [
+          214,
+          596
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "lead-chat.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "lead-deal-tab-empty.png": {
+      "cursor": {
+        "pos": [
+          936,
+          1417
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "lead-deal-tab-overview.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "lead-panel-details.png": {
+      "cursor": {
+        "pos": [
+          197,
+          448
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "lead-segments.png": {
+      "cursor": {
+        "pos": [
+          1722,
+          304
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "lead-status-change.png": {
+      "cursor": {
+        "pos": [
+          422,
+          330
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "lead-tasks.png": {
+      "cursor": {
+        "pos": [
+          1628,
+          556
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

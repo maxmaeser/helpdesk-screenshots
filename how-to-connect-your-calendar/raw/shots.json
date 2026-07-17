@@ -1,0 +1,26 @@
+{
+  "revision": 0,
+  "shots": {
+    "calendar-settings-connected.png": {
+      "cursor": {
+        "pos": [
+          1863,
+          680
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "calendar-settings-event-types-tab.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

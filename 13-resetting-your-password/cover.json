@@ -1,0 +1,160 @@
+{
+  "revision": 31,
+  "cover": {
+    "v": 2,
+    "background": "ocean",
+    "title": null,
+    "scale": 85,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "background",
+        "x": 30,
+        "y": 25,
+        "w": 480,
+        "h": 460,
+        "contentZoom": 1,
+        "children": [
+          {
+            "id": "a0",
+            "type": "logoBlock",
+            "props": {
+              "name": "Lumon Fresh",
+              "color": "#1F54DE"
+            }
+          },
+          {
+            "id": "a1",
+            "type": "text",
+            "props": {
+              "variant": "heading",
+              "value": "Welcome back!"
+            }
+          },
+          {
+            "id": "a2",
+            "type": "formField",
+            "props": {
+              "label": "Email",
+              "placeholder": "Email address",
+              "required": true,
+              "type": "text"
+            }
+          },
+          {
+            "id": "a3",
+            "type": "formField",
+            "props": {
+              "label": "Password",
+              "placeholder": "************",
+              "required": true,
+              "type": "text"
+            }
+          },
+          {
+            "id": "a4",
+            "type": "text",
+            "props": {
+              "variant": "body",
+              "value": "Forgot Password? Reset here.",
+              "color": "#1F54DE"
+            }
+          },
+          {
+            "id": "a5",
+            "type": "button",
+            "props": {
+              "label": "Log In",
+              "variant": "primary"
+            }
+          },
+          {
+            "id": "a6",
+            "type": "text",
+            "props": {
+              "variant": "body",
+              "value": "Haven't started your application yet? Sign up"
+            }
+          }
+        ]
+      },
+      {
+        "id": "b",
+        "role": "foreground",
+        "x": 530,
+        "y": 20,
+        "w": 500,
+        "h": 425,
+        "contentZoom": 1,
+        "children": [
+          {
+            "id": "b1",
+            "type": "text",
+            "props": {
+              "variant": "heading",
+              "value": "Reset your Password"
+            }
+          },
+          {
+            "id": "b2",
+            "type": "text",
+            "props": {
+              "variant": "body",
+              "value": "Enter the email attached to your Lumon Fresh account below"
+            }
+          },
+          {
+            "id": "b3",
+            "type": "formField",
+            "props": {
+              "label": "Email",
+              "placeholder": "johnsmith@example.com",
+              "required": true,
+              "type": "text"
+            }
+          },
+          {
+            "id": "b4",
+            "type": "text",
+            "props": {
+              "variant": "body",
+              "value": "Your link will be sent from hello@lumonfresh.com."
+            }
+          },
+          {
+            "id": "b7",
+            "type": "text",
+            "props": {
+              "variant": "body",
+              "value": "Please remember to check your spam folder."
+            }
+          },
+          {
+            "id": "b5",
+            "type": "button",
+            "props": {
+              "label": "Reset Password",
+              "variant": "primary"
+            }
+          },
+          {
+            "id": "b6",
+            "type": "text",
+            "props": {
+              "variant": "body",
+              "value": "Return to Login",
+              "color": "#1F54DE"
+            }
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 31
+  }
+}

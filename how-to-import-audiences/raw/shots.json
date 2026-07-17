@@ -1,0 +1,19 @@
+{
+  "revision": 0,
+  "shots": {
+    "import-dropdown-menu.png": {
+      "cursor": {
+        "pos": [
+          618,
+          172
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

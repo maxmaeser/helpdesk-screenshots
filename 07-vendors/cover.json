@@ -1,0 +1,133 @@
+{
+  "revision": 15,
+  "cover": {
+    "v": 2,
+    "background": "sand",
+    "title": null,
+    "scale": 85,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "background",
+        "x": 0,
+        "y": 30,
+        "w": 420,
+        "contentZoom": 0.94,
+        "overflowMode": "whole",
+        "children": [
+          {
+            "id": "homeModuleCard-vendors",
+            "type": "homeModuleCard",
+            "props": {
+              "icon": "store04",
+              "tone": "orange",
+              "eyebrow": "SUPPLY",
+              "title": "Vendors",
+              "rows": [
+                {
+                  "title": "PepsiCo",
+                  "sub": "Beverages",
+                  "badgeLabel": "Required",
+                  "badgeTone": "green"
+                },
+                {
+                  "title": "Mercury Bank",
+                  "sub": "Technology",
+                  "badgeLabel": "Recommended",
+                  "badgeTone": "orange"
+                },
+                {
+                  "title": "Anthropic",
+                  "sub": "Technology · AI",
+                  "badgeLabel": "Required",
+                  "badgeTone": "green"
+                },
+                {
+                  "title": "Toast",
+                  "sub": "POS",
+                  "badgeLabel": "Recommended",
+                  "badgeTone": "orange"
+                },
+                {
+                  "title": "Octopus Energy",
+                  "sub": "Electricity",
+                  "badgeLabel": "Optional",
+                  "badgeTone": "gray"
+                },
+                {
+                  "title": "Lobio Lovers",
+                  "sub": "Ingredients",
+                  "badgeLabel": "Required",
+                  "badgeTone": "green"
+                },
+                {
+                  "title": "Beer Wholesale",
+                  "sub": "Alcohol",
+                  "badgeLabel": "Optional",
+                  "badgeTone": "gray"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "b",
+        "role": "foreground",
+        "x": 420,
+        "y": 8,
+        "w": 700,
+        "h": 534,
+        "contentZoom": 1.9,
+        "children": [
+          {
+            "id": "text-vendor-heading",
+            "type": "text",
+            "props": {
+              "variant": "heading",
+              "value": "PepsiCo"
+            }
+          },
+          {
+            "id": "text-vendor-sub",
+            "type": "text",
+            "props": {
+              "variant": "body",
+              "value": "Colorado, United States · Beverages"
+            }
+          },
+          {
+            "id": "dropdown-setup-status",
+            "type": "dropdown",
+            "props": {
+              "title": "Setup Status",
+              "search": false,
+              "items": [
+                {
+                  "label": "Not Implemented",
+                  "color": "#B7101B"
+                },
+                {
+                  "label": "Implementing",
+                  "color": "#D87203",
+                  "highlighted": true
+                },
+                {
+                  "label": "Implemented",
+                  "color": "#27A51D"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 15
+  }
+}

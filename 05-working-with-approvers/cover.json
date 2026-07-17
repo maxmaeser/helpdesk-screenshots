@@ -1,0 +1,118 @@
+{
+  "revision": 13,
+  "cover": {
+    "v": 2,
+    "background": "peach",
+    "title": null,
+    "scale": 85,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "background",
+        "x": 0,
+        "y": 20,
+        "w": 640,
+        "h": 500,
+        "preset": "portal-shell",
+        "contentZoom": 1.15,
+        "children": [
+          {
+            "id": "text-eyebrow-a",
+            "type": "text",
+            "props": {
+              "variant": "eyebrow",
+              "value": "PROJECTS · LF ASPEN"
+            }
+          },
+          {
+            "id": "text-heading-a",
+            "type": "text",
+            "props": {
+              "variant": "heading",
+              "value": "Submit your menu pricing for corporate approval"
+            }
+          },
+          {
+            "id": "text-body-a",
+            "type": "text",
+            "props": {
+              "variant": "body",
+              "value": "Sent to 1 approver · waiting on 1"
+            }
+          },
+          {
+            "id": "approvalPill-a",
+            "type": "approvalPill",
+            "props": {
+              "state": "pending",
+              "initials": "CS",
+              "name": "Creed Smith",
+              "color": "purple"
+            }
+          },
+          {
+            "id": "badge-a",
+            "type": "badge",
+            "props": {
+              "label": "task-11-menu-pricing-sheet.xlsx",
+              "color": "#191919"
+            }
+          }
+        ]
+      },
+      {
+        "id": "b",
+        "role": "foreground",
+        "x": 640,
+        "y": 100,
+        "w": 380,
+        "h": 340,
+        "contentZoom": 1.1,
+        "children": [
+          {
+            "id": "text-eyebrow-b",
+            "type": "text",
+            "props": {
+              "variant": "eyebrow",
+              "value": "APPROVAL"
+            }
+          },
+          {
+            "id": "text-heading-b",
+            "type": "text",
+            "props": {
+              "variant": "heading",
+              "value": "Approved"
+            }
+          },
+          {
+            "id": "approvalPill-b",
+            "type": "approvalPill",
+            "props": {
+              "state": "approved",
+              "initials": "CS",
+              "name": "Creed Smith",
+              "color": "purple"
+            }
+          },
+          {
+            "id": "card-feedback-b",
+            "type": "card",
+            "props": {
+              "title": "Creed Smith",
+              "body": "Numbers check out — approved for Aspen.",
+              "footer": "Jul 3"
+            }
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 13
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "revision": 21,
+  "cover": {
+    "v": 2,
+    "background": "ocean",
+    "title": null,
+    "scale": 85,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "background",
+        "x": 0,
+        "y": 40,
+        "w": 600,
+        "overflowMode": "whole",
+        "children": [
+          {
+            "id": "text-learn-eyebrow",
+            "type": "text",
+            "props": {
+              "variant": "eyebrow",
+              "value": "LEARNING & DEVELOPMENT"
+            }
+          },
+          {
+            "id": "text-learn-headline",
+            "type": "text",
+            "props": {
+              "variant": "display",
+              "value": "Keep your edge sharp."
+            }
+          },
+          {
+            "id": "table-learn-courses",
+            "type": "table",
+            "props": {
+              "columns": [
+                "Course",
+                "Status"
+              ],
+              "rows": [
+                {
+                  "id": "1",
+                  "primary": "New Owner Foundations",
+                  "secondary": "4 Chapters · 12 Lessons · 1 Hr · New Franchisee Training",
+                  "badgeLabel": "In Progress",
+                  "badgeColor": "#1f54de"
+                },
+                {
+                  "id": "2",
+                  "primary": "Cooking Playbook",
+                  "secondary": "4 Chapters · 16 Lessons",
+                  "badgeLabel": "Not Started",
+                  "badgeColor": "#6f6f6f"
+                },
+                {
+                  "id": "3",
+                  "primary": "Selling our Bowls",
+                  "secondary": "5 Lessons",
+                  "badgeLabel": "Completed",
+                  "badgeColor": "#0c6f14"
+                },
+                {
+                  "id": "4",
+                  "primary": "POS Mastery",
+                  "secondary": "12 Lessons",
+                  "badgeLabel": "Overdue",
+                  "badgeColor": "#930a1e"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "b",
+        "role": "foreground",
+        "x": 610,
+        "y": 55,
+        "w": 380,
+        "h": 400,
+        "children": [
+          {
+            "id": "contentCard-67248",
+            "type": "contentCard",
+            "props": {
+              "title": "New Owner Foundations",
+              "progress": 17,
+              "status": "in_progress",
+              "coverSrc": "/api/stock/learning-course-hero.png"
+            }
+          },
+          {
+            "id": "button-77501",
+            "type": "button",
+            "props": {
+              "label": "Continue Course",
+              "variant": "primary"
+            }
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Repair pass: Frame A badges mixed to 4 distinct real states (In Progress/Not Started/Completed/Overdue) - Completed and Overdue pulled from verified real UI vocabulary (platform COURSE_STATUS + the red Overdue pill on learning-course-card.png, shortened from its full 'Overdue: Jul 3, 2026' form to fit the table's fixed 120px badge column - no fabricated text) and reapplied to Selling our Bowls / POS Mastery (both confirmed real course names via Learning full page.png) to diversify badges without duplicating course/status pairs; not asserting those two are literally in that state in prod right now. Frame B: contentZoom 1.4 was clipping the contentCard's right edge (title padding + card corner) because the card always fills 100% of frame.w and the scale transform is top-left anchored inside a frame that clips at its own unscaled w/h - dropped zoom to 1 and enlarged frame b (w 300->380, h 470->400) to keep hero prominence without any clip risk.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 21
+  }
+}

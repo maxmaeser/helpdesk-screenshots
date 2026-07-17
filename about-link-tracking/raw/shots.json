@@ -1,0 +1,66 @@
+{
+  "revision": 0,
+  "shots": {
+    "link-tracking-links.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "link-tracking-actions.png": {
+      "cursor": {
+        "pos": [4170, 318],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "link-tracking-create.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "link-tracking-copy.png": {
+      "cursor": {
+        "pos": [1148, 155],
+        "type": "hand"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "link-tracking-qr-templates.png": {
+      "cursor": {
+        "pos": [800, 130],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "link-tracking-analytics.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "link-tracking-detail-panel.png": {
+      "status": "proposed",
+      "note": "bonus shot: settles the forensic question of whether clicking a link row opens a detail panel. Overview view shown; tabs Overview/Performance/QR Code visible.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

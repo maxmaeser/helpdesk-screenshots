@@ -1,0 +1,87 @@
+{
+  "revision": 3,
+  "cover": {
+    "v": 2,
+    "background": "dusk",
+    "title": null,
+    "scale": 85,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "background",
+        "x": 0,
+        "y": 50,
+        "w": 600,
+        "children": [
+          {
+            "id": "text-140023114322288",
+            "type": "text",
+            "props": {
+              "variant": "eyebrow",
+              "value": "TEAM"
+            }
+          },
+          {
+            "id": "table-18850",
+            "type": "table",
+            "props": {
+              "columns": [
+                "Name",
+                "Status"
+              ],
+              "rows": [
+                {
+                  "id": "1",
+                  "primary": "Creed Smith",
+                  "secondary": "Active",
+                  "badgeLabel": "Active",
+                  "badgeColor": "#27A51D"
+                },
+                {
+                  "id": "2",
+                  "primary": "Max Mifflin",
+                  "secondary": "Active",
+                  "badgeLabel": "Active",
+                  "badgeColor": "#27A51D"
+                },
+                {
+                  "id": "3",
+                  "primary": "Pending teammate",
+                  "secondary": "josh+aspenunited@franchisesystems.ai",
+                  "badgeLabel": "Awaiting approval",
+                  "badgeColor": "#D87203"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "b",
+        "role": "foreground",
+        "x": 520,
+        "y": 20,
+        "w": 460,
+        "children": [
+          {
+            "id": "modal-2227",
+            "type": "modal",
+            "props": {
+              "title": "Invite teammate",
+              "body": "They'll be added to Aspen United.",
+              "primaryAction": "Continue",
+              "secondaryAction": "Cancel"
+            }
+          }
+        ]
+      }
+    ],
+    "status": "approved",
+    "note": "",
+    "lastTouchedBy": "max",
+    "editing": false,
+    "rev": 3
+  }
+}

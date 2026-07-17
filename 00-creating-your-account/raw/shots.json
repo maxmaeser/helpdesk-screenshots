@@ -1,0 +1,39 @@
+{
+  "revision": 38,
+  "shots": {
+    "account-signup-form.png": {
+      "cursor": {
+        "pos": [
+          837,
+          1685
+        ],
+        "type": "hand"
+      },
+      "highlights": [
+        {
+          "rect": [
+            0,
+            1354,
+            1679,
+            474
+          ],
+          "style": "blur"
+        },
+        {
+          "rect": [
+            398,
+            1638,
+            890,
+            78
+          ],
+          "style": "outline"
+        }
+      ],
+      "status": "adjusted",
+      "note": "",
+      "lastTouchedBy": "max",
+      "editing": false,
+      "rev": 38
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "revision": 0,
+  "shots": {
+    "segments-manage-tags.png": {
+      "cursor": { "pos": [1719, 332], "type": "arrow" },
+      "status": "proposed",
+      "note": "Recaptured 2026-07-16 after fixing the international-phone regex gap (was leaving a stray '+4' prefix on the Austrian demo number). Real lead (Maximilian Maser -- Demo, Max's own personal email/phone) -- sanitizer now replaces both cleanly, verified in final (max@example.com / (720) 555-0142, no stray prefix).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 1
+    },
+    "segments-create-tag.png": {
+      "cursor": { "pos": [1606, 642], "type": "arrow" },
+      "status": "proposed",
+      "note": "Recaptured 2026-07-16 alongside segments-manage-tags.png (same sanitizer fix, same session). Name field left empty per instructions -- Create New Tag button correctly shows disabled/greyed state. Closed via Cancel, nothing submitted.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 1
+    }
+  }
+}

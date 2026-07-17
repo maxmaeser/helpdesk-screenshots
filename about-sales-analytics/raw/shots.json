@@ -1,0 +1,68 @@
+{
+  "revision": 0,
+  "shots": {
+    "sales-analytics-generate-insights.png": {
+      "cursor": {
+        "pos": [
+          2620,
+          240
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "sales-analytics-generate-report.png": {
+      "cursor": {
+        "pos": [
+          1852,
+          1245
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "sales-analytics-leads-by-source.png": {
+      "cursor": {
+        "pos": [
+          1240,
+          345
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "sales-analytics-overview-top.png": {
+      "cursor": {
+        "pos": [
+          680,
+          60
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "sales-analytics-portal-steps.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

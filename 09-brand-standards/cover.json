@@ -1,0 +1,144 @@
+{
+  "revision": 34,
+  "cover": {
+    "v": 2,
+    "background": "mint",
+    "title": null,
+    "scale": 120,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "background",
+        "x": 0,
+        "y": 0,
+        "w": 460,
+        "h": 560,
+        "contentZoom": 1.25,
+        "children": [
+          {
+            "id": "text-a-eyebrow",
+            "type": "text",
+            "props": {
+              "variant": "eyebrow",
+              "value": "BRAND PROFILE · LUMON FRESH"
+            }
+          },
+          {
+            "id": "text-a-heading",
+            "type": "text",
+            "props": {
+              "variant": "heading",
+              "value": "Lumon Fresh"
+            }
+          },
+          {
+            "id": "listRow-a-founded",
+            "type": "listRow",
+            "props": {
+              "label": "1894",
+              "sublabel": "Founded"
+            }
+          },
+          {
+            "id": "listRow-a-locations",
+            "type": "listRow",
+            "props": {
+              "label": "20",
+              "sublabel": "Locations"
+            }
+          },
+          {
+            "id": "listRow-a-sales",
+            "type": "listRow",
+            "props": {
+              "label": "$1.2B",
+              "sublabel": "System sales"
+            }
+          },
+          {
+            "id": "listRow-a-avgunit",
+            "type": "listRow",
+            "props": {
+              "label": "$19.4M",
+              "sublabel": "Avg. unit"
+            }
+          }
+        ]
+      },
+      {
+        "id": "b",
+        "role": "foreground",
+        "x": 460,
+        "y": 0,
+        "w": 580,
+        "h": 520,
+        "contentZoom": 1.18,
+        "children": [
+          {
+            "id": "text-b-eyebrow",
+            "type": "text",
+            "props": {
+              "variant": "eyebrow",
+              "value": "LOGO"
+            }
+          },
+          {
+            "id": "logoBlock-b",
+            "type": "logoBlock",
+            "props": {
+              "name": "LUMON",
+              "color": "#15395E"
+            }
+          },
+          {
+            "id": "listRow-b-full",
+            "type": "listRow",
+            "props": {
+              "label": "Full logo",
+              "sublabel": "Use this version whenever possible"
+            }
+          },
+          {
+            "id": "listRow-b-small",
+            "type": "listRow",
+            "props": {
+              "label": "Small logo",
+              "sublabel": "Use this version for smaller layouts"
+            }
+          },
+          {
+            "id": "listRow-b-blue",
+            "type": "listRow",
+            "props": {
+              "label": "Lumon Blue",
+              "sublabel": "#15395E"
+            }
+          },
+          {
+            "id": "listRow-b-teal",
+            "type": "listRow",
+            "props": {
+              "label": "Refinement Teal",
+              "sublabel": "#4FB3A0"
+            }
+          },
+          {
+            "id": "button-b-download",
+            "type": "button",
+            "props": {
+              "label": "Download",
+              "variant": "primary"
+            }
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 34
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "lead-activity.png": {
+    "cursor": [
+      1645,
+      562
+    ]
+  },
+  "lead-assets.png": {
+    "cursor": [
+      1651,
+      556
+    ]
+  },
+  "lead-actions-menu.png": {
+    "cursor": [
+      1726,
+      106
+    ]
+  },
+  "lead-panel-details.png": {
+    "cursor": [
+      197,
+      448
+    ]
+  },
+  "lead-assign-rep.png": {
+    "cursor": [
+      214,
+      596
+    ]
+  },
+  "lead-status-change.png": {
+    "cursor": [
+      422,
+      330
+    ]
+  },
+  "lead-segments.png": {
+    "cursor": [
+      1722,
+      304
+    ]
+  },
+  "lead-tasks.png": {
+    "cursor": [
+      1628,
+      556
+    ]
+  },
+  "lead-deal-tab-empty.png": {
+    "cursor": [
+      936,
+      1417
+    ]
+  }
+}

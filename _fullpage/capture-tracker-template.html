@@ -19,7 +19,8 @@
     --font:'Inter',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
   }
   html, body { background:#e8dcc8; color:var(--txt); font-family:var(--font); font-size:13px; line-height:1.55; -webkit-font-smoothing:antialiased; }
-  .shell { display:grid; grid-template-columns:260px 1fr; min-height:100vh; position:relative; }
+  .shell { display:grid; grid-template-columns:260px 1fr; min-height:100vh; position:relative; transition:grid-template-columns 0.25s ease; }
+  .shell.side-collapsed { grid-template-columns:52px 1fr; }
   .paper-grain::after {
     content:""; position:absolute; inset:0;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
@@ -40,7 +41,20 @@
   .sidebar::-webkit-scrollbar-track { background:transparent; }
   .sidebar::-webkit-scrollbar-thumb { background:var(--border); border-radius:3px; }
   .sidebar { scrollbar-width:thin; scrollbar-color:var(--border) transparent; }
-  .sidebar-header { padding:0 20px 16px; border-bottom:1px solid var(--border); }
+  .side-toggle {
+    position:absolute; top:14px; right:12px; width:26px; height:26px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:14px; font-weight:600; line-height:1; color:var(--txt3);
+    background:var(--surface); border:1px solid var(--border); border-radius:6px;
+    cursor:pointer; transition:all 0.15s; z-index:3;
+  }
+  .side-toggle:hover { background:var(--surface-warm); color:var(--txt2); }
+  .side-collapsed .side-toggle { right:13px; }
+  .side-collapsed .sidebar-header,
+  .side-collapsed .total-progress,
+  .side-collapsed .nav,
+  .side-collapsed .reset-btn { display:none; }
+  .sidebar-header { padding:0 44px 16px 20px; border-bottom:1px solid var(--border); }
   .sidebar-header h1 { font-size:15px; font-weight:800; letter-spacing:-0.02em; }
   .sidebar-header .subtitle { font-size:11px; color:var(--txt3); margin-top:2px; }
   .total-progress { padding:16px 20px; border-bottom:1px solid var(--border); }
@@ -67,14 +81,26 @@
   /* Main */
   .main-wrap { background-color:#faf6ee; background-image:radial-gradient(ellipse at 50% 30%,#fffdf8 0%,#f5eddb 100%); min-height:100vh; height:100vh; overflow-y:auto; }
   .main { padding:32px 40px 64px; max-width:860px; }
-  .section { display:none; }
-  .section.active { display:block; }
+  #main > section { scroll-margin-top:20px; }
+  .overview { margin-bottom:28px; }
   .section-header { margin-bottom:20px; }
   .section-header h2 { font-size:20px; font-weight:800; letter-spacing:-0.02em; }
   .section-header .desc { font-size:12px; color:var(--txt2); margin-top:4px; }
-  .section-progress { display:flex; align-items:center; gap:12px; margin-top:12px; }
-  .section-progress .progress-bar-wrap { flex:1; max-width:300px; }
-  .section-progress .pct { font-size:12px; font-weight:600; color:var(--txt3); min-width:36px; }
+
+  /* Collapsible group (one per article + one for full-page shots) */
+  .group { margin-bottom:16px; border:1px solid var(--border-lt); border-radius:12px; background:rgba(255,255,255,0.4); box-shadow:0 1px 2px rgba(0,0,0,0.03); overflow:hidden; }
+  .group-header { display:flex; align-items:center; gap:10px; padding:13px 16px; cursor:pointer; user-select:none; transition:background 0.15s; }
+  .group-header:hover { background:var(--surface-warm); }
+  .group-header h2 { font-size:15px; font-weight:800; letter-spacing:-0.01em; }
+  .group-header .gcnt { font-size:11px; font-weight:600; color:var(--txt3); background:var(--border-lt); padding:1px 8px; border-radius:10px; white-space:nowrap; }
+  .group-header .gcnt.complete { background:var(--green-bg); color:var(--green); }
+  .group-progress { display:flex; align-items:center; gap:8px; flex:1; justify-content:flex-end; }
+  .group-progress .progress-bar-wrap { width:120px; }
+  .group-progress .pct { font-size:11px; font-weight:600; color:var(--txt3); min-width:32px; text-align:right; }
+  .chev { width:8px; height:8px; border-right:2px solid var(--txt3); border-bottom:2px solid var(--txt3); transform:rotate(45deg); transition:transform 0.15s ease; flex-shrink:0; margin-top:-4px; }
+  .group.collapsed .chev { transform:rotate(-45deg); margin-top:0; }
+  .group-body { padding:4px 10px 12px; border-top:1px solid var(--border-lt); }
+  .group.collapsed .group-body { display:none; }
 
   input[type="checkbox"] {
     -webkit-appearance:none; appearance:none; width:20px; height:20px;
@@ -95,12 +121,17 @@
   .shot-file { font-size:11px; font-weight:600; color:var(--txt2); background:var(--border-lt); padding:2px 9px; border-radius:4px; cursor:pointer; transition:all 0.1s; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; white-space:nowrap; }
   .shot-file:hover { background:var(--accent); color:#fff; }
   .shot-file::before { content:'\1F4F7  '; }
+  .shot-thumb-wrap { margin:8px 0 0 34px; }
+  .shot-thumb-link { display:inline-block; line-height:0; border-radius:8px; overflow:hidden; border:1px solid var(--border); box-shadow:0 1px 3px rgba(0,0,0,0.08); background:var(--surface-warm); }
+  .shot-thumb { display:block; height:150px; width:auto; max-width:min(100%,420px); object-fit:cover; }
   .shot-meta { display:flex; flex-wrap:wrap; gap:6px; margin:6px 0 0 34px; }
   .shot-tag { font-size:11px; color:var(--txt2); background:var(--surface); border:1px solid var(--border); padding:2px 8px; border-radius:4px; }
   .shot-tag .k { font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:0.03em; opacity:0.55; margin-right:5px; }
   .shot-tag.cursor-arrow { background:var(--blue-bg); border-color:var(--blue-bg); color:var(--blue); }
   .shot-tag.cursor-hand { background:var(--purple-light); border-color:var(--purple-light); color:var(--purple); }
   .shot-tag.cursor-none { color:var(--txt3); }
+  .shot-tag.grade-green { background:var(--green-bg); color:var(--green-txt); border-left:2px solid var(--green); padding-left:7px; }
+  .shot-tag.grade-yellow { background:var(--orange-light); color:var(--orange); border-left:2px solid var(--orange); padding-left:7px; }
 
   /* Overview */
   .ov-big { display:flex; align-items:baseline; gap:12px; margin-bottom:8px; }
@@ -123,8 +154,9 @@
 </style>
 </head>
 <body>
-  <div class="shell paper-grain">
+  <div class="shell paper-grain" id="shell">
     <aside class="sidebar">
+      <button class="side-toggle" id="sideToggle" onclick="toggleSidebar()" title="Collapse sidebar">&#171;</button>
       <div class="sidebar-header">
         <h1 id="hdrTitle">Title</h1>
         <div class="subtitle" id="hdrSub">Subtitle</div>
@@ -137,7 +169,7 @@
       <nav class="nav" id="nav"></nav>
       <button class="reset-btn" onclick="resetAll()">Reset progress</button>
     </aside>
-    <div class="main-wrap">
+    <div class="main-wrap" id="mainWrap">
       <div class="main" id="main"></div>
     </div>
   </div>
@@ -166,25 +198,29 @@ const BATCH = {
   },
   // One entry per article. cursor: "none" | "arrow" | "hand".
   // folder = the screenshots/{folder}/ where raws + finals live.
+  // grade: "green" (capturable now) | "yellow" (needs setup/seeding first).
+  // placement: where the shot lands in the article — `## Section → after "quoted first words…"`.
   articles: [
     { id:"01", name:"01 First Article", folder:"01-first-article", shots:[
-      { desc:"What the shot shows", state:"UI state to set up first", cursor:"none", file:"first-shot.png" },
-      { desc:"A click target", state:"Open the dropdown / hover the option", cursor:"arrow", file:"second-shot.png" }
+      { desc:"What the shot shows", state:"UI state to set up first", cursor:"none", file:"first-shot.png", grade:"green", placement:'## Overview → after "This is the first paragraph…"' },
+      { desc:"A click target", state:"Open the dropdown / hover the option", cursor:"arrow", file:"second-shot.png", grade:"yellow", placement:'## Using it → after "Click the dropdown to…"' }
     ]},
     { id:"02", name:"02 Second Article", folder:"02-second-article", shots:[
-      { desc:"Another shot", state:"Set up the state", cursor:"hand", file:"third-shot.png" }
+      { desc:"Another shot", state:"Set up the state", cursor:"hand", file:"third-shot.png", grade:"green", placement:'intro → after the opening paragraph, before the first H2' }
     ]}
   ]
 };
-
 /* ==========================  END OF EDITABLE DATA  ========================== */
 
-const STORAGE_KEY = `${BATCH.id}-capture-v${BATCH.version}`;
+const STORAGE_KEY = `${BATCH.id}-capture-v${BATCH.version}`;   // checkbox state (unchanged format)
+const UI_KEY = `${STORAGE_KEY}-ui`;                            // sidebar + group collapse state
 let toastTimer;
 
 function esc(s){ return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 function loadState(){ try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch { return {}; } }
 function saveState(s){ localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); }
+function loadUI(){ try { return JSON.parse(localStorage.getItem(UI_KEY)) || {}; } catch { return {}; } }
+function saveUI(u){ localStorage.setItem(UI_KEY, JSON.stringify(u)); }
 function copy(text){
   navigator.clipboard.writeText(text);
   const t = document.getElementById('toast');
@@ -194,6 +230,11 @@ function copy(text){
 }
 
 // Build the list of "groups": full-page first, then each article.
+// imgFinal/imgRaw are root-relative (the page is served from the screenshots/
+// repo root, e.g. `python3 -m http.server` at the repo root) so they resolve
+// correctly regardless of where under the repo the tracker HTML itself lives.
+// Thumbnails degrade gracefully: if a placeholder filename doesn't exist yet,
+// the <img> onerror hides just the thumbnail, not the rest of the shot card.
 function groups(){
   const g = [{ key:"fullpage", name:"Full-page reference shots",
     items: BATCH.fullpage.shots.map((s,i)=>({
@@ -202,31 +243,57 @@ function groups(){
       state:"Uncropped, any width — for UI awareness",
       cursor:"none",
       file:`${BATCH.fullpage.datePrefix}-${s.file}`,
-      path:`_fullpage/${BATCH.fullpage.surface}/${BATCH.fullpage.datePrefix}-${s.file}`
+      path:`_fullpage/${BATCH.fullpage.surface}/${BATCH.fullpage.datePrefix}-${s.file}`,
+      imgFinal:`/_fullpage/${BATCH.fullpage.surface}/${BATCH.fullpage.datePrefix}-${s.file}`,
+      imgRaw:null
     })) }];
   BATCH.articles.forEach(a=>{
     g.push({ key:a.id, name:a.name,
       items: a.shots.map((s,i)=>({
         id:`${a.id}-${i}`,
         desc:s.desc, state:s.state, cursor:s.cursor,
-        file:s.file, path:`${a.folder}/raw/${s.file}`
+        file:s.file, path:`${a.folder}/raw/${s.file}`,
+        imgFinal:`/${a.folder}/${s.file}`,
+        imgRaw:`/${a.folder}/raw/${s.file}`,
+        grade:s.grade, placement:s.placement
       })) });
   });
   return g;
 }
 const GROUPS = groups();
 
+// Chained fallback for the thumbnail <img>: final -> raw -> hide the thumb
+// entirely (leaves the rest of the shot card intact).
+function thumbFallback(img){
+  const raw = img.dataset.raw;
+  if (raw && img.dataset.triedRaw !== '1'){
+    img.dataset.triedRaw = '1';
+    img.src = raw;
+  } else {
+    const wrap = img.closest('.shot-thumb-wrap');
+    if (wrap) wrap.style.display = 'none';
+  }
+}
+
 function shotHTML(it){
   const cur = it.cursor || "none";
+  const thumb = it.imgFinal ? `<div class="shot-thumb-wrap">
+      <a class="shot-thumb-link" href="${esc(it.imgFinal)}" target="_blank" title="Open full size">
+        <img class="shot-thumb" loading="lazy" src="${esc(it.imgFinal)}" alt="${esc(it.desc)}" data-raw="${it.imgRaw ? esc(it.imgRaw) : ''}" onerror="thumbFallback(this)">
+      </a>
+    </div>` : '';
   return `<div class="shot" id="shot-${it.id}">
     <div class="shot-top">
       <input type="checkbox" data-id="${it.id}">
       <span class="shot-desc">${esc(it.desc)}</span>
       <span class="shot-file" title="Copy: ${esc(it.path)}" onclick="copy('${esc(it.path)}')">${esc(it.file)}</span>
     </div>
+    ${thumb}
     <div class="shot-meta">
       <span class="shot-tag"><span class="k">state</span>${esc(it.state)}</span>
       <span class="shot-tag cursor-${cur}"><span class="k">cursor</span>${cur}</span>
+      ${it.grade ? `<span class="shot-tag grade-${it.grade}"><span class="k">grade</span>${it.grade}</span>` : ''}
+      ${it.placement ? `<span class="shot-tag"><span class="k">placement</span>${esc(it.placement)}</span>` : ''}
     </div>
   </div>`;
 }
@@ -235,27 +302,27 @@ function render(){
   document.getElementById('hdrTitle').textContent = BATCH.title;
   document.getElementById('hdrSub').textContent = BATCH.subtitle;
 
-  // Nav
-  let nav = `<div class="nav-item active" data-sec="overview" onclick="showSec('overview')">
+  // Nav: jump links, one per group, with per-group progress count + dot.
+  let nav = `<div class="nav-item active" data-sec="overview" onclick="jumpTo('overview')">
     <div class="nav-dot status-na"></div><span class="nav-name">Overview</span></div>
     <div class="nav-section-label">Shots</div>`;
   GROUPS.forEach(g=>{
-    nav += `<div class="nav-item" data-sec="${g.key}" onclick="showSec('${g.key}')">
+    nav += `<div class="nav-item" data-sec="${g.key}" onclick="jumpTo('${g.key}')">
       <div class="nav-dot status-todo" id="dot-${g.key}"></div>
       <span class="nav-name">${esc(g.name)}</span>
       <span class="nav-count" id="cnt-${g.key}">0/${g.items.length}</span></div>`;
   });
   document.getElementById('nav').innerHTML = nav;
 
-  // Sections
-  let main = `<section class="section active" id="sec-overview">
+  // Main: overview block, then every group as a collapsible section.
+  let main = `<section class="overview" id="sec-overview">
     <div class="section-header"><h2>Overview</h2>
       <div class="desc">${esc(BATCH.captureNote)}</div></div>
     <div class="ov-big"><span class="num" id="ovNum">0</span><span class="lbl">of <span id="ovTot">0</span> shots captured</span></div>
     <div class="ov-progress progress-bar-wrap" style="height:10px;max-width:400px;"><div class="progress-bar-fill" id="ovBar" style="width:0%"></div></div>
     <div class="ov-sep">Groups</div>`;
   GROUPS.forEach(g=>{
-    main += `<div class="ov-row" onclick="showSec('${g.key}')">
+    main += `<div class="ov-row" onclick="jumpTo('${g.key}')">
       <span class="ov-dot todo" id="ovdot-${g.key}"></span>
       <span class="ov-name">${esc(g.name)}</span>
       <span class="ov-count" id="ovcnt-${g.key}">0/${g.items.length}</span>
@@ -264,27 +331,88 @@ function render(){
   main += `</section>`;
 
   GROUPS.forEach(g=>{
-    main += `<section class="section" id="sec-${g.key}">
-      <div class="section-header"><h2>${esc(g.name)}</h2>
-        <div class="section-progress">
+    main += `<section class="group" id="sec-${g.key}">
+      <header class="group-header" onclick="toggleGroup('${g.key}')">
+        <span class="chev"></span>
+        <h2>${esc(g.name)}</h2>
+        <span class="gcnt" id="gcnt-${g.key}">0/${g.items.length}</span>
+        <div class="group-progress">
           <div class="progress-bar-wrap"><div class="progress-bar-fill" id="bar-${g.key}" style="width:0%"></div></div>
-          <span class="pct" id="pct-${g.key}">0%</span></div></div>`;
+          <span class="pct" id="pct-${g.key}">0%</span>
+        </div>
+      </header>
+      <div class="group-body">`;
     if (g.key === "fullpage") {
       main += `<div class="hint">Replace <code>${esc(BATCH.fullpage.datePrefix)}</code> in each filename with the capture date (e.g. <code>2026-07-08</code>). Drop these in <code>${esc('_fullpage/'+BATCH.fullpage.surface+'/')}</code>.</div>`;
     }
     g.items.forEach(it=> main += shotHTML(it));
-    main += `</section>`;
+    main += `</div></section>`;
   });
   document.getElementById('main').innerHTML = main;
 }
 
-function showSec(key){
-  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
-  document.getElementById(`sec-${key}`).classList.add('active');
-  const n = document.querySelector(`.nav-item[data-sec="${key}"]`);
-  if (n) n.classList.add('active');
-  document.querySelector('.main-wrap').scrollTop = 0;
+function setActiveNav(key){
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.toggle('active', n.dataset.sec===key));
+}
+
+function jumpTo(key){
+  const sec = document.getElementById(`sec-${key}`);
+  if (!sec) return;
+  if (sec.classList.contains('collapsed')) toggleGroup(key);
+  sec.scrollIntoView({ behavior:'smooth', block:'start' });
+  setActiveNav(key);
+}
+
+function toggleGroup(key){
+  const sec = document.getElementById(`sec-${key}`);
+  if (!sec) return;
+  const collapsed = sec.classList.toggle('collapsed');
+  const u = loadUI();
+  u.collapsedGroups = u.collapsedGroups || {};
+  if (collapsed) u.collapsedGroups[key] = true; else delete u.collapsedGroups[key];
+  saveUI(u);
+}
+
+function toggleSidebar(){
+  const collapsed = document.getElementById('shell').classList.toggle('side-collapsed');
+  const btn = document.getElementById('sideToggle');
+  btn.innerHTML = collapsed ? '&#187;' : '&#171;';
+  btn.title = collapsed ? 'Expand sidebar' : 'Collapse sidebar';
+  const u = loadUI(); u.sidebarCollapsed = collapsed; saveUI(u);
+}
+
+function applyUI(){
+  const u = loadUI();
+  if (u.sidebarCollapsed){
+    document.getElementById('shell').classList.add('side-collapsed');
+    const btn = document.getElementById('sideToggle');
+    btn.innerHTML = '&#187;'; btn.title = 'Expand sidebar';
+  }
+  const cg = u.collapsedGroups || {};
+  Object.keys(cg).forEach(k=>{
+    if (!cg[k]) return;
+    const sec = document.getElementById(`sec-${k}`);
+    if (sec) sec.classList.add('collapsed');
+  });
+}
+
+// Highlight the sidebar item for the group currently at the top of the viewport.
+function initScrollSpy(){
+  const wrap = document.getElementById('mainWrap');
+  let ticking = false;
+  wrap.addEventListener('scroll', ()=>{
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(()=>{
+      ticking = false;
+      const wrapTop = wrap.getBoundingClientRect().top;
+      let active = 'overview';
+      document.querySelectorAll('#main > section').forEach(sec=>{
+        if (sec.getBoundingClientRect().top - wrapTop <= 100) active = sec.id.replace('sec-','');
+      });
+      setActiveNav(active);
+    });
+  });
 }
 
 function updateCounts(){
@@ -296,6 +424,8 @@ function updateCounts(){
     const status = d===0?'todo':d===g.items.length?'done':'partial';
     const cnt=document.getElementById(`cnt-${g.key}`);
     if (cnt){ cnt.textContent=`${d}/${g.items.length}`; cnt.classList.toggle('complete', d===g.items.length); }
+    const gc=document.getElementById(`gcnt-${g.key}`);
+    if (gc){ gc.textContent=`${d}/${g.items.length}`; gc.classList.toggle('complete', d===g.items.length); }
     const dot=document.getElementById(`dot-${g.key}`); if (dot) dot.className=`nav-dot status-${status}`;
     const bar=document.getElementById(`bar-${g.key}`); if (bar) bar.style.width=`${(d/g.items.length*100).toFixed(0)}%`;
     const pct=document.getElementById(`pct-${g.key}`); if (pct) pct.textContent=`${(d/g.items.length*100).toFixed(0)}%`;
@@ -332,8 +462,10 @@ function resetAll(){
 }
 
 render();
+applyUI();
 bindChecks();
 updateCounts();
+initScrollSpy();
 </script>
 </body>
 </html>

@@ -19,7 +19,8 @@
     --font:'Inter',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
   }
   html, body { background:#e8dcc8; color:var(--txt); font-family:var(--font); font-size:13px; line-height:1.55; -webkit-font-smoothing:antialiased; }
-  .shell { display:grid; grid-template-columns:260px 1fr; min-height:100vh; position:relative; }
+  .shell { display:grid; grid-template-columns:260px 1fr; min-height:100vh; position:relative; transition:grid-template-columns 0.25s ease; }
+  .shell.side-collapsed { grid-template-columns:52px 1fr; }
   .paper-grain::after {
     content:""; position:absolute; inset:0;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
@@ -40,7 +41,20 @@
   .sidebar::-webkit-scrollbar-track { background:transparent; }
   .sidebar::-webkit-scrollbar-thumb { background:var(--border); border-radius:3px; }
   .sidebar { scrollbar-width:thin; scrollbar-color:var(--border) transparent; }
-  .sidebar-header { padding:0 20px 16px; border-bottom:1px solid var(--border); }
+  .side-toggle {
+    position:absolute; top:14px; right:12px; width:26px; height:26px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:14px; font-weight:600; line-height:1; color:var(--txt3);
+    background:var(--surface); border:1px solid var(--border); border-radius:6px;
+    cursor:pointer; transition:all 0.15s; z-index:3;
+  }
+  .side-toggle:hover { background:var(--surface-warm); color:var(--txt2); }
+  .side-collapsed .side-toggle { right:13px; }
+  .side-collapsed .sidebar-header,
+  .side-collapsed .total-progress,
+  .side-collapsed .nav,
+  .side-collapsed .reset-btn { display:none; }
+  .sidebar-header { padding:0 44px 16px 20px; border-bottom:1px solid var(--border); }
   .sidebar-header h1 { font-size:15px; font-weight:800; letter-spacing:-0.02em; }
   .sidebar-header .subtitle { font-size:11px; color:var(--txt3); margin-top:2px; }
   .total-progress { padding:16px 20px; border-bottom:1px solid var(--border); }
@@ -67,14 +81,26 @@
   /* Main */
   .main-wrap { background-color:#faf6ee; background-image:radial-gradient(ellipse at 50% 30%,#fffdf8 0%,#f5eddb 100%); min-height:100vh; height:100vh; overflow-y:auto; }
   .main { padding:32px 40px 64px; max-width:860px; }
-  .section { display:none; }
-  .section.active { display:block; }
+  #main > section { scroll-margin-top:20px; }
+  .overview { margin-bottom:28px; }
   .section-header { margin-bottom:20px; }
   .section-header h2 { font-size:20px; font-weight:800; letter-spacing:-0.02em; }
   .section-header .desc { font-size:12px; color:var(--txt2); margin-top:4px; }
-  .section-progress { display:flex; align-items:center; gap:12px; margin-top:12px; }
-  .section-progress .progress-bar-wrap { flex:1; max-width:300px; }
-  .section-progress .pct { font-size:12px; font-weight:600; color:var(--txt3); min-width:36px; }
+
+  /* Collapsible group (one per article + one for full-page shots) */
+  .group { margin-bottom:16px; border:1px solid var(--border-lt); border-radius:12px; background:rgba(255,255,255,0.4); box-shadow:0 1px 2px rgba(0,0,0,0.03); overflow:hidden; }
+  .group-header { display:flex; align-items:center; gap:10px; padding:13px 16px; cursor:pointer; user-select:none; transition:background 0.15s; }
+  .group-header:hover { background:var(--surface-warm); }
+  .group-header h2 { font-size:15px; font-weight:800; letter-spacing:-0.01em; }
+  .group-header .gcnt { font-size:11px; font-weight:600; color:var(--txt3); background:var(--border-lt); padding:1px 8px; border-radius:10px; white-space:nowrap; }
+  .group-header .gcnt.complete { background:var(--green-bg); color:var(--green); }
+  .group-progress { display:flex; align-items:center; gap:8px; flex:1; justify-content:flex-end; }
+  .group-progress .progress-bar-wrap { width:120px; }
+  .group-progress .pct { font-size:11px; font-weight:600; color:var(--txt3); min-width:32px; text-align:right; }
+  .chev { width:8px; height:8px; border-right:2px solid var(--txt3); border-bottom:2px solid var(--txt3); transform:rotate(45deg); transition:transform 0.15s ease; flex-shrink:0; margin-top:-4px; }
+  .group.collapsed .chev { transform:rotate(-45deg); margin-top:0; }
+  .group-body { padding:4px 10px 12px; border-top:1px solid var(--border-lt); }
+  .group.collapsed .group-body { display:none; }
 
   input[type="checkbox"] {
     -webkit-appearance:none; appearance:none; width:20px; height:20px;
@@ -95,12 +121,17 @@
   .shot-file { font-size:11px; font-weight:600; color:var(--txt2); background:var(--border-lt); padding:2px 9px; border-radius:4px; cursor:pointer; transition:all 0.1s; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; white-space:nowrap; }
   .shot-file:hover { background:var(--accent); color:#fff; }
   .shot-file::before { content:'\1F4F7  '; }
+  .shot-thumb-wrap { margin:8px 0 0 34px; }
+  .shot-thumb-link { display:inline-block; line-height:0; border-radius:8px; overflow:hidden; border:1px solid var(--border); box-shadow:0 1px 3px rgba(0,0,0,0.08); background:var(--surface-warm); }
+  .shot-thumb { display:block; height:150px; width:auto; max-width:min(100%,420px); object-fit:cover; }
   .shot-meta { display:flex; flex-wrap:wrap; gap:6px; margin:6px 0 0 34px; }
   .shot-tag { font-size:11px; color:var(--txt2); background:var(--surface); border:1px solid var(--border); padding:2px 8px; border-radius:4px; }
   .shot-tag .k { font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:0.03em; opacity:0.55; margin-right:5px; }
   .shot-tag.cursor-arrow { background:var(--blue-bg); border-color:var(--blue-bg); color:var(--blue); }
   .shot-tag.cursor-hand { background:var(--purple-light); border-color:var(--purple-light); color:var(--purple); }
   .shot-tag.cursor-none { color:var(--txt3); }
+  .shot-tag.grade-green { background:var(--green-bg); color:var(--green-txt); border-left:2px solid var(--green); padding-left:7px; }
+  .shot-tag.grade-yellow { background:var(--orange-light); color:var(--orange); border-left:2px solid var(--orange); padding-left:7px; }
 
   /* Overview */
   .ov-big { display:flex; align-items:baseline; gap:12px; margin-bottom:8px; }
@@ -123,8 +154,9 @@
 </style>
 </head>
 <body>
-  <div class="shell paper-grain">
+  <div class="shell paper-grain" id="shell">
     <aside class="sidebar">
+      <button class="side-toggle" id="sideToggle" onclick="toggleSidebar()" title="Collapse sidebar">&#171;</button>
       <div class="sidebar-header">
         <h1 id="hdrTitle">Title</h1>
         <div class="subtitle" id="hdrSub">Subtitle</div>
@@ -137,7 +169,7 @@
       <nav class="nav" id="nav"></nav>
       <button class="reset-btn" onclick="resetAll()">Reset progress</button>
     </aside>
-    <div class="main-wrap">
+    <div class="main-wrap" id="mainWrap">
       <div class="main" id="main"></div>
     </div>
   </div>
@@ -151,15 +183,15 @@
    ============================================================================ */
 const BATCH = {
   id: "franchisee-onboarding",
-  version: 1,
+  version: 2,
   title: "Franchisee Onboarding",
-  subtitle: "Helpdesk screenshots — 12 articles",
+  subtitle: "Helpdesk screenshots — 14 articles",
   captureNote: "Capture on staging as a franchisee (Lumon, super-admin impersonation). 2x / Retina. Click any filename to copy it — name your raw with that, drop it in the article's raw/ folder.",
   // One uncropped full-page reference shot per portal page. These are for
   // verifying the drafts + updating the portal map, not for the articles.
   fullpage: {
     surface: "franchisee-portal",
-    datePrefix: "DATE",   // replace DATE with capture date, e.g. 2026-07-08
+    datePrefix: "2026-07-13",   // replace DATE with capture date, e.g. 2026-07-08
     shots: [
       { page: "Home", file: "home.png" },
       { page: "Projects index + one open project", file: "projects.png" },
@@ -177,74 +209,87 @@ const BATCH = {
   },
   // Per-article shot lists. cursor: "none" | "arrow" | "hand".
   articles: [
+    { id:"00", name:"00 Creating Your Account", folder:"00-creating-your-account", shots:[
+      { desc:"Account creation form (locked Invite Code and Email, name and phone fields)", state:"logged out, open /franchisees/signup with no query params (renders the empty form shape)", cursor:"none", file:"account-signup-form.png", grade:"green", placement:'## Accepting your invite → after "Your brand sends an invite email with…"' }
+    ]},
     { id:"01", name:"01 Welcome", folder:"01-welcome-to-your-franchisee-portal", shots:[
-      { desc:"Full sidebar, all items visible", state:"Portal loaded, sidebar expanded", cursor:"none", file:"welcome-sidebar.png" },
-      { desc:"Avatar menu open (Help desk, Settings)", state:"Click avatar at bottom of sidebar", cursor:"arrow", file:"welcome-avatar-menu.png" }
+      { desc:"Full sidebar, all items visible", state:"Portal loaded, sidebar expanded", cursor:"none", file:"welcome-sidebar.png", grade:"green", placement:'## What\'s in the sidebar → directly under heading, before the bullet list' },
+      { desc:"Avatar menu open (Settings, Log Out)", state:"Click avatar at bottom of sidebar", cursor:"arrow", file:"welcome-avatar-menu.png", grade:"green", placement:'## Your menu → after "Click your avatar at the bottom of…"' },
+      { desc:"Need help? menu open in top bar (Submit a ticket, My tickets, Open Helpdesk)", state:"top-bar Need help? menu open", cursor:"hand", file:"welcome-help-menu.png", grade:"green", placement:'## Your menu → after the "For help, click the Need help?…" sentence' }
     ]},
     { id:"02", name:"02 Home", folder:"02-home", shots:[
-      { desc:"Home page overview", state:"Home loaded, panels visible", cursor:"none", file:"home-overview.png" },
-      { desc:"Task hovered showing due date + status", state:"Hover an active task card", cursor:"arrow", file:"home-task-hover.png" }
+      { desc:"Home top: greeting hero and Chat panel", state:"Home, fully loaded", cursor:"none", file:"home-overview.png", grade:"green", placement:'intro → after "Home is the snapshot of your business…", before ## What you\'ll find' },
+      { desc:"Your Tasks panel (header, task rows with due dates and status)", state:"Home, tasks panel in view", cursor:"none", file:"home-tasks.png", grade:"green", placement:'## What you\'ll find → after the Tasks bullet' },
+      { desc:"Home panel stack: Manuals, Brand Feed, Assets, Team", state:"Home, mid-page panels in view", cursor:"none", file:"home-panels.png", grade:"green", placement:'## What you\'ll find → after the Quick links bullet (end of list)' },
+      { desc:"A task opened from Home with the Details popover (status, due date, type)", state:"task open from Home, Details popover expanded", cursor:"arrow", file:"home-task-open.png", grade:"yellow", placement:'## How to use it → after "Start your day here. Open a task…"' }
     ]},
     { id:"03", name:"03 What Projects Are", folder:"03-what-projects-are", shots:[
-      { desc:"Projects index list", state:"Projects page loaded", cursor:"none", file:"projects-index.png" },
-      { desc:"Open project: phases + tasks", state:"A project open", cursor:"none", file:"projects-detail.png" },
-      { desc:"New project template gallery", state:"Click New project", cursor:"arrow", file:"projects-templates.png" },
-      { desc:"Task with Blocked status + reason", state:"Open a blocked task", cursor:"none", file:"projects-blocked.png" }
+      { desc:"Projects index list", state:"Projects page loaded", cursor:"none", file:"projects-index.png", grade:"yellow", placement:'## Finding your way around → after "The Projects page lists your projects in…"' },
+      { desc:"Open project: task list grouped by status", state:"A project open", cursor:"none", file:"projects-detail.png", grade:"yellow", placement:'## Finding your way around → after "Click a project to open it and…"' },
+      { desc:"Project Overview popover (summary, start date, linked locations)", state:"project open, Overview popover expanded", cursor:"hand", file:"projects-overview.png", grade:"yellow", placement:'## The project overview → after "Open a project and click Overview…"' },
+      { desc:"A Locked task row (dependency-gated, lock icon)", state:"project with a dependency-gated task seeded", cursor:"none", file:"projects-locked.png", grade:"yellow", placement:'## Task status → after "Some tasks depend on others finishing first…"' }
     ]},
     { id:"04", name:"04 Completing a Task", folder:"04-completing-a-task", shots:[
-      { desc:"Task card with chip + action button called out", state:"Any task card", cursor:"none", file:"task-anatomy.png" },
-      { desc:"A File Upload task card", state:"Open a File Upload task", cursor:"arrow", file:"task-file-upload.png" },
-      { desc:"A completed task with green check", state:"Task marked complete", cursor:"none", file:"task-complete.png" }
+      { desc:"Task panel: type, due date, action button", state:"Any task card", cursor:"none", file:"task-anatomy.png", grade:"yellow", placement:'intro → after "Task panels work the same way across…", before ## The seven task types' },
+      { desc:"Task attachments area (upload + attach from library)", state:"task open, attachments area visible", cursor:"arrow", file:"task-attachments.png", grade:"yellow", placement:'## Attachments → after "Tasks have an attachments area where you…"' },
+      { desc:"A completed task with green check", state:"Task marked complete", cursor:"none", file:"task-complete.png", grade:"yellow", placement:'intro → after "Once you finish, the task gets a Task complete confirmation…", before ## The seven task types' }
     ]},
     { id:"05", name:"05 Working with Approvers", folder:"05-working-with-approvers", shots:[
-      { desc:"Task with approver roles shown", state:"Task detail with RACI-A", cursor:"none", file:"approvers-roles.png" },
-      { desc:"Pending approval badge + approver avatar", state:"Finished task pending approval", cursor:"none", file:"approvers-pending.png" }
+      { desc:"Task with approver roles shown", state:"Task detail with RACI-A", cursor:"none", file:"approvers-roles.png", grade:"yellow", placement:'## The five roles → after the RACI-A bullet list, before ## How approval works' },
+      { desc:"Pending approval badge + approver avatar", state:"Finished task pending approval", cursor:"none", file:"approvers-pending.png", grade:"yellow", placement:'## Tracking a pending task → after "When you finish a task that has…"' }
     ]},
     { id:"06", name:"06 Locations", folder:"06-locations", shots:[
-      { desc:"Locations list with status chips", state:"Locations loaded", cursor:"none", file:"locations-list.png" },
-      { desc:"Location detail + status history timeline", state:"Open a location", cursor:"none", file:"locations-detail.png" },
-      { desc:"Status dropdown open", state:"Click status dropdown", cursor:"arrow", file:"locations-status.png" }
+      { desc:"Locations list with status chips", state:"Locations loaded", cursor:"none", file:"locations-list.png", grade:"green", placement:'intro → after "Locations is the live record of each…", before ## The location detail' },
+      { desc:"Location detail + status history timeline", state:"Open a location", cursor:"none", file:"locations-detail.png", grade:"green", placement:'## The location detail → after "Click into a location and the detail…"' },
+      { desc:"Status dropdown open", state:"Click status dropdown", cursor:"arrow", file:"locations-status.png", grade:"yellow", placement:'## Updating a status → after "Status updates happen right from the detail…"' }
     ]},
     { id:"07", name:"07 Vendors", folder:"07-vendors", shots:[
-      { desc:"Vendor grid of cards", state:"Vendors loaded", cursor:"none", file:"vendors-grid.png" },
-      { desc:"Vendor detail with 3 action buttons", state:"Open a vendor", cursor:"none", file:"vendors-detail.png" },
-      { desc:"Report Issue form", state:"Click Report Issue", cursor:"arrow", file:"vendors-report-issue.png" }
+      { desc:"Vendor table (name, usage badge, category, location assignments, contacts)", state:"Vendors loaded", cursor:"none", file:"vendors-grid.png", grade:"green", placement:'## The vendor list → after "The main view is a table…"' },
+      { desc:"Vendor detail: tabs Details / Contacts / Locations / Manuals / Assets", state:"Open a vendor", cursor:"none", file:"vendors-detail.png", grade:"green", placement:'## The vendor list → after "Click a row and the detail view opens…"' },
+      { desc:"Vendor Setup Status menu (Not Implemented / Implementing / Implemented)", state:"vendor detail, setup status menu open", cursor:"hand", file:"vendors-setup-status.png", grade:"green", placement:'## Setup status → after "The Locations tab tracks where this vendor…"' }
     ]},
     { id:"08", name:"08 Team and Roles", folder:"08-team-and-roles", shots:[
-      { desc:"Team roster", state:"Team loaded", cursor:"none", file:"team-roster.png" },
-      { desc:"Add Team Member form", state:"Click Add Team Member", cursor:"arrow", file:"team-add-member.png" },
-      { desc:"Role dropdown open on member detail", state:"Open role dropdown", cursor:"arrow", file:"team-role-dropdown.png" }
+      { desc:"Team roster", state:"Team loaded", cursor:"none", file:"team-roster.png", grade:"green", placement:'intro → after "Team is your roster of the people…", before ## Inviting a team member' },
+      { desc:"Invite teammate modal (name, email, title, reason)", state:"Click Add Team Member", cursor:"arrow", file:"team-add-member.png", grade:"green", placement:'## Inviting a team member → at step 1' },
+      { desc:"Role controls on a roster row (Primary radio / Consulted toggle) or the promote-to-Primary modal", state:"Team roster visible, a member's role controls in view", cursor:"arrow", file:"team-role-controls.png", grade:"green", placement:'## Roles → after "Roles are defined by your brand, and…"' },
+      { desc:"Member detail panel (Primary/Consulted badge, email, phone, joined date)", state:"member detail open", cursor:"none", file:"team-member-detail.png", grade:"green", placement:'## The member detail → after its lead paragraph' }
     ]},
     { id:"09", name:"09 Brand Standards", folder:"09-brand-standards", shots:[
-      { desc:"Brand overview page", state:"Brand loaded", cursor:"none", file:"brand-overview.png" },
-      { desc:"Visual standards reference", state:"Open Visual standards", cursor:"none", file:"brand-visual-standards.png" },
-      { desc:"Request approval form", state:"Click Request approval", cursor:"arrow", file:"brand-request-approval.png" }
+      { desc:"Brand overview page", state:"Brand loaded", cursor:"none", file:"brand-overview.png", grade:"green", placement:'intro → after "Brand is your identity reference: a read…", before ## One page, up to six tabs' },
+      { desc:"Identity tab (logos, color palette with hex values)", state:"Open Visual standards", cursor:"none", file:"brand-identity.png", grade:"green", placement:'## One page, up to six tabs → after the Identity bullet' }
     ]},
     { id:"10", name:"10 Learning", folder:"10-learning", shots:[
-      { desc:"Courses tab with catalog", state:"Learning loaded, Courses tab", cursor:"none", file:"learning-courses.png" },
-      { desc:"A course card (started, Continue Course)", state:"Hover a started course", cursor:"none", file:"learning-course-card.png" },
-      { desc:"Course view: chapters, player, Resources", state:"Open a course", cursor:"none", file:"learning-course-view.png" }
+      { desc:"Courses tab with catalog", state:"Learning loaded, Courses tab", cursor:"none", file:"learning-courses.png", grade:"green", placement:'## The Courses tab → after "The tab opens on Pick up where…"' },
+      { desc:"Started course card with Continue Course (list view; needs a started course)", state:"Hover a started course", cursor:"none", file:"learning-course-card.png", grade:"yellow", placement:'## The Courses tab → after "Each course card shows the cover, the…"' },
+      { desc:"Course view: chapters, player, Resources", state:"Open a course", cursor:"none", file:"learning-course-view.png", grade:"green", placement:'## Inside a course → after "Open a course and the course view…"' }
     ]},
     { id:"11", name:"11 Manuals", folder:"11-manuals", shots:[
-      { desc:"Manuals home: categories + document list", state:"Manuals loaded", cursor:"none", file:"manuals-home.png" },
-      { desc:"Document view with table of contents", state:"Open a manual", cursor:"none", file:"manuals-document.png" },
-      { desc:"Search results with highlighted matches", state:"Run a search", cursor:"arrow", file:"manuals-search.png" }
+      { desc:"Manuals home: tabs (Browse, My List, Recommended...) with category filter pills", state:"Browse tab, fully loaded", cursor:"none", file:"manuals-home.png", grade:"green", placement:'## Browsing and categories → after "Manuals opens on tabs across the top…"' },
+      { desc:"Document view with table of contents", state:"Open a manual", cursor:"none", file:"manuals-document.png", grade:"green", placement:'## Reading a manual → after "Each manual opens in a clean document…"' },
+      { desc:"Search results for a phrase (result card with title and snippet)", state:"Run a search", cursor:"none", file:"manuals-search.png", grade:"green", placement:'## Search → after "Search runs across the whole library, not…"' }
     ]},
     { id:"12", name:"12 Assets", folder:"12-assets", shots:[
-      { desc:"Assets home: five category tiles", state:"Assets loaded", cursor:"none", file:"assets-home.png" },
-      { desc:"Photos grid", state:"Open Photos", cursor:"none", file:"assets-photos.png" },
-      { desc:"File detail with Download", state:"Open a file", cursor:"arrow", file:"assets-file-detail.png" }
+      { desc:"Assets home: Collections/Files toggle with collection cards", state:"Assets loaded", cursor:"none", file:"assets-home.png", grade:"green", placement:'intro → after "Assets is your brand\'s file library…", before ## Collections and files' },
+      { desc:"An opened collection grid (nearest populated collection)", state:"a populated collection open", cursor:"none", file:"assets-collection.png", grade:"yellow", placement:'## Collections and files → after "Collections shows cards your brand has put together…"' },
+      { desc:"File detail with Download", state:"Open a file", cursor:"arrow", file:"assets-file-detail.png", grade:"green", placement:'## Downloading a file → after "The flow is the same whether you\'re…"' }
+    ]},
+    { id:"13", name:"13 Resetting Your Password", folder:"13-resetting-your-password", shots:[
+      { desc:"Log In page with the Forgot Password? Reset here. link", state:"logged out, /login", cursor:"hand", file:"login-forgot-link.png", grade:"green", placement:'## Requesting a reset → at its first sentence, after "On the Log In page, click Forgot Password? Reset here."' },
+      { desc:"Reset your Password page (email field, Reset Password button)", state:"logged out, /forgot-password", cursor:"none", file:"forgot-password-form.png", grade:"green", placement:'## Requesting a reset → after "Enter the email attached to your account and press Reset Password."' }
     ]}
   ]
 };
 /* ==========================  END OF EDITABLE DATA  ========================== */
 
-const STORAGE_KEY = `${BATCH.id}-capture-v${BATCH.version}`;
+const STORAGE_KEY = `${BATCH.id}-capture-v${BATCH.version}`;   // checkbox state (unchanged format)
+const UI_KEY = `${STORAGE_KEY}-ui`;                            // sidebar + group collapse state
 let toastTimer;
 
 function esc(s){ return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 function loadState(){ try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch { return {}; } }
 function saveState(s){ localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); }
+function loadUI(){ try { return JSON.parse(localStorage.getItem(UI_KEY)) || {}; } catch { return {}; } }
+function saveUI(u){ localStorage.setItem(UI_KEY, JSON.stringify(u)); }
 function copy(text){
   navigator.clipboard.writeText(text);
   const t = document.getElementById('toast');
@@ -254,6 +299,9 @@ function copy(text){
 }
 
 // Build the list of "groups": full-page first, then each article.
+// imgFinal/imgRaw are root-relative (the page is served from the screenshots/
+// repo root, e.g. `python3 -m http.server` at the repo root) so they resolve
+// correctly regardless of where under the repo the tracker HTML itself lives.
 function groups(){
   const g = [{ key:"fullpage", name:"Full-page reference shots",
     items: BATCH.fullpage.shots.map((s,i)=>({
@@ -262,31 +310,58 @@ function groups(){
       state:"Uncropped, any width — for UI awareness",
       cursor:"none",
       file:`${BATCH.fullpage.datePrefix}-${s.file}`,
-      path:`_fullpage/${BATCH.fullpage.surface}/${BATCH.fullpage.datePrefix}-${s.file}`
+      path:`_fullpage/${BATCH.fullpage.surface}/${BATCH.fullpage.datePrefix}-${s.file}`,
+      imgFinal:`/_fullpage/${BATCH.fullpage.surface}/${BATCH.fullpage.datePrefix}-${s.file}`,
+      imgRaw:null
     })) }];
   BATCH.articles.forEach(a=>{
     g.push({ key:a.id, name:a.name,
       items: a.shots.map((s,i)=>({
         id:`${a.id}-${i}`,
         desc:s.desc, state:s.state, cursor:s.cursor,
-        file:s.file, path:`${a.folder}/raw/${s.file}`
+        file:s.file, path:`${a.folder}/raw/${s.file}`,
+        imgFinal:`/${a.folder}/${s.file}`,
+        imgRaw:`/${a.folder}/raw/${s.file}`,
+        grade:s.grade, placement:s.placement
       })) });
   });
   return g;
 }
 const GROUPS = groups();
 
+// Chained fallback for the thumbnail <img>: final -> raw -> hide the thumb
+// entirely (leaves the rest of the shot card intact). Tolerant of shots that
+// haven't been captured/processed yet, or a BATCH with placeholder filenames.
+function thumbFallback(img){
+  const raw = img.dataset.raw;
+  if (raw && img.dataset.triedRaw !== '1'){
+    img.dataset.triedRaw = '1';
+    img.src = raw;
+  } else {
+    const wrap = img.closest('.shot-thumb-wrap');
+    if (wrap) wrap.style.display = 'none';
+  }
+}
+
 function shotHTML(it){
   const cur = it.cursor || "none";
+  const thumb = it.imgFinal ? `<div class="shot-thumb-wrap">
+      <a class="shot-thumb-link" href="${esc(it.imgFinal)}" target="_blank" title="Open full size">
+        <img class="shot-thumb" loading="lazy" src="${esc(it.imgFinal)}" alt="${esc(it.desc)}" data-raw="${it.imgRaw ? esc(it.imgRaw) : ''}" onerror="thumbFallback(this)">
+      </a>
+    </div>` : '';
   return `<div class="shot" id="shot-${it.id}">
     <div class="shot-top">
       <input type="checkbox" data-id="${it.id}">
       <span class="shot-desc">${esc(it.desc)}</span>
       <span class="shot-file" title="Copy: ${esc(it.path)}" onclick="copy('${esc(it.path)}')">${esc(it.file)}</span>
     </div>
+    ${thumb}
     <div class="shot-meta">
       <span class="shot-tag"><span class="k">state</span>${esc(it.state)}</span>
       <span class="shot-tag cursor-${cur}"><span class="k">cursor</span>${cur}</span>
+      ${it.grade ? `<span class="shot-tag grade-${it.grade}"><span class="k">grade</span>${it.grade}</span>` : ''}
+      ${it.placement ? `<span class="shot-tag"><span class="k">placement</span>${esc(it.placement)}</span>` : ''}
     </div>
   </div>`;
 }
@@ -295,27 +370,27 @@ function render(){
   document.getElementById('hdrTitle').textContent = BATCH.title;
   document.getElementById('hdrSub').textContent = BATCH.subtitle;
 
-  // Nav
-  let nav = `<div class="nav-item active" data-sec="overview" onclick="showSec('overview')">
+  // Nav: jump links, one per group, with per-group progress count + dot.
+  let nav = `<div class="nav-item active" data-sec="overview" onclick="jumpTo('overview')">
     <div class="nav-dot status-na"></div><span class="nav-name">Overview</span></div>
     <div class="nav-section-label">Shots</div>`;
   GROUPS.forEach(g=>{
-    nav += `<div class="nav-item" data-sec="${g.key}" onclick="showSec('${g.key}')">
+    nav += `<div class="nav-item" data-sec="${g.key}" onclick="jumpTo('${g.key}')">
       <div class="nav-dot status-todo" id="dot-${g.key}"></div>
       <span class="nav-name">${esc(g.name)}</span>
       <span class="nav-count" id="cnt-${g.key}">0/${g.items.length}</span></div>`;
   });
   document.getElementById('nav').innerHTML = nav;
 
-  // Sections
-  let main = `<section class="section active" id="sec-overview">
+  // Main: overview block, then every group as a collapsible section.
+  let main = `<section class="overview" id="sec-overview">
     <div class="section-header"><h2>Overview</h2>
       <div class="desc">${esc(BATCH.captureNote)}</div></div>
     <div class="ov-big"><span class="num" id="ovNum">0</span><span class="lbl">of <span id="ovTot">0</span> shots captured</span></div>
     <div class="ov-progress progress-bar-wrap" style="height:10px;max-width:400px;"><div class="progress-bar-fill" id="ovBar" style="width:0%"></div></div>
     <div class="ov-sep">Groups</div>`;
   GROUPS.forEach(g=>{
-    main += `<div class="ov-row" onclick="showSec('${g.key}')">
+    main += `<div class="ov-row" onclick="jumpTo('${g.key}')">
       <span class="ov-dot todo" id="ovdot-${g.key}"></span>
       <span class="ov-name">${esc(g.name)}</span>
       <span class="ov-count" id="ovcnt-${g.key}">0/${g.items.length}</span>
@@ -324,27 +399,88 @@ function render(){
   main += `</section>`;
 
   GROUPS.forEach(g=>{
-    main += `<section class="section" id="sec-${g.key}">
-      <div class="section-header"><h2>${esc(g.name)}</h2>
-        <div class="section-progress">
+    main += `<section class="group" id="sec-${g.key}">
+      <header class="group-header" onclick="toggleGroup('${g.key}')">
+        <span class="chev"></span>
+        <h2>${esc(g.name)}</h2>
+        <span class="gcnt" id="gcnt-${g.key}">0/${g.items.length}</span>
+        <div class="group-progress">
           <div class="progress-bar-wrap"><div class="progress-bar-fill" id="bar-${g.key}" style="width:0%"></div></div>
-          <span class="pct" id="pct-${g.key}">0%</span></div></div>`;
+          <span class="pct" id="pct-${g.key}">0%</span>
+        </div>
+      </header>
+      <div class="group-body">`;
     if (g.key === "fullpage") {
       main += `<div class="hint">Replace <code>${esc(BATCH.fullpage.datePrefix)}</code> in each filename with the capture date (e.g. <code>2026-07-08</code>). Drop these in <code>${esc('_fullpage/'+BATCH.fullpage.surface+'/')}</code>.</div>`;
     }
     g.items.forEach(it=> main += shotHTML(it));
-    main += `</section>`;
+    main += `</div></section>`;
   });
   document.getElementById('main').innerHTML = main;
 }
 
-function showSec(key){
-  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
-  document.getElementById(`sec-${key}`).classList.add('active');
-  const n = document.querySelector(`.nav-item[data-sec="${key}"]`);
-  if (n) n.classList.add('active');
-  document.querySelector('.main-wrap').scrollTop = 0;
+function setActiveNav(key){
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.toggle('active', n.dataset.sec===key));
+}
+
+function jumpTo(key){
+  const sec = document.getElementById(`sec-${key}`);
+  if (!sec) return;
+  if (sec.classList.contains('collapsed')) toggleGroup(key);
+  sec.scrollIntoView({ behavior:'smooth', block:'start' });
+  setActiveNav(key);
+}
+
+function toggleGroup(key){
+  const sec = document.getElementById(`sec-${key}`);
+  if (!sec) return;
+  const collapsed = sec.classList.toggle('collapsed');
+  const u = loadUI();
+  u.collapsedGroups = u.collapsedGroups || {};
+  if (collapsed) u.collapsedGroups[key] = true; else delete u.collapsedGroups[key];
+  saveUI(u);
+}
+
+function toggleSidebar(){
+  const collapsed = document.getElementById('shell').classList.toggle('side-collapsed');
+  const btn = document.getElementById('sideToggle');
+  btn.innerHTML = collapsed ? '&#187;' : '&#171;';
+  btn.title = collapsed ? 'Expand sidebar' : 'Collapse sidebar';
+  const u = loadUI(); u.sidebarCollapsed = collapsed; saveUI(u);
+}
+
+function applyUI(){
+  const u = loadUI();
+  if (u.sidebarCollapsed){
+    document.getElementById('shell').classList.add('side-collapsed');
+    const btn = document.getElementById('sideToggle');
+    btn.innerHTML = '&#187;'; btn.title = 'Expand sidebar';
+  }
+  const cg = u.collapsedGroups || {};
+  Object.keys(cg).forEach(k=>{
+    if (!cg[k]) return;
+    const sec = document.getElementById(`sec-${k}`);
+    if (sec) sec.classList.add('collapsed');
+  });
+}
+
+// Highlight the sidebar item for the group currently at the top of the viewport.
+function initScrollSpy(){
+  const wrap = document.getElementById('mainWrap');
+  let ticking = false;
+  wrap.addEventListener('scroll', ()=>{
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(()=>{
+      ticking = false;
+      const wrapTop = wrap.getBoundingClientRect().top;
+      let active = 'overview';
+      document.querySelectorAll('#main > section').forEach(sec=>{
+        if (sec.getBoundingClientRect().top - wrapTop <= 100) active = sec.id.replace('sec-','');
+      });
+      setActiveNav(active);
+    });
+  });
 }
 
 function updateCounts(){
@@ -356,6 +492,8 @@ function updateCounts(){
     const status = d===0?'todo':d===g.items.length?'done':'partial';
     const cnt=document.getElementById(`cnt-${g.key}`);
     if (cnt){ cnt.textContent=`${d}/${g.items.length}`; cnt.classList.toggle('complete', d===g.items.length); }
+    const gc=document.getElementById(`gcnt-${g.key}`);
+    if (gc){ gc.textContent=`${d}/${g.items.length}`; gc.classList.toggle('complete', d===g.items.length); }
     const dot=document.getElementById(`dot-${g.key}`); if (dot) dot.className=`nav-dot status-${status}`;
     const bar=document.getElementById(`bar-${g.key}`); if (bar) bar.style.width=`${(d/g.items.length*100).toFixed(0)}%`;
     const pct=document.getElementById(`pct-${g.key}`); if (pct) pct.textContent=`${(d/g.items.length*100).toFixed(0)}%`;
@@ -392,8 +530,10 @@ function resetAll(){
 }
 
 render();
+applyUI();
 bindChecks();
 updateCounts();
+initScrollSpy();
 </script>
 </body>
 </html>

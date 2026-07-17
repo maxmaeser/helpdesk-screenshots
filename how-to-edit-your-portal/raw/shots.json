@@ -1,0 +1,19 @@
+{
+  "revision": 0,
+  "shots": {
+    "portal-editor-landing-cards.png": {
+      "cursor": {
+        "pos": [
+          2721,
+          744
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

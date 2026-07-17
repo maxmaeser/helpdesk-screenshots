@@ -40,6 +40,23 @@ Cursor column = where the pointer should conceptually be. Max does NOT need to i
 - **Set the real UI state first**: open the dropdown, hover the option, select the checkboxes. The screenshot should show the state, the cursor gets added in post.
 - **Full-page shots**: one uncropped capture of the entire page (scroll-stitched if needed), any width. These are for Claude's UI awareness, precision doesn't matter.
 
+## DOM Sanitization (agent captures)
+
+When agent-capturing on staging (Fallback Capture — see the `fsai-helpdesk-articles` skill), ALWAYS inject `scripts/dom-sanitize.js` and run it immediately before every `page.screenshot()`. Real customer/user PII must never reach a raw. Date freshening keeps activity feeds and timestamps looking current instead of stale staging data.
+
+- **React reverts edits.** A re-render can silently undo the sanitize pass between your call and the shutter — re-run it defensively in the same tick (short `waitForTimeout`, sanitize again) right before `screenshot()`.
+- **Split text nodes.** Relative-time chips ("4 months ago") often render as 3 sibling text nodes (bullet / number+unit / " ago") — a regex requiring "ago" in the same node silently misses the isolated middle node; the sanitizer already matches "N unit" alone, so this is handled, don't special-case it yourself.
+- Usage:
+  ```js
+  const { sanitize } = require('/home/max/work/fsai/fsai-helpdesksuite/screenshots/scripts/dom-sanitize.js');
+  // ...right before each page.screenshot() call:
+  const counts = await page.evaluate(sanitize, {}); // defaults: generic email/phone regex, freshenDates: 'auto'
+  await page.waitForTimeout(150);
+  await page.evaluate(sanitize, {}); // defensive re-run in case React reverted it
+  console.log(counts); // {emails, phones, dates, custom} — log what got sanitized
+  await page.screenshot({ path, clip });
+  ```
+
 ## Processing
 
 ```bash
