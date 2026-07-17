@@ -39,8 +39,8 @@ The **Getting Started** area stays in your sidebar so you can pick up setup wher
 
 ### Next steps
 
-- Learn about the hierarchy: [What Is an Organization?], [What Is a Brand?], [What Is Multi-Tenancy?]
-- Personalize your account: [Setting Up Your Profile]
+- Learn about the hierarchy: *[What Is an Organization?]*, *[What Is a Brand?]*, *[What Is Multi-Tenancy?]*
+- Personalize your account: *[Setting Up Your Profile]*
 
 ### The path
 
@@ -48,11 +48,11 @@ The rest of the Getting Started series is a funnel.
 
 It moves you from an empty account through to franchisees you are actively operating, one stage at a time. Work through the entries in order, or jump straight to the stage you are in right now.
 
-1. [Set Up Your Brand and Team]: invite your team, set notifications and billing, and shape your portal and forms.
-2. [Get Your Leads In]: import and organize your prospects and leads so your pipeline has people in it.
-3. [Reach Out and Nurture]: build emails, sequences, and automations that keep prospects engaged.
-4. [Work Your Pipeline]: assign leads, create custom statuses, and move each one through your sales process.
-5. [Close the Deal]: manage deals, send FDDs, and collect signatures to convert leads into franchisees.
-6. [Operate Your Franchisees]: manage locations and get your assets into the hands of signed franchisees.
+1. *[Set Up Your Brand and Team]*: invite your team, set notifications and billing, and shape your portal and forms.
+2. *[Get Your Leads In]*: import and organize your prospects and leads so your pipeline has people in it.
+3. *[Reach Out and Nurture]*: build emails, sequences, and automations that keep prospects engaged.
+4. *[Work Your Pipeline]*: assign leads, create custom statuses, and move each one through your sales process.
+5. *[Close the Deal]*: manage deals, send FDDs, and collect signatures to convert leads into franchisees.
+6. *[Operate Your Franchisees]*: manage locations and get your assets into the hands of signed franchisees.
 
-**Next up:** [Set Up Your Brand and Team], where you bring your team into the platform and configure your brand.
+**Next up:** *[Set Up Your Brand and Team]*, where you bring your team into the platform and configure your brand.

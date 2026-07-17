@@ -12,20 +12,20 @@ Learn the vocabulary first, then get your existing lists in and sorted.
 
 Work through these in order the first time, then come back to whichever piece you need.
 
-1. [General Definitions]: learn what prospect, lead, segment, and audience actually mean before you move contacts around.
+1. *[General Definitions]*: learn what prospect, lead, segment, and audience actually mean before you move contacts around.
 
-2. [How to Import Audiences]: bring your existing contacts in from a CSV, into your prospect list or straight into your sales leads.
+2. *[How to Import Audiences]*: bring your existing contacts in from a CSV, into your prospect list or straight into your sales leads.
 
-3. [How to Filter, Sort, and Search Your Contacts]: narrow a large list down to the subset you want to work with or export.
+3. *[How to Filter, Sort, and Search Your Contacts]*: narrow a large list down to the subset you want to work with or export.
 
-4. [How to Export Contacts]: pull your prospects or leads back out as a CSV for reporting, backup, or outside tools.
+4. *[How to Export Contacts]*: pull your prospects or leads back out as a CSV for reporting, backup, or outside tools.
 
-5. [Best Practices: Prospect vs. Lead]: decide which list a contact belongs in so your pipeline and automations stay accurate.
+5. *[Best Practices: Prospect vs. Lead]*: decide which list a contact belongs in so your pipeline and automations stay accurate.
 
-6. [Prospect to Lead Flow]: see how someone moves from a marketing prospect to a working sales lead, automatically or by hand.
+6. *[Prospect to Lead Flow]*: see how someone moves from a marketing prospect to a working sales lead, automatically or by hand.
 
-> **An import is quiet on purpose.** When you upload a CSV, it never fires welcome sequences, never auto-assigns anyone to a rep, and imported contacts stay in your marketing audience until you act. See [Leads vs. Marketing Audiences].
+> **An import is quiet on purpose.** When you upload a CSV, it never fires welcome sequences, never auto-assigns anyone to a rep, and imported contacts stay in your marketing audience until you act. See *[Leads vs. Marketing Audiences]*.
 
 Once your contacts are in and sorted, you are ready to start reaching them.
 
-**Next up:** [Reach Out and Nurture], where you warm up your audience with email, sequences, and automations.
+**Next up:** *[Reach Out and Nurture]*, where you warm up your audience with email, sequences, and automations.

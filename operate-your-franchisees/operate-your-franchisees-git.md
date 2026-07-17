@@ -9,18 +9,18 @@ Work through these in order the first time, then come back to whichever piece yo
 
 ### What to do
 
-1. [About Locations]: track every site your franchise operates or plans to open, from status and franchisee entity to the details behind each one.
+1. *[About Locations]*: track every site your franchise operates or plans to open, from status and franchisee entity to the details behind each one.
 
-2. [How to Upload and Manage Assets]: add the PDFs, images, videos, and documents your franchisees need, and keep them versioned and organized in one library.
+2. *[How to Upload and Manage Assets]*: add the PDFs, images, videos, and documents your franchisees need, and keep them versioned and organized in one library.
 
-3. [How Assets Reach Your Franchisees]: take the second step that actually shares a published asset with the franchisees who should see it.
+3. *[How Assets Reach Your Franchisees]*: take the second step that actually shares a published asset with the franchisees who should see it.
 
-> **Uploading is not sharing.** Adding an asset to your library and a franchisee actually seeing it are two separate steps. An asset only reaches the field once you take the explicit sharing step after uploading. See [How Assets Reach Your Franchisees].
+> **Uploading is not sharing.** Adding an asset to your library and a franchisee actually seeing it are two separate steps. An asset only reaches the field once you take the explicit sharing step after uploading. See *[How Assets Reach Your Franchisees]*.
 
 This is the last stage in the Getting Started path.
 
 You have gone from an empty account to signed, operating franchisees.
 
-From here, revisit [Getting Started with Franchise Systems Ai] any time you need the map of the whole journey.
+From here, revisit *[Getting Started with Franchise Systems Ai]* any time you need the map of the whole journey.
 
 Browse the rest of the helpdesk for the deep how-to on any feature you touch along the way.
