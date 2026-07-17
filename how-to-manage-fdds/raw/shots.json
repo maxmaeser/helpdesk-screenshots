@@ -2,15 +2,29 @@
   "revision": 1,
   "shots": {
     "fdd-toggle-menu.png": {
+      "status": "superseded",
+      "note": "SUPERSEDED by fdd-toggle-menu-v2.png (2026-07-17 reshoot): background list rows leaked a joke filename ('...(Z-Library).pdf'), a joke collection name ('HEHEHEHEHE'), and a typo'd collection name ('Collemction 1'). Library, Lumon Fresh brand: kebab menu open on Lumon-Industries-FDD-2026.pdf showing 'Set is FDD'. Covers 'Uploading an FDD'. Agent-captured 2026-07-17, 1680x1050 CSS viewport, 2x, dom-sanitize. Cosmetic: hid unselected 'Staging Test Brand' chip. Cursor: arrow on 'Set is FDD'.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "fdd-toggle-menu-v2.png": {
       "status": "proposed",
-      "note": "Library, Lumon Fresh brand: kebab menu open on Lumon-Industries-FDD-2026.pdf showing 'Set is FDD'. Covers 'Uploading an FDD'. Agent-captured 2026-07-17, 1680x1050 CSS viewport, 2x, dom-sanitize. Cosmetic: hid unselected 'Staging Test Brand' chip. Cursor: arrow on 'Set is FDD'.",
+      "note": "Reshoot of fdd-toggle-menu.png (2026-07-17): same Library view, kebab menu open on Lumon-Industries-FDD-2026.pdf showing 'Set is FDD'. Covers 'Uploading an FDD'. Same tr[data-index] row targeting caveat as other DataTable captures (a non-interactive decoy table overlaps the real virtualized rows). DOM-swapped background blemishes: 'Vijnana Bhairava tantra (Many translators) (Z-Library).pdf' -> 'Lumon-FDD-Archive.pdf', collection 'HEHEHEHEHE' -> '2026 FDD Collection', collection 'Collemction 1' -> 'Collection 1'. 'Staging Test Brand' chip hidden. dom-sanitize run. No cursor (matches original -- not in cursors.json).",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0
     },
     "fdd-prepare-esignature-menu.png": {
+      "status": "superseded",
+      "note": "SUPERSEDED by fdd-prepare-esignature-menu-v2.png (2026-07-17 reshoot): same background blemishes as fdd-toggle-menu.png (Z-Library filename, HEHEHEHEHE collection, Collemction 1 typo). Same asset kebab menu, eSignature submenu open showing 'Prepare eSignature' / 'Generate eSignature link'. Covers 'Preparing an FDD for e-signature'. Same capture session as fdd-toggle-menu.png. Cursor: arrow on 'Prepare eSignature'.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "fdd-prepare-esignature-menu-v2.png": {
       "status": "proposed",
-      "note": "Same asset kebab menu, eSignature submenu open showing 'Prepare eSignature' / 'Generate eSignature link'. Covers 'Preparing an FDD for e-signature'. Same capture session as fdd-toggle-menu.png. Cursor: arrow on 'Prepare eSignature'.",
+      "note": "Reshoot of fdd-prepare-esignature-menu.png (2026-07-17): same Library view, same kebab menu, eSignature submenu open showing 'Prepare eSignature' / 'Generate eSignature link'. Covers 'Preparing an FDD for e-signature'. Same capture session as fdd-toggle-menu-v2.png; same DOM swaps and Staging Test Brand hide applied. No cursor (matches original -- not in cursors.json).",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0

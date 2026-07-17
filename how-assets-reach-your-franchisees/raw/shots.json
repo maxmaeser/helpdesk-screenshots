@@ -1,9 +1,16 @@
 {
-  "revision": 1,
+  "revision": 2,
   "shots": {
     "library-published-pills.png": {
+      "status": "superseded",
+      "note": "SUPERSEDED by library-published-pills-v2.png (2026-07-17): original left the 'Knowledge Base' sidebar item and the 'Staging Test Brand' chip visible in frame (both staging-only, never in production). Library > Lumon Fresh brand selected, default All Assets view. Shows the collections sidebar with several collections carrying the blue 'Published' pill (globe icon) next to their name, plus the 'Published to Franchisees' filter row with count at the top. Agent-captured 2026-07-17 at 1680x790 CSS clip, 2x, dom-sanitize (freshenDates:false, no relative dates on page). Blemish fixes via page.evaluate text swap (cosmetic only, no fabricated features): 'Collemction 1' -> 'Collection 1', 'Franchisee Marketzing' -> 'Franchisee Marketing TX', 'HEHEHEHEHE' -> 'Seasonal Promotions', 'Test' -> 'Vendor Contracts' (renamed pre-shot so no test-y staging collection names appear in the published article). No cursor -- read-only orienting state.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "library-published-pills-v2.png": {
       "status": "proposed",
-      "note": "Library > Lumon Fresh brand selected, default All Assets view. Shows the collections sidebar with several collections carrying the blue 'Published' pill (globe icon) next to their name, plus the 'Published to Franchisees' filter row with count at the top. Agent-captured 2026-07-17 at 1680x790 CSS clip, 2x, dom-sanitize (freshenDates:false, no relative dates on page). Blemish fixes via page.evaluate text swap (cosmetic only, no fabricated features): 'Collemction 1' -> 'Collection 1', 'Franchisee Marketzing' -> 'Franchisee Marketing TX', 'HEHEHEHEHE' -> 'Seasonal Promotions', 'Test' -> 'Vendor Contracts' (renamed pre-shot so no test-y staging collection names appear in the published article). No cursor -- read-only orienting state.",
+      "note": "Reshoot of library-published-pills.png (2026-07-17) fixing the two DOM blemishes: 'Knowledge Base' sidebar item hidden (display:none, isDevOrStaging()-gated, never in production) and 'Staging Test Brand' chip hidden from the brand selector row. Same route/UI state as the original: Library > Lumon Fresh brand selected, default All Assets view, collections sidebar with blue 'Published' pills, 'Published to Franchisees' filter row. Same collection-name typo fixes carried over ('Collemction 1' -> 'Collection 1', 'Franchisee Marketzing' -> 'Franchisee Marketing TX', 'HEHEHEHEHE' -> 'Seasonal Promotions', exact-match 'Test' -> 'Vendor Contracts'). Agent-captured 1680x790 CSS clip, 2x, dom-sanitize (freshenDates:false). Raw dimensions (3360x1580) match the original exactly. No cursor -- read-only orienting state.",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0
@@ -16,8 +23,15 @@
       "rev": 0
     },
     "library-bulk-publish.png": {
+      "status": "superseded",
+      "note": "SUPERSEDED by library-bulk-publish-v2.png (2026-07-17): original left the 'Knowledge Base' sidebar item visible in frame (staging-only, never in production). Library > Lumon Fresh > All Assets, 3 individual files selected via row checkboxes, More menu open showing Share / Download / 'Publish 3 to Franchisees' / Delete. Menu item not clicked (read-only -- staging is shared, no write actions taken). Same collection-name blemish fixes applied as the pills shot. Agent-captured 2026-07-17 at 1680x826 CSS clip, 2x, dom-sanitize (freshenDates:false). Arrow cursor on 'Publish 3 to Franchisees'.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "library-bulk-publish-v2.png": {
       "status": "proposed",
-      "note": "Library > Lumon Fresh > All Assets, 3 individual files selected via row checkboxes, More menu open showing Share / Download / 'Publish 3 to Franchisees' / Delete. Menu item not clicked (read-only -- staging is shared, no write actions taken). Same collection-name blemish fixes applied as the pills shot. Agent-captured 2026-07-17 at 1680x826 CSS clip, 2x, dom-sanitize (freshenDates:false). Arrow cursor on 'Publish 3 to Franchisees'.",
+      "note": "Reshoot of library-bulk-publish.png (2026-07-17) fixing the 'Knowledge Base' sidebar-item blemish (display:none, isDevOrStaging()-gated, never in production). Same route/UI state as the original: Library > Lumon Fresh > All Assets, the same 3 contiguous rows selected via row checkboxes (lumon logo small Background Removed.png, Gandalf Smoking Pipe.gif, the 12 Mar 2026 Lumon-Industries-FDD-2026.pdf duplicate -- NOT the unrelated 25 Feb 2026 FDD row at the top of the list), More menu open showing Share / Download / 'Publish 3 to Franchisees' / Delete. Menu item not clicked (read-only). Same collection-name typo fixes carried over. Agent-captured with a shorter 1100px CSS viewport so the fixed-to-viewport-bottom bulk action bar lands inside the 1680x826 CSS clip (a taller viewport pushed the bar below the crop in an earlier attempt); non-fullPage clip screenshot used deliberately -- a fullPage capture silently closed this popover mid-shot. dom-sanitize (freshenDates:false). Raw dimensions (3360x1652) match the original exactly. Arrow cursor on 'Publish 3 to Franchisees' (re-measured for this capture: [2097, 1467], not reused verbatim from the original's [2100, 1380] -- see cursors.json).",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0

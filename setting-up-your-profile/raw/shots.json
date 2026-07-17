@@ -51,8 +51,15 @@
       "rev": 0
     },
     "profile-security.png": {
+      "status": "superseded",
+      "note": "Superseded by profile-security-v2.png (2026-07-17): swapped the real-looking Active Sessions IP for a placeholder.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "profile-security-v2.png": {
       "status": "proposed",
-      "note": "",
+      "note": "Recaptured 2026-07-17 to DOM-swap the Active Sessions IP (184.82.28.225 -> 192.168.1.24) everywhere it appears; supersedes profile-security.png",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0

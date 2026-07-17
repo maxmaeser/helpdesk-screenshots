@@ -12,7 +12,7 @@ Every location has a status that reflects where it is in its lifecycle:
 
 You can update the status of one or multiple locations at a time using the bulk status action in the locations table.
 
-![Locations table showing status badges](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-locations/locations-overview.png)
+![Locations table showing status badges](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-locations/locations-overview-v2.png)
 
 ### Adding a location manually
 
@@ -50,7 +50,7 @@ You can favorite locations to keep quick access to the ones you work with most. 
 
 **Franchisee organizations**: You can assign a franchisee organization to one or more locations. Use the bulk action in the locations table to assign the same franchisee organization to multiple locations at once.
 
-![Bulk action toolbar with two locations selected](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-locations/locations-bulk-actions.png)
+![Bulk action toolbar with two locations selected](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-locations/locations-bulk-actions-v2.png)
 
 ### Social and Connections (some accounts)
 
@@ -60,7 +60,7 @@ On accounts with social posting enabled, each location's detail view also includ
 
 The locations table includes a map view powered by Mapbox. Locations with latitude and longitude coordinates appear as pins on the map, giving you a geographic overview of your franchise network.
 
-![Locations map view with pins](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-locations/locations-map.png)
+![Locations map view with pins](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-locations/locations-map-v2.png)
 
 ### Location details
 

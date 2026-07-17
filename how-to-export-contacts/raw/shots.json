@@ -1,16 +1,30 @@
 {
-  "revision": 1,
+  "revision": 2,
   "shots": {
     "audiences-export-selected.png": {
-      "status": "proposed",
-      "note": "Marketing > Audiences (Prospects tab). 3 prospect rows selected (Shawn Martinez / Jennifer Liu / Brandon Bean), Actions dropdown open showing 'Export (3)' hovered. Agent-captured 2026-07-17 on staging (Lumon Fresh org's shared multi-brand seed), 1680x1050 CSS viewport, 2x, dom-sanitize with freshenDates:auto plus custom replacements for two seed-data leak shapes the stock regexes missed: a fused 'name(720) 555-0142@domain' artifact and bare non-NANP phone digit runs (leading-0 11-digit, oddly-grouped 11-digit dash strings). Cursor: arrow on the 'Export (3)' menu item.",
+      "status": "superseded",
+      "note": "SUPERSEDED 2026-07-17 by audiences-export-selected-v2.png (hid 'Knowledge Base' sidebar item + 'Staging Test Brand' chip, both visible in this original). Marketing > Audiences (Prospects tab). 3 prospect rows selected (Shawn Martinez / Jennifer Liu / Brandon Bean), Actions dropdown open showing 'Export (3)' hovered. Agent-captured 2026-07-17 on staging (Lumon Fresh org's shared multi-brand seed), 1680x1050 CSS viewport, 2x, dom-sanitize with freshenDates:auto plus custom replacements for two seed-data leak shapes the stock regexes missed: a fused 'name(720) 555-0142@domain' artifact and bare non-NANP phone digit runs (leading-0 11-digit, oddly-grouped 11-digit dash strings). Cursor: arrow on the 'Export (3)' menu item.",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0
     },
     "pipeline-export-selected.png": {
+      "status": "superseded",
+      "note": "SUPERSEDED 2026-07-17 by pipeline-export-selected-v2.png (hid 'Knowledge Base' sidebar item + 'Staging Test Brand' chip, both visible in this original). Sales > Pipeline (Leads tab). 3 lead rows selected (Jordan Ellis / Jonathan Whiteman / Nathan Minkhorst, chosen to avoid junk-named seed rows like 'Testinjg Imported' / 'okkkk'), Actions dropdown open showing 'Export (3)' hovered. Agent-captured 2026-07-17 on staging, same viewport/sanitize config as the Audiences shot. Cursor: arrow on the 'Export (3)' menu item.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "audiences-export-selected-v2.png": {
       "status": "proposed",
-      "note": "Sales > Pipeline (Leads tab). 3 lead rows selected (Jordan Ellis / Jonathan Whiteman / Nathan Minkhorst, chosen to avoid junk-named seed rows like 'Testinjg Imported' / 'okkkk'), Actions dropdown open showing 'Export (3)' hovered. Agent-captured 2026-07-17 on staging, same viewport/sanitize config as the Audiences shot. Cursor: arrow on the 'Export (3)' menu item.",
+      "note": "Targeted reshoot of audiences-export-selected.png (same route/UI-state/crop, same row selection, same cursor coords). Fix: 'Knowledge Base' sidebar item and 'Staging Test Brand' chip hidden via DOM before every screenshot (walk-up-to-clickable-container technique, re-applied after each sanitize pass and again immediately before the shutter). Agent-captured 2026-07-17 on staging, 1680x1050 CSS viewport, 2x, same dom-sanitize config as the original (freshenDates:auto + the two custom seed-leak replacements). Cursor: arrow on the 'Export (3)' menu item.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "pipeline-export-selected-v2.png": {
+      "status": "proposed",
+      "note": "Targeted reshoot of pipeline-export-selected.png (same route/UI-state/crop, same row selection, same cursor coords). Fix: 'Knowledge Base' sidebar item and 'Staging Test Brand' chip hidden via DOM before every screenshot (same technique as the Audiences reshoot). Agent-captured 2026-07-17 on staging, same viewport/sanitize config as the Audiences shot. Cursor: arrow on the 'Export (3)' menu item.",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0

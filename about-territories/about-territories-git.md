@@ -20,7 +20,7 @@ The Territories page lists the states where your brand operates or plans to oper
 
 The **Compliance** tab provides a focused view of your filing activity and regulatory status across states. Use it to monitor which states are up to date, which filings are pending, and which deadlines are approaching.
 
-![Compliance tab on the Territories page, showing the state list with filing status badges next to an interactive map](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-territories/territories-compliance.png)
+![Compliance tab on the Territories page, showing the state list with filing status badges next to an interactive map](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-territories/territories-compliance-v2.png)
 
 ### Bulk Operations
 
@@ -39,7 +39,7 @@ Franchise regulations vary by state, and you may need different FDD versions for
 4. Choose the FDD asset to assign.
 5. Confirm the assignment.
 
-![Two states selected on the Compliance tab with the Bulk Assign FDD asset picker open](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-territories/territories-bulk-assign-fdd.png)
+![Two states selected on the Compliance tab with the Bulk Assign FDD asset picker open](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-territories/territories-bulk-assign-fdd-v2.png)
 
 ### ~~Searching and Filtering~~
 
@@ -64,7 +64,7 @@ You can search zones by name and use the filter icon to narrow the list. The **S
 
 The right panel shows an interactive map of the United States. Deal zones are displayed as highlighted regions on the map, giving you a visual overview of your geographic coverage and any gaps.
 
-![Deal Zones tab showing the zone list with assigned entities and deal counts beside the map, with the Draw Deal Zone button highlighted](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-territories/territories-deal-zones.png)
+![Deal Zones tab showing the zone list with assigned entities and deal counts beside the map, with the Draw Deal Zone button highlighted](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-territories/territories-deal-zones-v2.png)
 
 ### Creating a Deal Zone
 

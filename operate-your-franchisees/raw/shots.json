@@ -1,5 +1,5 @@
 {
-  "revision": 1,
+  "revision": 2,
   "shots": {
     "operate-your-franchisees-overview.png": {
       "cursor": null,
@@ -11,8 +11,16 @@
     },
     "operate-your-franchisees-overview-v2.png": {
       "cursor": null,
+      "status": "superseded",
+      "note": "Reshoot 2026-07-17 to fix two seed-data blemishes via page.evaluate text-node replacement before sanitize: row 1 (Tulip Canteen) Store ID 'testst' -> 'TC4487215' (matches the column's 2-letter-prefix + 7-digit format used by other franchisee-linked rows, e.g. SE5554715, QQ8473340, JI8463950); 'Lumon Floor Arlignton' -> 'Lumon Floor Arlington'. Fixes re-applied defensively after sanitize in case React reverted them; verified absent via innerText before capture. Same route, viewport (1440x975 CSS, 2x), dom-sanitize config (custom rule for 09887112344), and Missing Booking Profile hide as the original. Superseded by -v3 (left the 'Staging Test Brand' chip and 'Knowledge Base' sidebar item visible in the top brand strip / sidebar).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "operate-your-franchisees-overview-v3.png": {
+      "cursor": null,
       "status": "proposed",
-      "note": "Reshoot 2026-07-17 to fix two seed-data blemishes via page.evaluate text-node replacement before sanitize: row 1 (Tulip Canteen) Store ID 'testst' -> 'TC4487215' (matches the column's 2-letter-prefix + 7-digit format used by other franchisee-linked rows, e.g. SE5554715, QQ8473340, JI8463950); 'Lumon Floor Arlignton' -> 'Lumon Floor Arlington'. Fixes re-applied defensively after sanitize in case React reverted them; verified absent via innerText before capture. Same route, viewport (1440x975 CSS, 2x), dom-sanitize config (custom rule for 09887112344), and Missing Booking Profile hide as the original.",
+      "note": "Reshoot 2026-07-17 to hide the 'Staging Test Brand' chip in the top brand strip and the 'Knowledge Base' sidebar item (both env-gated, staging-only, missed on prior passes) via page.evaluate display:none, applied and re-applied defensively around two dom-sanitize passes and a tour-modal dismissal ('Operations: Locations' tour reappeared after the brand switch and was dismissed via its own 'Maybe Later' button, not Escape). Kept both earlier fixes: row 1 (Tulip Canteen) Store ID 'TC4487215', 'Lumon Floor Arlington' typo fix. Hit and recovered from a brand-switch race condition: the DataTable can render briefly on stale/loading rows right after switching brands, so the script polls body text for 'Tulip Canteen' + 'Total Locations: 20' before proceeding, verified true before this capture. Same route (Operations > Locations, brand=11111111-1111-1111-1111-111111111111 i.e. Lumon Fresh), viewport (1440x975 CSS, 2x), dom-sanitize config (custom rule for 09887112344), Missing Booking Profile hide. Verified via innerText immediately before screenshot: no 'Staging Test Brand', no 'Knowledge Base', no 'testst', no 'Arlignton', no tour modal text, and 'Tulip Canteen' / 'TC4487215' / 'Lumon Floor Arlington' all present.",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0

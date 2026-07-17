@@ -7,7 +7,7 @@ You can export your prospects or leads as a CSV file for reporting, backup, or u
 3. Click the **Export** button in the toolbar. If you have contacts selected, the button shows the count (for example, "Export (12)"). If nothing is selected, clicking **Export** exports all prospects.
 4. A CSV file downloads to your computer.
 
-![Audiences table with three prospects selected and the Actions menu open showing Export (3)](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-export-contacts/audiences-export-selected.png)
+![Audiences table with three prospects selected and the Actions menu open showing Export (3)](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-export-contacts/audiences-export-selected-v2.png)
 **Exported prospect fields:**
 
 - First name
@@ -25,7 +25,7 @@ You can export your prospects or leads as a CSV file for reporting, backup, or u
 3. Click the **Export** button in the toolbar.
 4. A CSV file downloads to your computer.
 
-![Pipeline table with three leads selected and the Actions menu open showing Export (3)](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-export-contacts/pipeline-export-selected.png)
+![Pipeline table with three leads selected and the Actions menu open showing Export (3)](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-export-contacts/pipeline-export-selected-v2.png)
 **Exported lead fields:**
 
 - First name

@@ -5,7 +5,7 @@ The page has five tabs: Sequences, Automations, Runs, Content, and Analytics. Th
 - **Content**: email templates you create and reuse across sequences
 - **Sequences**: automated trigger-action flows that run when specific events occur
 
-![Workflows page showing the five tabs](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/creating-content-and-workflows/workflows-tabs.png)
+![Workflows page showing the five tabs](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/creating-content-and-workflows/workflows-tabs-v2.png)
 ### Content First, Then Sequences
 
 Before setting up a sequence, prepare the email content it will use:
@@ -15,7 +15,7 @@ Before setting up a sequence, prepare the email content it will use:
 3. Create one or more email templates using the email builder.
 4. Once your content is ready, switch to the **Sequences** tab to build your automation.
 
-![Content tab showing the email template list](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/creating-content-and-workflows/workflows-content.png)
+![Content tab showing the email template list](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/creating-content-and-workflows/workflows-content-v2.png)
 This separation keeps your email content reusable. The same template can appear in multiple sequences.
 
 ### What Is a Sequence?
@@ -37,7 +37,7 @@ A sequence is an automated trigger-action flow that runs when a specific event o
    - A tag is applied to a contact
    - A franchisee is converted or signs up
 
-![Trigger event picker open on the sequence builder canvas](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/creating-content-and-workflows/workflows-trigger-picker.png)
+![Trigger event picker open on the sequence builder canvas](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/creating-content-and-workflows/workflows-trigger-picker-v2.png)
 4. Add **action nodes** by connecting them to the trigger. Available actions:
    - **Send Email**: sends an email template to the contact. You select which template to use.
    - **Delay**: pauses the sequence for a set period (e.g., 1 hour, 1 day, 1 week, or a custom duration).
@@ -47,7 +47,7 @@ A sequence is an automated trigger-action flow that runs when a specific event o
    - **Create Task**: creates a task assigned to a team member, with a name, description, and due date.
 5. Connect nodes with edges to define the flow. Condition nodes have two outgoing paths (yes/no), while other nodes continue in sequence.
 
-![Trigger node connected to a Send Email action node on the builder canvas](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/creating-content-and-workflows/workflows-builder-canvas.png)
+![Trigger node connected to a Send Email action node on the builder canvas](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/creating-content-and-workflows/workflows-builder-canvas-v2.png)
 ### Entry Conditions
 
 You can add entry conditions to a trigger to filter which events actually start the sequence. For example, a "new marketing lead created" trigger could include a condition that only fires for leads from a specific source.
@@ -61,4 +61,4 @@ Sequences start in **Draft** status. When you are ready:
 3. To pause a running sequence, set it to **Paused**. No new contacts enter, but in-progress ones continue.
 4. To retire a sequence permanently, set it to **Archived**.
 
-![Sequence detail panel with the Active toggle](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/creating-content-and-workflows/workflows-activate-toggle.png)
+![Sequence detail panel with the Active toggle](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/creating-content-and-workflows/workflows-activate-toggle-v2.png)

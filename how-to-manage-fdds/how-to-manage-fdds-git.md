@@ -16,7 +16,7 @@ An FDD is a regular asset with the FDD flag enabled.
 
 You can also set the FDD flag when editing an asset's metadata by updating the title, description, and FDD status together.
 
-![Set is FDD in an asset's menu](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-manage-fdds/fdd-toggle-menu.png)
+![Set is FDD in an asset's menu](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-manage-fdds/fdd-toggle-menu-v2.png)
 
 ### Preparing an FDD for e-signature
 
@@ -28,7 +28,7 @@ Before an FDD can be sent for signing, it needs to be prepared as a signable doc
 
 This preparation step uses the same e-signature system as other signable documents in the platform. There is no FDD-specific signing interface - the standard document signing flow applies.
 
-![Prepare eSignature in an asset's menu](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-manage-fdds/fdd-prepare-esignature-menu.png)
+![Prepare eSignature in an asset's menu](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-manage-fdds/fdd-prepare-esignature-menu-v2.png)
 
 ### Assigning FDDs to states
 

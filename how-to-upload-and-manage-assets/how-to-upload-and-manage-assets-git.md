@@ -2,7 +2,7 @@ Assets are files you store and share across your organization - PDFs, images, vi
 
 > **Note:** The **Library** in the sidebar shows all assets across your organization. Department-specific views like **Sales → Assets** display the same assets filtered to that department. Uploading or editing an asset in one view updates it everywhere.
 
-![Library page showing the asset list for a brand](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-upload-and-manage-assets/assets-library-overview.png)
+![Library page showing the asset list for a brand](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-upload-and-manage-assets/assets-library-overview-v2.png)
 ### Supported file formats
 
 You can upload most common file types including:
@@ -67,11 +67,11 @@ To update permissions on multiple assets at once:
 
 You can also use the **Share All** action to apply permission changes to every asset matching your current search and filter criteria.
 
-![Two assets selected in the library with the bulk actions menu open on Share](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-upload-and-manage-assets/assets-bulk-share-menu.png)
+![Two assets selected in the library with the bulk actions menu open on Share](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-upload-and-manage-assets/assets-bulk-share-menu-v2.png)
 ### Collections
 
 Collections let you organize assets into named groups for easier browsing. You can create a collection, give it a name and description, and add assets to it.
 
 Collections are organizational - they help you group related assets together (for example, "Q1 Marketing Materials" or "Training Videos"). Permissions are still managed at the individual asset level, not at the collection level.
 
-![An opened collection showing its assets](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-upload-and-manage-assets/assets-collection-view.png)
+![An opened collection showing its assets](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-upload-and-manage-assets/assets-collection-view-v2.png)

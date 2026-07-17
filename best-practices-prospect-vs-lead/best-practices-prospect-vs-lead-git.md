@@ -38,7 +38,7 @@ When someone begins signing up through your applicant portal (enters their email
 2. Select one or more prospects using the checkboxes.
 3. Click **Convert** in the action bar. To convert all prospects matching your current filters, use **Convert All**.
 
-![Selected prospects with the Convert action open in the bulk toolbar](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/best-practices-prospect-vs-lead/convert-action-dropdown.png)
+![Selected prospects with the Convert action open in the bulk toolbar](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/best-practices-prospect-vs-lead/convert-action-dropdown-v2.png)
 When a prospect is converted (either automatically or manually):
 
 - A new lead record is created in the sales pipeline with the prospect's contact details and custom field data.

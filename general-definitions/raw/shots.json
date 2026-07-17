@@ -11,15 +11,30 @@
     },
     "definitions-pipeline-table.png": {
       "crop": [0, 0, 3360, 2100],
+      "status": "superseded",
+      "note": "SUPERSEDED by definitions-pipeline-table-v2.png (2026-07-17): this capture left the 'Knowledge Base' sidebar item visible (staging-only, never in production). Sales > Pipeline, Leads tab, Lumon Fresh selected. Full viewport (46 leads, virtualized table, no email/phone columns so nothing to sanitize there). Staging Test Brand chip hidden pre-shot. dom-sanitize ran with freshenDates:true.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "definitions-pipeline-table-v2.png": {
+      "crop": [0, 0, 3360, 2100],
       "status": "proposed",
-      "note": "Sales > Pipeline, Leads tab, Lumon Fresh selected. Full viewport (46 leads, virtualized table, no email/phone columns so nothing to sanitize there). Staging Test Brand chip hidden pre-shot. dom-sanitize ran with freshenDates:true.",
+      "note": "Reshoot of definitions-pipeline-table.png (2026-07-17) to hide the 'Knowledge Base' sidebar item (staging-only, never in production). Sales > Pipeline (route /sales), Leads tab, Lumon Fresh selected (confirmed via '1 Selected' indicator). Full viewport (46 leads, virtualized table, no email/phone columns so nothing to sanitize there). Staging Test Brand chip hidden pre-shot. dom-sanitize ran with freshenDates:true (0 matches - Date Added column is absolute dates, not relative). Identical route/crop/data to the superseded v1.",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0
     },
     "definitions-sequences-tab.png": {
+      "status": "superseded",
+      "note": "SUPERSEDED by definitions-sequences-tab-v2.png (2026-07-17): this capture left the 'Knowledge Base' sidebar item visible (staging-only, never in production). Marketing > Workflows, Sequences tab (default of the 5-tab pattern), Lumon Fresh selected, one sequence row. Read-only capture: did not open the write-mode builder canvas since this sequence's trigger is unconfigured (Trigger: -) and adding one would mutate staging data. Staging Test Brand chip hidden; sequence title text-node-renamed from the seed's generic 'Test Workflow' to 'Welcome Sequence' (cosmetic rename only, no functional change, no data written). dom-sanitize ran with freshenDates:false (no relative-date copy on this page).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "definitions-sequences-tab-v2.png": {
       "status": "proposed",
-      "note": "Marketing > Workflows, Sequences tab (default of the 5-tab pattern), Lumon Fresh selected, one sequence row. Read-only capture: did not open the write-mode builder canvas since this sequence's trigger is unconfigured (Trigger: -) and adding one would mutate staging data. Staging Test Brand chip hidden; sequence title text-node-renamed from the seed's generic 'Test Workflow' to 'Welcome Sequence' (cosmetic rename only, no functional change, no data written). dom-sanitize ran with freshenDates:false (no relative-date copy on this page).",
+      "note": "Reshoot of definitions-sequences-tab.png (2026-07-17) to hide the 'Knowledge Base' sidebar item (staging-only, never in production). Marketing > Workflows (route /marketing/workflows), Sequences tab, Lumon Fresh selected, one sequence row. Read-only capture, same as v1: did not open the write-mode builder canvas. Staging Test Brand chip hidden; sequence title text-node-renamed from the seed's generic 'Test Workflow' to 'Welcome Sequence' (cosmetic rename only, no functional change, no data written). dom-sanitize ran with freshenDates:false (no relative-date copy on this page). Identical route/crop/data to the superseded v1.",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0

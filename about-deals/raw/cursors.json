@@ -1,6 +1,16 @@
 {
   "deals-nav-pipeline-v2.png": {
-    "cursor": [820, 345],
+    "cursor": [
+      820,
+      345
+    ],
+    "type": "arrow"
+  },
+  "deals-nav-pipeline-v3.png": {
+    "cursor": [
+      820,
+      345
+    ],
     "type": "arrow"
   }
 }

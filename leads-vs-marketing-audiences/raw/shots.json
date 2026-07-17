@@ -1,5 +1,5 @@
 {
-  "revision": 1,
+  "revision": 2,
   "shots": {
     "marketing-audiences-prospects.png": {
       "status": "proposed",
@@ -16,8 +16,15 @@
       "rev": 0
     },
     "convert-action-dropdown.png": {
+      "status": "superseded",
+      "note": "SUPERSEDED by convert-action-dropdown-v2.png (2026-07-17 reshoot) -- this raw showed the staging-only 'Knowledge Base' sidebar item, which is never present in production. Marketing > Audiences, Prospects tab, two rows selected via checkboxes, bulk toolbar's Actions dropdown open showing Convert (2). Illustrates the manual conversion path named in the article ('...you convert them yourself from the Marketing -> Audiences table using the Convert action'). Reused raw from best-practices-prospect-vs-lead (2026-07-17, already dom-sanitized). Cursor added in post pointing at Convert (2).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "convert-action-dropdown-v2.png": {
       "status": "proposed",
-      "note": "Marketing > Audiences, Prospects tab, two rows selected via checkboxes, bulk toolbar's Actions dropdown open showing Convert (2). Illustrates the manual conversion path named in the article ('...you convert them yourself from the Marketing -> Audiences table using the Convert action'). Reused raw from best-practices-prospect-vs-lead (2026-07-17, already dom-sanitized). Cursor added in post pointing at Convert (2).",
+      "note": "Reshoot of convert-action-dropdown.png (2026-07-17) -- fixes the staging-only 'Knowledge Base' sidebar item being visible (hidden via DOM fix before capture; not present in production). Same UI state: Marketing > Audiences, Prospects tab, two rows selected (Billy Smith, Joshua Radin-Grant) via checkboxes, bulk toolbar's More dropdown open showing Convert (2) / Validate Emails (2) / Delete (2). Reused raw from best-practices-prospect-vs-lead/raw/convert-action-dropdown-v2.png (2026-07-17 reshoot of the identical UI state, same brand/session, dom-sanitized, freshenDates:false, no 'Staging Test Brand' chip in frame). Raw pixel dimensions (3360x1300) and final processed dimensions (1800x765) match the original exactly; cursor coordinate [2225,1178] (More button) reused verbatim.",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0

@@ -21,7 +21,7 @@ There are two ways a prospect becomes a lead:
 2. Select one or more prospects using the checkboxes.
 3. Click **Convert** in the action bar. To convert all prospects matching your current filters, use **Convert All**.
 
-![Prospects selected in the Marketing table with the Convert option open in the action bar](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/prospect-to-lead-flow/marketing-convert-menu.png)
+![Prospects selected in the Marketing table with the Convert option open in the action bar](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/prospect-to-lead-flow/marketing-convert-menu-v2.png)
 
 ### What Happens During Conversion
 
@@ -39,4 +39,4 @@ Whether conversion happens automatically through portal signup or manually from 
 
 Once converted, the lead appears under **Sales → Pipeline** in the **Leads** tab and no longer appears in Marketing. You can assign a rep, set a status, and begin tracking them through the Applicant Portal while working them through your sales process.
 
-![The Leads tab in Sales > Pipeline where converted prospects land](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/prospect-to-lead-flow/pipeline-leads.png)
+![The Leads tab in Sales > Pipeline where converted prospects land](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/prospect-to-lead-flow/pipeline-leads-v2.png)

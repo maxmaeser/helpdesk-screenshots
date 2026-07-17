@@ -13,7 +13,7 @@ A lead is someone who has entered your sales pipeline. The primary path for crea
 
 Leads appear in the **Sales → Pipeline** table. They carry more data than prospects, including application progress, assigned sales rep, lead status, completed onboarding steps, and deal information.
 
-![Sales Pipeline table showing the Leads tab with status, progress, and assignment](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/general-definitions/definitions-pipeline-table.png)
+![Sales Pipeline table showing the Leads tab with status, progress, and assignment](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/general-definitions/definitions-pipeline-table-v2.png)
 ### Tags
 
 Tags are labels you create and apply to prospects, leads, or franchisees to organize your contacts beyond the built-in filters. For example, you might tag a group of prospects as "Trade Show 2025" or tag leads by geographic region.
@@ -34,4 +34,4 @@ You build a sequence by defining a trigger event (such as "New Sales Lead" or "P
 
 The **Content** tab on the same Workflows page is where you create and manage the email templates that your sequences use.
 
-![Workflows page, Sequences tab, showing the five-tab pattern and a sequence row](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/general-definitions/definitions-sequences-tab.png)
+![Workflows page, Sequences tab, showing the five-tab pattern and a sequence row](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/general-definitions/definitions-sequences-tab-v2.png)

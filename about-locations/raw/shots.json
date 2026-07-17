@@ -3,8 +3,16 @@
   "shots": {
     "locations-overview.png": {
       "crop": [460, 0, 2900, 1300],
+      "status": "superseded",
+      "note": "SUPERSEDED by locations-overview-v2.png (2026-07-17 reshoot: hid the 'Staging Test Brand' chip that was visible in the brand selector row). Operations > Locations, Lumon Fresh brand selected. Full list view with Status column showing Developing/Open/Inactive/Planned badges. Agent-captured 2026-07-17, 1680x1050 CSS viewport, 2x, dom-sanitize applied. Fixed a staging typo blemish ('Lumon Floor Arlignton' -> 'Arlington') via DOM text-node edit before shooting. No cursor -- read-only orientation state.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "locations-overview-v2.png": {
+      "crop": [460, 0, 2900, 1300],
       "status": "proposed",
-      "note": "Operations > Locations, Lumon Fresh brand selected. Full list view with Status column showing Developing/Open/Inactive/Planned badges. Agent-captured 2026-07-17, 1680x1050 CSS viewport, 2x, dom-sanitize applied. Fixed a staging typo blemish ('Lumon Floor Arlignton' -> 'Arlington') via DOM text-node edit before shooting. No cursor -- read-only orientation state.",
+      "note": "Reshoot of locations-overview.png (2026-07-17): hid the 'Staging Test Brand' chip (display:none) that was visible in the brand selector row in v1. Operations > Locations, Lumon Fresh brand selected, no other changes. Same route/UI state/crop as v1. Agent-captured, 1680x1050 CSS viewport, 2x, dom-sanitize applied (freshenDates:false, no dates in frame). No cursor -- read-only orientation state.",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0
@@ -27,8 +35,16 @@
     },
     "locations-bulk-actions.png": {
       "crop": [460, 0, 2900, 2100],
+      "status": "superseded",
+      "note": "SUPERSEDED by locations-bulk-actions-v2.png (2026-07-17 reshoot: hid the 'Staging Test Brand' chip, and DOM-swapped joke/placeholder Franchisee Entity names -- 'Bill Smith's Entity', 'Martins Likes To Move It Dance ...', 'Joshua Radin-Grant's Entity', 'Swiss Sweetie's Candies Inc.', 'Fred's Thai Massage LLC' -- to plausible LLC names). Two locations selected via row checkboxes, showing the bulk action toolbar (Set Location Status, Assign To Franchisee Entity, Assign To Deal Zone) -- covers both the bulk status update and bulk franchisee-assignment sections of the article. Agent-captured 2026-07-17, dom-sanitize applied. No cursor -- selection state, the toolbar tells the story.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "locations-bulk-actions-v2.png": {
+      "crop": [460, 0, 2900, 2100],
       "status": "proposed",
-      "note": "Two locations selected via row checkboxes, showing the bulk action toolbar (Set Location Status, Assign To Franchisee Entity, Assign To Deal Zone) -- covers both the bulk status update and bulk franchisee-assignment sections of the article. Agent-captured 2026-07-17, dom-sanitize applied. No cursor -- selection state, the toolbar tells the story.",
+      "note": "Reshoot of locations-bulk-actions.png (2026-07-17): hid the 'Staging Test Brand' chip; DOM-swapped joke Franchisee Entity names to plausible LLCs ('Bill Smith's Entity'->'Ridgeline Retail Group LLC', 'Martins Likes To Move It Dance ...'->'Meridian Hospitality Partners LLC', 'Joshua Radin-Grant's Entity'->'Radin-Grant Holdings LLC', 'Swiss Sweetie's Candies Inc.'->'Alpine Confections LLC', 'Fred's Thai Massage LLC'->'Whitman Restaurant Group LLC'); also carried the v1 'Lumon Floor Arlignton'->'Arlington' typo fix since that row falls in this taller crop. Same route/UI state/crop/selection (Tulip Canteen + Lumon Sports Castle rows checked) as v1. Agent-captured, dom-sanitize applied. No cursor.",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0
@@ -51,8 +67,16 @@
     },
     "locations-map.png": {
       "crop": [460, 0, 2900, 2100],
+      "status": "superseded",
+      "note": "SUPERSEDED by locations-map-v2.png (2026-07-17 reshoot: hid the 'Staging Test Brand' chip; also carried the joke-entity-name swap since 'Bill Smith's Entity' was visible in the map side panel for Lumon Sports Castle). Locations table, Map view toggle -- split list/map layout with Mapbox pins and cluster counts. Agent-captured 2026-07-17, dom-sanitize applied. No cursor -- read-only view.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "locations-map-v2.png": {
+      "crop": [460, 0, 2900, 2100],
       "status": "proposed",
-      "note": "Locations table, Map view toggle -- split list/map layout with Mapbox pins and cluster counts. Agent-captured 2026-07-17, dom-sanitize applied. No cursor -- read-only view.",
+      "note": "Reshoot of locations-map.png (2026-07-17): hid the 'Staging Test Brand' chip; DOM-swapped the same joke Franchisee Entity names as locations-bulk-actions-v2.png (visible in the map side panel, e.g. 'Bill Smith's Entity'->'Ridgeline Retail Group LLC'). Same route/UI state/crop/selection (Tulip Canteen + Lumon Sports Castle rows checked, Map view) as v1. Agent-captured, dom-sanitize applied. No cursor -- read-only view.",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0

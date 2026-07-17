@@ -52,7 +52,7 @@ The **Preferences** tab sets your **time format** (12-hour or 24-hour) and your 
 
 The **Security** tab is where you protect your account. Here you can change your password, turn **two-factor authentication** on or off, and manage your personal **API key** for developer integrations.
 
-![Security tab showing the password change form and a list of active sessions](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/setting-up-your-profile/profile-security.png)
+![Security tab showing the password change form and a list of active sessions](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/setting-up-your-profile/profile-security-v2.png)
 
 ![Security tab showing the two-factor authentication toggle and the personal API key field](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/setting-up-your-profile/profile-security-2fa-api.png)
 

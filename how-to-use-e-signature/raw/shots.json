@@ -1,9 +1,16 @@
 {
-  "revision": 1,
+  "revision": 2,
   "shots": {
     "esig-library-menu.png": {
+      "status": "superseded",
+      "note": "SUPERSEDED by esig-library-menu-v2.png (2026-07-17): a stray staging-seed filename 'Vijnana Bhairava tantra (Many translators) (Z-Library).pdf' was visible in the row below the interaction target. Kept for history only, do not re-use in the article.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 1
+    },
+    "esig-library-menu-v2.png": {
       "status": "proposed",
-      "note": "Library > Lumon-Industries-FDD-2026.pdf row, kebab menu open, eSignature submenu expanded showing 'Prepare eSignature' and 'Generate eSignature link'. Agent-captured 2026-07-17, 1680x1050 CSS viewport, 2x, dom-sanitize with freshenDates:false. No cursor -- open-menu state speaks for itself. Covers the entry point for 'Preparing a Document for Signature'.",
+      "note": "Library > Lumon-Industries-FDD-2026.pdf row, kebab menu open, eSignature submenu expanded showing 'Prepare eSignature' and 'Generate eSignature link'. Reshoot of esig-library-menu.png: the neighboring row's stray filename ('Vijnana Bhairava tantra (Many translators) (Z-Library).pdf') was DOM-swapped to 'Employee-Onboarding-Packet.pdf' before capture. Also hid the 'Staging Test Brand' chip (visibility:hidden, layout-preserving) and the 'Knowledge Base' sidebar item (display:none, outside crop). Agent-captured 2026-07-17, 1680x1050 CSS viewport, 2x, dom-sanitize with freshenDates:false, same clip box as v1 (framing verified pixel-close to original). Covers the entry point for 'Preparing a Document for Signature'.",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0

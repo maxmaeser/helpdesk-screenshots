@@ -1,5 +1,5 @@
 {
-  "revision": 1,
+  "revision": 2,
   "shots": {
     "marketing-audiences-prospects.png": {
       "status": "proposed",
@@ -9,8 +9,15 @@
       "rev": 0
     },
     "convert-action-dropdown.png": {
+      "status": "superseded",
+      "note": "SUPERSEDED by convert-action-dropdown-v2.png (2026-07-17 reshoot) -- this raw showed the staging-only 'Knowledge Base' sidebar item, which is never present in production. Marketing > Audiences, Prospects tab, two rows selected via checkboxes, bulk toolbar's More dropdown open showing Convert (2) / Validate Emails (2) / Delete (2). Illustrates the manual conversion step (Convert action) described in the article. Agent-captured 2026-07-17, viewport shrunk to 1680x650 CSS after opening the dropdown so the fixed-bottom toolbar sits close to the table (less dead space), 2x, dom-sanitize (freshenDates:false, same phone replacements as the other Audiences shot). Cursor points at the 'More' toolbar button.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "convert-action-dropdown-v2.png": {
       "status": "proposed",
-      "note": "Marketing > Audiences, Prospects tab, two rows selected via checkboxes, bulk toolbar's More dropdown open showing Convert (2) / Validate Emails (2) / Delete (2). Illustrates the manual conversion step (Convert action) described in the article. Agent-captured 2026-07-17, viewport shrunk to 1680x650 CSS after opening the dropdown so the fixed-bottom toolbar sits close to the table (less dead space), 2x, dom-sanitize (freshenDates:false, same phone replacements as the other Audiences shot). Cursor to be added in post pointing at 'Convert (2)'.",
+      "note": "Reshoot of convert-action-dropdown.png (2026-07-17) -- fixes the staging-only 'Knowledge Base' sidebar item being visible (hidden via DOM fix; not present in production). Same UI state: Marketing > Audiences, Prospects tab (View All brand context), two rows selected (Billy Smith, Joshua Radin-Grant) via checkboxes, bulk toolbar's More dropdown open showing Convert (2) / Validate Emails (2) / Delete (2). Agent-captured at 1680x650 CSS, 2x, dom-sanitize (freshenDates:false, pre-stripped +tag emails before sanitize, custom replacements for the two non-NANP phone formats the stock regex misses). Also hid the multi-brand picker row (contains 'Staging Test Brand') and the three test-artifact rows (Max Testing22, testing invalid fields, Testing New) to match the sibling orientation shot. Raw pixel dimensions (3360x1300) and final processed dimensions (1800x765) match the original exactly; cursor coordinate [2225,1178] (More button) reused verbatim and verified to land correctly.",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0

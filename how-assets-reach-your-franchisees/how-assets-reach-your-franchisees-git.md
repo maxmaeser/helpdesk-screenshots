@@ -43,7 +43,7 @@ When it is on, it reads "Visible to all franchisee organisations."
 
 A published collection shows a blue **Published** pill with a globe icon next to its name in the sidebar.
 
-![Library sidebar showing collections with the blue Published pill](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-assets-reach-your-franchisees/library-published-pills.png)
+![Library sidebar showing collections with the blue Published pill](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-assets-reach-your-franchisees/library-published-pills-v2.png)
 
 To share a collection with only certain franchisee organizations instead of all of them, use **Sharing and Permissions** from the same right-click menu.
 
@@ -55,7 +55,7 @@ You can also publish files one by one without using a collection.
 2. Select one or more assets using the checkboxes at the left of each row.
 3. Choose **Publish to Franchisees** from the actions that appear.
 
-![Library list with three assets selected and the Publish to Franchisees action open](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-assets-reach-your-franchisees/library-bulk-publish.png)
+![Library list with three assets selected and the Publish to Franchisees action open](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-assets-reach-your-franchisees/library-bulk-publish-v2.png)
 
 The **Published to Franchisees** filter at the top of the Library sidebar, marked with a globe icon, shows everything currently published brand-wide. Use it to confirm what your franchisees can see.
 

@@ -2,7 +2,7 @@ A deal in Franchise Systems Ai (FS Ai) represents a franchise opportunity tied t
 
 You find deals under **Sales → Pipeline**, then select the **Deals** tab.
 
-![Sales, Pipeline, Deals tab](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-deals/deals-nav-pipeline-v2.png)
+![Sales, Pipeline, Deals tab](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-deals/deals-nav-pipeline-v3.png)
 
 ### Deal Overview
 

@@ -32,7 +32,7 @@ A prospect becomes a lead in one of two ways: they complete signup through your 
 
 Either way, a new lead record is created in the pipeline, the prospect is removed from the marketing table, and their scheduled marketing emails are cancelled.
 
-![Selected prospects with the Convert action open in the bulk toolbar](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/leads-vs-marketing-audiences/convert-action-dropdown.png)
+![Selected prospects with the Convert action open in the bulk toolbar](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/leads-vs-marketing-audiences/convert-action-dropdown-v2.png)
 
 See *[Prospect to Lead Flow]* and *[Best Practices: Prospect vs. Lead]* for the full mechanics.
 

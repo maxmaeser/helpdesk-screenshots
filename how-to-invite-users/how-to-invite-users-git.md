@@ -8,7 +8,7 @@ Franchise Systems Ai (FS Ai) lets you invite team members to your organization v
 2. Open the **Organization** page and go to **Members**.
 3. Click **Invite Team Member** in the top right.
 
-![Team Admins section on the Members page with the Invite Team Member button in the top right](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-invite-users/invite-nav-members.png)
+![Team Admins section on the Members page with the Invite Team Member button in the top right](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-invite-users/invite-nav-members-v2.png)
 4. Select an **Access Level** for the new user:
    - **Admin**: Full permissions across the organization. Admins can invite other users, manage team members, and access all organization settings.
    - **Member**: Limited permissions. Members can be granted specific brand permissions after they accept the invitation.

@@ -1,37 +1,72 @@
 {
-  "revision": 1,
+  "revision": 2,
   "shots": {
     "workflows-tabs.png": {
-      "status": "proposed",
-      "note": "Workflows page, five tabs, Sequences default",
+      "status": "superseded",
+      "note": "Workflows page, five tabs, Sequences default. Superseded by workflows-tabs-v2.png (2026-07-17 reshoot: hid staging-only Knowledge Base sidebar item)",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 1
     },
     "workflows-content.png": {
-      "status": "proposed",
-      "note": "Content tab, email template list",
+      "status": "superseded",
+      "note": "Content tab, email template list. Superseded by workflows-content-v2.png (2026-07-17 reshoot: hid staging-only Knowledge Base sidebar item)",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0
     },
     "workflows-activate-toggle.png": {
-      "status": "proposed",
-      "note": "Sequence detail panel with Active? toggle",
+      "status": "superseded",
+      "note": "Sequence detail panel with Active? toggle. Superseded by workflows-activate-toggle-v2.png (2026-07-17 reshoot: hid staging-only Knowledge Base sidebar item)",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0
     },
     "workflows-trigger-picker.png": {
-      "status": "proposed",
-      "note": "Trigger event picker open on the sequence builder canvas",
+      "status": "superseded",
+      "note": "Trigger event picker open on the sequence builder canvas. Superseded by workflows-trigger-picker-v2.png (2026-07-17 reshoot: hid staging-only Knowledge Base sidebar item)",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0
     },
     "workflows-builder-canvas.png": {
+      "status": "superseded",
+      "note": "Trigger node connected to a Send Email action node. Superseded by workflows-builder-canvas-v2.png (2026-07-17 reshoot: hid staging-only Knowledge Base sidebar item)",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "workflows-tabs-v2.png": {
       "status": "proposed",
-      "note": "Trigger node connected to a Send Email action node",
+      "note": "Workflows page, five tabs, Sequences default. Reshoot of workflows-tabs.png: Knowledge Base sidebar item hidden (staging-only, isDevOrStaging()-gated)",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "workflows-content-v2.png": {
+      "status": "proposed",
+      "note": "Content tab, email template list. Reshoot of workflows-content.png: Knowledge Base sidebar item hidden (staging-only, isDevOrStaging()-gated)",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "workflows-activate-toggle-v2.png": {
+      "status": "proposed",
+      "note": "Sequence detail panel with Active? toggle. Reshoot of workflows-activate-toggle.png: Knowledge Base sidebar item hidden (staging-only, isDevOrStaging()-gated)",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "workflows-trigger-picker-v2.png": {
+      "status": "proposed",
+      "note": "Trigger event picker open on the sequence builder canvas. Reshoot of workflows-trigger-picker.png: Knowledge Base sidebar item hidden (staging-only, isDevOrStaging()-gated)",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "workflows-builder-canvas-v2.png": {
+      "status": "proposed",
+      "note": "Trigger node connected to a Send Email action node. Reshoot of workflows-builder-canvas.png: Knowledge Base sidebar item hidden (staging-only, isDevOrStaging()-gated)",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0

@@ -6,5 +6,13 @@
   "workflows-trigger-picker.png": {
     "cursor": [2406, 704],
     "type": "arrow"
+  },
+  "workflows-activate-toggle-v2.png": {
+    "cursor": [3102, 1254],
+    "type": "arrow"
+  },
+  "workflows-trigger-picker-v2.png": {
+    "cursor": [2324, 776],
+    "type": "arrow"
   }
 }

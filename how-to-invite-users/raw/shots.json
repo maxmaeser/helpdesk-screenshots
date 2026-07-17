@@ -1,9 +1,23 @@
 {
-  "revision": 1,
+  "revision": 2,
   "shots": {
     "invite-modal-v2.png": {
       "status": "used",
       "note": "Reshoot 2026-07-17 replacing the March invite-modal.png final, which showed a stale test org name ('Invite to DevOpsLtd') no longer present in the live seed. Live modal now reads 'Invite to Franchise Systems Ai'. Agent-captured: Settings > Organization > Members > Invite Team Member, clip tight to the [role=dialog] bounding box (no padding, to avoid the darkened page backdrop bleeding into the processed card). dom-sanitize with freshenDates:false (page's only day-count is the factual 'Valid for 7 days' copy, confirmed still accurate live -- not a stale artifact). No cursor -- empty form state, nothing to point at. Existing-invite placeholder uses a fake example.com address, no real PII.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "invite-nav-members.png": {
+      "status": "superseded",
+      "note": "Superseded 2026-07-17 by invite-nav-members-v2.png -- original showed a joke role title ('Franchise God' on Jonathan Whiteside). Kept for history only, no longer referenced by the article.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "invite-nav-members-v2.png": {
+      "status": "used",
+      "note": "Reshoot 2026-07-17 replacing invite-nav-members.png, whose Jonathan Whiteside row carried the joke title 'Franchise God'. Agent-captured: Settings > Organization > Members. The live Team Admins seed has grown to 10 rows (several with joke titles/avatars added since March: 'Flayer', 'Lemon Farmer', 'British Politician'). To reproduce the original 3-row framing without introducing new blemishes, all rows except Joshua Radin-Grant / Max Maeser / Jonathan Whiteside were client-side hidden (display:none, no staging data mutated) and reordered to match the original top-to-bottom order; Jonathan Whiteside's role chip text was DOM-swapped from 'Franchise God' to 'Franchise Director'. Clip is the full Team Admins card (header + Invite Team Member button + the 3 rows), matching the original shot's composition and alt text. dom-sanitize run twice (defensive re-run) -- redacted 2 stray emails elsewhere in the settings page text, no PII in the visible crop. Knowledge Base / Staging Test Brand not present in this crop but hidden defensively per the mandatory fixes. No cursor: the live card's header/first-row spacing is more compact than the March original, and the standard 200px hand-cursor overlay overlapped the first row's 'Last Activity' text at every position tried -- omitted rather than ship obscured text (same precedent as invite-modal-v2 above).",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0

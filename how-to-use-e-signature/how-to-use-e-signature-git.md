@@ -6,7 +6,7 @@ E-Signature lets you send documents for electronic signing directly from Franchi
 
 Upload your document to the **Library**. Once uploaded, open the asset details and use the e-signature option to create a signable template. DocuSeal processes the document and generates the fields (signature blocks, date fields, text inputs) that signers will complete.
 
-![eSignature menu on a Library asset showing Prepare eSignature and Generate eSignature link](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-use-e-signature/esig-library-menu.png)
+![eSignature menu on a Library asset showing Prepare eSignature and Generate eSignature link](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-use-e-signature/esig-library-menu-v2.png)
 
 ![DocuSeal template builder showing the field palette and a placed signature field on an FDD](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-use-e-signature/esig-prepare-fields.png)
 

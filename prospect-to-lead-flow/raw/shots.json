@@ -1,16 +1,30 @@
 {
-  "revision": 1,
+  "revision": 2,
   "shots": {
     "marketing-convert-menu.png": {
+      "status": "superseded",
+      "note": "SUPERSEDED by marketing-convert-menu-v2.png (2026-07-17): showed the 'Knowledge Base' sidebar item (staging-only, isDevOrStaging()-gated, never in production) and the 'Staging Test Brand' chip in the brand row. Original note: Marketing > Audiences (Prospects tab), Lumon Fresh brand selected. 3 prospects selected via checkboxes, bulk action bar open with the 'More' dropdown expanded showing Convert (3) / Validate Emails (3) / Delete (3). Supports 'Converting Prospects Manually'. Agent-captured 2026-07-17 at 1680x820 CSS viewport, 2x, headless Playwright, read-only (no Convert click). PII cleanup: emails/phones replaced with clean example.com / (555) 010-xxxx values derived per-row (custom targeted text-node replacement, not the generic sanitizer, which mangles plus-tagged emails via its phone regex); two test-artifact display names ('Max Testing22', 'Testing New') renamed to plausible names ('Max Chen', 'Alicia Novak'). Cursor: arrow on 'Convert (3)' menu item.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "marketing-convert-menu-v2.png": {
       "status": "proposed",
-      "note": "Marketing > Audiences (Prospects tab), Lumon Fresh brand selected. 3 prospects selected via checkboxes, bulk action bar open with the 'More' dropdown expanded showing Convert (3) / Validate Emails (3) / Delete (3). Supports 'Converting Prospects Manually'. Agent-captured 2026-07-17 at 1680x820 CSS viewport, 2x, headless Playwright, read-only (no Convert click). PII cleanup: emails/phones replaced with clean example.com / (555) 010-xxxx values derived per-row (custom targeted text-node replacement, not the generic sanitizer, which mangles plus-tagged emails via its phone regex); two test-artifact display names ('Max Testing22', 'Testing New') renamed to plausible names ('Max Chen', 'Alicia Novak'). Cursor: arrow on 'Convert (3)' menu item.",
+      "note": "Reshoot of marketing-convert-menu.png (2026-07-17) to hide staging-only chrome. Marketing > Audiences (Prospects tab), Lumon Fresh brand selected. 3 prospects selected via checkboxes, bulk action bar open with the 'More' dropdown expanded showing Convert (3) / Validate Emails (3) / Delete (3). Supports 'Converting Prospects Manually'. Agent-captured 2026-07-17 at 1680x820 CSS viewport, 2x, headless Playwright, read-only (no Convert click). DOM fixes: 'Knowledge Base' sidebar item hidden (display:none, safe); 'Staging Test Brand' brand chip hidden via visibility:hidden + pointer-events:none rather than display:none -- display:none on that specific chip was found to corrupt this app's brand-chip-row React state and silently drop ALL sibling brand chips (Lumon Fresh, Kharcho Kings, Circada, Khinkali Krew) on next render; visibility:hidden achieves the same 'not visible' outcome without the corruption (verified via isolated A/B capture). PII cleanup: emails/phones replaced with clean example.com / (555) 010-1XXX values per-row via exact-literal text-node replacement scoped to the correct table cell (custom targeted replacement, not the generic sanitizer, which mangles plus-tagged emails via its phone regex); two test-artifact display names ('Max Testing22', 'Testing New') renamed to plausible names ('Max Chen', 'Alicia Novak'). Cursor: arrow on 'Convert (3)' menu item (same coordinate as v1 -- identical layout).",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0
     },
     "pipeline-leads.png": {
+      "status": "superseded",
+      "note": "SUPERSEDED by pipeline-leads-v2.png (2026-07-17): showed the 'Knowledge Base' sidebar item (staging-only, isDevOrStaging()-gated, never in production) and the 'Staging Test Brand' chip in the brand row. Original note: Sales > Pipeline (Leads tab, default), Lumon Fresh brand selected. Shows the lead table destination for converted prospects. Supports 'After Conversion'. Agent-captured 2026-07-17 at 1680x820 CSS viewport, 2x, headless Playwright, read-only. Cleanup: repeated/garbled staging lead names (duplicate 'Joshua Radin-Grant' entries, typo/test artifacts like 'Nathannn Test QAaaa') replaced with a rotating pool of plausible distinct names via DOM text-node swap; first occurrence of any name left untouched. Assigned To column (internal rep names, not customer data) left as-is. No cursor -- read-only orientation state.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "pipeline-leads-v2.png": {
       "status": "proposed",
-      "note": "Sales > Pipeline (Leads tab, default), Lumon Fresh brand selected. Shows the lead table destination for converted prospects. Supports 'After Conversion'. Agent-captured 2026-07-17 at 1680x820 CSS viewport, 2x, headless Playwright, read-only. Cleanup: repeated/garbled staging lead names (duplicate 'Joshua Radin-Grant' entries, typo/test artifacts like 'Nathannn Test QAaaa') replaced with a rotating pool of plausible distinct names via DOM text-node swap; first occurrence of any name left untouched. Assigned To column (internal rep names, not customer data) left as-is. No cursor -- read-only orientation state.",
+      "note": "Reshoot of pipeline-leads.png (2026-07-17) to hide staging-only chrome. Sales > Pipeline (Leads tab, default), Lumon Fresh brand selected. Shows the lead table destination for converted prospects. Supports 'After Conversion'. Agent-captured 2026-07-17 at 1680x820 CSS viewport, 2x, headless Playwright, read-only. DOM fixes: 'Knowledge Base' sidebar item hidden (display:none, safe); 'Staging Test Brand' brand chip hidden via visibility:hidden + pointer-events:none (see marketing-convert-menu-v2.png note for why display:none broke sibling brand chips on this app). Cleanup: repeated/garbled staging lead names (duplicate 'Joshua Radin-Grant' entries, typo/test artifacts like 'Nathannn Test QAaaa', 'Joshuaaaaaa Raidinnn') replaced with a rotating pool of plausible distinct names ('Priya Anand', 'Marcus Webb', 'Dana Okafor', 'Leah Fischer', 'Trevor Diaz') via exact-literal text-node replacement scoped to the name cell only (avoids bleeding into the 'Funnel' badge or the Assigned To column, which legitimately repeats 'Joshua Radin-Grant' as an assignee in some of the same rows); first occurrence of any name left untouched. Assigned To column (internal rep names, not customer data) left as-is. No cursor -- read-only orientation state.",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0
