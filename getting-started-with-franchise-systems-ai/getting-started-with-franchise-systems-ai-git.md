@@ -27,9 +27,13 @@ The brand dashboard is divided into several areas, accessible from the left side
 - **Studio**: build and customize your applicant and franchisee portals, forms, link tracking, and more.
 - **Library**: store and organize documents and files.
 
+![Brand dashboard home page showing the left sidebar with Home, Marketing, Sales, Operations, Projects, Brand, Studio, and Library, plus the brand selector bar and Overview tab](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/getting-started-with-franchise-systems-ai/dashboard-sidebar.png)
+
 > **Where is Settings?** Settings is not a sidebar item: open it by clicking your profile picture at the bottom of the sidebar.
 
 Settings is grouped into **Account** (your profile, notifications, and calendar), **Organization** (members, brands, API keys, and billing), and **Brand** (each brand's profile, appearance, scheduling, team, and connections).
+
+![Settings page showing the Account, Organization, and Brand groups in the left navigation, with the Profile page open on the right](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/getting-started-with-franchise-systems-ai/settings-scopes.png)
 
 ### Your first steps
 

@@ -1,0 +1,19 @@
+{
+  "revision": 0,
+  "shots": {
+    "brand-switcher.png": {
+      "status": "proposed",
+      "note": "Shared raw with what-is-an-organization and what-is-multi-tenancy",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "brand-profile.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

@@ -29,6 +29,13 @@
       "editing": false,
       "rev": 0
     },
+    "profile-assignability-v2.png": {
+      "status": "proposed",
+      "note": "Recaptured 2026-07-17 to hide the Staging Test Brand row (blemish fix); supersedes profile-assignability.png",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
     "profile-preferences.png": {
       "status": "proposed",
       "note": "",

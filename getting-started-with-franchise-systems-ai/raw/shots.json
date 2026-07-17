@@ -1,0 +1,19 @@
+{
+  "revision": 0,
+  "shots": {
+    "dashboard-sidebar.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "settings-scopes.png": {
+      "status": "proposed",
+      "note": "Same raw as setting-up-your-profile/raw/settings-scopes-nav.png, reprocessed for this article's own image URL",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}
