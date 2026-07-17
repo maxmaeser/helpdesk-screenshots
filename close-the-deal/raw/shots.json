@@ -1,0 +1,12 @@
+{
+  "revision": 0,
+  "shots": {
+    "close-the-deal-overview.png": {
+      "status": "proposed",
+      "note": "Orientation shot for the Close the Deal series hub. Lead panel Deal tab (Deal 20, Maximilian Maser -- Demo, Max's own demo lead) on Sales > Pipeline > Leads, Lumon Fresh brand. Shows Deal Overview (#020, Multi Unit Development, In Review), Documents & Signatures, Deal Zone header and Convert To Franchisee, with the leads table as left context. Captured 2026-07-17 at 2x, clip 1050x984 CSS from x630/y66. No cursor -- read-only state shot. Sanitizer ran clean (0 replacements); background rows are staging test data.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

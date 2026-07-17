@@ -1,5 +1,5 @@
 {
-  "revision": 0,
+  "revision": 14,
   "shots": {
     "calendar-settings-connected.png": {
       "cursor": {
@@ -9,18 +9,41 @@
         ],
         "type": "arrow"
       },
-      "status": "proposed",
+      "highlights": [],
+      "status": "approved",
       "note": "",
-      "lastTouchedBy": "claude",
+      "lastTouchedBy": "max",
       "editing": false,
-      "rev": 0
+      "rev": 4,
+      "renderedRev": 3
     },
     "calendar-settings-event-types-tab.png": {
-      "status": "proposed",
+      "highlights": [
+        {
+          "rect": [
+            605,
+            502,
+            472,
+            147
+          ],
+          "style": "outline"
+        },
+        {
+          "style": "outline",
+          "rect": [
+            804,
+            629,
+            472,
+            119
+          ]
+        }
+      ],
+      "status": "adjusted",
       "note": "",
-      "lastTouchedBy": "claude",
+      "lastTouchedBy": "max",
       "editing": false,
-      "rev": 0
+      "rev": 5,
+      "renderedRev": 5
     }
   }
 }

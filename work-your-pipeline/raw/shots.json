@@ -1,0 +1,12 @@
+{
+  "revision": 0,
+  "shots": {
+    "work-your-pipeline-overview.png": {
+      "status": "proposed",
+      "note": "Orientation shot for the Work Your Pipeline series hub. Sales > Pipeline > Leads tab, Lumon Fresh brand selected (1 Selected), full 1680x1050 viewport at 2x, 17 lead rows visible, Total Leads: 46. Agent-captured 2026-07-17, dom-sanitize run twice pre-shot (0 emails/phones/dates needed replacing; all data is staging test personas). No cursor: read-only orientation state.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

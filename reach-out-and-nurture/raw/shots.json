@@ -1,0 +1,12 @@
+{
+  "revision": 0,
+  "shots": {
+    "reach-out-and-nurture-overview.png": {
+      "status": "proposed",
+      "note": "Series-hub orientation shot: Marketing > Workflows, Sequences tab, Lumon Fresh selected. Captured 2026-07-17 at 1440x480 CSS (2x) with full chrome (sidebar + header) per house automations-list framing. No cursor (orientation/state shot). Sequences is the only Lumon Marketing surface free of junk/real-customer copy: the email templates contain 'Taco Haven / DUMMY' test copy and a real taim customer email; Automations has 1 draft. Sanitized (0 hits, page is PII-free).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

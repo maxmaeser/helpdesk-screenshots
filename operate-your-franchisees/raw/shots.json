@@ -1,0 +1,13 @@
+{
+  "revision": 0,
+  "shots": {
+    "operate-your-franchisees-overview.png": {
+      "cursor": null,
+      "status": "proposed",
+      "note": "Wide orientation shot for the Operate Your Franchisees series hub. Operations > Locations list, Lumon Fresh brand selected, Total Locations: 20. Captured 2026-07-17 at 1440x975 CSS (2x) via bespoke Playwright; dom-sanitize run twice (9 phones replaced) plus a custom rule for the non-NANP staging number 09887112344; Missing Booking Profile badge hidden; bottom clipped at a clean row boundary after Dallas Lumon 2. No cursor: read-only orientation state.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}
