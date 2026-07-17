@@ -41,9 +41,9 @@ Franchise regulations vary by state, and you may need different FDD versions for
 
 ![Two states selected on the Compliance tab with the Bulk Assign FDD asset picker open](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-territories/territories-bulk-assign-fdd-v2.png)
 
-### ~~Searching and Filtering~~
+### Searching States
 
-~~The territories table supports searching by state name and filtering by filing status. You can sort by any column to quickly identify states that need attention, such as those with upcoming renewal deadlines or incomplete filings.~~
+Use the **Search States** box above the state list to find a state by name.
 
 ## Deal Zones
 
