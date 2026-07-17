@@ -1,16 +1,30 @@
 {
-  "revision": 0,
+  "revision": 1,
   "shots": {
     "import-dropdown-menu.png": {
       "cursor": {
         "pos": [
-          618,
-          172
+          1010,
+          170
         ],
         "type": "arrow"
       },
       "status": "proposed",
-      "note": "",
+      "note": "Re-pointed at the Import trigger row (was overlapping Import from CSV text); reprocessed as import-dropdown-menu-v2.png (old final left in place, unreferenced, per CDN cache rule)",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 1
+    },
+    "audiences-import-menu.png": {
+      "cursor": {
+        "pos": [
+          3160,
+          218
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "Marketing > Audiences Actions > Import submenu, sanitized",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0

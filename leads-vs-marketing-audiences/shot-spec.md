@@ -1,9 +1,11 @@
 # Shot Spec: Leads vs. Marketing Audiences
 
-| # | Shot | UI state to set up | Cursor | Filename | Width |
+LEAN pass (2026-07-17): conceptual article, kept to the 3 shots that orient the reader on the two tables and the one named UI action (Convert). Raws reused from `best-practices-prospect-vs-lead/raw/` (identical UI states, same brand/session, already dom-sanitized) rather than recaptured.
+
+| # | Shot | UI state | Cursor | Filename | Width |
 |---|---|---|---|---|---|
-| 1 | Sales leads table (pipeline view) | Navigate to **Sales → Pipeline**, Leads tab. Filter by brand: select Lumon Fresh only. Scroll to show full width with at least 3 columns visible (Status, Progress, City, Assigned To). Do NOT include Email or Phone columns in the crop. | none | `sales-pipeline-leads.png` | ~840 CSS |
-| 2 | Marketing prospects table (outreach view) | Navigate to **Marketing → Audiences**, Prospects tab. Filter by brand: select Lumon Fresh only. Scroll to show Email, Verification, Phone, and Source columns. Include at least 2–3 rows with blue "Imported" segment chips visible. | none | `marketing-audiences-prospects.png` | ~840 CSS |
-| 3 | Prospect row with Imported chip (close crop) | Navigate to **Marketing → Audiences**, Prospects tab, Lumon Fresh. Scroll to or locate a prospect row with an "Imported" segment chip. Crop tightly to show just that row, with the Imported chip visible next to the Verification status column. | none | `prospect-imported-segment.png` | ~840 CSS |
-| 4 | Convert action dropdown open | Navigate to **Marketing → Audiences**, Prospects tab, Lumon Fresh. Select one or more prospect rows via the checkboxes on the left. Click the black "Actions" dropdown button to open it and reveal the Convert / Convert All options. | arrow on Actions button | `convert-action-dropdown.png` | ~840 CSS |
-| 5 | Welcome sequence with status chip (optional) | Navigate to **Sales → Workflows**, Sequences tab. Locate a welcome sequence row showing either a Draft or Active status chip. Include at least 1 sequence in view. If space in the article is tight, this shot is lower priority. | none | `workflows-welcome-sequence-status.png` | ~840 CSS |
+| 1 | Marketing Audiences table (prospect columns) | **Marketing → Audiences**, Prospects tab. Shows Email, Verification, Phone, Source columns. | none | `marketing-audiences-prospects.png` | ~900 CSS |
+| 2 | Sales Pipeline table (lead columns) | **Sales → Pipeline**, Leads tab. Shows Status, Progress, City, Assigned To columns. | none | `sales-pipeline-leads.png` | ~900 CSS |
+| 3 | Convert action open | **Marketing → Audiences**, Prospects tab, 2 rows selected, bulk toolbar's More dropdown open showing Convert (2). | arrow on the More trigger | `convert-action-dropdown.png` | ~900 CSS |
+
+Dropped from an earlier draft of this spec (over-shooting for a conceptual article): a close crop of the Imported segment chip, and a Draft/Active workflow status chip. Neither is essential to orient the reader beyond what the two table shots already establish; the article's prose carries those rules fine on its own.

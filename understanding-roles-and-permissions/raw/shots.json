@@ -1,0 +1,19 @@
+{
+  "revision": 1,
+  "shots": {
+    "members-access-levels.png": {
+      "status": "proposed",
+      "note": "Organization Settings > Members page, Team Admins section. Agent-captured 2026-07-17, brand dashboard (staging.app.franchisesystems.ai), 1680x1050 CSS viewport, 2x, dom-sanitize freshenDates:auto. Cropped to the heading + first three rows (CTO / Intern / COO job title chips) to avoid the seed data's joke job titles further down the list (Flayer, Lemon Farmer, British Politician, Franchise God). No cursor -- read-only orientation state showing the Team Admins grouping and free-text job title chips referenced in the article.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "brand-team-role-list.png": {
+      "status": "proposed",
+      "note": "Brand Settings > Team & Access page, Brand Team list with a role dropdown open showing all RACI role options (No role checked, Brand Marketing Manager through VP Franchise Development). Agent-captured 2026-07-17, same route/viewport, dom-sanitize freshenDates:auto. No cursor: per screenshots/CLAUDE.md dropdown rule (cursor belongs on the trigger, never inside the open menu) and the trigger for this row is hidden behind the open menu in this crop, so cursor was omitted rather than placed on top of an option.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

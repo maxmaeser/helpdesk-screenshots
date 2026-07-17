@@ -1,0 +1,19 @@
+{
+  "revision": 1,
+  "shots": {
+    "email-domain-purposes.png": {
+      "status": "proposed",
+      "note": "Brand Settings > Profile > Domain Management, domain panel for mail.lumonfresh.com (Lumon Fresh brand) with Advanced > Purposes expanded and scrolled to show all 7 purpose toggles (Cold Outreach Non-Consensual + 6 Consensual warm purposes) plus the 'Multiple Purposes Selected' isolation advisory banner. Illustrates the article's core Cold vs Warm domain-purpose concept directly. Agent-captured 2026-07-17, 1680x1050 CSS viewport, 2x, dom-sanitize with freshenDates:false. Cosmetic fixes: renamed the seed domain from 'email-testing.franchiseapplicantportal.com' to 'mail.lumonfresh.com' and the display name from 'Staging Outreach' to 'Lumon Fresh Newsletter' (both test-y seed-data blemishes, no feature fabrication). No cursor -- read-only orientation state.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "email-sending-methods.png": {
+      "status": "proposed",
+      "note": "Marketing > Workflows page, Lumon Fresh brand, default Sequences tab showing the 5-tab bar (Sequences, Automations, Runs, Content, Analytics) and one sequence row. Illustrates the article's 'two ways to send email' (Bulk sends via Sequences, Automations via the Automations tab). Agent-captured 2026-07-17, 1680x900 CSS clip, 2x, dom-sanitize with freshenDates:false. Cosmetic fix: renamed the seed sequence name from 'Test Workflow' to 'Welcome Sequence' (test-y identifier, no feature fabrication). No cursor -- read-only orientation state.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

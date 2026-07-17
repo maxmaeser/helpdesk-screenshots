@@ -1,0 +1,26 @@
+{
+  "revision": 1,
+  "shots": {
+    "multi-brand-selector-raw.png": {
+      "status": "proposed",
+      "note": "Multi-brand section example: Sales > Pipeline (Leads tab), section=sales-list (multiselect per code). Shows View All button, individual brand toggle chips, Other Brands count badge, and the 'All Selected' aggregation chip. Agent-captured 2026-07-17 at 1680x305 CSS clip (cuts off before the leads table's data rows to avoid any customer/staff names), 2x, dom-sanitize with freshenDates:false. No cursor -- read-only orientation state showing the selected/toggled states themselves.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "other-brands-dropdown-raw.png": {
+      "status": "proposed",
+      "note": "Switching/reordering entry point: Other Brands dropdown open on the same Sales Pipeline multiselect bar, showing Search Brands input, the 3 overflow brand chips, 'Total Brands: 3' and the Edit Order control. Same clip/sanitize config as multi-brand-selector-raw. Cursor will be added in post on the Edit Order link (hand) to cue it's clickable.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "single-brand-selector-raw.png": {
+      "status": "proposed",
+      "note": "Single-brand section example: Settings > Brands (Brand Settings page), section=brand-workspace (single-select per code). Shows the active/highlighted brand chip, sibling brand chips, Other Brands dropdown trigger, and the 'Single Brand Selector' tag. Agent-captured 2026-07-17 at 1680x200 CSS clip (cuts before a 'Missing required information' CAN-SPAM warning banner on this seed brand, unrelated to the article topic), 2x, dom-sanitize with freshenDates:false (sanitized 2 emails elsewhere in the settings sidebar/page chrome). Blemish fix: the default active brand was named 'Staging Test Brand' (seed placeholder) -- renamed via DOM text-node swap to 'Saperavi Grill' (thematically consistent with the other Georgian-food seed brand names already visible: Lumon Fresh, Kharcho Kings) to avoid featuring an obvious test-data label as the article's example brand. No feature/data fabricated, only the display label. No cursor -- read-only orientation state.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

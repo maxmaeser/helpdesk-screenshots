@@ -1,16 +1,32 @@
 {
-  "revision": 0,
+  "revision": 1,
   "shots": {
     "billing-nav-organization.png": {
       "cursor": {
-        "pos": [
-          60,
-          1142
-        ],
+        "pos": [60, 1142],
+        "type": "arrow"
+      },
+      "status": "approved",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "billing-subscription-brands.png": {
+      "cursor": null,
+      "status": "proposed",
+      "note": "Subscription + Brands sections, Franchise Systems Ai org (no active subscription in staging, shown honestly)",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "billing-invoices-section.png": {
+      "cursor": {
+        "pos": [470, 430],
         "type": "arrow"
       },
       "status": "proposed",
-      "note": "",
+      "note": "Invoices table (empty state, staging org has no invoices) + Open Billing Management button",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0

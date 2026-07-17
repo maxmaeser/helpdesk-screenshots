@@ -1,0 +1,26 @@
+{
+  "revision": 1,
+  "shots": {
+    "marketing-audiences-prospects.png": {
+      "status": "proposed",
+      "note": "Marketing > Audiences, Prospects tab. Orients the reader on where prospects live. Agent-captured 2026-07-17 at 1680x500 CSS clip, 2x, dom-sanitize (freshenDates:false, custom replacements for two non-NANP phone formats the stock regex missed). Pre-stripped plus-tag emails (name+123@domain) before sanitize to avoid the phone regex mis-matching the +digits suffix and corrupting the email. Hid the unselected 'Staging Test Brand' pill and three test-artifact rows (Max Testing22, testing invalid fields, Testing New) via page.evaluate display:none -- no fabricated data, just seed-data blemish cleanup. No cursor -- read-only orientation state.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "convert-action-dropdown.png": {
+      "status": "proposed",
+      "note": "Marketing > Audiences, Prospects tab, two rows selected via checkboxes, bulk toolbar's More dropdown open showing Convert (2) / Validate Emails (2) / Delete (2). Illustrates the manual conversion step (Convert action) described in the article. Agent-captured 2026-07-17, viewport shrunk to 1680x650 CSS after opening the dropdown so the fixed-bottom toolbar sits close to the table (less dead space), 2x, dom-sanitize (freshenDates:false, same phone replacements as the other Audiences shot). Cursor to be added in post pointing at 'Convert (2)'.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "sales-pipeline-leads.png": {
+      "status": "proposed",
+      "note": "Sales > Pipeline, Leads tab (default). Orients the reader on where leads live. Scrolled the virtualized table to a clean contiguous block of seed rows (Christine Huang through Natalie Cobel) that have real-sounding names, varied custom statuses, and no test-artifact names or Max Maeser/real-name Assigned To chips. Agent-captured 2026-07-17 at 1680x555 CSS clip, 2x, dom-sanitize (freshenDates:false). No cursor -- read-only orientation state.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

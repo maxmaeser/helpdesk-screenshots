@@ -1,0 +1,19 @@
+{
+  "revision": 1,
+  "shots": {
+    "audiences-export-selected.png": {
+      "status": "proposed",
+      "note": "Marketing > Audiences (Prospects tab). 3 prospect rows selected (Shawn Martinez / Jennifer Liu / Brandon Bean), Actions dropdown open showing 'Export (3)' hovered. Agent-captured 2026-07-17 on staging (Lumon Fresh org's shared multi-brand seed), 1680x1050 CSS viewport, 2x, dom-sanitize with freshenDates:auto plus custom replacements for two seed-data leak shapes the stock regexes missed: a fused 'name(720) 555-0142@domain' artifact and bare non-NANP phone digit runs (leading-0 11-digit, oddly-grouped 11-digit dash strings). Cursor: arrow on the 'Export (3)' menu item.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "pipeline-export-selected.png": {
+      "status": "proposed",
+      "note": "Sales > Pipeline (Leads tab). 3 lead rows selected (Jordan Ellis / Jonathan Whiteman / Nathan Minkhorst, chosen to avoid junk-named seed rows like 'Testinjg Imported' / 'okkkk'), Actions dropdown open showing 'Export (3)' hovered. Agent-captured 2026-07-17 on staging, same viewport/sanitize config as the Audiences shot. Cursor: arrow on the 'Export (3)' menu item.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

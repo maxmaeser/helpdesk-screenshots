@@ -1,0 +1,19 @@
+{
+  "revision": 1,
+  "shots": {
+    "marketing-convert-menu.png": {
+      "status": "proposed",
+      "note": "Marketing > Audiences (Prospects tab), Lumon Fresh brand selected. 3 prospects selected via checkboxes, bulk action bar open with the 'More' dropdown expanded showing Convert (3) / Validate Emails (3) / Delete (3). Supports 'Converting Prospects Manually'. Agent-captured 2026-07-17 at 1680x820 CSS viewport, 2x, headless Playwright, read-only (no Convert click). PII cleanup: emails/phones replaced with clean example.com / (555) 010-xxxx values derived per-row (custom targeted text-node replacement, not the generic sanitizer, which mangles plus-tagged emails via its phone regex); two test-artifact display names ('Max Testing22', 'Testing New') renamed to plausible names ('Max Chen', 'Alicia Novak'). Cursor: arrow on 'Convert (3)' menu item.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "pipeline-leads.png": {
+      "status": "proposed",
+      "note": "Sales > Pipeline (Leads tab, default), Lumon Fresh brand selected. Shows the lead table destination for converted prospects. Supports 'After Conversion'. Agent-captured 2026-07-17 at 1680x820 CSS viewport, 2x, headless Playwright, read-only. Cleanup: repeated/garbled staging lead names (duplicate 'Joshua Radin-Grant' entries, typo/test artifacts like 'Nathannn Test QAaaa') replaced with a rotating pool of plausible distinct names via DOM text-node swap; first occurrence of any name left untouched. Assigned To column (internal rep names, not customer data) left as-is. No cursor -- read-only orientation state.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

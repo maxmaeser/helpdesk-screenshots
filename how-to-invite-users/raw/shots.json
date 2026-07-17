@@ -1,0 +1,12 @@
+{
+  "revision": 1,
+  "shots": {
+    "invite-modal-v2.png": {
+      "status": "used",
+      "note": "Reshoot 2026-07-17 replacing the March invite-modal.png final, which showed a stale test org name ('Invite to DevOpsLtd') no longer present in the live seed. Live modal now reads 'Invite to Franchise Systems Ai'. Agent-captured: Settings > Organization > Members > Invite Team Member, clip tight to the [role=dialog] bounding box (no padding, to avoid the darkened page backdrop bleeding into the processed card). dom-sanitize with freshenDates:false (page's only day-count is the factual 'Valid for 7 days' copy, confirmed still accurate live -- not a stale artifact). No cursor -- empty form state, nothing to point at. Existing-invite placeholder uses a fake example.com address, no real PII.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

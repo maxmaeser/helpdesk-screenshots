@@ -1,0 +1,26 @@
+{
+  "revision": 1,
+  "shots": {
+    "domains-management-overview.png": {
+      "status": "proposed",
+      "note": "Brand dashboard, Settings > Brand > Domain Management card. Lumon Fresh brand, existing connected domain (email-testing.franchiseapplicantportal.com) showing Active / Verified / All Purposes badges plus the Connect Domain button. Orients the reader on 'What Is an Email Domain?' and 'Domain Purposes'. Agent-captured 2026-07-17 at CSS clip (442,712,1036,206) within a 1680x1050 viewport, 2x, dom-sanitize with freshenDates:false (page has no relevant relative dates). No cursor -- orientation/results state, not a click target.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "domains-add-domain-form.png": {
+      "status": "proposed",
+      "note": "Connect Domain flow, Step 0 ('Add your sending domain'), Advanced accordion expanded. Shows the Domain field, cold-outreach toggle, all 7 Purpose checkboxes, Email local-part field, Display Name (brand default 'Lumon Fresh'), and Reply-To Strategy = Static Email. Form was opened and populated with its own defaults; NOT submitted (staging read-only rule -- no domain was created). Covers 'Adding a New Domain' steps 2-5 and 'Domain Purposes'. Agent-captured 2026-07-17, CSS clip (452,138,776,890) in a 1680x1050 viewport, 2x, dom-sanitize freshenDates:false. No cursor -- filled-form/result state.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "domains-manage-detail.png": {
+      "status": "proposed",
+      "note": "Manage drawer for the existing verified domain: Domain Connected Successfully banner, Active toggle, Email Settings (Email, Display Name, Reply-To Strategy = Assigned Sales Rep with the Dynamic Reply-To Active blurb), Recipient Inbox Preview. Covers 'Reply-To Settings' (Assigned Rep variant, contrasts with the Static Email default seen in the add-domain form) and the connected-domain state referenced in 'Domain Health'. Cosmetic fix: the domain's seed display name 'Staging Outreach' read test-y for a customer-facing article -- renamed via DOM text/value swap to 'Lumon Fresh News' (no feature or state fabricated, only the sample sender label). Agent-captured 2026-07-17, CSS clip (823,73,844,785) in a 1680x1050 viewport, 2x, dom-sanitize freshenDates:false. No cursor -- result/state view.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

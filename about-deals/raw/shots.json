@@ -1,0 +1,12 @@
+{
+  "revision": 1,
+  "shots": {
+    "deals-nav-pipeline-v2.png": {
+      "status": "proposed",
+      "note": "Reshoot 2026-07-17 of the Sales > Pipeline > Deals-tab orientation shot. Original deals-nav-pipeline.png (Apr 16) showed an unhidden 'Staging Test Brand' chip in the brand switcher -- disallowed seed-data blemish. Same technique as set-up-your-brand-and-team-overview-v2: chip hidden via display:none (not renamed) to avoid an icon/label mismatch. Cropped to 760x700 CSS (1520x1400 raw @2x) to exclude the newer 'Lead' column (added to the Deals table since April), which now surfaces seed lead names not relevant to this shot. dom-sanitize run with freshenDates:false. Cursor arrow on the Deals tab.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

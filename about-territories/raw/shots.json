@@ -1,0 +1,34 @@
+{
+  "revision": 0,
+  "shots": {
+    "territories-compliance.png": {
+      "status": "proposed",
+      "note": "Sales > Territories, Compliance tab (default), Lumon Fresh selected in the Single Brand Selector. State list (flag, filing status badges, deal count) beside the interactive map. Agent-captured 2026-07-17 at 1680x1050 CSS viewport, 2x, full sidebar+navbar included per current operator-shot convention. Cosmetic fix: hid the unselected 'Staging Test Brand' chip (display:none) so only real-looking brands show. dom-sanitize with freshenDates:false. No cursor -- read-only orientation state.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "territories-bulk-assign-fdd.png": {
+      "cursor": {
+        "pos": [1052, 2026],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "Compliance tab, Texas + Colorado selected via row checkboxes, 'Assign FDD' bulk-toolbar button clicked to open the FDD asset picker. Agent-captured 2026-07-17. Cosmetic fixes: hid 'Staging Test Brand' chip; renamed 3 seed FDD asset filenames ('best_fdd_ever', 'kbv-syd-boarding-pass.pdf', 'my-bus-ticket.pdf' -> Lumon_Fresh_FDD_2026.pdf / _2025.pdf / _Amendment.pdf) via DOM text swap -- no feature or state fabricated, only filename text. dom-sanitize with freshenDates:false. Cursor on the Assign FDD trigger button (not the open picker), per dropdown convention.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "territories-deal-zones.png": {
+      "cursor": {
+        "pos": [3172, 472],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "Deal Zones tab, Lumon Fresh selected. Zone list (state flag, zone name, assigned entity, deal count X/Y) beside the map with highlighted zone shapes; 'Draw Deal Zone' button top right. Agent-captured 2026-07-17. Cosmetic fixes: hid 'Staging Test Brand' chip; renamed test-y seed zone/entity names ('Sonething'->Denver Foothills, 'new'->Boulder Corridor, 'NO'->Austin Metro, 'Test'->Denver Central, 'Signup! Testing'/'Maximilian Mäser -- Demo'->Rocky Mountain Holdings, 'Email Me'->Peachtree Ventures) via DOM text swap on exact/substring matches -- counts, structure, and 'Unassigned' rows (a real product state) left untouched. dom-sanitize with freshenDates:false. Cursor on Draw Deal Zone button (referenced by the 'Creating a Deal Zone' how-to, not activated -- entering draw mode needs no click to convey the entry point).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

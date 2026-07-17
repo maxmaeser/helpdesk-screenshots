@@ -1,0 +1,40 @@
+{
+  "revision": 1,
+  "shots": {
+    "fdd-toggle-menu.png": {
+      "status": "proposed",
+      "note": "Library, Lumon Fresh brand: kebab menu open on Lumon-Industries-FDD-2026.pdf showing 'Set is FDD'. Covers 'Uploading an FDD'. Agent-captured 2026-07-17, 1680x1050 CSS viewport, 2x, dom-sanitize. Cosmetic: hid unselected 'Staging Test Brand' chip. Cursor: arrow on 'Set is FDD'.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "fdd-prepare-esignature-menu.png": {
+      "status": "proposed",
+      "note": "Same asset kebab menu, eSignature submenu open showing 'Prepare eSignature' / 'Generate eSignature link'. Covers 'Preparing an FDD for e-signature'. Same capture session as fdd-toggle-menu.png. Cursor: arrow on 'Prepare eSignature'.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "fdd-bulk-assign-states.png": {
+      "status": "proposed",
+      "note": "Sales > Territories (Compliance tab), Lumon Fresh: Texas + Colorado checked, bulk action bar showing '2 selected / Set Status / Assign FDD'. Covers 'Assigning FDDs to states'. dom-sanitize, 'Staging Test Brand' chip hidden. Cursor: arrow on 'Assign FDD'.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "fdd-state-filing-status.png": {
+      "status": "proposed",
+      "note": "Territories > Texas state detail panel, Details tab: Franchise Disclosure Document card + Registration Information (FDD Filing Required, FDD Filing Date, Registration Date, Submit FDD Renewal, Expiration Date, Governing Agency). Covers 'Tracking filing status'. dom-sanitize with freshenDates:false (page has no relative-time chips; freshenDates was mangling the Renewal Fee/Period '6 Months' dropdown into '2 days' -- confirmed bug, avoided). Cosmetic: renamed joke placeholder FDD filename 'best_fdd_ever' to 'Lumon-Industries-FDD-2026.pdf' to match the asset used elsewhere in the article. No cursor -- read-only state.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "fdd-send-for-signature.png": {
+      "status": "proposed",
+      "note": "Sales > Deals > Deal 20 (Lumon Fresh) > Entity Members: two applicants, one already 'Awaiting Signature...' with Resend FDD, one fresh with 'Send FDD for signature' button -- exact article wording. Covers 'Sending an FDD for signature'. dom-sanitize freshenDates:false. Cursor: arrow on 'Send FDD for signature'.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

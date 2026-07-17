@@ -1,0 +1,34 @@
+{
+  "revision": 0,
+  "shots": {
+    "payment-profile-menu-settings.png": {
+      "cursor": {
+        "pos": [66, 186],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "Profile menu open (bottom of sidebar), Settings item. Agent-captured 2026-07-17, brand dashboard, dom-sanitize with freshenDates:false (no dates on this popover). Tight crop to just the popover, matching the convention in setting-up-your-profile/profile-menu-settings.png.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "payment-billing-org-selector.png": {
+      "status": "proposed",
+      "note": "Settings > Organization > Billing page, top: org selector chip, Subscription card, and start of Brands list. Agent-captured 2026-07-17, dom-sanitize freshenDates:false (no relative dates on page). Blemish fix: hid the seed-data 'Staging Test Brand' row from the Brands list (display:none), no fabricated data. No cursor -- read-only orientation state. Account only has one organization, so the org chip has no dropdown to demonstrate step 3's multi-org case; noted as a gap.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "payment-billing-open-management.png": {
+      "cursor": {
+        "pos": [956, 696],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "Bottom of the Billing page: Invoices card and the Open Billing Management button. Agent-captured 2026-07-17, dom-sanitize freshenDates:false. Staging seed has no subscription/invoices, so both tables read 'No Subscription Found' / 'No Invoices Found' -- genuine empty states, not fabricated.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

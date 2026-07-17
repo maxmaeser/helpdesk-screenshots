@@ -1,0 +1,26 @@
+{
+  "revision": 1,
+  "shots": {
+    "esig-library-menu.png": {
+      "status": "proposed",
+      "note": "Library > Lumon-Industries-FDD-2026.pdf row, kebab menu open, eSignature submenu expanded showing 'Prepare eSignature' and 'Generate eSignature link'. Agent-captured 2026-07-17, 1680x1050 CSS viewport, 2x, dom-sanitize with freshenDates:false. No cursor -- open-menu state speaks for itself. Covers the entry point for 'Preparing a Document for Signature'.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "esig-prepare-fields.png": {
+      "status": "proposed",
+      "note": "Result of clicking 'Prepare eSignature': live DocuSeal template-builder embed on the same FDD PDF, showing the Signature/Text/Date/Number field palette and a placed signature field. DocuSeal's own 'Developer Sandbox / Upgrade to Production' banner was hidden via page.evaluate (display:none) -- third-party SaaS chrome unrelated to the FSAI feature being documented, not a fabricated state. Agent-captured 2026-07-17, 1680x1050 CSS viewport, 2x, dom-sanitize freshenDates:false, then PIL-cropped to remove sidebar/nav. Covers 'Preparing a Document for Signature'.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "esig-fdd-step-settings.png": {
+      "status": "proposed",
+      "note": "Portal editor (Studio > Applicant Portal), 'Your Franchise Disclosure Document' Sign step selected, Step panel open showing Document Settings: Franchise Disclosure Document toggle on, Franchise Agreement toggle off, Esignature Document set to Automatic, 'Assign FDD from lead's state' note. Agent-captured 2026-07-17, 1680x1400 CSS viewport (taller for the full step list + panel), 2x, dom-sanitize freshenDates:false, then PIL-cropped. Covers 'FDD Signing Workflow'.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

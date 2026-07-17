@@ -1,0 +1,26 @@
+{
+  "revision": 1,
+  "shots": {
+    "lead-source-field.png": {
+      "status": "superseded",
+      "note": "Sales > Pipeline > Leads, Lumon Fresh brand, first lead (Jordan Ellis) detail panel, Details tab. Original crop included a sliver of the Leads list wide enough to expose a test-y row name ('Nathannn Test QAaaa') further down the list -- superseded by -v2 (narrower crop, list reduced to an uninformative sliver, blemish no longer visible).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "lead-source-field-v2.png": {
+      "status": "proposed",
+      "note": "Reshoot 2026-07-17: narrower crop of the same capture, removing the wider list column so the test-y seed row name further down the list ('Nathannn Test QAaaa') is no longer visible; only an uninformative sliver of the list remains for orientation. Shows Contact Information and the Lead Generation group with the Source field. dom-sanitize run twice on the original capture (2 emails, 2 phones, 2 dates replaced with generic placeholders). No cursor -- read-only record view.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "leads-by-source-chart.png": {
+      "status": "proposed",
+      "note": "Sales > Analytics > Overview, Lumon Fresh brand, Monthly View, date range widened to 01 May 2025 - 17 Jul 2026 to surface non-organic sources. Leads By Source donut + table showing a real mixed breakdown (No Data 97%, google 2%, organic 2%). Agent-captured 2026-07-17, cropped to the widget region. No PII on this page (aggregate chart data only) so dom-sanitize had nothing to replace on this specific raw; no cursor -- read-only chart view.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

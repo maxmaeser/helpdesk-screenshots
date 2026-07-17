@@ -1,0 +1,40 @@
+{
+  "revision": 1,
+  "shots": {
+    "library-published-pills.png": {
+      "status": "proposed",
+      "note": "Library > Lumon Fresh brand selected, default All Assets view. Shows the collections sidebar with several collections carrying the blue 'Published' pill (globe icon) next to their name, plus the 'Published to Franchisees' filter row with count at the top. Agent-captured 2026-07-17 at 1680x790 CSS clip, 2x, dom-sanitize (freshenDates:false, no relative dates on page). Blemish fixes via page.evaluate text swap (cosmetic only, no fabricated features): 'Collemction 1' -> 'Collection 1', 'Franchisee Marketzing' -> 'Franchisee Marketing TX', 'HEHEHEHEHE' -> 'Seasonal Promotions', 'Test' -> 'Vendor Contracts' (renamed pre-shot so no test-y staging collection names appear in the published article). No cursor -- read-only orienting state.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "library-edit-collection-toggle.png": {
+      "status": "proposed",
+      "note": "Library > right-click 'Grand Opening Kit' collection (already brand-published on staging) > Edit Collection. Modal shows the 'Publish to all franchisees' toggle already ON with helper text 'Visible to all franchisee organisations', globe icon. Read-only capture -- toggle was already in this state, no Save Changes click (button stayed disabled/greyed, confirming no write occurred). Agent-captured 2026-07-17 at 1000x560 CSS clip, 2x, dom-sanitize (freshenDates:false). No cursor -- shows the resulting state, not mid-interaction.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "library-bulk-publish.png": {
+      "status": "proposed",
+      "note": "Library > Lumon Fresh > All Assets, 3 individual files selected via row checkboxes, More menu open showing Share / Download / 'Publish 3 to Franchisees' / Delete. Menu item not clicked (read-only -- staging is shared, no write actions taken). Same collection-name blemish fixes applied as the pills shot. Agent-captured 2026-07-17 at 1680x826 CSS clip, 2x, dom-sanitize (freshenDates:false). Arrow cursor on 'Publish 3 to Franchisees'.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "location-assets-entity-library.png": {
+      "status": "proposed",
+      "note": "Operations > Locations > Lumon Fresh Hotchkiss > Assets tab > Entity Libraries > 'Aspen United' (the location's correctly linked franchisee entity). Shows the three-column layout (Libraries sidebar / collection list / detail panel) with the caption 'Documents for Lumon Fresh Hotchkiss -- visible to franchisees of Aspen United and brand agents.' Agent-captured 2026-07-17 at 1430x520 CSS clip, 2x, dom-sanitize (masked 9 phone-shaped strings site-wide as a precaution; freshenDates:false, no relative dates on this panel). No cursor -- read-only orienting state.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "location-assets-orphaned-banner.png": {
+      "status": "proposed",
+      "note": "Same location (Lumon Fresh Hotchkiss > Assets tab), but its OTHER library -- 'Chiang Mai United Farmers Inc.' (marked 'Not linked' in the sidebar) -- which is no longer tied to the location's live franchisee entity. Shows the exact yellow warning banner text from the article: 'This location is no longer linked to the franchisee entity that owned this library. Franchisees can't see these documents -- only brand agents can.' This is real staging state (not fabricated) -- the location has two libraries, one correctly linked (Aspen United, see the other shot) and one orphaned. Agent-captured 2026-07-17 at 1430x520 CSS clip, 2x, dom-sanitize. No cursor -- read-only warning state.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

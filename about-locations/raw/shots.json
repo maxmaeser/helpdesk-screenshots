@@ -1,0 +1,61 @@
+{
+  "revision": 1,
+  "shots": {
+    "locations-overview.png": {
+      "crop": [460, 0, 2900, 1300],
+      "status": "proposed",
+      "note": "Operations > Locations, Lumon Fresh brand selected. Full list view with Status column showing Developing/Open/Inactive/Planned badges. Agent-captured 2026-07-17, 1680x1050 CSS viewport, 2x, dom-sanitize applied. Fixed a staging typo blemish ('Lumon Floor Arlignton' -> 'Arlington') via DOM text-node edit before shooting. No cursor -- read-only orientation state.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "locations-add.png": {
+      "crop": [948, 572, 1460, 956],
+      "status": "proposed",
+      "note": "Actions > Add Location on the Locations table. Step 1 of the 'Add a new location' wizard (Location Name + Display ID). Agent-captured 2026-07-17, dom-sanitize applied. No cursor -- modal result state.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "locations-discover.png": {
+      "crop": [1108, 464, 1140, 1172],
+      "status": "proposed",
+      "note": "Actions > Find Existing Locations (the Google Places discovery feature described in the article as 'Discover Locations'). Search results list for the Lumon Fresh brand name. Agent-captured 2026-07-17, dom-sanitize applied. No cursor -- results state.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "locations-bulk-actions.png": {
+      "crop": [460, 0, 2900, 2100],
+      "status": "proposed",
+      "note": "Two locations selected via row checkboxes, showing the bulk action toolbar (Set Location Status, Assign To Franchisee Entity, Assign To Deal Zone) -- covers both the bulk status update and bulk franchisee-assignment sections of the article. Agent-captured 2026-07-17, dom-sanitize applied. No cursor -- selection state, the toolbar tells the story.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "locations-detail.png": {
+      "crop": [500, 0, 2860, 1500],
+      "status": "proposed",
+      "note": "Location detail panel (Lumon Fresh Hotchkiss), Details tab -- shows the tab bar (Details/Chat/Tasks/Projects/Assets/Vendors/Catalog/Performance/Links/Activity/Social/Connections) and the top of the Location fields section. Agent-captured 2026-07-17, dom-sanitize applied. No cursor -- read-only view.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "locations-vendors.png": {
+      "crop": [500, 0, 2860, 1600],
+      "status": "proposed",
+      "note": "Location detail panel, Vendors tab -- vendor assignments table (Usage, Category, Setup Status, Email, Phone) for a single location. Agent-captured 2026-07-17, dom-sanitize applied. No cursor -- read-only view.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "locations-map.png": {
+      "crop": [460, 0, 2900, 2100],
+      "status": "proposed",
+      "note": "Locations table, Map view toggle -- split list/map layout with Mapbox pins and cluster counts. Agent-captured 2026-07-17, dom-sanitize applied. No cursor -- read-only view.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

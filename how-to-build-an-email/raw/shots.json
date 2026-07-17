@@ -1,0 +1,40 @@
+{
+  "revision": 1,
+  "shots": {
+    "email-builder-overview.png": {
+      "status": "proposed",
+      "note": "Marketing > Workflows > Content, Lumon Fresh brand, editing 'Welcome Email 1' template. Shows the full-screen editor: canvas on the left (subject line with a first_name merge tag chip, body text, an inserted image) and the Details sidebar tab on the right. Agent-captured 2026-07-17, viewport 1680x1050 CSS clipped to x:240,y:0,w:1440,h:800 (2x), dom-sanitize with freshenDates:false. No cursor -- read-only orientation state. Crop deliberately excludes the template's jokey closing line ('You should do it, DUMMY!') further down the canvas.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "email-builder-theme.png": {
+      "status": "proposed",
+      "note": "Same template, Theme sidebar tab open with Typography expanded and the Body sub-section expanded, showing font family, color swatch, weight, and size controls. Clip x:240,y:0,w:1440,h:650 (2x). No cursor -- read-only settings panel.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "email-builder-preview-desktop.png": {
+      "status": "proposed",
+      "note": "Preview mode, Desktop view selected (default). Shows the rendered email with merge tags resolved to sample data (Alex). Clip x:240,y:0,w:1440,h:860 (2x). No cursor -- read-only preview result.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "email-builder-preview-mobile.png": {
+      "status": "proposed",
+      "note": "Preview mode, Mobile view selected via the Desktop/Mobile toggle -- narrower centered rendering. Clip x:240,y:0,w:1440,h:860 (2x). Arrow cursor on the Mobile toggle icon to show what was clicked.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "email-builder-save-dropdown.png": {
+      "status": "proposed",
+      "note": "Chevron next to 'Save and Exit' clicked open, showing the 'Exit without saving' option. Clip x:240,y:0,w:700,h:280 (2x). Arrow cursor on the chevron trigger (not the open menu item), per cursor heuristics for dropdowns.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "revision": 1,
+  "shots": {
+    "sequences-list.png": {
+      "status": "proposed",
+      "note": "Operations > Workflows > Sequences tab (route /operations/workflows), Lumon Fresh brand. Orients the reader to where sequences live and shows the sequence table (Name, Date Created, Status) plus the '+ Create Workflow' button. Agent-captured 2026-07-17 at 1680 CSS viewport, clipped to table height (0,0,1680,508), 2x, dom-sanitize with freshenDates:false (no relative dates on page). Cosmetic fixes: hid the 'Staging Test Brand' chip (display:none), renamed seed sequences 'testing' -> 'Fall Grand Opening' and 'test' -> 'Spring Referral Push' (test-y identifiers, not fabricated features). All three sequences show Status: Inactive per the live seed data, not fabricated. No cursor -- read-only orientation state.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "sequence-builder-canvas.png": {
+      "status": "proposed",
+      "note": "Sequence builder canvas for the 'Fishermen Campaign' sequence (Operations > Workflows > Sequences, Edit Workflow), showing the trigger-action node chain: Manually Triggered -> Send Email 'Welcome Email 1' -> Wait (2 Days) -> Send Email 'Welcome Email 2'. Illustrates the trigger-action pattern, the Email action type, and the Delay action type's day-count preset referenced in the article text. Agent-captured 2026-07-17, clipped to the slide-over panel (803,0,877,810), 2x, dom-sanitize with freshenDates:false (the '2 Days' string is product copy, not a relative date -- must not be rewritten). No PII, no staging blemishes in frame (panel obscures the underlying list). No cursor -- read-only canvas view, no single element being clicked.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

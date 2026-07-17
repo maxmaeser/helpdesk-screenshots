@@ -1,0 +1,28 @@
+{
+  "revision": 0,
+  "shots": {
+    "definitions-audiences-table.png": {
+      "crop": [0, 0, 3360, 1040],
+      "status": "proposed",
+      "note": "Marketing > Audiences, Prospects tab, Lumon Fresh selected. Cropped to the table + header, dropping empty whitespace below the 7 prospect rows. Blemishes fixed pre-shot: Staging Test Brand chip hidden, one mangled plus-tag email normalized to bill@example.com, two non-NANP/malformed phone numbers normalized to the canned (720) 555-0142 format matching the rest of the column. dom-sanitize ran with freshenDates:true (Date Added column).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "definitions-pipeline-table.png": {
+      "crop": [0, 0, 3360, 2100],
+      "status": "proposed",
+      "note": "Sales > Pipeline, Leads tab, Lumon Fresh selected. Full viewport (46 leads, virtualized table, no email/phone columns so nothing to sanitize there). Staging Test Brand chip hidden pre-shot. dom-sanitize ran with freshenDates:true.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "definitions-sequences-tab.png": {
+      "status": "proposed",
+      "note": "Marketing > Workflows, Sequences tab (default of the 5-tab pattern), Lumon Fresh selected, one sequence row. Read-only capture: did not open the write-mode builder canvas since this sequence's trigger is unconfigured (Trigger: -) and adding one would mutate staging data. Staging Test Brand chip hidden; sequence title text-node-renamed from the seed's generic 'Test Workflow' to 'Welcome Sequence' (cosmetic rename only, no functional change, no data written). dom-sanitize ran with freshenDates:false (no relative-date copy on this page).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}
