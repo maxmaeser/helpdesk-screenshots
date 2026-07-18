@@ -5,7 +5,7 @@ You are in this stage once sites are opening and your franchisees need the locat
 ![Overview of the Operate section](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/operate-your-franchisees/operate-your-franchisees-overview-v3.png)
 Everything below lives under the **Operations** section of the sidebar, where you track each location and manage the assets you share out to the field.
 
-![operate-your-franchisees opener](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/operate-your-franchisees/operate-your-franchisees-opener.png)
+![operate-your-franchisees opener](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/operate-your-franchisees/operate-your-franchisees-opener-v2.png)
 ### What to do
 
 1. *[About Locations]*: track every site your franchise operates or plans to open, from status and franchisee entity to the details behind each one.

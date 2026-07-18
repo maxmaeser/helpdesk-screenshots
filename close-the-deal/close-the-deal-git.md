@@ -6,7 +6,7 @@ Everything below lives on the **Deal** tab of a lead's detail panel, which you r
 
 Each deal carries a type, a status, its documents and signatures, and a **Convert To Franchisee** button once it is ready.
 
-![close-the-deal opener](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/close-the-deal/close-the-deal-opener.png)
+![close-the-deal opener](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/close-the-deal/close-the-deal-opener-v2.png)
 
 ![close-the-deal overview](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/close-the-deal/close-the-deal-overview.png)
 ### What to do

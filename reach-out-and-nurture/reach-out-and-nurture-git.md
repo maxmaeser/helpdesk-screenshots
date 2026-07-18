@@ -6,7 +6,7 @@ Most of this work starts at **Marketing → Workflows**, which opens on your seq
 
 Get your email foundation right first, then layer on the automation that keeps outreach running without you.
 
-![reach-out-and-nurture opener](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/reach-out-and-nurture/reach-out-and-nurture-opener.png)
+![reach-out-and-nurture opener](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/reach-out-and-nurture/reach-out-and-nurture-opener-v2.png)
 
 ![reach-out-and-nurture overview](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/reach-out-and-nurture/reach-out-and-nurture-overview.png)
 ### What to do
