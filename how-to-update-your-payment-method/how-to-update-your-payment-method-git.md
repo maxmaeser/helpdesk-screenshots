@@ -7,13 +7,16 @@ Franchise Systems Ai (FS Ai) uses Stripe to handle billing and payment processin
 1. Click your profile picture at the bottom of the sidebar and select **Settings**.
 
 ![Profile menu open at the bottom of the sidebar, with Settings highlighted](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-update-your-payment-method/payment-profile-menu-settings.png)
+
 2. Under **Organization**, go to the **Billing** page.
 3. If you belong to multiple organizations, select the organization whose payment method you want to update.
 
 ![Billing page in Settings, showing the organization selector, Subscription section, and Brands list](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-update-your-payment-method/payment-billing-org-selector.png)
+
 4. Click **Open Billing Management** at the bottom of the page.
 
 ![Bottom of the Billing page with the Invoices section and the Open Billing Management button](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-update-your-payment-method/payment-billing-open-management.png)
+
 5. This opens the Stripe billing portal in a new tab. From here you can add a new card, update your existing payment method, or switch to a different payment option.
 6. Once you have made your changes in Stripe, close the tab. Your updated payment method will be reflected in the dashboard.
 

@@ -16,6 +16,7 @@ You can connect one calendar account at a time. To switch providers, disconnect 
 3. On the **Calendars** tab, click **Connect Google Calendar** or **Connect Office 365 Calendar**.
 
 ![Connect a calendar dialog on the Calendars tab, listing Google Calendar and Office 365 as provider options](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-connect-your-calendar/calendar-connect-provider-modal.png)
+
 4. A popup window opens asking you to sign in and authorize access.
 5. Complete the authorization in the popup. The calendar connects automatically once approved.
 
@@ -73,6 +74,7 @@ On the Home page **Overview** tab, a sidebar shows your upcoming events for the 
 2. Under the **Account** group, open **Calendar & Scheduling** and stay on the **Calendars** tab. Your connected account email and provider are displayed.
 
 ![Calendars tab showing a connected Google Calendar account with its email, Primary and Connected badges, and the Manage control](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-connect-your-calendar/calendar-settings-connected.png)
+
 3. Click to manage the connection and choose **Disconnect Calendar**.
 4. Confirm the disconnection in the dialog that appears.
 

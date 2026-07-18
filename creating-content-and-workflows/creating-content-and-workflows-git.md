@@ -38,6 +38,7 @@ A sequence is an automated trigger-action flow that runs when a specific event o
    - A franchisee is converted or signs up
 
 ![Trigger event picker open on the sequence builder canvas](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/creating-content-and-workflows/workflows-trigger-picker-v2.png)
+
 4. Add **action nodes** by connecting them to the trigger. Available actions:
    - **Send Email**: sends an email template to the contact. You select which template to use.
    - **Delay**: pauses the sequence for a set period (e.g., 1 hour, 1 day, 1 week, or a custom duration).

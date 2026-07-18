@@ -33,6 +33,7 @@ You can change a lead's status from two places:
 2. Scroll to the bottom and click **+ Create New Status**.
 
 ![Bottom of the Change Status dropdown showing the Create New Status option](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-create-custom-statuses/statuses-create-trigger.png)
+
 3. Enter a name for the status.
 4. Click the icon on the left to open the icon picker. Browse icons by category or use the search bar, then pick a color using the color picker below the icon grid.
 5. Click **Create New Status** to save.

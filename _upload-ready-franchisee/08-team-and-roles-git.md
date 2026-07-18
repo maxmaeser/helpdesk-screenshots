@@ -8,6 +8,7 @@ Team is your roster of the people who operate the location with you. Each row sh
 1. Click **Invite teammate**.
 
 ![Invite teammate modal with fields for name, email, title, and reason](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/08-team-and-roles/team-add-member.png)
+
 2. The modal walks you through a short set of steps. Start with their full name, email, and job title, then continue through the rest, including why you're inviting them.
 3. Submit it.
 

@@ -5,6 +5,7 @@ You can assign or reassign a lead to any agent whose assignability is set to **A
 ### Assigning a Lead to a Sales Rep
 
 ![Leads tab selected in Sales Pipeline, showing the leads table](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-assign-leads/leads-nav-tabs.png)
+
 1. Navigate to **Sales → Pipeline** and select the **Leads** tab.
 2. Find the lead you want to assign in the leads table.
 3. Locate the **Assigned To** column for that lead.

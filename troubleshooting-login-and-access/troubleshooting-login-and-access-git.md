@@ -46,6 +46,7 @@ If you started connecting a calendar during setup but did not finish, here's how
 3. On the **Calendars** tab, check whether your calendar shows as **Connected**.
 
 ![Calendars tab on the Calendar & Scheduling page, showing a connected calendar with the Primary and Connected badges](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/troubleshooting-login-and-access/calendars-connected.png)
+
 4. If it does not, click **Connect calendar** and complete the authorization in the popup that opens.
 
 See *[How to Connect Your Calendar]* for the full walkthrough.
