@@ -18,7 +18,7 @@ For each brand you have access to, you see three radio buttons:
 
 - **Automatic**: new leads from the applicant portal are automatically assigned to you via round-robin. You can also be manually assigned to leads.
 - **Manual**: you can be manually assigned to leads by other team members, but you will not receive automatic assignments.
-- **Not Assignable**: you will not be assigned to any leads for this brand. You will not appear in the assignment dropdown.
+- **Off**: you will not be assigned to any leads for this brand. You will not appear in the assignment dropdown.
 
 Select the option that matches your role. Only one option can be active per brand.
 

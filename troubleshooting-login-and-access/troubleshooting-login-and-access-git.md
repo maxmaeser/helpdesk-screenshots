@@ -4,6 +4,8 @@ This article walks through the checks that resolve the most common cases, in the
 
 ### Start at the sign-in page
 
+The sign-in page is always the same: https://app.franchisesystems.ai.
+
 To sign in, enter your **email** and **password**, then click **Sign In**.
 
 If you are not sure your password is correct, click **Forgot Password?** below the password field to reset it, then try again with the new password.

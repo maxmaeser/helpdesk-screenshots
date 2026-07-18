@@ -10,6 +10,17 @@ The editor opens in a full-screen view with the editing canvas on the left and a
 
 ![Email builder editor open, showing the canvas and Details sidebar](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-an-email/email-builder-overview.png)
 
+### Using the Blocks Tab
+
+The sidebar on the right has three tabs: **Blocks**, **Theme**, and **Details**. The **Blocks** tab is where you drag and drop elements onto the canvas.
+
+Blocks are grouped into two sections:
+
+- **Basic**: Text, Heading 1, Heading 2, Heading 3, Bulleted List, Numbered List, Blockquote
+- **Insert**: Divider, Button, Image, Two Columns, Merge Tags, Brand Logo, Footer
+
+Drag a block from the sidebar and drop it into the canvas at the position you want. This works alongside slash commands, so you can build your layout with whichever method is faster for what you are adding.
+
 ### Writing Your Email
 
 The editor uses a rich-text WYSIWYG format. You can type directly into the canvas and format text using the toolbar or slash commands:
@@ -40,6 +51,20 @@ You can add images two ways:
 - **Brand logo**: Type `/` and select **Brand Logo** to insert your brand's logo (this pulls from your Brand Settings)
 
 Images are uploaded and hosted automatically. You can also click on any existing image in the editor to change its source.
+
+### Editing an Image
+
+Click any image in the canvas to bring up its toolbar. From there you can:
+
+- **Align** the image left, center, or right
+- **Lock the aspect ratio** so resizing keeps the image in proportion
+- **Change Image** to swap in a different upload
+- **Delete** the image
+- **Add a link** so clicking the image opens a URL
+- **Set border radius** to round the corners
+- **Set outline width and color** to add a border around the image
+
+Drag the handles on the image's corners to resize it. With the aspect ratio lock on, resizing keeps the width and height proportional.
 
 ### Customizing the Theme
 

@@ -48,6 +48,8 @@ If you already have prospect or applicant lists in a spreadsheet, get them into 
 
 Column headers like name, email, and phone make the import clean and fast.
 
+If your list carries information beyond the standard fields, keep it as extra columns. The import mapping step picks up additional columns as custom fields, so you do not need to strip anything out first.
+
 ### A sending domain for email
 
 Decide which domain FS Ai should send email from, and line up whoever manages your DNS.
