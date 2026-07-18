@@ -1,6 +1,6 @@
 Send a single email template as a newsletter or deploy a multi-email sequence to a segment. Both use the same step-by-step send flow.
 
-> **Prerequisite:** At least one verified domain with an appropriate purpose enabled. See **About Domains and Domain Health** for setup.
+> **Prerequisite:** At least one verified domain with an appropriate purpose enabled. See *[About Domains and Domain Health]* for setup.
 
 ### Adding Email Domains
 
@@ -11,7 +11,7 @@ Send a single email template as a newsletter or deploy a multi-email sequence to
 3. Enter your domain name, select which purposes it should serve, and configure your reply-to settings.
 4. Add the DNS records FS Ai provides to your DNS provider, then verify.
 
-See **About Domains and Domain Health** for the full walkthrough.
+See *[About Domains and Domain Health]* for the full walkthrough.
 
 ### Sending a Newsletter
 

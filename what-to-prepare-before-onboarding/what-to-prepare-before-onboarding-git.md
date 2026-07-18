@@ -26,6 +26,8 @@ Bring both your open locations and your locations under construction. Both belon
 
 You do not have to enter these one at a time. Locations import in bulk, and existing sites can be pulled in by search, so a 40-location network does not need 40 manual entries.
 
+FS Ai supports a wide range of location fields beyond the basics above, including lease, construction, insurance, and compliance details, plus custom fields your brand can define for anything not covered by default. See *[About Locations]* for the complete field list.
+
 ![Locations list, showing status, franchisee entity, and store ID columns](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/what-to-prepare-before-onboarding/prep-locations.png)
 
 ### Team members to invite

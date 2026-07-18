@@ -29,9 +29,12 @@ A login page that loops, blinks, or keeps redirecting is almost always a stale s
 1. Try a hard refresh first. It reloads the page without using anything saved in your browser cache.
    - **Mac**: press **Cmd + Shift + R**
    - **Windows**: press **Ctrl + Shift + R**
-2. If that does not fix it, clear your cookies and cache for the FS Ai site:
-   - **Chrome**: open **Settings**, go to **Privacy and security**, then **Delete browsing data**. Select **Cookies and other site data** and **Cached images and files**, then click **Delete data**.
-   - **Safari**: open Safari's **Settings**, select the **Privacy** tab, then **Manage Website Data**. Search for "franchisesystems.ai" and click **Remove**.
+2. If that does not fix it, clear your cookies and cache for the FS Ai site.
+
+   **Chrome**: open **Settings**, go to **Privacy and security**, then **Delete browsing data**. Select **Cookies and other site data** and **Cached images and files**, then click **Delete data**.
+
+   **Safari**: open Safari's **Settings**, select the **Privacy** tab, then **Manage Website Data**. Search for "franchisesystems.ai" and click **Remove**.
+
 3. Close and reopen the browser.
 4. Load the sign-in page again and sign in.
 
