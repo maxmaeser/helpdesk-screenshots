@@ -6,6 +6,8 @@ Everything below starts at **Marketing → Audiences**, which opens on the **Pro
 
 Learn the vocabulary, then bring in your lists.
 
+![get-your-leads-in opener](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/get-your-leads-in/get-your-leads-in-opener.png)
+
 ![get-your-leads-in overview](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/get-your-leads-in/get-your-leads-in-overview.png)
 
 ### What to do

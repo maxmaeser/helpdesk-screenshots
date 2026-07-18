@@ -6,6 +6,7 @@ This article walks you through the key concepts and first steps.
 
 It opens the Getting Started series that carries you through the rest of the platform.
 
+![getting-started-with-franchise-systems-ai opener](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/getting-started-with-franchise-systems-ai/getting-started-with-franchise-systems-ai-opener.png)
 ### How the platform is structured
 
 FS Ai is organized into three levels:

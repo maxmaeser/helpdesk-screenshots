@@ -8,6 +8,8 @@ Most of this work happens in your settings, which you reach by clicking your pro
 
 You are in this stage before any leads exist, so there is no rush.
 
+![set-up-your-brand-and-team opener](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/set-up-your-brand-and-team/set-up-your-brand-and-team-opener.png)
+
 ![Set up your brand and team overview](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/set-up-your-brand-and-team/set-up-your-brand-and-team-overview-v2.png)
 ### What to set up
 
