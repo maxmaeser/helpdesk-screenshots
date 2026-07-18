@@ -14,6 +14,13 @@
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0
+    },
+    "member-brand-permissions.png": {
+      "status": "proposed",
+      "note": "Organization Settings > Members, click a Team Member row (Joshua Tester) to open the Agent Profile panel, Settings tab, Brand Permissions card with the Khinkali Krew brand expanded showing the Read/Write/Chat toggle matrix per category (Workspace Settings, Projects, Portal Editor, Media Library, Sales, Marketing, Operations). Agent-captured 2026-07-18, brand dashboard (staging.app.franchisesystems.ai), 1680x1050 CSS viewport, 2x, dom-sanitize freshenDates:false (no day-count copy on this panel). Answers Max's comment: missing the image where you actually see member-specific permissions. Staging Test Brand row hidden (collapsed group in the matrix, same rule as the Knowledge Base sidebar item). Cosmetic: swapped the seed job-title chip 'I test things' for 'Marketing Coordinator', same precedent as members-access-levels.png avoiding seed joke titles. No cursor: read-only informational panel, nothing to click.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
     }
   }
 }

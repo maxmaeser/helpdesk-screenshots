@@ -1,0 +1,19 @@
+{
+  "revision": 1,
+  "shots": {
+    "statuses-create-form.png": {
+      "status": "superseded",
+      "note": "Original was a confusing side-by-side pair crop (Create New Status name/icon field left, unrelated color-picker fragment right) with no page context -- Max: 'image is fucked, not showing anything relevant. a nearly uncropped screenshot might work better.' Superseded 2026-07-18 by statuses-create-form-v2.png.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "statuses-create-form-v2.png": {
+      "status": "proposed",
+      "note": "Reshoot 2026-07-18, nearly-uncropped per Max's request. Full 1680x1050 dashboard viewport (Sales > Pipeline, Lumon Fresh brand): sidebar + brand chips + leads table for orientation, with the Create New Status popover open on the first row's Status pill -- name filled ('Site Visit Scheduled'), icon picker open with an icon selected, and the color gradient picker open below it. 'Staging Test Brand' chip and 'Knowledge Base' sidebar item hidden via display:none. dom-sanitize run twice with freshenDates:false (no relative day-count copy on this page, only absolute Date Added dates, so no freshening needed). No PII, no cursor added (multi-state filled-form shot, cursor would obscure/mislead). No data mutation: dialog was never submitted, no status was actually created.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

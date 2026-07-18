@@ -21,7 +21,7 @@ Set the reporting window with the controls on the Overview tab:
 
 Every widget on the Overview tab respects these settings.
 
-![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-sales-analytics/sales-analytics-overview-top.png)
+![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-sales-analytics/sales-analytics-overview-top-v2.png)
 ### Reading the Overview
 
 At the top are five stat tiles giving you headline numbers for the selected range: **Average Unique Visitors**, **New Portal Sessions**, **Returning Portal Sessions**, **Form Submissions**, and **Steps Completed**.
@@ -72,7 +72,7 @@ Use the search box to find a step by name, the filter icon to narrow by type or 
 
 The range dropdown (defaulting to **All time**) sets the window this funnel is measured over.
 
-![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-sales-analytics/sales-analytics-portal-steps.png)
+![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-sales-analytics/sales-analytics-portal-steps-v2.png)
 ### Generating a report
 
 Click **Generate Report** to open the reports panel.
@@ -92,4 +92,4 @@ Some insights include a shortcut button that takes you straight to the related a
 
 Click **Generate Insights** to run it.
 
-![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-sales-analytics/sales-analytics-generate-insights.png)
+![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-sales-analytics/sales-analytics-generate-insights-v2.png)

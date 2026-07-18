@@ -1,0 +1,19 @@
+{
+  "revision": 1,
+  "shots": {
+    "signin-full-page.png": {
+      "status": "proposed",
+      "note": "Full-page brand-dashboard sign-in screen (logged out), split layout with FS Ai brand panel on the left and the Email/Password form on the right. Cursor: arrow on the Sign In button. Agent-captured 2026-07-18, https://staging.app.franchisesystems.ai/, fresh persistent profile (no session), 1680x1050 CSS viewport, 2x, dom-sanitize (nothing to sanitize on this page).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "calendars-connected.png": {
+      "status": "proposed",
+      "note": "Settings > Calendar & Scheduling > Calendars tab (Account group), Connected calendars card showing one calendar with the Primary and Connected badges. Left settings sidebar visible for Account-group context. Cursor: arrow on the + Connect calendar button. Agent-captured 2026-07-18, logged in as max+claude@franchisesystems.ai, 1680x1050 CSS viewport, 2x, dom-sanitize replaced the real calendar email with max@example.com, freshenDates:false (no relative-date copy on this page). Cropped raw to trim empty whitespace below the card per the 50-70% subject framing standard.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

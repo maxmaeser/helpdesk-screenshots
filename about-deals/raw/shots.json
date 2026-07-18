@@ -1,6 +1,20 @@
 {
-  "revision": 2,
+  "revision": 3,
   "shots": {
+    "deals-overview-v2.png": {
+      "status": "proposed",
+      "note": "Reshoot 2026-07-18 of deals-overview.png ('crop is off, needs a recrop' -- Max). No raw ever existed for the original (never committed with a raw/ counterpart), so recaptured the same state fresh: Deal 20, Sales > Pipeline > Deals tab, Lumon Fresh brand only selected. Root cause of the old crop: right edge clipped mid-badge ('Multi Unit Developme...'). New crop uses the full deal-drawer width (clip x=543,y=73,w=1122,h=687 CSS, drawer bounding box measured via getBoundingClientRect, +2px inset to avoid the drawer's own drop-shadow edge) so both the 'In Review' and 'Multi Unit Development' badges sit fully inside the frame with margin. Includes the 'Deals > Deal 20' breadcrumb row for page-context per the framing standard (old crop omitted it). dom-sanitize run with freshenDates:false (Date Created / FDD Disclosure Date / Date Agreement Signed are product fields, not relative-time chips). No PII (deal name, notes text unchanged from prior published shot). No cursor (read-only state view, matches original convention for this shot).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "deals-entity-members-add.png": {
+      "status": "proposed",
+      "note": "New shot 2026-07-18, added per Max's comment that the article was 'missing the add functionality where you can add more people for fdd or in general to the deal'. Same Deal 20 drawer, scrolled to Entity Members, then the '+ Add' trigger (top-right of the Entity Members card) was clicked to reveal its expanded inline form -- READ-ONLY, never submitted. Confirms there is no separate FDD-only vs general-add path: one form offers 'Search applications...' (link an existing lead/application already in the pipeline) OR 'Add partner by email' (invite someone not yet in the system), plus the helper line 'Additional Leads will form a franchisee entity together, after conversion'. Whoever is added becomes a normal Entity Member and gets individual FDD signature tracking (as seen on the existing second member, Jonathan Whiteman, who already shows a 'Send FDD for signature' action). dom-sanitize run with freshenDates:false; Knowledge Base sidebar item and Staging Test Brand chip hidden defensively (neither was actually in frame at this crop). No PII (both names are pre-existing staging seed data already published in deals-entity-members.png). No cursor (shows the resulting expanded state, not a click target).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
     "deals-nav-pipeline-v2.png": {
       "status": "superseded",
       "note": "Reshoot 2026-07-17 of the Sales > Pipeline > Deals-tab orientation shot. Original deals-nav-pipeline.png (Apr 16) showed an unhidden 'Staging Test Brand' chip in the brand switcher -- disallowed seed-data blemish. Same technique as set-up-your-brand-and-team-overview-v2: chip hidden via display:none (not renamed) to avoid an icon/label mismatch. Cropped to 760x700 CSS (1520x1400 raw @2x) to exclude the newer 'Lead' column (added to the Deals table since April), which now surfaces seed lead names not relevant to this shot. dom-sanitize run with freshenDates:false. Cursor arrow on the Deals tab. SUPERSEDED 2026-07-17: this fix missed the 'Knowledge Base' staging-only sidebar item, which was still visible -- see deals-nav-pipeline-v3.png.",

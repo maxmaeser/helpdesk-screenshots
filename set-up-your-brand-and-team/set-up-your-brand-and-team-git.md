@@ -8,12 +8,8 @@ Most of this work happens in your settings, which you reach by clicking your pro
 
 You are in this stage before any leads exist, so there is no rush.
 
-Get the foundation right and everything that follows has somewhere to land.
-
 ![Set up your brand and team overview](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/set-up-your-brand-and-team/set-up-your-brand-and-team-overview-v2.png)
 ### What to set up
-
-Work through these in roughly this order. Each one links to a full how-to.
 
 1. *[How to Invite Users]*: add your teammates to the organization by email so they can log in and start working.
 2. *[How to Set Up Your Notifications]*: choose which activity you get alerted about so you only hear about what matters.

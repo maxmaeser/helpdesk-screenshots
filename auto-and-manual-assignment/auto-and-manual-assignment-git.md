@@ -10,7 +10,7 @@ You control your own assignability settings from your profile.
 
 ![Sidebar profile menu with Settings highlighted](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/auto-and-manual-assignment/assignment-nav-settings-v2.png)
 
-2. On the **Profile** page, scroll to the **Assignable To Applicant Portal Leads** section.
+2. On the **Profile** page, scroll to the **Agent Sales Assignability** section.
 
 ![Profile settings page showing Assignability section with radio buttons](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/auto-and-manual-assignment/assignment-profile-settings-v2.png)
 

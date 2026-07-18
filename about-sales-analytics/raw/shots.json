@@ -1,5 +1,5 @@
 {
-  "revision": 0,
+  "revision": 1,
   "shots": {
     "sales-analytics-generate-insights.png": {
       "cursor": {
@@ -9,11 +9,11 @@
         ],
         "type": "arrow"
       },
-      "status": "proposed",
-      "note": "",
+      "status": "superseded",
+      "note": "Superseded by sales-analytics-generate-insights-v2.png (crop was a little too tight, per Max 2026-07-18).",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 1
     },
     "sales-analytics-generate-report.png": {
       "cursor": {
@@ -51,15 +51,50 @@
         ],
         "type": "arrow"
       },
+      "status": "superseded",
+      "note": "Superseded by sales-analytics-overview-top-v2.png (cursor moved onto the View dropdown, per Max 2026-07-18).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 1
+    },
+    "sales-analytics-portal-steps.png": {
+      "status": "superseded",
+      "note": "Superseded by sales-analytics-portal-steps-v2.png (crop was too aggressive, per Max 2026-07-18).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 1
+    },
+    "sales-analytics-overview-top-v2.png": {
+      "cursor": {
+        "pos": [
+          2100,
+          262
+        ],
+        "type": "arrow"
+      },
       "status": "proposed",
-      "note": "",
+      "note": "Recaptured with looser framing (brand chips + full tabs bar) and cursor on the right, over the Weekly View dropdown.",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0
     },
-    "sales-analytics-portal-steps.png": {
+    "sales-analytics-generate-insights-v2.png": {
+      "cursor": {
+        "pos": [
+          2710,
+          376
+        ],
+        "type": "arrow"
+      },
       "status": "proposed",
-      "note": "",
+      "note": "Recaptured with a looser crop: full tabs bar above, full chart-header row below (no more mid-cut).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "sales-analytics-portal-steps-v2.png": {
+      "status": "proposed",
+      "note": "Recaptured with a looser crop: brand chips + full tabs bar above, 6 clean full rows below (no mid-row cut).",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0

@@ -12,7 +12,11 @@ The platform is structured in three layers:
 
 ### How data isolation works
 
-Each brand's data is completely separate. When you are working within a brand, you only see that brand's applicants, leads, documents, workflows, and settings. Switching to a different brand gives you a fresh view with that brand's data. There is no automatic sharing of records between brands.
+Each brand's data is kept separate, with access controlled per brand. When you are working within a brand, you only see that brand's applicants, leads, documents, workflows, and settings.
+
+Switching to a different brand gives you a fresh view scoped to that brand's data.
+
+If you need to see across brands, the multi-brand selector lets you view leads, prospects, and other records from multiple brands in one combined view. See *[Multi-Brand View]* for details.
 
 ### Who can access what
 

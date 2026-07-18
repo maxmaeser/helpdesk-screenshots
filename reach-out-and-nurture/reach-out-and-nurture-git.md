@@ -9,8 +9,6 @@ Get your email foundation right first, then layer on the automation that keeps o
 ![reach-out-and-nurture overview](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/reach-out-and-nurture/reach-out-and-nurture-overview.png)
 ### What to do
 
-Work through the foundation first, then the automation. Each one links to a full guide.
-
 1. *[About Email in FS Ai]*: understand the different email contexts (cold, sales, marketing, franchisee, and system) so you set things up correctly from the start.
 
 2. *[About Domains and Domain Health]*: connect and verify your sending domains so your email lands in inboxes instead of spam.

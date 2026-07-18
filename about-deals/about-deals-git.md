@@ -16,7 +16,7 @@ When you open a deal, the **Overview** tab shows the core details:
 - **Date Agreement Signed**: when the franchise agreement was signed
 - **Notes**: free-text notes about the deal
 
-![Deal Overview panel](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-deals/deals-overview.png)
+![Deal Overview panel](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-deals/deals-overview-v2.png)
 
 ### Deal Statuses
 
@@ -76,6 +76,14 @@ Entity members are the people associated with the deal who need to sign the FDD.
 This section is where you track FDD signing progress for each individual involved in the deal.
 
 ![Entity Members list](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-deals/deals-entity-members.png)
+
+Click **+ Add** in the top-right corner of the Entity Members card to add another person to the deal.
+
+You can search for an existing lead or application already in your pipeline, or add a partner by email if they are not yet in the system.
+
+Anyone added this way becomes a full entity member, with their own ownership percentage and FDD signature tracking. Additional leads form the franchisee entity together once the deal converts, whether they were added through search or by email.
+
+![Entity Members Add form, showing search-applications and add-partner-by-email options](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-deals/deals-entity-members-add.png)
 
 ### Payments & Fees
 

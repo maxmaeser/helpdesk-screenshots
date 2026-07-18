@@ -9,8 +9,6 @@ Each deal carries a type, a status, its documents and signatures, and a **Conver
 ![close-the-deal overview](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/close-the-deal/close-the-deal-overview.png)
 ### What to do
 
-Work through these in order the first time, then come back to whichever piece you need.
-
 1. *[About Deals]*: understand the deal record, its type and status, and the convert action that turns a closed deal into a franchisee.
 
 2. *[How to Manage FDDs]*: upload your Franchise Disclosure Document, assign it by state, and track its filing status before you disclose.

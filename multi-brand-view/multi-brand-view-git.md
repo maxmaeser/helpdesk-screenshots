@@ -19,8 +19,6 @@ A brand selector appears at the top of most dashboard pages. How it behaves depe
 3. Click a different brand to switch to it.
 4. If more brands are available than can fit in the bar, click **Other Brands** to open a dropdown with a searchable list of all your brands.
 
-![Other Brands dropdown with Edit Order](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/multi-brand-view/other-brands-dropdown.png)
-
 Your brand selection is saved per section. When you return to a page, it remembers which brand you last selected there.
 
 ### Reordering Your Brands
@@ -32,6 +30,7 @@ If you work with many brands, you can customize which ones appear in the quick-a
 3. Drag and drop brands between the top bar (up to 5 brands) and the dropdown list.
 4. Click **Save** to apply your new order, or **Cancel** to discard changes.
 
+![Other Brands dropdown with Edit Order](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/multi-brand-view/other-brands-dropdown.png)
 ### Brand Access and Permissions
 
 You can only see brands that your organization has access to and that your account has been granted permissions for. If you expect to see a brand but it does not appear in the selector, ask your organization admin to verify your brand-level permissions.

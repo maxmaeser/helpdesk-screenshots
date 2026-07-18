@@ -28,6 +28,8 @@ To view this, click your profile picture at the bottom of the sidebar, select **
 
 ![Team Admins section on the Members page showing job title chips such as CTO, Intern, and COO next to each name](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/understanding-roles-and-permissions/members-access-levels.png)
 
+![Settings tab on a team member's profile panel showing the Brand Permissions matrix with Read, Write, and Chat toggles for each category under a specific brand](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/understanding-roles-and-permissions/member-brand-permissions.png)
+
 ### Billing access is separate
 
 Billing is controlled by its own toggle, not by the access level.

@@ -50,7 +50,7 @@ The **Getting Started** area stays in your sidebar so you can pick up setup wher
 
 The rest of the Getting Started series is a funnel.
 
-It moves you from an empty account through to franchisees you are actively operating, one stage at a time. Work through the entries in order, or jump straight to the stage you are in right now.
+It moves you from an empty account through to franchisees you are actively operating, one stage at a time.
 
 1. *[Set Up Your Brand and Team]*: invite your team, set notifications and billing, and shape your portal and forms.
 2. *[Get Your Leads In]*: import and organize your prospects and leads so your pipeline has people in it.

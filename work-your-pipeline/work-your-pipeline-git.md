@@ -6,8 +6,6 @@ Everything below lives under **Sales → Pipeline**, on the **Leads** tab.
 
 Each lead carries a status, a segment, a progress count, and an assigned owner.
 
-Work through the list in order the first time, then come back to whichever piece you need.
-
 ![Work your pipeline overview](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/work-your-pipeline/work-your-pipeline-overview.png)
 
 ### What to do

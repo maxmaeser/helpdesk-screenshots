@@ -37,7 +37,7 @@ You can change a lead's status from two places:
 4. Click the icon on the left to open the icon picker. Browse icons by category or use the search bar, then pick a color using the color picker below the icon grid.
 5. Click **Create New Status** to save.
 
-![Create New Status form with name field, icon picker, and color picker](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-create-custom-statuses/statuses-create-form.png)
+![Create New Status form with name field, icon picker, and color picker, shown in the Sales Pipeline page](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-create-custom-statuses/statuses-create-form-v2.png)
 The new status is immediately available for all leads within your brand.
 
 ### Editing a Custom Status

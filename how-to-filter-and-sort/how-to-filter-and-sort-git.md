@@ -18,6 +18,7 @@ Filters let you narrow the table to contacts matching specific criteria. You can
 4. Enter or select the filter value.
 5. Click **Apply**.
 
+![Filter panel with First Name field, Contains operator, and a value entered, ready to apply](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-filter-and-sort/filter-panel-open-v2.png)
 **Available filter fields for prospects:**
 
 - **First Name**: contains, equals, is not equal to
