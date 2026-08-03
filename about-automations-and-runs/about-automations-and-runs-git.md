@@ -18,13 +18,12 @@ This article covers the Automations list and the Runs log.
 
 The Automations tab lists every automation in the department, one row each. The columns are:
 
-![The Automations tab listing workflows with Name, Trigger, Status, and Last Edited columns](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-automations-and-runs/automations-list.png)
-
 - **Name**: what you named the automation.
 - **Trigger**: the event that starts it (for example, "Lead status changed" or "Lead submits a form").
 - **Status**: **Draft** while you are still building, **Active** once it is published and listening for events.
 - **Last Edited**: when the automation was last changed.
 
+![The Automations tab listing workflows with Name, Trigger, Status, and Last Edited columns](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-automations-and-runs/automations-list.png)
 Use **Search Workflows** to find an automation by name or trigger. Use the filter to narrow the list to **Published** or **Draft**.
 
 Select one or more rows to **Duplicate** or **Delete** them.
