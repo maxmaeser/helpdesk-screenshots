@@ -1,19 +1,45 @@
 {
-  "revision": 1,
+  "revision": 44,
   "shots": {
     "notifications-profile-menu.png": {
-      "status": "proposed",
+      "cursor": {
+        "pos": [
+          244,
+          320
+        ],
+        "type": "arrow"
+      },
+      "highlights": [
+        {
+          "rect": [
+            46,
+            303,
+            328,
+            51
+          ],
+          "style": "spotlight"
+        }
+      ],
+      "status": "approved",
       "note": "Orientation shot: profile picture menu open at bottom of sidebar, showing the Settings option. Agent-captured 2026-07-17 on staging brand dashboard (Claude Maeser account), clip 460x370 CSS (920x740 raw) at 2x, viewport 1680x1050. No DOM sanitization needed in this crop (no PII in frame -- brand chip row and inbox item are outside the crop). A transient yellow tooltip/toast briefly appeared near Send Feedback on first capture attempts and was gone after a longer settle wait (2.2s post-click); final capture is clean. Cursor: arrow on the Settings row (added in post).",
-      "lastTouchedBy": "claude",
+      "lastTouchedBy": "max",
       "editing": false,
-      "rev": 0
+      "rev": 21,
+      "renderedRev": 19
     },
     "notifications-table.png": {
-      "status": "proposed",
+      "crop": [
+        19,
+        0,
+        2043,
+        1260
+      ],
+      "status": "approved",
       "note": "Main content shot: Settings > Notifications page, showing the per-event toggle table (Notification / Notify Me In-App / Notify Me By Email columns) covering the Leads & Applicants and Documents groups plus the start of Tasks. Agent-captured 2026-07-17 on staging brand dashboard, clip 1040x630 CSS (2080x1260 raw) at 2x, cropped to the table region (sidebar excluded, per the very-wide-UI framing rule). dom-sanitize run with freshenDates:false (no relative dates on this page; toggle labels are the only text). No PII found (0 emails/phones/dates/custom). Read-only view -- no cursor.",
-      "lastTouchedBy": "claude",
+      "lastTouchedBy": "max",
       "editing": false,
-      "rev": 0
+      "rev": 7,
+      "renderedRev": 6
     }
   }
 }

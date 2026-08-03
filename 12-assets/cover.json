@@ -1,135 +1,121 @@
 {
-  "revision": 10,
+  "revision": 20,
   "cover": {
     "v": 2,
-    "background": "dew",
+    "background": "ember",
     "title": null,
-    "scale": 85,
+    "scale": 106,
     "positionX": 0,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
-        "role": "background",
-        "x": 0,
-        "y": 10,
-        "w": 540,
-        "h": 520,
-        "contentZoom": 0.92,
+        "role": "foreground",
+        "x": -80,
+        "y": -45,
+        "w": 1200,
+        "h": 630,
+        "preset": "bare",
+        "layout": "free",
         "children": [
           {
-            "id": "text-headline",
+            "id": "poster-eyebrow",
             "type": "text",
             "props": {
-              "variant": "heading",
-              "value": "Grand Opening Kit"
-            }
-          },
-          {
-            "id": "asset-1",
-            "type": "assetGridItem",
-            "props": {
-              "title": "grand-opening-flyer-EDITABLE.pdf",
-              "badgeLabel": "PDF",
-              "badgeTone": "gray",
-              "icon": "notebook"
+              "variant": "posterEyebrow",
+              "value": "READY TO USE"
             },
             "offset": [
-              37,
-              0
+              146,
+              212
             ]
           },
           {
-            "id": "asset-2",
+            "id": "poster-title",
+            "type": "text",
+            "props": {
+              "variant": "poster",
+              "value": "Assets"
+            },
+            "offset": [
+              139,
+              245
+            ]
+          },
+          {
+            "id": "tile-4",
             "type": "assetGridItem",
             "props": {
               "title": "local-store-marketing-playbook.pdf",
               "badgeLabel": "PDF",
               "badgeTone": "gray",
-              "icon": "notebook"
+              "icon": "notebook",
+              "tone": "light",
+              "scale": 0.95,
+              "blur": 5,
+              "dim": 0.5,
+              "tiltDeg": 16
             },
             "offset": [
-              317,
-              -168
+              1063,
+              104
             ]
           },
           {
-            "id": "asset-3",
+            "id": "tile-3",
+            "type": "assetGridItem",
+            "props": {
+              "title": "grand-opening-flyer-EDITABLE.pdf",
+              "badgeLabel": "PDF",
+              "badgeTone": "gray",
+              "icon": "notebook",
+              "tone": "light",
+              "scale": 1.08,
+              "blur": 3.6,
+              "dim": 0.36,
+              "tiltDeg": 11
+            },
+            "offset": [
+              966,
+              157
+            ]
+          },
+          {
+            "id": "tile-2",
             "type": "assetGridItem",
             "props": {
               "title": "brand-logo-reveal-720p.mp4",
               "badgeLabel": "MP4",
               "badgeTone": "purple",
-              "icon": "layersThree"
+              "icon": "playCircle",
+              "tone": "mid",
+              "scale": 1.22,
+              "blur": 1.8,
+              "dim": 0.18,
+              "tiltDeg": 6
             },
             "offset": [
-              37,
-              -168
+              854,
+              215
             ]
           },
           {
-            "id": "asset-4",
+            "id": "tile-front",
             "type": "assetGridItem",
             "props": {
               "title": "social-launch-post-1080.png",
               "badgeLabel": "PNG",
               "badgeTone": "blue",
-              "icon": "colorSwatch"
+              "icon": "colorSwatch",
+              "tone": "deep",
+              "scale": 1.4,
+              "tiltDeg": -3,
+              "meta": "PNG · Uploaded by Max Maeser"
             },
             "offset": [
-              317,
-              -336
+              721,
+              278
             ]
-          },
-          {
-            "id": "asset-5",
-            "type": "assetGridItem",
-            "props": {
-              "title": "numbered-menu-montage-720p.mp4",
-              "badgeLabel": "MP4",
-              "badgeTone": "purple",
-              "icon": "layersThree"
-            },
-            "offset": [
-              177,
-              -336
-            ]
-          }
-        ]
-      },
-      {
-        "id": "b",
-        "role": "foreground",
-        "x": 610,
-        "y": 10,
-        "w": 430,
-        "h": 520,
-        "contentZoom": 1.7,
-        "children": [
-          {
-            "id": "asset-hero",
-            "type": "assetGridItem",
-            "props": {
-              "title": "social-launch-post-1080.png",
-              "badgeLabel": "PNG",
-              "badgeTone": "blue",
-              "icon": "colorSwatch"
-            }
-          },
-          {
-            "id": "hero-card",
-            "type": "card",
-            "props": {
-              "body": "34 KB · Uploaded by Max Maeser"
-            }
-          },
-          {
-            "id": "hero-button",
-            "type": "button",
-            "props": {
-              "label": "Download",
-              "variant": "primary"
-            }
           }
         ]
       }
@@ -138,6 +124,7 @@
     "note": "",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 10
+    "rev": 17,
+    "updatedAt": 1784539880876
   }
 }

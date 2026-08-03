@@ -1,0 +1,84 @@
+{
+  "revision": 14,
+  "cover": {
+    "v": 2,
+    "background": "sky",
+    "title": null,
+    "scale": 85,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "background",
+        "x": 0,
+        "y": 40,
+        "w": 760,
+        "children": [
+          {
+            "id": "listRow-mrqjpcj0-21",
+            "type": "listRow",
+            "props": {
+              "label": "List item",
+              "sublabel": ""
+            }
+          },
+          {
+            "id": "listRow-mrqjpef2-22",
+            "type": "listRow",
+            "props": {
+              "label": "List item",
+              "sublabel": ""
+            }
+          },
+          {
+            "id": "listRow-mrqjpeyz-23",
+            "type": "listRow",
+            "props": {
+              "label": "List item",
+              "sublabel": ""
+            }
+          },
+          {
+            "id": "listRow-mrqjpfdb-24",
+            "type": "listRow",
+            "props": {
+              "label": "List item",
+              "sublabel": ""
+            }
+          },
+          {
+            "id": "listRow-mrqjpfsk-25",
+            "type": "listRow",
+            "props": {
+              "label": "List item",
+              "sublabel": ""
+            }
+          },
+          {
+            "id": "listRow-mrqjpgqu-26",
+            "type": "listRow",
+            "props": {
+              "label": "List item",
+              "sublabel": ""
+            }
+          }
+        ]
+      },
+      {
+        "id": "b",
+        "role": "foreground",
+        "x": 600,
+        "y": 0,
+        "w": 440,
+        "children": []
+      }
+    ],
+    "status": "flagged",
+    "note": "",
+    "lastTouchedBy": "max",
+    "editing": false,
+    "rev": 13,
+    "updatedAt": 1784390438615
+  }
+}

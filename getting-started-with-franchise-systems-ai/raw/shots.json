@@ -1,5 +1,5 @@
 {
-  "revision": 0,
+  "revision": 19,
   "shots": {
     "dashboard-sidebar.png": {
       "status": "proposed",
@@ -9,11 +9,31 @@
       "rev": 0
     },
     "settings-scopes.png": {
-      "status": "proposed",
+      "highlights": [
+        {
+          "rect": [
+            35,
+            417,
+            409,
+            59
+          ],
+          "style": "outline",
+          "thickness": 3,
+          "cornerRadius": 18,
+          "glowSize": 26,
+          "color": "blue",
+          "dimStrength": 45,
+          "feather": 24
+        }
+      ],
+      "status": "adjusted",
       "note": "Same raw as setting-up-your-profile/raw/settings-scopes-nav.png, reprocessed for this article's own image URL",
-      "lastTouchedBy": "claude",
+      "lastTouchedBy": "max",
       "editing": false,
-      "rev": 0
+      "rev": 13,
+      "renderedRev": 13,
+      "updatedAt": 1784539219864,
+      "renderedAt": 1784539221940
     }
   }
 }

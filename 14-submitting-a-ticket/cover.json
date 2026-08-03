@@ -1,0 +1,126 @@
+{
+  "revision": 7,
+  "cover": {
+    "v": 2,
+    "background": "ember",
+    "title": null,
+    "scale": 106,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -80,
+        "y": -45,
+        "w": 1200,
+        "h": 630,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "poster-eyebrow",
+            "type": "text",
+            "props": {
+              "variant": "posterEyebrow",
+              "value": "HELP ON THE WAY"
+            },
+            "offset": [
+              146,
+              230
+            ]
+          },
+          {
+            "id": "poster-title",
+            "type": "text",
+            "props": {
+              "variant": "poster",
+              "value": "Tickets"
+            },
+            "offset": [
+              139,
+              263
+            ]
+          },
+          {
+            "id": "msg-open",
+            "type": "threadCard",
+            "props": {
+              "role": "sent",
+              "title": "Freezer down",
+              "meta": "You",
+              "chip": "Open",
+              "lines": 2,
+              "tone": "light",
+              "width": 480,
+              "tiltDeg": -1.2
+            },
+            "offset": [
+              580,
+              38
+            ]
+          },
+          {
+            "id": "msg-progress",
+            "type": "threadCard",
+            "props": {
+              "role": "reply",
+              "title": "",
+              "meta": "Lumon Fresh",
+              "chip": "In progress",
+              "lines": 2,
+              "tone": "mid",
+              "width": 455,
+              "tiltDeg": 0.8
+            },
+            "offset": [
+              640,
+              225
+            ]
+          },
+          {
+            "id": "msg-waiting",
+            "type": "threadCard",
+            "props": {
+              "role": "sent",
+              "title": "",
+              "chip": "Waiting on you",
+              "lines": 0,
+              "tone": "mid",
+              "width": 340,
+              "tiltDeg": -0.8
+            },
+            "offset": [
+              690,
+              387
+            ]
+          },
+          {
+            "id": "msg-resolved",
+            "type": "threadCard",
+            "props": {
+              "role": "reply",
+              "title": "",
+              "meta": "Brand team",
+              "chip": "Resolved",
+              "lines": 0,
+              "tone": "deep",
+              "width": 375,
+              "tiltDeg": 1
+            },
+            "offset": [
+              712,
+              532
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Support thread archetype, Sol revision: one down-right cascade, spatial order = status order = rose ramp light to deep; Resolved endcap carries a modest bottom bleed.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 7,
+    "updatedAt": 1784542326711
+  }
+}

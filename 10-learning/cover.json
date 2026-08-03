@@ -1,10 +1,10 @@
 {
-  "revision": 21,
+  "revision": 29,
   "cover": {
     "v": 2,
-    "background": "ocean",
+    "background": "ember",
     "title": null,
-    "scale": 85,
+    "scale": 100,
     "positionX": 0,
     "positionY": 0,
     "frames": [
@@ -12,25 +12,35 @@
         "id": "a",
         "role": "background",
         "x": 0,
-        "y": 40,
-        "w": 600,
-        "overflowMode": "whole",
+        "y": 0,
+        "w": 620,
+        "h": 630,
+        "preset": "bare",
+        "layout": "free",
         "children": [
           {
-            "id": "text-learn-eyebrow",
+            "id": "poster-eyebrow",
             "type": "text",
             "props": {
-              "variant": "eyebrow",
-              "value": "LEARNING & DEVELOPMENT"
-            }
+              "variant": "posterEyebrow",
+              "value": "KEEP YOUR EDGE"
+            },
+            "offset": [
+              41,
+              60
+            ]
           },
           {
-            "id": "text-learn-headline",
+            "id": "poster-title",
             "type": "text",
             "props": {
-              "variant": "display",
-              "value": "Keep your edge sharp."
-            }
+              "variant": "poster",
+              "value": "Learning"
+            },
+            "offset": [
+              34,
+              93
+            ]
           },
           {
             "id": "table-learn-courses",
@@ -69,16 +79,21 @@
                   "badgeLabel": "Overdue",
                   "badgeColor": "#930a1e"
                 }
-              ]
-            }
+              ],
+              "radius": 16
+            },
+            "offset": [
+              0,
+              266
+            ]
           }
         ]
       },
       {
         "id": "b",
         "role": "foreground",
-        "x": 610,
-        "y": 55,
+        "x": 629,
+        "y": 70,
         "w": 380,
         "h": 400,
         "children": [
@@ -107,6 +122,7 @@
     "note": "Repair pass: Frame A badges mixed to 4 distinct real states (In Progress/Not Started/Completed/Overdue) - Completed and Overdue pulled from verified real UI vocabulary (platform COURSE_STATUS + the red Overdue pill on learning-course-card.png, shortened from its full 'Overdue: Jul 3, 2026' form to fit the table's fixed 120px badge column - no fabricated text) and reapplied to Selling our Bowls / POS Mastery (both confirmed real course names via Learning full page.png) to diversify badges without duplicating course/status pairs; not asserting those two are literally in that state in prod right now. Frame B: contentZoom 1.4 was clipping the contentCard's right edge (title padding + card corner) because the card always fills 100% of frame.w and the scale transform is top-left anchored inside a frame that clips at its own unscaled w/h - dropped zoom to 1 and enlarged frame b (w 300->380, h 470->400) to keep hero prominence without any clip risk.",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 21
+    "rev": 27,
+    "updatedAt": 1784539866229
   }
 }

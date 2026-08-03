@@ -1,0 +1,249 @@
+{
+  "revision": 4,
+  "cover": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "opener-wide",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -320,
+        "y": -110,
+        "w": 1680,
+        "h": 760,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-high9-1",
+            "type": "gridField",
+            "props": {
+              "width": 1680,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-high9-2",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "OPERATIONS"
+            },
+            "offset": [
+              160,
+              214
+            ]
+          },
+          {
+            "id": "text-high9-3",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "How to\nManage FDDs",
+              "size": 96
+            },
+            "offset": [
+              160,
+              270
+            ]
+          },
+          {
+            "id": "text-high9-4",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "Assign and track FDDs across states."
+            },
+            "offset": [
+              160,
+              502
+            ]
+          },
+          {
+            "id": "flowConnector-high9-5",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 18,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1194,
+              158
+            ]
+          },
+          {
+            "id": "flowConnector-high9-6",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 18,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1194,
+              288
+            ]
+          },
+          {
+            "id": "flowConnector-high9-7",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 18,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1194,
+              418
+            ]
+          },
+          {
+            "id": "flowConnector-high9-8",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 18,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1194,
+              548
+            ]
+          },
+          {
+            "id": "flowNode-high9-9",
+            "type": "flowNode",
+            "props": {
+              "label": "Upload an FDD",
+              "meta": "toggle the FDD flag",
+              "icon": "import",
+              "tint": "slate",
+              "emphasized": false,
+              "width": 520,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              66
+            ]
+          },
+          {
+            "id": "flowNode-high9-10",
+            "type": "flowNode",
+            "props": {
+              "label": "Prepare for Signature",
+              "meta": "powered by DocuSeal",
+              "icon": "pen",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 520,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              196
+            ]
+          },
+          {
+            "id": "flowNode-high9-11",
+            "type": "flowNode",
+            "props": {
+              "label": "Bulk Assign FDD",
+              "meta": "Sales → Territories",
+              "icon": "pin",
+              "tint": "amber",
+              "emphasized": false,
+              "width": 520,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              326
+            ]
+          },
+          {
+            "id": "flowNode-high9-12",
+            "type": "flowNode",
+            "props": {
+              "label": "Track filing status",
+              "meta": "Not Filed · Pending · Completed",
+              "icon": "chart",
+              "tint": "green",
+              "emphasized": false,
+              "width": 520,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              456
+            ]
+          },
+          {
+            "id": "flowNode-high9-13",
+            "type": "flowNode",
+            "props": {
+              "label": "Send FDD",
+              "meta": "email with a link to sign",
+              "icon": "send",
+              "tint": "blue",
+              "emphasized": true,
+              "width": 520,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              586
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Vertical FDD pipeline rev 2 per Sol QA: five uniform cards on one vertical axis (5 smaller cards vs work-your-pipeline's 4 larger), even connectors, labels normalized to one imperative form verbatim to the article's terms, Send FDD emphasized as the terminal step.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 4,
+    "updatedAt": 1784540371047
+  }
+}

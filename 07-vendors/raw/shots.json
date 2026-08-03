@@ -1,0 +1,33 @@
+{
+  "revision": 0,
+  "shots": {
+    "vendors-detail.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "vendors-grid.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "vendors-setup-status.png": {
+      "cursor": {
+        "pos": [
+          1878,
+          826
+        ],
+        "type": "hand"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

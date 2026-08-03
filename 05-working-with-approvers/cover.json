@@ -1,118 +1,100 @@
 {
-  "revision": 13,
+  "revision": 32,
   "cover": {
     "v": 2,
-    "background": "peach",
+    "background": "ember",
     "title": null,
-    "scale": 85,
+    "scale": 106,
     "positionX": 0,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
-        "role": "background",
-        "x": 0,
-        "y": 20,
-        "w": 640,
-        "h": 500,
-        "preset": "portal-shell",
-        "contentZoom": 1.15,
-        "children": [
-          {
-            "id": "text-eyebrow-a",
-            "type": "text",
-            "props": {
-              "variant": "eyebrow",
-              "value": "PROJECTS · LF ASPEN"
-            }
-          },
-          {
-            "id": "text-heading-a",
-            "type": "text",
-            "props": {
-              "variant": "heading",
-              "value": "Submit your menu pricing for corporate approval"
-            }
-          },
-          {
-            "id": "text-body-a",
-            "type": "text",
-            "props": {
-              "variant": "body",
-              "value": "Sent to 1 approver · waiting on 1"
-            }
-          },
-          {
-            "id": "approvalPill-a",
-            "type": "approvalPill",
-            "props": {
-              "state": "pending",
-              "initials": "CS",
-              "name": "Creed Smith",
-              "color": "purple"
-            }
-          },
-          {
-            "id": "badge-a",
-            "type": "badge",
-            "props": {
-              "label": "task-11-menu-pricing-sheet.xlsx",
-              "color": "#191919"
-            }
-          }
-        ]
-      },
-      {
-        "id": "b",
         "role": "foreground",
-        "x": 640,
-        "y": 100,
-        "w": 380,
-        "h": 340,
-        "contentZoom": 1.1,
+        "x": -80,
+        "y": -45,
+        "w": 1200,
+        "h": 630,
+        "preset": "bare",
+        "layout": "free",
         "children": [
           {
-            "id": "text-eyebrow-b",
+            "id": "poster-eyebrow",
             "type": "text",
             "props": {
-              "variant": "eyebrow",
-              "value": "APPROVAL"
-            }
+              "variant": "posterEyebrow",
+              "value": "OUT FOR SIGN-OFF"
+            },
+            "offset": [
+              469,
+              116
+            ]
           },
           {
-            "id": "text-heading-b",
+            "id": "poster-title",
             "type": "text",
             "props": {
-              "variant": "heading",
-              "value": "Approved"
-            }
+              "variant": "poster",
+              "value": "Approvals"
+            },
+            "offset": [
+              373,
+              150
+            ]
           },
           {
-            "id": "approvalPill-b",
-            "type": "approvalPill",
+            "id": "relay",
+            "type": "relayFlow",
             "props": {
-              "state": "approved",
-              "initials": "CS",
-              "name": "Creed Smith",
-              "color": "purple"
-            }
-          },
-          {
-            "id": "card-feedback-b",
-            "type": "card",
-            "props": {
-              "title": "Creed Smith",
-              "body": "Numbers check out — approved for Aspen.",
-              "footer": "Jul 3"
-            }
+              "width": 900,
+              "showNames": true,
+              "terminalCheck": true,
+              "items": [
+                {
+                  "name": "Mark Scout",
+                  "initials": "MS",
+                  "tone": "purple",
+                  "state": "pending"
+                },
+                {
+                  "name": "Helly Riggs",
+                  "initials": "HR",
+                  "tone": "blue",
+                  "state": "pending"
+                },
+                {
+                  "name": "Irving Bailiff",
+                  "initials": "IB",
+                  "tone": "gray",
+                  "state": "pending"
+                },
+                {
+                  "name": "Max Maeser",
+                  "initials": "MM",
+                  "tone": "purple",
+                  "state": "pending"
+                },
+                {
+                  "name": "Creed Smith",
+                  "initials": "CS",
+                  "tone": "gray",
+                  "state": "pending"
+                }
+              ]
+            },
+            "offset": [
+              228,
+              400
+            ]
           }
         ]
       }
     ],
-    "status": "proposed",
+    "status": "approved",
     "note": "",
-    "lastTouchedBy": "claude",
+    "lastTouchedBy": "max",
     "editing": false,
-    "rev": 13
+    "rev": 31,
+    "updatedAt": 1784377485746
   }
 }

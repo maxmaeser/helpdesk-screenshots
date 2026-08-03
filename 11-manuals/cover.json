@@ -1,118 +1,103 @@
 {
-  "revision": 6,
+  "revision": 24,
   "cover": {
     "v": 2,
-    "background": "mist",
+    "background": "ember",
     "title": null,
-    "scale": 85,
+    "scale": 106,
     "positionX": 0,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
-        "role": "background",
-        "x": 0,
-        "y": 30,
-        "w": 560,
-        "h": 490,
-        "contentZoom": 1.35,
-        "children": [
-          {
-            "id": "text-manuals-eyebrow-a",
-            "type": "text",
-            "props": {
-              "variant": "eyebrow",
-              "value": "LIBRARY"
-            }
-          },
-          {
-            "id": "text-manuals-heading-a",
-            "type": "text",
-            "props": {
-              "variant": "heading",
-              "value": "Every manual"
-            }
-          },
-          {
-            "id": "listRow-manuals-1",
-            "type": "listRow",
-            "props": {
-              "label": "Daily Opening Procedures",
-              "sublabel": "Operations 101 · 4 min"
-            }
-          },
-          {
-            "id": "listRow-manuals-2",
-            "type": "listRow",
-            "props": {
-              "label": "Royalty Reporting Procedure",
-              "sublabel": "Operations 101 · 3 min"
-            }
-          },
-          {
-            "id": "listRow-manuals-3",
-            "type": "listRow",
-            "props": {
-              "label": "Severed Workforce Placement Procedure",
-              "sublabel": "Operations 101 · 4 min"
-            }
-          },
-          {
-            "id": "listRow-manuals-4",
-            "type": "listRow",
-            "props": {
-              "label": "Hiring Practices and Onboarding",
-              "sublabel": "Operations 101 · 4 min"
-            }
-          }
-        ]
-      },
-      {
-        "id": "b",
         "role": "foreground",
-        "x": 450,
-        "y": 15,
-        "w": 580,
-        "h": 340,
+        "x": -80,
+        "y": -45,
+        "w": 1200,
+        "h": 630,
+        "preset": "bare",
+        "layout": "free",
         "children": [
           {
-            "id": "text-manuals-eyebrow-b",
+            "id": "poster-eyebrow",
             "type": "text",
             "props": {
-              "variant": "eyebrow",
-              "value": "OPERATIONS 101"
-            }
+              "variant": "posterEyebrow",
+              "value": "LOOK IT UP"
+            },
+            "offset": [
+              139,
+              212
+            ]
           },
           {
-            "id": "text-manuals-heading-b",
+            "id": "poster-title",
             "type": "text",
             "props": {
-              "variant": "heading",
-              "value": "Daily Opening Procedures"
-            }
+              "variant": "poster",
+              "value": "Manuals"
+            },
+            "offset": [
+              132,
+              245
+            ]
           },
           {
-            "id": "listRow-phase-1",
-            "type": "listRow",
+            "id": "sheet-back",
+            "type": "manualSheet",
             "props": {
-              "label": "Phase 1: Arrival and First Prep Window",
-              "sublabel": "The morning prep window opens the unit.",
-              "highlighted": true
-            }
+              "title": "Local Store Marketing Playbook",
+              "tone": "light",
+              "width": 420,
+              "lines": 3,
+              "blur": 3.4,
+              "dim": 0.34,
+              "tiltDeg": 6
+            },
+            "offset": [
+              883,
+              -37
+            ]
           },
           {
-            "id": "card-phase-1-steps",
-            "type": "card",
+            "id": "sheet-mid",
+            "type": "manualSheet",
             "props": {
-              "body": "1. Unlock, disarm the alarm, and switch on overhead lighting and HVAC. 2. Wash hands, change into a clean apron, and confirm the team is in uniform. 3. Walk the floor. Check for overnight issues, leaks, pests, or anything out of place."
-            }
+              "title": "Royalty Reporting Procedure",
+              "tag": "Operations 101",
+              "tone": "mid",
+              "width": 440,
+              "lines": 4,
+              "blur": 1.4,
+              "dim": 0.14,
+              "tiltDeg": 3
+            },
+            "offset": [
+              690,
+              89
+            ]
           },
           {
-            "id": "listRow-phase-2",
-            "type": "listRow",
+            "id": "sheet-front",
+            "type": "manualSheet",
             "props": {
-              "label": "Phase 2: Equipment Power-On"
-            }
+              "title": "Daily Opening Procedures",
+              "tag": "Operations 101",
+              "readTime": "4 min",
+              "tone": "deep",
+              "width": 472,
+              "chapters": [
+                "Phase 1: Arrival and First Prep Window",
+                "Phase 2: Equipment Power-On",
+                "Phase 3: Temperature Checks Before the First Build",
+                "Phase 4: Line and Build-Station Setup",
+                "Phase 5: Toast POS and Registers Online"
+              ]
+            },
+            "offset": [
+              541,
+              245
+            ]
           }
         ]
       }
@@ -121,6 +106,7 @@
     "note": "",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 6
+    "rev": 21,
+    "updatedAt": 1784539876817
   }
 }

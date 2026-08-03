@@ -1,0 +1,237 @@
+{
+  "revision": 3,
+  "cover": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "opener-wide",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -320,
+        "y": -110,
+        "w": 1680,
+        "h": 760,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-rail9-14",
+            "type": "gridField",
+            "props": {
+              "width": 1680,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-rail9-15",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "USERS AND SETTINGS"
+            },
+            "offset": [
+              160,
+              194
+            ]
+          },
+          {
+            "id": "text-rail9-16",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "Understanding\nRoles and\nPermissions",
+              "size": 76
+            },
+            "offset": [
+              160,
+              250
+            ]
+          },
+          {
+            "id": "text-rail9-17",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "What each team member can see and do."
+            },
+            "offset": [
+              160,
+              522
+            ]
+          },
+          {
+            "id": "text-rail9-18",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "ACCESS LEVELS"
+            },
+            "offset": [
+              760,
+              104
+            ]
+          },
+          {
+            "id": "text-rail9-19",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "BRAND TEAM ROLES"
+            },
+            "offset": [
+              1168,
+              104
+            ]
+          },
+          {
+            "id": "flowConnector-rail9-20",
+            "type": "flowConnector",
+            "props": {
+              "dx": 44,
+              "dy": 0,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1044,
+              218
+            ]
+          },
+          {
+            "id": "flowConnector-rail9-21",
+            "type": "flowConnector",
+            "props": {
+              "dx": 44,
+              "dy": 0,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1044,
+              406
+            ]
+          },
+          {
+            "id": "flowNode-rail9-22",
+            "type": "flowNode",
+            "props": {
+              "label": "Admin",
+              "meta": "full permissions",
+              "icon": "shield",
+              "tint": "blue",
+              "emphasized": true,
+              "width": 352,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              708,
+              160
+            ]
+          },
+          {
+            "id": "flowNode-rail9-23",
+            "type": "flowNode",
+            "props": {
+              "label": "Member",
+              "meta": "limited permissions",
+              "icon": "user",
+              "tint": "slate",
+              "emphasized": false,
+              "width": 352,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              708,
+              348
+            ]
+          },
+          {
+            "id": "flowNode-rail9-24",
+            "type": "flowNode",
+            "props": {
+              "label": "Finance Liaison",
+              "meta": "finance slots in projects",
+              "icon": "chart",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 436,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              1104,
+              160
+            ]
+          },
+          {
+            "id": "flowNode-rail9-25",
+            "type": "flowNode",
+            "props": {
+              "label": "Real Estate Manager",
+              "meta": "fills RACI slots",
+              "icon": "pin",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 436,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              1104,
+              348
+            ]
+          },
+          {
+            "id": "flowNode-rail9-26",
+            "type": "flowNode",
+            "props": {
+              "label": "Billing",
+              "meta": "its own toggle",
+              "icon": "card",
+              "tint": "amber",
+              "emphasized": false,
+              "width": 300,
+              "height": 120,
+              "anchorTop": false
+            },
+            "offset": [
+              756,
+              556
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Two-column map: the two access levels mapped to brand team roles they hold; billing detached below as its own toggle. Labels verbatim.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 3,
+    "updatedAt": 1784540369858
+  }
+}

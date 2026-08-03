@@ -1,0 +1,213 @@
+{
+  "revision": 2,
+  "cover": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "opener-wide",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -320,
+        "y": -110,
+        "w": 1680,
+        "h": 760,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-hubport-30",
+            "type": "gridField",
+            "props": {
+              "width": 1680,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-hubport-31",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "GETTING STARTED · CHAPTER 3"
+            },
+            "offset": [
+              160,
+              214
+            ]
+          },
+          {
+            "id": "text-hubport-32",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "Reach Out\nand Nurture",
+              "size": 96
+            },
+            "offset": [
+              160,
+              270
+            ]
+          },
+          {
+            "id": "text-hubport-33",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "Send email sequences and track results."
+            },
+            "offset": [
+              160,
+              502
+            ]
+          },
+          {
+            "id": "flowConnector-hubport-34",
+            "type": "flowConnector",
+            "props": {
+              "dx": 72,
+              "dy": 0,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1082,
+              222
+            ]
+          },
+          {
+            "id": "flowConnector-hubport-35",
+            "type": "flowConnector",
+            "props": {
+              "dx": -432,
+              "dy": 136,
+              "route": "vhv",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 28,
+              "arrow": true,
+              "mid": 0.53
+            },
+            "offset": [
+              906,
+              296
+            ]
+          },
+          {
+            "id": "flowConnector-hubport-36",
+            "type": "flowConnector",
+            "props": {
+              "dx": 72,
+              "dy": 0,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1082,
+              514
+            ]
+          },
+          {
+            "id": "flowNode-hubport-37",
+            "type": "flowNode",
+            "props": {
+              "label": "Domains",
+              "meta": "verified sending",
+              "icon": "shield",
+              "tint": "green",
+              "emphasized": false,
+              "width": 352,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              746,
+              164
+            ]
+          },
+          {
+            "id": "flowNode-hubport-38",
+            "type": "flowNode",
+            "props": {
+              "label": "Build Email",
+              "meta": "template · merge",
+              "icon": "mail",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 352,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              1178,
+              164
+            ]
+          },
+          {
+            "id": "flowNode-hubport-39",
+            "type": "flowNode",
+            "props": {
+              "label": "Sequences",
+              "meta": "auto follow-up",
+              "icon": "branch",
+              "tint": "blue",
+              "emphasized": true,
+              "width": 352,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              746,
+              456
+            ]
+          },
+          {
+            "id": "flowNode-hubport-40",
+            "type": "flowNode",
+            "props": {
+              "label": "Track",
+              "meta": "UTM · links",
+              "icon": "chart",
+              "tint": "amber",
+              "emphasized": false,
+              "width": 352,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              1178,
+              456
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Ported from tools/opener-gen (shipped -opener-v2) into editable studio primitives.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 2,
+    "updatedAt": 1784540367087
+  }
+}

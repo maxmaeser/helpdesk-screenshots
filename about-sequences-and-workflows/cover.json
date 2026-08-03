@@ -1,0 +1,277 @@
+{
+  "revision": 3,
+  "cover": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "opener-wide",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -320,
+        "y": -110,
+        "w": 1680,
+        "h": 760,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-high9-1",
+            "type": "gridField",
+            "props": {
+              "width": 1680,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-high9-2",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "OPERATIONS"
+            },
+            "offset": [
+              160,
+              238
+            ]
+          },
+          {
+            "id": "text-high9-3",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "About Sequences\nand Workflows",
+              "size": 72
+            },
+            "offset": [
+              160,
+              294
+            ]
+          },
+          {
+            "id": "text-high9-4",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "A trigger fires and actions execute in order."
+            },
+            "offset": [
+              160,
+              478
+            ]
+          },
+          {
+            "id": "flowConnector-high9-5",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 40,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              996,
+              172
+            ]
+          },
+          {
+            "id": "flowConnector-high9-6",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 40,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              996,
+              328
+            ]
+          },
+          {
+            "id": "flowConnector-high9-7",
+            "type": "flowConnector",
+            "props": {
+              "dx": -94,
+              "dy": 76,
+              "route": "vhv",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              792,
+              484
+            ]
+          },
+          {
+            "id": "flowConnector-high9-8",
+            "type": "flowConnector",
+            "props": {
+              "dx": 94,
+              "dy": 76,
+              "route": "vhv",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1106,
+              484
+            ]
+          },
+          {
+            "id": "text-high9-9",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "Yes",
+              "size": 22,
+              "color": "#8A8F98"
+            },
+            "offset": [
+              724,
+              522
+            ]
+          },
+          {
+            "id": "text-high9-10",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "No",
+              "size": 22,
+              "color": "#8A8F98"
+            },
+            "offset": [
+              1240,
+              522
+            ]
+          },
+          {
+            "id": "flowNode-high9-11",
+            "type": "flowNode",
+            "props": {
+              "label": "Trigger",
+              "meta": "deal moves to a new stage",
+              "icon": "flag",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 440,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              792,
+              72
+            ]
+          },
+          {
+            "id": "flowNode-high9-12",
+            "type": "flowNode",
+            "props": {
+              "label": "Email",
+              "meta": "your email templates",
+              "icon": "mail",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 440,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              792,
+              228
+            ]
+          },
+          {
+            "id": "flowNode-high9-13",
+            "type": "flowNode",
+            "props": {
+              "label": "Condition",
+              "meta": "two paths: yes and no",
+              "icon": "branch",
+              "tint": "blue",
+              "emphasized": true,
+              "width": 440,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              792,
+              384
+            ]
+          },
+          {
+            "id": "flowNode-high9-14",
+            "type": "flowNode",
+            "props": {
+              "label": "Add Tag",
+              "meta": "records that match",
+              "icon": "badge",
+              "tint": "amber",
+              "emphasized": false,
+              "width": 400,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              608,
+              576
+            ]
+          },
+          {
+            "id": "flowNode-high9-15",
+            "type": "flowNode",
+            "props": {
+              "label": "Create Task",
+              "meta": "records that do not",
+              "icon": "calendar",
+              "tint": "slate",
+              "emphasized": false,
+              "width": 400,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              1016,
+              576
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Branching flow from the article: trigger-action pattern with a condition node splitting into yes and no paths. All labels verbatim from About Sequences and Workflows. Rev 2: distinct yes/no stems with quiet gray branch labels per Sol QA.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 3,
+    "updatedAt": 1784540370251
+  }
+}

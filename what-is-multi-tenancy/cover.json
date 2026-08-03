@@ -1,0 +1,213 @@
+{
+  "revision": 5,
+  "cover": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "opener-wide",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -320,
+        "y": -110,
+        "w": 1680,
+        "h": 760,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-high9-1",
+            "type": "gridField",
+            "props": {
+              "width": 1680,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-high9-2",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "GETTING STARTED"
+            },
+            "offset": [
+              160,
+              220
+            ]
+          },
+          {
+            "id": "text-high9-3",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "What Is\nMulti-Tenancy?",
+              "size": 84
+            },
+            "offset": [
+              160,
+              276
+            ]
+          },
+          {
+            "id": "text-high9-4",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "Multiple brands, fully isolated data."
+            },
+            "offset": [
+              160,
+              496
+            ]
+          },
+          {
+            "id": "flowNode-high9-5",
+            "type": "flowNode",
+            "props": {
+              "label": "Organization",
+              "meta": "billing · team · brands",
+              "icon": "building",
+              "tint": "slate",
+              "emphasized": false,
+              "width": 800,
+              "height": 600,
+              "anchorTop": true
+            },
+            "offset": [
+              812,
+              80
+            ]
+          },
+          {
+            "id": "flowConnector-high9-6",
+            "type": "flowConnector",
+            "props": {
+              "dx": 152,
+              "dy": 98,
+              "route": "vhv",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 20,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              856,
+              180
+            ]
+          },
+          {
+            "id": "flowConnector-high9-7",
+            "type": "flowConnector",
+            "props": {
+              "dx": 528,
+              "dy": 98,
+              "route": "vhv",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 20,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              856,
+              180
+            ]
+          },
+          {
+            "id": "flowNode-high9-8",
+            "type": "flowNode",
+            "props": {
+              "label": "Food Brand",
+              "meta": "pipelines · portals",
+              "icon": "brand",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 352,
+              "height": 320,
+              "anchorTop": true
+            },
+            "offset": [
+              848,
+              300
+            ]
+          },
+          {
+            "id": "flowNode-high9-9",
+            "type": "flowNode",
+            "props": {
+              "label": "Fitness Brand",
+              "meta": "pipelines · portals",
+              "icon": "brand",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 352,
+              "height": 320,
+              "anchorTop": true
+            },
+            "offset": [
+              1224,
+              300
+            ]
+          },
+          {
+            "id": "flowNode-high9-10",
+            "type": "flowNode",
+            "props": {
+              "label": "Data",
+              "meta": "fully isolated",
+              "icon": "shield",
+              "tint": "green",
+              "emphasized": false,
+              "width": 296,
+              "height": 120,
+              "anchorTop": false
+            },
+            "offset": [
+              876,
+              468
+            ]
+          },
+          {
+            "id": "flowNode-high9-11",
+            "type": "flowNode",
+            "props": {
+              "label": "Data",
+              "meta": "fully isolated",
+              "icon": "shield",
+              "tint": "green",
+              "emphasized": false,
+              "width": 296,
+              "height": 120,
+              "anchorTop": false
+            },
+            "offset": [
+              1252,
+              468
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Nested twin containment: one Organization branching to two equal isolated Brands.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 5,
+    "updatedAt": 1784540631667
+  }
+}

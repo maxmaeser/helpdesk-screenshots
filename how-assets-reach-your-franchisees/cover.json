@@ -1,0 +1,195 @@
+{
+  "revision": 4,
+  "cover": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "opener-wide",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -320,
+        "y": -110,
+        "w": 1680,
+        "h": 760,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-high9-1",
+            "type": "gridField",
+            "props": {
+              "width": 1680,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-high9-2",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "OPERATIONS"
+            },
+            "offset": [
+              160,
+              197
+            ]
+          },
+          {
+            "id": "text-high9-3",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "How Assets\nReach Your\nFranchisees",
+              "size": 74
+            },
+            "offset": [
+              160,
+              253
+            ]
+          },
+          {
+            "id": "text-high9-4",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "Uploading a file does not\nmake it visible."
+            },
+            "offset": [
+              160,
+              519
+            ]
+          },
+          {
+            "id": "flowConnector-high9-6",
+            "type": "flowConnector",
+            "props": {
+              "dx": 40,
+              "dy": 150,
+              "route": "hv",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": false,
+              "mid": 0.5
+            },
+            "offset": [
+              1098,
+              214
+            ]
+          },
+          {
+            "id": "flowConnector-high9-7",
+            "type": "flowConnector",
+            "props": {
+              "dx": 40,
+              "dy": -150,
+              "route": "hv",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": false,
+              "mid": 0.5
+            },
+            "offset": [
+              1098,
+              364
+            ]
+          },
+          {
+            "id": "flowConnector-high9-11",
+            "type": "flowConnector",
+            "props": {
+              "dx": 32,
+              "dy": 0,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1138,
+              364
+            ]
+          },
+          {
+            "id": "flowNode-high9-8",
+            "type": "flowNode",
+            "props": {
+              "label": "Published to franchisees",
+              "meta": "from the Library",
+              "icon": "send",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 512,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              602,
+              156
+            ]
+          },
+          {
+            "id": "flowNode-high9-9",
+            "type": "flowNode",
+            "props": {
+              "label": "Linked to a location",
+              "meta": "from Operations → Locations",
+              "icon": "pin",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 512,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              602,
+              456
+            ]
+          },
+          {
+            "id": "flowNode-high9-10",
+            "type": "flowNode",
+            "props": {
+              "label": "Franchisees",
+              "meta": "in their library",
+              "icon": "badge",
+              "tint": "blue",
+              "emphasized": true,
+              "width": 336,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              1194,
+              306
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Converging paths rev 2: connectors leave each path card's right edge, join at a single merge point, then one arrowed connector enters the emphasized Franchisees card. Uploaded-state note dropped per Sol QA; the subtitle carries that message.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 4,
+    "updatedAt": 1784540370654
+  }
+}

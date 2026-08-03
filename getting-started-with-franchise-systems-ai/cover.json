@@ -1,0 +1,141 @@
+{
+  "revision": 2,
+  "cover": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "opener-wide",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -320,
+        "y": -110,
+        "w": 1680,
+        "h": 760,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-hubport-1",
+            "type": "gridField",
+            "props": {
+              "width": 1680,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-hubport-2",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "GETTING STARTED"
+            },
+            "offset": [
+              160,
+              197
+            ]
+          },
+          {
+            "id": "text-hubport-3",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "Getting Started\nwith Franchise\nSystems Ai",
+              "size": 74
+            },
+            "offset": [
+              160,
+              253
+            ]
+          },
+          {
+            "id": "text-hubport-4",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "Three levels: organization, brand, agent."
+            },
+            "offset": [
+              160,
+              519
+            ]
+          },
+          {
+            "id": "flowNode-hubport-5",
+            "type": "flowNode",
+            "props": {
+              "label": "Organization",
+              "meta": "brands · team · billing",
+              "icon": "building",
+              "tint": "slate",
+              "emphasized": false,
+              "width": 680,
+              "height": 512,
+              "anchorTop": true
+            },
+            "offset": [
+              850,
+              132
+            ]
+          },
+          {
+            "id": "flowNode-hubport-6",
+            "type": "flowNode",
+            "props": {
+              "label": "Brand",
+              "meta": "pipeline · portal",
+              "icon": "brand",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 552,
+              "height": 344,
+              "anchorTop": true
+            },
+            "offset": [
+              914,
+              252
+            ]
+          },
+          {
+            "id": "flowNode-hubport-7",
+            "type": "flowNode",
+            "props": {
+              "label": "Agent",
+              "meta": "logs in · your access",
+              "icon": "user",
+              "tint": "blue",
+              "emphasized": true,
+              "width": 424,
+              "height": 184,
+              "anchorTop": true
+            },
+            "offset": [
+              978,
+              380
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Ported from tools/opener-gen (shipped -opener-v2) into editable studio primitives.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 2,
+    "updatedAt": 1784540365876
+  }
+}

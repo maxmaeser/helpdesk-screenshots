@@ -1,57 +1,111 @@
 {
-  "revision": 4,
+  "revision": 16,
   "cover": {
     "v": 2,
-    "background": "cloud",
+    "background": "ember",
     "title": null,
-    "scale": 85,
+    "scale": 106,
     "positionX": 0,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
-        "role": "background",
-        "x": 0,
-        "y": 60,
-        "w": 560,
+        "role": "foreground",
+        "x": -80,
+        "y": -45,
+        "w": 1200,
+        "h": 630,
+        "preset": "bare",
+        "layout": "free",
         "children": [
           {
-            "id": "portalCard-88576",
-            "type": "portalCard",
+            "id": "dawn",
+            "type": "dawnField",
             "props": {
-              "eyebrow": "GET STARTED",
-              "title": "Welcome to your franchisee portal",
-              "body": "Everything you need to open and operate, in one place.",
-              "accent": "green",
-              "stats": [
-                {
-                  "value": "8",
-                  "label": "Modules"
-                },
-                {
-                  "value": "24",
-                  "label": "Tasks"
-                }
-              ]
-            }
+              "width": 900,
+              "height": 660,
+              "discSize": 500,
+              "discX": 470,
+              "discY": 250,
+              "rings": 3,
+              "horizon": true
+            },
+            "offset": [
+              500,
+              -30
+            ]
+          },
+          {
+            "id": "poster-eyebrow",
+            "type": "text",
+            "props": {
+              "variant": "posterEyebrow",
+              "value": "A NEW DAY"
+            },
+            "offset": [
+              147,
+              214
+            ]
+          },
+          {
+            "id": "poster-title",
+            "type": "text",
+            "props": {
+              "variant": "poster",
+              "value": "Welcome"
+            },
+            "offset": [
+              139,
+              246
+            ]
+          },
+          {
+            "id": "greet-eyebrow",
+            "type": "text",
+            "props": {
+              "variant": "eyebrow",
+              "value": "MONDAY, JULY 13",
+              "color": "#7d8a97"
+            },
+            "offset": [
+              151,
+              430
+            ]
+          },
+          {
+            "id": "greet-line",
+            "type": "text",
+            "props": {
+              "variant": "display",
+              "value": "Good afternoon, Creed.",
+              "color": "#22384E"
+            },
+            "offset": [
+              147,
+              462
+            ]
+          },
+          {
+            "id": "greet-sub",
+            "type": "text",
+            "props": {
+              "variant": "portalH3",
+              "value": "Welcome to Lumon Fresh",
+              "color": "#6a7886"
+            },
+            "offset": [
+              149,
+              520
+            ]
           }
         ]
-      },
-      {
-        "id": "b",
-        "role": "foreground",
-        "x": 480,
-        "y": 0,
-        "w": 320,
-        "h": 460,
-        "preset": "portal-shell",
-        "children": []
       }
     ],
-    "status": "approved",
+    "status": "proposed",
     "note": "",
-    "lastTouchedBy": "max",
+    "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 4
+    "rev": 13,
+    "updatedAt": 1784539717042
   }
 }

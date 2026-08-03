@@ -1,0 +1,213 @@
+{
+  "revision": 2,
+  "cover": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "opener-wide",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -320,
+        "y": -110,
+        "w": 1680,
+        "h": 760,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-hubport-41",
+            "type": "gridField",
+            "props": {
+              "width": 1680,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-hubport-42",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "GETTING STARTED · CHAPTER 4"
+            },
+            "offset": [
+              160,
+              208
+            ]
+          },
+          {
+            "id": "text-hubport-43",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "Work Your\nPipeline",
+              "size": 104
+            },
+            "offset": [
+              160,
+              264
+            ]
+          },
+          {
+            "id": "text-hubport-44",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "Route, track, and move each lead forward."
+            },
+            "offset": [
+              160,
+              508
+            ]
+          },
+          {
+            "id": "flowConnector-hubport-45",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 24,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1188,
+              192
+            ]
+          },
+          {
+            "id": "flowConnector-hubport-46",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 24,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1188,
+              340
+            ]
+          },
+          {
+            "id": "flowConnector-hubport-47",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 24,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1188,
+              488
+            ]
+          },
+          {
+            "id": "flowNode-hubport-48",
+            "type": "flowNode",
+            "props": {
+              "label": "New Lead",
+              "meta": "assigned to a rep",
+              "icon": "inbox",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 440,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              984,
+              92
+            ]
+          },
+          {
+            "id": "flowNode-hubport-49",
+            "type": "flowNode",
+            "props": {
+              "label": "Status",
+              "meta": "your custom stages",
+              "icon": "flag",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 440,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              984,
+              240
+            ]
+          },
+          {
+            "id": "flowNode-hubport-50",
+            "type": "flowNode",
+            "props": {
+              "label": "Working",
+              "meta": "tasks · messages",
+              "icon": "chat",
+              "tint": "amber",
+              "emphasized": false,
+              "width": 440,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              984,
+              388
+            ]
+          },
+          {
+            "id": "flowNode-hubport-51",
+            "type": "flowNode",
+            "props": {
+              "label": "Qualified",
+              "meta": "ready for a deal",
+              "icon": "check",
+              "tint": "blue",
+              "emphasized": true,
+              "width": 440,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              984,
+              536
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Ported from tools/opener-gen (shipped -opener-v2) into editable studio primitives.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 2,
+    "updatedAt": 1784540367486
+  }
+}

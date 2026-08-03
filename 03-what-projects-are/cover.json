@@ -1,5 +1,5 @@
 {
-  "revision": 37,
+  "revision": 74,
   "cover": {
     "v": 2,
     "background": "ember",
@@ -16,6 +16,7 @@
         "w": 1200,
         "h": 630,
         "preset": "bare",
+        "layout": "free",
         "children": [
           {
             "id": "poster-eyebrow",
@@ -25,8 +26,8 @@
               "value": "WORK IN MOTION"
             },
             "offset": [
-              139,
-              116
+              146,
+              200
             ]
           },
           {
@@ -37,8 +38,8 @@
               "value": "Projects"
             },
             "offset": [
-              132,
-              128
+              139,
+              233
             ]
           },
           {
@@ -86,8 +87,8 @@
               ]
             },
             "offset": [
-              39,
-              -131
+              75,
+              -82
             ]
           }
         ]
@@ -95,8 +96,9 @@
     ],
     "status": "proposed",
     "note": "",
-    "lastTouchedBy": "max",
+    "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 37
+    "rev": 73,
+    "updatedAt": 1784539717834
   }
 }

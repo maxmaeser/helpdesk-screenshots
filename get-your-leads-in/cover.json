@@ -1,0 +1,213 @@
+{
+  "revision": 2,
+  "cover": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "opener-wide",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -320,
+        "y": -110,
+        "w": 1680,
+        "h": 760,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-hubport-19",
+            "type": "gridField",
+            "props": {
+              "width": 1680,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-hubport-20",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "GETTING STARTED · CHAPTER 2"
+            },
+            "offset": [
+              160,
+              208
+            ]
+          },
+          {
+            "id": "text-hubport-21",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "Get Your\nLeads In",
+              "size": 104
+            },
+            "offset": [
+              160,
+              264
+            ]
+          },
+          {
+            "id": "text-hubport-22",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "Bring contacts in and organize them."
+            },
+            "offset": [
+              160,
+              508
+            ]
+          },
+          {
+            "id": "flowConnector-hubport-23",
+            "type": "flowConnector",
+            "props": {
+              "dx": 72,
+              "dy": 0,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1082,
+              222
+            ]
+          },
+          {
+            "id": "flowConnector-hubport-24",
+            "type": "flowConnector",
+            "props": {
+              "dx": -432,
+              "dy": 136,
+              "route": "vhv",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 28,
+              "arrow": true,
+              "mid": 0.53
+            },
+            "offset": [
+              906,
+              296
+            ]
+          },
+          {
+            "id": "flowConnector-hubport-25",
+            "type": "flowConnector",
+            "props": {
+              "dx": 72,
+              "dy": 0,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1082,
+              514
+            ]
+          },
+          {
+            "id": "flowNode-hubport-26",
+            "type": "flowNode",
+            "props": {
+              "label": "Import",
+              "meta": "CSV upload",
+              "icon": "import",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 352,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              746,
+              164
+            ]
+          },
+          {
+            "id": "flowNode-hubport-27",
+            "type": "flowNode",
+            "props": {
+              "label": "Prospects",
+              "meta": "segment · verified",
+              "icon": "userPlus",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 352,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              1178,
+              164
+            ]
+          },
+          {
+            "id": "flowNode-hubport-28",
+            "type": "flowNode",
+            "props": {
+              "label": "Organize",
+              "meta": "filter · sort",
+              "icon": "filter",
+              "tint": "amber",
+              "emphasized": false,
+              "width": 352,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              746,
+              456
+            ]
+          },
+          {
+            "id": "flowNode-hubport-29",
+            "type": "flowNode",
+            "props": {
+              "label": "Leads",
+              "meta": "sales-ready",
+              "icon": "check",
+              "tint": "blue",
+              "emphasized": true,
+              "width": 352,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              1178,
+              456
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Ported from tools/opener-gen (shipped -opener-v2) into editable studio primitives.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 2,
+    "updatedAt": 1784540366685
+  }
+}

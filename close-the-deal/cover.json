@@ -1,0 +1,213 @@
+{
+  "revision": 2,
+  "cover": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "opener-wide",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -320,
+        "y": -110,
+        "w": 1680,
+        "h": 760,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-hubport-52",
+            "type": "gridField",
+            "props": {
+              "width": 1680,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-hubport-53",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "GETTING STARTED · CHAPTER 5"
+            },
+            "offset": [
+              160,
+              204
+            ]
+          },
+          {
+            "id": "text-hubport-54",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "Close\nthe Deal",
+              "size": 108
+            },
+            "offset": [
+              160,
+              260
+            ]
+          },
+          {
+            "id": "text-hubport-55",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "Disclose the FDD and collect signatures."
+            },
+            "offset": [
+              160,
+              512
+            ]
+          },
+          {
+            "id": "flowConnector-hubport-56",
+            "type": "flowConnector",
+            "props": {
+              "dx": -154,
+              "dy": -60,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              898,
+              448
+            ]
+          },
+          {
+            "id": "flowConnector-hubport-57",
+            "type": "flowConnector",
+            "props": {
+              "dx": -154,
+              "dy": -60,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1052,
+              316
+            ]
+          },
+          {
+            "id": "flowConnector-hubport-58",
+            "type": "flowConnector",
+            "props": {
+              "dx": -154,
+              "dy": -60,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1206,
+              184
+            ]
+          },
+          {
+            "id": "flowNode-hubport-59",
+            "type": "flowNode",
+            "props": {
+              "label": "Deal",
+              "meta": "type · status",
+              "icon": "doc",
+              "tint": "slate",
+              "emphasized": false,
+              "width": 320,
+              "height": 132,
+              "anchorTop": false
+            },
+            "offset": [
+              748,
+              500
+            ]
+          },
+          {
+            "id": "flowNode-hubport-60",
+            "type": "flowNode",
+            "props": {
+              "label": "FDD",
+              "meta": "disclose by state",
+              "icon": "doc",
+              "tint": "amber",
+              "emphasized": false,
+              "width": 320,
+              "height": 132,
+              "anchorTop": false
+            },
+            "offset": [
+              902,
+              368
+            ]
+          },
+          {
+            "id": "flowNode-hubport-61",
+            "type": "flowNode",
+            "props": {
+              "label": "Sign",
+              "meta": "e-signature",
+              "icon": "pen",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 320,
+              "height": 132,
+              "anchorTop": false
+            },
+            "offset": [
+              1056,
+              236
+            ]
+          },
+          {
+            "id": "flowNode-hubport-62",
+            "type": "flowNode",
+            "props": {
+              "label": "Franchisee",
+              "meta": "converted",
+              "icon": "badge",
+              "tint": "blue",
+              "emphasized": true,
+              "width": 320,
+              "height": 132,
+              "anchorTop": false
+            },
+            "offset": [
+              1210,
+              104
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Ported from tools/opener-gen (shipped -opener-v2) into editable studio primitives.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 2,
+    "updatedAt": 1784540367878
+  }
+}

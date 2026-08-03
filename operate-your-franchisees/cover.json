@@ -1,0 +1,213 @@
+{
+  "revision": 3,
+  "cover": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "opener-wide",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -320,
+        "y": -110,
+        "w": 1680,
+        "h": 760,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-hubport-63",
+            "type": "gridField",
+            "props": {
+              "width": 1680,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-hubport-64",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "GETTING STARTED · CHAPTER 6"
+            },
+            "offset": [
+              160,
+              220
+            ]
+          },
+          {
+            "id": "text-hubport-65",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "Operate Your\nFranchisees",
+              "size": 90
+            },
+            "offset": [
+              160,
+              276
+            ]
+          },
+          {
+            "id": "text-hubport-66",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "Manage locations, assets,\nand documents."
+            },
+            "offset": [
+              160,
+              496
+            ]
+          },
+          {
+            "id": "flowConnector-hubport-67",
+            "type": "flowConnector",
+            "props": {
+              "dx": 168,
+              "dy": 94,
+              "route": "hv",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 80,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1138,
+              198
+            ]
+          },
+          {
+            "id": "flowConnector-hubport-68",
+            "type": "flowConnector",
+            "props": {
+              "dx": -156,
+              "dy": 106,
+              "route": "vh",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 52,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1150,
+              452
+            ]
+          },
+          {
+            "id": "flowConnector-hubport-69",
+            "type": "flowConnector",
+            "props": {
+              "dx": -72,
+              "dy": -270,
+              "route": "hv",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 28,
+              "arrow": false,
+              "mid": 0.5
+            },
+            "offset": [
+              714,
+              254
+            ]
+          },
+          {
+            "id": "flowConnector-hubport-70",
+            "type": "flowConnector",
+            "props": {
+              "dx": 60,
+              "dy": -56,
+              "route": "vh",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 28,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              714,
+              198
+            ]
+          },
+          {
+            "id": "flowNode-hubport-71",
+            "type": "flowNode",
+            "props": {
+              "label": "Locations",
+              "meta": "track every site",
+              "icon": "pin",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 352,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              802,
+              140
+            ]
+          },
+          {
+            "id": "flowNode-hubport-72",
+            "type": "flowNode",
+            "props": {
+              "label": "Assets",
+              "meta": "versioned library",
+              "icon": "folder",
+              "tint": "amber",
+              "emphasized": false,
+              "width": 352,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              1178,
+              320
+            ]
+          },
+          {
+            "id": "flowNode-hubport-73",
+            "type": "flowNode",
+            "props": {
+              "label": "Share",
+              "meta": "reach the field",
+              "icon": "send",
+              "tint": "blue",
+              "emphasized": true,
+              "width": 352,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              802,
+              500
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Ported from tools/opener-gen (shipped -opener-v2) into editable studio primitives.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 3,
+    "updatedAt": 1784540552139
+  }
+}

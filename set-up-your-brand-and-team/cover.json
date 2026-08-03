@@ -1,0 +1,213 @@
+{
+  "revision": 3,
+  "cover": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "opener-wide",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -320,
+        "y": -110,
+        "w": 1680,
+        "h": 760,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-hubport-8",
+            "type": "gridField",
+            "props": {
+              "width": 1680,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-hubport-9",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "GETTING STARTED · CHAPTER 1"
+            },
+            "offset": [
+              160,
+              175
+            ]
+          },
+          {
+            "id": "text-hubport-10",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "Set Up Your\nBrand and\nTeam",
+              "size": 90
+            },
+            "offset": [
+              160,
+              231
+            ]
+          },
+          {
+            "id": "text-hubport-11",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "Add your team, billing, and brand details."
+            },
+            "offset": [
+              160,
+              541
+            ]
+          },
+          {
+            "id": "flowConnector-hubport-12",
+            "type": "flowConnector",
+            "props": {
+              "dx": 64,
+              "dy": 174,
+              "route": "hv",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 20,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1164,
+              190
+            ]
+          },
+          {
+            "id": "flowConnector-hubport-13",
+            "type": "flowConnector",
+            "props": {
+              "dx": 64,
+              "dy": 0,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1164,
+              378
+            ]
+          },
+          {
+            "id": "flowConnector-hubport-14",
+            "type": "flowConnector",
+            "props": {
+              "dx": 64,
+              "dy": -174,
+              "route": "hv",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 20,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1164,
+              392
+            ]
+          },
+          {
+            "id": "flowNode-hubport-15",
+            "type": "flowNode",
+            "props": {
+              "label": "Team",
+              "meta": "invite users",
+              "icon": "userPlus",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 352,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              828,
+              132
+            ]
+          },
+          {
+            "id": "flowNode-hubport-16",
+            "type": "flowNode",
+            "props": {
+              "label": "Billing",
+              "meta": "payment · invoices",
+              "icon": "card",
+              "tint": "amber",
+              "emphasized": false,
+              "width": 352,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              828,
+              320
+            ]
+          },
+          {
+            "id": "flowNode-hubport-17",
+            "type": "flowNode",
+            "props": {
+              "label": "Portal",
+              "meta": "steps · forms",
+              "icon": "layout",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 352,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              828,
+              508
+            ]
+          },
+          {
+            "id": "flowNode-hubport-18",
+            "type": "flowNode",
+            "props": {
+              "label": "Ready",
+              "meta": "account set up",
+              "icon": "check",
+              "tint": "blue",
+              "emphasized": true,
+              "width": 352,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              1256,
+              320
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Ported from tools/opener-gen (shipped -opener-v2) into editable studio primitives.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 3,
+    "updatedAt": 1784540366293
+  }
+}

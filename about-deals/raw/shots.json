@@ -1,12 +1,15 @@
 {
-  "revision": 3,
+  "revision": 6,
   "shots": {
     "deals-overview-v2.png": {
       "status": "proposed",
       "note": "Reshoot 2026-07-18 of deals-overview.png ('crop is off, needs a recrop' -- Max). No raw ever existed for the original (never committed with a raw/ counterpart), so recaptured the same state fresh: Deal 20, Sales > Pipeline > Deals tab, Lumon Fresh brand only selected. Root cause of the old crop: right edge clipped mid-badge ('Multi Unit Developme...'). New crop uses the full deal-drawer width (clip x=543,y=73,w=1122,h=687 CSS, drawer bounding box measured via getBoundingClientRect, +2px inset to avoid the drawer's own drop-shadow edge) so both the 'In Review' and 'Multi Unit Development' badges sit fully inside the frame with margin. Includes the 'Deals > Deal 20' breadcrumb row for page-context per the framing standard (old crop omitted it). dom-sanitize run with freshenDates:false (Date Created / FDD Disclosure Date / Date Agreement Signed are product fields, not relative-time chips). No PII (deal name, notes text unchanged from prior published shot). No cursor (read-only state view, matches original convention for this shot).",
-      "lastTouchedBy": "claude",
+      "lastTouchedBy": "max",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "updatedAt": 1784384389343,
+      "renderedAt": 1784384400729
     },
     "deals-entity-members-add.png": {
       "status": "proposed",

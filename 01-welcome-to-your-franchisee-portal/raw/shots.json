@@ -1,0 +1,40 @@
+{
+  "revision": 0,
+  "shots": {
+    "welcome-avatar-menu.png": {
+      "cursor": {
+        "pos": [
+          139,
+          1554
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "welcome-help-menu.png": {
+      "cursor": {
+        "pos": [
+          3196,
+          61
+        ],
+        "type": "hand"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "welcome-sidebar.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

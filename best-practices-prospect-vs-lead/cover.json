@@ -1,0 +1,298 @@
+{
+  "revision": 3,
+  "cover": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "opener-wide",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -320,
+        "y": -110,
+        "w": 1680,
+        "h": 760,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-high9v2-12",
+            "type": "gridField",
+            "props": {
+              "width": 1680,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-high9v2-13",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "AUDIENCES AND CONTACTS"
+            },
+            "offset": [
+              160,
+              188
+            ]
+          },
+          {
+            "id": "text-high9v2-14",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "Best Practices:\nProspect\nvs. Lead",
+              "size": 80
+            },
+            "offset": [
+              160,
+              244
+            ]
+          },
+          {
+            "id": "text-high9v2-15",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "When to use each in your sales funnel."
+            },
+            "offset": [
+              160,
+              528
+            ]
+          },
+          {
+            "id": "flowConnector-high9v2-16",
+            "type": "flowConnector",
+            "props": {
+              "dx": -116,
+              "dy": 92,
+              "route": "vhv",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 20,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              906,
+              144
+            ]
+          },
+          {
+            "id": "flowConnector-high9v2-17",
+            "type": "flowConnector",
+            "props": {
+              "dx": 116,
+              "dy": 92,
+              "route": "vhv",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 20,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1222,
+              144
+            ]
+          },
+          {
+            "id": "flowConnector-high9v2-18",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 76,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              906,
+              404
+            ]
+          },
+          {
+            "id": "flowConnector-high9v2-19",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 76,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1338,
+              404
+            ]
+          },
+          {
+            "id": "flowConnector-high9v2-20",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 56,
+              "route": "line",
+              "thickness": 3,
+              "color": "#D9DDE4",
+              "cornerRadius": 24,
+              "arrow": false,
+              "mid": 0.5
+            },
+            "offset": [
+              1122,
+              244
+            ]
+          },
+          {
+            "id": "flowConnector-high9v2-21",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 240,
+              "route": "line",
+              "thickness": 3,
+              "color": "#D9DDE4",
+              "cornerRadius": 24,
+              "arrow": false,
+              "mid": 0.5
+            },
+            "offset": [
+              1122,
+              364
+            ]
+          },
+          {
+            "id": "text-high9v2-22",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "vs",
+              "size": 48
+            },
+            "offset": [
+              1114,
+              320
+            ]
+          },
+          {
+            "id": "flowNode-high9v2-23",
+            "type": "flowNode",
+            "props": {
+              "label": "Add Someone",
+              "meta": "expressed direct interest?",
+              "icon": "user",
+              "tint": "slate",
+              "emphasized": true,
+              "width": 460,
+              "height": 128,
+              "anchorTop": false
+            },
+            "offset": [
+              908,
+              32
+            ]
+          },
+          {
+            "id": "flowNode-high9v2-24",
+            "type": "flowNode",
+            "props": {
+              "label": "Prospect",
+              "meta": "not yet expressed direct interest",
+              "icon": "userPlus",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 352,
+              "height": 160,
+              "anchorTop": false
+            },
+            "offset": [
+              746,
+              260
+            ]
+          },
+          {
+            "id": "flowNode-high9v2-25",
+            "type": "flowNode",
+            "props": {
+              "label": "Lead",
+              "meta": "should enter your sales pipeline",
+              "icon": "inbox",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 352,
+              "height": 160,
+              "anchorTop": false
+            },
+            "offset": [
+              1178,
+              260
+            ]
+          },
+          {
+            "id": "flowNode-high9v2-26",
+            "type": "flowNode",
+            "props": {
+              "label": "Marketing",
+              "meta": "Audiences table",
+              "icon": "mail",
+              "tint": "amber",
+              "emphasized": false,
+              "width": 352,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              746,
+              504
+            ]
+          },
+          {
+            "id": "flowNode-high9v2-27",
+            "type": "flowNode",
+            "props": {
+              "label": "Sales",
+              "meta": "Pipeline table",
+              "icon": "chart",
+              "tint": "green",
+              "emphasized": false,
+              "width": 352,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              1178,
+              504
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Decision split with article-verbatim interest rule, parallel columns, vs divider, separated stems. Sol rev 1.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 3,
+    "updatedAt": 1784540371853
+  }
+}

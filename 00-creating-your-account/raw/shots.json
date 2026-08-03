@@ -1,5 +1,5 @@
 {
-  "revision": 38,
+  "revision": 58,
   "shots": {
     "account-signup-form.png": {
       "cursor": {
@@ -12,28 +12,39 @@
       "highlights": [
         {
           "rect": [
-            0,
-            1354,
-            1679,
-            474
-          ],
-          "style": "blur"
-        },
-        {
-          "rect": [
             398,
             1638,
             890,
             78
           ],
           "style": "outline"
+        },
+        {
+          "style": "spotlight",
+          "rect": [
+            397,
+            1638,
+            890,
+            78
+          ]
+        },
+        {
+          "rect": [
+            0,
+            1584,
+            1676,
+            432
+          ],
+          "style": "blur"
         }
       ],
-      "status": "adjusted",
+      "status": "approved",
       "note": "",
       "lastTouchedBy": "max",
       "editing": false,
-      "rev": 38
+      "rev": 51,
+      "renderedRev": 50,
+      "updatedAt": 1784372651543
     }
   }
 }

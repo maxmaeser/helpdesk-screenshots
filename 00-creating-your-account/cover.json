@@ -1,62 +1,92 @@
 {
-  "revision": 34,
+  "revision": 42,
   "cover": {
     "v": 2,
-    "background": "bloom",
+    "background": "ember",
     "title": null,
-    "scale": 85,
+    "scale": 106,
     "positionX": 0,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
-        "role": "background",
-        "x": 0,
-        "y": 50,
-        "w": 600,
-        "children": [
-          {
-            "id": "emailCard-37042",
-            "type": "emailCard",
-            "props": {
-              "sender": "Lumon Fresh",
-              "subject": "You're invited to join Lumon Fresh",
-              "snippet": "Mark Scout has invited you to join Aspen United. Accept your invite to create your account.",
-              "cta": "Accept Invitation"
-            }
-          }
-        ]
-      },
-      {
-        "id": "b",
         "role": "foreground",
-        "x": 520,
-        "y": 10,
-        "w": 480,
+        "x": -80,
+        "y": -45,
+        "w": 1200,
+        "h": 630,
+        "preset": "bare",
+        "layout": "free",
         "children": [
           {
-            "id": "authSplit-11927",
-            "type": "authSplit",
+            "id": "poster-eyebrow",
+            "type": "text",
             "props": {
-              "brandName": "Lumon Fresh",
-              "heading": "Create your account",
-              "subheading": "Set a password to finish joining Aspen United.",
-              "fields": [
-                "Full name",
-                "Email",
-                "Password"
-              ],
-              "cta": "Create account",
-              "pastel": "green"
-            }
+              "variant": "posterEyebrow",
+              "value": "PATH TO OWNERSHIP"
+            },
+            "offset": [
+              148,
+              214
+            ]
+          },
+          {
+            "id": "poster-title",
+            "type": "text",
+            "props": {
+              "variant": "poster",
+              "value": "Account"
+            },
+            "offset": [
+              140,
+              246
+            ]
+          },
+          {
+            "id": "journey",
+            "type": "journeyArc",
+            "props": {
+              "width": 820,
+              "height": 560,
+              "rise": 262,
+              "bow": 52,
+              "nodeSize": 66,
+              "nodes": [
+                {
+                  "label": "ACCEPT INVITATION",
+                  "state": "invite",
+                  "shade": 0.05
+                },
+                {
+                  "label": "CONTINUE",
+                  "state": "step",
+                  "shade": 0.4
+                },
+                {
+                  "label": "CREATE ACCOUNT",
+                  "state": "step",
+                  "shade": 0.68
+                },
+                {
+                  "label": "HOME",
+                  "state": "payoff",
+                  "shade": 1
+                }
+              ]
+            },
+            "offset": [
+              350,
+              30
+            ]
           }
         ]
       }
     ],
-    "status": "approved",
+    "status": "proposed",
     "note": "",
-    "lastTouchedBy": "max",
+    "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 34
+    "rev": 40,
+    "updatedAt": 1784539716644
   }
 }

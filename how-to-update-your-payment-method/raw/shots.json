@@ -1,9 +1,12 @@
 {
-  "revision": 0,
+  "revision": 55,
   "shots": {
     "payment-profile-menu-settings.png": {
       "cursor": {
-        "pos": [66, 186],
+        "pos": [
+          66,
+          186
+        ],
         "type": "arrow"
       },
       "status": "proposed",
@@ -21,14 +24,33 @@
     },
     "payment-billing-open-management.png": {
       "cursor": {
-        "pos": [956, 696],
+        "pos": [
+          1252,
+          702
+        ],
         "type": "arrow"
       },
-      "status": "proposed",
+      "highlights": [
+        {
+          "rect": [
+            882,
+            640,
+            430,
+            109
+          ],
+          "style": "spotlight",
+          "dimStrength": 15,
+          "blurRadius": 12
+        }
+      ],
+      "status": "approved",
       "note": "Bottom of the Billing page: Invoices card and the Open Billing Management button. Agent-captured 2026-07-17, dom-sanitize freshenDates:false. Staging seed has no subscription/invoices, so both tables read 'No Subscription Found' / 'No Invoices Found' -- genuine empty states, not fabricated.",
-      "lastTouchedBy": "claude",
+      "lastTouchedBy": "max",
       "editing": false,
-      "rev": 0
+      "rev": 33,
+      "renderedRev": 32,
+      "updatedAt": 1784372470493,
+      "renderedAt": 1784372453548
     }
   }
 }

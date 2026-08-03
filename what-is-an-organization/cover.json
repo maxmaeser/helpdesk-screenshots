@@ -1,0 +1,213 @@
+{
+  "revision": 5,
+  "cover": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "opener-wide",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -320,
+        "y": -110,
+        "w": 1680,
+        "h": 760,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-high9-12",
+            "type": "gridField",
+            "props": {
+              "width": 1680,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-high9-13",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "GETTING STARTED"
+            },
+            "offset": [
+              160,
+              220
+            ]
+          },
+          {
+            "id": "text-high9-14",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "What Is an\nOrganization?",
+              "size": 90
+            },
+            "offset": [
+              160,
+              276
+            ]
+          },
+          {
+            "id": "text-high9-15",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "One container for your brands."
+            },
+            "offset": [
+              160,
+              496
+            ]
+          },
+          {
+            "id": "flowConnector-high9-16",
+            "type": "flowConnector",
+            "props": {
+              "dx": -336,
+              "dy": 316,
+              "route": "vhv",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.78
+            },
+            "offset": [
+              364,
+              238
+            ]
+          },
+          {
+            "id": "flowConnector-high9-17",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 316,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              788,
+              238
+            ]
+          },
+          {
+            "id": "flowConnector-high9-18",
+            "type": "flowConnector",
+            "props": {
+              "dx": 312,
+              "dy": 316,
+              "route": "vhv",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.78
+            },
+            "offset": [
+              876,
+              238
+            ]
+          },
+          {
+            "id": "flowNode-high9-19",
+            "type": "flowNode",
+            "props": {
+              "label": "Organization",
+              "meta": "top-level container",
+              "icon": "building",
+              "tint": "slate",
+              "emphasized": true,
+              "width": 352,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              628,
+              100
+            ]
+          },
+          {
+            "id": "flowNode-high9-20",
+            "type": "flowNode",
+            "props": {
+              "label": "Brands",
+              "meta": "operating independently",
+              "icon": "brand",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 400,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              180,
+              576
+            ]
+          },
+          {
+            "id": "flowNode-high9-21",
+            "type": "flowNode",
+            "props": {
+              "label": "Team members",
+              "meta": "admin · member",
+              "icon": "userPlus",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 400,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              604,
+              576
+            ]
+          },
+          {
+            "id": "flowNode-high9-22",
+            "type": "flowNode",
+            "props": {
+              "label": "Billing",
+              "meta": "payment methods",
+              "icon": "card",
+              "tint": "amber",
+              "emphasized": false,
+              "width": 352,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              1028,
+              576
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Hub and spoke: Organization hub over one aligned row of Brands, Team members, Billing.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 5,
+    "updatedAt": 1784540369059
+  }
+}

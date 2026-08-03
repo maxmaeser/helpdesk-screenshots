@@ -1,136 +1,90 @@
 {
-  "revision": 34,
+  "revision": 45,
   "cover": {
     "v": 2,
-    "background": "mint",
+    "background": "ember",
     "title": null,
-    "scale": 120,
+    "scale": 106,
     "positionX": 0,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
-        "role": "background",
-        "x": 0,
-        "y": 0,
-        "w": 460,
-        "h": 560,
-        "contentZoom": 1.25,
-        "children": [
-          {
-            "id": "text-a-eyebrow",
-            "type": "text",
-            "props": {
-              "variant": "eyebrow",
-              "value": "BRAND PROFILE · LUMON FRESH"
-            }
-          },
-          {
-            "id": "text-a-heading",
-            "type": "text",
-            "props": {
-              "variant": "heading",
-              "value": "Lumon Fresh"
-            }
-          },
-          {
-            "id": "listRow-a-founded",
-            "type": "listRow",
-            "props": {
-              "label": "1894",
-              "sublabel": "Founded"
-            }
-          },
-          {
-            "id": "listRow-a-locations",
-            "type": "listRow",
-            "props": {
-              "label": "20",
-              "sublabel": "Locations"
-            }
-          },
-          {
-            "id": "listRow-a-sales",
-            "type": "listRow",
-            "props": {
-              "label": "$1.2B",
-              "sublabel": "System sales"
-            }
-          },
-          {
-            "id": "listRow-a-avgunit",
-            "type": "listRow",
-            "props": {
-              "label": "$19.4M",
-              "sublabel": "Avg. unit"
-            }
-          }
-        ]
-      },
-      {
-        "id": "b",
         "role": "foreground",
-        "x": 460,
-        "y": 0,
-        "w": 580,
-        "h": 520,
-        "contentZoom": 1.18,
+        "x": -80,
+        "y": -45,
+        "w": 1200,
+        "h": 630,
+        "preset": "bare",
+        "layout": "free",
         "children": [
           {
-            "id": "text-b-eyebrow",
+            "id": "poster-eyebrow",
             "type": "text",
             "props": {
-              "variant": "eyebrow",
-              "value": "LOGO"
-            }
+              "variant": "posterEyebrow",
+              "value": "THIS IS US"
+            },
+            "offset": [
+              146,
+              215
+            ]
           },
           {
-            "id": "logoBlock-b",
-            "type": "logoBlock",
+            "id": "poster-title",
+            "type": "text",
             "props": {
-              "name": "LUMON",
-              "color": "#15395E"
-            }
+              "variant": "poster",
+              "value": "Identity"
+            },
+            "offset": [
+              139,
+              248
+            ]
           },
           {
-            "id": "listRow-b-full",
-            "type": "listRow",
+            "id": "brand-specimen",
+            "type": "specimenSheet",
             "props": {
-              "label": "Full logo",
-              "sublabel": "Use this version whenever possible"
-            }
-          },
-          {
-            "id": "listRow-b-small",
-            "type": "listRow",
-            "props": {
-              "label": "Small logo",
-              "sublabel": "Use this version for smaller layouts"
-            }
-          },
-          {
-            "id": "listRow-b-blue",
-            "type": "listRow",
-            "props": {
-              "label": "Lumon Blue",
-              "sublabel": "#15395E"
-            }
-          },
-          {
-            "id": "listRow-b-teal",
-            "type": "listRow",
-            "props": {
-              "label": "Refinement Teal",
-              "sublabel": "#4FB3A0"
-            }
-          },
-          {
-            "id": "button-b-download",
-            "type": "button",
-            "props": {
-              "label": "Download",
-              "variant": "primary"
-            }
+              "wordmark": "Lumon Fresh",
+              "tag": "EST. 1894",
+              "markFill": "#0C1B2A",
+              "markGlyph": "droplet",
+              "wordmarkColor": "#15395E",
+              "columns": 2,
+              "size": 1.18,
+              "swatches": [
+                {
+                  "name": "Lumon Blue",
+                  "hex": "#15395E"
+                },
+                {
+                  "name": "Refinement Teal",
+                  "hex": "#4FB3A0"
+                },
+                {
+                  "name": "Eagan Ink",
+                  "hex": "#0C1B2A"
+                },
+                {
+                  "name": "Kier Bronze",
+                  "hex": "#B08D57"
+                },
+                {
+                  "name": "Cold Fluorescent",
+                  "hex": "#DCE4E8"
+                },
+                {
+                  "name": "Severed White",
+                  "hex": "#F4F6F7"
+                }
+              ],
+              "lockupAlign": "end"
+            },
+            "offset": [
+              543,
+              77
+            ]
           }
         ]
       }
@@ -139,6 +93,7 @@
     "note": "",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 34
+    "rev": 43,
+    "updatedAt": 1784539862224
   }
 }

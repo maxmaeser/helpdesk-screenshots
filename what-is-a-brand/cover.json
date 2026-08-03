@@ -1,0 +1,249 @@
+{
+  "revision": 5,
+  "cover": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "opener-wide",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -320,
+        "y": -110,
+        "w": 1680,
+        "h": 760,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-rail9-1",
+            "type": "gridField",
+            "props": {
+              "width": 1680,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-rail9-2",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "GETTING STARTED"
+            },
+            "offset": [
+              160,
+              208
+            ]
+          },
+          {
+            "id": "text-rail9-3",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "What Is\na Brand?",
+              "size": 104
+            },
+            "offset": [
+              160,
+              264
+            ]
+          },
+          {
+            "id": "text-rail9-4",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "A single franchise concept\nin your organization."
+            },
+            "offset": [
+              160,
+              508
+            ]
+          },
+          {
+            "id": "flowConnector-rail9-5",
+            "type": "flowConnector",
+            "props": {
+              "dx": -110,
+              "dy": -88,
+              "route": "hv",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 28,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              832,
+              192
+            ]
+          },
+          {
+            "id": "flowConnector-rail9-6",
+            "type": "flowConnector",
+            "props": {
+              "dx": -105,
+              "dy": 88,
+              "route": "hv",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 28,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              837,
+              360
+            ]
+          },
+          {
+            "id": "flowConnector-rail9-7",
+            "type": "flowConnector",
+            "props": {
+              "dx": 70,
+              "dy": -88,
+              "route": "hv",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 28,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1282,
+              192
+            ]
+          },
+          {
+            "id": "flowConnector-rail9-8",
+            "type": "flowConnector",
+            "props": {
+              "dx": 86,
+              "dy": 88,
+              "route": "hv",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 28,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1282,
+              360
+            ]
+          },
+          {
+            "id": "flowNode-rail9-9",
+            "type": "flowNode",
+            "props": {
+              "label": "Pipeline",
+              "meta": "franchise applicants",
+              "icon": "flag",
+              "tint": "amber",
+              "emphasized": false,
+              "width": 400,
+              "height": 136,
+              "anchorTop": false
+            },
+            "offset": [
+              648,
+              72
+            ]
+          },
+          {
+            "id": "flowNode-rail9-10",
+            "type": "flowNode",
+            "props": {
+              "label": "Portal",
+              "meta": "submit applications",
+              "icon": "layout",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 352,
+              "height": 136,
+              "anchorTop": false
+            },
+            "offset": [
+              1192,
+              72
+            ]
+          },
+          {
+            "id": "flowNode-rail9-11",
+            "type": "flowNode",
+            "props": {
+              "label": "Library",
+              "meta": "documents and files",
+              "icon": "folder",
+              "tint": "green",
+              "emphasized": false,
+              "width": 390,
+              "height": 136,
+              "anchorTop": false
+            },
+            "offset": [
+              658,
+              464
+            ]
+          },
+          {
+            "id": "flowNode-rail9-12",
+            "type": "flowNode",
+            "props": {
+              "label": "Settings",
+              "meta": "identity · connections",
+              "icon": "filter",
+              "tint": "slate",
+              "emphasized": false,
+              "width": 384,
+              "height": 136,
+              "anchorTop": false
+            },
+            "offset": [
+              1192,
+              464
+            ]
+          },
+          {
+            "id": "flowNode-rail9-13",
+            "type": "flowNode",
+            "props": {
+              "label": "Brand",
+              "meta": "data · workflows",
+              "icon": "brand",
+              "tint": "blue",
+              "emphasized": true,
+              "width": 340,
+              "height": 176,
+              "anchorTop": false
+            },
+            "offset": [
+              958,
+              248
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Center spine: Brand dead-center, the four holdings every brand gets radiating left and right. Labels verbatim from the article.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 5,
+    "updatedAt": 1784540369456
+  }
+}
