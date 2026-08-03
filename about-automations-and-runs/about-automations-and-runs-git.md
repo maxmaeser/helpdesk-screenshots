@@ -1,6 +1,6 @@
 The **Automations** and **Runs** tabs on the **Workflows** page are where you build event-driven workflows and watch them execute in Franchise Systems Ai (FS Ai).
 
-Automations do the work automatically when something happens to a lead, deal, or other record. Runs is the log of every time an automation has fired. E2E-PROBE-DELETE-ME.
+Automations do the work automatically when something happens to a lead, deal, or other record. Runs is the log of every time an automation has fired.
 
 You reach both from the sidebar under **Sales → Workflows**. The same tabs appear under Marketing and Operations, and each department has its own automations.
 
