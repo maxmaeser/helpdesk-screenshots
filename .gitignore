@@ -5,3 +5,4 @@ __pycache__/
 /tmp/
 .playwright-mcp/
 *-raw.png
+.autocommit-status.json
