@@ -2,7 +2,7 @@ The **Automations** and **Runs** tabs on the **Workflows** page are where you bu
 
 Automations do the work automatically when something happens to a lead, deal, or other record. Runs is the log of every time an automation has fired.
 
-You reach both from the sidebar under **Sales → Workflows**. The same tabs appear under Marketing and Operations, and each department has its own automations.
+You reach both from the sidebar under **Sales** → **Workflows**. The same tabs appear under Marketing and Operations, and each department has its own automations. SYNC-PROBE.
 
 > **Prerequisite:** You need write access to the department (Sales, Marketing, or Operations) to create or publish an automation.
 
