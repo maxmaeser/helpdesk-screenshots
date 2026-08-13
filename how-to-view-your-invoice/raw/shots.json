@@ -1,35 +1,85 @@
 {
-  "revision": 1,
+  "revision": 53,
   "shots": {
     "billing-nav-organization.png": {
       "cursor": {
-        "pos": [60, 1142],
+        "pos": [
+          60,
+          1142
+        ],
         "type": "arrow"
       },
+      "highlights": [
+        {
+          "rect": [
+            23,
+            1117,
+            249,
+            53
+          ],
+          "style": "spotlight",
+          "thickness": 3,
+          "cornerRadius": 10,
+          "glowSize": 12,
+          "color": "blue",
+          "blurRadius": 8,
+          "maskFeather": 12,
+          "dimStrength": 3,
+          "feather": 46,
+          "contactShadow": true
+        }
+      ],
       "status": "approved",
       "note": "",
-      "lastTouchedBy": "claude",
+      "lastTouchedBy": "max",
       "editing": false,
-      "rev": 0
+      "rev": 11,
+      "renderedRev": 11,
+      "updatedAt": 1786630065064,
+      "renderedAt": 1786630054559
     },
     "billing-subscription-brands.png": {
-      "cursor": null,
-      "status": "proposed",
+      "status": "approved",
       "note": "Subscription + Brands sections, Franchise Systems Ai org (no active subscription in staging, shown honestly)",
-      "lastTouchedBy": "claude",
+      "lastTouchedBy": "max",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "updatedAt": 1786630177791
     },
     "billing-invoices-section.png": {
       "cursor": {
-        "pos": [470, 430],
+        "pos": [
+          1248,
+          864
+        ],
         "type": "arrow"
       },
-      "status": "proposed",
+      "highlights": [
+        {
+          "rect": [
+            872,
+            818,
+            443,
+            102
+          ],
+          "style": "spotlight",
+          "thickness": 3,
+          "cornerRadius": 10,
+          "glowSize": 12,
+          "color": "blue",
+          "dimStrength": 9,
+          "feather": 4,
+          "contactShadow": true
+        }
+      ],
+      "status": "approved",
       "note": "Invoices table (empty state, staging org has no invoices) + Open Billing Management button",
-      "lastTouchedBy": "claude",
+      "lastTouchedBy": "max",
       "editing": false,
-      "rev": 0
+      "rev": 13,
+      "renderedRev": 13,
+      "updatedAt": 1786630165473,
+      "renderedAt": 1786630156363
     }
   }
 }

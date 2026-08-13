@@ -1,7 +1,13 @@
 {
-  "revision": 44,
+  "revision": 90,
   "shots": {
     "notifications-profile-menu.png": {
+      "crop": [
+        0,
+        99,
+        467,
+        608
+      ],
       "cursor": {
         "pos": [
           244,
@@ -17,15 +23,25 @@
             328,
             51
           ],
-          "style": "spotlight"
+          "style": "outline",
+          "blurRadius": 8,
+          "maskFeather": 12,
+          "dimStrength": 45,
+          "feather": 24,
+          "thickness": 3,
+          "cornerRadius": 10,
+          "glowSize": 28,
+          "dash": "dashed"
         }
       ],
-      "status": "approved",
+      "status": "adjusted",
       "note": "Orientation shot: profile picture menu open at bottom of sidebar, showing the Settings option. Agent-captured 2026-07-17 on staging brand dashboard (Claude Maeser account), clip 460x370 CSS (920x740 raw) at 2x, viewport 1680x1050. No DOM sanitization needed in this crop (no PII in frame -- brand chip row and inbox item are outside the crop). A transient yellow tooltip/toast briefly appeared near Send Feedback on first capture attempts and was gone after a longer settle wait (2.2s post-click); final capture is clean. Cursor: arrow on the Settings row (added in post).",
       "lastTouchedBy": "max",
       "editing": false,
-      "rev": 21,
-      "renderedRev": 19
+      "rev": 42,
+      "renderedRev": 42,
+      "updatedAt": 1786629948965,
+      "renderedAt": 1786629950002
     },
     "notifications-table.png": {
       "crop": [
