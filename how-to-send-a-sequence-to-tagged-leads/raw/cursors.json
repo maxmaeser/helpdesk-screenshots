@@ -1,0 +1,44 @@
+{
+  "pipeline-apply-tag.png": {
+    "cursor": [
+      745,
+      1150
+    ],
+    "type": "arrow"
+  },
+  "lead-panel-manage-tags.png": {
+    "cursor": [
+      1719,
+      332
+    ],
+    "type": "arrow"
+  },
+  "segments-tab-tagged.png": {
+    "cursor": [
+      500,
+      1365
+    ],
+    "type": "hand"
+  },
+  "send-configure-sequence.png": {
+    "cursor": [
+      340,
+      680
+    ],
+    "type": "arrow"
+  },
+  "send-select-sequence.png": {
+    "cursor": [
+      1480,
+      432
+    ],
+    "type": "arrow"
+  },
+  "send-review.png": {
+    "cursor": [
+      1440,
+      1235
+    ],
+    "type": "arrow"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "revision": 0,
+  "shots": {
+    "lead-actions-send-email.png": {
+      "cursor": {
+        "pos": [
+          1610,
+          300
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "Reused from the approved how-to-work-a-lead raw; cursor moved onto the Send Email menu item.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}
