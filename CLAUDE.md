@@ -101,6 +101,33 @@ When agent-capturing on staging (Fallback Capture — see the `fsai-helpdesk-art
 - Default branch: `master`
 - Commit raws when Max drops them; commit finals + `-git.md` when approved.
 
+### The VPS is the single committer for operator `-git.md` (non-negotiable)
+
+**The VPS is the single committer for `<slug>/<slug>-git.md` of every operator
+article in `tools/review-site/build.py`'s `OPERATOR` list.** Studio assets (PNG
+finals, `cover.json`, `cover.png`, `raw/**`) were already the VPS's job. As of
+the review site's inline editor, the review UI's edits to those `-git.md` files
+are too: each one is a separate commit pushed from the VPS in-request.
+
+Before editing any `-git.md` on Leo:
+
+```
+git -C screenshots fetch
+git -C screenshots log --oneline HEAD..origin/master -- <slug>/<slug>-git.md
+```
+
+If that prints anything, **pull first**; the VPS has newer prose and your copy
+is stale. Never commit a `-git.md` over a VPS commit you have not pulled.
+
+`-git.md` files for articles NOT in `OPERATOR` (franchisee packets, new
+articles not yet wired into the build) are unaffected and are still committed
+from Leo by hand.
+
+Review-UI edits carry a `Source-sync: articles/...` trailer naming the
+canonical article they left behind. `tools/review-site/sync-edits.py` folds
+that prose back into `articles/` — report-only by default, and it never
+commits.
+
 ## Skill
 
 Full article lifecycle (writing, shot specs, import) lives in `~/.claude/skills/fsai-helpdesk-articles/SKILL.md` — source of truth in the suite repo at `skills/fsai-helpdesk-articles.md`.

@@ -12,7 +12,7 @@ Target crop width ~840 CSS px (1680 real px at 2x). Cursor is added in post, so 
 
 ## Outstanding
 
-Agent capture on 2026-07-22 could not complete these. The lead detail panel's own request returns 401 for the capture account (`max+claude@franchisesystems.ai`): the panel renders "You need to sign in to continue / You are not authorized. Please sign in again." while the Leads table behind it loads fine. Reproduced across a wiped browser profile, six fresh logins, deep-link and row-click entry, and a reload of the `?app=<id>` URL. A parallel agent hit the identical 401 independently, so it is the endpoint, not the session.
+Resolved 2026-08-14. These shots are captured and committed. The 401 that blocked the 2026-07-22 attempt was never a permissions or endpoint fault: the lead detail panel's request was missing the `X-Session-Type` header, which only a properly bootstrapped session sets, so a fresh headless login produced a session the panel rejected with "You need to sign in to continue / You are not authorized. Please sign in again." while the Leads table behind it loaded fine. Re-logging in could not fix it, which is why six attempts all failed and a second agent reproduced it. Capturing through the persisted session in `scripts/capture/session.js` reuses an already-bootstrapped session and the panel loads normally. Use that harness for any lead-panel shot rather than a fresh scripted login.
 
 Every UI string below was read from `origin/master` at `1a12f1ee1` (`SendEmailToContactModal.tsx`, `ContactPanel.tsx`, `MarketingLeadPanel.tsx`, `constants/scheduling.ts`), so the copy is verified even though the shots are missing.
 

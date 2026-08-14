@@ -1,5 +1,5 @@
 {
-  "revision": 58,
+  "revision": 114,
   "shots": {
     "account-signup-form.png": {
       "cursor": {
@@ -12,39 +12,29 @@
       "highlights": [
         {
           "rect": [
-            398,
-            1638,
-            890,
-            78
+            385,
+            1626,
+            916,
+            103
           ],
-          "style": "outline"
-        },
-        {
-          "style": "spotlight",
-          "rect": [
-            397,
-            1638,
-            890,
-            78
-          ]
-        },
-        {
-          "rect": [
-            0,
-            1584,
-            1676,
-            432
-          ],
-          "style": "blur"
+          "style": "lens",
+          "dimStrength": 6,
+          "feather": 7,
+          "contactShadow": true,
+          "color": "blue",
+          "lensZoom": 1.2,
+          "lensRadius": 28,
+          "lensRefraction": 90
         }
       ],
-      "status": "approved",
+      "status": "adjusted",
       "note": "",
       "lastTouchedBy": "max",
       "editing": false,
-      "rev": 51,
-      "renderedRev": 50,
-      "updatedAt": 1784372651543
+      "rev": 81,
+      "renderedRev": 81,
+      "updatedAt": 1786698175560,
+      "renderedAt": 1786698177392
     }
   }
 }

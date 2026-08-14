@@ -557,8 +557,111 @@ def draw_outline_highlight(img, rect, color=None, stroke_width=None, dash=None,
     return img
 
 
+def draw_spotlight_group(img, specs):
+    """Dim the whole image except the UNION of every spotlight's rounded-rect
+    cutout — ONE shared dim pass for all the spotlights on a shot.
+
+    Why a group and not one call per highlight: the spotlight style dims
+    everything OUTSIDE its own rect, so running it once per highlight made each
+    pass darken the region the previous pass had deliberately left lit, and the
+    surround dim multiplied — (1 - a)^N instead of (1 - a). Two spotlights left
+    BOTH rects grey and the background twice as dark; N compounded to near
+    black. One pass over the union fixes both halves at once: every rect stays
+    fully lit, and N spotlights read exactly as dark as one.
+
+    `specs` is a list of dicts: {"rect", "dim_alpha", "feather",
+    "contact_shadow"} (the last three optional / None = unset). Per-rect
+    feather and per-rect contact shadow are preserved — only the DIM is
+    unified, so each rect keeps its own soft edge and its own lift.
+
+    Differing dimStrength across the group: STRONGEST DIM WINS (max alpha). A
+    single dim layer can only carry one alpha, and taking the max honours the
+    most emphatic spotlight on the shot — never rendering the surround lighter
+    than the operator asked for anywhere. (Averaging would silently weaken a
+    90% spotlight; the min would silently weaken every other one.)
+
+    Single-spotlight byte-parity contract: for one spec this is arithmetically
+    identical to the pre-group per-highlight renderer, path for path —
+    ImageChops.lighter against a zero image is the identity, the union of one
+    crisp rect is that rect, and max() of one alpha is that alpha. Every shot
+    ever baked with a spotlight has exactly one, so no existing final PNG moves.
+    """
+    style = HIGHLIGHT_STYLE["spotlight"]
+
+    entries = []
+    for spec in specs:
+        x, y, w, h = _clamp_rect(spec.get("rect"), img.size)
+        if w <= 0 or h <= 0:
+            continue
+        radius = min(style["radius"], w // 2, h // 2)
+        # 255 inside rounded rect, 0 outside
+        hole = create_rounded_mask(w, h, radius)
+        feather = spec.get("feather")
+        entries.append({
+            "x": x, "y": y, "hole": hole,
+            "feather": max(0, feather) if feather is not None else 0,
+            "contact_shadow": bool(spec.get("contact_shadow")),
+        })
+    if not entries:
+        return img
+
+    alphas = []
+    for spec in specs:
+        a = spec.get("dim_alpha")
+        a = a if a is not None else style["dim_alpha"]
+        alphas.append(max(0, min(255, int(round(a)))))
+    dim_alpha = max(alphas)
+
+    if any(e["contact_shadow"] for e in entries):
+        # Lift shadows under the dim layer's cut: each region's crisp rounded
+        # mask, offset down and blurred, masked to OUTSIDE the union of ALL
+        # the lit regions so no shadow falls into another spotlight's rect.
+        union_crisp = Image.new("L", img.size, 0)
+        for e in entries:
+            layer = Image.new("L", img.size, 0)
+            layer.paste(e["hole"], (e["x"], e["y"]))
+            union_crisp = ImageChops.lighter(union_crisp, layer)
+        outside = ImageOps.invert(union_crisp)
+        for e in entries:
+            if not e["contact_shadow"]:
+                continue
+            shadow_src = Image.new("L", img.size, 0)
+            shadow_src.paste(e["hole"], (e["x"], e["y"] + CONTACT_SHADOW_OFFSET_Y))
+            shadow_alpha = shadow_src.filter(ImageFilter.GaussianBlur(CONTACT_SHADOW_BLUR))
+            shadow_alpha = shadow_alpha.point(lambda v: int(v * CONTACT_SHADOW_ALPHA / 255))
+            shadow_alpha = ImageChops.multiply(shadow_alpha, outside)
+            shadow = Image.new("RGBA", img.size, (0, 0, 0, 0))
+            shadow.putalpha(shadow_alpha)
+            img.alpha_composite(shadow)
+
+    # Combined "lit" mask: 255 where a spotlight lights the image, 0 elsewhere.
+    # Each rect is feathered on its own (gaussian blur of that rect's hole)
+    # BEFORE the union, so a soft-edged spotlight and a hard-edged one can
+    # coexist on one shot; the union then takes the brightest claim per pixel.
+    lit = Image.new("L", img.size, 0)
+    for e in entries:
+        layer = Image.new("L", img.size, 0)
+        layer.paste(e["hole"], (e["x"], e["y"]))
+        if e["feather"] > 0:
+            # Soft radial falloff: the lit region spills light outward instead
+            # of ending at a knife edge.
+            layer = layer.filter(ImageFilter.GaussianBlur(e["feather"]))
+        lit = ImageChops.lighter(lit, layer)
+
+    # Alpha mask: dim_alpha everywhere, 0 (no dim) inside the lit union.
+    mask = ImageOps.invert(lit).point(lambda v: int(v * dim_alpha / 255))
+    dim = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    dim.putalpha(mask)
+    img.alpha_composite(dim)
+    return img
+
+
 def draw_spotlight_highlight(img, rect, dim_alpha=None, feather=None, contact_shadow=False):
     """Dim the whole image except a rounded-rect cutout at full brightness.
+
+    Single-spotlight convenience wrapper over draw_spotlight_group (which is
+    what apply_highlights actually calls, so that several spotlights on one
+    shot share a single dim pass).
 
     Per-highlight overrides (see shot_spec_to_args):
       - `dim_alpha` (0-255) overrides HIGHLIGHT_STYLE.spotlight.dim_alpha.
@@ -570,54 +673,10 @@ def draw_spotlight_highlight(img, rect, dim_alpha=None, feather=None, contact_sh
         CONTACT_SHADOW_ALPHA), drawn only outside the region mask, composited
         under the dim layer.
     """
-    style = HIGHLIGHT_STYLE["spotlight"]
-    x, y, w, h = _clamp_rect(rect, img.size)
-    if w <= 0 or h <= 0:
-        return img
-
-    dim_alpha = dim_alpha if dim_alpha is not None else style["dim_alpha"]
-    dim_alpha = max(0, min(255, int(round(dim_alpha))))
-    feather = max(0, feather) if feather is not None else 0
-    radius = min(style["radius"], w // 2, h // 2)
-    hole = create_rounded_mask(w, h, radius)  # 255 inside rounded rect, 0 outside
-
-    if contact_shadow:
-        # Lift shadow under the dim layer's cut: the region's crisp rounded
-        # mask, offset down and blurred, masked to OUTSIDE the region so the
-        # lit area itself stays untouched.
-        shadow_src = Image.new("L", img.size, 0)
-        shadow_src.paste(hole, (x, y + CONTACT_SHADOW_OFFSET_Y))
-        shadow_alpha = shadow_src.filter(ImageFilter.GaussianBlur(CONTACT_SHADOW_BLUR))
-        shadow_alpha = shadow_alpha.point(lambda v: int(v * CONTACT_SHADOW_ALPHA / 255))
-        outside = Image.new("L", img.size, 255)
-        inv_region = ImageOps.invert(hole)
-        outside.paste(inv_region, (x, y))
-        shadow_alpha = ImageChops.multiply(shadow_alpha, outside)
-        shadow = Image.new("RGBA", img.size, (0, 0, 0, 0))
-        shadow.putalpha(shadow_alpha)
-        img.alpha_composite(shadow)
-
-    if feather > 0:
-        # Soft radial falloff: blur the hole mask, then invert to the dim
-        # alpha — the lit region spills light outward instead of ending at a
-        # knife edge.
-        hole_full = Image.new("L", img.size, 0)
-        hole_full.paste(hole, (x, y))
-        hole_full = hole_full.filter(ImageFilter.GaussianBlur(feather))
-        mask = ImageOps.invert(hole_full)
-        mask = mask.point(lambda v: int(v * dim_alpha / 255))
-    else:
-        # v1-exact path (byte-parity contract for absent/0 feather).
-        # Alpha mask: dim_alpha everywhere, 0 (no dim) inside the rounded rect.
-        mask = Image.new("L", img.size, 255)
-        inv_hole = ImageOps.invert(hole)          # 0 inside rect, 255 outside
-        mask.paste(inv_hole, (x, y))
-        mask = mask.point(lambda v: int(v * dim_alpha / 255))
-
-    dim = Image.new("RGBA", img.size, (0, 0, 0, 0))
-    dim.putalpha(mask)
-    img.alpha_composite(dim)
-    return img
+    return draw_spotlight_group(img, [{
+        "rect": rect, "dim_alpha": dim_alpha, "feather": feather,
+        "contact_shadow": contact_shadow,
+    }])
 
 
 def draw_blur_highlight(img, rect, radius=None, mask_feather=None):
@@ -1006,9 +1065,40 @@ def apply_highlights(img, highlights):
     for "lens": a lens reads the pixels the earlier highlights already wrote.
     See "HIGHLIGHT ORDERING CONTRACT" in the module docstring for how that
     interacts with the studio preview.
+
+    ONE EXCEPTION to strict array order: every "spotlight" on the shot is
+    rendered as a single shared dim pass (draw_spotlight_group), fired at the
+    position of the FIRST spotlight in the array; the later ones are consumed
+    there and paint nothing of their own. Running them independently made each
+    one re-dim the regions the others had lit, so the dim compounded and no
+    rect stayed bright. Anchoring the group at the first spotlight keeps the
+    single-spotlight case (every spotlight shot in the corpus today) in exactly
+    its old slot, so it composites against the same running image as before —
+    byte for byte. With several spotlights, a lens or soften sitting BETWEEN
+    them in the array now samples the fully-dimmed composite rather than a
+    partly-dimmed one; that is the intended reading, since the dim is one
+    lighting decision for the whole shot rather than N stacked effects.
     """
     if not highlights:
         return img
+
+    def _has_rect(h):
+        rect = h.get("rect")
+        return bool(rect) and len(rect) == 4
+
+    spotlight_specs = [
+        {
+            "rect": h.get("rect"),
+            "dim_alpha": (round(h["dimStrength"] * 255 / 100)
+                          if h.get("dimStrength") is not None else None),
+            "feather": h.get("feather"),
+            "contact_shadow": bool(h.get("contactShadow")),
+        }
+        for h in highlights
+        if h.get("style") == "spotlight" and _has_rect(h)
+    ]
+    spotlight_pending = bool(spotlight_specs)
+
     for h in highlights:
         style = h.get("style")
         rect = h.get("rect")
@@ -1023,11 +1113,10 @@ def apply_highlights(img, highlights):
                 corner_radius=h.get("cornerRadius"), glow_size=h.get("glowSize"),
                 glow_color=glow_color)
         elif style == "spotlight":
-            dim_strength = h.get("dimStrength")
-            dim_alpha = round(dim_strength * 255 / 100) if dim_strength is not None else None
-            img = draw_spotlight_highlight(
-                img, rect, dim_alpha=dim_alpha, feather=h.get("feather"),
-                contact_shadow=bool(h.get("contactShadow")))
+            # All spotlights share one dim pass, fired at the first one.
+            if spotlight_pending:
+                img = draw_spotlight_group(img, spotlight_specs)
+                spotlight_pending = False
         elif style == "blur":
             img = draw_blur_highlight(img, rect, radius=h.get("blurRadius"),
                                       mask_feather=h.get("maskFeather"))

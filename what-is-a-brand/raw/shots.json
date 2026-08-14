@@ -1,5 +1,5 @@
 {
-  "revision": 0,
+  "revision": 1,
   "shots": {
     "brand-switcher.png": {
       "status": "proposed",
@@ -11,6 +11,20 @@
     "brand-profile.png": {
       "status": "proposed",
       "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "where-to-find-settings.png": {
+      "status": "proposed",
+      "note": "Side-by-side pair answering Max's note \"show an image or a side by side or something that shows how to get to settings from every screen\". Left: profile menu open at the bottom of the sidebar with Settings in the list (Home). Right: the settings page with the Brand group in the settings sidebar. Agent-captured 2026-08-03 on staging.app.franchisesystems.ai, 1680x1050 CSS viewport, 2x, dom-sanitize freshenDates:auto, clip x0 y480 w620 h560 for both halves, composed with helpdesk-image.py --pair. Raws: open-settings-menu.png + settings-brand-section.png. No cursor: the open menu already carries the action and the arrow would run off the bottom of the crop.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "org-owns-brands.png": {
+      "status": "proposed",
+      "note": "Logic diagram, not a screenshot. Answers Max's note \"the image here should be a logic image just showing an org owning a brand or two\" on the How brands relate to organizations section. Built 2026-08-03 in the opener-gen visual language (grid canvas, white node cards, blue connectors, Inter), rendered at 840x380 CSS / 2x and alpha-rounded with tools/opener-gen/round-corners.py. One Organization node (billing, team, brands) branching to two Brand nodes (pipeline, portal, library, settings).",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0

@@ -1,5 +1,5 @@
 {
-  "revision": 1,
+  "revision": 2,
   "shots": {
     "email-builder-overview.png": {
       "status": "proposed",
@@ -32,6 +32,13 @@
     "email-builder-save-dropdown.png": {
       "status": "proposed",
       "note": "Chevron next to 'Save and Exit' clicked open, showing the 'Exit without saving' option. Clip x:240,y:0,w:700,h:280 (2x). Arrow cursor on the chevron trigger (not the open menu item), per cursor heuristics for dropdowns.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "workflows-content-tab.png": {
+      "status": "proposed",
+      "note": "Answers Max's note \"We should show the content tab with the list of emails here as a screenshot\" on the Opening the Email Builder steps. Agent-captured 2026-08-03 on staging.app.franchisesystems.ai, Marketing > Workflows > Content tab, brand Lumon Fresh (Staging Test Brand shows a CAN-SPAM missing-brand-info banner, so it was avoided), 1680x1050 CSS viewport, 2x, dom-sanitize freshenDates:auto, clip x240 y148 w1440 h553 (tab bar through eight template rows). Cosmetic DOM fix before the shutter: seed template names (New Email Template, Test Email 1, Taim Image Debugging Email 12322) swapped for realistic franchise-development names, same precedent as the seed job-title swaps on the roles shots. No cursor: read-only list view.",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0
