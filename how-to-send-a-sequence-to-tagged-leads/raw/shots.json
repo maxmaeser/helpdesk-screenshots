@@ -1,0 +1,89 @@
+{
+  "revision": 0,
+  "shots": {
+    "lead-panel-manage-tags.png": {
+      "cursor": {
+        "pos": [
+          1719,
+          332
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "pipeline-apply-tag.png": {
+      "cursor": {
+        "pos": [
+          745,
+          1150
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "segments-tab-tagged.png": {
+      "cursor": {
+        "pos": [
+          500,
+          1365
+        ],
+        "type": "hand"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "send-configure-sequence.png": {
+      "cursor": {
+        "pos": [
+          340,
+          680
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "send-review.png": {
+      "cursor": {
+        "pos": [
+          1440,
+          1235
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "send-select-sequence.png": {
+      "cursor": {
+        "pos": [
+          1480,
+          432
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}
