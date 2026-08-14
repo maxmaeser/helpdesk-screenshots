@@ -17,12 +17,20 @@ The send flow previews the email with that lead's details already merged in, so 
 3. The right side of the window renders the email as this lead will receive it, subject line included. Pick a different template to swap the preview.
 4. Click **Continue**.
 
+![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-send-a-template-from-a-lead/send-email-choose-path.png)
+
+![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-send-a-template-from-a-lead/send-email-pick-template.png)
+
+![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-send-a-template-from-a-lead/send-email-template-preview.png)
 ### Set the purpose and send
 
 1. Choose a **Purpose**. For a lead you have two options: **General Sales (Consensual)** and **Sales Newsletter (Consensual)**. The purpose decides which of your verified domains sends the email, and the panel below the dropdown names the exact address it will come from.
 2. Leave **Send Immediately** on to send it now, or turn it off and set a date and time under **Schedule For**.
 3. Click **Send Email**.
 
+![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-send-a-template-from-a-lead/send-email-purpose.png)
+
+![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-send-a-template-from-a-lead/send-email-schedule.png)
 You land back on the lead panel. The email appears on the lead's **Activity** tab alongside the rest of their history, and delivery events like opens and clicks land there too as they happen.
 
 A scheduled email sits on the Activity tab until it goes out, with a **Cancel Email** action on the row if you change your mind.
@@ -47,6 +55,7 @@ The same flow exists on prospects.
 
 Go to **Marketing → Audiences**, click a prospect to open their panel, then use the three-dot **Actions** button and select **Send Email**.
 
+![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-send-a-template-from-a-lead/prospect-actions-send-email.png)
 Everything after that is identical, except the **Purpose** options are the marketing ones: **Cold Outreach (Non-Consensual)** and **General Marketing (Consensual)**.
 
 ### Sending to more than one lead
