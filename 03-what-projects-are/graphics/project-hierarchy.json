@@ -1,0 +1,262 @@
+{
+  "revision": 5,
+  "graphic": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "inline-16x9",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -280,
+        "y": -180,
+        "w": 1600,
+        "h": 900,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-inlinegfx-26",
+            "type": "gridField",
+            "props": {
+              "width": 1600,
+              "height": 900,
+              "gridSize": 80,
+              "cornerRadius": 32,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 50,
+              "maskY": 45
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-inlinegfx-27",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "INSIDE A PROJECT",
+              "size": 22,
+              "color": "#8A8A8A"
+            },
+            "offset": [
+              72,
+              56
+            ]
+          },
+          {
+            "id": "flowConnector-inlinegfx-28",
+            "type": "flowConnector",
+            "props": {
+              "dx": 120,
+              "dy": 0,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              504,
+              424
+            ]
+          },
+          {
+            "id": "flowConnector-inlinegfx-29",
+            "type": "flowConnector",
+            "props": {
+              "dx": 130,
+              "dy": -270,
+              "route": "hvh",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              974,
+              154
+            ]
+          },
+          {
+            "id": "flowConnector-inlinegfx-30",
+            "type": "flowConnector",
+            "props": {
+              "dx": 130,
+              "dy": -80,
+              "route": "hvh",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              974,
+              344
+            ]
+          },
+          {
+            "id": "flowConnector-inlinegfx-31",
+            "type": "flowConnector",
+            "props": {
+              "dx": 130,
+              "dy": 110,
+              "route": "hvh",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              974,
+              424
+            ]
+          },
+          {
+            "id": "flowConnector-inlinegfx-32",
+            "type": "flowConnector",
+            "props": {
+              "dx": 130,
+              "dy": 300,
+              "route": "hvh",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              974,
+              424
+            ]
+          },
+          {
+            "id": "flowNode-inlinegfx-33",
+            "type": "flowNode",
+            "props": {
+              "label": "Project",
+              "meta": "your collaborative workspace",
+              "icon": "folder",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 430,
+              "height": 200,
+              "anchorTop": false
+            },
+            "offset": [
+              90,
+              340
+            ]
+          },
+          {
+            "id": "flowNode-inlinegfx-34",
+            "type": "flowNode",
+            "props": {
+              "label": "Tasks",
+              "meta": "steps to work through",
+              "icon": "check",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 350,
+              "height": 180,
+              "anchorTop": false
+            },
+            "offset": [
+              640,
+              350
+            ]
+          },
+          {
+            "id": "flowNode-inlinegfx-35",
+            "type": "flowNode",
+            "props": {
+              "label": "To-do",
+              "meta": "still to do",
+              "icon": "inbox",
+              "tint": "slate",
+              "emphasized": false,
+              "width": 420,
+              "height": 140,
+              "anchorTop": false
+            },
+            "offset": [
+              1120,
+              102
+            ]
+          },
+          {
+            "id": "flowNode-inlinegfx-36",
+            "type": "flowNode",
+            "props": {
+              "label": "In progress",
+              "meta": "underway",
+              "icon": "flag",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 420,
+              "height": 140,
+              "anchorTop": false
+            },
+            "offset": [
+              1120,
+              290
+            ]
+          },
+          {
+            "id": "flowNode-inlinegfx-37",
+            "type": "flowNode",
+            "props": {
+              "label": "Awaiting approval",
+              "meta": "waiting on an approver",
+              "icon": "shield",
+              "tint": "amber",
+              "emphasized": false,
+              "width": 420,
+              "height": 140,
+              "anchorTop": false
+            },
+            "offset": [
+              1120,
+              480
+            ]
+          },
+          {
+            "id": "flowNode-inlinegfx-38",
+            "type": "flowNode",
+            "props": {
+              "label": "Done",
+              "meta": "wrapped up",
+              "icon": "check",
+              "tint": "blue",
+              "emphasized": true,
+              "width": 420,
+              "height": 140,
+              "anchorTop": false
+            },
+            "offset": [
+              1120,
+              670
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Inline infographic: project > tasks > status buckets on a continuous spine (03-what-projects-are). Sol QA rev.",
+    "lastTouchedBy": "max",
+    "editing": false,
+    "rev": 4,
+    "updatedAt": 1784551301141
+  }
+}

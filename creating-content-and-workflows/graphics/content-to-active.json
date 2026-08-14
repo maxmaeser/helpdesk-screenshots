@@ -1,0 +1,190 @@
+{
+  "revision": 3,
+  "graphic": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "inline-tall",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -80,
+        "y": -480,
+        "w": 1200,
+        "h": 1500,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-gfx-22",
+            "type": "gridField",
+            "props": {
+              "width": 1200,
+              "height": 1500,
+              "gridSize": 80,
+              "cornerRadius": 32,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 50,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-gfx-23",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "Content to active",
+              "color": "#9B9B9B",
+              "size": 22
+            },
+            "offset": [
+              390,
+              64
+            ]
+          },
+          {
+            "id": "flowConnector-gfx-24",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 192,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              584,
+              312
+            ]
+          },
+          {
+            "id": "flowConnector-gfx-25",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 192,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              584,
+              652
+            ]
+          },
+          {
+            "id": "flowConnector-gfx-26",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 192,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              584,
+              992
+            ]
+          },
+          {
+            "id": "flowNode-gfx-27",
+            "type": "flowNode",
+            "props": {
+              "label": "Content",
+              "meta": "email templates",
+              "icon": "mail",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 420,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              390,
+              180
+            ]
+          },
+          {
+            "id": "flowNode-gfx-28",
+            "type": "flowNode",
+            "props": {
+              "label": "Sequence",
+              "meta": "trigger-action flow",
+              "icon": "branch",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 420,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              390,
+              520
+            ]
+          },
+          {
+            "id": "flowNode-gfx-29",
+            "type": "flowNode",
+            "props": {
+              "label": "Entry conditions",
+              "meta": "which events start it",
+              "icon": "filter",
+              "tint": "amber",
+              "emphasized": false,
+              "width": 420,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              390,
+              860
+            ]
+          },
+          {
+            "id": "flowNode-gfx-30",
+            "type": "flowNode",
+            "props": {
+              "label": "Active",
+              "meta": "runs in real time",
+              "icon": "check",
+              "tint": "blue",
+              "emphasized": true,
+              "width": 420,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              390,
+              1200
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Inline infographic: the content-to-active-sequence flow (content, sequence, entry conditions, activate).",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 2,
+    "updatedAt": 1784542159813
+  }
+}

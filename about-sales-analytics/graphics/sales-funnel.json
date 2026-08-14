@@ -1,0 +1,212 @@
+{
+  "revision": 3,
+  "graphic": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "inline-tall",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -80,
+        "y": -480,
+        "w": 1200,
+        "h": 1500,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-funnel-1",
+            "type": "gridField",
+            "props": {
+              "width": 1200,
+              "height": 1500,
+              "gridSize": 80,
+              "cornerRadius": 32,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 50,
+              "maskY": 48
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "flowConnector-funnel-2",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 112,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              584,
+              272
+            ]
+          },
+          {
+            "id": "flowConnector-funnel-3",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 112,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              584,
+              532
+            ]
+          },
+          {
+            "id": "flowConnector-funnel-4",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 112,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              584,
+              792
+            ]
+          },
+          {
+            "id": "flowConnector-funnel-5",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 112,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              584,
+              1052
+            ]
+          },
+          {
+            "id": "flowNode-funnel-6",
+            "type": "flowNode",
+            "props": {
+              "label": "Unique Portal Visits",
+              "meta": "traffic in the portal",
+              "icon": "user",
+              "tint": "slate",
+              "emphasized": false,
+              "width": 1000,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              100,
+              140
+            ]
+          },
+          {
+            "id": "flowNode-funnel-7",
+            "type": "flowNode",
+            "props": {
+              "label": "Form Submissions",
+              "meta": "form activity in the portal",
+              "icon": "doc",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 900,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              150,
+              400
+            ]
+          },
+          {
+            "id": "flowNode-funnel-8",
+            "type": "flowNode",
+            "props": {
+              "label": "Steps Completed",
+              "meta": "onboarding steps applicants finished",
+              "icon": "check",
+              "tint": "amber",
+              "emphasized": false,
+              "width": 800,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              200,
+              660
+            ]
+          },
+          {
+            "id": "flowNode-funnel-9",
+            "type": "flowNode",
+            "props": {
+              "label": "FDDs Signed",
+              "meta": "Franchise Disclosure Documents",
+              "icon": "pen",
+              "tint": "green",
+              "emphasized": false,
+              "width": 700,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              250,
+              920
+            ]
+          },
+          {
+            "id": "flowNode-funnel-10",
+            "type": "flowNode",
+            "props": {
+              "label": "Franchisees Converted",
+              "meta": "applicants who became franchisees",
+              "icon": "badge",
+              "tint": "blue",
+              "emphasized": true,
+              "width": 600,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              300,
+              1180
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Inline infographic: the Analytics funnel from portal traffic to conversion (Overview + Portal Steps stage names verbatim). Descending widths = funnel; climax node emphasized. Rev 2: article-exact milestone metas, connectors attached edge to edge.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 2,
+    "updatedAt": 1784542033368
+  }
+}

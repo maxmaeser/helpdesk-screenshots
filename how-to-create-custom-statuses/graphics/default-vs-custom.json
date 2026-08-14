@@ -1,0 +1,200 @@
+{
+  "revision": 3,
+  "graphic": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "inline-tall",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -80,
+        "y": -480,
+        "w": 1200,
+        "h": 1500,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-statg-1",
+            "type": "gridField",
+            "props": {
+              "width": 1200,
+              "height": 1500,
+              "gridSize": 80,
+              "cornerRadius": 32,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 50,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-statg-2",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "CHANGE STATUS",
+              "size": 22,
+              "color": "#8A8F98"
+            },
+            "offset": [
+              260,
+              170
+            ]
+          },
+          {
+            "id": "text-statg-3",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "DEFAULT STATUSES",
+              "size": 22,
+              "color": "#B4B8BF"
+            },
+            "offset": [
+              260,
+              250
+            ]
+          },
+          {
+            "id": "text-statg-4",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "CUSTOM STATUSES",
+              "size": 22,
+              "color": "#B4B8BF"
+            },
+            "offset": [
+              260,
+              786
+            ]
+          },
+          {
+            "id": "flowNode-statg-6",
+            "type": "flowNode",
+            "props": {
+              "label": "Qualified",
+              "meta": "",
+              "icon": "check",
+              "tint": "green",
+              "emphasized": false,
+              "width": 680,
+              "height": 110,
+              "anchorTop": false
+            },
+            "offset": [
+              260,
+              300
+            ]
+          },
+          {
+            "id": "flowNode-statg-7",
+            "type": "flowNode",
+            "props": {
+              "label": "Investigating",
+              "meta": "",
+              "icon": "chart",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 680,
+              "height": 110,
+              "anchorTop": false
+            },
+            "offset": [
+              260,
+              446
+            ]
+          },
+          {
+            "id": "flowNode-statg-8",
+            "type": "flowNode",
+            "props": {
+              "label": "Lost",
+              "meta": "",
+              "icon": "flag",
+              "tint": "slate",
+              "emphasized": false,
+              "width": 680,
+              "height": 110,
+              "anchorTop": false
+            },
+            "offset": [
+              260,
+              592
+            ]
+          },
+          {
+            "id": "flowNode-statg-9",
+            "type": "flowNode",
+            "props": {
+              "label": "Experimenting",
+              "meta": "Edit · Delete",
+              "icon": "brand",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 680,
+              "height": 132,
+              "anchorTop": false
+            },
+            "offset": [
+              260,
+              836
+            ]
+          },
+          {
+            "id": "flowNode-statg-10",
+            "type": "flowNode",
+            "props": {
+              "label": "Fast-Track",
+              "meta": "Edit · Delete",
+              "icon": "send",
+              "tint": "green",
+              "emphasized": false,
+              "width": 680,
+              "height": 132,
+              "anchorTop": false
+            },
+            "offset": [
+              260,
+              1004
+            ]
+          },
+          {
+            "id": "flowNode-statg-11",
+            "type": "flowNode",
+            "props": {
+              "label": "+ Create New Status",
+              "meta": "name · icon · color",
+              "icon": "pen",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 680,
+              "height": 132,
+              "anchorTop": false
+            },
+            "offset": [
+              260,
+              1172
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Rev 2 (Sol QA): deleted the semantically false Fast-Track → Create arrow (the insertion point is carried by layout: the CTA sits at the bottom of the custom group at the same rhythm); CTA de-emphasized so the default-vs-custom comparison leads; CHANGE STATUS eyebrow anchored to the card column.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 2,
+    "updatedAt": 1784542067809
+  }
+}

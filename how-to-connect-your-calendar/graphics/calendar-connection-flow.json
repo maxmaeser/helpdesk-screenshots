@@ -1,0 +1,226 @@
+{
+  "revision": 4,
+  "graphic": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "inline-16x9",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -280,
+        "y": -180,
+        "w": 1600,
+        "h": 900,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-cal-1",
+            "type": "gridField",
+            "props": {
+              "width": 1600,
+              "height": 900,
+              "gridSize": 80,
+              "cornerRadius": 32,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 50,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "flowConnector-cal-2",
+            "type": "flowConnector",
+            "props": {
+              "dx": 170,
+              "dy": 142,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              314,
+              282
+            ]
+          },
+          {
+            "id": "flowConnector-cal-3",
+            "type": "flowConnector",
+            "props": {
+              "dx": -155,
+              "dy": 142,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              704,
+              282
+            ]
+          },
+          {
+            "id": "flowConnector-cal-4",
+            "type": "flowConnector",
+            "props": {
+              "dx": 275,
+              "dy": 0,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              839,
+              498
+            ]
+          },
+          {
+            "id": "flowConnector-cal-5",
+            "type": "flowConnector",
+            "props": {
+              "dx": -735,
+              "dy": 112,
+              "route": "vh",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 52,
+              "arrow": false,
+              "mid": 0.5
+            },
+            "offset": [
+              594,
+              572
+            ]
+          },
+          {
+            "id": "flowConnector-cal-6",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": -112,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              594,
+              572
+            ]
+          },
+          {
+            "id": "flowNode-cal-7",
+            "type": "flowNode",
+            "props": {
+              "label": "Google Calendar",
+              "meta": "Google Meet links",
+              "icon": "calendar",
+              "tint": "green",
+              "emphasized": false,
+              "width": 440,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              110,
+              150
+            ]
+          },
+          {
+            "id": "flowNode-cal-8",
+            "type": "flowNode",
+            "props": {
+              "label": "Office 365 Calendar",
+              "meta": "Microsoft Teams links",
+              "icon": "calendar",
+              "tint": "slate",
+              "emphasized": false,
+              "width": 470,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              640,
+              150
+            ]
+          },
+          {
+            "id": "flowNode-cal-9",
+            "type": "flowNode",
+            "props": {
+              "label": "Calendar & Scheduling",
+              "meta": "Calendars tab",
+              "icon": "shield",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 490,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              365,
+              440
+            ]
+          },
+          {
+            "id": "flowNode-cal-10",
+            "type": "flowNode",
+            "props": {
+              "label": "Home",
+              "meta": "your synced events",
+              "icon": "layout",
+              "tint": "blue",
+              "emphasized": true,
+              "width": 430,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              1130,
+              440
+            ]
+          },
+          {
+            "id": "text-cal-11",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "RECONNECT AFTER AUTHORIZATION EXPIRES",
+              "size": 18,
+              "color": "#8A8F98"
+            },
+            "offset": [
+              700,
+              650
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Inline infographic: calendar connection state flow. Providers converge into Calendar & Scheduling (Calendars tab), events land on Home; the labeled return loop is the reconnect-on-expiry path. Rev 3: edge-attached connectors, tightened loop, RECONNECT label, unified metas.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 3,
+    "updatedAt": 1784542033770
+  }
+}

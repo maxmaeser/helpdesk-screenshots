@@ -1,0 +1,284 @@
+{
+  "revision": 3,
+  "graphic": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "inline-16x9",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -280,
+        "y": -180,
+        "w": 1600,
+        "h": 900,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-seg-1",
+            "type": "gridField",
+            "props": {
+              "width": 1600,
+              "height": 900,
+              "gridSize": 80,
+              "cornerRadius": 32,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 50,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "flowConnector-seg-2",
+            "type": "flowConnector",
+            "props": {
+              "dx": 138,
+              "dy": 0,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              500,
+              438
+            ]
+          },
+          {
+            "id": "flowConnector-seg-3",
+            "type": "flowConnector",
+            "props": {
+              "dx": 244,
+              "dy": 190,
+              "route": "hv",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 28,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              500,
+              168
+            ]
+          },
+          {
+            "id": "flowConnector-seg-4",
+            "type": "flowConnector",
+            "props": {
+              "dx": 244,
+              "dy": -190,
+              "route": "hv",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 28,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              500,
+              518
+            ]
+          },
+          {
+            "id": "flowConnector-seg-5",
+            "type": "flowConnector",
+            "props": {
+              "dx": 148,
+              "dy": 0,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1010,
+              438
+            ]
+          },
+          {
+            "id": "flowConnector-seg-6",
+            "type": "flowConnector",
+            "props": {
+              "dx": 254,
+              "dy": -190,
+              "route": "vh",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 28,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              904,
+              168
+            ]
+          },
+          {
+            "id": "flowConnector-seg-7",
+            "type": "flowConnector",
+            "props": {
+              "dx": 254,
+              "dy": 190,
+              "route": "vh",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 28,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              904,
+              518
+            ]
+          },
+          {
+            "id": "flowNode-seg-8",
+            "type": "flowNode",
+            "props": {
+              "label": "Built-in groups",
+              "meta": "FS Ai maintains these",
+              "icon": "folder",
+              "tint": "slate",
+              "emphasized": false,
+              "width": 420,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              90,
+              110
+            ]
+          },
+          {
+            "id": "flowNode-seg-9",
+            "type": "flowNode",
+            "props": {
+              "label": "Tags",
+              "meta": "every tag you create",
+              "icon": "flag",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 420,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              90,
+              380
+            ]
+          },
+          {
+            "id": "flowNode-seg-10",
+            "type": "flowNode",
+            "props": {
+              "label": "Custom statuses",
+              "meta": "every status you define",
+              "icon": "badge",
+              "tint": "amber",
+              "emphasized": false,
+              "width": 420,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              90,
+              650
+            ]
+          },
+          {
+            "id": "flowNode-seg-11",
+            "type": "flowNode",
+            "props": {
+              "label": "Segments",
+              "meta": "a group of leads",
+              "icon": "branch",
+              "tint": "blue",
+              "emphasized": true,
+              "width": 360,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              660,
+              380
+            ]
+          },
+          {
+            "id": "flowNode-seg-12",
+            "type": "flowNode",
+            "props": {
+              "label": "One-off email",
+              "meta": "from a template",
+              "icon": "mail",
+              "tint": "green",
+              "emphasized": false,
+              "width": 380,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              1180,
+              110
+            ]
+          },
+          {
+            "id": "flowNode-seg-13",
+            "type": "flowNode",
+            "props": {
+              "label": "Sequence",
+              "meta": "timed delays",
+              "icon": "send",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 380,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              1180,
+              380
+            ]
+          },
+          {
+            "id": "flowNode-seg-14",
+            "type": "flowNode",
+            "props": {
+              "label": "Filter",
+              "meta": "narrow the Leads table",
+              "icon": "filter",
+              "tint": "slate",
+              "emphasized": false,
+              "width": 380,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              1180,
+              650
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Inline infographic: segment derivation. Three sources (built-in groups, tags, custom statuses) fan in to the Segments tab; segments fan out to what they unlock (one-off email, sequence, filtering the Leads table).",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 2,
+    "updatedAt": 1784542034513
+  }
+}

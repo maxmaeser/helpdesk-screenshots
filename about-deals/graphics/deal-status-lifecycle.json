@@ -1,0 +1,240 @@
+{
+  "revision": 3,
+  "graphic": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "inline-16x9",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -280,
+        "y": -180,
+        "w": 1600,
+        "h": 900,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-dealsg-1",
+            "type": "gridField",
+            "props": {
+              "width": 1600,
+              "height": 900,
+              "gridSize": 80,
+              "cornerRadius": 32,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 55,
+              "maskY": 45
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-dealsg-2",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "DEAL STATUSES",
+              "size": 22,
+              "color": "#8A8F98"
+            },
+            "offset": [
+              48,
+              52
+            ]
+          },
+          {
+            "id": "text-dealsg-12",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "ACTION",
+              "size": 20,
+              "color": "#8A8F98"
+            },
+            "offset": [
+              1058,
+              538
+            ]
+          },
+          {
+            "id": "flowConnector-dealsg-3",
+            "type": "flowConnector",
+            "props": {
+              "dx": 100,
+              "dy": 0,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              484,
+              268
+            ]
+          },
+          {
+            "id": "flowConnector-dealsg-4",
+            "type": "flowConnector",
+            "props": {
+              "dx": 100,
+              "dy": 0,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              984,
+              268
+            ]
+          },
+          {
+            "id": "flowConnector-dealsg-5",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": -222,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1284,
+              342
+            ]
+          },
+          {
+            "id": "flowConnector-dealsg-6",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 222,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              784,
+              342
+            ]
+          },
+          {
+            "id": "flowNode-dealsg-7",
+            "type": "flowNode",
+            "props": {
+              "label": "Open",
+              "meta": "active and in progress",
+              "icon": "folder",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 400,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              100,
+              210
+            ]
+          },
+          {
+            "id": "flowNode-dealsg-8",
+            "type": "flowNode",
+            "props": {
+              "label": "In Review",
+              "meta": "being evaluated",
+              "icon": "doc",
+              "tint": "amber",
+              "emphasized": false,
+              "width": 400,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              600,
+              210
+            ]
+          },
+          {
+            "id": "flowNode-dealsg-9",
+            "type": "flowNode",
+            "props": {
+              "label": "Won",
+              "meta": "closed successfully",
+              "icon": "check",
+              "tint": "green",
+              "emphasized": false,
+              "width": 400,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              1100,
+              210
+            ]
+          },
+          {
+            "id": "flowNode-dealsg-10",
+            "type": "flowNode",
+            "props": {
+              "label": "Lost",
+              "meta": "did not move forward",
+              "icon": "flag",
+              "tint": "slate",
+              "emphasized": false,
+              "width": 400,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              600,
+              580
+            ]
+          },
+          {
+            "id": "flowNode-dealsg-11",
+            "type": "flowNode",
+            "props": {
+              "label": "Convert to Franchisee",
+              "meta": "sets the deal status to Won",
+              "icon": "building",
+              "tint": "blue",
+              "emphasized": true,
+              "width": 500,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              1050,
+              580
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Rev 2 (Sol QA): status relay Open → In Review → Won with Lost dropping off; Convert to Franchisee restyled as the ACTION feeding INTO Won (upward arrow into Won's bottom edge, emphasized card + ACTION eyebrow + action-register meta) so it cannot read as a fifth status. All connector endpoints attached to card edges.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 2,
+    "updatedAt": 1784542067017
+  }
+}

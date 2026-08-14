@@ -1,0 +1,330 @@
+{
+  "revision": 5,
+  "graphic": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "inline-tall",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -80,
+        "y": -480,
+        "w": 1200,
+        "h": 1500,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-gfx06r-0",
+            "type": "gridField",
+            "props": {
+              "width": 1200,
+              "height": 1500,
+              "gridSize": 80,
+              "cornerRadius": 32,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 48,
+              "maskY": 55
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-gfx06r-1",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "THE FIVE STATUSES",
+              "size": 20,
+              "color": "#8A8A8A"
+            },
+            "offset": [
+              96,
+              64
+            ]
+          },
+          {
+            "id": "flowConnector-gfx06r-2",
+            "type": "flowConnector",
+            "props": {
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5,
+              "dx": 0,
+              "dy": 120
+            },
+            "offset": [
+              300,
+              320
+            ]
+          },
+          {
+            "id": "flowConnector-gfx06r-3",
+            "type": "flowConnector",
+            "props": {
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5,
+              "dx": 0,
+              "dy": 120
+            },
+            "offset": [
+              300,
+              556
+            ]
+          },
+          {
+            "id": "flowConnector-gfx06r-4",
+            "type": "flowConnector",
+            "props": {
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5,
+              "dx": 0,
+              "dy": 120
+            },
+            "offset": [
+              300,
+              792
+            ]
+          },
+          {
+            "id": "flowConnector-gfx06r-5",
+            "type": "flowConnector",
+            "props": {
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5,
+              "dx": 0,
+              "dy": 120
+            },
+            "offset": [
+              300,
+              1028
+            ]
+          },
+          {
+            "id": "flowConnector-gfx06r-6",
+            "type": "flowConnector",
+            "props": {
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5,
+              "dx": 0,
+              "dy": 60
+            },
+            "offset": [
+              896,
+              884
+            ]
+          },
+          {
+            "id": "flowConnector-gfx06r-7",
+            "type": "flowConnector",
+            "props": {
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5,
+              "dx": 0,
+              "dy": 60
+            },
+            "offset": [
+              896,
+              1048
+            ]
+          },
+          {
+            "id": "flowNode-gfx06r-8",
+            "type": "flowNode",
+            "props": {
+              "label": "Planned",
+              "meta": "intent locked in",
+              "icon": "flag",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 440,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              96,
+              220
+            ]
+          },
+          {
+            "id": "flowNode-gfx06r-9",
+            "type": "flowNode",
+            "props": {
+              "label": "Developing",
+              "meta": "in build out",
+              "icon": "building",
+              "tint": "amber",
+              "emphasized": false,
+              "width": 440,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              96,
+              456
+            ]
+          },
+          {
+            "id": "flowNode-gfx06r-10",
+            "type": "flowNode",
+            "props": {
+              "label": "Open",
+              "meta": "live and operating",
+              "icon": "check",
+              "tint": "green",
+              "emphasized": true,
+              "width": 440,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              96,
+              692
+            ]
+          },
+          {
+            "id": "flowNode-gfx06r-11",
+            "type": "flowNode",
+            "props": {
+              "label": "Inactive",
+              "meta": "paused · on your list",
+              "icon": "pin",
+              "tint": "slate",
+              "emphasized": false,
+              "width": 440,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              96,
+              928
+            ]
+          },
+          {
+            "id": "flowNode-gfx06r-12",
+            "type": "flowNode",
+            "props": {
+              "label": "Closed",
+              "meta": "no longer operating",
+              "icon": "folder",
+              "tint": "slate",
+              "emphasized": false,
+              "width": 440,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              96,
+              1164
+            ]
+          },
+          {
+            "id": "text-gfx06r-13",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "UPDATING A STATUS",
+              "size": 18,
+              "color": "#8A8A8A"
+            },
+            "offset": [
+              720,
+              740
+            ]
+          },
+          {
+            "id": "flowNode-gfx06r-14",
+            "type": "flowNode",
+            "props": {
+              "label": "Status dropdown",
+              "meta": "pick the new value",
+              "icon": "layout",
+              "tint": "slate",
+              "emphasized": false,
+              "width": 384,
+              "height": 104,
+              "anchorTop": false
+            },
+            "offset": [
+              720,
+              796
+            ]
+          },
+          {
+            "id": "flowNode-gfx06r-15",
+            "type": "flowNode",
+            "props": {
+              "label": "Timeline",
+              "meta": "records the change",
+              "icon": "calendar",
+              "tint": "slate",
+              "emphasized": false,
+              "width": 384,
+              "height": 104,
+              "anchorTop": false
+            },
+            "offset": [
+              720,
+              960
+            ]
+          },
+          {
+            "id": "flowNode-gfx06r-16",
+            "type": "flowNode",
+            "props": {
+              "label": "Corporate",
+              "meta": "sees the same update",
+              "icon": "brand",
+              "tint": "slate",
+              "emphasized": false,
+              "width": 384,
+              "height": 104,
+              "anchorTop": false
+            },
+            "offset": [
+              720,
+              1124
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Five location statuses as the primary lifecycle chain; the status update flow as a quiet aside. Composed by claude.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 4,
+    "updatedAt": 1784542103717
+  }
+}

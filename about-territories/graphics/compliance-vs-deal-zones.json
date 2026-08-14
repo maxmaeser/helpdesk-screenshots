@@ -1,0 +1,212 @@
+{
+  "revision": 3,
+  "graphic": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "inline-4x3",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -280,
+        "y": -330,
+        "w": 1600,
+        "h": 1200,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-terrg-1",
+            "type": "gridField",
+            "props": {
+              "width": 1600,
+              "height": 1200,
+              "gridSize": 80,
+              "cornerRadius": 32,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 50,
+              "maskY": 42
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "flowConnector-terrg-2",
+            "type": "flowConnector",
+            "props": {
+              "dx": -400,
+              "dy": 232,
+              "route": "vhv",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 28,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              384,
+              292
+            ]
+          },
+          {
+            "id": "flowConnector-terrg-3",
+            "type": "flowConnector",
+            "props": {
+              "dx": 400,
+              "dy": 232,
+              "route": "vhv",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 28,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              784,
+              292
+            ]
+          },
+          {
+            "id": "flowConnector-terrg-4",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 192,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              384,
+              672
+            ]
+          },
+          {
+            "id": "flowConnector-terrg-5",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 192,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1184,
+              672
+            ]
+          },
+          {
+            "id": "flowNode-terrg-6",
+            "type": "flowNode",
+            "props": {
+              "label": "Territories",
+              "meta": "Sales → Territories",
+              "icon": "pin",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 400,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              600,
+              160
+            ]
+          },
+          {
+            "id": "flowNode-terrg-7",
+            "type": "flowNode",
+            "props": {
+              "label": "Compliance",
+              "meta": "state-level FDD filing",
+              "icon": "shield",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 480,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              160,
+              540
+            ]
+          },
+          {
+            "id": "flowNode-terrg-8",
+            "type": "flowNode",
+            "props": {
+              "label": "Deal Zones",
+              "meta": "geographic zone management",
+              "icon": "layout",
+              "tint": "amber",
+              "emphasized": false,
+              "width": 480,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              960,
+              540
+            ]
+          },
+          {
+            "id": "flowNode-terrg-9",
+            "type": "flowNode",
+            "props": {
+              "label": "Track Filing Status",
+              "meta": "Not Filed · Pending · Completed",
+              "icon": "doc",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 480,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              160,
+              880
+            ]
+          },
+          {
+            "id": "flowNode-terrg-10",
+            "type": "flowNode",
+            "props": {
+              "label": "Draw Deal Zone",
+              "meta": "boundaries · entity · capacity",
+              "icon": "pen",
+              "tint": "amber",
+              "emphasized": false,
+              "width": 480,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              960,
+              880
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Rev 2 (Sol QA): bottom nodes made parallel actions (Track Filing Status / Draw Deal Zone, both verb-led, metas both three-noun facet lists); every connector now departs from and lands on a card edge (root bottom edge to group top centers, group bottom edges to sub top edges).",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 2,
+    "updatedAt": 1784542067405
+  }
+}

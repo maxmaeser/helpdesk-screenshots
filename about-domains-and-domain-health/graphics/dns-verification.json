@@ -1,0 +1,226 @@
+{
+  "revision": 3,
+  "graphic": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "inline-16x9",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -280,
+        "y": -180,
+        "w": 1600,
+        "h": 900,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-gfx-11",
+            "type": "gridField",
+            "props": {
+              "width": 1600,
+              "height": 900,
+              "gridSize": 80,
+              "cornerRadius": 32,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 50,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-gfx-12",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "DNS verification",
+              "color": "#9B9B9B",
+              "size": 22
+            },
+            "offset": [
+              140,
+              64
+            ]
+          },
+          {
+            "id": "flowConnector-gfx-13",
+            "type": "flowConnector",
+            "props": {
+              "dx": 220,
+              "dy": 195,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              424,
+              194
+            ]
+          },
+          {
+            "id": "flowConnector-gfx-14",
+            "type": "flowConnector",
+            "props": {
+              "dx": 220,
+              "dy": 0,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              424,
+              434
+            ]
+          },
+          {
+            "id": "flowConnector-gfx-15",
+            "type": "flowConnector",
+            "props": {
+              "dx": 220,
+              "dy": -195,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              424,
+              479
+            ]
+          },
+          {
+            "id": "flowConnector-gfx-16",
+            "type": "flowConnector",
+            "props": {
+              "dx": 108,
+              "dy": 0,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              996,
+              434
+            ]
+          },
+          {
+            "id": "flowNode-gfx-17",
+            "type": "flowNode",
+            "props": {
+              "label": "MX",
+              "meta": "",
+              "icon": "doc",
+              "tint": "slate",
+              "emphasized": false,
+              "width": 300,
+              "height": 120,
+              "anchorTop": false
+            },
+            "offset": [
+              140,
+              150
+            ]
+          },
+          {
+            "id": "flowNode-gfx-18",
+            "type": "flowNode",
+            "props": {
+              "label": "TXT",
+              "meta": "",
+              "icon": "doc",
+              "tint": "slate",
+              "emphasized": false,
+              "width": 300,
+              "height": 120,
+              "anchorTop": false
+            },
+            "offset": [
+              140,
+              390
+            ]
+          },
+          {
+            "id": "flowNode-gfx-19",
+            "type": "flowNode",
+            "props": {
+              "label": "CNAME",
+              "meta": "",
+              "icon": "doc",
+              "tint": "slate",
+              "emphasized": false,
+              "width": 300,
+              "height": 120,
+              "anchorTop": false
+            },
+            "offset": [
+              140,
+              630
+            ]
+          },
+          {
+            "id": "flowNode-gfx-20",
+            "type": "flowNode",
+            "props": {
+              "label": "Verify",
+              "meta": "checks each record",
+              "icon": "shield",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 352,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              660,
+              376
+            ]
+          },
+          {
+            "id": "flowNode-gfx-21",
+            "type": "flowNode",
+            "props": {
+              "label": "Active",
+              "meta": "all records verified",
+              "icon": "check",
+              "tint": "blue",
+              "emphasized": true,
+              "width": 400,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              1120,
+              376
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Inline infographic: DNS records fan into Verify; once all records are verified the domain activates.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 2,
+    "updatedAt": 1784542159417
+  }
+}

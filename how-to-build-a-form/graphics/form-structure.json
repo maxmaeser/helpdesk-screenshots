@@ -1,0 +1,280 @@
+{
+  "revision": 4,
+  "graphic": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "inline-4x3",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -280,
+        "y": -330,
+        "w": 1600,
+        "h": 1200,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-inlinegfx-12",
+            "type": "gridField",
+            "props": {
+              "width": 1600,
+              "height": 1200,
+              "gridSize": 80,
+              "cornerRadius": 32,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 50,
+              "maskY": 45
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-inlinegfx-13",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "FORM STRUCTURE",
+              "size": 22,
+              "color": "#8A8A8A"
+            },
+            "offset": [
+              72,
+              56
+            ]
+          },
+          {
+            "id": "flowConnector-inlinegfx-14",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 180,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              284,
+              274
+            ]
+          },
+          {
+            "id": "flowConnector-inlinegfx-15",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 140,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              284,
+              604
+            ]
+          },
+          {
+            "id": "flowNode-inlinegfx-16",
+            "type": "flowNode",
+            "props": {
+              "label": "Form",
+              "meta": "pages · fields",
+              "icon": "doc",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 360,
+              "height": 150,
+              "anchorTop": false
+            },
+            "offset": [
+              120,
+              140
+            ]
+          },
+          {
+            "id": "flowNode-inlinegfx-17",
+            "type": "flowNode",
+            "props": {
+              "label": "Page 1",
+              "meta": "title · subtitle",
+              "icon": "layout",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 360,
+              "height": 150,
+              "anchorTop": false
+            },
+            "offset": [
+              120,
+              470
+            ]
+          },
+          {
+            "id": "flowNode-inlinegfx-18",
+            "type": "flowNode",
+            "props": {
+              "label": "Page 2",
+              "meta": "title · subtitle",
+              "icon": "layout",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 360,
+              "height": 150,
+              "anchorTop": false
+            },
+            "offset": [
+              120,
+              760
+            ]
+          },
+          {
+            "id": "flowNode-inlinegfx-19",
+            "type": "flowNode",
+            "props": {
+              "label": "Field Category",
+              "meta": "where the submitted data appears on your sales lead panels",
+              "icon": "folder",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 880,
+              "height": 780,
+              "anchorTop": true
+            },
+            "offset": [
+              640,
+              300
+            ]
+          },
+          {
+            "id": "flowConnector-inlinegfx-20",
+            "type": "flowConnector",
+            "props": {
+              "dx": 220,
+              "dy": 0,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              464,
+              504
+            ]
+          },
+          {
+            "id": "flowConnector-inlinegfx-21",
+            "type": "flowConnector",
+            "props": {
+              "dx": 220,
+              "dy": 140,
+              "route": "hvh",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              464,
+              564
+            ]
+          },
+          {
+            "id": "flowConnector-inlinegfx-22",
+            "type": "flowConnector",
+            "props": {
+              "dx": 220,
+              "dy": 65,
+              "route": "hvh",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              464,
+              819
+            ]
+          },
+          {
+            "id": "flowNode-inlinegfx-23",
+            "type": "flowNode",
+            "props": {
+              "label": "Field",
+              "meta": "text",
+              "icon": "pen",
+              "tint": "amber",
+              "emphasized": false,
+              "width": 760,
+              "height": 140,
+              "anchorTop": false
+            },
+            "offset": [
+              700,
+              470
+            ]
+          },
+          {
+            "id": "flowNode-inlinegfx-24",
+            "type": "flowNode",
+            "props": {
+              "label": "Field",
+              "meta": "single select",
+              "icon": "pen",
+              "tint": "amber",
+              "emphasized": false,
+              "width": 760,
+              "height": 140,
+              "anchorTop": false
+            },
+            "offset": [
+              700,
+              650
+            ]
+          },
+          {
+            "id": "flowNode-inlinegfx-25",
+            "type": "flowNode",
+            "props": {
+              "label": "Field",
+              "meta": "dropdown",
+              "icon": "pen",
+              "tint": "amber",
+              "emphasized": false,
+              "width": 760,
+              "height": 140,
+              "anchorTop": false
+            },
+            "offset": [
+              700,
+              830
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Inline infographic: ordered pages feeding fields grouped inside a Field Category container (how-to-build-a-form). Sol QA rev.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 3,
+    "updatedAt": 1784542499698
+  }
+}

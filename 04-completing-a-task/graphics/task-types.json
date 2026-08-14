@@ -1,0 +1,203 @@
+{
+  "revision": 3,
+  "graphic": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "inline-16x9",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -280,
+        "y": -180,
+        "w": 1600,
+        "h": 900,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-inlinegfx-39",
+            "type": "gridField",
+            "props": {
+              "width": 1600,
+              "height": 900,
+              "gridSize": 80,
+              "cornerRadius": 32,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 50,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-inlinegfx-40",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "THE SEVEN TASK TYPES",
+              "size": 22,
+              "color": "#8A8A8A"
+            },
+            "offset": [
+              72,
+              64
+            ]
+          },
+          {
+            "id": "flowNode-inlinegfx-41",
+            "type": "flowNode",
+            "props": {
+              "label": "Todo checklist",
+              "meta": "a task you confirm",
+              "icon": "check",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 348,
+              "height": 170,
+              "anchorTop": false
+            },
+            "offset": [
+              56,
+              190
+            ]
+          },
+          {
+            "id": "flowNode-inlinegfx-42",
+            "type": "flowNode",
+            "props": {
+              "label": "Form",
+              "meta": "a set of questions",
+              "icon": "doc",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 348,
+              "height": 170,
+              "anchorTop": false
+            },
+            "offset": [
+              436,
+              190
+            ]
+          },
+          {
+            "id": "flowNode-inlinegfx-43",
+            "type": "flowNode",
+            "props": {
+              "label": "Visit link",
+              "meta": "an external URL",
+              "icon": "send",
+              "tint": "amber",
+              "emphasized": false,
+              "width": 348,
+              "height": 170,
+              "anchorTop": false
+            },
+            "offset": [
+              816,
+              190
+            ]
+          },
+          {
+            "id": "flowNode-inlinegfx-44",
+            "type": "flowNode",
+            "props": {
+              "label": "Schedule a call",
+              "meta": "a meeting to book",
+              "icon": "calendar",
+              "tint": "green",
+              "emphasized": false,
+              "width": 348,
+              "height": 170,
+              "anchorTop": false
+            },
+            "offset": [
+              1196,
+              190
+            ]
+          },
+          {
+            "id": "flowNode-inlinegfx-45",
+            "type": "flowNode",
+            "props": {
+              "label": "Watch video",
+              "meta": "a video to watch",
+              "icon": "layout",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 348,
+              "height": 170,
+              "anchorTop": false
+            },
+            "offset": [
+              246,
+              440
+            ]
+          },
+          {
+            "id": "flowNode-inlinegfx-46",
+            "type": "flowNode",
+            "props": {
+              "label": "View slides",
+              "meta": "a deck to review",
+              "icon": "card",
+              "tint": "slate",
+              "emphasized": false,
+              "width": 348,
+              "height": 170,
+              "anchorTop": false
+            },
+            "offset": [
+              626,
+              440
+            ]
+          },
+          {
+            "id": "flowNode-inlinegfx-47",
+            "type": "flowNode",
+            "props": {
+              "label": "Signature",
+              "meta": "a document to sign",
+              "icon": "pen",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 348,
+              "height": 170,
+              "anchorTop": false
+            },
+            "offset": [
+              1006,
+              440
+            ]
+          },
+          {
+            "id": "text-inlinegfx-48",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "Approver tasks stay pending until the approver signs off.",
+              "size": 22
+            },
+            "offset": [
+              505,
+              700
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Inline infographic: seven task types roster + approver footnote (04-completing-a-task). Sol QA rev.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 2,
+    "updatedAt": 1784542328007
+  }
+}

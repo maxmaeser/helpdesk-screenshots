@@ -1,0 +1,226 @@
+{
+  "revision": 4,
+  "graphic": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "inline-16x9",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -280,
+        "y": -180,
+        "w": 1600,
+        "h": 900,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-gfx05r-0",
+            "type": "gridField",
+            "props": {
+              "width": 1600,
+              "height": 900,
+              "gridSize": 80,
+              "cornerRadius": 32,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 50,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-gfx05r-1",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "HOW APPROVAL WORKS",
+              "size": 20,
+              "color": "#8A8A8A"
+            },
+            "offset": [
+              96,
+              64
+            ]
+          },
+          {
+            "id": "flowConnector-gfx05r-2",
+            "type": "flowConnector",
+            "props": {
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5,
+              "dx": 128,
+              "dy": 0
+            },
+            "offset": [
+              464,
+              434
+            ]
+          },
+          {
+            "id": "flowConnector-gfx05r-3",
+            "type": "flowConnector",
+            "props": {
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5,
+              "dx": 128,
+              "dy": 0
+            },
+            "offset": [
+              976,
+              434
+            ]
+          },
+          {
+            "id": "flowConnector-gfx05r-4",
+            "type": "flowConnector",
+            "props": {
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5,
+              "dx": 0,
+              "dy": 108
+            },
+            "offset": [
+              784,
+              252
+            ]
+          },
+          {
+            "id": "flowConnector-gfx05r-5",
+            "type": "flowConnector",
+            "props": {
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5,
+              "dx": 0,
+              "dy": 108
+            },
+            "offset": [
+              784,
+              508
+            ]
+          },
+          {
+            "id": "flowNode-gfx05r-6",
+            "type": "flowNode",
+            "props": {
+              "label": "Responsible",
+              "meta": "does the work",
+              "icon": "user",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 384,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              96,
+              376
+            ]
+          },
+          {
+            "id": "flowNode-gfx05r-7",
+            "type": "flowNode",
+            "props": {
+              "label": "Consulted",
+              "meta": "gives feedback",
+              "icon": "chat",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 384,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              608,
+              120
+            ]
+          },
+          {
+            "id": "flowNode-gfx05r-8",
+            "type": "flowNode",
+            "props": {
+              "label": "Approver",
+              "meta": "signs off",
+              "icon": "check",
+              "tint": "blue",
+              "emphasized": true,
+              "width": 384,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              608,
+              376
+            ]
+          },
+          {
+            "id": "flowNode-gfx05r-9",
+            "type": "flowNode",
+            "props": {
+              "label": "Accountable",
+              "meta": "owns the outcome",
+              "icon": "flag",
+              "tint": "amber",
+              "emphasized": false,
+              "width": 384,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              1120,
+              376
+            ]
+          },
+          {
+            "id": "flowNode-gfx05r-10",
+            "type": "flowNode",
+            "props": {
+              "label": "Informed",
+              "meta": "notified · no action",
+              "icon": "mail",
+              "tint": "slate",
+              "emphasized": false,
+              "width": 384,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              608,
+              632
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Approval sequence: work submitted, approval gate, outcome. Consulted feeds the gate, Informed hears the result. Composed by claude.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 3,
+    "updatedAt": 1784542103322
+  }
+}

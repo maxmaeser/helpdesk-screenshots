@@ -1,0 +1,262 @@
+{
+  "revision": 4,
+  "graphic": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "inline-4x3",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -280,
+        "y": -330,
+        "w": 1600,
+        "h": 1200,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-gfx-31",
+            "type": "gridField",
+            "props": {
+              "width": 1600,
+              "height": 1200,
+              "gridSize": 80,
+              "cornerRadius": 32,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 50,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-gfx-32",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "UTM data flow",
+              "color": "#9B9B9B",
+              "size": 22
+            },
+            "offset": [
+              96,
+              64
+            ]
+          },
+          {
+            "id": "flowConnector-gfx-33",
+            "type": "flowConnector",
+            "props": {
+              "dx": 104,
+              "dy": 0,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              480,
+              258
+            ]
+          },
+          {
+            "id": "flowConnector-gfx-34",
+            "type": "flowConnector",
+            "props": {
+              "dx": 104,
+              "dy": 0,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              984,
+              258
+            ]
+          },
+          {
+            "id": "flowConnector-gfx-35",
+            "type": "flowConnector",
+            "props": {
+              "dx": -404,
+              "dy": 472,
+              "route": "vhv",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 28,
+              "arrow": true,
+              "mid": 0.34
+            },
+            "offset": [
+              280,
+              332
+            ]
+          },
+          {
+            "id": "flowConnector-gfx-36",
+            "type": "flowConnector",
+            "props": {
+              "dx": -504,
+              "dy": 472,
+              "route": "vhv",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 28,
+              "arrow": true,
+              "mid": 0.66
+            },
+            "offset": [
+              784,
+              332
+            ]
+          },
+          {
+            "id": "flowConnector-gfx-37",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 472,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1288,
+              332
+            ]
+          },
+          {
+            "id": "flowNode-gfx-38",
+            "type": "flowNode",
+            "props": {
+              "label": "Tagged URL",
+              "meta": "utm_source=facebook",
+              "icon": "send",
+              "tint": "amber",
+              "emphasized": false,
+              "width": 400,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              96,
+              200
+            ]
+          },
+          {
+            "id": "flowNode-gfx-39",
+            "type": "flowNode",
+            "props": {
+              "label": "Prospect",
+              "meta": "captured at signup",
+              "icon": "userPlus",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 400,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              600,
+              200
+            ]
+          },
+          {
+            "id": "flowNode-gfx-40",
+            "type": "flowNode",
+            "props": {
+              "label": "Lead",
+              "meta": "carries over",
+              "icon": "flag",
+              "tint": "blue",
+              "emphasized": true,
+              "width": 400,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              1104,
+              200
+            ]
+          },
+          {
+            "id": "flowNode-gfx-41",
+            "type": "flowNode",
+            "props": {
+              "label": "Profile",
+              "meta": "source field",
+              "icon": "user",
+              "tint": "slate",
+              "emphasized": false,
+              "width": 400,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              96,
+              820
+            ]
+          },
+          {
+            "id": "flowNode-gfx-42",
+            "type": "flowNode",
+            "props": {
+              "label": "Pipeline",
+              "meta": "filter by source",
+              "icon": "filter",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 400,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              600,
+              820
+            ]
+          },
+          {
+            "id": "flowNode-gfx-43",
+            "type": "flowNode",
+            "props": {
+              "label": "Analytics",
+              "meta": "leads by source",
+              "icon": "chart",
+              "tint": "amber",
+              "emphasized": false,
+              "width": 400,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              1104,
+              820
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Inline infographic: UTM values enter on the tagged signup URL, carry from prospect to lead, and surface in profile, pipeline, and analytics.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 3,
+    "updatedAt": 1784542234020
+  }
+}

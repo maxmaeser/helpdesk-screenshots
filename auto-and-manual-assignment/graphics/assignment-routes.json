@@ -1,0 +1,208 @@
+{
+  "revision": 4,
+  "graphic": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "inline-16x9",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -280,
+        "y": -180,
+        "w": 1600,
+        "h": 900,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-gfx-1",
+            "type": "gridField",
+            "props": {
+              "width": 1600,
+              "height": 900,
+              "gridSize": 80,
+              "cornerRadius": 32,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 50,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-gfx-2",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "Lead assignment",
+              "color": "#9B9B9B",
+              "size": 22
+            },
+            "offset": [
+              120,
+              64
+            ]
+          },
+          {
+            "id": "flowConnector-gfx-3",
+            "type": "flowConnector",
+            "props": {
+              "dx": 294,
+              "dy": -162,
+              "route": "vh",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 28,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              280,
+              198
+            ]
+          },
+          {
+            "id": "flowConnector-gfx-4",
+            "type": "flowConnector",
+            "props": {
+              "dx": 294,
+              "dy": 162,
+              "route": "vh",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 28,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              280,
+              508
+            ]
+          },
+          {
+            "id": "flowConnector-gfx-5",
+            "type": "flowConnector",
+            "props": {
+              "dx": 188,
+              "dy": 122,
+              "route": "vh",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 28,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              924,
+              272
+            ]
+          },
+          {
+            "id": "flowConnector-gfx-6",
+            "type": "flowConnector",
+            "props": {
+              "dx": 188,
+              "dy": -122,
+              "route": "vh",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 28,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              924,
+              474
+            ]
+          },
+          {
+            "id": "flowNode-gfx-7",
+            "type": "flowNode",
+            "props": {
+              "label": "New lead",
+              "meta": "portal signup",
+              "icon": "inbox",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 352,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              120,
+              376
+            ]
+          },
+          {
+            "id": "flowNode-gfx-8",
+            "type": "flowNode",
+            "props": {
+              "label": "Automatic",
+              "meta": "cycles through reps",
+              "icon": "branch",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 420,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              590,
+              140
+            ]
+          },
+          {
+            "id": "flowNode-gfx-9",
+            "type": "flowNode",
+            "props": {
+              "label": "Manual",
+              "meta": "choose a specific rep",
+              "icon": "user",
+              "tint": "amber",
+              "emphasized": false,
+              "width": 420,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              590,
+              612
+            ]
+          },
+          {
+            "id": "flowNode-gfx-10",
+            "type": "flowNode",
+            "props": {
+              "label": "Assigned",
+              "meta": "to a sales rep",
+              "icon": "check",
+              "tint": "blue",
+              "emphasized": true,
+              "width": 352,
+              "height": 148,
+              "anchorTop": false
+            },
+            "offset": [
+              1128,
+              376
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Inline infographic: the two assignment routes (round-robin auto vs manual) branching from one incoming lead.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 3,
+    "updatedAt": 1784542159011
+  }
+}
