@@ -4,5 +4,36 @@
       1610,
       300
     ]
+  },
+  "send-email-choose-path.png": {
+    "cursor": [
+      1460,
+      502
+    ]
+  },
+  "send-email-pick-template.png": {
+    "cursor": [
+      688,
+      490
+    ],
+    "type": "hand"
+  },
+  "send-email-purpose.png": {
+    "cursor": [
+      840,
+      442
+    ]
+  },
+  "prospect-actions-send-email.png": {
+    "cursor": [
+      1660,
+      218
+    ]
+  },
+  "send-email-schedule.png": {
+    "cursor": [
+      1255,
+      678
+    ]
   }
 }
