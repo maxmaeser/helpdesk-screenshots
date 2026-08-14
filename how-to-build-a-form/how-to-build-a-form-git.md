@@ -2,7 +2,7 @@ Forms let you collect structured information from applicants at different stages
 
 ### Creating a Form
 
-Navigate to **Portals → Control** and select the **Forms** tab.
+Go to **Studio → Forms** from the sidebar.
 
 ![Studio sidebar with Forms tab selected](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-a-form/form-nav-sidebar-2026-03-13.png)
 Create a new form to open the form builder.
@@ -53,6 +53,12 @@ There are two ways to take a field off a page:
 - **Delete Field** (from the library menu): Permanently removes the field from your entire form. This cannot be undone.
 
 ![Field context menu showing Edit Field and Remove From Page](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-a-form/form-field-menu-2026-03-13.png)
+### Best Practices
+
+- Keep the number of fields per page manageable. Shorter pages lead to higher completion rates.
+- Use clear, specific questions for the **Field Question** so applicants know what to provide.
+- Group related fields on the same page and give each page a descriptive title.
+
 ### Using Forms in the Portal
 
 Forms can appear in two places:

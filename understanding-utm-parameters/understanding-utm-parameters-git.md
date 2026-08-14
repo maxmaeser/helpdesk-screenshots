@@ -22,6 +22,22 @@ The captured UTM source is extracted and stored as a dedicated field, making it 
 
 ![Lead Generation section of a lead's detail panel, showing the Source field](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/understanding-utm-parameters/lead-source-field-v2.png)
 
+### Carrying UTM Tags from Your Website
+
+Capture is automatic when someone reaches your applicant portal with the tags still on the address.
+
+If your ads point at your own marketing website first, the tags are usually lost on the hop from that site to your application form. A one-line tracking snippet closes that gap.
+
+You find it in the **Campaign attribution** section on the **Connections** page under Brand in your settings. On FS Ai Lite, the same section sits on the **Profile** page under Brand instead.
+
+The section shows a **Snippet** panel with a **Copy** button. Copy the line and paste it into your website builder's custom code or header scripts area, set to run on all pages.
+
+You only need to add it once.
+
+To check that it works, open your website with `?utm_source=fsai_test&utm_medium=test&utm_campaign=check` on the end of the address, then click through to your application form the way a visitor would. The form address should now carry those tags, and any lead you submit from there is credited to that campaign.
+
+> **Note:** The snippet is generated for your brand, so copy it from your own settings rather than reusing one from anywhere else. If your brand has not published a funnel or an applicant portal yet, the section shows a notice in place of the snippet.
+
 ### UTM Data Through the Pipeline
 
 UTM data follows the contact through their lifecycle:

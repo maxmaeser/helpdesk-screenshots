@@ -91,4 +91,10 @@ Alongside it are breakdowns by device, browser, referrer, and country.
 
 The UTM Source you set on a link is the same source dimension used elsewhere in reporting. When a tracking link points at your applicant portal, its source feeds lead attribution.
 
-For lead-level source reporting, see About Sales Analytics.
+### Traffic that starts on your own website
+
+Tracking links cover the links you hand out yourself. They do not cover visitors who land on your marketing website first and then click through to your application form.
+
+For that, add the campaign attribution snippet to your website. You find it in the **Campaign attribution** section on the **Connections** page under Brand in your settings, or on the **Profile** page under Brand if you are on FS Ai Lite.
+
+For lead-level source reporting, see *[About Sales Analytics]*. For what the tags mean and how FS Ai reads them, see *[Understanding UTM Parameters]*.

@@ -8,7 +8,7 @@ You control your own assignability settings from your profile.
 
 ![Sidebar profile menu with Settings highlighted](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/auto-and-manual-assignment/assignment-nav-settings-v2.png)
 
-2. On the **Profile** page, scroll to the **Agent Sales Assignability** section.
+2. Under **Account**, go to the **Profile** page and select the **Sales Assignability** tab.
 
 ![Profile settings page showing Assignability section with radio buttons](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/auto-and-manual-assignment/assignment-profile-settings-v3.png)
 
@@ -24,6 +24,12 @@ Select the option that matches your role. Only one option can be active per bran
 
 When a new lead signs up through your portal, the platform can automatically assign them to a sales rep using round-robin logic. The system cycles through all agents whose assignability is set to **Automatic** for that brand, distributing leads evenly.
 
+The round-robin works as follows:
+
+1. The system looks at which agent was last assigned a lead.
+2. It picks the next agent in the auto-assign list.
+3. After the last agent receives a lead, the cycle starts over from the first.
+
 Auto-assignment only triggers when a new lead is created through the portal signup flow. Imported leads and manually created leads are not auto-assigned.
 
 ### How Manual Assignment Works
@@ -35,3 +41,10 @@ You can manually assign any lead to a specific sales rep from the leads table.
 The **Assigned To** column displays a dropdown of all agents whose assignability is set to **Automatic** or **Manual** for the brand. Select an agent from the list to assign or reassign the lead.
 
 ![Assigned To dropdown open showing available agents](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/auto-and-manual-assignment/assignment-manual-dropdown-v2.png)
+
+Manual assignment is useful when:
+
+- A lead requests a specific rep
+- You want to route leads by territory or expertise
+- A rep is out of office and you need to redistribute their leads
+- You have imported leads that were not auto-assigned

@@ -54,7 +54,7 @@ Each member here has a role dropdown that starts on **No role**.
 
 The other options include Brand Marketing Manager, Construction Manager, Design / Architecture Lead, Director of Operations, Finance Liaison, Legal / Franchise Compliance, PR / Communications Lead, Real Estate Manager, Training Coordinator, and VP Franchise Development.
 
-![Brand Team list on the Team & Access page with a role dropdown open, showing No role checked and the full list of RACI role options](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/understanding-roles-and-permissions/brand-team-role-list.png)
+![Brand Team list on the Team & Access page with one member's role dropdown open, showing the No role button and the full list of RACI role options](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/understanding-roles-and-permissions/brand-team-role-list-v2.png)
 
 These roles fill RACI slots when you deploy project templates. They decide who gets assigned to which part of a project.
 

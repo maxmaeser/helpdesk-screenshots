@@ -6,6 +6,8 @@ The email builder is a visual editor where you compose email content, set subjec
 2. Switch to the **Content** tab.
 3. Click on an existing email template to edit it, or create a new one.
 
+![Content tab under Marketing Workflows showing the template list with Name, Type, Date Added, and Last Updated columns](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-an-email/workflows-content-tab.png)
+
 The editor opens in a full-screen view with the editing canvas on the left and a settings sidebar on the right.
 
 ![Email builder editor open, showing the canvas and Details sidebar](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-an-email/email-builder-overview.png)

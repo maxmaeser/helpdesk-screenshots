@@ -1,10 +1,16 @@
-The portal editor lets you build and customize the applicant-facing experience - the pages and steps your leads see after signing up. You control the layout, content, and visual design from a single editor.
+The portal editor lets you build and customize the applicant-facing experience: the pages and steps your leads see after signing up. You control the layout, content, and visual design from a single editor.
 
 ### Opening the Portal Editor
 
-Navigate to **Portals → Editor** from the sidebar. The editor opens in a full-screen view with three tabs at the top: **Edit**, **Theme**, and **Style**.
+Go to **Studio → Applicant Portal** from the sidebar.
 
-![Studio sidebar with Portals Editor selected](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-edit-your-portal/portal-nav-sidebar-2026-03-13.png)
+The label on this item depends on your brand. If your brand runs the funnel rather than the applicant portal, it reads **Franchisee Portal** and opens the franchisee portal editor directly.
+
+**Studio → Applicant Portal** opens on a set of cards. Select **Applicant Portal** to edit the pages and steps your leads see after signing up. Depending on how your brand is set up, you may also see **Sign Up and Login** and **Franchisee Portal** cards here.
+
+The applicant portal editor opens in a full-screen view with three tabs at the top: **Edit**, **Theme**, and **Style**.
+
+![Studio sidebar with the portal editor selected](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-edit-your-portal/portal-nav-sidebar-2026-03-13.png)
 ### Working with Sections and Steps
 
 Your portal is organized into **sections** (collapsible groups) containing **steps** (individual actions an applicant completes). Each step has a type that determines what the applicant does.
@@ -56,7 +62,7 @@ Switch to the **Style** tab to open the CSS editor. Write custom CSS using data-
 ![Custom Styles CSS editor with selector reference](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-edit-your-portal/portal-style-css-2026-03-13.png)
 ### Editing the Signup Page
 
-Navigate to **Portals → Signup Builder** to customize the page where new applicants create their account. The builder has three sections:
+From the same **Studio → Applicant Portal** page, open **Sign Up and Login** to customize where new applicants create their account. The builder has three sections:
 
 - **Page Style**: Choose a layout (Left Aligned, Right Aligned, or Center Aligned), upload a background image, set a title and subtitle, and adjust logo sizing
 - **Form Fields**: Select an existing form to display additional fields during signup, beyond the required First Name, Last Name, Email, and Phone

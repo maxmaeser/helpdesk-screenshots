@@ -6,7 +6,7 @@ Everything below starts at **Marketing → Audiences**, which opens on the **Pro
 
 Learn the vocabulary, then bring in your lists.
 
-![get-your-leads-in opener](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/get-your-leads-in/get-your-leads-in-opener-v2.png)
+![get-your-leads-in opener](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/get-your-leads-in/get-your-leads-in-opener-v4.png)
 
 ![get-your-leads-in overview](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/get-your-leads-in/get-your-leads-in-overview.png)
 
@@ -24,7 +24,9 @@ Learn the vocabulary, then bring in your lists.
 
 6. *[Prospect to Lead Flow]*: see how someone moves from a marketing prospect to a working sales lead, automatically or by hand.
 
-> **An import is quiet on purpose.** When you upload a CSV, it never fires welcome sequences, never auto-assigns anyone to a rep, and imported contacts stay in your marketing audience until you act.
+> **Importing into your prospect list is quiet.** No sequences fire, nobody gets auto-assigned to a rep, and imported contacts sit in your marketing audience until you act.
+
+> **Importing straight into sales leads works differently.** Nobody gets auto-assigned there either, but those contacts become real leads right away, and any workflow that triggers on a new lead runs for them too.
 
 Once your contacts are in and sorted, you are ready to start reaching them.
 

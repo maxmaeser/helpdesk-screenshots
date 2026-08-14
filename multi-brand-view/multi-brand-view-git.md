@@ -4,7 +4,7 @@ If your organization manages more than one franchise brand, Franchise Systems Ai
 
 A brand selector appears at the top of most dashboard pages. How it behaves depends on the section you are viewing:
 
-- **Single-brand sections** (Sales pipeline, Operations, Portal Editor, Brand Settings, and others): You work with one brand at a time. Click a brand in the selector bar to switch to it. The page content updates to show data for the selected brand only.
+- **Single-brand sections** (Sales pipeline, Operations, the Studio portal editors, Brand Settings, and others): You work with one brand at a time. Click a brand in the selector bar to switch to it. The page content updates to show data for the selected brand only.
 
 ![Single Brand Selector](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/multi-brand-view/single-brand-selector.png)
 

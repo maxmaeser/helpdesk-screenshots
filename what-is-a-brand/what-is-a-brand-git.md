@@ -22,7 +22,13 @@ If you're not sure which plan your organization is on, ask your organization adm
 
 ### How brands relate to organizations
 
-A brand sits within an organization. The organization is the parent container that handles billing and team management, while each brand manages its own day-to-day franchise operations. An organization can hold multiple brands, and each brand's data stays isolated from the others.
+A brand sits within an organization.
+
+The organization is the parent container. It handles billing and team management.
+
+Each brand under it manages its own day-to-day franchise operations. An organization can hold multiple brands, and each brand's data stays isolated from the others.
+
+![Diagram of one organization holding two brands. The organization handles billing, team, and brands; each brand holds its own pipeline, portal, library, and settings](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/what-is-a-brand/org-owns-brands.png)
 
 ### Switching between brands
 
@@ -42,8 +48,12 @@ When you add a new brand (either during onboarding or later), you go through a b
 
 These details appear across the applicant portal and in communications sent on behalf of the brand.
 
+![Brand Information page showing Brand Name, Public Name, Company Name, Industry, Email, Phone, Website, and Address fields, plus Domain Management](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/what-is-a-brand/brand-profile.png)
+
 ### Where to find brand settings
 
-You can manage brand configuration under **Brand** in your settings. This includes the brand profile, domain control, appearance, scheduling events, team access, and connections (formerly called integrations), plus associated organizations and webhooks.
+You can open settings from any screen. Click your profile picture at the bottom of the sidebar, then choose **Settings**.
 
-![Brand Information page showing Brand Name, Public Name, Company Name, Industry, Email, Phone, Website, and Address fields, plus Domain Management](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/what-is-a-brand/brand-profile.png)
+Brand configuration lives under **Brand** in your settings. This includes the brand profile, domain control, appearance, scheduling events, team access, and connections (formerly called integrations), plus associated organizations and webhooks.
+
+![Left: the profile menu open at the bottom of the sidebar with Settings in the list. Right: the settings page with the Brand section and its Profile, Appearance, Scheduling, Team and Access, and Connections pages](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/what-is-a-brand/where-to-find-settings.png)
