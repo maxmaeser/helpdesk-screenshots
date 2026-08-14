@@ -2,7 +2,9 @@ Franchise Systems Ai (FS Ai) uses several terms to describe the people in your p
 
 ### Prospects
 
-A prospect is someone you are marketing to who has not yet completed an application through your portal. Prospects live in the **Marketing → Audiences** table. You can add prospects by importing them from a CSV, creating them individually, or capturing them through a portal interest form on your website. The platform also creates a prospect automatically when someone begins signing up through the applicant portal (enters their email and gives consent) but has not yet completed the process.
+A prospect is someone at the top of your funnel: a cold-outreach contact, an imported list record, or a website visitor who started your applicant portal but hasn't finished signing up.
+
+Prospects live in the **Marketing → Audiences** table. You can add prospects by importing them from a CSV, creating them individually, or capturing them through a portal interest form on your website. The platform also creates a prospect automatically when someone begins signing up through the applicant portal (enters their email and gives consent) but has not yet completed the process.
 
 Each prospect record stores contact details (name, email, phone), location information, custom field values, and UTM tracking data. The platform can verify prospect email addresses to help you maintain list quality before sending campaigns.
 

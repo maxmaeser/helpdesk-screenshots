@@ -4,8 +4,6 @@ You have your team and brand set up, and now you bring in the contacts you alrea
 
 Everything below starts at **Marketing → Audiences**, which opens on the **Prospects** tab: your list of marketing contacts, each with a segment, an email, and a verification status.
 
-Learn the vocabulary, then bring in your lists.
-
 ![get-your-leads-in opener](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/get-your-leads-in/get-your-leads-in-opener-v4.png)
 
 ![get-your-leads-in overview](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/get-your-leads-in/get-your-leads-in-overview.png)
