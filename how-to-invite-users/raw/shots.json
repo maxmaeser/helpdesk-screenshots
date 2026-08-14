@@ -1,12 +1,12 @@
 {
-  "revision": 45,
+  "revision": 46,
   "shots": {
     "invite-modal-v2.png": {
-      "status": "approved",
-      "note": "Reshoot 2026-07-17 replacing the March invite-modal.png final, which showed a stale test org name ('Invite to DevOpsLtd') no longer present in the live seed. Live modal now reads 'Invite to Franchise Systems Ai'. Agent-captured: Settings > Organization > Members > Invite Team Member, clip tight to the [role=dialog] bounding box (no padding, to avoid the darkened page backdrop bleeding into the processed card). dom-sanitize with freshenDates:false (page's only day-count is the factual 'Valid for 7 days' copy, confirmed still accurate live -- not a stale artifact). No cursor -- empty form state, nothing to point at. Existing-invite placeholder uses a fake example.com address, no real PII.",
-      "lastTouchedBy": "max",
+      "status": "proposed",
+      "note": "Reshoot 2026-08-14 replacing the 2026-07-17 capture: the invite flow was rebuilt 2026-07-22 and the old modal (Access Level / Has Billing Access / Invite button, 'Invite to Franchise Systems Ai' title) is gone. New modal is OrganizationSettingsInviteModal.tsx: title 'Invite members', subtitle 'Franchise Systems Ai'. Agent-captured: Settings > Organization > Members > Invite members. Added one sample chip (team@example.com) to the Emails field so the form reads as in-progress rather than empty, then blurred the input so no focus ring shows. Clip is [role=dialog] bounding box + 40px margin on all sides (raw-relative, no crop field needed) so the darkened page backdrop shows as page context per the framing standard, without the tight zero-padding of the prior revision. dom-sanitize run twice defensively; sample email is a fake example.com address, no real PII. Confirms new field labels Emails / Role / Billing Access / Send invite; confirms old labels (Access Level, Has Billing Access, Invite Team Member, Invite submit button) are gone. No cursor: filled-form/result state, nothing to point at (same precedent as prior revision). Resolves reshoot mark rm-1786691147824-3505 (reason: dom).",
+      "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 1
+      "rev": 2
     },
     "invite-nav-members.png": {
       "status": "approved",
@@ -19,37 +19,16 @@
     "invite-nav-members-v2.png": {
       "cursor": {
         "pos": [
-          1723,
-          82
+          1745,
+          58
         ],
-        "type": "hand"
+        "type": "arrow"
       },
-      "highlights": [
-        {
-          "rect": [
-            1675,
-            44,
-            330,
-            53
-          ],
-          "style": "spotlight",
-          "thickness": 3,
-          "cornerRadius": 10,
-          "glowSize": 12,
-          "color": "blue",
-          "dimStrength": 6,
-          "feather": 7,
-          "contactShadow": true
-        }
-      ],
-      "status": "approved",
-      "note": "Reshoot 2026-07-17 replacing invite-nav-members.png, whose Jonathan Whiteside row carried the joke title 'Franchise God'. Agent-captured: Settings > Organization > Members. The live Team Admins seed has grown to 10 rows (several with joke titles/avatars added since March: 'Flayer', 'Lemon Farmer', 'British Politician'). To reproduce the original 3-row framing without introducing new blemishes, all rows except Joshua Radin-Grant / Max Maeser / Jonathan Whiteside were client-side hidden (display:none, no staging data mutated) and reordered to match the original top-to-bottom order; Jonathan Whiteside's role chip text was DOM-swapped from 'Franchise God' to 'Franchise Director'. Clip is the full Team Admins card (header + Invite Team Member button + the 3 rows), matching the original shot's composition and alt text. dom-sanitize run twice (defensive re-run) -- redacted 2 stray emails elsewhere in the settings page text, no PII in the visible crop. Knowledge Base / Staging Test Brand not present in this crop but hidden defensively per the mandatory fixes. No cursor: the live card's header/first-row spacing is more compact than the March original, and the standard 200px hand-cursor overlay overlapped the first row's 'Last Activity' text at every position tried -- omitted rather than ship obscured text (same precedent as invite-modal-v2 above).",
-      "lastTouchedBy": "max",
+      "status": "proposed",
+      "note": "Reshoot 2026-08-14: the invite flow was rebuilt 2026-07-22, replacing the old 'Team Admins' card (Invite Team Member button) with the new full-width Members page (OrganizationSettingsTeam.tsx) -- header 'Members', toolbar (search + role filter), member rows with Billing toggle and Role select, button top right now reads 'Invite members'. Agent-captured: Settings > Organization > Members (/settings/organizations?section=organization-members). Clip is raw-relative x=448,y=168,w=1024,h=340 (css, pre-2x) -- the Members card header + toolbar + first 3 rows, matching the prior revision's 3-row framing and page-context intent; no crop field needed since the raw capture is already this clip. dom-sanitize run twice defensively; all visible names/emails are staging test personas already on *.example.com. [data-fsai-guide] removed pre-shot. Arrow cursor (not hand) on the Invite members button per the current CLAUDE.md cursor heuristic (Arrow: buttons). Confirms new label 'Invite members'; confirms old labels 'Team Admins' / 'Invite Team Member' are gone. Resolves reshoot mark rm-1786691147591-0140 (reason: dom).",
+      "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 26,
-      "renderedRev": 26,
-      "updatedAt": 1786689897055,
-      "renderedAt": 1786689655471
+      "rev": 27
     }
   }
 }
