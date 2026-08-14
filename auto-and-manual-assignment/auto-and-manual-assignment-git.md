@@ -1,5 +1,3 @@
-# Auto and Manual Lead Assignment
-
 Lead assignment determines which sales rep is responsible for each incoming lead. Franchise Systems Ai (FS Ai) supports two approaches: automatic round-robin distribution and manual assignment.
 
 ### Configuring Your Assignability
@@ -12,7 +10,7 @@ You control your own assignability settings from your profile.
 
 2. On the **Profile** page, scroll to the **Agent Sales Assignability** section.
 
-![Profile settings page showing Assignability section with radio buttons](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/auto-and-manual-assignment/assignment-profile-settings-v2.png)
+![Profile settings page showing Assignability section with radio buttons](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/auto-and-manual-assignment/assignment-profile-settings-v3.png)
 
 For each brand you have access to, you see three radio buttons:
 
