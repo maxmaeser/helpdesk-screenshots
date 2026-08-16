@@ -1,5 +1,5 @@
 {
-  "revision": 0,
+  "revision": 32,
   "shots": {
     "filter-panel-open-v2.png": {
       "cursor": {
@@ -9,11 +9,48 @@
         ],
         "type": "arrow"
       },
-      "status": "proposed",
+      "highlights": [
+        {
+          "rect": [
+            1171,
+            387,
+            79,
+            83
+          ],
+          "style": "spotlight",
+          "thickness": 3,
+          "cornerRadius": 10,
+          "glowSize": 12,
+          "color": "blue",
+          "dimStrength": 0,
+          "feather": 10,
+          "contactShadow": true
+        },
+        {
+          "rect": [
+            1171,
+            482,
+            1477,
+            265
+          ],
+          "style": "spotlight",
+          "thickness": 3,
+          "cornerRadius": 10,
+          "glowSize": 12,
+          "color": "blue",
+          "dimStrength": 0,
+          "feather": 10,
+          "contactShadow": true
+        }
+      ],
+      "status": "approved",
       "note": "",
-      "lastTouchedBy": "claude",
+      "lastTouchedBy": "max",
       "editing": false,
-      "rev": 0
+      "rev": 15,
+      "renderedRev": 15,
+      "updatedAt": 1786870829023,
+      "renderedAt": 1786870822933
     }
   }
 }

@@ -1,13 +1,30 @@
 {
-  "revision": 55,
+  "revision": 59,
   "shots": {
     "members-access-levels.png": {
-      "status": "approved",
+      "highlights": [
+        {
+          "rect": [
+            35,
+            715,
+            409,
+            59
+          ],
+          "style": "outline",
+          "thickness": 3,
+          "cornerRadius": 10,
+          "glowSize": 12,
+          "color": "blue"
+        }
+      ],
+      "status": "adjusted",
       "note": "Organization Settings > Members page, Team Admins section. Agent-captured 2026-07-17, brand dashboard (staging.app.franchisesystems.ai), 1680x1050 CSS viewport, 2x, dom-sanitize freshenDates:auto. Cropped to the heading + first three rows (CTO / Intern / COO job title chips) to avoid the seed data's joke job titles further down the list (Flayer, Lemon Farmer, British Politician, Franchise God). No cursor -- read-only orientation state showing the Team Admins grouping and free-text job title chips referenced in the article.",
       "lastTouchedBy": "max",
       "editing": false,
-      "rev": 0,
-      "updatedAt": 1784390125940
+      "rev": 3,
+      "renderedRev": 2,
+      "updatedAt": 1786870531814,
+      "renderedAt": 1786870522685
     },
     "brand-team-role-list.png": {
       "status": "reshoot",
