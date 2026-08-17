@@ -1,0 +1,75 @@
+{
+  "revision": 1,
+  "shots": {
+    "audiences-members-nav.png": {
+      "crop": [0, 0, 3360, 1050],
+      "cursor": { "pos": [751, 635], "type": "hand" },
+      "status": "proposed",
+      "note": "Agent-captured (session.js + routes.js FRANCHISEES route, brand switched to Circada in-app): Operations > Audiences, Members tab. Circada has only 3 fake franchisees (Partner 1/2, Paul Tran, all tbd@example.com) so the list reads clean with no real PII, unlike Lumon Fresh's 19-row list of internal staff test accounts. Hand cursor on the 'Partner 2' name (clickable row leading to the detail panel), per the cursor heuristic (hand: clickable text/rows). No dom-sanitize needed: emails are already @example.com placeholders. [data-fsai-guide] removed pre-shot. Covers steps 1-2 of 'Inviting a franchisee who's already in the system'.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 1
+    },
+    "franchisee-banner-not-invited.png": {
+      "crop": [0, 0, 3360, 1230],
+      "cursor": { "pos": [3152, 559], "type": "arrow" },
+      "status": "proposed",
+      "note": "Agent-captured: clicked into 'Partner 2' (Circada, Not invited state) from the Members tab. Banner shows Imported contact + Not invited badges, 'Portal invitation ready to send to tbd2@example.com', and both Copy invite link / Send invitation buttons -- covers step 3 and the status-banner paragraph in one shot. Arrow cursor on Send invitation (button, per heuristic). Did NOT click Send invitation for real (would email a live invite and mutate shared staging data) -- captured the ready-to-send state only. Crop keeps the dimmed background list visible on the left for page context, matching the invite-modal-v2 precedent. dom-sanitize run defensively even though tbd2@example.com has no real PII.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 1
+    },
+    "franchisee-banner-portal-access.png": {
+      "crop": [0, 0, 3360, 1230],
+      "status": "proposed",
+      "note": "Agent-captured: clicked into 'Billy Smith' (Lumon Fresh) from the Members tab -- an already-invited franchisee. Banner shows Imported contact + Portal access (green) badges and 'bill+22@example.com already has a portal account with access', illustrating the alternate/end 'Portal Access' status the article's banner paragraph calls out. No cursor: read-only result state, nothing to click (cursor heuristic). dom-sanitize run twice (before/after a defensive re-run) on the live page before the shot -- real staff email/phone in the underlying row were masked to bill+22@example.com / a fake phone; the detail panel's own Email/Phone fields reflect the same sanitized values.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 1
+    },
+    "audiences-entities-nav.png": {
+      "crop": [0, 0, 3360, 1050],
+      "cursor": { "pos": [784, 739], "type": "hand" },
+      "status": "proposed",
+      "note": "Agent-captured: Operations > Audiences, Entities tab (Staging Test Brand, 8 fake entities, no PII). Hand cursor on 'Coastal Bistro' (clickable row) -- the entity used for the rest of this flow's shots. Covers steps 1-2 of 'Adding a new franchisee and inviting them'.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 1
+    },
+    "entity-members-add-franchisee.png": {
+      "crop": [0, 0, 3360, 1680],
+      "cursor": { "pos": [3128, 655], "type": "arrow" },
+      "status": "proposed",
+      "note": "Agent-captured: inside the Coastal Bistro entity panel, Members tab (empty -- 'No Members Yet'). Arrow cursor on the '+ Add Franchisee' button top-right, per heuristic (button). Covers step 3 of 'Adding a new franchisee'.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 1
+    },
+    "add-new-franchisee-fields.png": {
+      "crop": [924, 420, 1512, 1294],
+      "status": "proposed",
+      "note": "Agent-captured: clicked + Add Franchisee, then 'Add new franchisee' inside the Add Members modal. Filled First Name/Last Name/Email with fake placeholder data (Jordan Reyes / jordan.reyes@example.com, invented -- not a real person) to show the field set from step 4 without leaving it looking empty. Phone left blank (optional per the article). Did NOT click 'Add to list' -> 'Continue' -> 'Add Member' with this record to avoid creating a real franchisee on shared staging; captured the filled-fields state only. No cursor: filled form, result state (cursor heuristic).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 1
+    },
+    "add-member-access-role.png": {
+      "crop": [924, 470, 1512, 1142],
+      "cursor": { "pos": [2041, 1440], "type": "arrow" },
+      "status": "proposed",
+      "note": "Agent-captured: continued past the filled-fields step (Add to list -> Continue) to the 'Set each member's details' step -- Access Level / Ownership Stake / Role Or Title fields plus the 'Send portal invites immediately' toggle, ON by default. Arrow cursor on 'Add Member' (the final submit button, per heuristic), but the button was NOT clicked -- clicking it would create a real franchisee record and fire a real portal invite email on shared staging. Covers steps 5-6.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 1
+    },
+    "actions-invite-all-uninvited.png": {
+      "crop": [0, 0, 3360, 950],
+      "cursor": { "pos": [3125, 706], "type": "arrow" },
+      "status": "proposed",
+      "note": "Agent-captured: Circada, Members tab, Actions dropdown open (Create Franchisee / Import From CSV / Imports in Progress / Invite all Uninvited). Arrow cursor on 'Invite all Uninvited', per heuristic (menu item). Did NOT click it -- would brand-wide invite every Not Invited franchisee on shared staging. Covers the 'Inviting everyone at once' section.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 1
+    }
+  }
+}
