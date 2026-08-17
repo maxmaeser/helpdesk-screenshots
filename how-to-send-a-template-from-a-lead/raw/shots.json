@@ -1,5 +1,5 @@
 {
-  "revision": 0,
+  "revision": 46,
   "shots": {
     "lead-actions-send-email.png": {
       "cursor": {
@@ -9,11 +9,32 @@
         ],
         "type": "arrow"
       },
-      "status": "proposed",
+      "highlights": [
+        {
+          "rect": [
+            1348,
+            279,
+            409,
+            50
+          ],
+          "style": "spotlight",
+          "thickness": 3,
+          "cornerRadius": 10,
+          "glowSize": 12,
+          "color": "blue",
+          "dimStrength": 0,
+          "feather": 14,
+          "contactShadow": true
+        }
+      ],
+      "status": "adjusted",
       "note": "Reused from the approved how-to-work-a-lead raw; cursor moved onto the Send Email menu item.",
-      "lastTouchedBy": "claude",
+      "lastTouchedBy": "max",
       "editing": false,
-      "rev": 0
+      "rev": 22,
+      "renderedRev": 22,
+      "updatedAt": 1786984029392,
+      "renderedAt": 1786984032704
     }
   }
 }
