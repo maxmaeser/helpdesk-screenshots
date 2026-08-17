@@ -21,6 +21,8 @@ Blocks are grouped into two sections:
 - **Basic**: Text, Heading 1, Heading 2, Heading 3, Bulleted List, Numbered List, Blockquote
 - **Insert**: Divider, Button, Image, Two Columns, Merge Tags, Brand Logo, Footer
 
+![Blocks tab open in the sidebar, showing the Basic and Insert block groups](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-an-email/email-builder-blocks-tab.png)
+
 Drag a block from the sidebar and drop it into the canvas at the position you want. This works alongside slash commands, so you can build your layout with whichever method is faster for what you are adding.
 
 ### Writing Your Email
@@ -44,6 +46,8 @@ Merge tags work in both the email body and the subject line. When the email is s
 ### Setting the Subject Line
 
 The subject line editor sits above the email canvas. It supports merge tags for personalization and shows a character count with a recommended limit of 72 characters. Subject lines over 72 characters may get truncated in some email clients.
+
+![Subject line field with a merge tag chip and the character counter reading 39/72](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-an-email/email-builder-subject-line.png)
 
 ### Adding Images
 

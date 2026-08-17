@@ -1,6 +1,20 @@
 {
-  "revision": 7,
+  "revision": 8,
   "shots": {
+    "email-builder-blocks-tab.png": {
+      "status": "proposed",
+      "note": "Answers Max's 2026-07-18 note (marked resolved without ever being shot): the Blocks tab -- the drag-and-drop block palette -- had no screenshot at all. Agent-captured 2026-08-17 on staging.app.franchisesystems.ai, Marketing > Workflows > Content tab, brand Lumon Fresh, editing 'Welcome Email 1' template (same template as email-builder-overview.png / email-builder-theme.png, route MARKETING_WORKFLOWS_EMAIL_BUILDER). Blocks sidebar tab open with both groups fully visible in one frame -- Basic (Text, Heading 1, Heading 2, Heading 3, Bulleted List, Numbered List, Blockquote) and Insert (Divider, Button, Image, Two Columns, Merge Tags, Brand Logo, Footer) -- no scroll needed. 1680x1050 CSS viewport, 2x, clip x:240,y:0,w:1440,h:875 (2x real x:480,y:0,w:2880,h:1750). No PII on page, sanitize not needed. No cursor -- read-only palette, same precedent as the Theme-tab shot.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "email-builder-subject-line.png": {
+      "status": "proposed",
+      "note": "Answers Max's 2026-07-18 note asking for how subject lines work (the field plus its character counter). Agent-captured 2026-08-17, same session/template as email-builder-blocks-tab.png (Lumon Fresh, 'Welcome Email 1'). Crop on the top of the editor: toolbar, Subject field with a first_name merge tag chip, and the 39/72 character counter, with a sliver of the canvas below for context (undo/redo icons). 1680x1050 CSS viewport, 2x, clip x:240,y:0,w:1060,h:210 (2x real x:480,y:0,w:2120,h:420) -- narrower than the article's usual w:1440 crop, deliberately, to avoid the post-process downscale past 900 CSS canvas width and keep the small counter text legible. No cursor -- read-only display state.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
     "email-builder-overview.png": {
       "status": "proposed",
       "note": "Marketing > Workflows > Content, Lumon Fresh brand, editing 'Welcome Email 1' template. Shows the full-screen editor: canvas on the left (subject line with a first_name merge tag chip, body text, an inserted image) and the Details sidebar tab on the right. Agent-captured 2026-07-17, viewport 1680x1050 CSS clipped to x:240,y:0,w:1440,h:800 (2x), dom-sanitize with freshenDates:false. No cursor -- read-only orientation state. Crop deliberately excludes the template's jokey closing line ('You should do it, DUMMY!') further down the canvas.",
