@@ -1,5 +1,5 @@
 {
-  "revision": 68,
+  "revision": 70,
   "shots": {
     "get-your-leads-in-overview.png": {
       "crop": [
@@ -15,15 +15,29 @@
         ],
         "type": "arrow"
       },
-      "highlights": [],
+      "highlights": [
+        {
+          "rect": [
+            87,
+            333,
+            350,
+            55
+          ],
+          "style": "outline",
+          "thickness": 3,
+          "cornerRadius": 10,
+          "glowSize": 12,
+          "color": "blue"
+        }
+      ],
       "status": "adjusted",
       "note": "Wide orientation shot for the Get Your Leads In series hub. Marketing > Audiences, Prospects tab, Lumon Fresh brand selected (1 Selected), Total Prospects: 7. Captured 2026-07-17 at 1340x820 CSS (2x) via bespoke Playwright; viewport chosen so the frame ends exactly on the Verification column boundary (Phone/Source columns fall outside the fixed 1492px table). dom-sanitize run twice: 7 emails genericized (plus-tags pre-stripped), all 6 phones replaced per-row with distinct 555-01xx numbers (stock regex misses the non-NANP staging formats 07717325656 / 098765678 / 844-457-85846), 4 real-looking lead names swapped for fictional ones (Derek Foster, Rachel Kim, Marcus Webb, Jordan Avery), freshenDates off (only absolute dates on this page). No cursor: read-only orientation state.",
       "lastTouchedBy": "max",
       "editing": false,
-      "rev": 34,
-      "renderedRev": 34,
-      "updatedAt": 1785739819646,
-      "renderedAt": 1785739820311
+      "rev": 35,
+      "renderedRev": 35,
+      "updatedAt": 1786980530977,
+      "renderedAt": 1786980542400
     }
   }
 }
