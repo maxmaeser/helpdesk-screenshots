@@ -1,5 +1,5 @@
 {
-  "revision": 2,
+  "revision": 7,
   "shots": {
     "email-builder-overview.png": {
       "status": "proposed",
@@ -37,11 +37,21 @@
       "rev": 0
     },
     "workflows-content-tab.png": {
-      "status": "proposed",
+      "cursor": {
+        "pos": [
+          843,
+          70
+        ],
+        "type": "arrow"
+      },
+      "status": "approved",
       "note": "Answers Max's note \"We should show the content tab with the list of emails here as a screenshot\" on the Opening the Email Builder steps. Agent-captured 2026-08-03 on staging.app.franchisesystems.ai, Marketing > Workflows > Content tab, brand Lumon Fresh (Staging Test Brand shows a CAN-SPAM missing-brand-info banner, so it was avoided), 1680x1050 CSS viewport, 2x, dom-sanitize freshenDates:auto, clip x240 y148 w1440 h553 (tab bar through eight template rows). Cosmetic DOM fix before the shutter: seed template names (New Email Template, Test Email 1, Taim Image Debugging Email 12322) swapped for realistic franchise-development names, same precedent as the seed job-title swaps on the roles shots. No cursor: read-only list view.",
-      "lastTouchedBy": "claude",
+      "lastTouchedBy": "max",
       "editing": false,
-      "rev": 0
+      "rev": 2,
+      "renderedRev": 2,
+      "updatedAt": 1786984178858,
+      "renderedAt": 1786984175171
     }
   }
 }

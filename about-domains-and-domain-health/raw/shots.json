@@ -1,5 +1,5 @@
 {
-  "revision": 10,
+  "revision": 21,
   "shots": {
     "domains-management-overview.png": {
       "crop": [
@@ -16,12 +16,20 @@
       "updatedAt": 1784376844166
     },
     "domains-add-domain-form.png": {
+      "crop": [
+        0,
+        116,
+        1552,
+        1465
+      ],
       "status": "flagged",
       "note": "Connect Domain flow, Step 0 ('Add your sending domain'), Advanced accordion expanded. Shows the Domain field, cold-outreach toggle, all 7 Purpose checkboxes, Email local-part field, Display Name (brand default 'Lumon Fresh'), and Reply-To Strategy = Static Email. Form was opened and populated with its own defaults; NOT submitted (staging read-only rule -- no domain was created). Covers 'Adding a New Domain' steps 2-5 and 'Domain Purposes'. Agent-captured 2026-07-17, CSS clip (452,138,776,890) in a 1680x1050 viewport, 2x, dom-sanitize freshenDates:false. No cursor -- filled-form/result state.",
       "lastTouchedBy": "max",
       "editing": false,
-      "rev": 0,
-      "updatedAt": 1784376948609
+      "rev": 4,
+      "renderedRev": 4,
+      "updatedAt": 1786984125057,
+      "renderedAt": 1786984126903
     },
     "domains-manage-detail.png": {
       "status": "proposed",
