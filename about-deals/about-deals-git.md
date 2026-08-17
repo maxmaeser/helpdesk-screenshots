@@ -42,7 +42,9 @@ You can also:
 
 ### Deal Zone
 
-Each deal can have geographic deal zones assigned to it. The deal zone section shows a map with your assigned zones. Click **Edit** to assign or modify deal zones for this deal.
+Each deal can have geographic deal zones assigned to it. The deal zone section shows a map with your assigned zones.
+
+To assign or modify deal zones, go to **Sales → Territories** and select the **Deal Zones** tab.
 
 ![Deal Zone map](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-deals/deals-zone-map.png)
 
