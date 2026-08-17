@@ -23,4 +23,4 @@ FS Ai provides two ways to send email:
 2. **Automations**: Trigger-based workflows that send to individual contacts in response to events (new lead created, tag applied). These fire one at a time and are not bulk sends.
 
 ![Marketing Workflows page showing the Sequences, Automations, Runs, Content, and Analytics tabs](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-email-in-fs-ai/email-sending-methods-v2.png)
-See **How to Send Email** for the bulk send walkthrough and **Creating Content and Sequences** for building automations.
+See **How to Send Email** for the bulk send walkthrough and *[About Automations and Runs]* for building automations.

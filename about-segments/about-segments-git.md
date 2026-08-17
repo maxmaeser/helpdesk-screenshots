@@ -53,6 +53,6 @@ Click any segment that has at least one lead to open the send flow. From there y
 
 Tagging a lead can also start a sequence automatically, since sequences can trigger off a tag.
 
-For how to build one, see **Creating Content and Workflows**.
+For how to build one, see *[About Sequences and Workflows]*.
 
 You can also filter the **Leads** table by segment to narrow your pipeline to a single group. For working an individual lead, see How to Work a Lead.

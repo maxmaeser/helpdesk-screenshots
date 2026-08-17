@@ -19,7 +19,7 @@ Get your email foundation right first, then layer on the automation that keeps o
 
 4. *[How to Send Email]*: send a single template as a newsletter or deploy a multi-email sequence to a segment.
 
-5. *[Creating Content and Sequences]*: get oriented on the Workflows page, where your email content and automated sequences both live.
+5. *[Creating Content and Workflows]*: get oriented on the Workflows page, where your email content and automated sequences both live.
 
 6. *[About Sequences and Workflows]*: automate follow-up so a series of actions runs on its own when something happens.
 
