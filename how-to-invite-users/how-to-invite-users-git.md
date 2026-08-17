@@ -13,8 +13,8 @@ Franchise Systems Ai (FS Ai) lets you invite team members to your organization v
 4. In the **Emails** field, type an address and press Enter to add it. Each address becomes a chip you can remove.
 5. Repeat for anyone else you want to invite. You can also paste several addresses separated by commas and they are split for you.
 6. Choose a **Role** for everyone in this batch:
-   - **Member** (the default): can work in the organization without managing it. Members can be granted specific brand permissions after they accept.
-   - **Admin**: full permissions across the organization. Admins can invite other users, manage team members, and access all organization settings.
+    - **Member** (the default): can work in the organization without managing it. Members can be granted specific brand permissions after they accept.
+    - **Admin**: full permissions across the organization. Admins can invite other users, manage team members, and access all organization settings.
 7. Turn on **Billing access** if these users should be able to see invoices and manage payment methods.
 8. Click **Send invite**. If you added more than one address, the button counts them, for example **Send 3 invites**.
 

@@ -42,13 +42,13 @@ The calendar toolbar includes a **timezone selector** on the right side. Changin
 1. Navigate to **Home** and select the **Calendar** tab.
 2. Click the **Create Event** button in the toolbar (top right). A panel slides open on the right side of the calendar.
 3. Fill in the event details:
-   - **Event Title** (required)
-   - **Date and Time**: pick a date from the date picker and set start/end times
-   - **Description**: add notes using the rich text editor
-   - **Location**: enter a physical address or location name
-   - **Meeting Link**: toggle this on to generate an online meeting link (Google Meet or Microsoft Teams, depending on your provider)
-   - **Guests**: type an email address and click the add button to invite attendees
-   - **Guest Permissions**: control whether guests can edit the event, invite others, or see the guest list
+    - **Event Title** (required)
+    - **Date and Time**: pick a date from the date picker and set start/end times
+    - **Description**: add notes using the rich text editor
+    - **Location**: enter a physical address or location name
+    - **Meeting Link**: toggle this on to generate an online meeting link (Google Meet or Microsoft Teams, depending on your provider)
+    - **Guests**: type an email address and click the add button to invite attendees
+    - **Guest Permissions**: control whether guests can edit the event, invite others, or see the guest list
 4. Click **Create New Event** to save.
 
 The event syncs to your connected calendar and attendees receive an invitation.
