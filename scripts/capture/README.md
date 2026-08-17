@@ -1,14 +1,34 @@
-# fsai-capture (Phase 1)
+# fsai-capture (Phase 1-2)
 
-Reusable pieces for agent-driven capture of FSAI staging UI. Phase 1 ships the
-auth layer only: `session.js`. The runner, route map, and declarative shot specs
-are Phases 2-3 (see the capture-library proposal).
+Reusable pieces for agent-driven capture of FSAI staging UI. Phase 1 shipped
+the auth layer (`session.js`). Phase 2 adds the canonical route map so a
+capture agent resolves a URL instead of click-hunting for a page. The runner
+and declarative shot specs are Phase 3 (see the capture-library proposal).
 
 ## What exists
 
 | File | Role |
 |---|---|
 | `session.js` | Log in once, persist `storageState`, hand back an authenticated 2x Playwright context. CLI: `verify` / `refresh` / `info`. |
+| `routes.brand.json` | Generated brand-dashboard route map (name -> path/params/static), sourced from fsai-codebase `routes.ts`. |
+| `routes.js` | `resolve(name, params)` -> absolute staging URL, `list({ staticOnly })` -> route names. CLI: `list` / `resolve`. |
+| `gen-routes.mjs` | Regenerates `routes.brand.json` from the live fsai-codebase source via `gh api`. Run when the app's route table changes. |
+
+## Routes usage
+
+```js
+const { resolve } = require('.../screenshots/scripts/capture/routes.js');
+const { getContext, closeAll } = require('.../screenshots/scripts/capture/session.js');
+
+const { page } = await getContext('brand');
+await page.goto(resolve('SALES_ASSETS'));   // -> https://staging.app.franchisesystems.ai/sales/assets
+await page.goto(resolve('BRAND_INTAKE', { brandId: '<uuid>' }));
+await closeAll();
+```
+
+`resolve()` throws a clear error if a route is unknown or a required `:param`
+is missing. `list({ staticOnly: true })` returns only the directly-shootable
+(no-param) route names.
 
 ## Why this exists
 
@@ -120,8 +140,9 @@ Other selectors already proven stable on the brand dashboard:
 | Data table rows | `tr[data-index]` — never bare `tbody tr` (DataTables render a decoy measurement table) |
 | Brand selection | localStorage `fsai-selected-brands-multi` = JSON array of brand ids |
 
-## Not done yet (Phases 2-3)
+## Not done yet (Phase 3)
 
 `index.js` (runner), `actions.js` (click/fill/select verbs), `framing.js` (clip
-math + viewport growth), `routes.brand.json` / `routes.portal.json`,
-`gen-routes.mjs`.
+math + viewport growth). `routes.brand.json` shipped in Phase 2 (brand
+dashboard only — there is no `routes.portal.json`; the franchisee/applicant
+portal has no equivalent generated route table yet).

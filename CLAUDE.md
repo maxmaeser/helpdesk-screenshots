@@ -40,6 +40,35 @@ Cursor column = where the pointer should conceptually be. Max does NOT need to i
 - **Set the real UI state first**: open the dropdown, hover the option, select the checkboxes. The screenshot should show the state, the cursor gets added in post.
 - **Full-page shots**: one uncropped capture of the entire page (scroll-stitched if needed), any width. These are for Claude's UI awareness, precision doesn't matter.
 
+## Agent Capture: use session.js + routes.js, don't click-hunt
+
+Fallback/agent capture (`scripts/capture/`) has a canonical URL map now. Get an
+authenticated context from `session.js`, resolve the page URL from `routes.js`,
+`goto()` it directly — don't navigate by clicking through the sidebar to find
+a page.
+
+```js
+const { getContext, closeAll } = require('./scripts/capture/session.js');
+const { resolve } = require('./scripts/capture/routes.js');
+
+const { page } = await getContext('brand');
+await page.goto(resolve('SALES_ASSETS'));
+```
+
+`routes.js` covers the brand dashboard only (`routes.brand.json`, regenerate
+with `scripts/capture/gen-routes.mjs` if the app's routes change). No portal
+route map exists yet — resolve franchisee/applicant-portal pages by hand.
+
+## shots.json convention (per-article raw metadata, undocumented until now)
+
+Most article `raw/` folders carry a `shots.json` (`{ revision, shots: { <filename>: {...} } }`).
+Per-shot core fields: `status` (e.g. `proposed`), `note` (free text — page/state,
+route, sanitize/cursor detail), `lastTouchedBy`, `rev`, `editing` (bool). Optional
+fields seen in the wild: `cursor`, `crop`, `highlights`, `renderedAt`,
+`renderedRev`, `updatedAt`, `supersededBy`. It's how the review pipeline tracks
+which raw came from which page/state and whether it's still current. Not
+auto-generated — hand-maintained per article as shots are captured or reshot.
+
 ## DOM Sanitization (agent captures)
 
 When agent-capturing on staging (Fallback Capture — see the `fsai-helpdesk-articles` skill), ALWAYS inject `scripts/dom-sanitize.js` and run it immediately before every `page.screenshot()`. Real customer/user PII must never reach a raw. Date freshening keeps activity feeds and timestamps looking current instead of stale staging data.

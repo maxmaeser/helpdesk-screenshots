@@ -1,0 +1,528 @@
+{
+  "_meta": {
+    "source": {
+      "repo": "franchiseai/fsai",
+      "path": "apps/brand-dashboard/src/utils/routes.ts"
+    },
+    "sourceCommitSha": "6c32bfdbd9351c2aee56d5156120dd32bf1a2c6d",
+    "fetchedAt": "2026-08-17"
+  },
+  "BASE": {
+    "path": "/",
+    "params": [],
+    "static": true
+  },
+  "GETTING_STARTED": {
+    "path": "/getting-started",
+    "params": [],
+    "static": true
+  },
+  "GETTING_STARTED_LITE": {
+    "path": "/getting-started/lite",
+    "params": [],
+    "static": true
+  },
+  "MARKETING": {
+    "path": "/marketing",
+    "params": [],
+    "static": true
+  },
+  "MARKETING_FINDER": {
+    "path": "/marketing/finder",
+    "params": [],
+    "static": true
+  },
+  "MARKETING_FINDER_SEARCH": {
+    "path": "/marketing/finder/:searchId",
+    "params": [
+      "searchId"
+    ],
+    "static": false
+  },
+  "MARKETING_SOCIALS": {
+    "path": "/marketing/socials",
+    "params": [],
+    "static": true
+  },
+  "MARKETING_SOCIALS_POST": {
+    "path": "/marketing/socials/posts/:postSetId",
+    "params": [
+      "postSetId"
+    ],
+    "static": false
+  },
+  "MARKETING_SOCIALS_CALLBACK": {
+    "path": "/marketing/socials/callback",
+    "params": [],
+    "static": true
+  },
+  "MARKETING_WORKFLOWS": {
+    "path": "/marketing/workflows",
+    "params": [],
+    "static": true
+  },
+  "MARKETING_WORKFLOWS_EMAIL_BUILDER": {
+    "path": "/marketing/workflows/email/:templateId",
+    "params": [
+      "templateId"
+    ],
+    "static": false
+  },
+  "SALES": {
+    "path": "/sales",
+    "params": [],
+    "static": true
+  },
+  "SALES_WORKFLOWS": {
+    "path": "/sales/campaigns",
+    "params": [],
+    "static": true
+  },
+  "SALES_WORKFLOWS_EMAIL_BUILDER": {
+    "path": "/sales/campaigns/email/:templateId",
+    "params": [
+      "templateId"
+    ],
+    "static": false
+  },
+  "SALES_ANALYTICS": {
+    "path": "/sales/analytics",
+    "params": [],
+    "static": true
+  },
+  "SALES_ASSETS": {
+    "path": "/sales/assets",
+    "params": [],
+    "static": true
+  },
+  "SALES_IMPORT": {
+    "path": "/sales/import",
+    "params": [],
+    "static": true
+  },
+  "OPS_WORKFLOWS": {
+    "path": "/operations/workflows",
+    "params": [],
+    "static": true
+  },
+  "OPS_WORKFLOWS_EMAIL_BUILDER": {
+    "path": "/operations/workflows/email/:templateId",
+    "params": [
+      "templateId"
+    ],
+    "static": false
+  },
+  "LOGIN": {
+    "path": "/login",
+    "params": [],
+    "static": true
+  },
+  "LOGIN_VERIFY": {
+    "path": "/login/verify",
+    "params": [],
+    "static": true
+  },
+  "SIGN_UP": {
+    "path": "/signup",
+    "params": [],
+    "static": true
+  },
+  "SIGN_UP_LITE": {
+    "path": "/signup/lite",
+    "params": [],
+    "static": true
+  },
+  "SIGN_UP_CONFIRM_EMAIL": {
+    "path": "/signup/confirm-email",
+    "params": [],
+    "static": true
+  },
+  "SIGN_UP_ORG_INVITE": {
+    "path": "/signup/org-invite",
+    "params": [],
+    "static": true
+  },
+  "SIGN_UP_PROFILE": {
+    "path": "/signup/profile",
+    "params": [],
+    "static": true
+  },
+  "FORGOT_PASSWORD": {
+    "path": "/forgot-password",
+    "params": [],
+    "static": true
+  },
+  "RESET_PASSWORD": {
+    "path": "/reset-password",
+    "params": [],
+    "static": true
+  },
+  "INVITE_ERROR": {
+    "path": "/invite-error",
+    "params": [],
+    "static": true
+  },
+  "AUTH_SETUP_2FA": {
+    "path": "/auth/setup-2fa",
+    "params": [],
+    "static": true
+  },
+  "SIGNATURE": {
+    "path": "/esignature",
+    "params": [],
+    "static": true
+  },
+  "SETTINGS_ACCOUNT": {
+    "path": "/settings/account",
+    "params": [],
+    "static": true
+  },
+  "SETTINGS_ACCOUNT_CALLBACK": {
+    "path": "/settings/account/callback",
+    "params": [],
+    "static": true
+  },
+  "SETTINGS_CALENDAR": {
+    "path": "/settings/calendar",
+    "params": [],
+    "static": true
+  },
+  "SETTINGS_ORGANISATION": {
+    "path": "/settings/organizations",
+    "params": [],
+    "static": true
+  },
+  "SETTINGS_BRANDS": {
+    "path": "/settings/brands",
+    "params": [],
+    "static": true
+  },
+  "SETTINGS_NOTIFICATIONS": {
+    "path": "/settings/notifications",
+    "params": [],
+    "static": true
+  },
+  "SETTINGS_NOTIFICATIONS_LEGACY": {
+    "path": "/notification-settings",
+    "params": [],
+    "static": true
+  },
+  "ONBOARDING_CALLBACK": {
+    "path": "/onboarding/callback",
+    "params": [],
+    "static": true
+  },
+  "GETTING_STARTED_CALLBACK": {
+    "path": "/getting-started/callback",
+    "params": [],
+    "static": true
+  },
+  "BRAND_INTAKE": {
+    "path": "/getting-started/intake/:brandId",
+    "params": [
+      "brandId"
+    ],
+    "static": false
+  },
+  "HOME_CALLBACK": {
+    "path": "/callback",
+    "params": [],
+    "static": true
+  },
+  "ORG_BILLING": {
+    "path": "/settings/billing",
+    "params": [],
+    "static": true
+  },
+  "PORTAL_CONTROL": {
+    "path": "/studio/portal-control",
+    "params": [],
+    "static": true
+  },
+  "PORTAL_SIGNUP_INFORMATION": {
+    "path": "/studio/portal-sign-up",
+    "params": [],
+    "static": true
+  },
+  "STUDIO_LINK_TRACKING": {
+    "path": "/studio/link-tracking",
+    "params": [],
+    "static": true
+  },
+  "STUDIO_FORMS": {
+    "path": "/studio/forms",
+    "params": [],
+    "static": true
+  },
+  "STUDIO_FORM_BUILDER": {
+    "path": "/studio/forms/:formId",
+    "params": [
+      "formId"
+    ],
+    "static": false
+  },
+  "STUDIO_EMAIL_TEMPLATES": {
+    "path": "/studio/email-templates",
+    "params": [],
+    "static": true
+  },
+  "STUDIO_EMAIL_TEMPLATE_PORTAL": {
+    "path": "/studio/email-templates/portal/:purpose",
+    "params": [
+      "purpose"
+    ],
+    "static": false
+  },
+  "STUDIO_EMAIL_TEMPLATE_CAMPAIGN": {
+    "path": "/studio/email-templates/campaign/:templateId",
+    "params": [
+      "templateId"
+    ],
+    "static": false
+  },
+  "APPLICANT_PORTAL_EDITOR": {
+    "path": "/studio/applicant-portal",
+    "params": [],
+    "static": true
+  },
+  "FRANCHISEE_PORTAL_EDITOR": {
+    "path": "/studio/franchisee-portal",
+    "params": [],
+    "static": true
+  },
+  "FUNNEL_PORTAL_BUILDER": {
+    "path": "/studio/funnel",
+    "params": [],
+    "static": true
+  },
+  "STUDIO_SLIDERS": {
+    "path": "/studio/sliders",
+    "params": [],
+    "static": true
+  },
+  "TERRITORIES": {
+    "path": "/territories",
+    "params": [],
+    "static": true
+  },
+  "FRANCHISEES": {
+    "path": "/operations/audience",
+    "params": [],
+    "static": true
+  },
+  "FRANCHISEES_IMPORT": {
+    "path": "/operations/audience/import",
+    "params": [],
+    "static": true
+  },
+  "VENDORS": {
+    "path": "/operations/vendors",
+    "params": [],
+    "static": true
+  },
+  "LOCATIONS": {
+    "path": "/operations/locations",
+    "params": [],
+    "static": true
+  },
+  "LOCATIONS_IMPORT": {
+    "path": "/operations/locations/import",
+    "params": [],
+    "static": true
+  },
+  "FRANCHISEE_ORG_IMPORT": {
+    "path": "/operations/organizations/import",
+    "params": [],
+    "static": true
+  },
+  "ADMIN": {
+    "path": "/fsai-admin",
+    "params": [],
+    "static": true
+  },
+  "ADMIN_EMAIL_IMPORTER": {
+    "path": "/fsai-admin/email-import",
+    "params": [],
+    "static": true
+  },
+  "ADMIN_BULK_DATA": {
+    "path": "/fsai-admin/bulk-data",
+    "params": [],
+    "static": true
+  },
+  "ADMIN_ANALYTICS": {
+    "path": "/fsai-admin/analytics",
+    "params": [],
+    "static": true
+  },
+  "ADMIN_SMS_IMPORTER": {
+    "path": "/fsai-admin/sms-import",
+    "params": [],
+    "static": true
+  },
+  "ADMIN_CLICKWRAP": {
+    "path": "/fsai-admin/clickwrap",
+    "params": [],
+    "static": true
+  },
+  "ADMIN_BRANDS": {
+    "path": "/fsai-admin/brands",
+    "params": [],
+    "static": true
+  },
+  "ADMIN_BRAND_BILLING_DETAIL": {
+    "path": "/fsai-admin/brands/:brandId",
+    "params": [
+      "brandId"
+    ],
+    "static": false
+  },
+  "ADMIN_ONBOARDING": {
+    "path": "/fsai-admin/onboarding",
+    "params": [],
+    "static": true
+  },
+  "ADMIN_ONBOARDING_DETAIL": {
+    "path": "/fsai-admin/onboarding/:brandId",
+    "params": [
+      "brandId"
+    ],
+    "static": false
+  },
+  "ADMIN_HELPDESK": {
+    "path": "/fsai-admin/helpdesk",
+    "params": [],
+    "static": true
+  },
+  "ADMIN_HELPDESK_EDITOR": {
+    "path": "/fsai-admin/helpdesk/:articleId",
+    "params": [
+      "articleId"
+    ],
+    "static": false
+  },
+  "ADMIN_TICKETS": {
+    "path": "/fsai-admin/tickets",
+    "params": [],
+    "static": true
+  },
+  "ADMIN_ANALYST_ACCESS": {
+    "path": "/fsai-admin/analyst-access",
+    "params": [],
+    "static": true
+  },
+  "ADMIN_IMPERSONATE": {
+    "path": "/fsai-admin/impersonate",
+    "params": [],
+    "static": true
+  },
+  "ADMIN_FEATURE_FLAGS": {
+    "path": "/fsai-admin/feature-flags",
+    "params": [],
+    "static": true
+  },
+  "HELPDESK": {
+    "path": "/helpdesk",
+    "params": [],
+    "static": true
+  },
+  "HELPDESK_ARTICLE": {
+    "path": "/helpdesk/:articleSlug",
+    "params": [
+      "articleSlug"
+    ],
+    "static": false
+  },
+  "LIBRARY": {
+    "path": "/library",
+    "params": [],
+    "static": true
+  },
+  "LIBRARY_COLLECTIONS": {
+    "path": "/library/collections",
+    "params": [],
+    "static": true
+  },
+  "LIBRARY_COLLECTION": {
+    "path": "/library/collections/:collectionId",
+    "params": [
+      "collectionId"
+    ],
+    "static": false
+  },
+  "LIBRARY_ASSETS": {
+    "path": "/library/assets",
+    "params": [],
+    "static": true
+  },
+  "LIBRARY_DOCUMENT_EDITOR": {
+    "path": "/library/documents/:assetId/edit",
+    "params": [
+      "assetId"
+    ],
+    "static": false
+  },
+  "KNOWLEDGE_BASE": {
+    "path": "/knowledge-base",
+    "params": [],
+    "static": true
+  },
+  "OPS_MANUALS": {
+    "path": "/operations/manuals",
+    "params": [],
+    "static": true
+  },
+  "OPS_MANUAL": {
+    "path": "/operations/manuals/:articleId",
+    "params": [
+      "articleId"
+    ],
+    "static": false
+  },
+  "OPS_MANUALS_EDITOR": {
+    "path": "/operations/manuals/:articleId/edit",
+    "params": [
+      "articleId"
+    ],
+    "static": false
+  },
+  "BRAND_OVERVIEW": {
+    "path": "/brand-overview",
+    "params": [],
+    "static": true
+  },
+  "LEARNING": {
+    "path": "/operations/learning",
+    "params": [],
+    "static": true
+  },
+  "COURSE_BUILDER": {
+    "path": "/operations/learning/courses/:courseId/builder",
+    "params": [
+      "courseId"
+    ],
+    "static": false
+  },
+  "CATALOG": {
+    "path": "/operations/catalog",
+    "params": [],
+    "static": true
+  },
+  "BRAND_TICKETS": {
+    "path": "/operations/tickets",
+    "params": [],
+    "static": true
+  },
+  "PROJECTS": {
+    "path": "/projects",
+    "params": [],
+    "static": true
+  },
+  "PROJECT_DETAIL": {
+    "path": "/projects/:projectId",
+    "params": [
+      "projectId"
+    ],
+    "static": false
+  }
+}
