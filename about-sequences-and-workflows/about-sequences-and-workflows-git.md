@@ -1,60 +1,68 @@
-Sequences are automated workflows that run a series of actions when a specific event occurs. They let you automate repetitive tasks like sending follow-up emails, tagging records, creating tasks, and applying time delays, without manual intervention.
+A sequence is an ordered run of emails with waiting time built in between them.
 
-Sequences are available across **Sales**, **Marketing**, and **Operations**. Each sequence belongs to one of these departments and appears under that department's **Workflows** page.
+You use one to send the same series to a whole group of people: a welcome series, a newsletter run, a bulk invite to the portal.
+
+![Manually Triggered sequence with Send Email, Wait, and Send Email steps in the builder canvas](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-sequences-and-workflows/sequence-builder-canvas.png)
+
+Sequences live on the **Sequences** tab of **Marketing → Workflows**, **Sales → Workflows**, and **Operations → Workflows**. Each department keeps its own.
 
 ![Sequences tab under a department's Workflows page](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-sequences-and-workflows/sequences-list.png)
 
-### How sequences work
+> **Prerequisite:** At least one email template on the **Content** tab, and a verified sending domain for the purpose you plan to send under. See *[About Domains and Domain Health]*.
 
-Every sequence follows a trigger-action pattern:
+### What a sequence is made of
 
-1. **A trigger fires**: something happens in the system (for example, a deal moves to a new stage or a contact is created).
-2. **The sequence evaluates entry conditions**: optional filters that determine whether this particular record should enter the sequence.
-3. **Actions execute in order**: the sequence walks through its nodes one by one, following the path you defined.
+A sequence is a single straight line of steps. There are three kinds:
 
-### Trigger types
+- **Send Email**: sends one of your email templates.
+- **Wait**: holds the sequence for a set period before the next step.
+- **Send SMS**: shown in the step menu but not currently available.
 
-A trigger is the event that starts the sequence. You define which event to listen for and which type of record it applies to (deals, applicants, or contacts). You can also set entry conditions so the sequence only runs when specific criteria are met, for example, only when a deal's value is above a certain threshold.
+You cannot place two **Wait** steps back to back.
 
-### Action types
+Sequences do not branch. There are no conditions, no yes and no paths, and no steps for tagging, changing a status, or creating a task.
 
-Each node in a sequence performs one action. The available action types are:
+Those belong to the **Automations** tab on the same page. See *[About Automations and Runs]*.
 
-- **Email**: Send an email using one of your email templates. You specify the template and who should receive it (the contact, the assigned agent, etc.).
-- **Delay**: Pause the sequence for a set amount of time before continuing. Preset options include 1 hour, 4 hours, 1 day, 2 days, 3 days, 1 week, and 2 weeks. You can also set a custom duration in minutes.
-- **Condition**: Evaluate a set of rules against the record's current data. Conditions branch the sequence into two paths: one for records that match ("yes") and one for records that do not ("no").
-- **Add Tag**: Add a tag to the record or a related record.
-- **Remove Tag**: Remove a tag from the record or a related record.
-- **Create Task**: Create a new task assigned to a specific person (like the deal's assigned agent). You can set the task name, description, and a due date offset in days.
+### Build a sequence
 
-### Building a sequence
+1. Open the **Sequences** tab and click **+ Create Workflow**. A panel opens on the right.
+2. Enter a **Title**, add a **Description** if you want one, and save.
+3. Click **Edit Workflow** to open the builder.
+4. Click **Add Trigger** and pick the event from the **Select** list.
+5. Click a **+** on the line to add a step, then choose **Send Email** or **Wait**.
+6. Open each **Send Email** step and choose the template it sends.
+7. Click **Save And Exit**.
 
-1. Go to **Workflows** under Sales, Marketing, or Operations and open the **Sequences** tab.
-2. Click **Create** (the button is labeled **+ Create Workflow** in the interface) to start a new sequence.
-3. **Set up the trigger**: choose the event that starts the sequence, the entity type it applies to, and any entry conditions.
-4. **Add nodes**: build out the sequence by adding action nodes. Connect them in the order you want them to execute.
-5. **Connect with edges**: draw connections between nodes to define the execution path. Condition nodes have two outgoing paths (yes and no).
-6. **Save** the sequence. It starts in **Draft** status.
+### Trigger options
 
-![A sequence's trigger-action node chain in the builder canvas](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-sequences-and-workflows/sequence-builder-canvas.png)
+The events on offer depend on which department you are in.
 
-### Conditions and branching
+- Every department: **Manually Triggered**, plus one entry per brand tag, listed as "Tag Name" Tag Applied.
+- Sales: **New Sales Lead**, **Invite to Portal**.
+- Marketing: **Abandoned Signup**, **Prospect Imported**.
+- Operations: **Converted To Franchisee**, **Franchisee Signs Up**.
 
-Condition nodes let you create branching logic. You define rules using field comparisons (equals, not equals, greater than, less than, contains, is empty, etc.) and group them with AND/OR logic. Based on whether the record matches, the sequence follows the "yes" or "no" branch.
+Every event trigger except **Manually Triggered** needs a verified domain for its sending purpose.
 
-### Sequence statuses
+If a trigger is greyed out in the list, hover it. The tooltip tells you which kind of domain is missing. Connect that domain and the trigger becomes selectable. See *[About Domains and Domain Health]*.
 
-- **Draft**: the sequence is saved but not running. You can edit it freely.
-- **Active**: the sequence is live and will trigger on matching events. To activate, the sequence must have at least one action node beyond the trigger.
-- **Paused**: the sequence is temporarily stopped. No new records will enter it, but records already in the sequence may continue.
-- **Archived**: the sequence is retired and will not run.
+![Trigger event picker open on the sequence builder canvas](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/creating-content-and-workflows/workflows-trigger-picker-v2.png)
 
-You can change the status at any time from the sequence detail view.
+### Turn a sequence on
 
-### Cancellation rules
+Click the sequence in the list to open its panel. The panel shows the title, description, trigger, total duration, who created it, and the date it was created.
 
-You can configure cancellation rules that automatically stop a running sequence for a specific record when a particular event occurs. For example, you might cancel a follow-up email sequence if the deal is marked as won before the sequence completes.
+Switch **Active?** on. The list then shows the sequence as **Active** instead of **Inactive**.
 
-### Timeout
+Those are the only two states. There is no draft, paused, or archived status on a sequence.
 
-You can set an optional timeout (in minutes) for the entire sequence. If a sequence instance has not completed within the timeout period, it will be stopped automatically.
+![Sequence detail panel with the Active toggle](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/creating-content-and-workflows/workflows-activate-toggle-v2.png)
+
+### Send a sequence to a group
+
+A sequence set to **Manually Triggered** shows a **Schedule Campaign** button in its panel. That is how you send it to a segment on a schedule you choose.
+
+You can also start from the audience side and pick the sequence there. See *[How to Send a Sequence to Tagged Leads]*.
+
+The recipient list is fixed the moment you schedule the send, so finish building your audience first. For how segments are built, see *[About Segments]*.

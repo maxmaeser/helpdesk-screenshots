@@ -32,7 +32,7 @@ Segments appear in the **Segments** tab within both the Marketing and Sales sect
 
 Sequences are for large email sends: broadcasts, newsletters, and bulk invites to a whole segment or audience. Rather than firing every message at once, a sequence uses the platform's domain protection system to pace the send based on each sending domain's health, protecting your deliverability.
 
-You find sequences on the **Workflows** page within Marketing, Sales, or Operations, under the **Sequences** tab. You build one by defining a trigger event (such as "New Sales Lead" or "Prospect Imported"), then adding action nodes: send an email, add a tag, create a task, introduce a delay, or evaluate a condition. Sequences support conditional branching so different contacts can follow different paths based on their data.
+You find sequences on the **Workflows** page within Marketing, Sales, or Operations, under the **Sequences** tab. You build one by picking a trigger event (such as "New Sales Lead" or "Prospect Imported"), then adding **Send Email** and **Wait** steps in a straight line. Sequences have no conditions or branching.
 
 The **Content** tab on the same Workflows page is where you create and manage the email templates that your sequences use.
 

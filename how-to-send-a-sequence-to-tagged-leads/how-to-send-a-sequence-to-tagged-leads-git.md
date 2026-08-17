@@ -66,6 +66,6 @@ FS Ai reads the segment once, then creates one scheduled email per contact. Lead
 You have two ways to cover the late arrivals:
 
 - **Finish tagging first, then send.** If you are still working through a list, tag everyone before you open the send flow. You can also schedule a second send to the same segment once the rest are tagged.
-- **Automate it.** On the **Automations** tab of **Sales → Workflows**, build an automation triggered by **Lead added to segment** and point it at your tag. From then on, any lead that picks up the tag is enrolled on its own. See *[About Sequences and Workflows]*.
+- **Automate it.** On the **Automations** tab of **Sales → Workflows**, build an automation triggered by **Lead added to segment** and point it at your tag. From then on, any lead that picks up the tag is enrolled on its own. See *[About Automations and Runs]*.
 
 One more thing to expect: contacts who have unsubscribed are dropped when the list is read, so the number that actually receives the sequence can be lower than the **Size** shown on the Segments tab.

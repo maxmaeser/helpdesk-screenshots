@@ -1,65 +1,48 @@
-The **Workflows** page in Franchise Systems Ai (FS Ai) is where you manage email content and automated sequences. You access it from the sidebar under Marketing, Sales, or Operations.
+The **Workflows** page in Franchise Systems Ai (FS Ai) holds three separate tools that are easy to mix up: your email content, your sequences, and your automations.
 
-The page has five tabs: Sequences, Automations, Runs, Content, and Analytics. This article covers the two you need to build a sequence:
+Go to **Marketing → Workflows**, **Sales → Workflows**, or **Operations → Workflows**.
 
-- **Content**: email templates you create and reuse across sequences
-- **Sequences**: automated trigger-action flows that run when specific events occur
+Each department keeps its own templates, sequences, and automations. Nothing is shared between them.
+
+The page has five tabs: **Sequences**, **Automations**, **Runs**, **Content**, and **Analytics**.
 
 ![Workflows page showing the five tabs](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/creating-content-and-workflows/workflows-tabs-v2.png)
-### Content First, Then Sequences
 
-Before setting up a sequence, prepare the email content it will use:
+### Sequences and Automations are not the same thing
 
-1. Go to the **Workflows** page under Marketing, Sales, or Operations.
-2. Switch to the **Content** tab.
-3. Create one or more email templates using the email builder.
-4. Once your content is ready, switch to the **Sequences** tab to build your automation.
+This is where most confusion starts. Both tabs open from the same **+ Create Workflow** button, and both call what you build a workflow.
+
+**Sequences**: an ordered run of emails with waiting time between them. You point a sequence at a segment and schedule it.
+
+**Automations**: an event-driven flow that reacts to one record at a time. It starts when something happens to a lead or deal, then branches on conditions and does things like applying a tag, changing a status, or creating a task.
+
+The quick test:
+
+- Sending the same series of emails to a group of people? You want **Sequences**.
+- Want FS Ai to react on its own when one lead does one thing? You want **Automations**.
+
+A sequence has no conditions and no branching. An automation has no schedule and no audience. They are different tools that happen to live next to each other.
+
+### What each tab is for
+
+- **Sequences**: build, activate, and schedule email sequences. See *[About Sequences and Workflows]*.
+- **Automations**: build event-driven flows in the node builder. See *[About Automations and Runs]*.
+- **Runs**: the log of every automation execution. Sequences do not appear here. See *[About Automations and Runs]*.
+- **Content**: the email templates that both sequences and automations send. See *[How to Build an Email]*.
+- **Analytics**: email performance for the department.
+
+### Build your content first
+
+A sequence step and an automation email step both ask you to pick a template that already exists. Write the email before you build the thing that sends it.
+
+1. Open the **Content** tab.
+2. Click **Create** and choose **Email**.
+3. Build the email and give it a subject line.
 
 ![Content tab showing the email template list](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/creating-content-and-workflows/workflows-content-v2.png)
-This separation keeps your email content reusable. The same template can appear in multiple sequences.
 
-### What Is a Sequence?
+A template with no subject line cannot be selected in a send, so fill that in before you leave the builder.
 
-A sequence is an automated trigger-action flow that runs when a specific event occurs. Each sequence belongs to a department (Marketing, Sales, or Operations) and consists of:
+The same template can be used by any number of sequences and automations, so you write it once and reuse it.
 
-- **A trigger**: the event that starts the sequence
-- **One or more action nodes**: steps the sequence executes in order
-- **Conditions and branches**: logic that controls which path a contact follows
-
-### Building a Sequence
-
-1. Switch to the **Sequences** tab and click **Create** (the button is labeled **+ Create Workflow** in the interface).
-2. Give the sequence a name.
-3. Select the **trigger event** - this defines what starts the sequence. Examples include:
-    - A new prospect is imported
-    - A marketing lead is created
-    - A lead completes an onboarding step
-    - A tag is applied to a contact
-    - A franchisee is converted or signs up
-
-![Trigger event picker open on the sequence builder canvas](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/creating-content-and-workflows/workflows-trigger-picker-v2.png)
-
-4. Add **action nodes** by connecting them to the trigger. Available actions:
-    - **Send Email**: sends an email template to the contact. You select which template to use.
-    - **Delay**: pauses the sequence for a set period (e.g., 1 hour, 1 day, 1 week, or a custom duration).
-    - **Condition**: evaluates criteria about the contact and branches into "yes" or "no" paths. You can group conditions with AND/OR logic.
-    - **Add Tag**: applies a tag to the contact or a related record.
-    - **Remove Tag**: removes a tag from the contact or a related record.
-    - **Create Task**: creates a task assigned to a team member, with a name, description, and due date.
-5. Connect nodes with edges to define the flow. Condition nodes have two outgoing paths (yes/no), while other nodes continue in sequence.
-
-![Trigger node connected to a Send Email action node on the builder canvas](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/creating-content-and-workflows/workflows-builder-canvas-v2.png)
-### Entry Conditions
-
-You can add entry conditions to a trigger to filter which events actually start the sequence. For example, a "new marketing lead created" trigger could include a condition that only fires for leads from a specific source.
-
-### Activating a Sequence
-
-Sequences start in **Draft** status. When you are ready:
-
-1. Ensure the sequence has at least one action node beyond the trigger.
-2. Set the status to **Active**. The sequence now processes matching events in real time.
-3. To pause a running sequence, set it to **Paused**. No new contacts enter, but in-progress ones continue.
-4. To retire a sequence permanently, set it to **Archived**.
-
-![Sequence detail panel with the Active toggle](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/creating-content-and-workflows/workflows-activate-toggle-v2.png)
+For the builder itself, see *[How to Build an Email]*.

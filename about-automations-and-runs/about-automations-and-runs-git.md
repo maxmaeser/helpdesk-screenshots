@@ -8,9 +8,15 @@ You reach both from the sidebar under **Sales → Workflows**. The same tabs app
 
 ### Automations vs. sequences
 
-An **automation** is an event-driven workflow you build in the workflow builder. It starts from a trigger, then runs steps like delays, conditions, and actions in the order you connect them.
+An **automation** is an event-driven workflow you build in the node builder. It starts from a trigger, then runs steps like delays, conditions, and actions in the order you connect them.
 
-Sequences live on their own tab on the same page and are covered separately. For the full vocabulary of triggers, action steps, conditions, and branching, see **Creating Content and Workflows** and **About Sequences and Workflows**.
+An automation acts on one record at a time, the record that fired the trigger. It has no audience and no schedule.
+
+A **sequence** is the other tool on this page. It is an ordered run of emails with waiting time between them, and you send it to a whole segment on a schedule you set.
+
+Sequences have no conditions and no branching, and their sends do not appear in Runs.
+
+Use an automation when you want FS Ai to react on its own. Use a sequence when you are sending a series to a group. See *[About Sequences and Workflows]*.
 
 This article covers the Automations list and the Runs log.
 
@@ -55,7 +61,9 @@ The run walks through the steps you built, in order. A **Delay** step holds the 
 
 ### The Runs tab
 
-The Runs tab is the log of every automation execution in the department. Four tiles at the top summarize the current view:
+The Runs tab is the log of every automation execution in the department. Sequence sends do not appear here.
+
+Four tiles at the top summarize the current view:
 
 - **Total Runs**: how many runs are listed.
 - **Running**: runs still in progress.
