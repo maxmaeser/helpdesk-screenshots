@@ -35,6 +35,8 @@ Filters let you narrow the table to contacts matching specific criteria. You can
 
 To remove a filter, click the active filter chip and clear it, or remove all filters at once.
 
+![Applied Status filter set to Fast-Track, narrowing the Leads table to 2 matching results](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-filter-and-sort/filter-example-applied.png)
+
 ### Sorting
 
 You can sort the table by one or more fields to control the display order.

@@ -39,12 +39,11 @@
       "renderedAt": 1786630054559
     },
     "billing-subscription-brands.png": {
-      "status": "approved",
-      "note": "Subscription + Brands sections, Franchise Systems Ai org (no active subscription in staging, shown honestly)",
-      "lastTouchedBy": "max",
+      "status": "proposed",
+      "note": "Reshoot 2026-08-14: Settings > Billing (/settings/billing) now opens with a new \"Add a payment method\" card (Lumon / Test Lite Brand line items, Promo Code field, Card/US Bank Account (ACH) tabs, Account Holder Email, disabled Add Payment Method button) before Subscription and Brands. The old top-of-page org selector chip/pill (\"Franchise Systems Ai\" with radio icon) is gone entirely -- confirmed via full-viewport capture, not just reordered. Sidebar Organization group now shows the org name as plain text under the group label instead of a pill button. Agent-captured, viewport widened to 1680x1500 CSS (2x) to fit the taller page in one shot, clip x=0,y=20,w=1680,h=1100 CSS. dom-sanitize run twice (0 replacements -- no PII in frame, brand names are seed data). No cursor -- read-only orientation state, matches original convention for this shot. Brands list first row is now 'Staging Test Brand' (was 'Demo Brand' in the prior capture) -- left as-is per the original note's 'shown honestly' convention, not a blemish.",
+      "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0,
-      "updatedAt": 1786630177791
+      "rev": 1
     },
     "billing-invoices-section.png": {
       "cursor": {

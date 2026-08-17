@@ -1,21 +1,19 @@
 {
-  "revision": 9,
+  "revision": 10,
   "shots": {
     "domains-management-overview.png": {
       "crop": [
-        11,
-        12,
-        2049,
-        386
+        0,
+        0,
+        2480,
+        520
       ],
-      "status": "approved",
-      "note": "Brand dashboard, Settings > Brand > Domain Management card. Lumon Fresh brand, existing connected domain (email-testing.franchiseapplicantportal.com) showing Active / Verified / All Purposes badges plus the Connect Domain button. Orients the reader on 'What Is an Email Domain?' and 'Domain Purposes'. Agent-captured 2026-07-17 at CSS clip (442,712,1036,206) within a 1680x1050 viewport, 2x, dom-sanitize with freshenDates:false (page has no relevant relative dates). No cursor -- orientation/results state, not a click target.",
-      "lastTouchedBy": "max",
+      "status": "proposed",
+      "note": "Reshoot 2026-08-14: Max flagged the old crop as too tight (card only, no page context). Re-captured wider -- now includes the \"Lumon Fresh\" brand header above the card. Brand dashboard, Settings > Brand > Domain Management card, existing connected domain (email-testing.franchiseapplicantportal.com) showing Verified badge and Manage button, plus the + Connect domain button. Orients the reader on 'What Is an Email Domain?' and 'Domain Purposes'. Agent-captured 2026-08-14 at a wider CSS clip within a 1680x1050 viewport, 2x, dom-sanitize with freshenDates:false. Cropped to end just before the next card (\"Campaign attribution\") begins. No cursor -- orientation/results state, not a click target.",
+      "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 1,
-      "renderedRev": 1,
-      "updatedAt": 1784376844166,
-      "renderedAt": 1784376802522
+      "rev": 2,
+      "updatedAt": 1784376844166
     },
     "domains-add-domain-form.png": {
       "status": "flagged",
@@ -26,11 +24,11 @@
       "updatedAt": 1784376948609
     },
     "domains-manage-detail.png": {
-      "status": "flagged",
-      "note": "Manage drawer for the existing verified domain: Domain Connected Successfully banner, Active toggle, Email Settings (Email, Display Name, Reply-To Strategy = Assigned Sales Rep with the Dynamic Reply-To Active blurb), Recipient Inbox Preview. Covers 'Reply-To Settings' (Assigned Rep variant, contrasts with the Static Email default seen in the add-domain form) and the connected-domain state referenced in 'Domain Health'. Cosmetic fix: the domain's seed display name 'Staging Outreach' read test-y for a customer-facing article -- renamed via DOM text/value swap to 'Lumon Fresh News' (no feature or state fabricated, only the sample sender label). Agent-captured 2026-07-17, CSS clip (823,73,844,785) in a 1680x1050 viewport, 2x, dom-sanitize freshenDates:false. No cursor -- result/state view.",
-      "lastTouchedBy": "max",
+      "status": "proposed",
+      "note": "Reshoot 2026-08-14: Max flagged the old crop as too tight. Re-captured wider (no crop applied -- full raw used) to keep the brand page and sidebar visible behind the drawer, not just the drawer card. Manage drawer for the existing verified domain: Domain Connected Successfully banner, Active toggle, Email Settings (Email, Display Name, Reply-To Strategy = Assigned Sales Rep with the Dynamic Reply-To Active blurb), Recipient Inbox Preview. Covers 'Reply-To Settings' (Assigned Rep variant, contrasts with the Static Email default seen in the add-domain form) and the connected-domain state referenced in 'Domain Health'. Agent-captured 2026-08-14, brand dashboard (staging.app.franchisesystems.ai), 2x, dom-sanitize freshenDates:false. No cursor -- result/state view.",
+      "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0,
+      "rev": 1,
       "updatedAt": 1784376931852
     }
   }

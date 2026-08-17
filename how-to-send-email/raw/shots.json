@@ -1,0 +1,20 @@
+{
+  "revision": 1,
+  "shots": {
+    "send-email-connect-domain.png": {
+      "cursor": {
+        "pos": [
+          1965,
+          78
+        ],
+        "type": "arrow"
+      },
+      "highlights": [],
+      "status": "proposed",
+      "note": "Reshoot 2026-08-14: UI drift -- card retitled from 'Domain Management' to 'Domains & sending', button retitled from '+ Connect domain' (old capitalization/wording) to match current chrome. Domains & sending card showing the + Connect domain button and the existing verified domain (email-testing.franchiseapplicantportal.com, Verified badge, Manage button). Agent-captured 2026-08-14, brand dashboard, 2x, dom-sanitize freshenDates:false. Cursor (arrow) on the Connect domain button, matching the original shot's convention.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

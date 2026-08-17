@@ -3,10 +3,10 @@
   "shots": {
     "org-details.png": {
       "status": "proposed",
-      "note": "",
+      "note": "Reshoot 2026-08-14: Org > Details (/settings/organizations) rebuilt since the prior capture. Was one combined 'Organization Details' card (avatar + 2x2 grid: Org Name/Email/Phone/Timezone). Now two separate cards: 'Organization logo' (upload/remove avatar) and 'Organization details' (Name, Email, Phone with country-code dropdown, Timezone, new Website field, and a full address block: Street 1, Street 2, City, State, ZIP, Country). Agent-captured, viewport 1680x1600 CSS (2x), clip x=441,y=164,w=1029,h=625 CSS -- content-only crop excluding sidebar and the page h1/breadcrumb, matching this shot's original card-only framing. dom-sanitize sanitized 1 email (bill@... -> bill@example.com); phone/address fields are pre-existing seed data (UK-style address on a US-flagged org, +1 country code -- inconsistent staging seed, not something this capture introduced). No cursor -- read-only orientation state.",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 1
     },
     "brand-switcher.png": {
       "status": "proposed",

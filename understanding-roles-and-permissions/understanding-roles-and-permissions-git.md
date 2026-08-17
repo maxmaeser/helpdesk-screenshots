@@ -38,6 +38,8 @@ When you invite someone, the **Has Billing Access?** toggle decides whether they
 
 A person can be an Admin without billing access, or a Member with it. The two settings are independent.
 
+![Invite members modal with the Billing Access toggle switched on, showing the "Can see invoices and manage payment methods" description](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/understanding-roles-and-permissions/invite-billing-access.png)
+
 ### The job title next to a name is not a role
 
 On the Members list, each person shows a small chip next to their name, such as "COO" or "Manager".
@@ -49,6 +51,8 @@ It has no effect on permissions or access. Do not treat it as a role.
 ### Brand team roles are for project templates
 
 Open the **Team & Access** section under Brand in your settings and you will see a Brand Team list.
+
+![Brand settings sidebar with Team & Access highlighted under the Brand group, landing on the Brand Team list](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/understanding-roles-and-permissions/team-access-nav.png)
 
 Each member here has a role dropdown that starts on **No role**.
 

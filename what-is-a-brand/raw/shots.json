@@ -10,10 +10,10 @@
     },
     "brand-profile.png": {
       "status": "proposed",
-      "note": "",
+      "note": "Reshoot 2026-08-14: same Brand > Profile rebuild as set-up-your-brand-and-team-overview-v2.png (Domain Management card removed, address split into 6 fields, new Brand voice card, new Associated organizations card). Lumon Fresh brand selected (populated data). Agent-captured, viewport 1680x1600 CSS (2x), clip x=441,y=75,w=1029,h=1175 CSS -- content-card-only crop excluding the left sidebar, matching this shot's original narrower framing (the 'Lumon Fresh' dropdown chip + All changes saved pill stand in for the old 'Single Brand Selector' tag row, which is also gone from the live UI -- see multi-brand-view/single-brand-selector.png for that specific drift). dom-sanitize sanitized 1 email. No cursor -- read-only orientation state.",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 1
     },
     "where-to-find-settings.png": {
       "status": "proposed",

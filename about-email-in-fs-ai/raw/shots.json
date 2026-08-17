@@ -9,11 +9,17 @@
       "rev": 0
     },
     "email-domain-purposes-v2.png": {
+      "crop": [
+        1470,
+        1400,
+        1890,
+        1680
+      ],
       "status": "proposed",
-      "note": "Reshoot of email-domain-purposes.png (2026-07-17): same route/state/crop (Brand Settings > Profile > Domain Management, domain panel for mail.lumonfresh.com, Advanced > Purposes expanded and scrolled to show all 7 purpose toggles plus the 'Multiple Purposes Selected' isolation advisory banner), now with the 'Staging Test Brand' chip hidden from the brand-chip bar (targeted fix; the chip bar renders an off-screen ResizeObserver measurement clone of every chip -- must only display:none the real visible chip, hiding the clone corrupts the overflow calc and silently drops unrelated real chips). Same cosmetic domain/display-name renames as the original (email-testing.franchiseapplicantportal.com -> mail.lumonfresh.com, Staging Outreach -> Lumon Fresh Newsletter, including the banner's subdomain example). Agent-captured 2026-07-17, 1680x1050 CSS viewport, 2x, dom-sanitize with freshenDates:false. No cursor -- read-only orientation state.",
+      "note": "Reshoot 2026-08-14: UI drift -- brand settings page restructured (now shows a 'Brand Information' card above Domain Management; brand-chip bar now shows real sibling brands Lumon Fresh/Kharcho Kings instead of a 'Staging Test Brand' chip to hide). Domain renamed mail.lumonfresh.com, Manage drawer opened, scrolled to Advanced > Purposes showing all 7 purpose toggles (now styled as blue switches) plus the 'Multiple Purposes Selected' isolation advisory banner and Connect Additional Domain button -- same subject as the prior version, matches the article alt text exactly (Cold Outreach + consensual warm purposes + isolation advisory). Cropped tightly to just the Advanced/Purposes/banner block, excluding the Email Settings section that sits above it in this wider raw (off-topic for this shot, already covered by other article images). Agent-captured 2026-08-14, 2x, dom-sanitize with freshenDates:false. No cursor -- read-only orientation state.",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 1
     },
     "email-sending-methods.png": {
       "status": "superseded",

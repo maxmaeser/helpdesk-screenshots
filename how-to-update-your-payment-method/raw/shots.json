@@ -17,10 +17,10 @@
     },
     "payment-billing-org-selector.png": {
       "status": "proposed",
-      "note": "Settings > Organization > Billing page, top: org selector chip, Subscription card, and start of Brands list. Agent-captured 2026-07-17, dom-sanitize freshenDates:false (no relative dates on page). Blemish fix: hid the seed-data 'Staging Test Brand' row from the Brands list (display:none), no fabricated data. No cursor -- read-only orientation state. Account only has one organization, so the org chip has no dropdown to demonstrate step 3's multi-org case; noted as a gap.",
+      "note": "Reshoot 2026-08-14: same drift as billing-subscription-brands.png in how-to-view-your-invoice -- Settings > Billing now opens with the new \"Add a payment method\" card (Promo Code, Card/US Bank Account (ACH) tabs, Account Holder Email) above Subscription and Brands. The org selector chip/pill previously shown at the top of the page is gone (org name is now plain sidebar text under 'Organization', not a clickable pill) -- account still only has one organization so no multi-org dropdown to demonstrate either, same gap as the prior capture's note. Agent-captured, viewport 1680x1500 CSS (2x), clip x=0,y=20,w=1680,h=940 CSS (shorter crop than the invoice article's version, matching this shot's original shorter framing -- ends after 1 Brands row instead of 3). dom-sanitize run twice (0 replacements). No cursor -- read-only orientation state.",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 1
     },
     "payment-billing-open-management.png": {
       "cursor": {

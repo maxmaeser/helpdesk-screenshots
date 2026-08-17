@@ -1,30 +1,20 @@
 {
-  "revision": 59,
+  "revision": 60,
   "shots": {
     "members-access-levels.png": {
-      "highlights": [
-        {
-          "rect": [
-            35,
-            715,
-            409,
-            59
-          ],
-          "style": "outline",
-          "thickness": 3,
-          "cornerRadius": 10,
-          "glowSize": 12,
-          "color": "blue"
-        }
+      "crop": [
+        0,
+        0,
+        2140,
+        838
       ],
-      "status": "adjusted",
-      "note": "Organization Settings > Members page, Team Admins section. Agent-captured 2026-07-17, brand dashboard (staging.app.franchisesystems.ai), 1680x1050 CSS viewport, 2x, dom-sanitize freshenDates:auto. Cropped to the heading + first three rows (CTO / Intern / COO job title chips) to avoid the seed data's joke job titles further down the list (Flayer, Lemon Farmer, British Politician, Franchise God). No cursor -- read-only orientation state showing the Team Admins grouping and free-text job title chips referenced in the article.",
-      "lastTouchedBy": "max",
+      "highlights": [],
+      "status": "proposed",
+      "note": "Reshoot 2026-08-14: UI drift -- Organization Settings > Members page rebuilt. No longer grouped under \"Team Admins\"/\"Team Members\" section headers; now a single searchable/filterable list (Search by name or email, All roles filter dropdown), \"+ Invite members\" button, and per-row Billing toggle + role dropdown (Admin/Member) replacing the old free-text job-title chips. Agent-captured 2026-08-14, brand dashboard (staging.app.franchisesystems.ai), dom-sanitize freshenDates:auto, 2x. Cropped to the header + filter row + first 4 members (Claude Maeser, Dennis Teser, Max Maeser, Bill Smith) to end cleanly before the next row. No cursor -- read-only orientation state. NOTE FOR ARTICLE COPY (articles/ scope, not touched here): the article's prose (\"admins are grouped under Team Admins and members are grouped under Team Members\") no longer matches this page and needs a rewrite pass.",
+      "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 3,
-      "renderedRev": 2,
-      "updatedAt": 1786870531814,
-      "renderedAt": 1786870522685
+      "rev": 4,
+      "updatedAt": 1786870531814
     },
     "brand-team-role-list.png": {
       "status": "reshoot",
@@ -33,7 +23,7 @@
       "editing": false,
       "rev": 0,
       "updatedAt": 1784390119570,
-      "reshootNote": "cropped too tightly, can't see the role section button."
+      "reshootNote": "cropped too tightly, can't see the role section button. SUPERSEDED by brand-team-role-list-v2.png (already approved and live in the article)."
     },
     "member-brand-permissions.png": {
       "crop": [
@@ -92,6 +82,56 @@
       "renderedRev": 25,
       "updatedAt": 1786691959650,
       "renderedAt": 1786691938375
+    },
+    "invite-billing-access.png": {
+      "highlights": [
+        {
+          "rect": [
+            83,
+            668,
+            894,
+            105
+          ],
+          "style": "spotlight",
+          "thickness": 3,
+          "cornerRadius": 10,
+          "glowSize": 12,
+          "color": "blue",
+          "dimStrength": 6,
+          "feather": 8,
+          "contactShadow": true
+        }
+      ],
+      "status": "proposed",
+      "note": "NEW shot, agent-captured 2026-08-14, resolves reshoot mark rm-1786691977069-0cb4 (\"When you invite someone, the Has Billing Access? toggle decides whether they can see invoices and manage payment methods.\"). Organization Settings > Members > Invite members modal: Emails field, Role dropdown (Member), and the Billing Access toggle switched ON with its 'Can see invoices and manage payment methods' description, plus the 1-week invite validity note. Fills the \"Billing access is separate\" section, which previously had no image. dom-sanitize freshenDates:false (no dates on this modal). 2x. No cursor -- the toggle state itself is the subject, called out with a highlight instead.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "team-access-nav.png": {
+      "highlights": [
+        {
+          "rect": [
+            22,
+            1610,
+            280,
+            60
+          ],
+          "style": "spotlight",
+          "thickness": 3,
+          "cornerRadius": 10,
+          "glowSize": 12,
+          "color": "blue",
+          "dimStrength": 8,
+          "feather": 8,
+          "contactShadow": true
+        }
+      ],
+      "status": "proposed",
+      "note": "NEW shot, agent-captured 2026-08-14, resolves reshoot mark rm-1786692002466-0749 (\"Open the Team & Access section under Brand in your settings and you will see a Brand Team list.\"). Brand settings sidebar with Team & Access highlighted/active under the Brand group, landing on the Staging Test Brand > Team & Access page (\"Team members, assignability, and contacts for this brand\") with the Brand Team list underneath. Full sidebar kept in frame so the Account/Organization/Brand nav grouping and the Team & Access item's position are all visible together. dom-sanitize freshenDates:false. 2x. No cursor -- highlight on the nav item stands in for the click target per the Cursor Heuristics (arrow would be redundant next to the highlight here).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
     }
   }
 }

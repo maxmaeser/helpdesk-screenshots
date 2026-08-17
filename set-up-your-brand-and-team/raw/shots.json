@@ -10,10 +10,10 @@
     },
     "set-up-your-brand-and-team-overview-v2.png": {
       "status": "proposed",
-      "note": "Reshoot 2026-07-17 to fix a seed-data blemish: the unselected 'Staging Test Brand' chip next to the Lumon Fresh selector was hidden via page.evaluate (display:none on the button) rather than renamed, to avoid an icon/label mismatch -- no fabricated brand or feature. Same route, viewport (1000x915 CSS, 2x), and dom-sanitize config (freshenDates:false) as the original. No cursor -- read-only orientation state.",
+      "note": "Reshoot 2026-08-14: Brand > Profile (/settings/brands) rebuilt since the prior capture. Domain Management card is gone entirely (moved to Brand > Connections, not shown here). Address is now split into 6 discrete fields (Address, City, State, ZIP, Country, Address Line 2) instead of one combined 'Brand Address' line. New 'Brand voice' card added below Brand information ('How you talk to candidates, applied when we write emails for you' + Set up your brand voice button), and a new 'Associated organizations' card below that. Switched brand selector to Lumon Fresh (populated data, matches original convention) -- Staging Test Brand has empty required fields and shows a red CAN-SPAM 'Missing required information' banner instead, not used here. Agent-captured, viewport 1680x1600 CSS (2x), clip x=0,y=20,w=1680,h=1230 CSS, full sidebar included per this shot's original wide framing. dom-sanitize sanitized 1 email (info@... -> info@example.com). No cursor -- read-only orientation state.",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 1
     }
   }
 }
