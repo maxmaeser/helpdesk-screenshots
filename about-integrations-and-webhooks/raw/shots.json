@@ -1,0 +1,23 @@
+{
+  "revision": 1,
+  "shots": {
+    "integrations-toast-card.png": {
+      "crop": [0, 0, 2096, 334],
+      "cursor": { "pos": [1871, 239], "type": "arrow" },
+      "status": "proposed",
+      "note": "Agent-captured (session.js, Staging Test Brand, /settings/brands?section=brand-connections card 'Integrations'): Toast point-of-sale row showing the Unconnected badge and Connect account button, which is the only integration currently available on this platform. Arrow cursor on 'Connect account' per heuristic (button). Did not click it (would attempt a real OAuth connection on shared staging). Could not capture the alternate 'Reconnect account' / Connected badge state without actually connecting a Toast account first, which data-safety rules for this session disallow -- every brand checked (Staging Test Brand, Lumon Fresh, Circada, Kharcho Kings, Lumon) shows Toast Unconnected. Covers the 'Integrations' section.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 1
+    },
+    "webhooks-empty-state.png": {
+      "crop": [0, 0, 2096, 714],
+      "cursor": { "pos": [1899, 624], "type": "arrow" },
+      "status": "proposed",
+      "note": "Agent-captured: 'Webhooks' card, honest empty state ('No webhooks configured yet') plus the always-visible inline Add webhook form (Endpoint URL field, HTTPS-only note, Docs link, Add webhook button). Arrow cursor on 'Add webhook' per heuristic (button) -- matches the article's 'enter an Endpoint URL and click Add webhook' step. Did not type a URL or submit (would create a real webhook on shared staging). Checked every brand in the org (Staging Test Brand, Lumon Fresh, Circada, Kharcho Kings, Lumon) -- none has a configured webhook, so the masked-signing-secret / eye-icon-reveal / actions-menu-remove states described later in the article are not capturable without creating one first; reported as uncapturable rather than seeded. Covers the 'Webhooks' section and its empty-state paragraph.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 1
+    }
+  }
+}

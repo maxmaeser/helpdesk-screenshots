@@ -1,0 +1,41 @@
+{
+  "revision": 1,
+  "shots": {
+    "brand-team-list.png": {
+      "crop": [0, 0, 2096, 1362],
+      "cursor": { "pos": [300, 545], "type": "hand" },
+      "status": "proposed",
+      "note": "Agent-captured (session.js, Staging Test Brand, /settings/brands?section=brand-team card 'Brand team'): the member roster showing avatar, name, Google calendar-connected indicator (colored G icon, absent for members who haven't linked calendar e.g. Bill Smith/Joshua Tester), and the Auto Assigned / Manually Assignable badges. Hand cursor on the 'Bill Smith' row per the cursor heuristic (clickable row -> profile), nudged right of the name so it doesn't obscure the text. All names are FSAI's known internal staging/test accounts (Max Maeser, Claude Maeser, Dennis Teser, Jonathan Whiteside, etc.) on the dedicated Staging Test Brand -- no real customer PII. dom-sanitize run defensively (no emails/phones visible in this card). Covers the 'Brand team' section.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 1
+    },
+    "sales-assignability.png": {
+      "crop": [0, 0, 2096, 1712],
+      "cursor": { "pos": [1722, 322], "type": "arrow" },
+      "status": "proposed",
+      "note": "Agent-captured: same page, 'Sales assignability' card, scrolled so the card sits near the top of the (internally-scrolling) settings panel to fit the full 11-row member list within one viewport capture (the row list is virtualized and only paints rows within the visible scroll window, so this required repositioning rather than a plain scrollIntoView). Shows the Automatic/Manual/Off segmented control per member, with a couple of members already set to Automatic/Manual to illustrate the selected state. Arrow cursor on the 'Automatic' option for the top row (Claude Maeser), per heuristic (segmented button). Covers the 'Sales assignability' section.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 1
+    },
+    "contacts-card.png": {
+      "crop": [0, 0, 2096, 452],
+      "cursor": { "pos": [1905, 89], "type": "arrow" },
+      "status": "proposed",
+      "note": "Agent-captured: 'Contacts' card, showing the search box, the one existing contact ('Toast', toast@example.com -- already an example.com placeholder, not real PII), and its Actions menu button. Arrow cursor on '+ Add contact' (button, per heuristic) since that's the card's primary described action. Did not open the Actions dropdown or click Add contact (would create/mutate a real brand contact on shared staging). Covers the 'Contacts' section.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 1
+    },
+    "franchisee-invite-approvals.png": {
+      "crop": [0, 0, 2096, 310],
+      "cursor": { "pos": [1976, 227], "type": "arrow" },
+      "status": "proposed",
+      "note": "Agent-captured: 'Franchisee invite approvals' card, showing the 'Require Approval For Franchisee Team Invites' toggle in its current ON state on Staging Test Brand. Arrow cursor on the toggle, per heuristic (button/control). Did not flip the toggle (would change a real brand setting on shared staging) -- captured the existing state only. Covers the 'Franchisee invite approvals' section.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 1
+    }
+  }
+}

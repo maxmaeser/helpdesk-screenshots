@@ -1,0 +1,22 @@
+{
+  "revision": 1,
+  "shots": {
+    "api-keys-list.png": {
+      "crop": [0, 0, 2096, 450],
+      "cursor": { "pos": [1879, 89], "type": "arrow" },
+      "status": "proposed",
+      "note": "Agent-captured (session.js, /settings/organizations?section=organization-api-keys card 'API keys'): shows the 'Generate API key' button and the one existing organization key, masked as bullet-dots + last 4 chars ('••••41DF'), its Created date, and the Revoke button -- the only key that exists on this org, and it is already masked so no real secret is exposed. Arrow cursor on 'Generate API key' per heuristic (button). Did NOT click it -- generating a key is irreversible-in-effect (org-wide credential) and forbidden by this session's data-safety rules, and the 'shown once in full' reveal screen is fundamentally uncapturable honestly without creating a real live key, so it's not represented in this shot set; reported as uncapturable. No Revoked or Expired badge example exists on this org (only one active key) -- also uncapturable without revoking the real key or waiting for a natural expiry, both disallowed. Covers 'Generating a key' (button only) and part of 'Managing existing keys'.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 1
+    },
+    "api-keys-revoke-confirm.png": {
+      "crop": [0, 0, 1088, 484],
+      "status": "proposed",
+      "note": "Agent-captured: clicked 'Revoke' on the existing key to open the 'Revoke API key' confirm dialog ('Are you sure? ... This cannot be undone.' / Cancel / Yes, revoke), then clicked Cancel (verified afterward via a fresh page load that the key is still active, no Revoked badge). No cursor -- dialog/result state per heuristic, and deliberately not pointing at 'Yes, revoke' since that action was never taken. Covers the 'To revoke an active key, click Revoke on its row and confirm' step.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 1
+    }
+  }
+}
