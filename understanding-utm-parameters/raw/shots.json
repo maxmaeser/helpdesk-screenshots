@@ -17,10 +17,10 @@
     },
     "leads-by-source-chart.png": {
       "status": "proposed",
-      "note": "Sales > Analytics > Overview, Lumon Fresh brand, Monthly View, date range widened to 01 May 2025 - 17 Jul 2026 to surface non-organic sources. Leads By Source donut + table showing a real mixed breakdown (No Data 97%, google 2%, organic 2%). Agent-captured 2026-07-17, cropped to the widget region. No PII on this page (aggregate chart data only) so dom-sanitize had nothing to replace on this specific raw; no cursor -- read-only chart view.",
+      "note": "Sales > Analytics > Overview, Lumon Fresh brand, Monthly View. DOM FILL 2026-08-18 (reshoot, same fix applied as about-sales-analytics/sales-analytics-leads-by-source.png -- Max flagged the empty/near-empty \"No Data\" donut as unacceptable wherever it appears): previous capture showed No Data 63 (97%), google 1 (2%), organic 1 (2%) -- still dominated by the empty state. Cloned the real donut <path> and table <tr> markup and replaced with a synthetic-but-plausible source breakdown: google 9 (36%), organic 6 (24%), direct 4 (16%), referral 3 (12%), paid social 2 (8%), email 1 (4%) -- 25 leads total, percentages sum to 100%, arithmetically consistent. Colors are the app's real semantic accent CSS vars (blue/green/orange/purple/yellow/red -accent), arc paths computed with the same d3-arc geometry (center, outer/inner radius) read off the live single-slice path. Deliberately different numbers from the about-sales-analytics twin so the two articles don't show identical fake data. NOT real captured data -- client-side DOM manipulation only, nothing written to staging DB. No cursor -- read-only chart view.",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 1
     }
   }
 }

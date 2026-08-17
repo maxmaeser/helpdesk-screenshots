@@ -38,10 +38,10 @@
         "type": "arrow"
       },
       "status": "proposed",
-      "note": "",
+      "note": "Sales > Analytics > Overview, Lumon Fresh brand, Monthly View. DOM FILL 2026-08-18: live widget showed 100% \"No Data\" (empty donut, Max flagged this as unacceptable for the article -- see review-site flag \"dom manipulation to show actual data, not just an empty donut chart\"). Cloned the real donut <path> and table <tr> markup and replaced with a synthetic-but-plausible source breakdown: google 7 (35%), organic 5 (25%), direct 3 (15%), referral 2 (10%), paid social 2 (10%), email 1 (5%) -- 20 leads total, percentages sum to 100%, arithmetically consistent. Colors are the app's real semantic accent CSS vars (blue/green/orange/purple/yellow/red -accent), arc paths computed with the same d3-arc geometry (center, outer/inner radius) read off the live single-slice path. NOT real captured data -- client-side DOM manipulation only, nothing written to staging DB. No cursor -- read-only chart view.",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 1
     },
     "sales-analytics-overview-top.png": {
       "cursor": {
