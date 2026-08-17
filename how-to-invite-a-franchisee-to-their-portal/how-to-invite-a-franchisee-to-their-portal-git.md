@@ -51,7 +51,7 @@ If you have a batch of franchisees who were imported but never invited, open the
 
 They get an email titled "Your Invite to the [Brand] Franchisee Dashboard." Opening it takes them straight to account creation with their email already filled in.
 
-From there they set a name, phone number, and password, verify their email, and land on their portal Home already logged in. The full walkthrough is in *[Creating Your Account]*.
+From there they set a name, phone number, and password, verify their email, and land on their portal Home already logged in.
 
 ### Not the same as dashboard team invites
 
