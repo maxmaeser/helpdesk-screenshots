@@ -286,8 +286,11 @@ HIGHLIGHT_STYLE = {
         "tint": (0.9948, 0.9983, 1.0070),
         "light_dir": (-0.70710678118, -0.70710678118),
         "bevel_light": 0.28,    "bevel_dark": 0.14,
-        "shadow_dy1": 6.0,  "shadow_sig1": 20.0, "shadow_a1": 0.22,
-        "shadow_dy2": 2.0,  "shadow_sig2":  4.0, "shadow_a2": 0.12,
+        # Deliberately shallow (Max, 2026-08-17): the lens must read as a thin
+        # flat pane of glass sitting ON the page, not as a slab lifted off it.
+        # Mirrors SHADOW_* in lens-recipe.ts — the two are ONE recipe.
+        "shadow_dy1": 2.0,  "shadow_sig1":  8.0, "shadow_a1": 0.10,
+        "shadow_dy2": 1.0,  "shadow_sig2":  2.0, "shadow_a2": 0.08,
     },
 }
 
@@ -852,7 +855,7 @@ def draw_lens_highlight(img, rect, zoom=None, radius=None, refraction=None):
 
     Two passes, straight (un-premultiplied) alpha, composited base -> shadow
     -> lens:
-      A. an analytic two-lobe drop shadow over rect ⊕ 66px (two Gaussians of
+      A. an analytic two-lobe drop shadow over rect ⊕ 26px (two Gaussians of
          the *outside* distance of the down-shifted rounded rect — no blur
          kernel anywhere, because a blur pass is the single largest source of
          drift against the browser preview);
