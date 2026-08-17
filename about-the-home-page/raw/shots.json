@@ -1,0 +1,41 @@
+{
+  "revision": 1,
+  "shots": {
+    "home-overview.png": {
+      "crop": [0, 0, 3360, 2100],
+      "cursor": { "pos": [700, 803], "type": "hand" },
+      "status": "proposed",
+      "note": "Agent-captured (session.js + routes.js BASE route, brand dashboard, All Selected brand view): Home > Overview tab, the default landing page. Shows the four-tab bar (Overview/Tasks/Chat/Calendar), the brand selector strip across the top, the notification inbox on the left with mixed notification types (chat mentions, invite-approval requests) each carrying a quick action link (View Chat / Review request), and the calendar sidebar on the right with a mini-month picker, a Connect Calendar prompt, and a populated upcoming-events list grouped by day. Hand cursor on the first notification's 'View Chat' quick action (clickable text, per cursor heuristic). dom-sanitize ran before the shot: 3 internal @franchisesystems.ai emails were masked to @example.com and 6 relative-time chips were freshened (1 day ago / 2 weeks ago / about 8 weeks ago) so the shot doesn't look stale. Covers the intro paragraph, the tab list, and the entire Overview tab section (inbox description, quick actions, calendar sidebar with connect-calendar prompt).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 1
+    },
+    "home-tasks.png": {
+      "crop": [0, 0, 3360, 2100],
+      "cursor": { "pos": [3189, 548], "type": "arrow" },
+      "status": "proposed",
+      "note": "Agent-captured: Home > Tasks tab. A 'Welcome to Tasks' product-tour modal appeared on first visit and a tour-interaction-blocker overlay intercepted clicks; both were dismissed via a direct DOM .click() on 'Maybe Later' (Playwright's actionability check kept finding the transparent blocker mid-transition) before waiting ~4s for the table to hydrate past its loading skeleton. Shows the real task table (Total Tasks: 1866) with Task/Linked To/Status/Responsible/Due Date/Created columns, filter/sort icons, and the '+ Create Task' button. Arrow cursor on 'Create Task' (button, per heuristic). No PII: responsible-party avatars are generic placeholder icons, task titles are generic onboarding-checklist items. Covers the Tasks tab section including the table's column set.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 1
+    },
+    "home-chat.png": {
+      "crop": [0, 0, 3360, 1300],
+      "cursor": { "pos": [926, 645], "type": "hand" },
+      "status": "proposed",
+      "note": "Agent-captured: Home > Chat tab. Honest empty state for this account (All 0 conversations, 'No conversation selected' in the message pane) -- shows the All/Direct/Groups filter row and the two-pane messaging layout described in the article. Hand cursor on the 'Direct' filter tab (clickable text, per heuristic). Cropped to 1300px tall to keep the mostly-empty right pane from dominating the frame while still showing the two-pane structure for context. Seeding a real conversation would improve this shot (show unread badges, an actual message thread, attachment/emoji/voice-message affordances) but was not done to avoid mutating shared staging data -- flagging for Max if a livelier Chat shot is wanted later.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 1
+    },
+    "home-calendar.png": {
+      "crop": [0, 0, 3360, 1900],
+      "cursor": { "pos": [3211, 531], "type": "arrow" },
+      "status": "proposed",
+      "note": "Agent-captured: Home > Calendar tab, Week view (the tab's default). Shows the Month/Week/Day view selector, the (GMT+7:00) Bangkok timezone selector, date-range navigation, and a populated week grid with real events (out-of-office blocks, recurring standups, product-sync meetings). Arrow cursor on 'Create Event' (button, per heuristic). Covers the Calendar tab section (Month/Week/Day + timezone selector + Create Event).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 1
+    }
+  }
+}
