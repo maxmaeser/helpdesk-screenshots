@@ -20,13 +20,17 @@ Every member of your organization has one of two access levels.
 
 **Member**: limited permissions. Members cannot invite other users or manage organization settings. An admin can grant a member specific brand permissions after they accept their invitation. The invitation steps are covered in *[How to Invite Users]*.
 
-You set the access level when you invite someone.
+You set the access level when you invite someone, and you can change it at any time afterward.
 
-You can see it on the Members section of your organization settings, where admins are grouped under **Team Admins** and members are grouped under **Team Members**.
+To view or manage it, click your profile picture at the bottom of the sidebar, select **Settings**, and open the **Members** page under Organization.
 
-To view this, click your profile picture at the bottom of the sidebar, select **Settings**, and open the **Members** section under Organization.
+The Members page lists everyone in your organization in a single list. A search box and a role filter narrow it down.
 
-![Team Admins section on the Members page showing job title chips such as CTO, Intern, and COO next to each name](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/understanding-roles-and-permissions/members-access-levels.png)
+Each row shows a Role control reading **Admin** or **Member**. Use it to change someone's access level.
+
+A kebab menu on each row gives you **View profile** and **Remove from organization**. People you have invited but who have not yet joined show up in a separate Pending invites card below the list, with options to resend or revoke the invite.
+
+![Members page showing the flat member list with each row's Role control reading Admin or Member](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/understanding-roles-and-permissions/members-access-levels.png)
 
 ![Settings tab on a team member's profile panel showing the Brand Permissions matrix with Read, Write, and Chat toggles for each category under a specific brand](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/understanding-roles-and-permissions/member-brand-permissions.png)
 
@@ -34,19 +38,13 @@ To view this, click your profile picture at the bottom of the sidebar, select **
 
 Billing is controlled by its own toggle, not by the access level.
 
-When you invite someone, the **Has Billing Access?** toggle decides whether they can see invoices and manage payment methods.
+When you invite someone, the **Billing access** toggle in the invite form decides whether they can see invoices and manage payment methods.
+
+You can also turn billing access on or off later from the **Billing** toggle on their row on the Members page.
 
 A person can be an Admin without billing access, or a Member with it. The two settings are independent.
 
 ![Invite members modal with the Billing Access toggle switched on, showing the "Can see invoices and manage payment methods" description](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/understanding-roles-and-permissions/invite-billing-access.png)
-
-### The job title next to a name is not a role
-
-On the Members list, each person shows a small chip next to their name, such as "COO" or "Manager".
-
-This is a free-text job title. It is a label only.
-
-It has no effect on permissions or access. Do not treat it as a role.
 
 ### Brand team and sales assignability
 
