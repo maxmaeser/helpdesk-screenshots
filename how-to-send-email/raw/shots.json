@@ -1,5 +1,5 @@
 {
-  "revision": 1,
+  "revision": 2,
   "shots": {
     "send-email-connect-domain.png": {
       "cursor": {
@@ -12,6 +12,29 @@
       "highlights": [],
       "status": "proposed",
       "note": "Reshoot 2026-08-14: UI drift -- card retitled from 'Domain Management' to 'Domains & sending', button retitled from '+ Connect domain' (old capitalization/wording) to match current chrome. Domains & sending card showing the + Connect domain button and the existing verified domain (email-testing.franchiseapplicantportal.com, Verified badge, Manage button). Agent-captured 2026-08-14, brand dashboard, 2x, dom-sanitize freshenDates:false. Cursor (arrow) on the Connect domain button, matching the original shot's convention.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "send-email-deploy-button.png": {
+      "cursor": {
+        "pos": [
+          700,
+          180
+        ],
+        "type": "arrow"
+      },
+      "highlights": [],
+      "status": "proposed",
+      "note": "Recaptured 2026-08-17: this shot had no raw source (studio-editability gap -- an earlier agent registered only send-email-connect-domain.png in shots.json even though 3 finals exist). Email builder toolbar (brand: Lumon Fresh, template: Welcome Email 1) with Deploy dropdown open showing the Send as Newsletter menu item, Blocks/Theme/Details tabs visible below. Agent-captured, brand dashboard, 2x, dom-sanitize freshenDates:false. Cursor (arrow) on the Send as Newsletter option, matching the original shot's convention.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "send-email-newsletter-schedule.png": {
+      "highlights": [],
+      "status": "proposed",
+      "note": "Recaptured 2026-08-17: this shot had no raw source (studio-editability gap -- an earlier agent registered only send-email-connect-domain.png in shots.json even though 3 finals exist). Deploy Newsletter wizard Review step (brand: Lumon Fresh, template: Welcome Email 1, domain email-testing.franchiseapplicantportal.com), reached via Deploy -> Send as Newsletter -> Configure -> Purpose -> Schedule -> Review, backed out without sending. Agent-captured, brand dashboard, 2x, dom-sanitize freshenDates:false. No cursor -- result/review state, matches original convention. Data drift from the original: Delivery Estimate shows 0 emails / 0 minutes and Send Newsletter is disabled because every audience segment on this staging brand currently resolves to 0 valid recipients (verified across 6 segments); the original final showed 48 emails from different historical staging data. This is a test-data limitation, not a UI regression.",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0
