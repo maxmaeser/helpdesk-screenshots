@@ -1,6 +1,13 @@
 {
-  "revision": 60,
+  "revision": 61,
   "shots": {
+    "brand-team-role-list-v2.png": {
+      "status": "proposed",
+      "note": "INTENT CHANGED 2026-08-17: the RACI role-assignment dropdown this shot used to show is REMOVED from the live Brand Team page (confirmed by audit; article prose already rewritten without RACI). Replaced with the CURRENT Brand > Team & Access page: Brand team member rows with Google-icon (Sign in with Google) badges and status tags ('Auto Assigned' green / 'Manually Assignable' amber) on the rows that carry them, followed by the new 'Sales assignability' section (description + Automatic/Manual/Off legend, first row Dennis Teser with its Automatic/Manual/Off toggle visible). Brand > Team & Access (/settings/brands, Team & Access tab). Cropped to just the two cards (no app chrome/sidebar/brand-name header), matching the old shot's tight framing. Agent-captured, dom-sanitize run (1 email replaced). No cursor -- read-only orientation state. Old note superseded: 'View your brand's team and assign each member a role... roles fill RACI slots' no longer applies to this page; -git.md caption/prose in the same folder updated in the same pass (VPS single-committer checked via git fetch first, no upstream commits pending).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 1
+    },
     "members-access-levels.png": {
       "crop": [
         0,

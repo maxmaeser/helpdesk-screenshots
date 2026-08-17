@@ -1,5 +1,5 @@
 {
-  "revision": 1,
+  "revision": 2,
   "shots": {
     "locations-overview.png": {
       "crop": [460, 0, 2900, 1300],
@@ -10,12 +10,12 @@
       "rev": 0
     },
     "locations-overview-v2.png": {
-      "crop": [460, 0, 2900, 1300],
+      "crop": [460, 0, 2900, 1480],
       "status": "proposed",
-      "note": "Reshoot of locations-overview.png (2026-07-17): hid the 'Staging Test Brand' chip (display:none) that was visible in the brand selector row in v1. Operations > Locations, Lumon Fresh brand selected, no other changes. Same route/UI state/crop as v1. Agent-captured, 1680x1050 CSS viewport, 2x, dom-sanitize applied (freshenDates:false, no dates in frame). No cursor -- read-only orientation state.",
+      "note": "Reshoot 2026-08-17: new stat-summary bar (Total/Open Locations/Under Construction/Planned Locations/Closed/Inactive Units) between the brand-chip row and search; old 'Single Brand Selector' badge and 'Show Analytics' button are gone platform-wide. Operations > Locations, Lumon Fresh brand selected, 22 locations (was 20, live data grew). Crop height extended (1300->1480) to fit the new stat tiles. 'Staging Test Brand' chip and Knowledge Base sidebar item hidden; carried forward the Store ID/typo DOM-swap fixes ('testst'->'TC4487215', 'Lumon Floor Arlignton'->'Arlington') and the joke-entity-name swap. Agent-captured, 1680x1050 CSS viewport, 2x, dom-sanitize applied. No cursor -- read-only orientation state.",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 1
     },
     "locations-add.png": {
       "crop": [948, 572, 1460, 956],
@@ -44,10 +44,10 @@
     "locations-bulk-actions-v2.png": {
       "crop": [460, 0, 2900, 2100],
       "status": "proposed",
-      "note": "Reshoot of locations-bulk-actions.png (2026-07-17): hid the 'Staging Test Brand' chip; DOM-swapped joke Franchisee Entity names to plausible LLCs ('Bill Smith's Entity'->'Ridgeline Retail Group LLC', 'Martins Likes To Move It Dance ...'->'Meridian Hospitality Partners LLC', 'Joshua Radin-Grant's Entity'->'Radin-Grant Holdings LLC', 'Swiss Sweetie's Candies Inc.'->'Alpine Confections LLC', 'Fred's Thai Massage LLC'->'Whitman Restaurant Group LLC'); also carried the v1 'Lumon Floor Arlignton'->'Arlington' typo fix since that row falls in this taller crop. Same route/UI state/crop/selection (Tulip Canteen + Lumon Sports Castle rows checked) as v1. Agent-captured, dom-sanitize applied. No cursor.",
+      "note": "Reshoot 2026-08-17: new stat-summary bar visible above the toolbar (same platform change as locations-overview-v2.png); 'Single Brand Selector'/'Show Analytics' gone. Two locations selected (Tulip Canteen, LF - Redstone -- row order shifted vs v1 since Lumon Sports Castle moved down the list; toolbar shows 'Selected: 2 of 22' + 2 Locations selected / Set Location Status (2) / Assign To Franchisee Entity (2) / Assign To Deal Zone (2) / More). 'Staging Test Brand' chip and Knowledge Base hidden; carried forward the joke-entity-name swap and Store ID/typo fixes. Agent-captured, dom-sanitize applied. No cursor -- selection state, the toolbar tells the story.",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 1
     },
     "locations-detail.png": {
       "crop": [500, 0, 2860, 1500],
@@ -76,10 +76,10 @@
     "locations-map-v2.png": {
       "crop": [460, 0, 2900, 2100],
       "status": "proposed",
-      "note": "Reshoot of locations-map.png (2026-07-17): hid the 'Staging Test Brand' chip; DOM-swapped the same joke Franchisee Entity names as locations-bulk-actions-v2.png (visible in the map side panel, e.g. 'Bill Smith's Entity'->'Ridgeline Retail Group LLC'). Same route/UI state/crop/selection (Tulip Canteen + Lumon Sports Castle rows checked, Map view) as v1. Agent-captured, dom-sanitize applied. No cursor -- read-only view.",
+      "note": "Reshoot 2026-08-17: new stat-summary bar visible above the toolbar (same platform change as locations-overview-v2.png); 'Single Brand Selector'/'Show Analytics' gone. Map view, same 2-location selection carried over from locations-bulk-actions-v2.png (Tulip Canteen, LF - Redstone), split list/map layout with Mapbox pins and cluster counts. 'Staging Test Brand' chip and Knowledge Base hidden; joke-entity-name swap and typo fixes carried forward. Agent-captured, dom-sanitize applied. No cursor -- read-only view.",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 1
     }
   }
 }

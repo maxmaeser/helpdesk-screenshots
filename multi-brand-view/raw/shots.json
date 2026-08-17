@@ -1,5 +1,5 @@
 {
-  "revision": 81,
+  "revision": 82,
   "shots": {
     "multi-brand-selector-raw.png": {
       "cursor": {
@@ -91,14 +91,11 @@
     },
     "single-brand-selector-raw.png": {
       "highlights": [],
-      "status": "approved",
-      "note": "Single-brand section example: Settings > Brands (Brand Settings page), section=brand-workspace (single-select per code). Shows the active/highlighted brand chip, sibling brand chips, Other Brands dropdown trigger, and the 'Single Brand Selector' tag. Agent-captured 2026-07-17 at 1680x200 CSS clip (cuts before a 'Missing required information' CAN-SPAM warning banner on this seed brand, unrelated to the article topic), 2x, dom-sanitize with freshenDates:false (sanitized 2 emails elsewhere in the settings sidebar/page chrome). Blemish fix: the default active brand was named 'Staging Test Brand' (seed placeholder) -- renamed via DOM text-node swap to 'Saperavi Grill' (thematically consistent with the other Georgian-food seed brand names already visible: Lumon Fresh, Kharcho Kings) to avoid featuring an obvious test-data label as the article's example brand. No feature/data fabricated, only the display label. No cursor -- read-only orientation state.",
-      "lastTouchedBy": "max",
+      "status": "proposed",
+      "note": "RESHOOT 2026-08-17 (Thursday's raw was the wrong page -- Brand Profile chrome with no brand selector in frame -- reverted by the salvage agent). Corrected: Settings > Brands (Brand Settings page, /settings/brands), section=brand-workspace (single-select). The sibling-brand-chip bar and the 'Single Brand Selector' tag badge no longer exist platform-wide -- the live UI is now a single dropdown-style header ('Saperavi Grill' with a chevron) under an 'All changes saved' status pill. Agent-captured at 1680x200 CSS clip (same crop convention as before, cuts above the 'Missing required information' CAN-SPAM banner), 2x, dom-sanitize (1 email replaced). Blemish fix carried forward: the seed brand name 'Staging Test Brand' renamed via DOM text-node swap to 'Saperavi Grill' (thematically consistent with Lumon Fresh, Kharcho Kings). No cursor -- read-only orientation state, dropdown shown closed to match the file's role as the static single-brand reference (the open-dropdown interaction is out of scope for this shot).",
+      "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 8,
-      "renderedRev": 8,
-      "updatedAt": 1786691029137,
-      "renderedAt": 1786691028788
+      "rev": 9
     }
   }
 }

@@ -1,5 +1,5 @@
 {
-  "revision": 0,
+  "revision": 1,
   "shots": {
     "definitions-audiences-table.png": {
       "crop": [0, 0, 3360, 1040],
@@ -34,10 +34,10 @@
     },
     "definitions-sequences-tab-v2.png": {
       "status": "proposed",
-      "note": "Reshoot of definitions-sequences-tab.png (2026-07-17) to hide the 'Knowledge Base' sidebar item (staging-only, never in production). Marketing > Workflows (route /marketing/workflows), Sequences tab, Lumon Fresh selected, one sequence row. Read-only capture, same as v1: did not open the write-mode builder canvas. Staging Test Brand chip hidden; sequence title text-node-renamed from the seed's generic 'Test Workflow' to 'Welcome Sequence' (cosmetic rename only, no functional change, no data written). dom-sanitize ran with freshenDates:false (no relative-date copy on this page). Identical route/crop/data to the superseded v1.",
+      "note": "Reshoot 2026-08-17: the 'Single Brand Selector' tag badge was removed platform-wide (no longer exists anywhere in the live UI, so nothing to hide/suppress). Marketing > Workflows (route /marketing/workflows), Sequences tab, Lumon Fresh selected, one sequence row. Same as prior version otherwise: read-only capture (did not open the write-mode builder canvas), Knowledge Base sidebar item hidden (staging-only), sequence title text-node-renamed from the seed's generic 'Test Workflow' to 'Welcome Sequence' (cosmetic rename only, no functional change). dom-sanitize ran with freshenDates:false (no relative-date copy on this page). Identical route/crop/data to the prior version.",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 1
     }
   }
 }

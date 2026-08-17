@@ -1,5 +1,5 @@
 {
-  "revision": 1,
+  "revision": 2,
   "shots": {
     "fdd-toggle-menu.png": {
       "status": "superseded",
@@ -30,11 +30,15 @@
       "rev": 0
     },
     "fdd-bulk-assign-states.png": {
+      "cursor": {
+        "pos": [1188, 2024],
+        "type": "arrow"
+      },
       "status": "proposed",
-      "note": "Sales > Territories (Compliance tab), Lumon Fresh: Texas + Colorado checked, bulk action bar showing '2 selected / Set Status / Assign FDD'. Covers 'Assigning FDDs to states'. dom-sanitize, 'Staging Test Brand' chip hidden. Cursor: arrow on 'Assign FDD'.",
+      "note": "Reshoot 2026-08-17: States panel restructured -- Country selector removed; 'Active first' sort plus 'All states'/'Any status'/'Any FDD' filter dropdowns now sit above 'Select All'. Sales > Territories (Compliance tab), Lumon Fresh: Texas + Colorado checked (both 'Franchising'), bulk action bar showing '2 selected / Set Status / Assign FDD'. Covers 'Assigning FDDs to states'. Captured at 700x1050 CSS viewport, 2x. Knowledge Base sidebar hidden, dom-sanitize run (freshenDates:false). Cursor: arrow on 'Assign FDD'.",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 1
     },
     "fdd-state-filing-status.png": {
       "status": "proposed",

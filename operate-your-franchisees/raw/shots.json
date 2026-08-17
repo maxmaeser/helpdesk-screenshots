@@ -1,5 +1,5 @@
 {
-  "revision": 2,
+  "revision": 3,
   "shots": {
     "operate-your-franchisees-overview.png": {
       "cursor": null,
@@ -20,10 +20,10 @@
     "operate-your-franchisees-overview-v3.png": {
       "cursor": null,
       "status": "proposed",
-      "note": "Reshoot 2026-07-17 to hide the 'Staging Test Brand' chip in the top brand strip and the 'Knowledge Base' sidebar item (both env-gated, staging-only, missed on prior passes) via page.evaluate display:none, applied and re-applied defensively around two dom-sanitize passes and a tour-modal dismissal ('Operations: Locations' tour reappeared after the brand switch and was dismissed via its own 'Maybe Later' button, not Escape). Kept both earlier fixes: row 1 (Tulip Canteen) Store ID 'TC4487215', 'Lumon Floor Arlington' typo fix. Hit and recovered from a brand-switch race condition: the DataTable can render briefly on stale/loading rows right after switching brands, so the script polls body text for 'Tulip Canteen' + 'Total Locations: 20' before proceeding, verified true before this capture. Same route (Operations > Locations, brand=11111111-1111-1111-1111-111111111111 i.e. Lumon Fresh), viewport (1440x975 CSS, 2x), dom-sanitize config (custom rule for 09887112344), Missing Booking Profile hide. Verified via innerText immediately before screenshot: no 'Staging Test Brand', no 'Knowledge Base', no 'testst', no 'Arlignton', no tour modal text, and 'Tulip Canteen' / 'TC4487215' / 'Lumon Floor Arlington' all present.",
+      "note": "Reshoot 2026-08-17: new stat-tile row (Total Locations/Open Locations/Under Construction/Planned Locations/Closed/Inactive Units) between the brand-chip row and the search bar; the old 'Show Analytics' button and selector links are gone platform-wide. Operations > Locations, Lumon Fresh brand, Total Locations now 22 (live data grew from 20). Kept the established fixes: 'Staging Test Brand' chip hidden, Knowledge Base sidebar item hidden, row 1 (Tulip Canteen) Store ID 'testst'->'TC4487215', 'Lumon Floor Arlignton'->'Arlington' typo fix, custom sanitize rule for the non-NANP staging number 09887112344, tour-modal dismissal via 'Maybe Later'. Same route (Operations > Locations, Lumon Fresh), default 1680x1050 CSS viewport, 2x, dom-sanitize. Verified via innerText before screenshot: no 'Staging Test Brand', no 'Knowledge Base', no 'testst', no 'Arlignton', no tour modal text, stat tiles present.",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 1
     }
   }
 }

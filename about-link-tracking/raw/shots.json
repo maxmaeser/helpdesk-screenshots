@@ -1,23 +1,23 @@
 {
-  "revision": 0,
+  "revision": 1,
   "shots": {
     "link-tracking-links.png": {
       "status": "proposed",
-      "note": "",
+      "note": "Reshoot 2026-08-17: Studio sidebar rename (Portal Editor -> Applicant Portal, FranDev Portal -> Funnel, Slides -> Sliders) and platform-wide removal of the 'Single Brand Selector' tag badge. Studio > Link Tracking, Links tab, Lumon Fresh brand. 9 links now (was 5, live data grew). Agent-captured at 2200x1300 CSS viewport, 2x, clipped to content bottom. Knowledge Base sidebar item hidden (staging-only). dom-sanitize run (0 replacements). No cursor -- read-only table view.",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 1
     },
     "link-tracking-actions.png": {
       "cursor": {
-        "pos": [4170, 318],
+        "pos": [4192, 522],
         "type": "arrow"
       },
       "status": "proposed",
-      "note": "",
+      "note": "Reshoot 2026-08-17: same Studio sidebar renames as link-tracking-links.png. Links tab, Actions dropdown open showing 'Create Link'. Cursor: arrow on 'Create Link'. Knowledge Base hidden, dom-sanitize run.",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 1
     },
     "link-tracking-create.png": {
       "status": "proposed",
@@ -28,32 +28,32 @@
     },
     "link-tracking-copy.png": {
       "cursor": {
-        "pos": [1148, 155],
+        "pos": [590, 740],
         "type": "hand"
       },
       "status": "proposed",
-      "note": "",
+      "note": "Reshoot 2026-08-17: same Studio sidebar renames. Links tab, row 2 (Portal Sign Up) hovered -- link/copy affordance. Cursor: hand on the row's link icon. Knowledge Base hidden, dom-sanitize run.",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 1
     },
     "link-tracking-qr-templates.png": {
       "cursor": {
-        "pos": [800, 130],
+        "pos": [587, 436],
         "type": "arrow"
       },
       "status": "proposed",
-      "note": "",
+      "note": "Reshoot 2026-08-17: same Studio sidebar renames. QR Templates tab, Lumon Fresh, 2 templates (Brand Default, CHECK). Cursor: arrow near Search Templates. Knowledge Base hidden.",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 1
     },
     "link-tracking-analytics.png": {
       "status": "proposed",
-      "note": "",
+      "note": "Reshoot 2026-08-17: same Studio sidebar renames. Analytics tab, Lumon Fresh: Total Clicks 10, Unique Visitors 5, Total Links 9, Avg Clicks/Link 1, Total Clicks Over Time line chart. Knowledge Base hidden, dom-sanitize run. No cursor -- read-only view.",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 1
     },
     "link-tracking-detail-panel.png": {
       "status": "proposed",
