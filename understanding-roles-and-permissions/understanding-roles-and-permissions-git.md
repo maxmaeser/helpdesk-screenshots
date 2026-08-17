@@ -2,13 +2,13 @@ Franchise Systems Ai (FS Ai) controls what each team member can see and do throu
 
 This article explains what those settings are, what each one controls, and how access is assigned.
 
-### The two places "roles" live
+### Two different settings, two different jobs
 
-The word "role" shows up in two different parts of FS Ai, and they do completely different jobs.
+Organization access level and brand team membership are separate things in FS Ai, and they do different jobs.
 
 **Organization access level**: this is the real permission setting. It decides what a person can see and do across the platform.
 
-**Brand team role**: this labels what a person does on a brand's team. It fills slots in project templates. It does not grant or restrict any access.
+**Brand team membership**: this shows who is on a brand's team, and their sales assignability for that brand. It does not grant or restrict any platform access.
 
 Keep these separate. Only the organization access level changes a person's permissions.
 
@@ -48,23 +48,17 @@ This is a free-text job title. It is a label only.
 
 It has no effect on permissions or access. Do not treat it as a role.
 
-### Brand team roles are for project templates
+### Brand team and sales assignability
 
 Open the **Team & Access** section under Brand in your settings and you will see a Brand Team list.
 
 ![Brand settings sidebar with Team & Access highlighted under the Brand group, landing on the Brand Team list](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/understanding-roles-and-permissions/team-access-nav.png)
 
-Each member here has a role dropdown that starts on **No role**.
-
-The other options include Brand Marketing Manager, Construction Manager, Design / Architecture Lead, Director of Operations, Finance Liaison, Legal / Franchise Compliance, PR / Communications Lead, Real Estate Manager, Training Coordinator, and VP Franchise Development.
+Each member's row shows a status tag, **Auto Assigned** or **Manually Assignable**, based on their sales assignability setting for that brand.
 
 ![Brand Team list on the Team & Access page showing member rows with Google sign-in badges and Auto Assigned / Manually Assignable status tags, plus the Sales assignability section with its Automatic / Manual / Off toggle](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/understanding-roles-and-permissions/brand-team-role-list-v2.png)
 
-These roles fill RACI slots when you deploy project templates. They decide who gets assigned to which part of a project.
-
-They do not control what a person can see or do in the platform.
-
-Assigning someone the Finance Liaison role, for example, does not give them billing access or any other permission. It only assigns them to finance slots in projects.
+The page also has a Sales assignability section showing whether each member is set to Automatic, Manual, or Off for that brand. This is the same setting a member chooses for themselves from their own profile. See *[Auto and Manual Lead Assignment]* for what each option controls.
 
 There is no invite button in this section. All invitations happen at the organization level.
 
