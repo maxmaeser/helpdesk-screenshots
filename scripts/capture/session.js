@@ -95,9 +95,9 @@ const SURFACES = {
       await page.goto(baseUrl, { waitUntil: 'domcontentloaded' });
       await page.waitForTimeout(3000);
       await page.getByPlaceholder('Email address').fill(email);
-      await page.getByLabel('Password').fill(password);
+      await page.locator('input[type="password"]').fill(password);
       await page.waitForTimeout(400);
-      await page.getByRole('button', { name: 'Login' }).click();
+      await page.getByRole('button', { name: /login/i }).click();
       await page.waitForTimeout(6000);
     },
   },

@@ -1,12 +1,15 @@
 {
-  "revision": 0,
+  "revision": 2,
   "shots": {
     "assets-collection.png": {
       "status": "proposed",
       "note": "",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 1,
+      "renderedRev": 1,
+      "updatedAt": 1787033751148,
+      "renderedAt": 1787033816329
     },
     "assets-file-detail.png": {
       "cursor": {

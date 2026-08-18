@@ -1,5 +1,5 @@
 {
-  "revision": 0,
+  "revision": 2,
   "shots": {
     "team-add-member.png": {
       "cursor": {
@@ -20,7 +20,10 @@
       "note": "",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 1,
+      "renderedRev": 1,
+      "updatedAt": 1787033751135,
+      "renderedAt": 1787033813569
     },
     "team-role-controls.png": {
       "cursor": {
