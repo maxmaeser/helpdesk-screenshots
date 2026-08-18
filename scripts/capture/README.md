@@ -11,8 +11,10 @@ and declarative shot specs are Phase 3 (see the capture-library proposal).
 |---|---|
 | `session.js` | Log in once, persist `storageState`, hand back an authenticated 2x Playwright context. CLI: `verify` / `refresh` / `info`. |
 | `routes.brand.json` | Generated brand-dashboard route map (name -> path/params/static), sourced from fsai-codebase `routes.ts`. |
-| `routes.js` | `resolve(name, params)` -> absolute staging URL, `list({ staticOnly })` -> route names. CLI: `list` / `resolve`. |
+| `routes.portal.json` | Generated franchisee/applicant-portal route map, sourced from fsai-codebase `apps/applicant-portal/src/utils/routes.ts`. |
+| `routes.js` | `resolve(name, params)` -> absolute staging URL, `list({ staticOnly })` -> route names (brand). Same pair for the portal map: `resolvePortal(name, params)`, `listPortal({ staticOnly })`. CLI: `list` / `resolve`, both accepting `--portal`. |
 | `gen-routes.mjs` | Regenerates `routes.brand.json` from the live fsai-codebase source via `gh api`. Run when the app's route table changes. |
+| `gen-routes-portal.mjs` | Regenerates `routes.portal.json` the same way, from `apps/applicant-portal/src/utils/routes.ts`. |
 
 ## Routes usage
 
@@ -143,6 +145,11 @@ Other selectors already proven stable on the brand dashboard:
 ## Not done yet (Phase 3)
 
 `index.js` (runner), `actions.js` (click/fill/select verbs), `framing.js` (clip
-math + viewport growth). `routes.brand.json` shipped in Phase 2 (brand
-dashboard only — there is no `routes.portal.json`; the franchisee/applicant
-portal has no equivalent generated route table yet).
+math + viewport growth). `routes.brand.json` (brand dashboard) and
+`routes.portal.json` (franchisee/applicant portal) both shipped in Phase 2.
+Portal panel/detail views (Projects, Vendors) are query-param overlays, not
+routes — see `routes.portal.json`'s `_meta.note` and the brand-dashboard
+"Known route gotcha" section above for the analog. No `storageState.portal.json`
+exists yet in `~/.config/fsai-capture/` — the portal auth contract and creds
+are wired in `session.js`/`login.env`, but no agent has run
+`node session.js refresh portal` yet to produce the persisted state file.

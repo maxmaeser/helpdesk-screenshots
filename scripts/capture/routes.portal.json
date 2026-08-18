@@ -1,0 +1,260 @@
+{
+  "_meta": {
+    "source": {
+      "repo": "franchiseai/fsai",
+      "path": "apps/applicant-portal/src/utils/routes.ts"
+    },
+    "sourceCommitSha": "672c8c02d530cc0634dc53c0afb097937a7f05c9",
+    "fetchedAt": "2026-08-18",
+    "note": "Panel/detail views for Projects and Vendors are query-param overlays (searchParams.PROJECT_ID / VENDOR_ID / TASK_ID etc. in usePanels.ts), not routes: they do not appear as separate entries here. See README.md \"Known route gotcha\" for the brand-dashboard analog."
+  },
+  "BASE": {
+    "path": "/",
+    "params": [],
+    "static": true
+  },
+  "MY_LOCATIONS": {
+    "path": "/my-locations",
+    "params": [],
+    "static": true
+  },
+  "LOCATION_OVERVIEW": {
+    "path": "/my-locations/:locationId",
+    "params": [
+      "locationId"
+    ],
+    "static": false
+  },
+  "SIGNUP": {
+    "path": "/signup",
+    "params": [],
+    "static": true
+  },
+  "APPLY": {
+    "path": "/apply",
+    "params": [],
+    "static": true
+  },
+  "SIGNUP_CONFIRM_EMAIL": {
+    "path": "/signup/confirm-email",
+    "params": [],
+    "static": true
+  },
+  "COMPLETE_PROFILE": {
+    "path": "/complete-profile",
+    "params": [],
+    "static": true
+  },
+  "FRANCHISEE_SIGNUP": {
+    "path": "/franchisees/signup",
+    "params": [],
+    "static": true
+  },
+  "LOGIN": {
+    "path": "/login",
+    "params": [],
+    "static": true
+  },
+  "PUBLIC_CALL_BOOKING": {
+    "path": "/book/:profileName",
+    "params": [
+      "profileName"
+    ],
+    "static": false
+  },
+  "LINKED_SIGNATURE": {
+    "path": "/linked-sign",
+    "params": [],
+    "static": true
+  },
+  "LINKED_FDD_SIGNATURE": {
+    "path": "/fdd-sign",
+    "params": [],
+    "static": true
+  },
+  "FORGOT_PASSWORD": {
+    "path": "/forgot-password",
+    "params": [],
+    "static": true
+  },
+  "RESET_PASSWORD": {
+    "path": "/reset-password",
+    "params": [],
+    "static": true
+  },
+  "UNSUBSCRIBE": {
+    "path": "/unsubscribe/:token",
+    "params": [
+      "token"
+    ],
+    "static": false
+  },
+  "APPLICATION": {
+    "path": "/application",
+    "params": [],
+    "static": true
+  },
+  "APPLICATION_STEP": {
+    "path": "/application/steps/:stepId",
+    "params": [
+      "stepId"
+    ],
+    "static": false
+  },
+  "BRAND_STORY": {
+    "path": "/brand-story",
+    "params": [],
+    "static": true
+  },
+  "DOCUMENTS": {
+    "path": "/documents",
+    "params": [],
+    "static": true
+  },
+  "CHAT": {
+    "path": "/chat",
+    "params": [],
+    "static": true
+  },
+  "DEAL": {
+    "path": "/deal",
+    "params": [],
+    "static": true
+  },
+  "TEAM": {
+    "path": "/team",
+    "params": [],
+    "static": true
+  },
+  "VENDORS": {
+    "path": "/vendors",
+    "params": [],
+    "static": true
+  },
+  "ONBOARDING_PORTAL_STEP": {
+    "path": "/onboarding/:stepId",
+    "params": [
+      "stepId"
+    ],
+    "static": false
+  },
+  "BRAND_OVERVIEW": {
+    "path": "/brand-overview",
+    "params": [],
+    "static": true
+  },
+  "BRAND_FEED_POST": {
+    "path": "/brand-overview/feed/:articleSlug",
+    "params": [
+      "articleSlug"
+    ],
+    "static": false
+  },
+  "ACCOUNT_SETTINGS": {
+    "path": "/settings/account",
+    "params": [],
+    "static": true
+  },
+  "MANUALS": {
+    "path": "/manuals",
+    "params": [],
+    "static": true
+  },
+  "MANUAL_CATEGORY": {
+    "path": "/manuals/c/:categorySlug",
+    "params": [
+      "categorySlug"
+    ],
+    "static": false
+  },
+  "MANUAL": {
+    "path": "/manuals/:articleSlug",
+    "params": [
+      "articleSlug"
+    ],
+    "static": false
+  },
+  "NOTIFICATION_PREFERENCES": {
+    "path": "/settings/notifications",
+    "params": [],
+    "static": true
+  },
+  "CATALOG": {
+    "path": "/catalog",
+    "params": [],
+    "static": true
+  },
+  "LEARNING": {
+    "path": "/learning",
+    "params": [],
+    "static": true
+  },
+  "COURSE_TAKING": {
+    "path": "/learning/courses/:courseId/take",
+    "params": [
+      "courseId"
+    ],
+    "static": false
+  },
+  "PROJECTS": {
+    "path": "/projects",
+    "params": [],
+    "static": true
+  },
+  "HELPDESK": {
+    "path": "/helpdesk",
+    "params": [],
+    "static": true
+  },
+  "HELPDESK_ARTICLE": {
+    "path": "/helpdesk/:articleSlug",
+    "params": [
+      "articleSlug"
+    ],
+    "static": false
+  },
+  "MY_TICKETS": {
+    "path": "/tickets",
+    "params": [],
+    "static": true
+  },
+  "MY_TICKET_DETAIL": {
+    "path": "/tickets/:ticketId",
+    "params": [
+      "ticketId"
+    ],
+    "static": false
+  },
+  "LINK_REDIRECT": {
+    "path": "/t/:slug",
+    "params": [
+      "slug"
+    ],
+    "static": false
+  },
+  "SOCIALS": {
+    "path": "/socials",
+    "params": [],
+    "static": true
+  },
+  "SOCIALS_POST": {
+    "path": "/socials/posts/:postSetId",
+    "params": [
+      "postSetId"
+    ],
+    "static": false
+  },
+  "SOCIALS_LOCATION_POST": {
+    "path": "/my-locations/:locationId/socials/posts/:postSetId",
+    "params": [
+      "locationId",
+      "postSetId"
+    ],
+    "static": false
+  },
+  "SOCIAL_OAUTH_CALLBACK": {
+    "path": "/social/callback",
+    "params": [],
+    "static": true
+  }
+}
