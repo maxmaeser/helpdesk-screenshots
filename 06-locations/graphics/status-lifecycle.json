@@ -1,5 +1,5 @@
 {
-  "revision": 5,
+  "revision": 13,
   "graphic": {
     "v": 2,
     "background": "white-solid",
@@ -322,9 +322,9 @@
     ],
     "status": "proposed",
     "note": "Five location statuses as the primary lifecycle chain; the status update flow as a quiet aside. Composed by claude.",
-    "lastTouchedBy": "claude",
+    "lastTouchedBy": "max",
     "editing": false,
-    "rev": 4,
-    "updatedAt": 1784542103717
+    "rev": 12,
+    "updatedAt": 1787031410175
   }
 }
