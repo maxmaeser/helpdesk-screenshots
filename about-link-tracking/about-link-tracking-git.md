@@ -23,6 +23,7 @@ If you have not connected one yet, a red banner reads **No domain connected to y
 On the **Links** tab, open **Actions** and choose **Create Link**. Fill in the dialog:
 
 ![link-tracking-actions](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-link-tracking/link-tracking-actions.png)
+
 - **Name**: an internal label for the link, such as "Summer Campaign - Twitter". This is what you see in the table.
 - **Destination URL**: the full web address the link sends people to, such as your applicant portal signup page or your main website.
 - **Slug**: the short piece at the end of the tracking link. FS Ai fills this in from the Name automatically, and you can edit it. It must be unique, so the dialog warns you if the slug is already taken.

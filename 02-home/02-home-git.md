@@ -9,6 +9,7 @@ Home is the snapshot of your business. It surfaces the need to know information 
 - **Tasks**: your active and upcoming tasks, with due dates and status
 
 ![The Your Tasks panel on Home listing active tasks with due dates](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/02-home/home-tasks.png)
+
 - **Quick links**: shortcuts into the rest of the portal
 
 ![The Manuals, Brand Feed, Assets, and Team panels stacked on Home](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/02-home/home-panels.png)

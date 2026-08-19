@@ -5,6 +5,7 @@ Your Franchisee Portal is your central command center. It's where you manage you
 ## What's in the sidebar
 
 ![Full sidebar with all items visible](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/01-welcome-to-your-franchisee-portal/welcome-sidebar.png)
+
 - **Home**: the snapshot of your business
 - **Locations**: the live record of each unit you operate. If you operate one unit, this reads **Location** and opens straight to that location's overview
 - **Manuals**: your brand's playbooks, SOPs, and standards

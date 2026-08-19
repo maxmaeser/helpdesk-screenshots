@@ -13,6 +13,7 @@ Brand organizes its content into tabs, and a tab your brand hasn't filled in hid
 - **Identity**: the visual standards. Full and small logo versions, the color palette with hex values, typography with **Download font kit** buttons, and identity guidelines.
 
 ![Identity tab showing logos and the color palette with hex values](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/09-brand-standards/brand-identity.png)
+
 - **Voice & style**: how the brand speaks. A voice description, numbered voice principles, tone guidance by channel, and written style guidelines with do and don't examples, so the on brand call is clear.
 - **Gallery**: brand mockups.
 
