@@ -1,12 +1,43 @@
 {
-  "revision": 0,
+  "revision": 59,
   "shots": {
     "profile-details-v2.png": {
-      "status": "proposed",
+      "highlights": [
+        {
+          "rect": [
+            73,
+            1149,
+            716,
+            48
+          ],
+          "style": "redact",
+          "lensZoom": 1.6,
+          "lensRadius": 44,
+          "lensRefraction": 65,
+          "color": "blue"
+        },
+        {
+          "rect": [
+            1358,
+            1154,
+            368,
+            39
+          ],
+          "style": "redact",
+          "color": "blue",
+          "lensZoom": 1.6,
+          "lensRadius": 44,
+          "lensRefraction": 65
+        }
+      ],
+      "status": "adjusted",
       "note": "",
-      "lastTouchedBy": "claude",
+      "lastTouchedBy": "max",
       "editing": false,
-      "rev": 0
+      "rev": 14,
+      "renderedRev": 14,
+      "updatedAt": 1787158558815,
+      "renderedAt": 1787158559170
     },
     "profile-menu-settings.png": {
       "cursor": {
@@ -16,11 +47,29 @@
         ],
         "type": "arrow"
       },
-      "status": "proposed",
+      "highlights": [
+        {
+          "rect": [
+            19,
+            151,
+            385,
+            96
+          ],
+          "style": "lens",
+          "lensZoom": 1.1,
+          "lensRadius": 28,
+          "lensRefraction": 65,
+          "color": "blue"
+        }
+      ],
+      "status": "approved",
       "note": "",
-      "lastTouchedBy": "claude",
+      "lastTouchedBy": "max",
       "editing": false,
-      "rev": 0
+      "rev": 10,
+      "renderedRev": 10,
+      "updatedAt": 1787158504439,
+      "renderedAt": 1787158498768
     },
     "profile-organizations.png": {
       "status": "proposed",
