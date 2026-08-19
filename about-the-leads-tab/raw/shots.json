@@ -1,0 +1,19 @@
+{
+  "revision": 1,
+  "shots": {
+    "leads-by-source.png": {
+      "cursor": {
+        "pos": [
+          674,
+          598
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "Sales > Analytics > Leads tab, Circada brand (funnel brand), Weekly View. DOM FILL 2026-08-20: live widget showed 100% \"No Data\" (empty donut, same problem Max flagged on the about-sales-analytics widget -- see that article's raw/shots.json note and the review-site flag \"dom manipulation to show actual data, not just an empty donut chart\"). Replaced the single real donut <path> and single-row table <tr> with a synthetic-but-plausible funnel-source breakdown: Funnel 9 (45%), Website Form 5 (25%), Organic 4 (20%), Referral 2 (10%) -- 20 leads total, percentages sum to 100%, arithmetically consistent. Arc paths computed with the same d3-arc geometry (outer/inner radius read off the live single-slice full-circle path, cumulative angles per source), colors are the app's real semantic accent CSS vars (blue/green/orange/red -accent) read live from the page. NOT real captured data -- client-side DOM manipulation only via Playwright page.evaluate, nothing written to staging DB. Cursor: arrow on the \"Include Organic Leads?\" toggle (same element Max's original raw pointed at; position shifted down vs the old raw because the table is now 4 rows instead of 1).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 1
+    }
+  }
+}
