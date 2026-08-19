@@ -4,7 +4,7 @@ Your franchisee account starts with an invite from your brand. Once you accept i
 
 ## Accepting your invite
 
-Your brand sends an invite email with the subject "Your Invite to the {Brand} Franchisee Dashboard." Open it and click **Accept Invitation**. That takes you to the account creation page with your **Invite Code** and **Email** already filled in and locked. Add your **First Name**, **Last Name**, and **Phone**, then press **Continue**.
+Your brand sends an invite email with the subject "Your Invite to the {Brand} Franchisee Dashboard." Open it and click **Accept Invitation**. That takes you to the account creation page with your **Invite Code** and **Email** already filled in and locked. Add your **First Name**, **Last Name**, and **Phone (Optional)**, then press **Continue**.
 
 ![Account creation form with locked Invite Code and Email fields, plus name and phone fields](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/00-creating-your-account/account-signup-form.png)
 ## Choosing a password

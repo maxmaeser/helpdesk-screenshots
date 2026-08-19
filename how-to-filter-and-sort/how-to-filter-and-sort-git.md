@@ -31,7 +31,7 @@ Filters let you narrow the table to contacts matching specific criteria. You can
 - **Invited At**: date comparisons
 - **LinkedIn URL**: has URL, has no URL
 
-**Available filter fields for leads** include name, email, lead status, assigned rep, tags, created date, city, state, country, and more.
+**Available filter fields for leads** include name, email, status, assigned rep, tags, city, company name, source, created date, and more.
 
 To remove a filter, click the active filter chip and clear it, or remove all filters at once.
 

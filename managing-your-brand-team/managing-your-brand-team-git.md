@@ -35,6 +35,6 @@ Use the search box to find a contact by name or email. Each contact has an actio
 
 This toggle controls whether franchisee team invites need your review before they go out.
 
-Turn on **Require Approval For Franchisee Team Invites** to review each invite before it's sent. Turn it off to let franchisee team invites send immediately.
+Turn on **Require approval for franchisee team invites** to review each invite before it's sent. Turn it off to let franchisee team invites send immediately.
 
 ![Franchisee invite approvals card with the Require Approval For Franchisee Team Invites toggle switched on](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/managing-your-brand-team/franchisee-invite-approvals.png)
