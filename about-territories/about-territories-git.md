@@ -1,64 +1,70 @@
-The Territories page in Franchise Systems Ai (FS Ai) is where you manage geographic compliance and deal distribution for your franchise operations. It has two tabs:
+Franchise Systems Ai (FS Ai) splits geographic territory management into two places: state-level compliance and Deal Zones.
 
-- **Compliance**: state-level FDD filing status, registration details, and regulatory tracking
-- **Deal Zones**: geographic zone management for assigning and distributing deals across regions
+## State Compliance
 
-You find it under **Sales → Territories**.
+You manage state filing status and FDDs under **Sales → Compliance**.
+
+The Compliance page has three tabs:
+
+- **States**: the states where your brand operates or plans to operate, with active/inactive status and registration requirements
+- **FDDs**: your Franchise Disclosure Documents, which states each one is registered in, and any issues that need attention
+- **Deadlines**: upcoming filing and renewal deadlines
+
+A "Connect legal team" button in the top right of the Compliance page opens a request to Franchise Systems Ai's legal partners. You may also see a dismissible banner above the page offering the same connection.
+
+If your brand's compliance is handled by an outside legal team instead of managed in-platform, the **FDDs** tab is replaced by a **Legal** tab, a "Managed by" badge appears next to the page title, and the "Connect legal team" button and banner don't show, since you already have a legal team connected.
 
 ### State Management
 
-The Territories page lists the states where your brand operates or plans to operate. Each state record tracks:
+The **States** tab lists the states where your brand operates or plans to operate. Each state record shows:
 
-- **FDD Assignment**: which Franchise Disclosure Document is assigned to that state
-- **Filing Required**: whether the state requires FDD filing
-- **Filing Status**: Not Filed, Pending, or Completed
-- **Filing Date**: when the FDD was filed
-- **Renewal Deadline**: when the filing needs to be renewed
-- **Registration Agent**: the team member responsible for compliance in that state
+- **Status**: Active or Inactive
+- **Registration status**: No Registration, Filing Only, or Registration Required
+- **FDD count**: how many FDDs are registered in that state
 
-### Compliance Tab
+Select where you're actively franchising by checking the states where you sell franchises, then use Set Status to mark them Actively Franchising.
 
-The **Compliance** tab provides a focused view of your filing activity and regulatory status across states. Use it to monitor which states are up to date, which filings are pending, and which deadlines are approaching.
-
-![Compliance tab on the Territories page, showing the state list with filing status badges next to an interactive map](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-territories/territories-compliance-v2.png)
+Use the **Search States** box to find a state by name, or the filter dropdowns to narrow by status or FDD.
 
 ### Bulk Operations
 
 You can manage multiple states at once:
 
 - **Bulk Assign FDD**: select multiple states and assign the same FDD document to all of them
-- **Bulk Status Update**: toggle active status or update filing information across multiple states simultaneously
+- **Bulk Status Update**: toggle active status across multiple states simultaneously
 
 ### Assigning FDDs to States
 
-Franchise regulations vary by state, and you may need different FDD versions for different states.
+1. Go to **Sales → Compliance** and select the **FDDs** tab.
+2. Upload an FDD, or open an existing one from **Active FDDs**.
+3. Assign it to the states you want to update.
+4. Confirm the assignment.
 
-1. Navigate to **Sales → Territories**.
-2. Select the states you want to update.
-3. Use the **Bulk Assign FDD** action.
-4. Choose the FDD asset to assign.
-5. Confirm the assignment.
+### FDDs Tab
 
-![Two states selected on the Compliance tab with the Bulk Assign FDD asset picker open](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-territories/territories-bulk-assign-fdd-v2.png)
+The **FDDs** tab lists your active FDDs. Each FDD shows how many states it's registered in, when it was last updated, and a status badge.
 
-### Searching States
+Expand an FDD to see the states registered to it, each with the same status badges used on the States tab.
 
-Use the **Search States** box above the state list to find a state by name.
+Any states or FDDs that need attention show at the top of the tab, and the total also appears as an orange chip next to the page title.
 
 ## Deal Zones
 
-The **Deal Zones** tab lets you define geographic zones and control how deals are distributed across your franchise territory.
+Deal Zones let you define geographic zones and control how deals are distributed across your franchise territory. You manage them from **Sales → Pipeline**, on the **Territories** tab.
+
+This tab is available on full-plan brands. If your selected brands are all on the lite plan, the tab doesn't appear.
 
 ### Zone List
 
-The left panel displays all your deal zones. Each zone shows:
+The left panel lists your deal zones. Each zone shows:
 
+- **Brand**: which brand the zone belongs to
 - **State flags**: the state(s) the zone covers (zones can span multiple states)
 - **Zone name**: the label you gave the zone
 - **Assigned entity**: the business entity responsible for that zone, or "Unassigned" if none is set
 - **Deal count**: displayed as X/Y, where X is the number of deals currently used and Y is the total deal capacity for that zone
 
-You can search zones by name and use the filter icon to narrow the list. The **Select All** checkbox lets you select multiple zones for bulk actions.
+Zones follow whichever brands you have selected at the top of the Pipeline page, so selecting multiple brands lists zones from all of them together. You can search zones by name and use the filter icon to narrow the list. The **Select All** checkbox lets you select multiple zones for bulk actions.
 
 ### Map View
 
@@ -68,4 +74,4 @@ The right panel shows an interactive map of the United States. Deal zones are di
 
 ### Creating a Deal Zone
 
-Click **Draw Deal Zone** in the top right to create a new zone. You define the zone's geographic boundaries, assign it to a business entity, and set its deal capacity.
+Click **Draw Deal Zone** in the top right to create a new zone. Choose which brand the zone belongs to, define its geographic boundaries, assign it to a business entity, and set its deal capacity.
