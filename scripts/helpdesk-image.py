@@ -119,6 +119,11 @@ negative radii treated as 0):
   - "contactShadow" (spotlight only): true adds the fixed-parameter lift
     shadow (black, blur 20, y-offset 8, alpha 90/255, outside the region
     mask, under the dim layer). Default off. No sub-knobs.
+  - "spotlightRadius" (spotlight only): cutout corner radius in px at 2x
+    scale. Default 10 — HIGHLIGHT_STYLE.spotlight.radius, the shared global
+    geometry radius that also rounds the Soften and Redact masks. Spotlight
+    is the only one of the three with a per-highlight override; the other
+    two still read the constant.
   - "blurRadius" (blur/Soften only): blur radius in px at 2x scale.
     Default 12.
   - "maskFeather" (blur/Soften only): mask edge feather in px at 2x scale,
@@ -253,7 +258,11 @@ HIGHLIGHT_STYLE = {
     },
     "spotlight": {
         "dim_alpha": 64,          # ~25% black (0.25 * 255 ≈ 64)
-        "radius": 10,             # cutout corner radius, matches outline
+        # Cutout corner radius. ABSENT-FIELD DEFAULT ONLY — do not raise it to
+        # restyle new spotlights; that is what the per-highlight
+        # "spotlightRadius" override and the studio's STYLE_UI_DEFAULTS are
+        # for. Moving this number re-rounds every spotlight ever exported.
+        "radius": 10,
     },
     "blur": {
         "radius": 12,             # ~12px at 2x
@@ -309,6 +318,11 @@ HIGHLIGHT_COLOR_RGB = {
 # every other color glows in its stroke color. Mirrors INDIGO_GLOW_HEX in
 # highlight-style.ts.
 INDIGO_GLOW_RGB = (88, 45, 139)   # #582D8B
+
+# Upper bound on the lens's effective corner radius, as a fraction of the slab's
+# SHORT side. Mirrored in lens-recipe.ts as LENS_RADIUS_MAX_FRAC. Strictly below
+# 0.5, which is the capsule point. See draw_lens_highlight.
+LENS_RADIUS_MAX_FRAC = 0.40
 
 # Fixed contact-shadow parameters for the spotlight lift toggle (no knobs).
 # Mirrors CONTACT_SHADOW_* in ShotCanvas.tsx.
@@ -371,6 +385,34 @@ def create_card_shadow(card_w, card_h):
     shadow = big.resize((sw, sh), Image.LANCZOS)
     shadow = shadow.filter(ImageFilter.GaussianBlur(radius=CARD_SHADOW_BLUR))
     return shadow, pad
+
+
+# Upper bound on the spotlight cutout's corner radius, as a fraction of the
+# region's SHORT side. Mirrored exactly in highlight-style.ts
+# (SPOTLIGHT_RADIUS_MAX_FRAC / spotlightRadiusCap) — one rule, two languages,
+# pinned by a test on each side.
+#
+# This replaced a flat `min(radius, w // 2, h // 2)`. That old bound was the
+# degenerate one: at exactly half the short side a rounded rect IS a capsule, so
+# the house-standard radius turned every small region into a pill while leaving
+# large ones correct. Max asked for a radius "smart enough to either be slightly
+# rounded or adjust to what is being highlighted" (2026-08-17); scaling the CAP
+# with the region is that, and it needs no new field, no sentinel and no knob —
+# the stored radius stays the operator's ceiling and the region decides how much
+# of it can actually land.
+#
+# 0.25 is half the degenerate 0.5, so a capsule is unreachable by construction
+# and the corner arc can never consume more than a quarter of the short side.
+# With the 28 standard the cap only binds below a 112 px short side; above that
+# the full 28 applies unchanged. Verified against the corpus: 0 of 14 existing
+# spotlights render differently under this bound (they all resolve to 10, and
+# 0.25 * 50 = 12.5 > 10 even for the smallest).
+SPOTLIGHT_RADIUS_MAX_FRAC = 0.25
+
+
+def spotlight_radius_cap(w, h):
+    """Largest corner radius the spotlight cutout may use in a w x h region."""
+    return math.floor(SPOTLIGHT_RADIUS_MAX_FRAC * min(w, h))
 
 
 def create_rounded_mask(w, h, radius, supersample=SUPERSAMPLE, blur=0):
@@ -596,7 +638,14 @@ def draw_spotlight_group(img, specs):
         x, y, w, h = _clamp_rect(spec.get("rect"), img.size)
         if w <= 0 or h <= 0:
             continue
-        radius = min(style["radius"], w // 2, h // 2)
+        # Per-highlight corner radius, falling back to the shared global
+        # geometry constant (10) when unset — so every spotlight baked before
+        # spotlightRadius existed still rounds by exactly 10 and its final PNG
+        # does not move. Soften and Redact keep reading the constant directly;
+        # they have no field of their own and are deliberately unaffected.
+        r = spec.get("radius")
+        r = r if r is not None else style["radius"]
+        radius = min(max(0, r), spotlight_radius_cap(w, h))
         # 255 inside rounded rect, 0 outside
         hole = create_rounded_mask(w, h, radius)
         feather = spec.get("feather")
@@ -668,6 +717,8 @@ def draw_spotlight_highlight(img, rect, dim_alpha=None, feather=None, contact_sh
 
     Per-highlight overrides (see shot_spec_to_args):
       - `dim_alpha` (0-255) overrides HIGHLIGHT_STYLE.spotlight.dim_alpha.
+      - `radius` overrides HIGHLIGHT_STYLE.spotlight.radius (the cutout's
+        corner radius). None reproduces the shared global geometry radius 10.
       - `feather` gaussian-blurs the cutout hole mask before the dim alpha is
         applied, so the region reads as lit with a soft radial falloff.
         None/0 reproduces the v1 hard-edged cutout exactly.
@@ -916,7 +967,15 @@ def draw_lens_highlight(img, rect, zoom=None, radius=None, refraction=None):
     # anti-kitsch "corner radius >= bezel width" rule. Consequence:
     # lensRadius = 0 renders a ~band-radius (~6px) corner, not a razor corner.
     # That is intended — do not "fix" it.
-    corner_r = min(max(rt, band), bx, by)
+    # The bx/by term here was the DEGENERATE bound: at exactly half the short
+    # side a rounded rect IS a capsule, so any lens shorter than ~113px
+    # collapsed into a pill. LENS_RADIUS_MAX_FRAC keeps the arc strictly inside
+    # that, so a pill is unreachable whatever radius is stored. Mirrors
+    # LENS_RADIUS_MAX_FRAC in lens-recipe.ts — one rule, two languages.
+    # 0.40 was chosen to move NOTHING already exported: the corpus holds exactly
+    # one lens (916x103, lensRadius 34) and 0.40 * 103 = 41.2 > 34, so it bakes
+    # byte-identically. Raising this re-renders real exports.
+    corner_r = min(max(rt, band), LENS_RADIUS_MAX_FRAC * min(w, h))
     # A ∝ 1/Z keeps the fold threshold at lensRefraction ≈ 108 independent of
     # zoom (the map is monotonic iff bend_exp * bend_gain * refr < 1). Never
     # drop the / zoom.
@@ -1096,6 +1155,7 @@ def apply_highlights(img, highlights):
                           if h.get("dimStrength") is not None else None),
             "feather": h.get("feather"),
             "contact_shadow": bool(h.get("contactShadow")),
+            "radius": h.get("spotlightRadius"),
         }
         for h in highlights
         if h.get("style") == "spotlight" and _has_rect(h)
@@ -1387,7 +1447,7 @@ def shot_spec_to_args(spec):
         # value is never rewritten here) — coercion happens at draw time
         # only where the raster API physically requires it.
         for field in ("thickness", "dimStrength", "blurRadius", "cornerRadius",
-                      "glowSize", "feather", "maskFeather",
+                      "glowSize", "feather", "spotlightRadius", "maskFeather",
                       "lensZoom", "lensRadius", "lensRefraction"):
             v = h.get(field)
             if isinstance(v, (int, float)) and not isinstance(v, bool) and math.isfinite(v):
