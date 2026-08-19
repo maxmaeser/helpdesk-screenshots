@@ -1,0 +1,41 @@
+{
+  "revision": 1,
+  "shots": {
+    "ticket-help-menu.png": {
+      "cursor": {
+        "pos": [1815, 15],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "Franchisee Portal home (BASE route), Lumon Fresh, franchisee account 'Creed Smith'. 'Need help?' question-bubble icon (top right, left of the notification bell) clicked to open its menu: Submit a ticket / My tickets / Open Helpdesk. Covers 'Finding the help menu'. Agent-captured 2026-08-20 via session.js persisted portal session, viewport 1680x1050 CSS 2x. Raw viewport shot clipped in processing to the top nav strip (1150,0,3360,420 raw px) -- narrow UI, kept surrounding page context per convention. No PII (own test account, home page banner/chat preview only). Cursor: arrow on the help-menu trigger icon.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "ticket-type-step.png": {
+      "cursor": {
+        "pos": [780, 660],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "Step 1 of 4 in the Submit a ticket flow: 'What kind of issue?' category grid (Marketing, Real Estate, Design, POS, Something else, Bug or technical issue). Covers step 1 of 'Submitting a ticket' and the 'Something else' / 'Bug or technical issue' callouts. Agent-captured 2026-08-20 via session.js persisted portal session. Clipped to the modal (900,480,2460,1600 raw px). No PII -- static category copy only. Cursor: arrow on the 'Something else' category icon.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "ticket-review-step.png": {
+      "status": "proposed",
+      "note": "Step 4 of 4, 'Review and submit': Type (Something else), Subject ('Walk-in cooler alarm going off'), Description, Attachments (1 file). Subject/description are realistic content typed in during capture (own test ticket, never submitted -- flow was Cancelled after this shot, no ticket created). Covers step 4 of 'Submitting a ticket' ('check it over and press Submit'). Agent-captured 2026-08-20 via session.js persisted portal session. Clipped to the modal (900,500,2460,1520 raw px). No cursor -- read-only summary, no single element being clicked.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "my-tickets-list.png": {
+      "status": "proposed",
+      "note": "My tickets page (route /tickets), Lumon Fresh, 'Creed Smith'. Ticket list with category filter chips (All/Marketing/Real Estate/Design/POS/...) beside the open ticket detail panel: title, Submitted date, In progress status badge, Description, Attachments, Status. Covers 'Tracking your tickets'. Agent-captured 2026-08-20 via session.js persisted portal session. Cosmetic DOM text swap: the seed ticket's placeholder title/description ('Test issue' / 'Testing this system.') renamed to realistic copy ('Loose signage bracket out front' / a matching description) -- same swap technique used elsewhere in this suite for test-y seed strings, no feature or state fabricated. dom-sanitize run (0 hits). Clipped to the top nav + list + detail header (0,0,3360,780 raw px). No cursor -- the selected-row highlight plus the status badges tell the story; a hand cursor at this line height collided with the row text and category chip.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}
