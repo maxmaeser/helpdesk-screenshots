@@ -6,5 +6,13 @@
   "fdd-send-for-signature.png": {
     "cursor": [1733, 1774],
     "type": "arrow"
+  },
+  "fdd-state-filing-status-v2.png": {
+    "cursor": [1610, 180],
+    "type": "arrow"
+  },
+  "send-fdd-modal-choice.png": {
+    "cursor": [1070, 468],
+    "type": "arrow"
   }
 }

@@ -60,7 +60,7 @@ Open a state's record to update its actual filing status. Click the status badge
 - **Filing-only states**: **FDD Not Filed** or **FDD Filed**
 - **Registration states**: **Not Filed Or Registered**, **FDD Filed But Not Registered**, or **FDD Filed and Registered**
 
-![A state's FDD and filing status details](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-manage-fdds/fdd-state-filing-status.png)
+![Status badge open on a state's detail panel showing the FDD Filed and FDD Not Filed options](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-manage-fdds/fdd-state-filing-status-v2.png)
 
 ### Sending an FDD for signature
 
@@ -72,6 +72,10 @@ For applicants who signed up through the Applicant Portal, open their deal or ap
 
 For leads captured through your public funnel, open their lead record and use the **Send FDD to Sign** action instead. This opens a send flow with two options: **Let the Lead Fill in Their Info**, so they pick their state at the sign step and the right document follows, or **Send a Specific State's FDD**, where you pick the state yourself from a full state list.
 
+![Send FDD to Sign modal with the two send options: Let the Lead Fill in Their Info, and Send a Specific State's FDD](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-manage-fdds/send-fdd-modal-choice.png)
+
 Each state in that list shows whether its FDD is ready to send. If you pick a state with no FDD document prepared, sending stays disabled until you prepare one. If the state has no compliance record on file, the flow still lets you send, but warns you first: the lead will still be able to review and sign, so make sure disclosing there is right before you do.
+
+![Send a Specific State's FDD state list, showing every state with a status dot for whether its FDD is ready to send](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-manage-fdds/send-fdd-modal-states.png)
 
 The recipient receives an email with a link to sign the document. Signing activity is tracked, so you can see when an FDD was sent and when it was signed. If a lead's link ever comes up with nothing to show (a missing document or an uncleared state), you get a notification as their assigned agent so you can follow up.
