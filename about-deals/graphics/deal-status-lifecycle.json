@@ -1,5 +1,5 @@
 {
-  "revision": 3,
+  "revision": 4,
   "graphic": {
     "v": 2,
     "background": "white-solid",
@@ -230,11 +230,11 @@
         ]
       }
     ],
-    "status": "proposed",
+    "status": "approved",
     "note": "Rev 2 (Sol QA): status relay Open → In Review → Won with Lost dropping off; Convert to Franchisee restyled as the ACTION feeding INTO Won (upward arrow into Won's bottom edge, emphasized card + ACTION eyebrow + action-register meta) so it cannot read as a fifth status. All connector endpoints attached to card edges.",
-    "lastTouchedBy": "claude",
+    "lastTouchedBy": "max",
     "editing": false,
     "rev": 2,
-    "updatedAt": 1784542067017
+    "updatedAt": 1787151621603
   }
 }

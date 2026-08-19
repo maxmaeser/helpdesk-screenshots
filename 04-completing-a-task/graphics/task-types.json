@@ -1,5 +1,5 @@
 {
-  "revision": 3,
+  "revision": 6,
   "graphic": {
     "v": 2,
     "background": "white-solid",
@@ -193,11 +193,11 @@
         ]
       }
     ],
-    "status": "proposed",
+    "status": "approved",
     "note": "Inline infographic: seven task types roster + approver footnote (04-completing-a-task). Sol QA rev.",
-    "lastTouchedBy": "claude",
+    "lastTouchedBy": "max",
     "editing": false,
-    "rev": 2,
-    "updatedAt": 1784542328007
+    "rev": 4,
+    "updatedAt": 1787151550805
   }
 }

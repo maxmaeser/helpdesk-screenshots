@@ -1,5 +1,5 @@
 {
-  "revision": 13,
+  "revision": 14,
   "graphic": {
     "v": 2,
     "background": "white-solid",
@@ -320,11 +320,11 @@
         ]
       }
     ],
-    "status": "proposed",
+    "status": "approved",
     "note": "Five location statuses as the primary lifecycle chain; the status update flow as a quiet aside. Composed by claude.",
     "lastTouchedBy": "max",
     "editing": false,
     "rev": 12,
-    "updatedAt": 1787031410175
+    "updatedAt": 1787151587406
   }
 }

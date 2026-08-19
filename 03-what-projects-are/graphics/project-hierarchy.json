@@ -1,5 +1,5 @@
 {
-  "revision": 5,
+  "revision": 6,
   "graphic": {
     "v": 2,
     "background": "white-solid",
@@ -252,11 +252,11 @@
         ]
       }
     ],
-    "status": "proposed",
+    "status": "approved",
     "note": "Inline infographic: project > tasks > status buckets on a continuous spine (03-what-projects-are). Sol QA rev.",
     "lastTouchedBy": "max",
     "editing": false,
     "rev": 4,
-    "updatedAt": 1784551301141
+    "updatedAt": 1787151492230
   }
 }
