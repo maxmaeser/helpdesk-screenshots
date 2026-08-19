@@ -10,6 +10,8 @@ The Compliance page has three tabs:
 - **FDDs**: your Franchise Disclosure Documents, which states each one is registered in, and any issues that need attention
 - **Deadlines**: upcoming filing and renewal deadlines
 
+![Compliance page States tab showing the state list with filing status badges and deal count beside the interactive map](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-territories/territories-compliance-v2.png)
+
 A "Connect legal team" button in the top right of the Compliance page opens a request to Franchise Systems Ai's legal partners. You may also see a dismissible banner above the page offering the same connection.
 
 If your brand's compliance is handled by an outside legal team instead of managed in-platform, the **FDDs** tab is replaced by a **Legal** tab, a "Managed by" badge appears next to the page title, and the "Connect legal team" button and banner don't show, since you already have a legal team connected.
@@ -39,6 +41,8 @@ You can manage multiple states at once:
 2. Upload an FDD, or open an existing one from **Active FDDs**.
 3. Assign it to the states you want to update.
 4. Confirm the assignment.
+
+![States tab with Texas and Colorado selected via checkboxes and the Assign FDD picker open from the bulk toolbar](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-territories/territories-bulk-assign-fdd-v2.png)
 
 ### FDDs Tab
 
