@@ -55,4 +55,4 @@ Tagging a lead can also start a sequence automatically, since sequences can trig
 
 For how to build one, see *[About Sequences and Workflows]*.
 
-You can also filter the **Leads** table by segment to narrow your pipeline to a single group. For working an individual lead, see How to Work a Lead.
+You can also filter the **Leads** table by segment to narrow your pipeline to a single group. For working an individual lead, see *[How to Work a Lead]*.

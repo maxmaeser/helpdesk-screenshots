@@ -71,7 +71,7 @@ On the Home page **Overview** tab, a sidebar shows your upcoming events for the 
 ### Disconnecting Your Calendar
 
 1. Click your profile picture at the bottom of the sidebar and select **Settings**.
-2. Under the **Account** group, open **Calendar & Scheduling** and stay on the **Calendars** tab. Your connected account email and provider are displayed.
+2. Under the **Account** group, open **Calendar & Scheduling**. Your connected account email and provider are displayed.
 
 ![Calendars tab showing a connected Google Calendar account with its email, Primary and Connected badges, and the Manage control](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-connect-your-calendar/calendar-settings-connected.png)
 

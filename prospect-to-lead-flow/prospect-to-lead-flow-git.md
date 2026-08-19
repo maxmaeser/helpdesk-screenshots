@@ -37,6 +37,6 @@ Whether conversion happens automatically through portal signup or manually from 
 
 ### After Conversion
 
-Once converted, the lead appears under **Sales → Pipeline** in the **Leads** tab and no longer appears in Marketing. You can assign a rep, set a status, and begin tracking them through the Applicant Portal while working them through your sales process.
+Once converted, the lead appears under **Sales → Pipeline** and no longer appears in Marketing. You can assign a rep, set a status, and begin tracking them through the Applicant Portal while working them through your sales process.
 
 ![The Leads tab in Sales > Pipeline where converted prospects land](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/prospect-to-lead-flow/pipeline-leads-v2.png)

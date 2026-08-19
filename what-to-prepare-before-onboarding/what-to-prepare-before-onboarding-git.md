@@ -40,7 +40,7 @@ Have their names, email addresses, and the role each should hold.
 
 Have your current Franchise Disclosure Document as a PDF.
 
-This is what powers state compliance and disclosure tracking through your sales process.
+This feeds the state compliance and disclosure tracking tools in your sales process. Uploading it does not by itself establish legal compliance in any state.
 
 ### Prospect and lead lists
 

@@ -10,11 +10,11 @@ Assets opens with a toggle between **Collections** and **Files**. Collections sh
 ![An opened collection grid](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/12-assets/assets-collection.png)
 ## Downloading a file
 
-The flow is the same whether you're in Collections or Files. Open a file, review the usage notes, and click **Download**. Files come down at the resolution and format your brand has approved.
+The flow is the same whether you're in Collections or Files. Open the card's **⋮** menu and select **Preview**, review the usage notes, and click **Download**. Files come down at the resolution and format your brand has approved.
 
 ![File detail view with the Download button](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/12-assets/assets-file-detail.png)
 ## Brand and Assets
 
-Brand is the standards layer: the visual rules, the voice, the customer experience your brand defines. Assets is the file side: the actual photos, logos, and templates that bring those standards to life. You'll see them cross reference each other often.
+Brand covers the standards: the visual rules, the voice, the customer experience your brand defines. Assets holds the files: the actual photos, logos, and templates that put those standards into practice. The two often cross-reference each other.
 
 That's the last stop in the portal walkthrough. You've now covered the sidebar from Home through Assets, with the purpose of each section and the basics of how to operate inside it.

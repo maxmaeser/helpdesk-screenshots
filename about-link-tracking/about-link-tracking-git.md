@@ -20,7 +20,7 @@ If you have not connected one yet, a red banner reads **No domain connected to y
 
 ### Creating a tracking link
 
-On the **Links** tab, open **Actions** and choose **Create Link**. Fill in the dialog:
+Open **Actions** and choose **Create Link**. Fill in the dialog:
 
 ![link-tracking-actions](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-link-tracking/link-tracking-actions.png)
 

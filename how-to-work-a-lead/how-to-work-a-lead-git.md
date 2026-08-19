@@ -79,7 +79,7 @@ Once a deal exists, this tab shows the deal overview in place, where you manage 
 ![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-work-a-lead/lead-deal-tab-overview.png)
 If the deal hasn't been converted yet, a **Convert To Franchisee** button appears so you can move it forward without leaving the lead panel.
 
-For a full walkthrough of deals, see About Deals.
+For a full walkthrough of deals, see *[About Deals]*.
 
 ### Quick actions
 

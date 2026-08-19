@@ -1,22 +1,22 @@
-Franchise Systems Ai (FS Ai) controls what each team member can see and do through two separate settings.
+Franchise Systems Ai (FS Ai) controls what each team member can see and do through a few separate settings: organization access level, billing access, and per-brand permissions.
 
 This article explains what those settings are, what each one controls, and how access is assigned.
 
-### Two different settings, two different jobs
+### Organization access level vs. brand team membership
 
 Organization access level and brand team membership are separate things in FS Ai, and they do different jobs.
 
-**Organization access level**: this is the real permission setting. It decides what a person can see and do across the platform.
+**Organization access level**: the base permission setting. It decides what a person can see and do across the platform.
 
-**Brand team membership**: this shows who is on a brand's team, and their sales assignability for that brand. It does not grant or restrict any platform access.
+**Brand team membership**: this shows who is on a brand's team, and their sales assignability for that brand. On its own, it does not grant or restrict any platform access.
 
-Keep these separate. Only the organization access level changes a person's permissions.
+Keep these separate. Brand team membership alone doesn't change a person's permissions, billing access and per-brand permissions are separate controls, covered below.
 
 ### Organization access levels
 
 Every member of your organization has one of two access levels.
 
-**Admin**: full permissions across the organization. Admins can see and manage everything, and they can invite other users.
+**Admin**: broad permissions across the organization, including inviting other users and managing organization settings. Billing access is a separate toggle, so an Admin does not automatically get it (see below).
 
 **Member**: limited permissions. Members cannot invite other users or manage organization settings. An admin can grant a member specific brand permissions after they accept their invitation. The invitation steps are covered in *[How to Invite Users]*.
 
@@ -48,7 +48,7 @@ A person can be an Admin without billing access, or a Member with it. The two se
 
 ### Brand team and sales assignability
 
-Open the **Team & Access** section under Brand in your settings and you will see a Brand Team list.
+Open the **Team & Access** page under Brand in your settings to see your Brand Team list.
 
 ![Brand settings sidebar with Team & Access highlighted under the Brand group, landing on the Brand Team list](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/understanding-roles-and-permissions/team-access-nav.png)
 

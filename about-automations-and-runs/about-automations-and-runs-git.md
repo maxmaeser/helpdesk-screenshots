@@ -12,7 +12,7 @@ An **automation** is an event-driven workflow you build in the node builder. It 
 
 An automation acts on one record at a time, the record that fired the trigger. It has no audience and no schedule.
 
-A **sequence** is the other tool on this page. It is an ordered run of emails with waiting time between them, and you send it to a whole segment on a schedule you set.
+A **sequence** is the other tool on this page. It is an ordered run of emails with waiting time between them. A sequence set to **Manually Triggered** is sent to a whole segment on a schedule you set; any other sequence fires per contact from its own event trigger instead.
 
 Sequences have no conditions and no branching, and their sends do not appear in Runs.
 

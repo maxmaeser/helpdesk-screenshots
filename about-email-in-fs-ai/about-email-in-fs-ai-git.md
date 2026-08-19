@@ -13,7 +13,7 @@ Mixing cold and warm on the same domain risks deliverability problems for both.
 Different email types carry different reputation risk. Assigning each domain a specific purpose isolates that risk. Your transactional and portal notification emails stay protected even if cold outreach encounters deliverability issues.
 
 ![Domain purposes panel showing Cold Outreach and consensual warm purposes with an isolation advisory](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-email-in-fs-ai/email-domain-purposes-v2.png)
-See **About Domains and Domain Health** for how to add domains and configure purposes.
+See *[About Domains and Domain Health]* for how to add domains and configure purposes.
 
 ### Sending Email in FS Ai
 
@@ -23,4 +23,4 @@ FS Ai provides two ways to send email:
 2. **Automations**: Trigger-based workflows that send to individual contacts in response to events (new lead created, tag applied). These fire one at a time and are not bulk sends.
 
 ![Marketing Workflows page showing the Sequences, Automations, Runs, Content, and Analytics tabs](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-email-in-fs-ai/email-sending-methods-v2.png)
-See **How to Send Email** for the bulk send walkthrough and *[About Automations and Runs]* for building automations.
+See *[How to Send Email]* for the bulk send walkthrough and *[About Automations and Runs]* for building automations.

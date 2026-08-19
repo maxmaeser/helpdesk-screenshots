@@ -25,4 +25,4 @@ Status updates happen right from the detail view. Open the status dropdown, pick
 
 Adding a location depends on how your brand sets it up. If you have rights to add a unit directly, you'll see an **Add Location** button on the list view. Fill in the basics and the new unit lands in your list as Developing. If you don't see the button, your brand may route new units through corporate instead: reach out to your franchise team.
 
-Locations is the anchor for the rest of the portal. Your team roster, your projects, and your day to day work tie back to the units listed here.
+Locations connects to the rest of the portal. Team assignments and projects are both tied to the units listed here.

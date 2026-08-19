@@ -22,7 +22,7 @@ This is the brand's profile at a glance. It includes:
 
 The Feed shows posts published to the brand, shown as a scrolling card grid.
 
-If you have permission to manage the feed, click into **Manage Brand Feed** to create, edit, and publish posts.
+If you have permission to manage the feed, click into **Manage Posts** to create, edit, and publish posts.
 
 ![Brand Feed tab showing a published post card and the Manage Posts button](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-the-brand-page/brand-feed.png)
 
@@ -32,7 +32,7 @@ News tracks coverage and mentions of the brand. Each item has a headline, summar
 
 You can tag a news item by kind (National, Trade, Press, Blog, Review, or Social), sentiment (Positive, Neutral, Watch, or Negative), and scope (brand-wide, or tied to a specific location).
 
-Click **Add news item** and paste a link to auto-fill the headline, summary, and image where available.
+Click **Add news** and paste a link to auto-fill the headline, summary, and image where available.
 
 ![Brand News tab showing the empty Press & News state with the Add news button](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-the-brand-page/brand-news.png)
 

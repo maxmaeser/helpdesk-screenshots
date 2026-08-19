@@ -19,8 +19,8 @@ Brand organizes its content into tabs, and a tab your brand hasn't filled in hid
 
 ## Read only, on purpose
 
-The standards stay consistent across locations because corporate maintains them in one place. Your part is reference and download: pull the brand kit, grab the font kits, and check the guidelines anytime you produce something that carries the brand. When a piece of work needs corporate sign-off, that happens through task approvals in **Projects**, which has its own article.
+The standards stay consistent across locations because corporate maintains them in one place. Your part is reference and download: pull the brand kit, grab the font kits, and check the guidelines anytime you produce something that carries the brand. When a piece of work needs corporate sign-off, that happens through task approvals in **Projects**, covered in *[What Projects Are]*.
 
 ## Brand and Assets
 
-Brand is the standards layer: what the identity is and how to use it. The actual files, your logos, photos, and templates, live in **Assets**, covered in its own article.
+Brand is the standards layer: what the identity is and how to use it. The actual files, your logos, photos, and templates, live in **Assets**, covered in *[Assets]*.

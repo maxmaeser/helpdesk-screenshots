@@ -1,20 +1,20 @@
-Uploading a file to your asset library does not make it visible to franchisees.
+Uploading a file to your general asset Library does not make it visible to franchisees.
 
-In Franchise Systems Ai (FS Ai), an asset moves through three separate states. It only reaches a franchisee once you take a second, explicit step after uploading.
+In Franchise Systems Ai (FS Ai), a franchisee sees a file only after you take an explicit action beyond that upload: publishing it brand-wide, or placing it in a location's library.
 
 This article explains that model so you know exactly why a file does or does not show up for your franchisees.
 
-### The three states of an asset
+### What controls who sees a file
 
-Think of every file as sitting in one of three states.
+Two independent things determine visibility, and a file can be affected by both at once.
 
-**Uploaded**: The file lives in your **Library**. Only brand agents can see it. No franchisee has access yet. This is the default state for everything you upload.
+**Uploaded to your Library**: The file lives in your brand's general **Library**. Only brand agents can see it. This is the default for anything you upload here.
 
-**Published to franchisees**: The file is now visible to your franchisees in their own library view. This is a brand-wide switch, not tied to any one location.
+**Published to franchisees**: A brand-wide switch. When it's on, every franchisee organization can see the file in their own library view. This is independent of location linking, a file can be published brand-wide and also live in a specific location's library at the same time.
 
-**Linked to a location**: The file lives inside a specific location's library and appears on that location's page. It is visible only to the franchisees of that location's entity, plus brand agents.
+**In a location's library**: The file lives inside a specific location's entity library and appears on that location's page. It is visible to the franchisees of that location's entity, plus brand agents. A file uploaded directly into a location's library skips the private Library state altogether: it's visible to that location's franchisees as soon as it's uploaded there.
 
-Uploading handles the first state. Publishing and linking are two different actions that handle the other two. They surface in two different places.
+These aren't sequential steps every file passes through. A file can be private, published brand-wide, sitting in a location's library, or any combination of published and location-linked.
 
 ### Two ways to reach franchisees
 
@@ -22,7 +22,7 @@ There are two independent paths, and choosing the wrong one is the most common r
 
 **Publish to all franchisees (from the Library)**: Makes the asset or collection available to every franchisee organization, brand-wide. It appears in their library, not on any specific location page.
 
-**Link it to a location (from Operations → Locations)**: Places the asset in one location's library so it appears on that location's page, scoped to the franchisees of that location's entity.
+**Add it to a location's library (from Operations → Locations)**: Upload the file directly into that location's entity library, or link an existing collection into it. Either way, it appears on that location's page, scoped to the franchisees of that location's entity.
 
 Publishing in the Library does not put a file on a location page.
 Linking a file to a location does not publish it to everyone.
@@ -66,7 +66,7 @@ This is the path that makes a file appear on a specific location's page.
 1. Go to **Operations → Locations** and open a location.
 2. Select the **Assets** tab.
 3. In the **Libraries** column, pick the entity library for that location (listed under **Entity Libraries**).
-4. Use **Upload** to add files, or **+ Add collection** to group them.
+4. Use **Upload** to add new files directly, or use **+ Add collection** to link an existing collection (or create a new one) into this library.
 
 ![Location Assets tab with the entity library selected and its visibility caption](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-assets-reach-your-franchisees/location-assets-entity-library.png)
 

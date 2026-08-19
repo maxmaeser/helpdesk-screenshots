@@ -1,6 +1,6 @@
 Franchise Systems Ai (FS Ai) provides access to your organization's invoices directly in the dashboard. All billing is processed through Stripe, and your invoice history is available at any time.
 
-> **Prerequisite:** You must be an organization **Admin** with **Billing Access** to view invoices.
+> **Prerequisite:** You must have **Billing access** turned on for your account to view invoices. It's a separate toggle from organization Admin, either an Admin or a Member can have it.
 
 ### Viewing Invoices in the Dashboard
 
@@ -26,6 +26,6 @@ For more detailed invoice management, click **Open Billing Management** at the b
 
 ### Subscription Overview
 
-The Billing page also displays your current subscription details, including the line items on your plan, unit pricing, and your monthly subtotal. The **Brands** section shows which brands are active on your subscription and allows billing admins to toggle brand billing on or off.
+The Billing page also displays your current subscription details, including the line items on your plan, unit pricing, and your monthly subtotal. The **Brands** section shows which brands are active on your subscription and allows users with **Billing access** to toggle brand billing on or off.
 
 ![Billing page showing the Subscription section with plan line items and the Brands section listing each brand's monthly price and Active toggle](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-view-your-invoice/billing-subscription-brands.png)

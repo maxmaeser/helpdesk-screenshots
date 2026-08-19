@@ -4,15 +4,15 @@ A Franchise Disclosure Document (FDD) is a legal document that franchisors are r
 
 - You need **Sales write** permission to send FDDs for signature.
 - FDDs are uploaded as assets in the library. You must have write access to the asset to mark it as an FDD.
-- E-signature functionality is powered by DocuSeal. Your brand must have DocuSeal configured.
+- Your brand must have e-signature configured.
 
 ### Preparing a document for e-signature
 
 Before a document can be marked as an FDD, it needs to be prepared as a signable document.
 
-1. Upload your FDD document to the **Library** (see the asset upload article for details).
+1. Upload your FDD document to the **Library** (see *[How to Upload and Manage Assets]* for details).
 2. Open the asset's detail view.
-3. Use the **Prepare for e-signature** option to create a signing template. This sets up the document with signature fields through DocuSeal.
+3. Use the **Prepare eSignature** option in the asset's menu to create a signing template. This sets up the document with signature fields.
 4. Once prepared, the asset will have a signable template linked to it.
 
 ![Prepare eSignature in an asset's menu](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-manage-fdds/fdd-prepare-esignature-menu-v2.png)

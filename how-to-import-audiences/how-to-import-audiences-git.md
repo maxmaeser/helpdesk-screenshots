@@ -48,4 +48,4 @@ Imported leads are created in the sales pipeline and can be assigned to reps, gi
 
 - Clean your CSV before importing. Remove rows with missing email addresses to avoid failures.
 - Use tags during import to label the source of your contacts (for example, "Conference List" or "Purchased List") so you can filter and report on them later.
-- If you import someone as a prospect and they later sign up through the applicant portal with the same email address, the platform merges their data into a lead record. See the best practices article for details on how this works.
+- If you import someone as a prospect and they later sign up through the applicant portal with the same email address, the platform merges their data into a lead record. See *[Best Practice: Prospect vs Lead]* for details on how this works.

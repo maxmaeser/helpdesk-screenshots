@@ -23,7 +23,7 @@ Using separate domains for different purposes protects your sender reputation. F
 ![Domain Management section showing a connected domain with Active, Verified, and All Purposes status](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-domains-and-domain-health/domains-management-overview.png)
 ### Adding a New Domain
 
-1. Click your profile picture at the bottom of the sidebar, select **Settings**, and open the **Brand** page. Scroll to **Domains**.
+1. Click your profile picture at the bottom of the sidebar, select **Settings**, and open the **Connections** page under Brand. Scroll to **Domains**. On lite organizations, where Connections isn't available, Domains lives on the **Profile** page instead.
 2. Click **Add Domain** and enter your domain name (e.g., `mail.yourbrand.com`).
 3. Select which purposes this domain should serve.
 4. Enter a **local part** (the portion before the @) and a **display name** for the sending address.
@@ -57,7 +57,7 @@ FS Ai also provides AI-powered domain health insights that analyze your domain c
 When configuring a domain's email address, you choose a **reply-to strategy** that determines where recipient replies are directed:
 
 - **Static**: Replies go to a fixed email address you specify (e.g., `support@yourbrand.com`). Use this when you want all replies funneled to a shared inbox.
-- **Assigned Rep**: Replies go to the email address of the sales rep or agent assigned to that contact. If the recipient is a lead, the system looks up their assigned rep. If they are a franchisee, it finds their assigned agent. This keeps conversations personal and routed to the right person.
+- **Assigned Sales Rep**: Replies go to the email address of the sales rep or agent assigned to that contact. If the recipient is a lead, the system looks up their assigned rep. If they are a franchisee, it finds their assigned agent. This keeps conversations personal and routed to the right person.
 
 ![Connected domain's Email Settings with the Assigned Sales Rep reply-to strategy active](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-domains-and-domain-health/domains-manage-detail.png)
 ### Managing Multiple Domains

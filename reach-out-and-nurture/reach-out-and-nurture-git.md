@@ -17,7 +17,7 @@ Get your email foundation right first, then layer on the automation that keeps o
 
 3. *[How to Build an Email]*: compose a reusable email template in the visual builder, with subject line and merge fields.
 
-4. *[How to Send Email]*: send a single template as a newsletter or deploy a multi-email sequence to a segment.
+4. *[How to Send Email]*: send a single template as a newsletter, or schedule a manually triggered sequence to a segment.
 
 5. *[Creating Content and Workflows]*: get oriented on the Workflows page, where your email content and automated sequences both live.
 
@@ -31,7 +31,7 @@ Get your email foundation right first, then layer on the automation that keeps o
 
 10. *[About Link Tracking]*: create short, trackable links for print pieces, QR codes, and campaigns.
 
-> **A sequence does not send just because you built it.** It fires only when its trigger event happens for a contact and the sequence is active, never on its own. See *[About Sequences and Workflows]*.
+> **A sequence does not send just because you built it.** It sends only when its trigger fires: an event happening for a contact for most triggers, or the **Schedule Campaign** action you take for a **Manually Triggered** sequence. Never on its own. See *[About Sequences and Workflows]*.
 
 Once your outreach is running, you can turn your attention to the leads who respond.
 

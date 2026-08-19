@@ -13,11 +13,11 @@ Home is the snapshot of your business. It surfaces the need to know information 
 - **Quick links**: shortcuts into the rest of the portal
 
 ![The Manuals, Brand Feed, Assets, and Team panels stacked on Home](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/02-home/home-panels.png)
-Panels for manuals, the brand feed, assets, and your team round out the page, so you get the full picture without leaving Home.
+Panels for manuals, the brand feed, assets, and your team round out the page.
 
 ## How to use it
 
-Start your day here. Open a task to see its due date and status, open a message to jump into the thread, and use the quick links to move into the section you need. Home is the first page you see when you log in, so the current picture of your business is waiting for you.
+Start your day here. Open a task to see its due date and status, open a message to jump into the thread, and use the quick links to move into the section you need. Home is the first page you see when you log in.
 
 ![A task opened from Home showing its due date and status](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/02-home/home-task-open.png)
 The next article covers Projects and how they're structured.

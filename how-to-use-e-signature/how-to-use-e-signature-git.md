@@ -1,24 +1,14 @@
-E-Signature lets you send documents for electronic signing directly from Franchise Systems Ai (FS Ai). The feature is powered by DocuSeal and supports both general document signing and FDD-specific workflows.
+E-Signature lets you send documents for electronic signing directly from Franchise Systems Ai (FS Ai). The feature supports both general document signing and FDD-specific workflows.
 
-> **Prerequisite:** Your documents must be uploaded to the Library and converted into signable templates through DocuSeal before they can be sent for signature.
+> **Prerequisite:** Your documents must be uploaded to the Library and converted into signable templates before they can be sent for signature.
 
 ### Preparing a Document for Signature
 
-Upload your document to the **Library**. Once uploaded, open the asset details and use the e-signature option to create a signable template. DocuSeal processes the document and generates the fields (signature blocks, date fields, text inputs) that signers will complete.
+Upload your document to the **Library**. Once uploaded, open the asset details and use **Prepare eSignature** to create a signable template. FS Ai processes the document and generates the fields (signature blocks, date fields, text inputs) that signers will complete.
 
 ![eSignature menu on a Library asset showing Prepare eSignature and Generate eSignature link](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-use-e-signature/esig-library-menu-v2.png)
 
 ![DocuSeal template builder showing the field palette and a placed signature field on an FDD](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-use-e-signature/esig-prepare-fields.png)
-
-### Sending a Document for Signature
-
-From an asset's detail panel, select **Prepare Asset for e-signature**. This opens the signature workflow where you:
-
-1. Search for and add recipients who need to sign
-2. Set each recipient's role (Needs to Sign is the default)
-3. Optionally add a note for each signer
-4. Optionally enable **Set signing order** so each signer only gets access after the previous one completes
-5. Click **Send** to create the submission
 
 ### Generating a Public Signing Link
 

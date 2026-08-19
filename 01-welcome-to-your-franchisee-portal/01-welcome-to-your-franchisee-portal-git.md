@@ -1,6 +1,6 @@
 > **[VIDEO EMBED: Module 1 — Welcome to your Franchisee Portal]**
 
-Your Franchisee Portal is your central command center. It's where you manage your day to day business and tap into the systems your brand has built. Your brand sets the standards, the training, and the tools. You bring it to life at your location. The portal pulls it all together in one place.
+Your Franchisee Portal is where you manage your day to day business and use the systems your brand has built. Your brand sets the standards, the training, and the tools. You apply them at your location, and the portal keeps it all together in one place.
 
 ## What's in the sidebar
 
@@ -28,4 +28,4 @@ Click your avatar at the bottom of the sidebar to open your menu. That's where y
 ![Need help menu open in the top bar showing Submit a ticket, My tickets, and Open Helpdesk](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/01-welcome-to-your-franchisee-portal/welcome-help-menu.png)
 ## Where to go next
 
-Each article in this series pairs with one training video, in the same order as the videos. Continue to the Home article for a walkthrough of your first page.
+Each article in this series pairs with one training video, in the same order as the videos. Continue to *[Home]* for a walkthrough of your first page.

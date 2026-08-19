@@ -23,6 +23,7 @@ You can configure preferences for each of the following events:
 - **New Sales Lead Assigned to Me**: A new applicant lead is assigned to you.
 - **Multiple Sales Leads Assigned to Me**: Several leads are assigned to you at once.
 - **Assigned Applicant Sends Chat Message**: An applicant you are working with sends a chat message.
+- **Franchisee Sends Chat Message**: A franchisee sends you a chat message.
 - **Assigned Applicant Completes Form**: An applicant you are assigned to submits a form.
 - **Assigned Applicant Books a Meeting**: An applicant schedules a meeting through your booking link.
 - **Assigned a New Task**: You are assigned a new task.
@@ -39,4 +40,4 @@ If you use the FS Ai mobile app, push notifications are delivered to your device
 ### Tips
 
 - Review your notification preferences after onboarding to ensure you are receiving the alerts most relevant to your role.
-- If you are in a high-volume sales role, consider turning off in-app notifications for bulk assignment events and relying on email summaries instead.
+- If you are in a high-volume sales role, consider leaving bulk assignment events on in-app only, without also enabling email, so you are not flooded with emails for events already visible in the dashboard.

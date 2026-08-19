@@ -58,7 +58,7 @@ The **Security** tab is where you protect your account. Here you can change your
 
 ### Connecting your calendar
 
-Your calendar connection and booking events live on a separate page. In your settings, under the **Account** group, open **Calendar & Scheduling**. See How to Connect Your Calendar for the full walkthrough.
+Your calendar connection and booking events live on a separate page. In your settings, under the **Account** group, open **Calendar & Scheduling**. See *[How to Connect Your Calendar]* for the full walkthrough.
 
 ### Why your profile matters
 

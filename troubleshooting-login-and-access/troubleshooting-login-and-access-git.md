@@ -31,15 +31,20 @@ A login page that loops, blinks, or keeps redirecting is almost always a stale s
 1. Try a hard refresh first. It reloads the page without using anything saved in your browser cache.
     - **Mac**: press **Cmd + Shift + R**
     - **Windows**: press **Ctrl + Shift + R**
-2. If that does not fix it, clear your cookies and cache for the FS Ai site:
-    - **Chrome**: open **Settings**, go to **Privacy and security**, then **Delete browsing data**. Select **Cookies and other site data** and **Cached images and files**, then click **Delete data**.
-    - **Safari**: open Safari's **Settings**, select the **Privacy** tab, then **Manage Website Data**. Search for "franchisesystems.ai" and click **Remove**.
+2. If that does not fix it, clear your cookies and cache for the FS Ai site only, not your whole browser.
+
+    **Chrome**: click the site info icon to the left of the address bar, select **Site settings**, then **Clear data**. This clears saved data for franchisesystems.ai without touching other sites.
+
+    **Safari**: open Safari's **Settings**, select the **Privacy** tab, then **Manage Website Data**. Search for "franchisesystems.ai" and click **Remove**.
+
 3. Close and reopen the browser.
 4. Load the sign-in page again and sign in.
 
 Trying a private or incognito window also works here, since it starts with no saved session.
 
 ### Finish an incomplete calendar connection
+
+This section is for after you have successfully signed in. If you cannot get past the sign-in page at all, use the steps above first.
 
 If you started connecting a calendar during setup but did not finish, here's how to complete it.
 
