@@ -1,5 +1,5 @@
 {
-  "revision": 3,
+  "revision": 4,
   "graphic": {
     "v": 2,
     "background": "white-solid",
@@ -216,11 +216,11 @@
         ]
       }
     ],
-    "status": "proposed",
+    "status": "approved",
     "note": "Inline infographic: DNS records fan into Verify; once all records are verified the domain activates.",
-    "lastTouchedBy": "claude",
+    "lastTouchedBy": "max",
     "editing": false,
     "rev": 2,
-    "updatedAt": 1784542159417
+    "updatedAt": 1787158046091
   }
 }

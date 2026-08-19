@@ -1,5 +1,5 @@
 {
-  "revision": 4,
+  "revision": 5,
   "graphic": {
     "v": 2,
     "background": "white-solid",
@@ -216,11 +216,11 @@
         ]
       }
     ],
-    "status": "proposed",
+    "status": "approved",
     "note": "Inline infographic: calendar connection state flow. Providers converge into Calendar & Scheduling (Calendars tab), events land on Home; the labeled return loop is the reconnect-on-expiry path. Rev 3: edge-attached connectors, tightened loop, RECONNECT label, unified metas.",
-    "lastTouchedBy": "claude",
+    "lastTouchedBy": "max",
     "editing": false,
     "rev": 3,
-    "updatedAt": 1784542033770
+    "updatedAt": 1787158090342
   }
 }

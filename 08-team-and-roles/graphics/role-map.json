@@ -1,5 +1,5 @@
 {
-  "revision": 4,
+  "revision": 5,
   "graphic": {
     "v": 2,
     "background": "white-solid",
@@ -216,11 +216,11 @@
         ]
       }
     ],
-    "status": "proposed",
+    "status": "approved",
     "note": "Role map: templated task splits in parallel to the Primary holder (via your location) and Consulted. Composed by claude.",
-    "lastTouchedBy": "claude",
+    "lastTouchedBy": "max",
     "editing": false,
     "rev": 3,
-    "updatedAt": 1784542104120
+    "updatedAt": 1787158042742
   }
 }

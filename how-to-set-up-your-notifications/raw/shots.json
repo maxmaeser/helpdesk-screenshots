@@ -1,5 +1,5 @@
 {
-  "revision": 90,
+  "revision": 91,
   "shots": {
     "notifications-profile-menu.png": {
       "crop": [
@@ -55,7 +55,8 @@
       "lastTouchedBy": "max",
       "editing": false,
       "rev": 7,
-      "renderedRev": 6
+      "renderedRev": 7,
+      "renderedAt": 1787158265972
     }
   }
 }

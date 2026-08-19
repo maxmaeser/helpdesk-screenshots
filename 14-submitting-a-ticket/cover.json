@@ -1,5 +1,5 @@
 {
-  "revision": 7,
+  "revision": 8,
   "cover": {
     "v": 2,
     "background": "ember",
@@ -116,11 +116,11 @@
         ]
       }
     ],
-    "status": "proposed",
+    "status": "approved",
     "note": "Support thread archetype, Sol revision: one down-right cascade, spatial order = status order = rose ramp light to deep; Resolved endcap carries a modest bottom bleed.",
-    "lastTouchedBy": "claude",
+    "lastTouchedBy": "max",
     "editing": false,
     "rev": 7,
-    "updatedAt": 1784542326711
+    "updatedAt": 1787158157512
   }
 }

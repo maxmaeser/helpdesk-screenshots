@@ -1,5 +1,5 @@
 {
-  "revision": 5,
+  "revision": 6,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -203,11 +203,11 @@
         ]
       }
     ],
-    "status": "proposed",
+    "status": "approved",
     "note": "Nested twin containment: one Organization branching to two equal isolated Brands.",
-    "lastTouchedBy": "claude",
+    "lastTouchedBy": "max",
     "editing": false,
     "rev": 5,
-    "updatedAt": 1784540631667
+    "updatedAt": 1787158195981
   }
 }

@@ -1,5 +1,5 @@
 {
-  "revision": 5,
+  "revision": 6,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -239,11 +239,11 @@
         ]
       }
     ],
-    "status": "proposed",
+    "status": "approved",
     "note": "Center spine: Brand dead-center, the four holdings every brand gets radiating left and right. Labels verbatim from the article.",
-    "lastTouchedBy": "claude",
+    "lastTouchedBy": "max",
     "editing": false,
     "rev": 5,
-    "updatedAt": 1784540369456
+    "updatedAt": 1787158194544
   }
 }

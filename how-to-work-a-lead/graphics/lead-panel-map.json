@@ -1,5 +1,5 @@
 {
-  "revision": 4,
+  "revision": 5,
   "graphic": {
     "v": 2,
     "background": "white-solid",
@@ -288,11 +288,11 @@
         ]
       }
     ],
-    "status": "proposed",
+    "status": "approved",
     "note": "Rev 2 (Sol QA): removed the clipped outbound arrow (the emphasized Deal card + its action meta carry the handoff); all six tab metas unified to one verb-led action register, article-derived; every connector endpoint now departs from and lands on a card edge.",
-    "lastTouchedBy": "claude",
+    "lastTouchedBy": "max",
     "editing": false,
     "rev": 3,
-    "updatedAt": 1784542145035
+    "updatedAt": 1787158118692
   }
 }

@@ -1,5 +1,5 @@
 {
-  "revision": 2,
+  "revision": 3,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -203,11 +203,11 @@
         ]
       }
     ],
-    "status": "proposed",
+    "status": "approved",
     "note": "Ported from tools/opener-gen (shipped -opener-v2) into editable studio primitives.",
-    "lastTouchedBy": "claude",
+    "lastTouchedBy": "max",
     "editing": false,
     "rev": 2,
-    "updatedAt": 1784540367486
+    "updatedAt": 1787158198828
   }
 }

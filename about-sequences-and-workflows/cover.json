@@ -1,5 +1,5 @@
 {
-  "revision": 3,
+  "revision": 4,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -267,11 +267,11 @@
         ]
       }
     ],
-    "status": "proposed",
+    "status": "approved",
     "note": "Branching flow from the article: trigger-action pattern with a condition node splitting into yes and no paths. All labels verbatim from About Sequences and Workflows. Rev 2: distinct yes/no stems with quiet gray branch labels per Sol QA.",
-    "lastTouchedBy": "claude",
+    "lastTouchedBy": "max",
     "editing": false,
     "rev": 3,
-    "updatedAt": 1784540370251
+    "updatedAt": 1787158160855
   }
 }

@@ -1,5 +1,5 @@
 {
-  "revision": 55,
+  "revision": 56,
   "shots": {
     "payment-profile-menu-settings.png": {
       "cursor": {
@@ -48,9 +48,9 @@
       "lastTouchedBy": "max",
       "editing": false,
       "rev": 33,
-      "renderedRev": 32,
+      "renderedRev": 33,
       "updatedAt": 1784372470493,
-      "renderedAt": 1784372453548
+      "renderedAt": 1787158267269
     }
   }
 }

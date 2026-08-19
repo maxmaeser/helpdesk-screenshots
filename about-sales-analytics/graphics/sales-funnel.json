@@ -1,5 +1,5 @@
 {
-  "revision": 3,
+  "revision": 4,
   "graphic": {
     "v": 2,
     "background": "white-solid",
@@ -202,11 +202,11 @@
         ]
       }
     ],
-    "status": "proposed",
+    "status": "flagged",
     "note": "Inline infographic: the Analytics funnel from portal traffic to conversion (Overview + Portal Steps stage names verbatim). Descending widths = funnel; climax node emphasized. Rev 2: article-exact milestone metas, connectors attached edge to edge.",
-    "lastTouchedBy": "claude",
+    "lastTouchedBy": "max",
     "editing": false,
     "rev": 2,
-    "updatedAt": 1784542033368
+    "updatedAt": 1787158055828
   }
 }

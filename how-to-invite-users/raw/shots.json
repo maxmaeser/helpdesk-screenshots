@@ -1,5 +1,5 @@
 {
-  "revision": 46,
+  "revision": 47,
   "shots": {
     "invite-modal-v2.png": {
       "status": "proposed",
@@ -14,6 +14,7 @@
       "lastTouchedBy": "max",
       "editing": false,
       "rev": 1,
+      "renderError": "Raw capture not found: /opt/helpdesk-studio/screenshots/how-to-invite-users/raw/invite-nav-members.png",
       "updatedAt": 1786689894139
     },
     "invite-nav-members-v2.png": {

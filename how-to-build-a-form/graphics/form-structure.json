@@ -1,5 +1,5 @@
 {
-  "revision": 4,
+  "revision": 5,
   "graphic": {
     "v": 2,
     "background": "white-solid",
@@ -270,11 +270,11 @@
         ]
       }
     ],
-    "status": "proposed",
+    "status": "flagged",
     "note": "Inline infographic: ordered pages feeding fields grouped inside a Field Category container (how-to-build-a-form). Sol QA rev.",
-    "lastTouchedBy": "claude",
+    "lastTouchedBy": "max",
     "editing": false,
     "rev": 3,
-    "updatedAt": 1784542499698
+    "updatedAt": 1787158086992
   }
 }

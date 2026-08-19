@@ -1,5 +1,5 @@
 {
-  "revision": 4,
+  "revision": 5,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -185,11 +185,11 @@
         ]
       }
     ],
-    "status": "proposed",
+    "status": "approved",
     "note": "Converging paths rev 2: connectors leave each path card's right edge, join at a single merge point, then one arrowed connector enters the emphasized Franchisees card. Uploaded-state note dropped per Sol QA; the subtitle carries that message.",
-    "lastTouchedBy": "claude",
+    "lastTouchedBy": "max",
     "editing": false,
     "rev": 4,
-    "updatedAt": 1784540370654
+    "updatedAt": 1787158172912
   }
 }

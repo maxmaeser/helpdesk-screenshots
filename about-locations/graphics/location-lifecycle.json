@@ -1,5 +1,5 @@
 {
-  "revision": 2,
+  "revision": 3,
   "graphic": {
     "v": 2,
     "background": "white-solid",
@@ -202,11 +202,11 @@
         ]
       }
     ],
-    "status": "proposed",
+    "status": "approved",
     "note": "Inline infographic: the five location statuses as a lifecycle S-flow (Planned to Developing to Open, then down to Inactive to Closed). Statuses verbatim; Open emphasized. Vendor/franchisee assignment nodes omitted to avoid crowding.",
-    "lastTouchedBy": "claude",
+    "lastTouchedBy": "max",
     "editing": false,
     "rev": 1,
-    "updatedAt": 1784526123218
+    "updatedAt": 1787158051025
   }
 }

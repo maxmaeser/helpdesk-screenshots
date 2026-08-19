@@ -1,8 +1,13 @@
 {
-  "revision": 0,
+  "revision": 3,
   "shots": {
     "assets-library-overview.png": {
-      "crop": [0, 0, 3360, 1300],
+      "crop": [
+        0,
+        0,
+        3360,
+        1300
+      ],
       "status": "superseded",
       "note": "Library page, All Assets tab, Lumon Fresh selected, List view. Orientation shot for the intro note about Library vs department-filtered views. Blemishes fixed pre-shot: Staging Test Brand chip hidden, 'Collemction 1' typo in the Collections sidebar renamed to 'Collection 1', jokey 'HEHEHEHEHE' test collection hidden, 9 junky/personal-looking seed rows (a personal PDF, a boarding pass, contact_csv.txt, four hash-named jpgs, two joke gifs) hidden via display:none so the visible rows read as a real brand's library. Cropped to end after the 7th clean row, before two duplicate TESTING-W QR Code.svg rows and a hash-named jpg. dom-sanitize ran with freshenDates:false (no relative-date copy on this page). No cursor -- read-only orientation view. SUPERSEDED 2026-07-17 by assets-library-overview-v2.png (Knowledge Base sidebar item was still visible in this version; missed in the original blemish pass).",
       "lastTouchedBy": "claude",
@@ -10,16 +15,34 @@
       "rev": 0
     },
     "assets-library-overview-v2.png": {
-      "crop": [0, 0, 3360, 1300],
+      "crop": [
+        0,
+        0,
+        3360,
+        1300
+      ],
       "status": "proposed",
       "note": "RESHOOT 2026-07-17. Library page, All Assets tab, Lumon Fresh selected (multi-brand chip row), List view. Same content pattern as v1: a personal-looking PDF (Vijnana Bhairava tantra, Z-Library), a boarding pass PDF, contact_csv.txt, four hash-named jpgs, and two joke gifs (green-goblin.gif, Gandalf Smoking Pipe.gif) hidden via display:none on live staging data. Blemish fixes applied: Knowledge Base sidebar item hidden (missed in v1 -- this was the reshoot trigger), Staging Test Brand chip hidden, 'Collemction 1' typo fixed to 'Collection 1', 'HEHEHEHEHE' joke test collection hidden. dom-sanitize ran with freshenDates:false. No cursor -- read-only orientation view.",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787158273765
     },
     "assets-upload-modal.png": {
-      "crop": [850, 250, 1650, 1600],
-      "cursor": { "pos": [2206, 1623], "type": "arrow" },
+      "crop": [
+        850,
+        250,
+        1650,
+        1600
+      ],
+      "cursor": {
+        "pos": [
+          2206,
+          1623
+        ],
+        "type": "arrow"
+      },
       "status": "proposed",
       "note": "Actions > Upload modal, one file selected (a placeholder PNG, 'Grand-Opening-Flyer.png') via the dropzone, ready state showing Clear Files / Upload 1 file. Cropped tight to the modal with dimmed page context. Did NOT click Upload (read-only rule -- no asset was actually created); cleared the file and closed instead. Cursor on the Upload button to suggest the next click. dom-sanitize ran with freshenDates:false.",
       "lastTouchedBy": "claude",
@@ -34,7 +57,13 @@
       "rev": 0
     },
     "assets-version-history.png": {
-      "cursor": { "pos": [2705, 395], "type": "arrow" },
+      "cursor": {
+        "pos": [
+          2705,
+          395
+        ],
+        "type": "arrow"
+      },
       "status": "proposed",
       "note": "Full-screen asset preview for Lumon-Industries-FDD-2026.pdf, Versions tab. Shows the version card (Version 0, current, with Preview/Restore) that the platform renders for this state. Note: this seed asset only has a single version on staging -- a true multi-version restore state was not reachable read-only (creating one would require an actual Update Version upload, which the read-only capture rule forbids), so this shows the single-version UI pattern rather than an active restore choice. Cursor on Restore to show the action described in the article text. Full raw used (no crop). dom-sanitize ran with freshenDates:false.",
       "lastTouchedBy": "claude",
@@ -42,7 +71,13 @@
       "rev": 0
     },
     "assets-bulk-share-menu.png": {
-      "cursor": { "pos": [2170, 1648], "type": "arrow" },
+      "cursor": {
+        "pos": [
+          2170,
+          1648
+        ],
+        "type": "arrow"
+      },
       "status": "superseded",
       "note": "Library, All Assets, two clean assets selected via checkbox (certificate-of-occupancy-acknowledgment.pdf, opening-day-readiness-checklist.pdf), floating '2 Assets selected' toolbar, More menu open showing Share / Download / Publish 2 to Franchisees / Delete -- Share here is the bulk-share entry point. Cursor on Share. Blemishes fixed: Staging Test Brand chip hidden, 'Collemction 1' typo fixed, 'HEHEHEHEHE' test collection hidden (same sidebar fixes as the overview shot). Full raw used (no crop). dom-sanitize ran with freshenDates:false. SUPERSEDED 2026-07-17 by assets-bulk-share-menu-v2.png (Knowledge Base sidebar fix mandate; also refreshed against current staging data).",
       "lastTouchedBy": "claude",
@@ -50,15 +85,28 @@
       "rev": 0
     },
     "assets-bulk-share-menu-v2.png": {
-      "cursor": { "pos": [2169, 1709], "type": "arrow" },
+      "cursor": {
+        "pos": [
+          2169,
+          1709
+        ],
+        "type": "arrow"
+      },
       "status": "proposed",
       "note": "RESHOOT 2026-07-17. Library, All Assets, two clean assets selected via checkbox (certificate-of-occupancy-acknowledgment.pdf, opening-day-readiness-checklist.pdf -- same two files as v1, still present on staging), floating '2 Assets selected' toolbar, More menu open showing Share / Download / Publish 2 to Franchisees / Delete. Cursor on Share. Blemishes fixed: Knowledge Base sidebar hidden (out of frame here due to scroll position, hidden defensively via dom-sanitize pass regardless), Staging Test Brand chip hidden, 'Collemction 1' typo fixed, 'HEHEHEHEHE' test collection hidden. Full raw used (no crop). dom-sanitize ran with freshenDates:false.",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787158270043
     },
     "assets-collection-view.png": {
-      "crop": [0, 0, 3360, 1100],
+      "crop": [
+        0,
+        0,
+        3360,
+        1100
+      ],
       "status": "superseded",
       "note": "Library, 'Grand Opening Kit' collection opened from the sidebar (5 assets: flyer PDF, playbook PDF, a social PNG, two MP4s), search placeholder updated to 'Search grand opening kit...'. Cropped to the populated rows, dropping empty whitespace below. Same sidebar blemish fixes as the overview shot (typo fixed, joke collection hidden, Staging Test Brand chip hidden). No cursor -- read-only browsing state. dom-sanitize ran with freshenDates:false. SUPERSEDED 2026-07-17 by assets-collection-view-v2.png (Knowledge Base sidebar fix mandate).",
       "lastTouchedBy": "claude",
@@ -66,12 +114,19 @@
       "rev": 0
     },
     "assets-collection-view-v2.png": {
-      "crop": [0, 0, 3360, 1100],
+      "crop": [
+        0,
+        0,
+        3360,
+        1100
+      ],
       "status": "proposed",
       "note": "RESHOOT 2026-07-17. Library, 'Grand Opening Kit' collection opened from the sidebar (5 assets: grand-opening-flyer-EDITABLE.pdf, local-store-marketing-playbook.pdf, social-launch-post-1080.png, brand-logo-reveal-720p.mp4, numbered-menu-montage-720p.mp4), search placeholder updated to 'Search grand opening kit...'. Cropped to the populated rows, dropping empty whitespace below. Blemish fixes: Knowledge Base sidebar item hidden (this was the reshoot trigger), 'Collemction 1' typo fixed, 'HEHEHEHEHE' joke collection hidden, Staging Test Brand chip hidden. No cursor -- read-only browsing state. dom-sanitize ran with freshenDates:false.",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787158271793
     }
   }
 }

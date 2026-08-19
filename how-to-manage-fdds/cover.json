@@ -1,5 +1,5 @@
 {
-  "revision": 4,
+  "revision": 5,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -239,11 +239,11 @@
         ]
       }
     ],
-    "status": "proposed",
+    "status": "approved",
     "note": "Vertical FDD pipeline rev 2 per Sol QA: five uniform cards on one vertical axis (5 smaller cards vs work-your-pipeline's 4 larger), even connectors, labels normalized to one imperative form verbatim to the article's terms, Send FDD emphasized as the terminal step.",
-    "lastTouchedBy": "claude",
+    "lastTouchedBy": "max",
     "editing": false,
     "rev": 4,
-    "updatedAt": 1784540371047
+    "updatedAt": 1787158177106
   }
 }

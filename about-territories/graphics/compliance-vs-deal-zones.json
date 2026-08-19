@@ -1,5 +1,5 @@
 {
-  "revision": 3,
+  "revision": 4,
   "graphic": {
     "v": 2,
     "background": "white-solid",
@@ -202,11 +202,11 @@
         ]
       }
     ],
-    "status": "proposed",
+    "status": "approved",
     "note": "Rev 2 (Sol QA): bottom nodes made parallel actions (Track Filing Status / Draw Deal Zone, both verb-led, metas both three-noun facet lists); every connector now departs from and lands on a card edge (root bottom edge to group top centers, group bottom edges to sub top edges).",
-    "lastTouchedBy": "claude",
+    "lastTouchedBy": "max",
     "editing": false,
     "rev": 2,
-    "updatedAt": 1784542067405
+    "updatedAt": 1787158072772
   }
 }

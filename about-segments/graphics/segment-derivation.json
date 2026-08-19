@@ -1,5 +1,5 @@
 {
-  "revision": 3,
+  "revision": 4,
   "graphic": {
     "v": 2,
     "background": "white-solid",
@@ -274,11 +274,11 @@
         ]
       }
     ],
-    "status": "proposed",
+    "status": "approved",
     "note": "Inline infographic: segment derivation. Three sources (built-in groups, tags, custom statuses) fan in to the Segments tab; segments fan out to what they unlock (one-off email, sequence, filtering the Leads table).",
-    "lastTouchedBy": "claude",
+    "lastTouchedBy": "max",
     "editing": false,
     "rev": 2,
-    "updatedAt": 1784542034513
+    "updatedAt": 1787158069427
   }
 }

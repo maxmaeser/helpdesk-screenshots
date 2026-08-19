@@ -1,5 +1,5 @@
 {
-  "revision": 3,
+  "revision": 4,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -288,11 +288,11 @@
         ]
       }
     ],
-    "status": "proposed",
+    "status": "approved",
     "note": "Decision split with article-verbatim interest rule, parallel columns, vs divider, separated stems. Sol rev 1.",
-    "lastTouchedBy": "claude",
+    "lastTouchedBy": "max",
     "editing": false,
     "rev": 3,
-    "updatedAt": 1784540371853
+    "updatedAt": 1787158162950
   }
 }

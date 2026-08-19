@@ -1,5 +1,5 @@
 {
-  "revision": 29,
+  "revision": 30,
   "cover": {
     "v": 2,
     "background": "ember",
@@ -118,11 +118,11 @@
         ]
       }
     ],
-    "status": "proposed",
+    "status": "approved",
     "note": "Repair pass: Frame A badges mixed to 4 distinct real states (In Progress/Not Started/Completed/Overdue) - Completed and Overdue pulled from verified real UI vocabulary (platform COURSE_STATUS + the red Overdue pill on learning-course-card.png, shortened from its full 'Overdue: Jul 3, 2026' form to fit the table's fixed 120px badge column - no fabricated text) and reapplied to Selling our Bowls / POS Mastery (both confirmed real course names via Learning full page.png) to diversify badges without duplicating course/status pairs; not asserting those two are literally in that state in prod right now. Frame B: contentZoom 1.4 was clipping the contentCard's right edge (title padding + card corner) because the card always fills 100% of frame.w and the scale transform is top-left anchored inside a frame that clips at its own unscaled w/h - dropped zoom to 1 and enlarged frame b (w 300->380, h 470->400) to keep hero prominence without any clip risk.",
-    "lastTouchedBy": "claude",
+    "lastTouchedBy": "max",
     "editing": false,
     "rev": 27,
-    "updatedAt": 1784539866229
+    "updatedAt": 1787158153569
   }
 }

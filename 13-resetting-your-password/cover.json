@@ -1,5 +1,5 @@
 {
-  "revision": 39,
+  "revision": 40,
   "cover": {
     "v": 2,
     "background": "ember",
@@ -87,11 +87,11 @@
         ]
       }
     ],
-    "status": "proposed",
+    "status": "approved",
     "note": "",
-    "lastTouchedBy": "claude",
+    "lastTouchedBy": "max",
     "editing": false,
     "rev": 37,
-    "updatedAt": 1784540041670
+    "updatedAt": 1787158156682
   }
 }

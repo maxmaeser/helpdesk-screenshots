@@ -1,5 +1,5 @@
 {
-  "revision": 5,
+  "revision": 6,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -203,11 +203,11 @@
         ]
       }
     ],
-    "status": "proposed",
+    "status": "flagged",
     "note": "Hub and spoke: Organization hub over one aligned row of Brands, Team members, Billing.",
-    "lastTouchedBy": "claude",
+    "lastTouchedBy": "max",
     "editing": false,
     "rev": 5,
-    "updatedAt": 1784540369059
+    "updatedAt": 1787158192596
   }
 }

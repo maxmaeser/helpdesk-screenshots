@@ -1,5 +1,5 @@
 {
-  "revision": 3,
+  "revision": 4,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -203,11 +203,11 @@
         ]
       }
     ],
-    "status": "proposed",
+    "status": "approved",
     "note": "Relay as stepped serpentine: Prospect, Marketing, Conversion, Lead. Sol rev 1: house lockup structure, stage labels, no orphan wraps.",
-    "lastTouchedBy": "claude",
+    "lastTouchedBy": "max",
     "editing": false,
     "rev": 3,
-    "updatedAt": 1784540371451
+    "updatedAt": 1787158186042
   }
 }

@@ -1,5 +1,5 @@
 {
-  "revision": 82,
+  "revision": 83,
   "shots": {
     "multi-brand-selector-raw.png": {
       "cursor": {
@@ -95,7 +95,9 @@
       "note": "RESHOOT 2026-08-17 (Thursday's raw was the wrong page -- Brand Profile chrome with no brand selector in frame -- reverted by the salvage agent). Corrected: Settings > Brands (Brand Settings page, /settings/brands), section=brand-workspace (single-select). The sibling-brand-chip bar and the 'Single Brand Selector' tag badge no longer exist platform-wide -- the live UI is now a single dropdown-style header ('Saperavi Grill' with a chevron) under an 'All changes saved' status pill. Agent-captured at 1680x200 CSS clip (same crop convention as before, cuts above the 'Missing required information' CAN-SPAM banner), 2x, dom-sanitize (1 email replaced). Blemish fix carried forward: the seed brand name 'Staging Test Brand' renamed via DOM text-node swap to 'Saperavi Grill' (thematically consistent with Lumon Fresh, Kharcho Kings). No cursor -- read-only orientation state, dropdown shown closed to match the file's role as the static single-brand reference (the open-dropdown interaction is out of scope for this shot).",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 9
+      "rev": 9,
+      "renderedRev": 9,
+      "renderedAt": 1787158283205
     }
   }
 }
