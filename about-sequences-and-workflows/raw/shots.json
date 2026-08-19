@@ -1,5 +1,5 @@
 {
-  "revision": 1,
+  "revision": 2,
   "shots": {
     "sequences-list.png": {
       "status": "proposed",
@@ -11,6 +11,17 @@
     "sequence-builder-canvas.png": {
       "status": "proposed",
       "note": "Sequence builder canvas for the 'Fishermen Campaign' sequence (Operations > Workflows > Sequences, Edit Workflow), showing the trigger-action node chain: Manually Triggered -> Send Email 'Welcome Email 1' -> Wait (2 Days) -> Send Email 'Welcome Email 2'. Illustrates the trigger-action pattern, the Email action type, and the Delay action type's day-count preset referenced in the article text. Agent-captured 2026-07-17, clipped to the slide-over panel (803,0,877,810), 2x, dom-sanitize with freshenDates:false (the '2 Days' string is product copy, not a relative date -- must not be rewritten). No PII, no staging blemishes in frame (panel obscures the underlying list). No cursor -- read-only canvas view, no single element being clicked.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "sequence-add-step-menu.png": {
+      "cursor": {
+        "pos": [861, 512],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "Same 'Fishermen Campaign' sequence builder (Operations > Workflows > Sequences, Lumon Fresh, Edit Workflow), first '+' add-step node clicked to open the Actions popover: Send Email (enabled), Send SMS (visibly greyed out, 'Send a user a text message'), Wait (enabled). Covers the 'Send SMS: shown in the step menu but not currently available' bullet in 'What a sequence is made of'. Agent-captured 2026-08-20 via session.js persisted brand session (fresh login 401-traps the lead/workflow panels), viewport 1680x1050 CSS 2x. Raw viewport shot clipped in processing to the slide-over panel + canvas (1601,0,3360,1500 raw px). dom-sanitize run defensively (0 hits -- no PII, no relative dates, all copy is product strings). Cursor: arrow on the '+' trigger that opened the popover.",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0

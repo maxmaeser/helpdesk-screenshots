@@ -18,6 +18,8 @@ A sequence is a single straight line of steps. There are three kinds:
 - **Wait**: holds the sequence for a set period before the next step.
 - **Send SMS**: shown in the step menu but not currently available.
 
+![Add-step menu on the builder canvas showing Send Email, Send SMS (unavailable), and Wait](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-sequences-and-workflows/sequence-add-step-menu.png)
+
 You cannot place two **Wait** steps back to back.
 
 Sequences do not branch. There are no conditions, no yes and no paths, and no steps for tagging, changing a status, or creating a task.
