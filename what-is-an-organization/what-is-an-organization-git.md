@@ -25,10 +25,10 @@ An organization admin can also designate specific members as **billing admins**,
 There are two ways to become part of an organization:
 
 1. **Create one**: during onboarding, you set up a new organization as part of the getting started wizard.
-2. **Join with an invite code**: an organization admin sends you an invite. You enter the code from the **Join Organization** option in the sidebar menu or from your account settings.
+2. **Join with an invite code**: an organization admin sends you an invite. You enter the code from the **Join Organization** option in your profile menu (click your profile picture at the bottom of the sidebar) or from your account settings.
 
 ### Where to find it
 
-You can view and manage your organization by clicking your profile picture at the bottom of the sidebar, selecting **Settings**, and opening the **Organization** page. This is where you see the organization name, linked brands, and current team members. Your associated organizations also appear on the **Profile** page under **Associated Organisations**.
+You can view and manage your organization by clicking your profile picture at the bottom of the sidebar, selecting **Settings**, and going to the **Details** page under Organization. This is where you see the organization name, linked brands, and current team members. Your associated organizations also appear on the **Organizations** tab of your Profile settings.
 
 ![Home page brand selector bar showing the multiple brands this organization holds, with Lumon Fresh selected](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/what-is-an-organization/brand-switcher.png)

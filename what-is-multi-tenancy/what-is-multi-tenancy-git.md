@@ -1,4 +1,4 @@
-Multi-tenancy in Franchise Systems Ai (FS Ai) means a single account can manage multiple franchise brands, each with fully isolated data.
+Multi-tenancy in Franchise Systems Ai (FS Ai) means a single account can manage multiple franchise brands, each with fully isolated data. This is designed for franchise groups that operate more than one concept under one corporate umbrella.
 
 ### The hierarchy: Organization > Brand > Agent
 
