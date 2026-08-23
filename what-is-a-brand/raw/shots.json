@@ -1,6 +1,20 @@
 {
-  "revision": 1,
+  "revision": 2,
   "shots": {
+    "brand-settings-connections.png": {
+      "status": "proposed",
+      "note": "Captured 2026-08-24 per SHOT-SPEC.md shot 1 (settings-brand-profile update). Full-plan brand (Staging Test Brand), Settings > Brand > Connections (resolve('SETTINGS_BRANDS') + '?section=brand-connections'). Agent-captured via session.js+routes.js, viewport 1680x1050 CSS (2x). Clip x=0,y=68,w=1475,h=863 CSS -- spans from the page-heading row down through the highlighted Connections nav item (which sits below the Campaign attribution card, so the rect has to reach that far to show all 5 Brand nav items), right edge past the Connect domain button. Shows Domains & sending and Campaign attribution cards in full, Integrations/Webhooks partially. dom-sanitize: 0 PII (empty-state/config UI). No cursor -- read-only view per spec.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "brand-settings-profile-lite.png": {
+      "status": "blocked",
+      "note": "SHOT-SPEC.md shot 2 (Lite-plan Brand Profile page). Unreachable 2026-08-24: only one brand-dashboard account is available (max+claude@franchisesystems.ai, org 'Franchise Systems Ai'). That org has a brand literally named 'Test Lite Brand' among its 9 brands, but switching to it renders the IDENTICAL Full-plan settings UI (5-item Brand nav, 'Associated organizations' card, not 'Campaign attribution') as every other brand in the org -- confirming the Profile-page swap is gated by the ORGANIZATION's plan, not a per-brand flag, and this org is Full plan uniformly. No Lite-plan org/brand exists in reach of the current credentials. See IMAGES-NEEDED.md.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
     "brand-switcher.png": {
       "status": "proposed",
       "note": "Shared raw with what-is-an-organization and what-is-multi-tenancy",
@@ -16,7 +30,8 @@
       "rev": 1
     },
     "where-to-find-settings.png": {
-      "status": "proposed",
+      "status": "superseded",
+      "supersededBy": "brand-settings-connections.png",
       "note": "Side-by-side pair answering Max's note \"show an image or a side by side or something that shows how to get to settings from every screen\". Left: profile menu open at the bottom of the sidebar with Settings in the list (Home). Right: the settings page with the Brand group in the settings sidebar. Agent-captured 2026-08-03 on staging.app.franchisesystems.ai, 1680x1050 CSS viewport, 2x, dom-sanitize freshenDates:auto, clip x0 y480 w620 h560 for both halves, composed with helpdesk-image.py --pair. Raws: open-settings-menu.png + settings-brand-section.png. No cursor: the open menu already carries the action and the arrow would run off the bottom of the crop.",
       "lastTouchedBy": "claude",
       "editing": false,

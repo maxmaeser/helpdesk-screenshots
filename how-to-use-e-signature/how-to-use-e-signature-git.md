@@ -4,16 +4,14 @@ E-Signature lets you send documents for electronic signing directly from Franchi
 
 ### Preparing a Document for Signature
 
-Upload your document to the **Library**. Once uploaded, open the asset details and use **Prepare eSignature** to create a signable template. FS Ai processes the document and generates the fields (signature blocks, date fields, text inputs) that signers will complete.
+Upload your document to the **Library**. From the document's row, open the menu and choose **eSignature**, then **Prepare eSignature** to create a signable template. FS Ai processes the document and gives you a field palette (Signature, Text, Date, and Number) to drop onto the pages for signers to complete.
 
-![eSignature menu on a Library asset showing Prepare eSignature and Generate eSignature link](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-use-e-signature/esig-library-menu-v2.png)
-
-![DocuSeal template builder showing the field palette and a placed signature field on an FDD](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-use-e-signature/esig-prepare-fields.png)
-
+![eSignature field editor showing the field palette and a placed signature field on a document](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-use-e-signature/esig-prepare-fields.png)
 ### Generating a Public Signing Link
 
-For documents that need to be signed by applicants, you can generate a public e-signature link from the asset panel. Click **Generate Public E-Signature Link** to create a shareable URL. Applicants who open the link will need an account to complete the signing.
+For documents that need to be signed by applicants, open the same document's menu and choose **eSignature**, then **Generate eSignature link** to create a shareable URL. Applicants who open the link will need an account to complete the signing.
 
+![eSignature menu on a Library asset showing Prepare eSignature and Generate eSignature link](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-use-e-signature/esig-library-menu-v2.png)
 The link status is tracked automatically. If a previous link has expired, been revoked, or become invalid, the system lets you know and you can generate a new one.
 
 ### Tracking Submission Status
@@ -39,7 +37,6 @@ For Franchise Disclosure Documents, the signing step has additional configuratio
 When set to automatic, the platform looks up the applicant's state and serves the correct state-specific FDD. You can also toggle **Franchise Agreement** for franchise agreement signing steps, which works the same way but is tracked separately.
 
 ![Portal editor Sign step Document Settings with Franchise Disclosure Document toggled on and Esignature Document set to Automatic](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-use-e-signature/esig-fdd-step-settings.png)
-
 ### E-Signature in the Portal
 
 Applicants encounter e-signature through the **Sign** step type in the portal. When they reach a sign step, the document loads in an embedded viewer where they can review and sign without leaving the portal. Once completed, the signed document is processed and linked to their application record.

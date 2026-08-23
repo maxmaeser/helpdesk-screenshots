@@ -1,5 +1,6 @@
 {
   "funnel-preview-mode.png": { "cursor": [1790, 208], "type": "arrow" },
   "funnel-details-panel.png": { "cursor": [1144, 970], "type": "arrow" },
-  "funnel-analytics-panel.png": { "cursor": [659, 1570], "type": "arrow" }
+  "funnel-analytics-panel.png": { "cursor": [659, 1570], "type": "arrow" },
+  "funnel-analytics-page-drilldown.png": { "cursor": [948, 935], "type": "arrow" }
 }

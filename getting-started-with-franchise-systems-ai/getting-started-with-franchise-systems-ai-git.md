@@ -29,18 +29,26 @@ The brand dashboard is divided into several areas, accessible from the left side
 - **Library**: store and organize documents and files.
 
 ![Brand dashboard home page showing the left sidebar with Home, Marketing, Sales, Operations, Projects, Brand, Studio, and Library, plus the brand selector bar and Overview tab](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/getting-started-with-franchise-systems-ai/dashboard-sidebar.png)
-
 > **Where is Settings?** Settings is not a sidebar item: open it by clicking your profile picture at the bottom of the sidebar.
 
 Settings is grouped into **Account** (your profile, notifications, and calendar), **Organization** (members, brands, API keys, and billing), and **Brand** (each brand's profile, appearance, scheduling, team, and connections).
 
 ![Settings page showing the Account, Organization, and Brand groups in the left navigation, with the Profile page open on the right](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/getting-started-with-franchise-systems-ai/settings-scopes.png)
-
 ### Your first steps
 
 When you sign up, a guided setup walks you through the essentials: setting up your profile, creating your organization, adding your first brand, inviting team members, and confirming your subscription. You also finalize your brand identity (logo, colors, description, and social links) along the way.
 
-The **Getting Started** area stays in your sidebar so you can pick up setup where you left off. Once the essentials are in place, the full dashboard unlocks and you can begin managing your franchise operations.
+If any of your brands still needs onboarding materials, the **Getting Started** item shows in your sidebar.
+
+Open it to see a card for each brand that still needs setup, with a status badge: Awaiting Intake, Intake Submitted, Processing, or Completed.
+
+Awaiting Intake means the brand still needs your logo, FDD, brand guidelines, and other key details uploaded.
+
+Once you submit them, the status moves to Intake Submitted while our team reviews it, then Processing while your brand platform is built.
+
+A brand shows Completed once it's live on the platform.
+
+The **Getting Started** item drops out of your sidebar once every brand you can access is Completed.
 
 ### Next steps
 
