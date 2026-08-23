@@ -78,8 +78,25 @@
     },
     "saved-views.png": {
       "highlights": [],
+      "status": "superseded",
+      "note": "SUPERSEDED 2026-08-24: DataTable Views redesign (be56bc5b6) replaced this popover layout with a further-updated one (search, per-view Default badge, Reset to default, inline save/save-as-new). See views-panel-empty.png + views-panel-unsaved-changes.png. Flagged to Max for final deletion of this raw + its processed final -- not deleted pre-emptively per VPS-commit rule on operator -git.md.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0,
+      "supersededBy": ["views-panel-empty.png", "views-panel-unsaved-changes.png"]
+    },
+    "views-panel-empty.png": {
+      "highlights": [],
       "status": "proposed",
-      "note": "Reshoot 2026-08-14: UI drift -- the standalone bookmark/save icon that used to sit after \"Views\" in the toolbar is gone. Saved views are now managed entirely from the Views dropdown panel itself: \"Views / Saved filters, sort, and columns\" header, \"Reset to default\" link, current \"Default configuration\" summary row, an inline \"Name this view...\" input with a \"+ Save\" button, a Search views box, and the \"No views created yet\" empty state (0 saved views). Agent-captured, 2x. No cursor -- panel-open orientation state.",
+      "note": "NEW shot 2026-08-24, per SHOT-SPEC.md row datatable-saved-views: Sales > Pipeline, Views toolbar button clicked, panel open with no saved views yet. Shows \"Default configuration · No filters · Created At↓ · 7 columns\" summary row, empty \"Name this view…\" input + Save button, Search views box, and the \"No views created yet\" empty state. Agent-captured via session.js + routes.js (SALES route), 2x, clip x:230 y:180 w:900 h:630 CSS (toolbar + panel, matches filter-panel.png convention). No cursor -- panel-open orientation state. Sanitized (dom-sanitize.js) before capture; 0 emails/phones found (Staging Test Brand seeded data).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "views-panel-unsaved-changes.png": {
+      "highlights": [],
+      "status": "proposed",
+      "note": "NEW shot 2026-08-24, per SHOT-SPEC.md row datatable-saved-views: same Views panel after saving a view (\"My View\"), selecting it active, then changing the sort (Created At Descending -> Ascending, applied) without saving the view. Panel now shows the \"Unsaved changes to 'My View'\" info banner with Update view / Save as new… buttons, and the saved view listed below (radio-selected). Agent-captured, 2x, tight panel-only clip (~424 CSS wide, panel is ~384px + margin), matches SHOT-SPEC's ~500 CSS panel-only guidance. No cursor. Note: the star (set-as-default) affordance on the list row is CSS opacity-0 until a real Tailwind group-hover state -- Playwright hover/mouse.move did not trigger it in headless (opacity stayed 0 per computed style), so it is not visible in this raw; not forced via CSS override since the article doesn't require it. Sanitized before capture; 0 emails/phones (Staging Test Brand seeded data, includes obviously-fake test-lead names like \"Bill Testing\"/\"Signup! Testing\").",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0

@@ -36,6 +36,24 @@
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 1
+    },
+    "home-create-quick-task.png": {
+      "crop": [604, 193, 1076, 857],
+      "cursor": { "pos": [735, 1237], "type": "arrow" },
+      "status": "proposed",
+      "note": "Agent-captured (session.js + routes.js BASE route, brand dashboard): Home > Tasks tab > + Create Task. Modal opens on the quick-task form (default). Task Name filled ('Follow up with new franchisee lead') for a fuller look; Description/Due Date left empty/default. Shows Brand, Task Name, Description, Status, Due Date, Assignee, and the footer (Turn into work task / Cancel / Create Quick Task). Arrow cursor on the Create Quick Task button. Note: the live modal does NOT currently render a 'Notification Settings / Notify Responsible' section under Assignee -- checked repeatedly (default assignee, filled name, changed assignee to a different person, added a due date) and it never appeared. The article text says 'Turn on Notify Responsible to alert the assignee', which does not match current staging UI; flagging for Max, did not alter article prose (out of scope for a capture pass). Shot is otherwise an accurate, unmodified capture of the real modal.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 1
+    },
+    "home-work-task-type-picker.png": {
+      "crop": [508, 119, 1172, 931],
+      "cursor": { "pos": [261, 386], "type": "arrow" },
+      "status": "proposed",
+      "note": "Agent-captured: same modal, after clicking 'Turn into work task' from the Create Quick Task form. Guided flow opens on step 1 of 4, 'Pick a task type', with Todo checklist selected by default (checkmark badge). Shows all 7 type cards (Todo checklist, Form, Visit a link, Schedule a call, Watch a video, View slides, Sign a document) and the footer (Cancel / Switch back to quick task / Step 1 of 4 / Continue). The dialog itself is CSS-capped at max-height:640px with overflow:auto, and the 7-card grid is a second, independently-scrolling inner div -- both clip real, already-rendered content since 7 cards in 3 rows don't fit the allotted space. Unclipped both (style.overflow='visible', maxHeight/height='auto' via page.evaluate) before the screenshot so all 7 cards render in one shot instead of scrolling/truncating -- nothing fabricated, just un-hiding DOM that was already there. Arrow cursor on the Todo checklist card's icon (selected state).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 1
     }
   }
 }

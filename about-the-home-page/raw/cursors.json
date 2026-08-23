@@ -1,0 +1,26 @@
+{
+  "home-overview.png": {
+    "cursor": [700, 803],
+    "type": "hand"
+  },
+  "home-tasks.png": {
+    "cursor": [3189, 548],
+    "type": "arrow"
+  },
+  "home-chat.png": {
+    "cursor": [926, 645],
+    "type": "hand"
+  },
+  "home-calendar.png": {
+    "cursor": [3211, 531],
+    "type": "arrow"
+  },
+  "home-create-quick-task.png": {
+    "cursor": [735, 1237],
+    "type": "arrow"
+  },
+  "home-work-task-type-picker.png": {
+    "cursor": [261, 386],
+    "type": "arrow"
+  }
+}
