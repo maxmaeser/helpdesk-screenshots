@@ -113,6 +113,76 @@
       "editing": false,
       "rev": 0
     },
+    "profile-security-sessions-actions.png": {
+      "cursor": {
+        "pos": [
+          1879,
+          94
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "New shot, edit pass 2026-08-24: Active sessions card full width, shows Sign out all others (header) + Sign out (row) both un-cropped. Custom IP-address sanitize rule added (192.168.1.24 placeholder, matches profile-security-v2.png convention).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "profile-security-2fa-setup-qr.png": {
+      "cursor": {
+        "pos": [
+          1408,
+          1232
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "New shot, row settings-account-2fa (2026-08-24): 2FA setup modal, Scan QR Code step. Secret/QR are synthetic staging-account TOTP values (computed via a pure-stdlib TOTP helper, no authenticator app). Crop padding bled into the modal backdrop and leaked the real Active Sessions IP behind it; recaptured with a custom IP-address sanitize rule (192.168.1.24 placeholder, matches profile-security-v2.png convention).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "profile-security-2fa-backup-codes.png": {
+      "status": "proposed",
+      "note": "New shot, row settings-account-2fa (2026-08-24): 2FA setup modal, backup codes step (results view, no cursor). Backup codes are synthetic staging-account values.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "profile-security-2fa-enabled.png": {
+      "status": "proposed",
+      "note": "New shot, row settings-account-2fa (2026-08-24): Security tab, closed-state 2FA card after enabling (state view, no cursor).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "profile-security-2fa-disable.png": {
+      "cursor": {
+        "pos": [
+          376,
+          608
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "New shot, row settings-account-2fa (2026-08-24): Disable confirmation panel, captured before submitting (code field empty). 2FA was actually disabled afterward via a computed TOTP code to restore the shared automation account (max+claude@franchisesystems.ai, used by session.js across all capture sessions) to its original no-2FA state.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "profile-security-2fa-regenerate.png": {
+      "cursor": {
+        "pos": [
+          376,
+          608
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "New shot, row settings-account-2fa (2026-08-24): Regenerate backup codes panel, captured before submitting (code field empty).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
     "settings-scopes-nav.png": {
       "cursor": {
         "pos": [

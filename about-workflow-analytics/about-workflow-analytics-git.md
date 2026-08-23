@@ -4,7 +4,7 @@ You find it under **Marketing → Workflows**, **Sales → Workflows**, or **Ope
 
 Sales has a second way in: go to **Sales → Analytics** and select the **Emails** tab.
 
-It is the exact same page as **Sales → Workflows** on the **Analytics** tab, just reached from a different spot in the sidebar. Everything below applies whichever way you got here.
+It is the exact same page as **Sales → Workflows** on the **Analytics** tab, reached from a different spot in the sidebar. Everything below applies whichever way you got here.
 
 Each department has its own Analytics tab. The numbers only cover email sent from that department, whether it went out through a sequence, an automation, or a one-off send.
 
@@ -49,7 +49,7 @@ Under the chart is the same event log as the Events view, scoped to this one tem
 Click the back arrow to return to the Templates view.
 
 ![Template detail view with the engagement chart and per-recipient event log](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-workflow-analytics/workflows-analytics-detail.png)
-Use this view to check whether one specific send landed, not just how the department is doing overall.
+Use this view to check whether one specific send landed, not only how the department is doing overall.
 
 ### If a section looks empty
 

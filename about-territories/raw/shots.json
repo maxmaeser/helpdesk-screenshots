@@ -1,5 +1,5 @@
 {
-  "revision": 1,
+  "revision": 2,
   "shots": {
     "territories-compliance.png": {
       "status": "superseded",
@@ -11,7 +11,10 @@
     },
     "territories-bulk-assign-fdd.png": {
       "cursor": {
-        "pos": [1052, 2026],
+        "pos": [
+          1052,
+          2026
+        ],
         "type": "arrow"
       },
       "status": "superseded",
@@ -23,12 +26,15 @@
     },
     "territories-deal-zones.png": {
       "cursor": {
-        "pos": [3172, 472],
+        "pos": [
+          3172,
+          472
+        ],
         "type": "arrow"
       },
       "status": "superseded",
       "supersededBy": "territories-deal-zones-v2.png",
-      "note": "Deal Zones tab, Lumon Fresh selected. Zone list (state flag, zone name, assigned entity, deal count X/Y) beside the map with highlighted zone shapes; 'Draw Deal Zone' button top right. Agent-captured 2026-07-17. Cosmetic fixes: hid 'Staging Test Brand' chip; renamed test-y seed zone/entity names ('Sonething'->Denver Foothills, 'new'->Boulder Corridor, 'NO'->Austin Metro, 'Test'->Denver Central, 'Signup! Testing'/'Maximilian Mäser -- Demo'->Rocky Mountain Holdings, 'Email Me'->Peachtree Ventures) via DOM text swap on exact/substring matches -- counts, structure, and 'Unassigned' rows (a real product state) left untouched. dom-sanitize with freshenDates:false. Cursor on Draw Deal Zone button (referenced by the 'Creating a Deal Zone' how-to, not activated -- entering draw mode needs no click to convey the entry point). SUPERSEDED 2026-07-17: original capture left the staging-only 'Knowledge Base' sidebar item visible.",
+      "note": "Deal Zones tab, Lumon Fresh selected. Zone list (state flag, zone name, assigned entity, deal count X/Y) beside the map with highlighted zone shapes; 'Draw Deal Zone' button top right. Agent-captured 2026-07-17. Cosmetic fixes: hid 'Staging Test Brand' chip; renamed test-y seed zone/entity names ('Sonething'->Denver Foothills, 'new'->Boulder Corridor, 'NO'->Austin Metro, 'Test'->Denver Central, 'Signup! Testing'/'Maximilian M\u00e4ser -- Demo'->Rocky Mountain Holdings, 'Email Me'->Peachtree Ventures) via DOM text swap on exact/substring matches -- counts, structure, and 'Unassigned' rows (a real product state) left untouched. dom-sanitize with freshenDates:false. Cursor on Draw Deal Zone button (referenced by the 'Creating a Deal Zone' how-to, not activated -- entering draw mode needs no click to convey the entry point). SUPERSEDED 2026-07-17: original capture left the staging-only 'Knowledge Base' sidebar item visible.",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0
@@ -42,7 +48,10 @@
     },
     "territories-bulk-assign-fdd-v2.png": {
       "cursor": {
-        "pos": [1052, 2026],
+        "pos": [
+          1052,
+          2026
+        ],
         "type": "arrow"
       },
       "status": "proposed",
@@ -53,7 +62,10 @@
     },
     "territories-deal-zones-v2.png": {
       "cursor": {
-        "pos": [3172, 472],
+        "pos": [
+          3172,
+          472
+        ],
         "type": "arrow"
       },
       "status": "proposed",
@@ -72,6 +84,13 @@
     "territories-deadlines-empty.png": {
       "status": "proposed",
       "note": "New shot for the Deadlines Tab subsection (2026-08-24), empty state. Sales > Compliance (Territories route), switched brand selector from Staging Test Brand to 'Test Lite Brand' (a distinct pre-existing test brand with zero registration/FDD dates set anywhere) because Staging Test Brand's Illinois/North Carolina now carry the test dates set for territories-deadlines.png and could not be cleared via the UI. Deadlines tab reads exactly 'No deadlines yet' / 'Registration expirations and FDD renewals appear here once your states have dates.', matching the SHOT-SPEC verbatim. Agent-captured 1680x1050 CSS viewport, 2x. dom-sanitize run twice, 0 hits both passes. Same Playwright clip as territories-deadlines.png: {x:240,y:105,width:840,height:370}. No cursor -- empty/read-only state.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "territories-states-filters.png": {
+      "status": "proposed",
+      "note": "New shot for the reworked State Management subsection (2026-08-24, coverage-matrix row sales-compliance-states). Sales > Compliance (Territories route), Staging Test Brand, default States tab. Data setup: searched California (Inactive, Registration Required, 0 FDD, matching SHOT-SPEC's example), checked its row checkbox, Set Status > Actively Franchising -- it becomes a live registration gap (No FDD + Registration Required badges, orange highlight + warning marker on the map, '1 issue to resolve' banner, FDDs tab badge '1'). Search box cleared before capture so the full list + default filter row shows (2 selected / Active first / All states / Any status / Any FDD, all left at defaults per spec, no dropdown opened). Agent-captured full 1680x1050 CSS viewport (no clip), 2x -- matches the pre-rework territories-compliance-v2.png framing (list on the left, map filling the rest, full sidebar+navbar included) per SHOT-SPEC's explicit instruction to reuse that framing. Cosmetic fix: hid the staging-only 'Knowledge Base' sidebar item (display:none), same established fix as every other raw in this article. dom-sanitize run twice (immediate + 150ms defensive re-run), 0 hits both passes. No cursor -- per SHOT-SPEC, this is a read-only/results state (the gap-highlight map is the point, not a click target).",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0

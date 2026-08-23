@@ -140,6 +140,13 @@
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0
+    },
+    "lead-panel-activity-fdd-email.png": {
+      "status": "proposed",
+      "note": "Activity tab, FDD Sent entry tag clicked open to the email preview modal (sales/pipeline, lead Billy Smith, staging). Sender address sanitized to hello@example.com via dom-sanitize.js; dates freshened. No cursor: read-only result state, not a click target.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
     }
   }
 }

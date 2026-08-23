@@ -1,4 +1,8 @@
 {
   "profile-menu-settings.png": { "cursor": [130, 198] },
-  "settings-scopes-nav.png": { "cursor": [60, 446] }
+  "settings-scopes-nav.png": { "cursor": [60, 446] },
+  "profile-security-sessions-actions.png": { "cursor": [1879, 94] },
+  "profile-security-2fa-setup-qr.png": { "cursor": [1408, 1232], "type": "arrow" },
+  "profile-security-2fa-disable.png": { "cursor": [376, 608], "type": "arrow" },
+  "profile-security-2fa-regenerate.png": { "cursor": [376, 608], "type": "arrow" }
 }

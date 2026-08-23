@@ -1,5 +1,5 @@
 {
-  "revision": 91,
+  "revision": 92,
   "shots": {
     "notifications-profile-menu.png": {
       "crop": [
@@ -43,20 +43,21 @@
       "updatedAt": 1786629948965,
       "renderedAt": 1786629950002
     },
-    "notifications-table.png": {
+    "notifications-group-card.png": {
       "crop": [
-        19,
-        0,
-        2043,
-        1260
+        448,
+        164,
+        1024,
+        516
       ],
       "status": "approved",
-      "note": "Main content shot: Settings > Notifications page, showing the per-event toggle table (Notification / Notify Me In-App / Notify Me By Email columns) covering the Leads & Applicants and Documents groups plus the start of Tasks. Agent-captured 2026-07-17 on staging brand dashboard, clip 1040x630 CSS (2080x1260 raw) at 2x, cropped to the table region (sidebar excluded, per the very-wide-UI framing rule). dom-sanitize run with freshenDates:false (no relative dates on this page; toggle labels are the only text). No PII found (0 emails/phones/dates/custom). Read-only view -- no cursor.",
-      "lastTouchedBy": "max",
+      "note": "Main content shot: Settings > Notifications page, redesigned grouped-card layout (fsai-codebase bd9f760d6, Aug 21). Applicants & Sales card, agent-captured 2026-08-24 on staging brand dashboard via session.js getContext('brand') + routes.js SETTINGS_NOTIFICATIONS, clip taken from live boundingClientRect of the card element (448,164,1024x516 CSS px, 2x). Master 'All Applicants & Sales' row shows the dash/partial state (mixed on/off children) plus all 9 individual event rows below it. dom-sanitize run twice (pre + 150ms defensive re-run), 0 emails/phones/dates/custom -- page has no PII in this crop. Read-only view -- no cursor, per the skip-it rule. Replaces notifications-table.png (deleted; page redesign moved from flat table to grouped cards).",
+      "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 7,
-      "renderedRev": 7,
-      "renderedAt": 1787158265972
+      "rev": 1,
+      "renderedRev": 1,
+      "renderedAt": 1787616000000,
+      "supersedes": "notifications-table.png"
     }
   }
 }

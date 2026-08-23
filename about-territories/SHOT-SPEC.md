@@ -15,3 +15,23 @@ Route: **Sales → Compliance**, then click the **Deadlines** tab (`https://stag
 - Shot 2 requires no setup on the current staging brand — verified live 2026-08-24, reads exactly "No deadlines yet" / "Registration expirations and FDD renewals appear here once your states have dates."
 - Crop to the left-hand deadlines card plus a little of the map, same framing as `territories-compliance-v2.png`. Don't include the full map area.
 - Run `dom-sanitize.js` before capture if any real dates/data are visible (shouldn't be, this is the Staging Test Brand).
+
+---
+
+# Shot Spec addendum — State Management filter row rework (2026-08-24)
+
+One new shot for the rewritten **State Management** subsection (coverage-matrix row `sales-compliance-states`, stale: the section pre-dated the Compliance rework and was missing the map and the current filter row). This replaces `territories-compliance.png`/`territories-compliance-v2.png` as the reference image for that subsection — those two are pre-rework (they show the old "Compliance / Deal Zones" two-tab layout and a brand-tab switcher that no longer exist) and should be retired once this shot lands; leave them in place until then since nothing currently in the canonical article references them.
+
+Route: **Sales → Compliance** (`https://staging.app.franchisesystems.ai/territories`), default **States** tab, on the Staging Test Brand.
+
+| # | Shot | UI state to set up | Cursor | Filename | Width |
+|---|---|---|---|---|---|
+| 1 | States tab, filter row + map, one gap state highlighted | On a state that currently shows **Registration Required** or **Expired** with no FDD assigned (e.g. Illinois, already **Expired**, or California, already **Registration Required**), check its box and use **Set Status** to mark it Actively Franchising, so it becomes a live registration gap. Leave the filter row at its defaults (2 selected / Active first / All states / Any status / Any FDD). Don't open any dropdown. | none | `territories-states-filters.png` | ~900 CSS |
+
+## Notes for Max
+
+- Verified live 2026-08-24: the filter row is 5 controls left to right, a country multi-select (defaults to "2 selected" = United States + US Territories), a sort dropdown (Active first / Name A-Z / Expiry soonest / Needs attention), a franchising-status dropdown (All states / Franchising / Not franchising), a registration-status multi-filter (Registered / Filed / Filing Only / Registration Required / Expired / No Registration), and an FDD-coverage dropdown (Any FDD / Has FDD / No FDD).
+- Crop wide enough to show the full filter row plus the map's US coverage, same general framing as the old `territories-compliance-v2.png` (list on the left, map filling the rest). Don't crop the map away.
+- The point of this shot is the orange gap highlight on the map plus its warning marker, so the Actively Franchising + no-FDD state needs to actually be visible on the map, not scrolled off in the list.
+- Run `dom-sanitize.js` before capture (Staging Test Brand shouldn't have real PII, but check).
+- Once this is approved, `territories-compliance.png` and `territories-compliance-v2.png` can be retired from `raw/` — they're pre-PR #3890 (old two-tab Compliance/Deal Zones layout) and aren't referenced by the canonical article anymore.

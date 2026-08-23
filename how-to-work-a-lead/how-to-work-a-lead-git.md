@@ -13,7 +13,9 @@ The panel stays layered over your pipeline, so closing it (the **X** in the top 
 
 ### Reviewing and editing details
 
-The **Details** tab holds everything you know about the lead:
+If the lead came in through your brand's funnel, a progress rail sits at the top of this tab showing where they stand in the funnel. For the full walkthrough, see *[How to Track Funnel Progress on a Lead]*.
+
+The **Details** tab also holds everything you know about the lead:
 
 - **Assigned To**: click to assign the lead to a sales rep or reassign it to someone else.
 - **Steps Completed**: how far the lead has progressed through the applicant portal.
@@ -60,11 +62,14 @@ Use **Log Activity** to add a note recording a call or a next step.
 Sort the timeline with the dropdown at the top left.
 
 ![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-work-a-lead/lead-activity.png)
+When an FDD goes out for signature, the **FDD Sent** entry on the timeline carries the actual email. Click its tag to preview it, including the from and reply-to address the lead saw.
+
+![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-work-a-lead/lead-panel-activity-fdd-email.png)
 ### Reviewing assets
 
 The **Assets** tab holds the documents attached to this lead, such as a signed FDD.
 
-Search by name, filter by file type with the icons above the list, or use the **Actions** menu to upload or link a document.
+Search by name, filter by file type with the icons above the list, or use the **Actions** menu to upload or share a document.
 
 ![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-work-a-lead/lead-assets.png)
 ### Handing off to a deal
