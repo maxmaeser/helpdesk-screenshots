@@ -1,5 +1,5 @@
 {
-  "revision": 1,
+  "revision": 2,
   "shots": {
     "sales-analytics-generate-insights.png": {
       "cursor": {
@@ -37,11 +37,11 @@
         ],
         "type": "arrow"
       },
-      "status": "proposed",
-      "note": "Sales > Analytics > Overview, Lumon Fresh brand, Monthly View. DOM FILL 2026-08-18: live widget showed 100% \"No Data\" (empty donut, Max flagged this as unacceptable for the article -- see review-site flag \"dom manipulation to show actual data, not just an empty donut chart\"). Cloned the real donut <path> and table <tr> markup and replaced with a synthetic-but-plausible source breakdown: google 7 (35%), organic 5 (25%), direct 3 (15%), referral 2 (10%), paid social 2 (10%), email 1 (5%) -- 20 leads total, percentages sum to 100%, arithmetically consistent. Colors are the app's real semantic accent CSS vars (blue/green/orange/purple/yellow/red -accent), arc paths computed with the same d3-arc geometry (center, outer/inner radius) read off the live single-slice path. NOT real captured data -- client-side DOM manipulation only, nothing written to staging DB. No cursor -- read-only chart view.",
+      "status": "superseded",
+      "note": "Superseded by sales-analytics-leads-by-source-v2.png (chart-library swap to BarLineChart/GeoChart/PieChart from @fsai/shared-ui, 812f6dd2b, 2026-08-21 -- old Nivo donut render no longer matches live UI). Sales > Analytics > Overview, Lumon Fresh brand, Monthly View. DOM FILL 2026-08-18: live widget showed 100% \"No Data\" (empty donut, Max flagged this as unacceptable for the article -- see review-site flag \"dom manipulation to show actual data, not just an empty donut chart\"). Cloned the real donut <path> and table <tr> markup and replaced with a synthetic-but-plausible source breakdown: google 7 (35%), organic 5 (25%), direct 3 (15%), referral 2 (10%), paid social 2 (10%), email 1 (5%) -- 20 leads total, percentages sum to 100%, arithmetically consistent. Colors are the app's real semantic accent CSS vars (blue/green/orange/purple/yellow/red -accent), arc paths computed with the same d3-arc geometry (center, outer/inner radius) read off the live single-slice path. NOT real captured data -- client-side DOM manipulation only, nothing written to staging DB. No cursor -- read-only chart view.",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 1
+      "rev": 2
     },
     "sales-analytics-overview-top.png": {
       "cursor": {
@@ -72,11 +72,11 @@
         ],
         "type": "arrow"
       },
-      "status": "proposed",
-      "note": "Recaptured with looser framing (brand chips + full tabs bar) and cursor on the right, over the Weekly View dropdown.",
+      "status": "superseded",
+      "note": "Superseded by sales-analytics-overview-top-v3.png (2026-08-24 tab-gating + chart-library refresh: old 2-tab bar with no Emails tab and old chart set no longer match live UI).",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 1
     },
     "sales-analytics-generate-insights-v2.png": {
       "cursor": {
@@ -86,15 +86,43 @@
         ],
         "type": "arrow"
       },
+      "status": "superseded",
+      "note": "Superseded (folded into sales-analytics-overview-top-v3.png, 2026-08-24: the new Overview-top shot covers the Generate Insights CTA too, no separate Insights-only shot needed per SHOT-SPEC.md).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 1
+    },
+    "sales-analytics-portal-steps-v2.png": {
+      "status": "superseded",
+      "note": "Superseded by sales-analytics-portal-steps-v3.png (2026-08-24 tab-gating refresh: old 2-tab bar with no Emails tab no longer matches live UI).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 1
+    },
+    "sales-analytics-overview-top-v3.png": {
+      "cursor": {
+        "pos": [
+          2545,
+          454
+        ],
+        "type": "arrow"
+      },
       "status": "proposed",
-      "note": "Recaptured with a looser crop: full tabs bar above, full chart-header row below (no more mid-cut).",
+      "note": "2026-08-24 reshoot (tab-gating + chart-library refresh, SHOT-SPEC.md). Sales > Analytics, Lumon Fresh brand (portal-surface), Overview tab active. Captures brand-tab row, 3-tab bar (Overview/Portal Steps/Emails, confirming Emails now visible), Generate Report + Weekly View/From/To, Generate Insights panel, and the 5 stat tiles. Cursor rests on the Generate Insights button. Covers both the Overview intro and the Generate Insights CTA -- replaces both sales-analytics-overview-top-v2.png and sales-analytics-generate-insights-v2.png.",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0
     },
-    "sales-analytics-portal-steps-v2.png": {
+    "sales-analytics-leads-by-source-v2.png": {
       "status": "proposed",
-      "note": "Recaptured with a looser crop: brand chips + full tabs bar above, 6 clean full rows below (no mid-row cut).",
+      "note": "2026-08-24 reshoot (chart-library swap to BarLineChart/GeoChart/PieChart from @fsai/shared-ui, 812f6dd2b, 2026-08-21, SHOT-SPEC.md). Sales > Analytics > Overview, Lumon Fresh brand, scrolled to the Leads By Source card. Live staging still has no real UTM-tagged leads (single-slice \"No Data\" 100% donut), so this reuses the same DOM-fill technique as the superseded v1 shot: cloned the new PieChart's single <path> + table row markup, replaced with the same synthetic 6-category breakdown already shown to Max (google 7/35%, organic 5/25%, direct 3/15%, referral 2/10%, paid social 2/10%, email 1/5%, 20 leads total). Arc paths computed from the component's own donut geometry (center 120,120, outer r=96, inner r=57.6) read off the live single-slice path. Colors: the app's real CSS accent vars -- only 4 distinct hues exist in this build (--border-color-{blue,green,orange,red}-accent), so the 5th/6th categories reuse the -strong variants of blue/green for a 6th and 5th distinct shade (no purple/yellow accent vars exist in the new component, unlike the old Nivo palette). NOT real captured data -- client-side DOM manipulation only, nothing written to staging DB. No cursor -- read-only chart view. Crop is the full card width (card genuinely spans the full content column in this layout, not artificially widened).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "sales-analytics-portal-steps-v3.png": {
+      "status": "proposed",
+      "note": "2026-08-24 reshoot (tab-gating refresh, SHOT-SPEC.md). Sales > Analytics, Lumon Fresh brand (16 real onboarding steps seeded), Portal Steps tab active. Captures the 3-tab bar (confirming Emails visible), Sample Size (11) / Avg Completed (2.45) tiles, search/filter/sort row, All time dropdown + Total Steps: 16, and 5 funnel table rows. No cursor -- read-only view.",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0

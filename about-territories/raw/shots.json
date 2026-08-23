@@ -61,6 +61,20 @@
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0
+    },
+    "territories-deadlines.png": {
+      "status": "proposed",
+      "note": "New shot for the Deadlines Tab subsection (2026-08-24). Sales > Compliance (Territories route), Staging Test Brand, Deadlines tab clicked. Data setup: set Illinois's Registration Expiration Date to 15 Jul 2026 (renders as 'Jul 14' / '40d overdue' in the Overdue group -- 1-day display offset is a pre-existing app quirk, not a capture bug) and North Carolina's Registration Expiration Date to 08 Sep 2026 (renders as 'Sep 7' / '15d left' under the September 2026 month group) via the state detail drawer's date pickers, so both badge colors and the urgency-then-month grouping show. No UI affordance found to clear a set expiration date (no Clear button in the date picker, no backspace/delete-to-clear, re-clicking the same day does not toggle it off) -- dates were left set on Staging Test Brand's Illinois/North Carolina records rather than reverted. Agent-captured 1680x1050 CSS viewport, 2x. dom-sanitize run twice (immediate + 150ms defensive re-run), 0 hits both passes. Playwright clip crop (CSS px, not full-page): {x:240,y:105,width:840,height:370} -- sidebar/navbar/banner cropped out, left-hand deadlines card plus a slice of the map. No cursor -- read-only orientation state per SHOT-SPEC.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "territories-deadlines-empty.png": {
+      "status": "proposed",
+      "note": "New shot for the Deadlines Tab subsection (2026-08-24), empty state. Sales > Compliance (Territories route), switched brand selector from Staging Test Brand to 'Test Lite Brand' (a distinct pre-existing test brand with zero registration/FDD dates set anywhere) because Staging Test Brand's Illinois/North Carolina now carry the test dates set for territories-deadlines.png and could not be cleared via the UI. Deadlines tab reads exactly 'No deadlines yet' / 'Registration expirations and FDD renewals appear here once your states have dates.', matching the SHOT-SPEC verbatim. Agent-captured 1680x1050 CSS viewport, 2x. dom-sanitize run twice, 0 hits both passes. Same Playwright clip as territories-deadlines.png: {x:240,y:105,width:840,height:370}. No cursor -- empty/read-only state.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
     }
   }
 }

@@ -11,7 +11,6 @@ The Compliance page has three tabs:
 - **Deadlines**: upcoming filing and renewal deadlines
 
 ![Compliance page States tab showing the state list with filing status badges and deal count beside the interactive map](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-territories/territories-compliance-v2.png)
-
 A "Connect legal team" button in the top right of the Compliance page opens a request to Franchise Systems Ai's legal partners. You may also see a dismissible banner above the page offering the same connection.
 
 If your brand's compliance is handled by an outside legal team instead of managed in-platform, the **FDDs** tab is replaced by a **Legal** tab, a "Managed by" badge appears next to the page title, and the "Connect legal team" button and banner don't show, since you already have a legal team connected.
@@ -43,7 +42,6 @@ You can manage multiple states at once:
 4. Confirm the assignment.
 
 ![States tab with Texas and Colorado selected via checkboxes and the Assign FDD picker open from the bulk toolbar](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-territories/territories-bulk-assign-fdd-v2.png)
-
 ### FDDs Tab
 
 The **FDDs** tab lists your active FDDs. Each FDD shows how many states it's registered in, when it was last updated, and a status badge.
@@ -51,6 +49,23 @@ The **FDDs** tab lists your active FDDs. Each FDD shows how many states it's reg
 Expand an FDD to see the states registered to it, each with the same status badges used on the States tab.
 
 Any states or FDDs that need attention show at the top of the tab, and the total also appears as an orange chip next to the page title.
+
+### Deadlines Tab
+
+The **Deadlines** tab collects every state's registration expiration and FDD renewal date into a single list, so you can see what's coming due without opening each state one at a time.
+
+Deadlines are grouped by urgency first, then by month:
+
+- **Overdue**: anything past its date, always shown first
+- Every other deadline falls under its due month, soonest month first
+
+![Compliance page Deadlines tab with a grouped list of upcoming and overdue deadlines beside the map](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-territories/territories-deadlines.png)
+Each row shows the state, whether it's a **Registration expires** or **FDD renewal due** deadline, the due date, and a badge counting down the days left. A deadline due within 30 days gets an orange badge; anything overdue gets a red one. Click any row to open that state's record.
+
+A deadline only appears once you've set a registration expiration or FDD renewal date for that state. Until then, the tab reads "No deadlines yet."
+
+![Compliance page Deadlines tab in its empty state, reading "No deadlines yet" beside the map](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-territories/territories-deadlines-empty.png)
+If your brand's compliance is handled by an outside legal team, the tab reads "Handled for you" instead, since your legal partner tracks these dates for you. It also adds a **Recent activity** list below the deadlines showing your legal team's filing updates, newest first.
 
 ## Deal Zones
 
@@ -75,7 +90,6 @@ Zones follow whichever brands you have selected at the top of the Pipeline page,
 The right panel shows an interactive map of the United States. Deal zones are displayed as highlighted regions on the map, giving you a visual overview of your geographic coverage and any gaps.
 
 ![Deal Zones tab showing the zone list with assigned entities and deal counts beside the map, with the Draw Deal Zone button highlighted](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-territories/territories-deal-zones-v2.png)
-
 ### Creating a Deal Zone
 
 Click **Draw Deal Zone** in the top right to create a new zone. Choose which brand the zone belongs to, define its geographic boundaries, assign it to a business entity, and set its deal capacity.
