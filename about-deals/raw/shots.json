@@ -1,5 +1,5 @@
 {
-  "revision": 6,
+  "revision": 24,
   "shots": {
     "deals-overview-v2.png": {
       "status": "proposed",
@@ -26,11 +26,36 @@
       "rev": 0
     },
     "deals-nav-pipeline-v3.png": {
-      "status": "proposed",
+      "cursor": {
+        "pos": [
+          796,
+          327
+        ],
+        "type": "arrow"
+      },
+      "highlights": [
+        {
+          "rect": [
+            637,
+            275,
+            249,
+            113
+          ],
+          "style": "lens",
+          "lensZoom": 1.1,
+          "lensRadius": 44,
+          "lensRefraction": 65,
+          "color": "blue"
+        }
+      ],
+      "status": "adjusted",
       "note": "Reshoot 2026-07-17 of deals-nav-pipeline-v2.png, which still showed the staging-only 'Knowledge Base' sidebar item (isDevOrStaging()-gated, never in production). Same route (Sales > Pipeline > Deals tab), same 760x700 CSS crop (1520x1400 raw @2x), same cursor arrow on the Deals tab. Knowledge Base hidden via display:none on its nav-item container (text-match walk, defensive re-apply after dom-sanitize per the mandatory React-revert pattern). dom-sanitize run with freshenDates:false; no PII in frame (deal names are generic seed labels 'Deal N'). No 'Staging Test Brand' chip present under this login (brand switcher shows Lumon Fresh + Kharcho Kings as individual chips instead of a collapsed 'Other Brands' badge -- cosmetic difference from the account used for v2, not a blemish).",
-      "lastTouchedBy": "claude",
+      "lastTouchedBy": "max",
       "editing": false,
-      "rev": 0
+      "rev": 7,
+      "renderedRev": 7,
+      "updatedAt": 1787570362952,
+      "renderedAt": 1787570366027
     }
   }
 }
