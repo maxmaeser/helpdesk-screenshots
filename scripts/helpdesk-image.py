@@ -32,6 +32,8 @@ Examples:
 
 Cursor coordinates are relative to the raw screenshot as captured (before any
 `crop`; before the INSET edge crop; before --scale2x upscaling if used).
+Highlight rects use the same frame and MAY sit partly outside it — see EDGE
+BLEED below.
 
 cursors.json format for --cursor-map (per-file, omitted files get no cursor):
     {
@@ -93,6 +95,19 @@ full of spotlight-dimmed pixels, while the preview shows it undimmed.
     Python is deliberately the composite-sampling side and must stay that way:
     a lens dropped on top of a "redact" must magnify the pixelation, never
     reach behind it and un-redact the content.
+
+EDGE BLEED. Highlights bake onto the FINISHED CANVAS (see place_card), not into
+the screenshot, so an effect on a UI element flush with the edge of the capture
+keeps its whole shape and overhangs into the card padding instead of being
+clamped mid-effect. What shows behind the overhang is the page — grid, card
+corner, drop shadow — and a lens genuinely magnifies it. The budget is
+CARD_PADDING px on every side; past that the canvas edge clamps again, and the
+studio keeps rects inside the budget (highlight-style.ts's
+highlightBleedMargin) so the canvas never has to grow.
+    Second legitimate preview/bake difference, and it lives here: inside the
+    overhang the studio has only the raw PNG to sample, so its lens clamps to
+    the raw's edge pixels while this bake magnifies the real page behind the
+    card. Geometry, position and radius agree; those overhang pixels do not.
 
 Optional per-highlight style overrides (Highlight Settings v2 — see the suite
 repo's docs/superpowers/specs/2026-07-18-highlight-settings-v2-design.md).
@@ -602,9 +617,20 @@ def draw_outline_highlight(img, rect, color=None, stroke_width=None, dash=None,
     return img
 
 
-def draw_spotlight_group(img, specs):
+def draw_spotlight_group(img, specs, region_mask=None):
     """Dim the whole image except the UNION of every spotlight's rounded-rect
     cutout — ONE shared dim pass for all the spotlights on a shot.
+
+    `region_mask` (an "L" image the size of `img`, 255 where the dim is
+    allowed) confines both the dim and the contact shadows to a sub-area.
+    Highlights bake onto the CANVAS now, not the bare screenshot, and
+    "dim everything outside the rect" must still mean "outside the rect but
+    INSIDE the screenshot card" — without the mask a spotlight would grey out
+    the grid background and the page would read as one big dimmed slab. The
+    mask passed by place_card is the card's own rounded mask, which is exactly
+    the area the dim used to cover back when it was baked into the screenshot,
+    so a spotlight that fits inside the card is byte-identical either way.
+    None (process_pair, direct callers) keeps the whole-image behavior.
 
     Why a group and not one call per highlight: the spotlight style dims
     everything OUTSIDE its own rect, so running it once per highlight made each
@@ -682,6 +708,8 @@ def draw_spotlight_group(img, specs):
             shadow_alpha = shadow_src.filter(ImageFilter.GaussianBlur(CONTACT_SHADOW_BLUR))
             shadow_alpha = shadow_alpha.point(lambda v: int(v * CONTACT_SHADOW_ALPHA / 255))
             shadow_alpha = ImageChops.multiply(shadow_alpha, outside)
+            if region_mask is not None:
+                shadow_alpha = ImageChops.multiply(shadow_alpha, region_mask)
             shadow = Image.new("RGBA", img.size, (0, 0, 0, 0))
             shadow.putalpha(shadow_alpha)
             img.alpha_composite(shadow)
@@ -702,6 +730,8 @@ def draw_spotlight_group(img, specs):
 
     # Alpha mask: dim_alpha everywhere, 0 (no dim) inside the lit union.
     mask = ImageOps.invert(lit).point(lambda v: int(v * dim_alpha / 255))
+    if region_mask is not None:
+        mask = ImageChops.multiply(mask, region_mask)
     dim = Image.new("RGBA", img.size, (0, 0, 0, 0))
     dim.putalpha(mask)
     img.alpha_composite(dim)
@@ -1113,11 +1143,16 @@ def draw_lens_highlight(img, rect, zoom=None, radius=None, refraction=None):
     return img
 
 
-def apply_highlights(img, highlights):
-    """Bake all highlight effects into img (already cropped/scaled screenshot).
+def apply_highlights(img, highlights, region_mask=None):
+    """Bake all highlight effects into img.
 
-    Applied after crop, before card framing — composes with the cursor
-    overlay, which is drawn later on top of the placed card. Each highlight's
+    Since the edge-bleed change `img` is the finished CANVAS and the rects have
+    already been offset into canvas space by place_card, which is what lets an
+    effect overhang the screenshot and land in the card padding instead of
+    being clamped mid-effect (see place_card). Still fired before the cursor
+    overlay, which is drawn last on top. `region_mask` is forwarded to
+    draw_spotlight_group — see there for why only the dim needs it. Each
+    highlight's
     optional style overrides are read straight off its dict —
     shot_spec_to_args already type-validated them (finite numbers pass
     through UNCLAMPED per the v2 posture), so any missing key here just means
@@ -1178,7 +1213,7 @@ def apply_highlights(img, highlights):
         elif style == "spotlight":
             # All spotlights share one dim pass, fired at the first one.
             if spotlight_pending:
-                img = draw_spotlight_group(img, spotlight_specs)
+                img = draw_spotlight_group(img, spotlight_specs, region_mask=region_mask)
                 spotlight_pending = False
         elif style == "blur":
             img = draw_blur_highlight(img, rect, radius=h.get("blurRadius"),
@@ -1261,10 +1296,33 @@ def fit_to_width(img, max_w, cursor_pos=None, highlights=None):
     return img, cursor_pos, highlights
 
 
-def place_card(canvas, img, card_x, card_y, card_w, card_h, cursor_pos, cursor_type):
-    """Place a single card (shadow + image + rounded mask + cursor) onto canvas.
+def place_card(canvas, img, card_x, card_y, card_w, card_h, cursor_pos, cursor_type,
+               highlights=None):
+    """Place a single card (shadow + image + rounded mask + highlights +
+    cursor) onto canvas.
 
-    cursor_pos is in the (already cropped/scaled) image's coordinate space.
+    cursor_pos and highlight rects are in the (already cropped/scaled) image's
+    coordinate space; both are translated into canvas space here.
+
+    EDGE BLEED — why highlights bake HERE and not into the screenshot.
+    A highlight used to be baked into `img` before the card was framed, so
+    every drawer clamped its rect to the screenshot (_clamp_rect). A UI element
+    flush against the edge of the capture therefore could not be highlighted
+    without the effect being cut off mid-stroke: the rect was SHRUNK, so a lens
+    re-centred its magnification and re-rounded all four corners inside the
+    truncated box, which reads as a rendering bug rather than a crop. Baking
+    onto the canvas instead gives every effect CARD_PADDING px of room on all
+    four sides to overhang into, and what shows behind the overhang is the page
+    itself — the grid, the card's rounded corner, its drop shadow — so a glass
+    lens reads as a slab lifting off the edge of the card. Past CARD_PADDING
+    the canvas edge clamps again; the studio keeps highlight rects inside that
+    budget so the canvas never has to grow (its width cap, CANVAS_WIDTH, is a
+    published contract and article layouts assume it).
+
+    Order is load-bearing three ways: AFTER the card composite so an effect can
+    paint over the card's rounded corner and shadow, and so a lens samples the
+    real page behind it rather than transparency; BEFORE the cursor so the
+    cursor still sits on top of every highlight exactly as it always has.
     """
     # Shadow
     shadow, shadow_pad = create_card_shadow(card_w, card_h)
@@ -1282,6 +1340,23 @@ def place_card(canvas, img, card_x, card_y, card_w, card_h, cursor_pos, cursor_t
     bg_region = canvas.crop((card_x, card_y, card_x + card_w, card_y + card_h))
     composited = Image.composite(card, bg_region, mask)
     canvas.paste(composited, (card_x, card_y))
+
+    # Highlight effects, in canvas space (see the docstring).
+    if highlights:
+        off_x = card_x + img_x
+        off_y = card_y + img_y
+        shifted = [
+            {**h, "rect": [h["rect"][0] + off_x, h["rect"][1] + off_y, h["rect"][2], h["rect"][3]]}
+            for h in highlights
+            if h.get("rect") and len(h["rect"]) == 4
+        ]
+        # The spotlight dim is the one effect that must NOT bleed: it darkens
+        # everything outside its rect, and outside the card that is the page.
+        # The card's own rounded mask, placed on the canvas, is precisely the
+        # area the dim covered when it was baked into the screenshot.
+        region_mask = Image.new("L", canvas.size, 0)
+        region_mask.paste(mask, (card_x, card_y))
+        canvas = apply_highlights(canvas, shifted, region_mask=region_mask)
 
     # Cursor overlay
     if cursor_pos is not None:
@@ -1310,8 +1385,6 @@ def process_image(src_path, dst_path, cursor_pos=None, canvas_width=CANVAS_WIDTH
     img, cursor_pos, highlights = fit_to_width(
         img, canvas_width - CARD_PADDING * 2, cursor_pos, highlights)
 
-    # Highlight effects: applied after crop, before card framing.
-    img = apply_highlights(img, highlights)
     scr_w, scr_h = img.size
 
     # Card hugs the screenshot (no internal white space); canvas hugs the card
@@ -1322,7 +1395,10 @@ def process_image(src_path, dst_path, cursor_pos=None, canvas_width=CANVAS_WIDTH
     card_y = CARD_PADDING
 
     canvas = create_grid_canvas(c_w, c_h)
-    place_card(canvas, img, card_x, card_y, card_w, card_h, cursor_pos, cursor_type)
+    # Highlights bake inside place_card, onto the canvas, so an effect on an
+    # edge-flush element bleeds into the card padding instead of being clamped.
+    canvas = place_card(canvas, img, card_x, card_y, card_w, card_h, cursor_pos,
+                        cursor_type, highlights=highlights)
     canvas = apply_rounded_corners(canvas, round_radius)
 
     save_png(canvas, dst_path)
