@@ -1,10 +1,10 @@
 {
-  "revision": 4,
+  "revision": 5,
   "graphic": {
     "v": 2,
     "background": "white-solid",
     "title": null,
-    "exportPreset": "inline-tall",
+    "exportPreset": "inline-16x9",
     "scale": 100,
     "positionX": 0,
     "positionY": 0,
@@ -12,19 +12,19 @@
       {
         "id": "a",
         "role": "foreground",
-        "x": -80,
-        "y": -480,
-        "w": 1200,
-        "h": 1500,
+        "x": -280,
+        "y": -180,
+        "w": 1600,
+        "h": 900,
         "preset": "bare",
         "layout": "free",
         "children": [
           {
-            "id": "gridField-funnel-1",
+            "id": "gridField-1",
             "type": "gridField",
             "props": {
-              "width": 1200,
-              "height": 1500,
+              "width": 1600,
+              "height": 900,
               "gridSize": 80,
               "cornerRadius": 32,
               "frameLine": true,
@@ -38,11 +38,25 @@
             ]
           },
           {
-            "id": "flowConnector-funnel-2",
+            "id": "text-funnel-eyebrow",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "PORTAL ANALYTICS",
+              "size": 22,
+              "color": "#8A8F98"
+            },
+            "offset": [
+              72,
+              56
+            ]
+          },
+          {
+            "id": "flowConnector-funnel-1",
             "type": "flowConnector",
             "props": {
-              "dx": 0,
-              "dy": 112,
+              "dx": 160,
+              "dy": 0,
               "route": "line",
               "thickness": 5,
               "color": "#1F54DE",
@@ -51,7 +65,25 @@
               "mid": 0.5
             },
             "offset": [
-              584,
+              704,
+              198
+            ]
+          },
+          {
+            "id": "flowConnector-funnel-2",
+            "type": "flowConnector",
+            "props": {
+              "dx": -720,
+              "dy": 92,
+              "route": "vhv",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              424,
               272
             ]
           },
@@ -59,8 +91,8 @@
             "id": "flowConnector-funnel-3",
             "type": "flowConnector",
             "props": {
-              "dx": 0,
-              "dy": 112,
+              "dx": 160,
+              "dy": 0,
               "route": "line",
               "thickness": 5,
               "color": "#1F54DE",
@@ -69,17 +101,17 @@
               "mid": 0.5
             },
             "offset": [
-              584,
-              532
+              704,
+              438
             ]
           },
           {
             "id": "flowConnector-funnel-4",
             "type": "flowConnector",
             "props": {
-              "dx": 0,
-              "dy": 112,
-              "route": "line",
+              "dx": -360,
+              "dy": 92,
+              "route": "vhv",
               "thickness": 5,
               "color": "#1F54DE",
               "cornerRadius": 24,
@@ -87,30 +119,12 @@
               "mid": 0.5
             },
             "offset": [
-              584,
-              792
+              784,
+              512
             ]
           },
           {
-            "id": "flowConnector-funnel-5",
-            "type": "flowConnector",
-            "props": {
-              "dx": 0,
-              "dy": 112,
-              "route": "line",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 24,
-              "arrow": true,
-              "mid": 0.5
-            },
-            "offset": [
-              584,
-              1052
-            ]
-          },
-          {
-            "id": "flowNode-funnel-6",
+            "id": "flowNode-funnel-1",
             "type": "flowNode",
             "props": {
               "label": "Unique Portal Visits",
@@ -118,95 +132,95 @@
               "icon": "user",
               "tint": "slate",
               "emphasized": false,
-              "width": 1000,
+              "width": 560,
               "height": 148,
               "anchorTop": false
             },
             "offset": [
-              100,
+              160,
               140
             ]
           },
           {
-            "id": "flowNode-funnel-7",
+            "id": "flowNode-funnel-2",
             "type": "flowNode",
             "props": {
               "label": "Form Submissions",
               "meta": "form activity in the portal",
               "icon": "doc",
-              "tint": "purple",
+              "tint": "slate",
               "emphasized": false,
-              "width": 900,
+              "width": 560,
               "height": 148,
               "anchorTop": false
             },
             "offset": [
-              150,
-              400
+              880,
+              140
             ]
           },
           {
-            "id": "flowNode-funnel-8",
+            "id": "flowNode-funnel-3",
             "type": "flowNode",
             "props": {
               "label": "Steps Completed",
               "meta": "onboarding steps applicants finished",
               "icon": "check",
-              "tint": "amber",
+              "tint": "slate",
               "emphasized": false,
-              "width": 800,
+              "width": 560,
               "height": 148,
               "anchorTop": false
             },
             "offset": [
-              200,
-              660
+              160,
+              380
             ]
           },
           {
-            "id": "flowNode-funnel-9",
+            "id": "flowNode-funnel-4",
             "type": "flowNode",
             "props": {
               "label": "FDDs Signed",
               "meta": "Franchise Disclosure Documents",
               "icon": "pen",
-              "tint": "green",
+              "tint": "slate",
               "emphasized": false,
-              "width": 700,
+              "width": 560,
               "height": 148,
               "anchorTop": false
             },
             "offset": [
-              250,
-              920
+              880,
+              380
             ]
           },
           {
-            "id": "flowNode-funnel-10",
+            "id": "flowNode-funnel-5",
             "type": "flowNode",
             "props": {
               "label": "Franchisees Converted",
               "meta": "applicants who became franchisees",
               "icon": "badge",
-              "tint": "blue",
+              "tint": "slate",
               "emphasized": true,
-              "width": 600,
+              "width": 560,
               "height": 148,
               "anchorTop": false
             },
             "offset": [
-              300,
-              1180
+              520,
+              620
             ]
           }
         ]
       }
     ],
     "status": "flagged",
-    "note": "Inline infographic: the Analytics funnel from portal traffic to conversion (Overview + Portal Steps stage names verbatim). Descending widths = funnel; climax node emphasized. Rev 2: article-exact milestone metas, connectors attached edge to edge.",
-    "lastTouchedBy": "max",
+    "note": "Inline infographic (SPINE): the five applicant-portal metrics on Sales > Analytics, in the order an applicant moves through them. Rev 3: the tapering widths are gone -- they implied drop-off ratios the article does not publish. All five cards are one width (560), all slate; tint carries no meaning here, so only the climax node (Franchisees Converted) is emphasized. Four SEQUENCE arrows, one style, edge to edge. Labels and metas unchanged. Rows read left to right, top to bottom.",
+    "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 2,
-    "updatedAt": 1787158055828
+    "rev": 3,
+    "updatedAt": 1787586229506
   }
 }
