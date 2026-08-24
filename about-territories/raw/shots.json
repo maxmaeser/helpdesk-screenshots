@@ -1,5 +1,5 @@
 {
-  "revision": 14,
+  "revision": 17,
   "shots": {
     "territories-compliance.png": {
       "status": "superseded",
@@ -68,10 +68,10 @@
       "highlights": [
         {
           "rect": [
-            2906,
+            2899,
             359,
-            454,
-            217
+            461,
+            225
           ],
           "style": "lens",
           "lensZoom": 1.6,
@@ -84,10 +84,10 @@
       "note": "Reshoot of territories-deal-zones.png (2026-07-17) targeting one blemish: the staging-only 'Knowledge Base' sidebar item was left visible in the original. Same route/UI state (Deal Zones tab, Lumon Fresh selected). New fix: hid Knowledge Base sidebar item in addition to existing 'Staging Test Brand' chip hide + zone/entity name renames (same swaps as original). dom-sanitize with freshenDates:false. Cursor on Draw Deal Zone button, same coords as original (framing identical). Raw dims match original exactly (3360x2100 @2x).",
       "lastTouchedBy": "max",
       "editing": false,
-      "rev": 5,
-      "renderedRev": 5,
-      "updatedAt": 1787570975748,
-      "renderedAt": 1787570981160
+      "rev": 6,
+      "renderedRev": 6,
+      "updatedAt": 1787576866622,
+      "renderedAt": 1787576871551
     },
     "territories-deadlines.png": {
       "status": "proposed",
