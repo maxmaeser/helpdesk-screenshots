@@ -1,5 +1,5 @@
 {
-  "revision": 38,
+  "revision": 124,
   "shots": {
     "home-overview.png": {
       "crop": [
@@ -61,16 +61,60 @@
       ],
       "cursor": {
         "pos": [
-          3189,
-          548
+          3270,
+          533
         ],
         "type": "arrow"
       },
-      "status": "proposed",
+      "highlights": [
+        {
+          "rect": [
+            663,
+            394,
+            298,
+            122
+          ],
+          "style": "lens",
+          "lensZoom": 1.6,
+          "lensRadius": 44,
+          "lensRefraction": 65,
+          "color": "blue"
+        },
+        {
+          "rect": [
+            961,
+            485,
+            1110,
+            126
+          ],
+          "style": "lens",
+          "lensZoom": 1.6,
+          "lensRadius": 44,
+          "lensRefraction": 65,
+          "color": "blue"
+        },
+        {
+          "rect": [
+            2980,
+            462,
+            421,
+            170
+          ],
+          "style": "lens",
+          "lensZoom": 1.6,
+          "lensRadius": 44,
+          "lensRefraction": 65,
+          "color": "blue"
+        }
+      ],
+      "status": "adjusted",
       "note": "Agent-captured: Home > Tasks tab. A 'Welcome to Tasks' product-tour modal appeared on first visit and a tour-interaction-blocker overlay intercepted clicks; both were dismissed via a direct DOM .click() on 'Maybe Later' (Playwright's actionability check kept finding the transparent blocker mid-transition) before waiting ~4s for the table to hydrate past its loading skeleton. Shows the real task table (Total Tasks: 1866) with Task/Linked To/Status/Responsible/Due Date/Created columns, filter/sort icons, and the '+ Create Task' button. Arrow cursor on 'Create Task' (button, per heuristic). No PII: responsible-party avatars are generic placeholder icons, task titles are generic onboarding-checklist items. Covers the Tasks tab section including the table's column set.",
-      "lastTouchedBy": "claude",
+      "lastTouchedBy": "max",
       "editing": false,
-      "rev": 1
+      "rev": 17,
+      "renderedRev": 17,
+      "updatedAt": 1787635119369,
+      "renderedAt": 1787635122047
     },
     "home-chat.png": {
       "crop": [
@@ -81,16 +125,34 @@
       ],
       "cursor": {
         "pos": [
-          926,
-          645
+          726,
+          647
         ],
         "type": "hand"
       },
-      "status": "proposed",
+      "highlights": [
+        {
+          "rect": [
+            837,
+            353,
+            322,
+            180
+          ],
+          "style": "lens",
+          "lensZoom": 1.6,
+          "lensRadius": 44,
+          "lensRefraction": 65,
+          "color": "blue"
+        }
+      ],
+      "status": "adjusted",
       "note": "Agent-captured: Home > Chat tab. Honest empty state for this account (All 0 conversations, 'No conversation selected' in the message pane) -- shows the All/Direct/Groups filter row and the two-pane messaging layout described in the article. Hand cursor on the 'Direct' filter tab (clickable text, per heuristic). Cropped to 1300px tall to keep the mostly-empty right pane from dominating the frame while still showing the two-pane structure for context. Seeding a real conversation would improve this shot (show unread badges, an actual message thread, attachment/emoji/voice-message affordances) but was not done to avoid mutating shared staging data -- flagging for Max if a livelier Chat shot is wanted later.",
-      "lastTouchedBy": "claude",
+      "lastTouchedBy": "max",
       "editing": false,
-      "rev": 1
+      "rev": 14,
+      "renderedRev": 14,
+      "updatedAt": 1787635202935,
+      "renderedAt": 1787635205249
     },
     "home-calendar.png": {
       "crop": [
@@ -106,11 +168,33 @@
         ],
         "type": "arrow"
       },
-      "status": "proposed",
+      "highlights": [
+        {
+          "rect": [
+            993,
+            362,
+            394,
+            171
+          ],
+          "style": "lens",
+          "dimStrength": 6,
+          "feather": 7,
+          "contactShadow": true,
+          "spotlightRadius": 28,
+          "color": "blue",
+          "lensZoom": 1.6,
+          "lensRadius": 44,
+          "lensRefraction": 65
+        }
+      ],
+      "status": "adjusted",
       "note": "Agent-captured: Home > Calendar tab, Week view (the tab's default). Shows the Month/Week/Day view selector, the (GMT+7:00) Bangkok timezone selector, date-range navigation, and a populated week grid with real events (out-of-office blocks, recurring standups, product-sync meetings). Arrow cursor on 'Create Event' (button, per heuristic). Covers the Calendar tab section (Month/Week/Day + timezone selector + Create Event).",
-      "lastTouchedBy": "claude",
+      "lastTouchedBy": "max",
       "editing": false,
-      "rev": 1
+      "rev": 8,
+      "renderedRev": 8,
+      "updatedAt": 1787635224897,
+      "renderedAt": 1787635225771
     },
     "home-create-quick-task.png": {
       "crop": [

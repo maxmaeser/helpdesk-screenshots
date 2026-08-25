@@ -1,56 +1,285 @@
 {
-  "revision": 1,
+  "revision": 263,
   "shots": {
     "projects-table.png": {
-      "crop": [0, 0, 3360, 2100],
-      "cursor": { "pos": [2320, 459], "type": "arrow" },
-      "status": "proposed",
+      "crop": [
+        0,
+        0,
+        3359,
+        1516
+      ],
+      "cursor": {
+        "pos": [
+          261,
+          508
+        ],
+        "type": "arrow"
+      },
+      "highlights": [
+        {
+          "rect": [
+            -54,
+            446,
+            554,
+            143
+          ],
+          "style": "lens",
+          "lensZoom": 1.4,
+          "lensRadius": 44,
+          "lensRefraction": 65,
+          "color": "blue"
+        }
+      ],
+      "status": "adjusted",
       "note": "Agent-captured (session.js + routes.js PROJECTS route, Staging Test Brand -- 7 real projects, classic table view; confirmed production does NOT show the newer KPI-tile ProjectsDashboard for this account, matching what the article documents). Shows the Project/Status/Progress/Due Date/Est. Launch columns, the search box, Table/Timeline toggle, and the Projects-by-Location map + Created/Completed chart in the side panel. Arrow cursor on 'Create Project' (button, per heuristic). Dates freshened by dom-sanitize (12 relative-time/date chips). Covers the intro paragraph and 'The projects table' section.",
-      "lastTouchedBy": "claude",
+      "lastTouchedBy": "max",
       "editing": false,
-      "rev": 1
+      "rev": 24,
+      "renderedRev": 24,
+      "updatedAt": 1787635579582,
+      "renderedAt": 1787635581999
     },
     "projects-timeline.png": {
-      "crop": [0, 0, 3360, 2100],
-      "status": "proposed",
+      "crop": [
+        0,
+        0,
+        3359,
+        1496
+      ],
+      "cursor": {
+        "pos": [
+          2126,
+          481
+        ],
+        "type": "hand"
+      },
+      "highlights": [
+        {
+          "rect": [
+            1942,
+            371,
+            304,
+            177
+          ],
+          "style": "lens",
+          "lensZoom": 1.4,
+          "lensRadius": 44,
+          "lensRefraction": 65,
+          "color": "blue"
+        }
+      ],
+      "status": "adjusted",
       "note": "Agent-captured: same Projects list, Timeline toggle active -- shows every project laid out on a shared Gantt-style bar chart with a 'Today' marker and a Not Started/In Progress/Complete/Overdue legend at the bottom. The toggle button is an icon-only control with aria-label 'Timeline' (no visible text), found via getBoundingClientRect() after a plain text-match click silently no-op'd. No cursor: read-only result view, nothing to click (cursor heuristic). Covers the 'Switch between Table and Timeline view' sentence.",
-      "lastTouchedBy": "claude",
+      "lastTouchedBy": "max",
       "editing": false,
-      "rev": 1
+      "rev": 14,
+      "renderedRev": 14,
+      "updatedAt": 1787636286951,
+      "renderedAt": 1787636289390
     },
     "projects-create-modal.png": {
-      "crop": [0, 0, 3360, 2100],
-      "cursor": { "pos": [969, 1057], "type": "hand" },
-      "status": "proposed",
+      "crop": [
+        0,
+        0,
+        3360,
+        2100
+      ],
+      "cursor": {
+        "pos": [
+          2351,
+          1077
+        ],
+        "type": "hand"
+      },
+      "highlights": [
+        {
+          "rect": [
+            2195,
+            420,
+            251,
+            72
+          ],
+          "style": "outline",
+          "lensZoom": 1.6,
+          "lensRadius": 44,
+          "lensRefraction": 65,
+          "color": "red",
+          "thickness": 3,
+          "cornerRadius": 10,
+          "glowSize": 0,
+          "dimStrength": 0,
+          "feather": 7,
+          "contactShadow": true,
+          "spotlightRadius": 28
+        }
+      ],
+      "status": "adjusted",
       "note": "Agent-captured: clicked 'Create Project', modal shows 'How do you want to start?' with the two starting points from the article -- 'Blank project' (Continue blank) and 'From a template' (Browse templates, 4 templates available for this brand) plus a Popular Playbooks row. Did NOT click through to actually create a project (would mutate shared staging data). Hand cursor on 'Continue blank' (clickable text link, per heuristic). Covers the 'Creating a project' section including both starting-point options.",
-      "lastTouchedBy": "claude",
+      "lastTouchedBy": "max",
       "editing": false,
-      "rev": 1
+      "rev": 22,
+      "renderedRev": 22,
+      "updatedAt": 1787635883567,
+      "renderedAt": 1787635886648
     },
     "project-detail-tasklist.png": {
-      "crop": [0, 0, 3360, 2100],
-      "status": "proposed",
+      "crop": [
+        0,
+        0,
+        3360,
+        1382
+      ],
+      "highlights": [
+        {
+          "rect": [
+            2832,
+            435,
+            574,
+            171
+          ],
+          "style": "lens",
+          "thickness": 3,
+          "cornerRadius": 22,
+          "glowSize": 12,
+          "color": "blue",
+          "blurRadius": 8,
+          "maskFeather": 12,
+          "lensZoom": 1.4,
+          "lensRadius": 44,
+          "lensRefraction": 65
+        },
+        {
+          "rect": [
+            356,
+            462,
+            2096,
+            112
+          ],
+          "style": "lens",
+          "lensZoom": 1.2,
+          "lensRadius": 44,
+          "lensRefraction": 65,
+          "color": "blue",
+          "dimStrength": 6,
+          "feather": 7,
+          "contactShadow": true,
+          "spotlightRadius": 28
+        }
+      ],
+      "status": "adjusted",
       "note": "Agent-captured: clicked into the 'New Location Launch' project (166 tasks, real onboarding-checklist data, no PII) via the ?project=<id> panel route. Shows the detail header (status, dates, est. launch, location), the List/Timeline layout toggle, the Actions button, the paperclip 'Artifacts' icon, and phase grouping (Site Selection 1/16, Pre-Construction / Design 0/34) with per-task assignee avatars, due dates, and type badges (Todo/Form/Signature/Schedule). No cursor: default landing state of the panel, read-only (cursor heuristic). Covers 'Working inside a project' intro + the List/Timeline toggle + phase grouping.",
-      "lastTouchedBy": "claude",
+      "lastTouchedBy": "max",
       "editing": false,
-      "rev": 1
+      "rev": 24,
+      "renderedRev": 24,
+      "updatedAt": 1787636007799,
+      "renderedAt": 1787636010164
     },
     "project-detail-actions-menu.png": {
-      "crop": [0, 0, 3360, 2100],
-      "cursor": { "pos": [3103, 606], "type": "arrow" },
-      "status": "proposed",
+      "crop": [
+        0,
+        0,
+        3360,
+        2100
+      ],
+      "cursor": {
+        "pos": [
+          3231,
+          583
+        ],
+        "type": "arrow"
+      },
+      "highlights": [
+        {
+          "rect": [
+            2802,
+            349,
+            649,
+            487
+          ],
+          "style": "lens",
+          "lensZoom": 1.4,
+          "lensRadius": 44,
+          "lensRefraction": 65,
+          "color": "blue"
+        }
+      ],
+      "status": "adjusted",
       "note": "Agent-captured: same project detail panel, 'Actions' button clicked open showing the 'Add Task' / 'Add Phase' menu exactly as the article describes. Arrow cursor on 'Add Task' (menu item, per heuristic). Did not select either option. Covers 'Use the Actions button to Add Task or Add Phase.'",
-      "lastTouchedBy": "claude",
+      "lastTouchedBy": "max",
       "editing": false,
-      "rev": 1
+      "rev": 6,
+      "renderedRev": 6,
+      "updatedAt": 1787636107105,
+      "renderedAt": 1787636110296
     },
     "project-detail-artifacts.png": {
-      "crop": [0, 0, 3360, 2100],
-      "status": "proposed",
+      "crop": [
+        0,
+        0,
+        3360,
+        2100
+      ],
+      "cursor": {
+        "pos": [
+          1245,
+          538
+        ],
+        "type": "arrow"
+      },
+      "highlights": [
+        {
+          "rect": [
+            1120,
+            423,
+            239,
+            202
+          ],
+          "style": "lens",
+          "lensZoom": 1.9,
+          "lensRadius": 44,
+          "lensRefraction": 65,
+          "color": "blue",
+          "dimStrength": 6,
+          "feather": 7,
+          "contactShadow": true,
+          "spotlightRadius": 28
+        },
+        {
+          "rect": [
+            2212,
+            1203,
+            1268,
+            125
+          ],
+          "style": "lens",
+          "lensZoom": 1.4,
+          "lensRadius": 44,
+          "lensRefraction": 82,
+          "color": "blue"
+        },
+        {
+          "rect": [
+            344,
+            1203,
+            1129,
+            125
+          ],
+          "style": "lens",
+          "lensZoom": 1.4,
+          "lensRadius": 44,
+          "lensRefraction": 65,
+          "color": "blue"
+        }
+      ],
+      "status": "adjusted",
       "note": "Agent-captured: clicked the paperclip icon (aria-label 'Artifacts', found by exact bounding-box lookup after a text-match click hit the wrong icon and opened an unrelated RACI 'Assignments' dialog first) to switch from the task list to the Artifacts view -- 166 artifacts (one per task) with file-type badges (Todo/e-Signature/Visit Link) instead of status columns. No cursor: read-only result view (cursor heuristic). Covers 'Click the paperclip icon to switch to the Artifacts view.'",
-      "lastTouchedBy": "claude",
+      "lastTouchedBy": "max",
       "editing": false,
-      "rev": 1
+      "rev": 23,
+      "renderedRev": 23,
+      "updatedAt": 1787636256618,
+      "renderedAt": 1787636256687
     }
   }
 }
