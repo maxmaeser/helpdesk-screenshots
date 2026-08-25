@@ -1,5 +1,5 @@
 {
-  "revision": 4,
+  "revision": 5,
   "graphic": {
     "v": 2,
     "background": "white-solid",
@@ -190,11 +190,11 @@
         ]
       }
     ],
-    "status": "flagged",
+    "status": "approved",
     "note": "Rev 2 (Sol QA): deleted the semantically false Fast-Track → Create arrow (the insertion point is carried by layout: the CTA sits at the bottom of the custom group at the same rhythm); CTA de-emphasized so the default-vs-custom comparison leads; CHANGE STATUS eyebrow anchored to the card column.",
     "lastTouchedBy": "max",
     "editing": false,
-    "rev": 2,
-    "updatedAt": 1787158096946
+    "rev": 3,
+    "updatedAt": 1787633951695
   }
 }

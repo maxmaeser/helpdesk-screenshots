@@ -1,0 +1,33 @@
+{
+  "revision": 0,
+  "shots": {
+    "email-campaign-editor.png": {
+      "cursor": {
+        "pos": [
+          3021,
+          181
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "email-template-portal.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "email-templates-list.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

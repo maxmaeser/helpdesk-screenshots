@@ -1,0 +1,33 @@
+{
+  "revision": 0,
+  "shots": {
+    "funnel-automations-card-expanded.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "funnel-automations-empty.png": {
+      "cursor": {
+        "pos": [
+          424,
+          630
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "funnel-automations-template-modal.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

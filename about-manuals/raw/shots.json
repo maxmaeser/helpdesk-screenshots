@@ -1,0 +1,19 @@
+{
+  "revision": 0,
+  "shots": {
+    "manuals-editor.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "manuals-list.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

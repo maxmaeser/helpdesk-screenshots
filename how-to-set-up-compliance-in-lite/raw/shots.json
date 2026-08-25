@@ -1,0 +1,47 @@
+{
+  "revision": 0,
+  "shots": {
+    "compliance-fdd-action-icons.png": {
+      "cursor": {
+        "pos": [
+          782,
+          232
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "compliance-set-status-menu.png": {
+      "cursor": {
+        "pos": [
+          385,
+          1224
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "compliance-state-fdd-card.png": {
+      "cursor": {
+        "pos": [
+          1545,
+          568
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

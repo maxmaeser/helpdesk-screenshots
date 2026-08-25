@@ -1,0 +1,82 @@
+{
+  "revision": 0,
+  "shots": {
+    "audiences-import-actions-menu.png": {
+      "cursor": {
+        "pos": [
+          3126,
+          645
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "import-franchisee-entities-modal.png": {
+      "cursor": {
+        "pos": [
+          2256,
+          1240
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "import-map-fields.png": {
+      "cursor": {
+        "pos": [
+          1843,
+          1006
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "import-review.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "import-upload-step.png": {
+      "cursor": {
+        "pos": [
+          1436,
+          1198
+        ],
+        "type": "hand"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "locations-import-actions-menu.png": {
+      "cursor": {
+        "pos": [
+          3098,
+          825
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

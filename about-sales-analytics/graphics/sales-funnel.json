@@ -1,5 +1,5 @@
 {
-  "revision": 5,
+  "revision": 6,
   "graphic": {
     "v": 2,
     "background": "white-solid",
@@ -216,11 +216,11 @@
         ]
       }
     ],
-    "status": "flagged",
+    "status": "approved",
     "note": "Inline infographic (SPINE): the five applicant-portal metrics on Sales > Analytics, in the order an applicant moves through them. Rev 3: the tapering widths are gone -- they implied drop-off ratios the article does not publish. All five cards are one width (560), all slate; tint carries no meaning here, so only the climax node (Franchisees Converted) is emphasized. Four SEQUENCE arrows, one style, edge to edge. Labels and metas unchanged. Rows read left to right, top to bottom.",
-    "lastTouchedBy": "claude",
+    "lastTouchedBy": "max",
     "editing": false,
-    "rev": 3,
-    "updatedAt": 1787586229506
+    "rev": 4,
+    "updatedAt": 1787633950685
   }
 }

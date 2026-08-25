@@ -1,0 +1,47 @@
+{
+  "revision": 0,
+  "shots": {
+    "vendor-assignment-templates-tab.png": {
+      "cursor": {
+        "pos": [
+          2599,
+          188
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "vendor-detail-panel-tabs.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "vendors-create-vendor-form.png": {
+      "cursor": {
+        "pos": [
+          200,
+          960
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "vendors-tab-list.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

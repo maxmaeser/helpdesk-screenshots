@@ -1,0 +1,26 @@
+{
+  "revision": 0,
+  "shots": {
+    "leads-verification-column.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "leads-verification-filter.png": {
+      "cursor": {
+        "pos": [
+          1095,
+          382
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

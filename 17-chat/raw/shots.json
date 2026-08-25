@@ -1,0 +1,47 @@
+{
+  "revision": 0,
+  "shots": {
+    "chat-composer.png": {
+      "cursor": {
+        "pos": [
+          74,
+          172
+        ],
+        "type": "hand"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "chat-new-chat-menu.png": {
+      "cursor": {
+        "pos": [
+          642,
+          70
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "chat-overview-list.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "chat-thread-view.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

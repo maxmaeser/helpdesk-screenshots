@@ -1,5 +1,5 @@
 {
-  "revision": 6,
+  "revision": 9,
   "graphic": {
     "v": 2,
     "background": "white-solid",
@@ -93,7 +93,7 @@
             "props": {
               "label": "Field",
               "meta": "text · required",
-              "icon": "pen",
+              "icon": "doc",
               "tint": "blue",
               "emphasized": true,
               "width": 480,
@@ -111,7 +111,7 @@
             "props": {
               "label": "Field",
               "meta": "single select · required",
-              "icon": "pen",
+              "icon": "check",
               "tint": "blue",
               "emphasized": false,
               "width": 480,
@@ -129,7 +129,7 @@
             "props": {
               "label": "Field",
               "meta": "date · optional",
-              "icon": "pen",
+              "icon": "calendar",
               "tint": "blue",
               "emphasized": false,
               "width": 480,
@@ -165,7 +165,7 @@
             "props": {
               "label": "Field",
               "meta": "dropdown · optional",
-              "icon": "pen",
+              "icon": "import",
               "tint": "blue",
               "emphasized": false,
               "width": 480,
@@ -183,7 +183,7 @@
             "props": {
               "label": "Field",
               "meta": "boolean · required",
-              "icon": "pen",
+              "icon": "flag",
               "tint": "blue",
               "emphasized": false,
               "width": 480,
@@ -201,7 +201,7 @@
             "props": {
               "label": "Field",
               "meta": "multi-select · optional",
-              "icon": "pen",
+              "icon": "filter",
               "tint": "blue",
               "emphasized": false,
               "width": 480,
@@ -216,11 +216,11 @@
         ]
       }
     ],
-    "status": "flagged",
+    "status": "approved",
     "note": "Inline infographic (CONTAINER): a form's pages, each holding the fields placed on it (how-to-build-a-form). Rev 4: containment is drawn by nesting only. The three horizontal 'contains' arrows are deleted, so the single arrow left in the frame (Page 1 to Page 2) can only mean sequence. Field Category is out of this graphic -- it is a third relation and needs its own. Geometry mirrors the approved portal-structure CONTAINER; heights are computed (last child bottom + 30). Two card widths total: 600 container, 480 field. Tint: slate = the page that holds fields, blue = a field you create and place.",
-    "lastTouchedBy": "claude",
+    "lastTouchedBy": "max",
     "editing": false,
-    "rev": 4,
-    "updatedAt": 1787586238494
+    "rev": 7,
+    "updatedAt": 1787633951195
   }
 }

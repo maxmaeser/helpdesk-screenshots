@@ -1,0 +1,33 @@
+{
+  "revision": 0,
+  "shots": {
+    "account-settings-edit.png": {
+      "cursor": {
+        "pos": [
+          2445,
+          124
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "account-settings-notifications.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "account-settings-profile.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "revision": 0,
+  "shots": {
+    "billing-add-payment-method.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "funnel-automations-panel.png": {
+      "cursor": {
+        "pos": [
+          331,
+          52
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "funnel-publish-popover.png": {
+      "cursor": {
+        "pos": [
+          545,
+          56
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "funnel-resources-end-screen.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

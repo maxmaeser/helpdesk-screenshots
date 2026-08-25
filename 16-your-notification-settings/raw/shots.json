@@ -1,0 +1,40 @@
+{
+  "revision": 0,
+  "shots": {
+    "notif-inbox-panel.png": {
+      "cursor": {
+        "pos": [
+          1584,
+          56
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "notif-preferences-table.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "notif-settings-nav.png": {
+      "cursor": {
+        "pos": [
+          320,
+          310
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

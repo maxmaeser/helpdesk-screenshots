@@ -1,0 +1,26 @@
+{
+  "revision": 0,
+  "shots": {
+    "sliders-deck-editor.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "sliders-empty-state.png": {
+      "cursor": {
+        "pos": [
+          1360,
+          1485
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "revision": 0,
+  "shots": {
+    "finder-list.png": {
+      "cursor": {
+        "pos": [
+          3187,
+          345
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "finder-results-table.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    },
+    "finder-search-open.png": {
+      "cursor": {
+        "pos": [
+          3165,
+          215
+        ],
+        "type": "arrow"
+      },
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
+    }
+  }
+}
