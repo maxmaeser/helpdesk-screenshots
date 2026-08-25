@@ -109,6 +109,17 @@ highlightBleedMargin) so the canvas never has to grow.
     the raw's edge pixels while this bake magnifies the real page behind the
     card. Geometry, position and radius agree; those overhang pixels do not.
 
+LENS SOURCE RESOLUTION. A lens is the one effect that magnifies, so it is the
+one effect that still wants the detail fit_to_width throws away: on a 3360px
+capture reduced to a 1680px card, magnifying the card at lensZoom 1.6 resolved
+the glass to 0.5/1.6 of the raw's sampling rate, and the bake read visibly
+blurrier than the studio preview, which gathers from the full-resolution PNG
+(Max, 2026-08-22). The content gather therefore reads the raw, prefiltered to
+the density it is about to ask for (_lens_hires_patch). Only the pixels inside
+the glass move; coverage, refraction, bevel, border and shadow all stay in
+renderer space, and the two cases above both opt back out to the canvas, so
+neither contract is weakened.
+
 Optional per-highlight style overrides (Highlight Settings v2 — see the suite
 repo's docs/superpowers/specs/2026-07-18-highlight-settings-v2-design.md).
 Absent fields fall back to the fixed v1 HIGHLIGHT_STYLE constants, so an
@@ -919,7 +930,158 @@ def _lens_fallback(img, rect, zoom, radius):
     return img
 
 
-def draw_lens_highlight(img, rect, zoom=None, radius=None, refraction=None):
+def _lens_paint_pad(h):
+    """How far outside its own rect a highlight's bake actually paints.
+
+    Mirrors highlightPaintRect in the studio's highlight-style.ts. Spotlight is
+    deliberately not listed: its dim covers everything OUTSIDE its rect, so it
+    reaches every lens wherever either one sits, and _lens_reads_earlier treats
+    it as an unconditional hit rather than a padded box.
+    """
+    style = h.get("style")
+    if style == "outline":
+        stroke = h.get("thickness")
+        stroke = HIGHLIGHT_STYLE["outline"]["stroke_width"] if stroke is None else stroke
+        glow = h.get("glowSize")
+        glow = HIGHLIGHT_STYLE["outline"]["glow_blur"] if glow is None else glow
+        return stroke + glow
+    if style == "blur":
+        feather = h.get("maskFeather")
+        # Unset maskFeather means a hard-edged mask; the blur itself never
+        # writes outside the rect.
+        return 0 if feather is None else feather
+    if style == "lens":
+        return int(math.ceil(3 * HIGHLIGHT_STYLE["lens"]["shadow_sig1"]
+                             + HIGHLIGHT_STYLE["lens"]["shadow_dy1"]))
+    return 0
+
+
+def _lens_reads_earlier(highlights, index):
+    """True when the lens at `index` magnifies pixels an EARLIER highlight wrote.
+
+    Transcription of lensSamplesEarlierHighlights in the studio's
+    highlight-style.ts, which is the same predicate the studio uses to warn an
+    operator that preview and bake will disagree for that lens.
+
+    The lens's sampling footprint is its rect shrunk by 1/zoom about the center
+    (grown, when zoom < 1). False means the composite under the footprint is
+    still the pristine screenshot, which is what lets _lens_hires_patch swap in
+    the full-resolution raw without ever reaching behind an earlier effect.
+    See the ordering contract in the module docstring.
+    """
+    lens = highlights[index]
+    x, y, w, h = lens["rect"]
+    zoom = lens.get("lensZoom")
+    zoom = HIGHLIGHT_STYLE["lens"]["zoom"] if zoom is None else zoom
+    zoom = min(max(float(zoom), 0.2), 8.0)
+    sw = w / zoom
+    sh = h / zoom
+    fx0 = x + (w - sw) / 2.0
+    fy0 = y + (h - sh) / 2.0
+    fx1 = fx0 + sw
+    fy1 = fy0 + sh
+    for earlier in highlights[:index]:
+        rect = earlier.get("rect")
+        if not rect or len(rect) != 4:
+            continue
+        if earlier.get("style") == "spotlight":
+            return True
+        pad = _lens_paint_pad(earlier)
+        ex0 = rect[0] - pad
+        ey0 = rect[1] - pad
+        ex1 = rect[0] + rect[2] + pad
+        ey1 = rect[1] + rect[3] + pad
+        if fx0 < ex1 and ex0 < fx1 and fy0 < ey1 and ey0 < fy1:
+            return True
+    return False
+
+
+def _lens_hires_patch(hires, cx, cy, bx, by, zoom, amp, ca):
+    """Prefiltered full-resolution source for a lens's CONTENT gather.
+
+    THE BUG THIS FIXES (Max, 2026-08-22: "in edit the glass highlight looks
+    sharp but in the final render it's quite blurry"). Highlights bake onto the
+    finished canvas, and by then fit_to_width has already reduced the capture
+    to renderer space: a 3360px Retina screenshot lands on a 1680px card, so
+    half the linear detail is gone before any lens is drawn. The lens then
+    MAGNIFIED that reduced buffer, so at lensZoom 1.6 the glass showed content
+    carrying only 0.5/1.6 of the raw's sampling rate. The studio's LensPreview
+    gathers from the pristine full-resolution PNG instead, so it showed the
+    same glass at 1/1.6, twice the detail. The preview was right and the bake
+    was throwing away pixels it still had on disk.
+
+    The gather now reads the raw, prefiltered to exactly the density it is
+    about to ask for: D = min(zoom, k) patch px per renderer px, where k is the
+    raw's own density over the card. That makes the gather run at ~1:1, the one
+    rate that is neither blurred (magnifying a too-coarse buffer, the bug) nor
+    aliased (point-sampling a too-fine one). LANCZOS does the prefilter; the
+    bilinear gather itself is untouched, because its kernel is half of the
+    parity contract with the browser.
+
+    Only the CONTENT moves. Coverage, refraction, chromatic aberration, bevel,
+    border and shadow all stay in renderer space, so the slab keeps its exact
+    geometry and cosmetics and nothing outside the glass changes by a byte.
+
+    Returns (flat, w, h, ox, oy, dx, dy), mapping a canvas point (X, Y) to
+    patch coords ((X - ox) * dx, (Y - oy) * dy), or None to keep the existing
+    renderer-space gather.
+    """
+    if hires is None:
+        return None
+    # zoom <= 1 minifies: the renderer-space composite is already at or above
+    # the density the gather asks for, and prefiltering below it would be a
+    # divergence the preview (which never prefilters) does not share.
+    if zoom <= 1.0:
+        return None
+
+    src = hires["img"]
+    ox, oy = hires["origin"]
+    fw, fh = hires["size"]
+    kx = src.width / float(fw)
+    ky = src.height / float(fh)
+    if kx <= 1.0 or ky <= 1.0:
+        return None      # raw was no larger than the card; nothing to recover
+
+    # Worst-case gather reach: the interior magnification, plus the full bend
+    # amplitude (bend peaks at the rim), plus the chromatic-aberration offset,
+    # plus one pixel for the bilinear tap itself.
+    half_w = bx / zoom + amp + ca + 1.0
+    half_h = by / zoom + amp + ca + 1.0
+    fx0, fx1 = cx - half_w, cx + half_w
+    fy0, fy1 = cy - half_h, cy + half_h
+
+    # EDGE BLEED (see place_card): a lens may overhang the screenshot into the
+    # card padding, and there the canvas holds the page grid, the card's
+    # rounded corner and its drop shadow, pixels the raw PNG simply does not
+    # contain. Magnifying the real page there is the BETTER behavior and it is
+    # the one the bake already has (the preview clamps to raw edge pixels and
+    # is the side that is wrong), so an overhanging gather keeps the canvas.
+    if fx0 < ox or fy0 < oy or fx1 > ox + fw or fy1 > oy + fh:
+        return None
+
+    a0 = max(0, int(math.floor((fx0 - ox) * kx)))
+    a1 = min(src.width, int(math.ceil((fx1 - ox) * kx)))
+    b0 = max(0, int(math.floor((fy0 - oy) * ky)))
+    b1 = min(src.height, int(math.ceil((fy1 - oy) * ky)))
+    if a1 - a0 < 2 or b1 - b0 < 2:
+        return None
+
+    crop = src.crop((a0, b0, a1, b1))
+    span_x = (a1 - a0) / kx          # canvas px the crop covers
+    span_y = (b1 - b0) / ky
+    density = min(zoom, kx)
+    pw = max(2, min(crop.width, int(round(span_x * density))))
+    ph = max(2, min(crop.height, int(round(span_y * density))))
+    if (pw, ph) != crop.size:
+        crop = crop.resize((pw, ph), Image.LANCZOS)
+
+    flat = np.asarray(crop.convert("RGB")).reshape(-1, 3)
+    return (flat, crop.width, crop.height,
+            ox + a0 / kx, oy + b0 / ky,
+            crop.width / span_x, crop.height / span_y)
+
+
+def draw_lens_highlight(img, rect, zoom=None, radius=None, refraction=None, hires=None):
     """Glass magnifier: a rounded-rect slab that magnifies what is under it.
 
     Per-highlight overrides (see shot_spec_to_args); omitted (None) params
@@ -1028,6 +1190,25 @@ def draw_lens_highlight(img, rect, zoom=None, radius=None, refraction=None):
     src_h, src_w = src.shape[0], src.shape[1]
     flat = src.reshape(-1, src.shape[2])[:, :3]
 
+    # Where the CONTENT gather reads from. Default is the running composite in
+    # renderer space (identity transform); _lens_hires_patch swaps in the raw
+    # at the gather's own density when it can prove that is the same content,
+    # only sharper. src_w/src_h stay the CANVAS dimensions either way: Pass A
+    # clips its shadow box against the canvas, not against the patch.
+    patch = _lens_hires_patch(hires, cx, cy, bx, by, zoom, amp,
+                              style["ca_max"] * scale)
+    if patch is None:
+        g_flat, g_w, g_h = flat, src_w, src_h
+        g_ox = g_oy = 0.0
+        g_dx = g_dy = 1.0
+    else:
+        g_flat, g_w, g_h, g_ox, g_oy, g_dx, g_dy = patch
+
+    def gather(mx, my):
+        """Bilinear content sample at canvas coords, through the patch map."""
+        return _gather_bilinear(g_flat, g_w, g_h,
+                                (mx - g_ox) * g_dx, (my - g_oy) * g_dy)
+
     # --- Pass A: analytic two-lobe drop shadow ----------------------------
     pad = int(math.ceil(3 * style["shadow_sig1"] * scale + style["shadow_dy1"] * scale))
     sx0 = max(0, x - pad)
@@ -1073,7 +1254,7 @@ def draw_lens_highlight(img, rect, zoom=None, radius=None, refraction=None):
     map_x = np.broadcast_to(map_x, (h, w))
     map_y = np.broadcast_to(map_y, (h, w))
 
-    sample = _gather_bilinear(flat, src_w, src_h, map_x, map_y)
+    sample = gather(map_x, map_y)
     red = sample[..., 0].copy()
     green = sample[..., 1].copy()
     blue = sample[..., 2].copy()
@@ -1087,10 +1268,8 @@ def draw_lens_highlight(img, rect, zoom=None, radius=None, refraction=None):
         bny = ny[in_band]
         bmx = map_x[in_band]
         bmy = map_y[in_band]
-        red[in_band] = _gather_bilinear(flat, src_w, src_h,
-                                        bmx + bnx * ca, bmy + bny * ca)[..., 0]
-        blue[in_band] = _gather_bilinear(flat, src_w, src_h,
-                                         bmx - bnx * ca, bmy - bny * ca)[..., 2]
+        red[in_band] = gather(bmx + bnx * ca, bmy + bny * ca)[..., 0]
+        blue[in_band] = gather(bmx - bnx * ca, bmy - bny * ca)[..., 2]
 
     # Content lift: brightness THEN saturate, exactly CSS filter order.
     red *= style["lift_bright"]
@@ -1143,7 +1322,7 @@ def draw_lens_highlight(img, rect, zoom=None, radius=None, refraction=None):
     return img
 
 
-def apply_highlights(img, highlights, region_mask=None):
+def apply_highlights(img, highlights, region_mask=None, hires=None):
     """Bake all highlight effects into img.
 
     Since the edge-bleed change `img` is the finished CANVAS and the rects have
@@ -1197,7 +1376,7 @@ def apply_highlights(img, highlights, region_mask=None):
     ]
     spotlight_pending = bool(spotlight_specs)
 
-    for h in highlights:
+    for index, h in enumerate(highlights):
         style = h.get("style")
         rect = h.get("rect")
         if not rect or len(rect) != 4:
@@ -1221,9 +1400,16 @@ def apply_highlights(img, highlights, region_mask=None):
         elif style == "redact":
             img = draw_redact_highlight(img, rect)
         elif style == "lens":
+            # The full-resolution source is offered only when this lens is
+            # provably magnifying the untouched screenshot. If an earlier
+            # highlight wrote inside its footprint the lens must keep reading
+            # the running composite, so a lens over a redact magnifies the
+            # pixelation instead of reaching behind it (see _lens_reads_earlier
+            # and the ordering contract in the module docstring).
             img = draw_lens_highlight(
                 img, rect, zoom=h.get("lensZoom"), radius=h.get("lensRadius"),
-                refraction=h.get("lensRefraction"))
+                refraction=h.get("lensRefraction"),
+                hires=None if _lens_reads_earlier(highlights, index) else hires)
         else:
             print(f"  WARNING: unknown highlight style {style!r}, skipping")
     return img
@@ -1297,7 +1483,7 @@ def fit_to_width(img, max_w, cursor_pos=None, highlights=None):
 
 
 def place_card(canvas, img, card_x, card_y, card_w, card_h, cursor_pos, cursor_type,
-               highlights=None):
+               highlights=None, hires_img=None):
     """Place a single card (shadow + image + rounded mask + highlights +
     cursor) onto canvas.
 
@@ -1356,7 +1542,16 @@ def place_card(canvas, img, card_x, card_y, card_w, card_h, cursor_pos, cursor_t
         # area the dim covered when it was baked into the screenshot.
         region_mask = Image.new("L", canvas.size, 0)
         region_mask.paste(mask, (card_x, card_y))
-        canvas = apply_highlights(canvas, shifted, region_mask=region_mask)
+        # The pre-fit_to_width screenshot, tagged with where it lands on the
+        # canvas, so a lens can magnify the raw's real detail instead of the
+        # reduced card (_lens_hires_patch). Nothing else consumes it.
+        hires = None if hires_img is None else {
+            "img": hires_img,
+            "origin": (card_x + img_x, card_y + img_y),
+            "size": img.size,
+        }
+        canvas = apply_highlights(canvas, shifted, region_mask=region_mask,
+                                  hires=hires)
 
     # Cursor overlay
     if cursor_pos is not None:
@@ -1381,6 +1576,11 @@ def process_image(src_path, dst_path, cursor_pos=None, canvas_width=CANVAS_WIDTH
     img, cursor_pos, highlights = load_screenshot(
         src_path, cursor_pos, scale2x, crop_rect, highlights)
 
+    # Hold on to the capture at its own resolution before fit_to_width reduces
+    # it: a lens magnifies, so it is the one effect that still has a use for
+    # the detail the card throws away (_lens_hires_patch).
+    hires_img = img
+
     # Scale down if screenshot exceeds card area (canvas_width - padding)
     img, cursor_pos, highlights = fit_to_width(
         img, canvas_width - CARD_PADDING * 2, cursor_pos, highlights)
@@ -1398,7 +1598,7 @@ def process_image(src_path, dst_path, cursor_pos=None, canvas_width=CANVAS_WIDTH
     # Highlights bake inside place_card, onto the canvas, so an effect on an
     # edge-flush element bleeds into the card padding instead of being clamped.
     canvas = place_card(canvas, img, card_x, card_y, card_w, card_h, cursor_pos,
-                        cursor_type, highlights=highlights)
+                        cursor_type, highlights=highlights, hires_img=hires_img)
     canvas = apply_rounded_corners(canvas, round_radius)
 
     save_png(canvas, dst_path)
