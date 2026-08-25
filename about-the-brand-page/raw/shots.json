@@ -1,35 +1,209 @@
 {
-  "revision": 1,
+  "revision": 126,
   "shots": {
     "brand-overview.png": {
-      "crop": [0, 0, 3360, 2100],
-      "cursor": { "pos": [3258, 328], "type": "arrow" },
-      "status": "proposed",
+      "crop": [
+        0,
+        4,
+        3360,
+        2096
+      ],
+      "cursor": {
+        "pos": [
+          3228,
+          313
+        ],
+        "type": "arrow"
+      },
+      "highlights": [
+        {
+          "rect": [
+            409,
+            549,
+            413,
+            185
+          ],
+          "style": "lens",
+          "lensZoom": 1.6,
+          "lensRadius": 44,
+          "lensRefraction": 65,
+          "color": "blue"
+        },
+        {
+          "rect": [
+            2538,
+            582,
+            414,
+            120
+          ],
+          "style": "lens",
+          "lensZoom": 1.6,
+          "lensRadius": 44,
+          "lensRefraction": 65,
+          "color": "blue"
+        },
+        {
+          "rect": [
+            422,
+            1335,
+            405,
+            139
+          ],
+          "style": "lens",
+          "lensZoom": 1.6,
+          "lensRadius": 44,
+          "lensRefraction": 65,
+          "color": "blue"
+        },
+        {
+          "rect": [
+            2538,
+            1052,
+            363,
+            119
+          ],
+          "style": "lens",
+          "lensZoom": 1.6,
+          "lensRadius": 44,
+          "lensRefraction": 65,
+          "color": "blue"
+        },
+        {
+          "rect": [
+            3156,
+            233,
+            214,
+            190
+          ],
+          "style": "lens",
+          "lensZoom": 1.6,
+          "lensRadius": 44,
+          "lensRefraction": 65,
+          "color": "blue"
+        }
+      ],
+      "status": "adjusted",
       "note": "Agent-captured (session.js + routes.js BRAND_OVERVIEW route, brand switched in-app to Lumon Fresh -- a fictional dev-seed brand with rich populated content, unlike the mostly-empty Staging Test Brand default). Shows the six-tab bar (Overview/Feed/News/Identity/Voice & style/Gallery), the About Brand description, the Locations/Countries/Date Founded row, the At a Glance metrics (Franchise Since/System Sales/Avg. Unit Revenue/Team), the start of Brand Values, and the Headquarters + Network map sidebar with location pins. Arrow cursor on 'Edit' (button, per heuristic). The Leadership card sits further down the page (~2300px, past this viewport) and isn't in frame -- flagging for Max in case a scrolled follow-up shot is wanted; every other Overview element the article names is covered. Covers the intro paragraph, the tab list, and the Overview tab bullet list (About Brand/Headquarters/Network map; Leadership only partially, per above).",
-      "lastTouchedBy": "claude",
+      "lastTouchedBy": "max",
       "editing": false,
-      "rev": 1
+      "rev": 29,
+      "renderedRev": 29,
+      "updatedAt": 1787636790652,
+      "renderedAt": 1787636791162
     },
     "brand-feed.png": {
-      "crop": [0, 0, 3360, 2100],
-      "cursor": { "pos": [3174, 652], "type": "arrow" },
-      "status": "proposed",
+      "crop": [
+        0,
+        0,
+        3359,
+        1548
+      ],
+      "cursor": {
+        "pos": [
+          3174,
+          652
+        ],
+        "type": "arrow"
+      },
+      "highlights": [
+        {
+          "rect": [
+            664,
+            466,
+            290,
+            162
+          ],
+          "style": "lens",
+          "lensZoom": 1.4,
+          "lensRadius": 44,
+          "lensRefraction": 65,
+          "color": "blue"
+        },
+        {
+          "rect": [
+            2949,
+            549,
+            453,
+            204
+          ],
+          "style": "lens",
+          "lensZoom": 1.4,
+          "lensRadius": 44,
+          "lensRefraction": 65,
+          "color": "blue"
+        }
+      ],
+      "status": "adjusted",
       "note": "Agent-captured: Lumon Fresh > Feed tab. Shows the scrolling card grid (one real post, 'Summer LTO is here: The Melon Bar', Cafe tag) and the 'Manage Posts' button (the article's 'Manage Brand Feed' entry point). Arrow cursor on the button (per heuristic). Covers the Feed tab section.",
-      "lastTouchedBy": "claude",
+      "lastTouchedBy": "max",
       "editing": false,
-      "rev": 1
+      "rev": 17,
+      "renderedRev": 17,
+      "updatedAt": 1787636865735,
+      "renderedAt": 1787636868121
     },
     "brand-news.png": {
-      "crop": [0, 0, 3360, 2100],
-      "cursor": { "pos": [3219, 658], "type": "arrow" },
-      "status": "proposed",
+      "crop": [
+        0,
+        0,
+        3360,
+        2100
+      ],
+      "cursor": {
+        "pos": [
+          3219,
+          658
+        ],
+        "type": "arrow"
+      },
+      "highlights": [
+        {
+          "rect": [
+            860,
+            490,
+            266,
+            128
+          ],
+          "style": "lens",
+          "dimStrength": 6,
+          "feather": 7,
+          "contactShadow": true,
+          "spotlightRadius": 28,
+          "color": "blue",
+          "lensZoom": 1.4,
+          "lensRadius": 44,
+          "lensRefraction": 65
+        },
+        {
+          "rect": [
+            3037,
+            547,
+            350,
+            209
+          ],
+          "style": "lens",
+          "lensZoom": 1.4,
+          "lensRadius": 44,
+          "lensRefraction": 65,
+          "color": "blue"
+        }
+      ],
+      "status": "adjusted",
       "note": "Agent-captured: Lumon Fresh > News tab. Honest empty state -- checked all 4 brands with real content (Lumon Fresh, Kharcho Kings, Circada, Khinkali Krew) and every one shows 'No news items yet' for News specifically, so this isn't a Lumon-only gap. Shows the Press & News header and the '+ Add news' entry point (the article's 'Add news item' flow). Arrow cursor on the button (per heuristic). The kind/sentiment/scope tagging and the paste-a-link auto-fill the article describes both live inside the Add-news flow, which was not opened to avoid creating a real news item on shared staging -- flagging for Max if a filled-in example is wanted. Covers the News tab intro.",
-      "lastTouchedBy": "claude",
-      "editing": false,
-      "rev": 1
+      "lastTouchedBy": "max",
+      "editing": true,
+      "rev": 9,
+      "renderedRev": 9,
+      "updatedAt": 1787636902676,
+      "renderedAt": 1787636902094
     },
     "brand-identity.png": {
-      "crop": [0, 0, 3360, 2100],
+      "crop": [
+        0,
+        0,
+        3360,
+        2100
+      ],
       "status": "proposed",
       "note": "Agent-captured: Lumon Fresh > Identity tab. Shows the Full Logo / Small Logo cards and the start of the Color Palette (Lumon Blue, Refinement Teal, Severed White, Eagan Ink swatches with hex/RGBA values) -- the style guide the article describes. Identity Guidelines (below the fold) not in frame. No cursor: read-only reference view (cursor heuristic). Covers the Identity tab intro and logo/color portion of the style guide.",
       "lastTouchedBy": "claude",
@@ -37,8 +211,19 @@
       "rev": 1
     },
     "brand-voice-style.png": {
-      "crop": [0, 0, 3360, 2100],
-      "cursor": { "pos": [3126, 652], "type": "arrow" },
+      "crop": [
+        0,
+        0,
+        3360,
+        2100
+      ],
+      "cursor": {
+        "pos": [
+          3126,
+          652
+        ],
+        "type": "arrow"
+      },
       "status": "proposed",
       "note": "Agent-captured: Lumon Fresh > Voice & style tab. Honest empty state -- checked Lumon Fresh, Kharcho Kings, and Circada, all show 'No brand voice added yet' / 'Nothing added yet' under every subsection, so this is universal, not Lumon-specific. Still shows the full structural layout the article's 'Voice & Style Guidelines' paragraph describes: Voice Of The Brand, then Voice & Style Guidelines broken into Voice Principles / Tone By Channel / Rules / Do's & Don'ts / Best Practices / Usage Guidelines. Arrow cursor on the edit-pencil icon for 'Voice Of The Brand' (button, per heuristic). Flagging for Max: seeding this section on one brand would make for a much livelier shot. Covers the Voice & style tab section.",
       "lastTouchedBy": "claude",
@@ -46,7 +231,12 @@
       "rev": 1
     },
     "brand-gallery.png": {
-      "crop": [0, 0, 3360, 2100],
+      "crop": [
+        0,
+        0,
+        3360,
+        2100
+      ],
       "status": "proposed",
       "note": "Agent-captured: Lumon Fresh > Gallery tab. Shows the asset grid grouped by category (Logos group fully visible: pixel logo, background-removed PNG, two SVG globe marks, wordmark; Brand Assets group starting below) with file-type badges and a Download Assets action per group -- the 'mockup assets, images and renders' the article describes. No cursor: read-only grid browse (cursor heuristic). Covers the Gallery tab section.",
       "lastTouchedBy": "claude",
@@ -54,4 +244,5 @@
       "rev": 1
     }
   }
+}
 }
