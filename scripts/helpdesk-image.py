@@ -158,7 +158,7 @@ negative radii treated as 0):
   - "redact" has no fields: cell size is locked at
     max(28, floor(min(w, h) / 8)) px — box-average down, nearest-neighbor
     up, composited through a rounded (radius 10) mask.
-  - "lensZoom" (lens only): magnification about the rect centre. Default 1.6.
+  - "lensZoom" (lens only): magnification about the rect centre. Default 1.4.
     Clamped to [0.2, 8.0] at draw time (the remap must stay well-formed).
   - "lensRadius" (lens only): corner radius of the glass slab in px at 2x.
     Default 28. Independent of "cornerRadius" (which is outline-only), and
@@ -307,7 +307,7 @@ HIGHLIGHT_STYLE = {
     # against the already-cropped/scaled image; the browser uses previewUnit()).
     "lens": {
         # --- the three per-highlight knobs (absent-field defaults) ---
-        "zoom": 1.6,             # magnification about the rect centre
+        "zoom": 1.4,             # magnification about the rect centre
         "radius": 28,            # corner radius, px at 2x
         "refraction": 65,        # 0-100, percent of the designed max bend
         # --- locked geometry ---
