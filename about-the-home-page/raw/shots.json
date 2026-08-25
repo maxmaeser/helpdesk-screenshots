@@ -1,18 +1,71 @@
 {
-  "revision": 1,
+  "revision": 38,
   "shots": {
     "home-overview.png": {
-      "crop": [0, 0, 3360, 2100],
-      "cursor": { "pos": [700, 803], "type": "hand" },
-      "status": "proposed",
+      "crop": [
+        0,
+        0,
+        3360,
+        2100
+      ],
+      "cursor": {
+        "pos": [
+          700,
+          803
+        ],
+        "type": "hand"
+      },
+      "highlights": [
+        {
+          "rect": [
+            395,
+            352,
+            408,
+            188
+          ],
+          "style": "lens",
+          "lensZoom": 1.6,
+          "lensRadius": 44,
+          "lensRefraction": 65,
+          "color": "blue"
+        },
+        {
+          "rect": [
+            521,
+            737,
+            405,
+            132
+          ],
+          "style": "lens",
+          "lensZoom": 1.6,
+          "lensRadius": 44,
+          "lensRefraction": 65,
+          "color": "blue"
+        }
+      ],
+      "status": "approved",
       "note": "Agent-captured (session.js + routes.js BASE route, brand dashboard, All Selected brand view): Home > Overview tab, the default landing page. Shows the four-tab bar (Overview/Tasks/Chat/Calendar), the brand selector strip across the top, the notification inbox on the left with mixed notification types (chat mentions, invite-approval requests) each carrying a quick action link (View Chat / Review request), and the calendar sidebar on the right with a mini-month picker, a Connect Calendar prompt, and a populated upcoming-events list grouped by day. Hand cursor on the first notification's 'View Chat' quick action (clickable text, per cursor heuristic). dom-sanitize ran before the shot: 3 internal @franchisesystems.ai emails were masked to @example.com and 6 relative-time chips were freshened (1 day ago / 2 weeks ago / about 8 weeks ago) so the shot doesn't look stale. Covers the intro paragraph, the tab list, and the entire Overview tab section (inbox description, quick actions, calendar sidebar with connect-calendar prompt).",
-      "lastTouchedBy": "claude",
+      "lastTouchedBy": "max",
       "editing": false,
-      "rev": 1
+      "rev": 17,
+      "renderedRev": 17,
+      "updatedAt": 1787632912330,
+      "renderedAt": 1787632903857
     },
     "home-tasks.png": {
-      "crop": [0, 0, 3360, 2100],
-      "cursor": { "pos": [3189, 548], "type": "arrow" },
+      "crop": [
+        0,
+        0,
+        3360,
+        2100
+      ],
+      "cursor": {
+        "pos": [
+          3189,
+          548
+        ],
+        "type": "arrow"
+      },
       "status": "proposed",
       "note": "Agent-captured: Home > Tasks tab. A 'Welcome to Tasks' product-tour modal appeared on first visit and a tour-interaction-blocker overlay intercepted clicks; both were dismissed via a direct DOM .click() on 'Maybe Later' (Playwright's actionability check kept finding the transparent blocker mid-transition) before waiting ~4s for the table to hydrate past its loading skeleton. Shows the real task table (Total Tasks: 1866) with Task/Linked To/Status/Responsible/Due Date/Created columns, filter/sort icons, and the '+ Create Task' button. Arrow cursor on 'Create Task' (button, per heuristic). No PII: responsible-party avatars are generic placeholder icons, task titles are generic onboarding-checklist items. Covers the Tasks tab section including the table's column set.",
       "lastTouchedBy": "claude",
@@ -20,8 +73,19 @@
       "rev": 1
     },
     "home-chat.png": {
-      "crop": [0, 0, 3360, 1300],
-      "cursor": { "pos": [926, 645], "type": "hand" },
+      "crop": [
+        0,
+        0,
+        3360,
+        1300
+      ],
+      "cursor": {
+        "pos": [
+          926,
+          645
+        ],
+        "type": "hand"
+      },
       "status": "proposed",
       "note": "Agent-captured: Home > Chat tab. Honest empty state for this account (All 0 conversations, 'No conversation selected' in the message pane) -- shows the All/Direct/Groups filter row and the two-pane messaging layout described in the article. Hand cursor on the 'Direct' filter tab (clickable text, per heuristic). Cropped to 1300px tall to keep the mostly-empty right pane from dominating the frame while still showing the two-pane structure for context. Seeding a real conversation would improve this shot (show unread badges, an actual message thread, attachment/emoji/voice-message affordances) but was not done to avoid mutating shared staging data -- flagging for Max if a livelier Chat shot is wanted later.",
       "lastTouchedBy": "claude",
@@ -29,8 +93,19 @@
       "rev": 1
     },
     "home-calendar.png": {
-      "crop": [0, 0, 3360, 1900],
-      "cursor": { "pos": [3211, 531], "type": "arrow" },
+      "crop": [
+        0,
+        0,
+        3360,
+        1900
+      ],
+      "cursor": {
+        "pos": [
+          3211,
+          531
+        ],
+        "type": "arrow"
+      },
       "status": "proposed",
       "note": "Agent-captured: Home > Calendar tab, Week view (the tab's default). Shows the Month/Week/Day view selector, the (GMT+7:00) Bangkok timezone selector, date-range navigation, and a populated week grid with real events (out-of-office blocks, recurring standups, product-sync meetings). Arrow cursor on 'Create Event' (button, per heuristic). Covers the Calendar tab section (Month/Week/Day + timezone selector + Create Event).",
       "lastTouchedBy": "claude",
@@ -38,8 +113,19 @@
       "rev": 1
     },
     "home-create-quick-task.png": {
-      "crop": [604, 193, 1076, 857],
-      "cursor": { "pos": [735, 1237], "type": "arrow" },
+      "crop": [
+        604,
+        193,
+        1076,
+        857
+      ],
+      "cursor": {
+        "pos": [
+          735,
+          1237
+        ],
+        "type": "arrow"
+      },
       "status": "proposed",
       "note": "Agent-captured (session.js + routes.js BASE route, brand dashboard): Home > Tasks tab > + Create Task. Modal opens on the quick-task form (default). Task Name filled ('Follow up with new franchisee lead') for a fuller look; Description/Due Date left empty/default. Shows Brand, Task Name, Description, Status, Due Date, Assignee, and the footer (Turn into work task / Cancel / Create Quick Task). Arrow cursor on the Create Quick Task button. Note: the live modal does NOT currently render a 'Notification Settings / Notify Responsible' section under Assignee -- checked repeatedly (default assignee, filled name, changed assignee to a different person, added a due date) and it never appeared. The article text says 'Turn on Notify Responsible to alert the assignee', which does not match current staging UI; flagging for Max, did not alter article prose (out of scope for a capture pass). Shot is otherwise an accurate, unmodified capture of the real modal.",
       "lastTouchedBy": "claude",
@@ -47,8 +133,19 @@
       "rev": 1
     },
     "home-work-task-type-picker.png": {
-      "crop": [508, 119, 1172, 931],
-      "cursor": { "pos": [261, 386], "type": "arrow" },
+      "crop": [
+        508,
+        119,
+        1172,
+        931
+      ],
+      "cursor": {
+        "pos": [
+          261,
+          386
+        ],
+        "type": "arrow"
+      },
       "status": "proposed",
       "note": "Agent-captured: same modal, after clicking 'Turn into work task' from the Create Quick Task form. Guided flow opens on step 1 of 4, 'Pick a task type', with Todo checklist selected by default (checkmark badge). Shows all 7 type cards (Todo checklist, Form, Visit a link, Schedule a call, Watch a video, View slides, Sign a document) and the footer (Cancel / Switch back to quick task / Step 1 of 4 / Continue). The dialog itself is CSS-capped at max-height:640px with overflow:auto, and the 7-card grid is a second, independently-scrolling inner div -- both clip real, already-rendered content since 7 cards in 3 rows don't fit the allotted space. Unclipped both (style.overflow='visible', maxHeight/height='auto' via page.evaluate) before the screenshot so all 7 cards render in one shot instead of scrolling/truncating -- nothing fabricated, just un-hiding DOM that was already there. Arrow cursor on the Todo checklist card's icon (selected state).",
       "lastTouchedBy": "claude",
