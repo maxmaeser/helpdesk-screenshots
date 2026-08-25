@@ -1,12 +1,14 @@
 {
-  "revision": 47,
+  "revision": 50,
   "shots": {
     "invite-modal-v2.png": {
       "status": "proposed",
-      "note": "Reshoot 2026-08-14 replacing the 2026-07-17 capture: the invite flow was rebuilt 2026-07-22 and the old modal (Access Level / Has Billing Access / Invite button, 'Invite to Franchise Systems Ai' title) is gone. New modal is OrganizationSettingsInviteModal.tsx: title 'Invite members', subtitle 'Franchise Systems Ai'. Agent-captured: Settings > Organization > Members > Invite members. Added one sample chip (team@example.com) to the Emails field so the form reads as in-progress rather than empty, then blurred the input so no focus ring shows. Clip is [role=dialog] bounding box + 40px margin on all sides (raw-relative, no crop field needed) so the darkened page backdrop shows as page context per the framing standard, without the tight zero-padding of the prior revision. dom-sanitize run twice defensively; sample email is a fake example.com address, no real PII. Confirms new field labels Emails / Role / Billing Access / Send invite; confirms old labels (Access Level, Has Billing Access, Invite Team Member, Invite submit button) are gone. No cursor: filled-form/result state, nothing to point at (same precedent as prior revision). Resolves reshoot mark rm-1786691147824-3505 (reason: dom).",
+      "note": "Re-captured 2026-08-25 from live staging by scripts/capture/shoot.js with the declarative spec scripts/capture/shots/how-to-invite-users.js (reshoot pilot). Same 1120x1216 raw as 2026-08-14: [role=dialog] bounding box + 40px margin on all sides, one sample chip (team@example.com) in the Emails field, input blurred so no focus ring shows. FIXES A CONTENT DEFECT in the 2026-08-14 capture: that final read 'Invites are valid for 1 week', which contradicted the article body's '7 days'. It was not a product change -- dom-sanitize's freshenDates default remaps any '<n> <unit>' onto a recency ladder, and it silently rewrote the dialog's own product copy. This capture disables freshenDates, and the footer now reads the true string 'Invites are valid for 7 days and the email must match at signup.' Emails still sanitized (14 rewritten): the member rows behind the dimmed backdrop fall inside the +40px pad. No cursor: filled-form state, nothing to point at.",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 2
+      "rev": 3,
+      "renderedRev": 3,
+      "renderedAt": 1787666478308
     },
     "invite-nav-members.png": {
       "status": "approved",
@@ -26,10 +28,12 @@
         "type": "arrow"
       },
       "status": "proposed",
-      "note": "Reshoot 2026-08-14: the invite flow was rebuilt 2026-07-22, replacing the old 'Team Admins' card (Invite Team Member button) with the new full-width Members page (OrganizationSettingsTeam.tsx) -- header 'Members', toolbar (search + role filter), member rows with Billing toggle and Role select, button top right now reads 'Invite members'. Agent-captured: Settings > Organization > Members (/settings/organizations?section=organization-members). Clip is raw-relative x=448,y=168,w=1024,h=340 (css, pre-2x) -- the Members card header + toolbar + first 3 rows, matching the prior revision's 3-row framing and page-context intent; no crop field needed since the raw capture is already this clip. dom-sanitize run twice defensively; all visible names/emails are staging test personas already on *.example.com. [data-fsai-guide] removed pre-shot. Arrow cursor (not hand) on the Invite members button per the current CLAUDE.md cursor heuristic (Arrow: buttons). Confirms new label 'Invite members'; confirms old labels 'Team Admins' / 'Invite Team Member' are gone. Resolves reshoot mark rm-1786691147591-0140 (reason: dom).",
+      "note": "Re-captured 2026-08-25 from live staging by scripts/capture/shoot.js with the declarative spec scripts/capture/shots/how-to-invite-users.js (reshoot pilot). Same route, same framing, same 2048x680 raw as the 2026-08-14 capture: Settings > Organization > Members (/settings/organizations?section=organization-members), clip raw-relative x=448,y=168,w=1024,h=340 css pre-2x, Members card header + toolbar + first 3 rows. The UI has NOT drifted since 2026-08-14 -- every label, control and layout matches the prior revision; only the relative-time column moved ('11 mo ago' -> '12 mo ago', Max Maeser 'Today' -> '5 days ago'). dom-sanitize run twice with freshenDates DISABLED (see the invite-modal-v2 note for why); 13 addresses rewritten to *.example.com. [data-fsai-guide] removed pre-shot. Cursor and clip metadata from the prior revision still apply unchanged.",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 27
+      "rev": 28,
+      "renderedRev": 28,
+      "renderedAt": 1787666476599
     }
   }
 }
