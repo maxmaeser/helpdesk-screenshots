@@ -1,21 +1,21 @@
 {
-  "revision": 4,
+  "revision": 5,
   "cover": {
     "v": 2,
     "background": "white-solid",
     "title": null,
     "exportPreset": "opener-wide",
-    "scale": 100,
-    "positionX": 0,
+    "scale": 86,
+    "positionX": 7,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
         "role": "foreground",
-        "x": -320,
-        "y": -110,
-        "w": 1680,
-        "h": 760,
+        "x": -480.047,
+        "y": -171.86,
+        "w": 1972.093,
+        "h": 883.721,
         "preset": "bare",
         "layout": "free",
         "children": [
@@ -23,14 +23,15 @@
             "id": "gridField-rail9-14",
             "type": "gridField",
             "props": {
-              "width": 1680,
-              "height": 760,
-              "gridSize": 80,
-              "cornerRadius": 56,
+              "width": 1972.093,
+              "height": 883.721,
+              "gridSize": 93.023,
+              "cornerRadius": 65.116,
               "frameLine": true,
               "showGrid": true,
               "maskX": 78,
-              "maskY": 50
+              "maskY": 50,
+              "lineScale": 1.16279
             },
             "offset": [
               0,
@@ -45,8 +46,8 @@
               "value": "USERS AND SETTINGS"
             },
             "offset": [
-              160,
-              194
+              320.047,
+              255.86
             ]
           },
           {
@@ -58,8 +59,8 @@
               "size": 76
             },
             "offset": [
-              160,
-              250
+              320.047,
+              311.86
             ]
           },
           {
@@ -70,8 +71,8 @@
               "value": "What each team member can see and do."
             },
             "offset": [
-              160,
-              522
+              320.047,
+              583.86
             ]
           },
           {
@@ -82,8 +83,8 @@
               "value": "ACCESS LEVELS"
             },
             "offset": [
-              760,
-              104
+              920.047,
+              165.86
             ]
           },
           {
@@ -94,8 +95,8 @@
               "value": "BRAND TEAM ROLES"
             },
             "offset": [
-              1168,
-              104
+              1328.047,
+              165.86
             ]
           },
           {
@@ -112,8 +113,8 @@
               "mid": 0.5
             },
             "offset": [
-              1044,
-              218
+              1204.047,
+              279.86
             ]
           },
           {
@@ -130,8 +131,8 @@
               "mid": 0.5
             },
             "offset": [
-              1044,
-              406
+              1204.047,
+              467.86
             ]
           },
           {
@@ -148,8 +149,8 @@
               "anchorTop": false
             },
             "offset": [
-              708,
-              160
+              868.047,
+              221.86
             ]
           },
           {
@@ -166,8 +167,8 @@
               "anchorTop": false
             },
             "offset": [
-              708,
-              348
+              868.047,
+              409.86
             ]
           },
           {
@@ -184,8 +185,8 @@
               "anchorTop": false
             },
             "offset": [
-              1104,
-              160
+              1264.047,
+              221.86
             ]
           },
           {
@@ -202,8 +203,8 @@
               "anchorTop": false
             },
             "offset": [
-              1104,
-              348
+              1264.047,
+              409.86
             ]
           },
           {
@@ -220,8 +221,8 @@
               "anchorTop": false
             },
             "offset": [
-              756,
-              556
+              916.047,
+              617.86
             ]
           }
         ]
@@ -231,7 +232,7 @@
     "note": "Two-column map: the two access levels mapped to brand team roles they hold; billing detached below as its own toggle. Labels verbatim.",
     "lastTouchedBy": "max",
     "editing": false,
-    "rev": 3,
-    "updatedAt": 1787158191263
+    "rev": 4,
+    "updatedAt": 1787735908163
   }
 }

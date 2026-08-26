@@ -1,21 +1,21 @@
 {
-  "revision": 4,
+  "revision": 5,
   "cover": {
     "v": 2,
     "background": "white-solid",
     "title": null,
     "exportPreset": "opener-wide",
-    "scale": 100,
-    "positionX": 0,
+    "scale": 86,
+    "positionX": 11,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
         "role": "foreground",
-        "x": -320,
-        "y": -110,
-        "w": 1680,
-        "h": 760,
+        "x": -488.047,
+        "y": -171.86,
+        "w": 1972.093,
+        "h": 883.721,
         "preset": "bare",
         "layout": "free",
         "children": [
@@ -23,14 +23,15 @@
             "id": "gridField-high9v2-12",
             "type": "gridField",
             "props": {
-              "width": 1680,
-              "height": 760,
-              "gridSize": 80,
-              "cornerRadius": 56,
+              "width": 1972.093,
+              "height": 883.721,
+              "gridSize": 93.023,
+              "cornerRadius": 65.116,
               "frameLine": true,
               "showGrid": true,
               "maskX": 78,
-              "maskY": 50
+              "maskY": 50,
+              "lineScale": 1.16279
             },
             "offset": [
               0,
@@ -45,8 +46,8 @@
               "value": "AUDIENCES AND CONTACTS"
             },
             "offset": [
-              160,
-              188
+              328.047,
+              249.86
             ]
           },
           {
@@ -58,8 +59,8 @@
               "size": 80
             },
             "offset": [
-              160,
-              244
+              328.047,
+              305.86
             ]
           },
           {
@@ -70,8 +71,8 @@
               "value": "When to use each in your sales funnel."
             },
             "offset": [
-              160,
-              528
+              328.047,
+              589.86
             ]
           },
           {
@@ -88,8 +89,8 @@
               "mid": 0.5
             },
             "offset": [
-              906,
-              144
+              1074.047,
+              205.86
             ]
           },
           {
@@ -106,8 +107,8 @@
               "mid": 0.5
             },
             "offset": [
-              1222,
-              144
+              1390.047,
+              205.86
             ]
           },
           {
@@ -124,8 +125,8 @@
               "mid": 0.5
             },
             "offset": [
-              906,
-              404
+              1074.047,
+              465.86
             ]
           },
           {
@@ -142,8 +143,8 @@
               "mid": 0.5
             },
             "offset": [
-              1338,
-              404
+              1506.047,
+              465.86
             ]
           },
           {
@@ -160,8 +161,8 @@
               "mid": 0.5
             },
             "offset": [
-              1122,
-              244
+              1290.047,
+              305.86
             ]
           },
           {
@@ -178,8 +179,8 @@
               "mid": 0.5
             },
             "offset": [
-              1122,
-              364
+              1290.047,
+              425.86
             ]
           },
           {
@@ -191,8 +192,8 @@
               "size": 48
             },
             "offset": [
-              1114,
-              320
+              1282.047,
+              381.86
             ]
           },
           {
@@ -209,8 +210,8 @@
               "anchorTop": false
             },
             "offset": [
-              908,
-              32
+              1076.047,
+              93.86
             ]
           },
           {
@@ -227,8 +228,8 @@
               "anchorTop": false
             },
             "offset": [
-              746,
-              260
+              914.047,
+              321.86
             ]
           },
           {
@@ -245,8 +246,8 @@
               "anchorTop": false
             },
             "offset": [
-              1178,
-              260
+              1346.047,
+              321.86
             ]
           },
           {
@@ -263,8 +264,8 @@
               "anchorTop": false
             },
             "offset": [
-              746,
-              504
+              914.047,
+              565.86
             ]
           },
           {
@@ -281,8 +282,8 @@
               "anchorTop": false
             },
             "offset": [
-              1178,
-              504
+              1346.047,
+              565.86
             ]
           }
         ]
@@ -292,7 +293,7 @@
     "note": "Decision split with article-verbatim interest rule, parallel columns, vs divider, separated stems. Sol rev 1.",
     "lastTouchedBy": "max",
     "editing": false,
-    "rev": 3,
-    "updatedAt": 1787158162950
+    "rev": 4,
+    "updatedAt": 1787735908080
   }
 }

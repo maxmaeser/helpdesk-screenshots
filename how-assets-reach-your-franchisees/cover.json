@@ -1,21 +1,21 @@
 {
-  "revision": 5,
+  "revision": 6,
   "cover": {
     "v": 2,
     "background": "white-solid",
     "title": null,
     "exportPreset": "opener-wide",
-    "scale": 100,
-    "positionX": 0,
+    "scale": 86,
+    "positionX": 12,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
         "role": "foreground",
-        "x": -320,
-        "y": -110,
-        "w": 1680,
-        "h": 760,
+        "x": -490.047,
+        "y": -171.86,
+        "w": 1972.093,
+        "h": 883.721,
         "preset": "bare",
         "layout": "free",
         "children": [
@@ -23,14 +23,15 @@
             "id": "gridField-high9-1",
             "type": "gridField",
             "props": {
-              "width": 1680,
-              "height": 760,
-              "gridSize": 80,
-              "cornerRadius": 56,
+              "width": 1972.093,
+              "height": 883.721,
+              "gridSize": 93.023,
+              "cornerRadius": 65.116,
               "frameLine": true,
               "showGrid": true,
               "maskX": 78,
-              "maskY": 50
+              "maskY": 50,
+              "lineScale": 1.16279
             },
             "offset": [
               0,
@@ -45,8 +46,8 @@
               "value": "OPERATIONS"
             },
             "offset": [
-              160,
-              197
+              330.047,
+              258.86
             ]
           },
           {
@@ -58,8 +59,8 @@
               "size": 74
             },
             "offset": [
-              160,
-              253
+              330.047,
+              314.86
             ]
           },
           {
@@ -70,8 +71,8 @@
               "value": "Uploading a file does not\nmake it visible."
             },
             "offset": [
-              160,
-              519
+              330.047,
+              580.86
             ]
           },
           {
@@ -88,8 +89,8 @@
               "mid": 0.5
             },
             "offset": [
-              1098,
-              214
+              1268.047,
+              275.86
             ]
           },
           {
@@ -106,8 +107,8 @@
               "mid": 0.5
             },
             "offset": [
-              1098,
-              364
+              1268.047,
+              425.86
             ]
           },
           {
@@ -124,8 +125,8 @@
               "mid": 0.5
             },
             "offset": [
-              1138,
-              364
+              1308.047,
+              425.86
             ]
           },
           {
@@ -142,8 +143,8 @@
               "anchorTop": false
             },
             "offset": [
-              602,
-              156
+              772.047,
+              217.86
             ]
           },
           {
@@ -160,8 +161,8 @@
               "anchorTop": false
             },
             "offset": [
-              602,
-              456
+              772.047,
+              517.86
             ]
           },
           {
@@ -178,8 +179,8 @@
               "anchorTop": false
             },
             "offset": [
-              1194,
-              306
+              1364.047,
+              367.86
             ]
           }
         ]
@@ -189,7 +190,7 @@
     "note": "Converging paths rev 2: connectors leave each path card's right edge, join at a single merge point, then one arrowed connector enters the emphasized Franchisees card. Uploaded-state note dropped per Sol QA; the subtitle carries that message.",
     "lastTouchedBy": "max",
     "editing": false,
-    "rev": 4,
-    "updatedAt": 1787158172912
+    "rev": 5,
+    "updatedAt": 1787735908107
   }
 }

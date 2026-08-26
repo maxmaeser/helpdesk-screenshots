@@ -1,21 +1,21 @@
 {
-  "revision": 6,
+  "revision": 7,
   "cover": {
     "v": 2,
     "background": "white-solid",
     "title": null,
     "exportPreset": "opener-wide",
-    "scale": 100,
-    "positionX": 0,
+    "scale": 86,
+    "positionX": -1,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
         "role": "foreground",
-        "x": -320,
-        "y": -110,
-        "w": 1680,
-        "h": 760,
+        "x": -464.047,
+        "y": -171.86,
+        "w": 1972.093,
+        "h": 883.721,
         "preset": "bare",
         "layout": "free",
         "children": [
@@ -23,14 +23,15 @@
             "id": "gridField-high9-1",
             "type": "gridField",
             "props": {
-              "width": 1680,
-              "height": 760,
-              "gridSize": 80,
-              "cornerRadius": 56,
+              "width": 1972.093,
+              "height": 883.721,
+              "gridSize": 93.023,
+              "cornerRadius": 65.116,
               "frameLine": true,
               "showGrid": true,
               "maskX": 78,
-              "maskY": 50
+              "maskY": 50,
+              "lineScale": 1.16279
             },
             "offset": [
               0,
@@ -45,8 +46,8 @@
               "value": "GETTING STARTED"
             },
             "offset": [
-              160,
-              220
+              304.047,
+              281.86
             ]
           },
           {
@@ -58,8 +59,8 @@
               "size": 84
             },
             "offset": [
-              160,
-              276
+              304.047,
+              337.86
             ]
           },
           {
@@ -70,8 +71,8 @@
               "value": "Multiple brands, fully isolated data."
             },
             "offset": [
-              160,
-              496
+              304.047,
+              557.86
             ]
           },
           {
@@ -88,8 +89,8 @@
               "anchorTop": true
             },
             "offset": [
-              812,
-              80
+              956.047,
+              141.86
             ]
           },
           {
@@ -106,8 +107,8 @@
               "mid": 0.5
             },
             "offset": [
-              856,
-              180
+              1000.047,
+              241.86
             ]
           },
           {
@@ -124,8 +125,8 @@
               "mid": 0.5
             },
             "offset": [
-              856,
-              180
+              1000.047,
+              241.86
             ]
           },
           {
@@ -142,8 +143,8 @@
               "anchorTop": true
             },
             "offset": [
-              848,
-              300
+              992.047,
+              361.86
             ]
           },
           {
@@ -160,8 +161,8 @@
               "anchorTop": true
             },
             "offset": [
-              1224,
-              300
+              1368.047,
+              361.86
             ]
           },
           {
@@ -178,8 +179,8 @@
               "anchorTop": false
             },
             "offset": [
-              876,
-              468
+              1020.047,
+              529.86
             ]
           },
           {
@@ -196,8 +197,8 @@
               "anchorTop": false
             },
             "offset": [
-              1252,
-              468
+              1396.047,
+              529.86
             ]
           }
         ]
@@ -207,7 +208,7 @@
     "note": "Nested twin containment: one Organization branching to two equal isolated Brands.",
     "lastTouchedBy": "max",
     "editing": false,
-    "rev": 5,
-    "updatedAt": 1787158195981
+    "rev": 6,
+    "updatedAt": 1787735908193
   }
 }

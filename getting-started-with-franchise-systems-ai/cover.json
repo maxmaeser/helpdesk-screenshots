@@ -1,21 +1,21 @@
 {
-  "revision": 2,
+  "revision": 3,
   "cover": {
     "v": 2,
     "background": "white-solid",
     "title": null,
     "exportPreset": "opener-wide",
-    "scale": 100,
-    "positionX": 0,
+    "scale": 86,
+    "positionX": 53,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
         "role": "foreground",
-        "x": -320,
-        "y": -110,
-        "w": 1680,
-        "h": 760,
+        "x": -572.047,
+        "y": -171.86,
+        "w": 1972.093,
+        "h": 883.721,
         "preset": "bare",
         "layout": "free",
         "children": [
@@ -23,14 +23,15 @@
             "id": "gridField-hubport-1",
             "type": "gridField",
             "props": {
-              "width": 1680,
-              "height": 760,
-              "gridSize": 80,
-              "cornerRadius": 56,
+              "width": 1972.093,
+              "height": 883.721,
+              "gridSize": 93.023,
+              "cornerRadius": 65.116,
               "frameLine": true,
               "showGrid": true,
               "maskX": 78,
-              "maskY": 50
+              "maskY": 50,
+              "lineScale": 1.16279
             },
             "offset": [
               0,
@@ -45,8 +46,8 @@
               "value": "GETTING STARTED"
             },
             "offset": [
-              160,
-              197
+              412.047,
+              258.86
             ]
           },
           {
@@ -58,8 +59,8 @@
               "size": 74
             },
             "offset": [
-              160,
-              253
+              412.047,
+              314.86
             ]
           },
           {
@@ -70,8 +71,8 @@
               "value": "Three levels: organization, brand, agent."
             },
             "offset": [
-              160,
-              519
+              412.047,
+              580.86
             ]
           },
           {
@@ -88,8 +89,8 @@
               "anchorTop": true
             },
             "offset": [
-              850,
-              132
+              1102.047,
+              193.86
             ]
           },
           {
@@ -106,8 +107,8 @@
               "anchorTop": true
             },
             "offset": [
-              914,
-              252
+              1166.047,
+              313.86
             ]
           },
           {
@@ -124,8 +125,8 @@
               "anchorTop": true
             },
             "offset": [
-              978,
-              380
+              1230.047,
+              441.86
             ]
           }
         ]
@@ -133,9 +134,9 @@
     ],
     "status": "proposed",
     "note": "Ported from tools/opener-gen (shipped -opener-v2) into editable studio primitives.",
-    "lastTouchedBy": "claude",
+    "lastTouchedBy": "max",
     "editing": false,
-    "rev": 2,
-    "updatedAt": 1784540365876
+    "rev": 3,
+    "updatedAt": 1787735908101
   }
 }

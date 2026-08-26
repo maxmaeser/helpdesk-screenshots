@@ -1,21 +1,21 @@
 {
-  "revision": 5,
+  "revision": 6,
   "cover": {
     "v": 2,
     "background": "white-solid",
     "title": null,
     "exportPreset": "opener-wide",
-    "scale": 100,
-    "positionX": 0,
+    "scale": 86,
+    "positionX": 32,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
         "role": "foreground",
-        "x": -320,
-        "y": -110,
-        "w": 1680,
-        "h": 760,
+        "x": -530.047,
+        "y": -171.86,
+        "w": 1972.093,
+        "h": 883.721,
         "preset": "bare",
         "layout": "free",
         "children": [
@@ -23,14 +23,15 @@
             "id": "gridField-high9-1",
             "type": "gridField",
             "props": {
-              "width": 1680,
-              "height": 760,
-              "gridSize": 80,
-              "cornerRadius": 56,
+              "width": 1972.093,
+              "height": 883.721,
+              "gridSize": 93.023,
+              "cornerRadius": 65.116,
               "frameLine": true,
               "showGrid": true,
               "maskX": 78,
-              "maskY": 50
+              "maskY": 50,
+              "lineScale": 1.16279
             },
             "offset": [
               0,
@@ -45,8 +46,8 @@
               "value": "OPERATIONS"
             },
             "offset": [
-              160,
-              214
+              370.047,
+              275.86
             ]
           },
           {
@@ -58,8 +59,8 @@
               "size": 96
             },
             "offset": [
-              160,
-              270
+              370.047,
+              331.86
             ]
           },
           {
@@ -70,8 +71,8 @@
               "value": "Assign and track FDDs across states."
             },
             "offset": [
-              160,
-              502
+              370.047,
+              563.86
             ]
           },
           {
@@ -88,8 +89,8 @@
               "mid": 0.5
             },
             "offset": [
-              1194,
-              158
+              1404.047,
+              219.86
             ]
           },
           {
@@ -106,8 +107,8 @@
               "mid": 0.5
             },
             "offset": [
-              1194,
-              288
+              1404.047,
+              349.86
             ]
           },
           {
@@ -124,8 +125,8 @@
               "mid": 0.5
             },
             "offset": [
-              1194,
-              418
+              1404.047,
+              479.86
             ]
           },
           {
@@ -142,8 +143,8 @@
               "mid": 0.5
             },
             "offset": [
-              1194,
-              548
+              1404.047,
+              609.86
             ]
           },
           {
@@ -160,8 +161,8 @@
               "anchorTop": false
             },
             "offset": [
-              950,
-              66
+              1160.047,
+              127.86
             ]
           },
           {
@@ -178,8 +179,8 @@
               "anchorTop": false
             },
             "offset": [
-              950,
-              196
+              1160.047,
+              257.86
             ]
           },
           {
@@ -196,8 +197,8 @@
               "anchorTop": false
             },
             "offset": [
-              950,
-              326
+              1160.047,
+              387.86
             ]
           },
           {
@@ -214,8 +215,8 @@
               "anchorTop": false
             },
             "offset": [
-              950,
-              456
+              1160.047,
+              517.86
             ]
           },
           {
@@ -232,8 +233,8 @@
               "anchorTop": false
             },
             "offset": [
-              950,
-              586
+              1160.047,
+              647.86
             ]
           }
         ]
@@ -243,7 +244,7 @@
     "note": "Vertical FDD pipeline rev 2 per Sol QA: five uniform cards on one vertical axis (5 smaller cards vs work-your-pipeline's 4 larger), even connectors, labels normalized to one imperative form verbatim to the article's terms, Send FDD emphasized as the terminal step.",
     "lastTouchedBy": "max",
     "editing": false,
-    "rev": 4,
-    "updatedAt": 1787158177106
+    "rev": 5,
+    "updatedAt": 1787735908114
   }
 }

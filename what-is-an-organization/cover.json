@@ -1,21 +1,21 @@
 {
-  "revision": 6,
+  "revision": 7,
   "cover": {
     "v": 2,
     "background": "white-solid",
     "title": null,
     "exportPreset": "opener-wide",
-    "scale": 100,
-    "positionX": 0,
+    "scale": 86,
+    "positionX": 48,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
         "role": "foreground",
-        "x": -320,
-        "y": -110,
-        "w": 1680,
-        "h": 760,
+        "x": -562.047,
+        "y": -171.86,
+        "w": 1972.093,
+        "h": 883.721,
         "preset": "bare",
         "layout": "free",
         "children": [
@@ -23,14 +23,15 @@
             "id": "gridField-high9-12",
             "type": "gridField",
             "props": {
-              "width": 1680,
-              "height": 760,
-              "gridSize": 80,
-              "cornerRadius": 56,
+              "width": 1972.093,
+              "height": 883.721,
+              "gridSize": 93.023,
+              "cornerRadius": 65.116,
               "frameLine": true,
               "showGrid": true,
               "maskX": 78,
-              "maskY": 50
+              "maskY": 50,
+              "lineScale": 1.16279
             },
             "offset": [
               0,
@@ -45,8 +46,8 @@
               "value": "GETTING STARTED"
             },
             "offset": [
-              160,
-              220
+              402.047,
+              281.86
             ]
           },
           {
@@ -58,8 +59,8 @@
               "size": 90
             },
             "offset": [
-              160,
-              276
+              402.047,
+              337.86
             ]
           },
           {
@@ -70,8 +71,8 @@
               "value": "One container for your brands."
             },
             "offset": [
-              160,
-              496
+              402.047,
+              557.86
             ]
           },
           {
@@ -88,8 +89,8 @@
               "mid": 0.78
             },
             "offset": [
-              364,
-              238
+              606.047,
+              299.86
             ]
           },
           {
@@ -106,8 +107,8 @@
               "mid": 0.5
             },
             "offset": [
-              788,
-              238
+              1030.047,
+              299.86
             ]
           },
           {
@@ -124,8 +125,8 @@
               "mid": 0.78
             },
             "offset": [
-              876,
-              238
+              1118.047,
+              299.86
             ]
           },
           {
@@ -142,8 +143,8 @@
               "anchorTop": false
             },
             "offset": [
-              628,
-              100
+              870.047,
+              161.86
             ]
           },
           {
@@ -160,8 +161,8 @@
               "anchorTop": false
             },
             "offset": [
-              180,
-              576
+              422.047,
+              637.86
             ]
           },
           {
@@ -178,8 +179,8 @@
               "anchorTop": false
             },
             "offset": [
-              604,
-              576
+              846.047,
+              637.86
             ]
           },
           {
@@ -196,8 +197,8 @@
               "anchorTop": false
             },
             "offset": [
-              1028,
-              576
+              1270.047,
+              637.86
             ]
           }
         ]
@@ -207,7 +208,7 @@
     "note": "Hub and spoke: Organization hub over one aligned row of Brands, Team members, Billing.",
     "lastTouchedBy": "max",
     "editing": false,
-    "rev": 5,
-    "updatedAt": 1787158192596
+    "rev": 6,
+    "updatedAt": 1787735908185
   }
 }

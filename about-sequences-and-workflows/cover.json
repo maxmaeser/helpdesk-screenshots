@@ -1,21 +1,21 @@
 {
-  "revision": 4,
+  "revision": 5,
   "cover": {
     "v": 2,
     "background": "white-solid",
     "title": null,
     "exportPreset": "opener-wide",
-    "scale": 100,
-    "positionX": 0,
+    "scale": 86,
+    "positionX": 48,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
         "role": "foreground",
-        "x": -320,
-        "y": -110,
-        "w": 1680,
-        "h": 760,
+        "x": -562.047,
+        "y": -171.86,
+        "w": 1972.093,
+        "h": 883.721,
         "preset": "bare",
         "layout": "free",
         "children": [
@@ -23,14 +23,15 @@
             "id": "gridField-high9-1",
             "type": "gridField",
             "props": {
-              "width": 1680,
-              "height": 760,
-              "gridSize": 80,
-              "cornerRadius": 56,
+              "width": 1972.093,
+              "height": 883.721,
+              "gridSize": 93.023,
+              "cornerRadius": 65.116,
               "frameLine": true,
               "showGrid": true,
               "maskX": 78,
-              "maskY": 50
+              "maskY": 50,
+              "lineScale": 1.16279
             },
             "offset": [
               0,
@@ -45,8 +46,8 @@
               "value": "OPERATIONS"
             },
             "offset": [
-              160,
-              238
+              402.047,
+              299.86
             ]
           },
           {
@@ -58,8 +59,8 @@
               "size": 72
             },
             "offset": [
-              160,
-              294
+              402.047,
+              355.86
             ]
           },
           {
@@ -70,8 +71,8 @@
               "value": "A trigger fires and actions execute in order."
             },
             "offset": [
-              160,
-              478
+              402.047,
+              539.86
             ]
           },
           {
@@ -88,8 +89,8 @@
               "mid": 0.5
             },
             "offset": [
-              996,
-              172
+              1238.047,
+              233.86
             ]
           },
           {
@@ -106,8 +107,8 @@
               "mid": 0.5
             },
             "offset": [
-              996,
-              328
+              1238.047,
+              389.86
             ]
           },
           {
@@ -124,8 +125,8 @@
               "mid": 0.5
             },
             "offset": [
-              792,
-              484
+              1034.047,
+              545.86
             ]
           },
           {
@@ -142,8 +143,8 @@
               "mid": 0.5
             },
             "offset": [
-              1106,
-              484
+              1348.047,
+              545.86
             ]
           },
           {
@@ -156,8 +157,8 @@
               "color": "#8A8F98"
             },
             "offset": [
-              724,
-              522
+              966.047,
+              583.86
             ]
           },
           {
@@ -170,8 +171,8 @@
               "color": "#8A8F98"
             },
             "offset": [
-              1240,
-              522
+              1482.047,
+              583.86
             ]
           },
           {
@@ -188,8 +189,8 @@
               "anchorTop": false
             },
             "offset": [
-              792,
-              72
+              1034.047,
+              133.86
             ]
           },
           {
@@ -206,8 +207,8 @@
               "anchorTop": false
             },
             "offset": [
-              792,
-              228
+              1034.047,
+              289.86
             ]
           },
           {
@@ -224,8 +225,8 @@
               "anchorTop": false
             },
             "offset": [
-              792,
-              384
+              1034.047,
+              445.86
             ]
           },
           {
@@ -242,8 +243,8 @@
               "anchorTop": false
             },
             "offset": [
-              608,
-              576
+              850.047,
+              637.86
             ]
           },
           {
@@ -260,8 +261,8 @@
               "anchorTop": false
             },
             "offset": [
-              1016,
-              576
+              1258.047,
+              637.86
             ]
           }
         ]
@@ -271,7 +272,7 @@
     "note": "Branching flow from the article: trigger-action pattern with a condition node splitting into yes and no paths. All labels verbatim from About Sequences and Workflows. Rev 2: distinct yes/no stems with quiet gray branch labels per Sol QA.",
     "lastTouchedBy": "max",
     "editing": false,
-    "rev": 3,
-    "updatedAt": 1787158160855
+    "rev": 4,
+    "updatedAt": 1787735908070
   }
 }

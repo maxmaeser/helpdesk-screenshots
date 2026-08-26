@@ -1,21 +1,21 @@
 {
-  "revision": 6,
+  "revision": 7,
   "cover": {
     "v": 2,
     "background": "white-solid",
     "title": null,
     "exportPreset": "opener-wide",
-    "scale": 100,
-    "positionX": 0,
+    "scale": 86,
+    "positionX": -3,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
         "role": "foreground",
-        "x": -320,
-        "y": -110,
-        "w": 1680,
-        "h": 760,
+        "x": -460.047,
+        "y": -171.86,
+        "w": 1972.093,
+        "h": 883.721,
         "preset": "bare",
         "layout": "free",
         "children": [
@@ -23,14 +23,15 @@
             "id": "gridField-rail9-1",
             "type": "gridField",
             "props": {
-              "width": 1680,
-              "height": 760,
-              "gridSize": 80,
-              "cornerRadius": 56,
+              "width": 1972.093,
+              "height": 883.721,
+              "gridSize": 93.023,
+              "cornerRadius": 65.116,
               "frameLine": true,
               "showGrid": true,
               "maskX": 78,
-              "maskY": 50
+              "maskY": 50,
+              "lineScale": 1.16279
             },
             "offset": [
               0,
@@ -45,8 +46,8 @@
               "value": "GETTING STARTED"
             },
             "offset": [
-              160,
-              208
+              300.047,
+              269.86
             ]
           },
           {
@@ -58,8 +59,8 @@
               "size": 104
             },
             "offset": [
-              160,
-              264
+              300.047,
+              325.86
             ]
           },
           {
@@ -70,8 +71,8 @@
               "value": "A single franchise concept\nin your organization."
             },
             "offset": [
-              160,
-              508
+              300.047,
+              569.86
             ]
           },
           {
@@ -88,8 +89,8 @@
               "mid": 0.5
             },
             "offset": [
-              832,
-              192
+              972.047,
+              253.86
             ]
           },
           {
@@ -106,8 +107,8 @@
               "mid": 0.5
             },
             "offset": [
-              837,
-              360
+              977.047,
+              421.86
             ]
           },
           {
@@ -124,8 +125,8 @@
               "mid": 0.5
             },
             "offset": [
-              1282,
-              192
+              1422.047,
+              253.86
             ]
           },
           {
@@ -142,8 +143,8 @@
               "mid": 0.5
             },
             "offset": [
-              1282,
-              360
+              1422.047,
+              421.86
             ]
           },
           {
@@ -160,8 +161,8 @@
               "anchorTop": false
             },
             "offset": [
-              648,
-              72
+              788.047,
+              133.86
             ]
           },
           {
@@ -178,8 +179,8 @@
               "anchorTop": false
             },
             "offset": [
-              1192,
-              72
+              1332.047,
+              133.86
             ]
           },
           {
@@ -196,8 +197,8 @@
               "anchorTop": false
             },
             "offset": [
-              658,
-              464
+              798.047,
+              525.86
             ]
           },
           {
@@ -214,8 +215,8 @@
               "anchorTop": false
             },
             "offset": [
-              1192,
-              464
+              1332.047,
+              525.86
             ]
           },
           {
@@ -232,8 +233,8 @@
               "anchorTop": false
             },
             "offset": [
-              958,
-              248
+              1098.047,
+              309.86
             ]
           }
         ]
@@ -243,7 +244,7 @@
     "note": "Center spine: Brand dead-center, the four holdings every brand gets radiating left and right. Labels verbatim from the article.",
     "lastTouchedBy": "max",
     "editing": false,
-    "rev": 5,
-    "updatedAt": 1787158194544
+    "rev": 6,
+    "updatedAt": 1787735908175
   }
 }

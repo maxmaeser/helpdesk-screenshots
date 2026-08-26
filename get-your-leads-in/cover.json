@@ -1,21 +1,21 @@
 {
-  "revision": 3,
+  "revision": 4,
   "cover": {
     "v": 2,
     "background": "white-solid",
     "title": null,
     "exportPreset": "opener-wide",
-    "scale": 100,
-    "positionX": 0,
+    "scale": 86,
+    "positionX": 10,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
         "role": "foreground",
-        "x": -320,
-        "y": -110,
-        "w": 1680,
-        "h": 760,
+        "x": -486.047,
+        "y": -171.86,
+        "w": 1972.093,
+        "h": 883.721,
         "preset": "bare",
         "layout": "free",
         "children": [
@@ -23,14 +23,15 @@
             "id": "gridField-hubport-19",
             "type": "gridField",
             "props": {
-              "width": 1680,
-              "height": 760,
-              "gridSize": 80,
-              "cornerRadius": 56,
+              "width": 1972.093,
+              "height": 883.721,
+              "gridSize": 93.023,
+              "cornerRadius": 65.116,
               "frameLine": true,
               "showGrid": true,
               "maskX": 78,
-              "maskY": 50
+              "maskY": 50,
+              "lineScale": 1.16279
             },
             "offset": [
               0,
@@ -45,8 +46,8 @@
               "value": "GETTING STARTED · CHAPTER 2"
             },
             "offset": [
-              160,
-              208
+              326.047,
+              269.86
             ]
           },
           {
@@ -58,8 +59,8 @@
               "size": 104
             },
             "offset": [
-              160,
-              264
+              326.047,
+              325.86
             ]
           },
           {
@@ -70,8 +71,8 @@
               "value": "Bring contacts in and organize them."
             },
             "offset": [
-              160,
-              508
+              326.047,
+              569.86
             ]
           },
           {
@@ -88,8 +89,8 @@
               "mid": 0.5
             },
             "offset": [
-              1082,
-              222
+              1248.047,
+              283.86
             ]
           },
           {
@@ -106,8 +107,8 @@
               "mid": 0.53
             },
             "offset": [
-              906,
-              296
+              1072.047,
+              357.86
             ]
           },
           {
@@ -124,8 +125,8 @@
               "mid": 0.5
             },
             "offset": [
-              1082,
-              514
+              1248.047,
+              575.86
             ]
           },
           {
@@ -142,8 +143,8 @@
               "anchorTop": false
             },
             "offset": [
-              746,
-              164
+              912.047,
+              225.86
             ]
           },
           {
@@ -160,8 +161,8 @@
               "anchorTop": false
             },
             "offset": [
-              1178,
-              164
+              1344.047,
+              225.86
             ]
           },
           {
@@ -178,8 +179,8 @@
               "anchorTop": false
             },
             "offset": [
-              746,
-              456
+              912.047,
+              517.86
             ]
           },
           {
@@ -196,8 +197,8 @@
               "anchorTop": false
             },
             "offset": [
-              1178,
-              456
+              1344.047,
+              517.86
             ]
           }
         ]
@@ -207,7 +208,7 @@
     "note": "Ported from tools/opener-gen (shipped -opener-v2) into editable studio primitives.",
     "lastTouchedBy": "max",
     "editing": false,
-    "rev": 2,
-    "updatedAt": 1787158165192
+    "rev": 3,
+    "updatedAt": 1787735908095
   }
 }

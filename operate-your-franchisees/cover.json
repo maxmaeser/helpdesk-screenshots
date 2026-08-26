@@ -1,21 +1,21 @@
 {
-  "revision": 4,
+  "revision": 5,
   "cover": {
     "v": 2,
     "background": "white-solid",
     "title": null,
     "exportPreset": "opener-wide",
-    "scale": 100,
-    "positionX": 0,
+    "scale": 86,
+    "positionX": 13,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
         "role": "foreground",
-        "x": -320,
-        "y": -110,
-        "w": 1680,
-        "h": 760,
+        "x": -492.047,
+        "y": -171.86,
+        "w": 1972.093,
+        "h": 883.721,
         "preset": "bare",
         "layout": "free",
         "children": [
@@ -23,14 +23,15 @@
             "id": "gridField-hubport-63",
             "type": "gridField",
             "props": {
-              "width": 1680,
-              "height": 760,
-              "gridSize": 80,
-              "cornerRadius": 56,
+              "width": 1972.093,
+              "height": 883.721,
+              "gridSize": 93.023,
+              "cornerRadius": 65.116,
               "frameLine": true,
               "showGrid": true,
               "maskX": 78,
-              "maskY": 50
+              "maskY": 50,
+              "lineScale": 1.16279
             },
             "offset": [
               0,
@@ -45,8 +46,8 @@
               "value": "GETTING STARTED · CHAPTER 6"
             },
             "offset": [
-              160,
-              220
+              332.047,
+              281.86
             ]
           },
           {
@@ -58,8 +59,8 @@
               "size": 90
             },
             "offset": [
-              160,
-              276
+              332.047,
+              337.86
             ]
           },
           {
@@ -70,8 +71,8 @@
               "value": "Manage locations, assets,\nand documents."
             },
             "offset": [
-              160,
-              496
+              332.047,
+              557.86
             ]
           },
           {
@@ -88,8 +89,8 @@
               "mid": 0.5
             },
             "offset": [
-              1138,
-              198
+              1310.047,
+              259.86
             ]
           },
           {
@@ -106,8 +107,8 @@
               "mid": 0.5
             },
             "offset": [
-              1150,
-              452
+              1322.047,
+              513.86
             ]
           },
           {
@@ -124,8 +125,8 @@
               "mid": 0.5
             },
             "offset": [
-              714,
-              254
+              886.047,
+              315.86
             ]
           },
           {
@@ -142,8 +143,8 @@
               "mid": 0.5
             },
             "offset": [
-              714,
-              198
+              886.047,
+              259.86
             ]
           },
           {
@@ -160,8 +161,8 @@
               "anchorTop": false
             },
             "offset": [
-              802,
-              140
+              974.047,
+              201.86
             ]
           },
           {
@@ -178,8 +179,8 @@
               "anchorTop": false
             },
             "offset": [
-              1178,
-              320
+              1350.047,
+              381.86
             ]
           },
           {
@@ -196,8 +197,8 @@
               "anchorTop": false
             },
             "offset": [
-              802,
-              500
+              974.047,
+              561.86
             ]
           }
         ]
@@ -207,7 +208,7 @@
     "note": "Ported from tools/opener-gen (shipped -opener-v2) into editable studio primitives.",
     "lastTouchedBy": "max",
     "editing": false,
-    "rev": 3,
-    "updatedAt": 1787158180778
+    "rev": 4,
+    "updatedAt": 1787735908122
   }
 }

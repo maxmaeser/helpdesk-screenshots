@@ -1,21 +1,21 @@
 {
-  "revision": 3,
+  "revision": 4,
   "cover": {
     "v": 2,
     "background": "white-solid",
     "title": null,
     "exportPreset": "opener-wide",
-    "scale": 100,
-    "positionX": 0,
+    "scale": 86,
+    "positionX": 54,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
         "role": "foreground",
-        "x": -320,
-        "y": -110,
-        "w": 1680,
-        "h": 760,
+        "x": -574.047,
+        "y": -171.86,
+        "w": 1972.093,
+        "h": 883.721,
         "preset": "bare",
         "layout": "free",
         "children": [
@@ -23,14 +23,15 @@
             "id": "gridField-hubport-41",
             "type": "gridField",
             "props": {
-              "width": 1680,
-              "height": 760,
-              "gridSize": 80,
-              "cornerRadius": 56,
+              "width": 1972.093,
+              "height": 883.721,
+              "gridSize": 93.023,
+              "cornerRadius": 65.116,
               "frameLine": true,
               "showGrid": true,
               "maskX": 78,
-              "maskY": 50
+              "maskY": 50,
+              "lineScale": 1.16279
             },
             "offset": [
               0,
@@ -45,8 +46,8 @@
               "value": "GETTING STARTED · CHAPTER 4"
             },
             "offset": [
-              160,
-              208
+              414.047,
+              269.86
             ]
           },
           {
@@ -58,8 +59,8 @@
               "size": 104
             },
             "offset": [
-              160,
-              264
+              414.047,
+              325.86
             ]
           },
           {
@@ -70,8 +71,8 @@
               "value": "Route, track, and move each lead forward."
             },
             "offset": [
-              160,
-              508
+              414.047,
+              569.86
             ]
           },
           {
@@ -88,8 +89,8 @@
               "mid": 0.5
             },
             "offset": [
-              1188,
-              192
+              1442.047,
+              253.86
             ]
           },
           {
@@ -106,8 +107,8 @@
               "mid": 0.5
             },
             "offset": [
-              1188,
-              340
+              1442.047,
+              401.86
             ]
           },
           {
@@ -124,8 +125,8 @@
               "mid": 0.5
             },
             "offset": [
-              1188,
-              488
+              1442.047,
+              549.86
             ]
           },
           {
@@ -142,8 +143,8 @@
               "anchorTop": false
             },
             "offset": [
-              984,
-              92
+              1238.047,
+              153.86
             ]
           },
           {
@@ -160,8 +161,8 @@
               "anchorTop": false
             },
             "offset": [
-              984,
-              240
+              1238.047,
+              301.86
             ]
           },
           {
@@ -178,8 +179,8 @@
               "anchorTop": false
             },
             "offset": [
-              984,
-              388
+              1238.047,
+              449.86
             ]
           },
           {
@@ -196,8 +197,8 @@
               "anchorTop": false
             },
             "offset": [
-              984,
-              536
+              1238.047,
+              597.86
             ]
           }
         ]
@@ -207,7 +208,7 @@
     "note": "Ported from tools/opener-gen (shipped -opener-v2) into editable studio primitives.",
     "lastTouchedBy": "max",
     "editing": false,
-    "rev": 2,
-    "updatedAt": 1787158198828
+    "rev": 3,
+    "updatedAt": 1787735908200
   }
 }
