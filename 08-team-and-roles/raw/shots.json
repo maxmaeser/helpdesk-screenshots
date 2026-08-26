@@ -1,5 +1,5 @@
 {
-  "revision": 2,
+  "revision": 4,
   "shots": {
     "team-add-member.png": {
       "cursor": {
@@ -28,8 +28,8 @@
     "team-role-controls.png": {
       "cursor": {
         "pos": [
-          2092,
-          1335
+          1892,
+          1431
         ],
         "type": "arrow"
       },
@@ -37,14 +37,18 @@
       "note": "",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787746949940
     },
     "team-roster.png": {
       "status": "proposed",
       "note": "",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787746910072
     }
   }
 }
