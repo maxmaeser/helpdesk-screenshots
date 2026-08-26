@@ -1,5 +1,5 @@
 {
-  "revision": 3,
+  "revision": 4,
   "shots": {
     "fdd-toggle-menu.png": {
       "status": "superseded",
@@ -31,18 +31,22 @@
     },
     "fdd-bulk-assign-states.png": {
       "cursor": {
-        "pos": [1188, 2024],
+        "pos": [
+          1188,
+          2024
+        ],
         "type": "arrow"
       },
       "status": "proposed",
       "note": "Reshoot 2026-08-17: States panel restructured -- Country selector removed; 'Active first' sort plus 'All states'/'Any status'/'Any FDD' filter dropdowns now sit above 'Select All'. Sales > Territories (Compliance tab), Lumon Fresh: Texas + Colorado checked (both 'Franchising'), bulk action bar showing '2 selected / Set Status / Assign FDD'. Covers 'Assigning FDDs to states'. Captured at 700x1050 CSS viewport, 2x. Knowledge Base sidebar hidden, dom-sanitize run (freshenDates:false). Cursor: arrow on 'Assign FDD'.",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 1
+      "rev": 1,
+      "renderedRev": 1,
+      "renderedAt": 1787755636918
     },
     "fdd-state-filing-status.png": {
       "status": "superseded",
-      "supersededBy": "fdd-state-filing-status-v2.png",
       "note": "Territories > Texas state detail panel, Details tab: Franchise Disclosure Document card + Registration Information (FDD Filing Required, FDD Filing Date, Registration Date, Submit FDD Renewal, Expiration Date, Governing Agency). Covers 'Tracking filing status'. dom-sanitize with freshenDates:false (page has no relative-time chips; freshenDates was mangling the Renewal Fee/Period '6 Months' dropdown into '2 days' -- confirmed bug, avoided). Cosmetic: renamed joke placeholder FDD filename 'best_fdd_ever' to 'Lumon-Industries-FDD-2026.pdf' to match the asset used elsewhere in the article. No cursor -- read-only state. SUPERSEDED 2026-08-20: fdd-state-filing-status-v2.png shows the actionable status-badge dropdown instead of just the read-only panel.",
       "lastTouchedBy": "claude",
       "editing": false,
@@ -57,7 +61,10 @@
     },
     "fdd-state-filing-status-v2.png": {
       "cursor": {
-        "pos": [1610, 180],
+        "pos": [
+          1610,
+          180
+        ],
         "type": "arrow"
       },
       "status": "proposed",
@@ -68,7 +75,10 @@
     },
     "send-fdd-modal-choice.png": {
       "cursor": {
-        "pos": [1070, 468],
+        "pos": [
+          1070,
+          468
+        ],
         "type": "arrow"
       },
       "status": "proposed",

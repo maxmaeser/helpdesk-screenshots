@@ -1,12 +1,14 @@
 {
-  "revision": 1,
+  "revision": 2,
   "shots": {
     "portal-nav-sidebar-2026-03-13.png": {
       "status": "proposed",
       "note": "Reshoot 2026-08-17: Studio submenu drift -- 'Portal Editor' -> 'Applicant Portal', new 'Funnel' item inserted between Forms and Email Templates (was 'FranDev Portal', now surface-gated), 'Slides' -> 'Sliders'. Home dashboard is now a split inbox+calendar Overview (was a plain welcome page) -- shown behind the expanded Studio submenu for orientation context. Sidebar: Home/Marketing/Sales/Operations/Projects/Brand/Studio (expanded: Applicant Portal/Link Tracking/Forms/Funnel/Email Templates/Sliders)/Library. Agent-captured, dom-sanitize run (3 emails replaced with @example.com). No cursor -- nav orientation shot.",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 1
+      "rev": 1,
+      "renderedRev": 1,
+      "renderedAt": 1787755620893
     },
     "portal-editor-landing-cards.png": {
       "cursor": {

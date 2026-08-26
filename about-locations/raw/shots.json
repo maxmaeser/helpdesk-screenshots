@@ -1,5 +1,5 @@
 {
-  "revision": 2,
+  "revision": 5,
   "shots": {
     "locations-overview.png": {
       "crop": [
@@ -25,7 +25,9 @@
       "note": "Reshoot 2026-08-17: new stat-summary bar (Total/Open Locations/Under Construction/Planned Locations/Closed/Inactive Units) between the brand-chip row and search; old 'Single Brand Selector' badge and 'Show Analytics' button are gone platform-wide. Operations > Locations, Lumon Fresh brand selected, 22 locations (was 20, live data grew). Crop height extended (1300->1480) to fit the new stat tiles. 'Staging Test Brand' chip and Knowledge Base sidebar item hidden; carried forward the Store ID/typo DOM-swap fixes ('testst'->'TC4487215', 'Lumon Floor Arlignton'->'Arlington') and the joke-entity-name swap. Agent-captured, 1680x1050 CSS viewport, 2x, dom-sanitize applied. No cursor -- read-only orientation state.",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 1
+      "rev": 1,
+      "renderedRev": 1,
+      "renderedAt": 1787755597380
     },
     "locations-add.png": {
       "crop": [
@@ -77,7 +79,9 @@
       "note": "Reshoot 2026-08-17: new stat-summary bar visible above the toolbar (same platform change as locations-overview-v2.png); 'Single Brand Selector'/'Show Analytics' gone. Two locations selected (Tulip Canteen, LF - Redstone -- row order shifted vs v1 since Lumon Sports Castle moved down the list; toolbar shows 'Selected: 2 of 22' + 2 Locations selected / Set Location Status (2) / Assign To Franchisee Entity (2) / Assign To Deal Zone (2) / More). 'Staging Test Brand' chip and Knowledge Base hidden; carried forward the joke-entity-name swap and Store ID/typo fixes. Agent-captured, dom-sanitize applied. No cursor -- selection state, the toolbar tells the story.",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 1
+      "rev": 1,
+      "renderedRev": 1,
+      "renderedAt": 1787755579843
     },
     "locations-detail.png": {
       "crop": [
@@ -129,7 +133,9 @@
       "note": "Reshoot 2026-08-17: new stat-summary bar visible above the toolbar (same platform change as locations-overview-v2.png); 'Single Brand Selector'/'Show Analytics' gone. Map view, same 2-location selection carried over from locations-bulk-actions-v2.png (Tulip Canteen, LF - Redstone), split list/map layout with Mapbox pins and cluster counts. 'Staging Test Brand' chip and Knowledge Base hidden; joke-entity-name swap and typo fixes carried forward. Agent-captured, dom-sanitize applied. No cursor -- read-only view.",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 1
+      "rev": 1,
+      "renderedRev": 1,
+      "renderedAt": 1787755589805
     }
   }
 }

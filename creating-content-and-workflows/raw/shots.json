@@ -1,5 +1,5 @@
 {
-  "revision": 2,
+  "revision": 3,
   "shots": {
     "workflows-tabs.png": {
       "status": "superseded",
@@ -62,7 +62,9 @@
       "note": "Trigger event picker open on the sequence builder canvas. Reshoot of workflows-trigger-picker.png: Knowledge Base sidebar item hidden (staging-only, isDevOrStaging()-gated)",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787755605274
     },
     "workflows-builder-canvas-v2.png": {
       "status": "proposed",
