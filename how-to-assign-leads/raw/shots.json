@@ -1,0 +1,32 @@
+{
+  "revision": 6,
+  "shots": {
+    "leads-nav-tabs.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787758788278
+    },
+    "leads-assign-dropdown.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787758789378
+    },
+    "assign-leads-bulk.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787758791003
+    }
+  }
+}

@@ -1,12 +1,21 @@
 {
-  "revision": 0,
-  "shots": {
-    "assignment-profile-settings-v3.png": {
-      "status": "proposed",
-      "note": "",
-      "lastTouchedBy": "claude",
-      "editing": false,
-      "rev": 0
-    }
+ "revision": 5,
+ "shots": {
+  "assignment-profile-settings-v3.png": {
+   "status": "proposed",
+   "note": "",
+   "lastTouchedBy": "claude",
+   "editing": false,
+   "rev": 0
+  },
+  "assignment-nav-settings-v2.png": {
+   "status": "proposed",
+   "note": "",
+   "lastTouchedBy": "claude",
+   "editing": false,
+   "rev": 0,
+   "renderedRev": 0,
+   "renderedAt": 1787758754358
   }
+ }
 }

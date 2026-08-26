@@ -1,5 +1,5 @@
 {
-  "revision": 5,
+  "revision": 7,
   "shots": {
     "statuses-create-form.png": {
       "status": "superseded",
@@ -34,6 +34,15 @@
       "rev": 0,
       "renderedRev": 0,
       "renderedAt": 1787756697153
+    },
+    "statuses-nav-pipeline-v2.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787758750171
     }
   }
 }
