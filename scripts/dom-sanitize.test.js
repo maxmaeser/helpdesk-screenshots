@@ -761,6 +761,20 @@ test('gluing does not invent a match out of ordinary text', async (page) => {
   assert.strictEqual(counts.names, 0);
 });
 
+
+test('a surname with its last letter held down is masked too', async (page) => {
+  await page.setContent(`<ul>
+      <li class="a">Joshuaaaaaa Raidinnn</li>
+      <li class="b">Raidinnn</li>
+      <li class="c">Maeserr</li>
+    </ul>`);
+  await page.evaluate(sanitize, {});
+  const a = await page.locator('.a').innerText();
+  assert.ok(!/Raidin/i.test(a), `half-masked - first name replaced, real surname left: ${a}`);
+  assert.ok(!/Raidin/i.test(await page.locator('.b').innerText()));
+  assert.ok(!/Maeser/i.test(await page.locator('.c').innerText()));
+});
+
 (async () => {
   const browser = await chromium.launch();
   const page = await browser.newPage();

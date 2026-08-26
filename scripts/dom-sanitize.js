@@ -730,7 +730,7 @@ function sanitize(config) {
   // often a letter/non-letter transition that \b does not see. They also keep
   // "Maser" out of "Maserati" and let "Maeser's" mask to "Avery's".
   function bounded(body, flags) { return new RegExp('(?<![A-Za-z])(?:' + body + ')(?![A-Za-z])', flags); }
-  const SURNAME_ALT = REAL_SURNAMES.map((e) => reEscape(e[0])).join('|');
+  // SURNAME_ALT is built AFTER stutter() below.
   // A name with its last letter held down is the same name. Staging holds QA
   // accounts literally called "Nathannn Test QAaaa" and "Joshuaaaaaa Radin-Grant",
   // and a plain alternation walks past both because the letter-boundary guard
@@ -742,6 +742,18 @@ function sanitize(config) {
     const esc = reEscape(name);
     return esc + '(?:' + reEscape(name[name.length - 1]) + ')*';
   }
+  // Trim a stuttered match back to the roster spelling before looking it up:
+  // "Raidinnn" is not itself a key, "Raidin" is.
+  function unstutter(word, index) {
+    let k = String(word).toLowerCase();
+    while (k.length > 1 && !index[k] && k[k.length - 1] === k[k.length - 2]) k = k.slice(0, -1);
+    return index[k] || null;
+  }
+  // Surnames stutter too. This was first-names-only until a background lead
+  // called "Joshuaaaaaa Raidinnn" came back masked as "Taylor Raidinnn" - first
+  // name replaced, REAL SURNAME still on screen. Half-masked is the worst state
+  // there is: the frame looks handled, so nobody looks again.
+  const SURNAME_ALT = REAL_SURNAMES.map((e) => stutter(e[0])).join('|');
   const FIRST_ALT = REAL_FIRSTS.filter((e) => !AMBIGUOUS_FIRSTS[e[0].toLowerCase()]).map((e) => stutter(e[0])).join('|');
   // A handle glues the two halves together: a lead record held
   // "https://www.linkedin.com/in/maxmaeser/" in a field, and the letter-boundary
@@ -788,14 +800,18 @@ function sanitize(config) {
     if (SURNAME_ALT) {
       const full = new RegExp('(?<![A-Za-z])([A-Za-z][A-Za-z\'\u2019]{0,20})(' + SPACE + ')(' + SURNAME_ALT + ')(?![A-Za-z])', 'gi');
       n += replaceEverywhere(full, (m, first, sp, sur) => {
-        const id = SURNAME_INDEX[sur.toLowerCase()];
+        const id = unstutter(sur, SURNAME_INDEX);
+        if (!id) return m;
         if (!/^[A-Z]/.test(first)) return first + sp + applyCase(sur, id.last);
         initialsSeen[(first[0] + sur[0]).toUpperCase()] = id;
         return applyCase(sur, id.first + ' ' + id.last);
       });
 
       // 3. A surname standing on its own ("Owner: Maeser", "Radin-Grant Holdings").
-      n += replaceEverywhere(bounded(SURNAME_ALT, 'gi'), (m) => applyCase(m, SURNAME_INDEX[m.toLowerCase()].last));
+      n += replaceEverywhere(bounded(SURNAME_ALT, 'gi'), (m) => {
+        const id = unstutter(m, SURNAME_INDEX);
+        return id ? applyCase(m, id.last) : m;
+      });
     }
 
     // 4. A first name standing on its own, but only the unambiguous ones.
@@ -803,9 +819,7 @@ function sanitize(config) {
       n += replaceEverywhere(bounded(FIRST_ALT, 'gi'), (m) => {
         // A stuttered match ("Nathannn") is not itself a roster key, so trim the
         // repeated tail back to the name before looking the identity up.
-        let k = m.toLowerCase();
-        while (k.length > 1 && !FIRST_INDEX[k] && k[k.length - 1] === k[k.length - 2]) k = k.slice(0, -1);
-        const id = FIRST_INDEX[k];
+        const id = unstutter(m, FIRST_INDEX);
         return id ? applyCase(m, id.first) : m;
       });
     }
@@ -816,7 +830,8 @@ function sanitize(config) {
     if (SURNAME_ALT && FIRST_ANY_ALT) {
       const glued = new RegExp('(?<![A-Za-z])(' + FIRST_ANY_ALT + ')(' + SURNAME_ALT + ')(?![A-Za-z])', 'gi');
       n += replaceEverywhere(glued, (m, first, sur) => {
-        const id = SURNAME_INDEX[sur.toLowerCase()];
+        const id = unstutter(sur, SURNAME_INDEX);
+        if (!id) return m;
         initialsSeen[(first[0] + sur[0]).toUpperCase()] = id;
         return applyCase(m, id.first + id.last);
       });
