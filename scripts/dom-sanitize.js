@@ -743,6 +743,13 @@ function sanitize(config) {
     return esc + '(?:' + reEscape(name[name.length - 1]) + ')*';
   }
   const FIRST_ALT = REAL_FIRSTS.filter((e) => !AMBIGUOUS_FIRSTS[e[0].toLowerCase()]).map((e) => stutter(e[0])).join('|');
+  // A handle glues the two halves together: a lead record held
+  // "https://www.linkedin.com/in/maxmaeser/" in a field, and the letter-boundary
+  // guard (correctly) refused to match "maeser" with an "x" in front of it, so a
+  // real person's real LinkedIn profile sat in the frame. Glued to a real surname
+  // there is no ambiguity left, so EVERY first name qualifies here, the ordinary
+  // ones included - "maxmaeser" cannot be a sentence about a maximum.
+  const FIRST_ANY_ALT = REAL_FIRSTS.map((e) => reEscape(e[0])).join('|');
   const SPACE = '[ \\t\\u00A0\\u2007\\u202F]{1,3}';
 
   // "MM" -> the identity it belongs to, filled in only when a FULL name is
@@ -800,6 +807,18 @@ function sanitize(config) {
         while (k.length > 1 && !FIRST_INDEX[k] && k[k.length - 1] === k[k.length - 2]) k = k.slice(0, -1);
         const id = FIRST_INDEX[k];
         return id ? applyCase(m, id.first) : m;
+      });
+    }
+
+    // 3b. A first name and a surname run together, as in a handle or a profile URL.
+    //     Resolved on the SURNAME, so "maxmaeser" and "claudemaeser" both land on
+    //     the same synthetic identity as the spaced spelling does.
+    if (SURNAME_ALT && FIRST_ANY_ALT) {
+      const glued = new RegExp('(?<![A-Za-z])(' + FIRST_ANY_ALT + ')(' + SURNAME_ALT + ')(?![A-Za-z])', 'gi');
+      n += replaceEverywhere(glued, (m, first, sur) => {
+        const id = SURNAME_INDEX[sur.toLowerCase()];
+        initialsSeen[(first[0] + sur[0]).toUpperCase()] = id;
+        return applyCase(m, id.first + id.last);
       });
     }
 

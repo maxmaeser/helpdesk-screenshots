@@ -731,6 +731,36 @@ test('the stutter rule does not eat an ordinary word', async (page) => {
   assert.ok(counts.names >= 2, 'the two real first names should still be masked');
 });
 
+
+test('a profile URL that glues the first name to the surname is masked', async (page) => {
+  await page.setContent(`<div>
+      <p class="u">https://www.linkedin.com/in/maxmaeser/</p>
+      <input class="f" value="https://www.linkedin.com/in/maxmaeser/" />
+      <p class="h">@claudemaeser</p>
+    </div>`);
+  await page.evaluate(sanitize, {});
+  const u = await page.locator('.u').innerText();
+  const f = await page.locator('.f').inputValue();
+  const h = await page.locator('.h').innerText();
+  assert.ok(!/maeser/i.test(u), `a real profile URL survived in text: ${u}`);
+  assert.ok(!/maeser/i.test(f), `a real profile URL survived in a field value: ${f}`);
+  assert.ok(!/maeser/i.test(h), `a real handle survived: ${h}`);
+  assert.ok(/linkedin\.com\/in\//.test(u), `the URL should still read as a profile URL: ${u}`);
+});
+
+test('gluing does not invent a match out of ordinary text', async (page) => {
+  await page.setContent(`<div>
+      <p class="p1">Maximise your billable hours</p>
+      <p class="p2">Grantham Road</p>
+      <p class="p3">Maserati dealership</p>
+    </div>`);
+  const counts = await page.evaluate(sanitize, {});
+  assert.strictEqual(await page.locator('.p1').innerText(), 'Maximise your billable hours');
+  assert.strictEqual(await page.locator('.p2').innerText(), 'Grantham Road');
+  assert.strictEqual(await page.locator('.p3').innerText(), 'Maserati dealership');
+  assert.strictEqual(counts.names, 0);
+});
+
 (async () => {
   const browser = await chromium.launch();
   const page = await browser.newPage();
