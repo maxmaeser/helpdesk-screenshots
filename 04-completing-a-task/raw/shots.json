@@ -1,12 +1,14 @@
 {
-  "revision": 0,
+  "revision": 1,
   "shots": {
     "task-anatomy.png": {
       "status": "proposed",
       "note": "",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787752784262
     },
     "task-attachments.png": {
       "cursor": {

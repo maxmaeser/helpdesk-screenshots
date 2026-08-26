@@ -1,5 +1,5 @@
 {
-  "revision": 0,
+  "revision": 1,
   "shots": {
     "projects-detail.png": {
       "status": "proposed",
@@ -34,7 +34,9 @@
       "note": "",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787752802426
     }
   }
 }
