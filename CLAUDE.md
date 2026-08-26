@@ -74,15 +74,16 @@ auto-generated — hand-maintained per article as shots are captured or reshot.
 When agent-capturing on staging (Fallback Capture — see the `fsai-helpdesk-articles` skill), ALWAYS inject `scripts/dom-sanitize.js` and run it immediately before every `page.screenshot()`. Real customer/user PII must never reach a raw. Date freshening keeps activity feeds and timestamps looking current instead of stale staging data.
 
 - **React reverts edits.** A re-render can silently undo the sanitize pass between your call and the shutter — re-run it defensively in the same tick (short `waitForTimeout`, sanitize again) right before `screenshot()`.
-- **Split text nodes.** Relative-time chips ("4 months ago") often render as 3 sibling text nodes (bullet / number+unit / " ago") — a regex requiring "ago" in the same node silently misses the isolated middle node; the sanitizer already matches "N unit" alone, so this is handled, don't special-case it yourself.
+- **Split text nodes.** Relative-time chips ("4 months ago") often render as 3 sibling text nodes (bullet / number+unit / " ago"). The sanitizer still matches the isolated "N unit" node, so this is handled and you should not special-case it yourself. Since `edafd50` it also requires a relative-time marker ("ago", "from now") in that node or its nearest three ancestors before it will rewrite. That marker gate is what keeps it off product copy.
+- **Durations in product copy are NOT freshened, deliberately.** Before 2026-08-26 the default rewrote ANY "N unit" text node onto a recency ladder, with no way to tell "3 days ago" from "Invites are valid for 7 days". Three wrong strings reached customers that way: "1 week" for 7 days, "2 days" for a 30 Days metric window, and "Last 1 day" for Last 30 days. The old unanchored sweep survives as an explicit per-shot `freshenDates: 'auto-all'` if you genuinely need it. Read `counts.datesSkipped` to see when a frame held a duration the sanitizer left alone.
 - Usage:
   ```js
   const { sanitize } = require('/home/max/work/fsai/fsai-helpdesksuite/screenshots/scripts/dom-sanitize.js');
   // ...right before each page.screenshot() call:
-  const counts = await page.evaluate(sanitize, {}); // defaults: generic email/phone regex, freshenDates: 'auto'
+  const counts = await page.evaluate(sanitize, {}); // defaults: generic email/phone regex, freshenDates: 'auto' (marker-gated)
   await page.waitForTimeout(150);
   await page.evaluate(sanitize, {}); // defensive re-run in case React reverted it
-  console.log(counts); // {emails, phones, dates, custom} — log what got sanitized
+  console.log(counts); // {emails, phones, dates, datesSkipped, custom} — log what got sanitized
   await page.screenshot({ path, clip });
   ```
 
