@@ -1,5 +1,5 @@
 {
-  "revision": 2,
+  "revision": 3,
   "shots": {
     "assets-collection.png": {
       "status": "proposed",
@@ -23,7 +23,9 @@
       "note": "",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787753349262
     },
     "assets-home.png": {
       "status": "proposed",

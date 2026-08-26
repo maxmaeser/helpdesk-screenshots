@@ -1,5 +1,5 @@
 {
-  "revision": 1,
+  "revision": 2,
   "shots": {
     "task-anatomy.png": {
       "status": "proposed",
@@ -29,7 +29,9 @@
       "note": "",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787753586363
     }
   }
 }
