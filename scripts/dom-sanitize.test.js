@@ -400,6 +400,264 @@ test("phonesBare: 'all' widens WHERE we mask, not what counts as phone-shaped", 
   assert.strictEqual(counts.phonesBareSkipped, 2);
 });
 
+// ===========================================================================
+// NAME MASKING + SPLIT-SIBLING VALUES (added 2026-08-26)
+//
+// WHY THESE EXIST
+// 1. Names were never in scope for this sanitizer. Every capture that showed a
+//    user list, an activity feed, an assignee or an avatar shipped a real
+//    surname to a public GitHub repo. 06-locations/locations-detail.png showed
+//    one name five times.
+// 2. emailReplacer deliberately PRESERVED a name-ish local part, so
+//    max.maeser@franchisesystems.ai became max.maeser@example.com - the domain
+//    was hidden and the identity was kept. For PII that is worse than useless.
+// 3. replaceEverywhere rewrote one text node at a time, so any value split
+//    across adjacent text nodes - the shape React produces for
+//    {first} {last} - could never match. freshenDates already handled split
+//    siblings; the PII paths did not.
+// ===========================================================================
+
+// Every real token that must never survive a default sanitize.
+const REAL_TOKENS = [
+  'Maeser', 'Radin-Grant', 'Monkhirst', 'Whiteside', 'Schmit', 'Schmidt',
+  'Mifflin', 'Bratton', 'Max Maeser', 'Creed Smith', 'Bill Schmit',
+  'Joshua Radin-Grant', 'Nathan Monkhirst', 'maeser',
+];
+
+// Fixture K: the surfaces that actually leaked - an assignee chip, an activity
+// feed, a bare surname and the signed-in user's real address.
+const NAME_SURFACES = `
+  <div class="app">
+    <div class="assignee"><span class="alabel">Assigned Brand Representative</span><span class="who">Max Maeser</span></div>
+    <ul class="feed">
+      <li class="f1">Max Maeser changed the status to Active</li>
+      <li class="f2">Creed Smith uploaded Store Photos.pdf</li>
+      <li class="f3">Joshua Radin-Grant approved the request</li>
+      <li class="f4">Nathan Monkhirst left a comment</li>
+      <li class="f5">Bill Schmit invited a franchisee</li>
+      <li class="f6">Jonathan Whiteside signed in</li>
+    </ul>
+    <p class="bare">Owner: Maeser</p>
+    <p class="mail">max.maeser@franchisesystems.ai</p>
+  </div>`;
+
+// Fixture L: values split across ADJACENT TEXT NODES. The <!-- --> separators
+// are exactly what React emits between two interpolated expressions, so r1 is
+// three sibling text nodes under one parent: "Creed", " ", "Smith". r2 and r3
+// split across inline elements instead, with the space its own text node.
+const SPLIT_VALUES = `
+  <div class="feed">
+    <div class="r1">Creed<!-- --> <!-- -->Smith commented on the task</div>
+    <div class="r2"><span>Nathan</span> <span>Monkhirst</span> approved</div>
+    <div class="r3">Reported by <b>Max</b> <b>Maeser</b></div>
+    <p class="se">max.maeser<!-- -->@<!-- -->franchisesystems.ai</p>
+    <p class="sp">(303)<!-- --> <!-- -->555-1212</p>
+    <p class="sc">Lumon<!-- --> <!-- -->Fresh Hotchkiss</p>
+  </div>`;
+
+// Fixture M: product copy that shares words with the roster, plus the numeric
+// shapes the phone branches must keep their hands off. Widening WHAT gets
+// masked is exactly how a sanitizer starts corrupting the product, so every one
+// of these has to come back byte-identical.
+const PRODUCT_NOUNS = `
+  <div class="copy">
+    <p class="p1">Max file size is 25 MB</p>
+    <p class="p2">Grant access to the vendor portal</p>
+    <p class="p3">Bill of materials</p>
+    <p class="p4">Billing and invoices</p>
+    <p class="p5">Smith and Sons Plumbing is an approved vendor</p>
+    <p class="p6">Order number 4059283746152</p>
+    <p class="p7">Created 1755691200</p>
+    <p class="p8">Run 550e8400-e29b-41d4-a716-446655440000</p>
+    <p class="p9">Brand Standards</p>
+    <p class="p10">Claude Code integration</p>
+    <p class="p11">Franchise Systems AI</p>
+  </div>`;
+
+// Fixture N: a label and its value in two SEPARATE inline elements with no
+// whitespace at the junction. element.textContent glues these into
+// "Emailjane.doe@realcorp.com", and a run-joiner that is too eager will let
+// EMAIL_RE swallow the label into the local part and delete it from the frame.
+const LABEL_VALUE = `
+  <div class="row"><span class="lab">Email</span><span class="val">jane.doe@realcorp.com</span></div>`;
+
+// Fixture O: adjacent table cells. Joining ACROSS a block boundary is not safe
+// (the next cell is a different field), so a name split over two <td>s is a
+// documented miss - but a distinctive first name still gets masked on its own.
+const CELL_SPLIT = `
+  <table><tbody><tr><td class="c1">Creed</td><td class="c2">Smith</td></tr></tbody></table>`;
+
+test('real names are masked by default', async (page) => {
+  await page.setContent(NAME_SURFACES);
+  const counts = await page.evaluate(sanitize, {});
+  const body = await page.locator('body').innerText();
+  REAL_TOKENS.forEach((t) =>
+    assert.ok(!body.includes(t), `real name survived a default sanitize: ${t}\n${body}`));
+  assert.ok(counts.names >= 7, `expected at least 7 name replacements, got ${counts.names}`);
+  assert.ok(/\w+\s\w+/.test(await page.locator('.who').innerText()),
+    'the assignee chip should still read as a person, not as a redaction');
+});
+
+test('the assignee label is not eaten when the name next to it is masked', async (page) => {
+  await page.setContent(NAME_SURFACES);
+  await page.evaluate(sanitize, {});
+  assert.strictEqual(await page.locator('.alabel').innerText(), 'Assigned Brand Representative');
+});
+
+test('a masked email no longer carries the real name in its local part', async (page) => {
+  await page.setContent(NAME_SURFACES);
+  await page.evaluate(sanitize, {});
+  const mail = await page.locator('.mail').innerText();
+  assert.ok(!/maeser/i.test(mail), `the local part still carries the real surname: ${mail}`);
+  assert.ok(!/\bmax\b/i.test(mail), `the local part still carries the real first name: ${mail}`);
+  assert.ok(/^[a-z0-9._-]+@example\.com$/.test(mail), `not a plausible masked address: ${mail}`);
+});
+
+test('one person maps to one synthetic identity across name and email', async (page) => {
+  await page.setContent(`<div>
+      <p class="n">Max Maeser</p>
+      <p class="e">max.maeser@franchisesystems.ai</p>
+      <p class="e2">creed.smith@franchisesystems.ai</p>
+    </div>`);
+  await page.evaluate(sanitize, {});
+  const name = await page.locator('.n').innerText();
+  const mail = await page.locator('.e').innerText();
+  const mail2 = await page.locator('.e2').innerText();
+  const local = mail.slice(0, mail.indexOf('@')).split(/[._-]/);
+  assert.ok(name.toLowerCase().includes(local[0]) && name.toLowerCase().includes(local[1]),
+    `the masked name ${name} and the masked address ${mail} are different people`);
+  assert.strictEqual(mail2, mail, 'the same person under two seed names got two identities');
+});
+
+test('a name split across sibling text nodes is masked', async (page) => {
+  await page.setContent(SPLIT_VALUES);
+  await page.evaluate(sanitize, {});
+  const r1 = await page.locator('.r1').innerText();
+  const r2 = await page.locator('.r2').innerText();
+  const r3 = await page.locator('.r3').innerText();
+  assert.ok(!r1.includes('Creed Smith'), `split sibling name survived: ${r1}`);
+  assert.ok(!r2.includes('Monkhirst'), `name split across inline elements survived: ${r2}`);
+  assert.ok(!r3.includes('Maeser'), `name split across inline elements survived: ${r3}`);
+});
+
+test('an email split across sibling text nodes is masked', async (page) => {
+  await page.setContent(SPLIT_VALUES);
+  const counts = await page.evaluate(sanitize, {});
+  const se = await page.locator('.se').innerText();
+  assert.ok(!se.includes('franchisesystems.ai'), `split email survived: ${se}`);
+  assert.ok(!/maeser/i.test(se), `split email kept the real identity: ${se}`);
+  assert.ok(counts.emails >= 1, `split email was not counted: ${counts.emails}`);
+});
+
+test('a phone split across sibling text nodes is masked', async (page) => {
+  await page.setContent(SPLIT_VALUES);
+  const counts = await page.evaluate(sanitize, {});
+  const sp = await page.locator('.sp').innerText();
+  assert.ok(!sp.includes('303'), `split phone survived: ${sp}`);
+  assert.ok(!sp.includes('555-1212'), `split phone survived: ${sp}`);
+  assert.strictEqual(counts.phones, 1, `split phone was not counted once: ${counts.phones}`);
+});
+
+test('a custom replacement matches across sibling text nodes', async (page) => {
+  await page.setContent(SPLIT_VALUES);
+  const counts = await page.evaluate(sanitize, {
+    replacements: [{ find: 'Lumon Fresh', replace: 'Acme Foods' }],
+  });
+  const sc = await page.locator('.sc').innerText();
+  assert.ok(sc.includes('Acme Foods'), `split custom value not replaced: ${sc}`);
+  assert.ok(!sc.includes('Lumon'), `split custom value survived: ${sc}`);
+  assert.strictEqual(counts.custom, 1);
+});
+
+test('a label in its own element is never joined into the value next to it', async (page) => {
+  await page.setContent(LABEL_VALUE);
+  await page.evaluate(sanitize, {});
+  assert.strictEqual(await page.locator('.lab').innerText(), 'Email',
+    'the label was swallowed into the email local part');
+  const val = await page.locator('.val').innerText();
+  assert.ok(!val.includes('realcorp.com'), `email not sanitized: ${val}`);
+  assert.ok(!/^Email/.test(val), `the label leaked into the masked value: ${val}`);
+});
+
+test('adjacent table cells are not joined, but a distinctive first name still masks', async (page) => {
+  await page.setContent(CELL_SPLIT);
+  await page.evaluate(sanitize, {});
+  assert.notStrictEqual(await page.locator('.c1').innerText(), 'Creed',
+    'a roster first name standing alone should still be masked');
+  assert.strictEqual(await page.locator('.c2').innerText(), 'Smith',
+    'Smith is too common to mask on its own - joining across a <td> is a documented miss');
+});
+
+test('ordinary product copy and numeric data survive name masking', async (page) => {
+  await page.setContent(PRODUCT_NOUNS);
+  const counts = await page.evaluate(sanitize, {});
+  const body = await page.locator('body').innerText();
+  [
+    'Max file size is 25 MB',
+    'Grant access to the vendor portal',
+    'Bill of materials',
+    'Billing and invoices',
+    'Smith and Sons Plumbing is an approved vendor',
+    'Order number 4059283746152',
+    'Created 1755691200',
+    '550e8400-e29b-41d4-a716-446655440000',
+    'Brand Standards',
+    'Claude Code integration',
+    'Franchise Systems AI',
+  ].forEach((s) => assert.ok(body.includes(s), `product copy was corrupted, lost: ${s}\n${body}`));
+  assert.strictEqual(counts.names, 0, 'nothing on this page is a real name');
+  assert.strictEqual(counts.phonesBare, 0);
+});
+
+test('names: false disables name masking', async (page) => {
+  await page.setContent(NAME_SURFACES);
+  const counts = await page.evaluate(sanitize, { names: false });
+  const body = await page.locator('body').innerText();
+  assert.ok(body.includes('Max Maeser'), 'names: false should have left the page alone');
+  assert.strictEqual(counts.names, 0);
+});
+
+test('a real name the roster does not know is NOT masked - the roster is a list, not a detector', async (page) => {
+  await page.setContent(`<li class="u">Priya Ramaswamy commented on the task</li>`);
+  const counts = await page.evaluate(sanitize, {});
+  assert.strictEqual(await page.locator('.u').innerText(), 'Priya Ramaswamy commented on the task',
+    'this documents the limit: an unknown name in seeded data reaches the frame');
+  assert.strictEqual(counts.names, 0);
+});
+
+test('replacements is the escape hatch for a name the roster does not know', async (page) => {
+  await page.setContent(`<li class="u">Priya Ramaswamy commented on the task</li>`);
+  const counts = await page.evaluate(sanitize, {
+    replacements: [{ find: 'Priya Ramaswamy', replace: 'Robin Ellis' }],
+  });
+  assert.strictEqual(await page.locator('.u').innerText(), 'Robin Ellis commented on the task');
+  assert.strictEqual(counts.custom, 1);
+});
+
+test('avatar initials are masked when the person is named on the same page', async (page) => {
+  await page.setContent(`<div><span class="av">MM</span><span class="nm">Max Maeser</span></div>`);
+  await page.evaluate(sanitize, {});
+  const av = await page.locator('.av').innerText();
+  const nm = await page.locator('.nm').innerText();
+  assert.notStrictEqual(av, 'MM', 'the avatar still carries the real initials');
+  assert.strictEqual(av, nm.split(/\s+/).map((w) => w[0]).join(''),
+    `initials ${av} do not match the masked name ${nm}`);
+});
+
+test('a two-letter cell is left alone when nobody on the page is named', async (page) => {
+  await page.setContent(`<table><tr><td class="unit">MM</td><td>Depth</td></tr></table>`);
+  await page.evaluate(sanitize, {});
+  assert.strictEqual(await page.locator('.unit').innerText(), 'MM',
+    'initials are only masked for an identity actually found on the page');
+});
+
+test('an address already at example.com is left exactly as it is', async (page) => {
+  await page.setContent(`<p class="safe">team@example.com</p>`);
+  await page.evaluate(sanitize, {});
+  assert.strictEqual(await page.locator('.safe').innerText(), 'team@example.com',
+    'a reserved-domain address is already safe and must not churn');
+});
+
 (async () => {
   const browser = await chromium.launch();
   const page = await browser.newPage();
