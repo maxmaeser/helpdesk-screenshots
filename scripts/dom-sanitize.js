@@ -35,9 +35,16 @@
 //                          labelled or not. Masks order numbers, invoice numbers
 //                          and epoch timestamps too. Opt in per shot only, and
 //                          only when you have checked the frame by eye.
+//                          NOTE this widens WHERE we mask, not what counts as
+//                          phone-shaped: a run outside the 10-14 band still needs
+//                          a label, because at 9 or 16 digits the shape carries no
+//                          information at all and there would be nothing left
+//                          separating a phone from an account number.
 //   false                  Do not run the bare branch at all.
 // Read counts.phonesBareSkipped: non-zero means the page held a phone-shaped
-// digit run this branch deliberately left alone - worth an eyeball.
+// digit run this branch deliberately left alone - worth an eyeball. It counts
+// EVERY declined candidate, including ones declined on length; before 2026-08-26
+// those returned early and the count silently under-reported.
 //
 // freshenDates values:
 //   (omitted) / 'auto'  Freshen ONLY durations that read as a relative timestamp,
@@ -112,6 +119,22 @@ function sanitize(config) {
   const BARE_PHONE_RE = /(?<![\w-])\(?\d{2,6}\)?(?:[-.\s]?\(?\d{2,6}\)?){0,5}(?![\w-])/g;
   const BARE_PHONE_MIN_DIGITS = 10;
   const BARE_PHONE_MAX_DIGITS = 14;
+  // The widths a LABELLED value may take. Shape alone cannot vouch for a run this
+  // short or this long - 9 digits is also an account number, 16 is also a card
+  // number - so these bounds apply ONLY where hasPhoneContext/fieldHasPhoneContext
+  // has already said "this field is a phone number". Inside the strict band above
+  // the shape is suggestive enough on its own for `phonesBare: 'all'` to act on it
+  // unlabelled; outside it a label is mandatory and there is no escape hatch.
+  //
+  // Both bounds come from real pages that shipped unmasked, not from theory: a
+  // 16-digit value in a <td> under a "Phone" <th>, and a 9-digit labelled number,
+  // were each rejected on LENGTH before the context gate was ever consulted, so
+  // the column header never got a vote. 17 is the ceiling deliberately - E.164
+  // allows 15 digits and a trunk-prefixed international form adds a couple, while
+  // 18+ is the ID/accession range that the "never carve a phone out of a long
+  // run" test pins down.
+  const BARE_PHONE_LABELLED_MIN_DIGITS = 7;
+  const BARE_PHONE_LABELLED_MAX_DIGITS = 17;
   // What counts as "this is a phone field". The boundaries are LETTER-only, not
   // \b: an element's textContent concatenates its text nodes with no separator,
   // so a label/value pair renders as "Phone07717325656" and \b would find no
@@ -124,7 +147,17 @@ function sanitize(config) {
   // Same bounds as the relative-time gate above, and for the same reason: a label
   // and its value share a small container, so look up a few short levels and stop
   // as soon as an ancestor is big enough to be prose rather than a field row.
-  const PHONE_CONTEXT_LEVELS = 4;
+  // 2026-08-26: was 4, one level too shallow for a field CARD. A vendor detail
+  // panel renders its value at
+  //     div(value) -> div.relative -> div.flex -> div -> div(label + value)
+  // so the "Phone" label is only reachable at the FIFTH ancestor - while the same
+  // value inside a <table> masked correctly via its <th>, which made it read as a
+  // value-specific bug rather than a depth limit. Raising this is safe because the
+  // walk is bounded by EVIDENCE, not by depth: it stops at the first ancestor whose
+  // text runs past PHONE_CONTEXT_MAX_CHARS, and at the first one wide enough to
+  // hold a second phone-shaped value (countPhoneCandidates > 1), where a "Phone"
+  // label is a neighbouring row's rather than this value's.
+  const PHONE_CONTEXT_LEVELS = 6;
   const PHONE_CONTEXT_MAX_CHARS = 160;
   // Separate RegExp object with the same source, used only for counting, so the
   // scan can never share lastIndex with the pass that is rewriting.
@@ -332,14 +365,32 @@ function sanitize(config) {
     let replaced = 0;
     let skipped = 0;
 
-    function rewrite(text, gated) {
+    // `contextFn` is a thunk rather than a boolean so the DOM walk runs only for
+    // text that actually holds a phone-shaped candidate, and at most once per
+    // node. Under `phonesBare: 'all'` an in-band run short-circuits before the
+    // thunk is ever called, so the escape hatch stays as cheap as it was.
+    function rewrite(text, contextFn) {
+      let ctx = null;
+      const gated = () => (ctx === null ? (ctx = !!contextFn()) : ctx);
       return text.replace(BARE_PHONE_RE, (match) => {
         const digits = match.replace(/\D/g, '');
-        if (digits.length < BARE_PHONE_MIN_DIGITS || digits.length > BARE_PHONE_MAX_DIGITS) return match;
+        const n = digits.length;
+        // Not phone-shaped at ANY confidence level, so not a candidate and not a
+        // skip either - counting these would drown the report in page furniture.
+        if (n < BARE_PHONE_LABELLED_MIN_DIGITS || n > BARE_PHONE_LABELLED_MAX_DIGITS) return match;
         // This pass runs after PHONE_RE, so the masked value is already on the
         // page. Leave it alone rather than counting it a second time.
         if (digits === replacementDigits) return match;
-        if (requireContext && !gated) { skipped++; return match; }
+        // Inside the strict band the shape is suggestive on its own, so 'all' may
+        // act on it unlabelled. Outside it only an actual label may vouch.
+        const inStrictBand = n >= BARE_PHONE_MIN_DIGITS && n <= BARE_PHONE_MAX_DIGITS;
+        const allowed = inStrictBand ? (!requireContext || gated()) : gated();
+        // Every declined candidate is counted, whatever declined it. Until
+        // 2026-08-26 an over- or under-length run returned above without ever
+        // reaching this line, so phonesBareSkipped reported 1-2 while three values
+        // were actually left unmasked on the page. A count that under-reports is
+        // worse than no count at all, because the capture agent trusts it.
+        if (!allowed) { skipped++; return match; }
         replaced++;
         return replacement;
       });
@@ -348,13 +399,13 @@ function sanitize(config) {
     textNodes().forEach((node) => {
       const v = node.nodeValue;
       if (!v || !/\d/.test(v)) return;
-      const next = rewrite(v, requireContext ? hasPhoneContext(node) : true);
+      const next = rewrite(v, () => hasPhoneContext(node));
       if (next !== v) node.nodeValue = next;
     });
     fields().forEach((el) => {
       const v = el.value;
       if (!v || !/\d/.test(v)) return;
-      const next = rewrite(v, requireContext ? fieldHasPhoneContext(el) : true);
+      const next = rewrite(v, () => fieldHasPhoneContext(el));
       if (next !== v) el.value = next;
     });
     return { replaced, skipped };

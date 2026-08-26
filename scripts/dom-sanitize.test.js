@@ -297,6 +297,109 @@ test('a long bare digit run is never partially carved into a phone', async (page
   assert.strictEqual(counts.phonesBare, 0);
 });
 
+// Fixture H: the vendor detail card from the live product, the shape that
+// defeated PHONE_CONTEXT_LEVELS = 4. The value sits at
+// div.value -> div.relative -> div.flex -> div -> div.field, so the "Phone"
+// label is only reachable at the FIFTH ancestor. The identical value inside a
+// <table> masked correctly via its <th>, which is what made this look like a
+// value-specific bug rather than a depth limit.
+const VENDOR_CARD = `
+  <div class="field">
+    <div class="label">Phone</div>
+    <div><div class="flex"><div class="relative"><div class="value">07717325656</div></div></div></div>
+  </div>`;
+
+// Fixture I: a members table whose Phone column holds runs on both sides of the
+// 10-14 digit band - a 16-digit international-with-trunk-prefix value and a
+// 9-digit local one. Both were rejected on LENGTH before the context gate was
+// ever consulted, so the column header never got to vouch for them. The table is
+// deliberately long enough that the ancestor-text walk bails on
+// PHONE_CONTEXT_MAX_CHARS and columnSaysPhone() is what does the vouching.
+const PHONE_COLUMN = `
+  <table>
+    <thead><tr><th>Name</th><th>Phone</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Dana Reyes</td><td class="over">0044207946095812</td><td>Active</td></tr>
+      <tr><td>Priya Raman</td><td class="under">071732565</td><td>Active</td></tr>
+      <tr><td>Marcus Webb</td><td class="inband">07717325656</td><td>Awaiting approval</td></tr>
+      <tr><td>Alex Okafor</td><td class="p4">07700900123</td><td>Active</td></tr>
+      <tr><td>Sam Iyer</td><td class="p5">07700900456</td><td>Active</td></tr>
+    </tbody>
+  </table>`;
+
+// Fixture J: the product data the WIDENED band must still leave alone. Same
+// three shapes as fixture E plus one run on each side of the strict band, so a
+// regression that drops the label requirement shows up here rather than in a
+// capture six weeks from now.
+const WIDENED_SAFETY = `
+  <div class="records">
+    <p class="epoch">Created 1755691200</p>
+    <p class="order">Order number 4059283746152</p>
+    <p class="uuid">Run 550e8400-e29b-41d4-a716-446655440000</p>
+    <p class="short">Account 071732565 closed</p>
+    <p class="long">Batch 0044207946095812 processed</p>
+  </div>`;
+
+test('a Phone label five ancestors up still vouches for the value', async (page) => {
+  await page.setContent(VENDOR_CARD);
+  const counts = await page.evaluate(sanitize, {});
+  const value = await page.locator('.value').innerText();
+  assert.ok(!value.includes('07717325656'),
+    `vendor-card phone survived - the label is 5 ancestors up: ${value}`);
+  assert.strictEqual(counts.phonesBare, 1);
+  assert.strictEqual(counts.phonesBareSkipped, 0);
+});
+
+test('an over-length value under a Phone column header is masked', async (page) => {
+  await page.setContent(PHONE_COLUMN);
+  await page.evaluate(sanitize, {});
+  const over = await page.locator('.over').innerText();
+  assert.ok(!over.includes('0044207946095812'),
+    `16-digit value under a Phone header survived: ${over}`);
+  assert.ok(!over.includes('20794609'), `partial phone survived: ${over}`);
+});
+
+test('an under-length value under a Phone column header is masked', async (page) => {
+  await page.setContent(PHONE_COLUMN);
+  const counts = await page.evaluate(sanitize, {});
+  const under = await page.locator('.under').innerText();
+  assert.ok(!under.includes('071732565'),
+    `9-digit value under a Phone header survived: ${under}`);
+  assert.strictEqual(counts.phonesBare, 5, 'every cell in the Phone column should be masked');
+  assert.strictEqual(counts.phonesBareSkipped, 0);
+});
+
+test('the widened band still leaves unlabelled product data alone, and COUNTS it', async (page) => {
+  await page.setContent(WIDENED_SAFETY);
+  const counts = await page.evaluate(sanitize, {});
+  const body = await page.locator('body').innerText();
+  assert.ok(body.includes('1755691200'), '10-digit epoch timestamp was masked');
+  assert.ok(body.includes('4059283746152'), '13-digit order number was masked');
+  assert.ok(body.includes('550e8400-e29b-41d4-a716-446655440000'), 'UUID fragment was masked');
+  assert.ok(body.includes('071732565'), '9-digit run was masked with no phone context');
+  assert.ok(body.includes('0044207946095812'), '16-digit run was masked with no phone context');
+  assert.strictEqual(counts.phonesBare, 0);
+  // The accounting bug: over- and under-length candidates used to return BEFORE
+  // skipped++, so this reported 2 while four runs were actually left alone. A
+  // count that under-reports is worse than no count - the capture agent trusts it.
+  assert.strictEqual(counts.phonesBareSkipped, 4,
+    `all four phone-shaped runs must be reported as skipped, got ${counts.phonesBareSkipped}`);
+});
+
+test("phonesBare: 'all' widens WHERE we mask, not what counts as phone-shaped", async (page) => {
+  await page.setContent(WIDENED_SAFETY);
+  const counts = await page.evaluate(sanitize, { phonesBare: 'all' });
+  const body = await page.locator('body').innerText();
+  assert.ok(!body.includes('1755691200'), "'all' is unanchored and masks the epoch");
+  assert.ok(!body.includes('4059283746152'), "'all' is unanchored and masks the order number");
+  assert.ok(body.includes('071732565'),
+    'outside the strict band a label must vouch, even under the escape hatch');
+  assert.ok(body.includes('0044207946095812'),
+    'outside the strict band a label must vouch, even under the escape hatch');
+  assert.strictEqual(counts.phonesBare, 2);
+  assert.strictEqual(counts.phonesBareSkipped, 2);
+});
+
 (async () => {
   const browser = await chromium.launch();
   const page = await browser.newPage();
