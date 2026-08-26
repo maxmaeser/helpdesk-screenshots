@@ -75,15 +75,22 @@ When agent-capturing on staging (Fallback Capture — see the `fsai-helpdesk-art
 
 - **React reverts edits.** A re-render can silently undo the sanitize pass between your call and the shutter — re-run it defensively in the same tick (short `waitForTimeout`, sanitize again) right before `screenshot()`.
 - **Split text nodes.** Relative-time chips ("4 months ago") often render as 3 sibling text nodes (bullet / number+unit / " ago"). The sanitizer still matches the isolated "N unit" node, so this is handled and you should not special-case it yourself. Since `edafd50` it also requires a relative-time marker ("ago", "from now") in that node or its nearest three ancestors before it will rewrite. That marker gate is what keeps it off product copy.
+- **A phone number without a country code needs a label to be masked.** Until 2026-08-26 the phone regex had two branches: NANP (exactly 10 digits) and international (leading `+`). A bare national run matched neither, so a real UK mobile shipped in the Phone column of `how-to-invite-a-franchisee-to-their-portal/franchisee-banner-portal-access.png`. There is now a third, **context-gated** branch for bare national numbers (10-14 digits, no country code). It fires only where the DOM says the value is a phone: a "phone"/"mobile"/"tel"/"cell"/"fax" label in the node or its nearest four short ancestors, one of those words in an `aria-label`/`placeholder`/`title`/`name`/`id`/`autocomplete`, an `<input type="tel">`, or a matching column header. **A number in an unlabelled cell will NOT be masked** - check the frame, and use `phonesBare: 'all'` for that shot if you need the unanchored sweep. Read `counts.phonesBareSkipped`: non-zero means the page held a phone-shaped digit run the sanitizer left alone.
+- **Bare 10-digit runs are no longer masked page-wide.** The NANP branch used to make every separator optional, so it swallowed any isolated 10-digit run - which is exactly the width of a Unix epoch timestamp, and of plenty of IDs. NANP now requires actual phone formatting (parens, or separators between all three groups); `+1 303-555-1212` and friends are still caught by the international branch. A bare `3035551212` now goes through the context gate like any other bare number.
 - **Durations in product copy are NOT freshened, deliberately.** Before 2026-08-26 the default rewrote ANY "N unit" text node onto a recency ladder, with no way to tell "3 days ago" from "Invites are valid for 7 days". Three wrong strings reached customers that way: "1 week" for 7 days, "2 days" for a 30 Days metric window, and "Last 1 day" for Last 30 days. The old unanchored sweep survives as an explicit per-shot `freshenDates: 'auto-all'` if you genuinely need it. Read `counts.datesSkipped` to see when a frame held a duration the sanitizer left alone.
+- **Assert before the shutter, do not trust the counts.** Counts tell you what the
+  sanitizer did, not what is left. Before writing any file, pull the frame's text
+  (`document.body.innerText` plus every `input`/`textarea` value) and assert the
+  real values are gone. `scripts/dom-sanitize.test.js` covers the regex; only the
+  page can tell you whether the gate fired on this particular DOM.
 - Usage:
   ```js
   const { sanitize } = require('/home/max/work/fsai/fsai-helpdesksuite/screenshots/scripts/dom-sanitize.js');
   // ...right before each page.screenshot() call:
-  const counts = await page.evaluate(sanitize, {}); // defaults: generic email/phone regex, freshenDates: 'auto' (marker-gated)
+  const counts = await page.evaluate(sanitize, {}); // defaults: generic email/phone regex, phonesBare: 'context', freshenDates: 'auto' (marker-gated)
   await page.waitForTimeout(150);
   await page.evaluate(sanitize, {}); // defensive re-run in case React reverted it
-  console.log(counts); // {emails, phones, dates, datesSkipped, custom} — log what got sanitized
+  console.log(counts); // {emails, phones, phonesBare, phonesBareSkipped, dates, datesSkipped, custom} — log what got sanitized
   await page.screenshot({ path, clip });
   ```
 
