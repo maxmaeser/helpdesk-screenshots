@@ -694,6 +694,43 @@ test('a bare Josh is masked - it is a real handle in this data, not a verb', asy
   assert.strictEqual(counts.names, 1);
 });
 
+
+test('an umlaut spelling of a roster surname is masked', async (page) => {
+  await page.setContent(`<div>
+      <p class="a">Maximilian M\u00e4ser -- Demo</p>
+      <p class="b">M\u00e4ser -- Demo</p>
+    </div>`);
+  await page.evaluate(sanitize, {});
+  const a = await page.locator('.a').innerText();
+  const b = await page.locator('.b').innerText();
+  assert.ok(!/M\u00e4ser/.test(a), `half-masked: first name gone, surname intact: ${a}`);
+  assert.ok(!/M\u00e4ser/.test(b), `bare umlaut surname survived: ${b}`);
+});
+
+test('a QA account with its last letter held down is still the same person', async (page) => {
+  await page.setContent(`<ul>
+      <li class="n">Nathannn Test QAaaa</li>
+      <li class="j">Joshuaaaaaa Radin-Grant</li>
+    </ul>`);
+  await page.evaluate(sanitize, {});
+  const n = await page.locator('.n').innerText();
+  const j = await page.locator('.j').innerText();
+  assert.ok(!/Nathan/.test(n), `stuttered first name survived: ${n}`);
+  assert.ok(!/Joshua|Radin/.test(j), `stuttered first name survived: ${j}`);
+});
+
+test('the stutter rule does not eat an ordinary word', async (page) => {
+  await page.setContent(`<div>
+      <p class="p1">Nathan Hale Elementary</p>
+      <p class="p2">Creedence</p>
+      <p class="p3">Joshua Tree National Park</p>
+    </div>`);
+  const counts = await page.evaluate(sanitize, {});
+  assert.strictEqual(await page.locator('.p2').innerText(), 'Creedence',
+    'a longer word that merely starts with a roster name must survive');
+  assert.ok(counts.names >= 2, 'the two real first names should still be masked');
+});
+
 (async () => {
   const browser = await chromium.launch();
   const page = await browser.newPage();

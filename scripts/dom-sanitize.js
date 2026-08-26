@@ -681,7 +681,12 @@ function sanitize(config) {
     ['Monkhirst', 'brooks'], ['Minkhorst', 'brooks'],
     ['Whiteside', 'pratt'], ['Whiteman', 'pratt'],
     ['Schmidt', 'chen'], ['Schmit', 'chen'],
-    ['Maeser', 'avery'], ['Maser', 'avery'],
+    // "Mäser" is a SEPARATE entry, not a fold of "Maser". The staging seed data
+    // spells the same account both ways and a literal alternation cannot match an
+    // umlaut it was never given - "Maximilian Mäser -- Demo" came back from a live
+    // page as "Jordan Mäser -- Demo", first name masked and surname intact, which
+    // is the exact half-masked shape that makes a leak invisible.
+    ['Maeser', 'avery'], ['M\u00e4ser', 'avery'], ['Maser', 'avery'],
     ['Mifflin', 'avery'], ['Bratton', 'avery'],
   ];
   // Real first names. Used to resolve a FULL name and an email local part always;
@@ -726,7 +731,18 @@ function sanitize(config) {
   // "Maser" out of "Maserati" and let "Maeser's" mask to "Avery's".
   function bounded(body, flags) { return new RegExp('(?<![A-Za-z])(?:' + body + ')(?![A-Za-z])', flags); }
   const SURNAME_ALT = REAL_SURNAMES.map((e) => reEscape(e[0])).join('|');
-  const FIRST_ALT = REAL_FIRSTS.filter((e) => !AMBIGUOUS_FIRSTS[e[0].toLowerCase()]).map((e) => reEscape(e[0])).join('|');
+  // A name with its last letter held down is the same name. Staging holds QA
+  // accounts literally called "Nathannn Test QAaaa" and "Joshuaaaaaa Radin-Grant",
+  // and a plain alternation walks past both because the letter-boundary guard
+  // (correctly) refuses to match "Nathan" inside "Nathannn". Allowing the final
+  // letter to repeat costs nothing - no real word is another word plus a run of
+  // its own last letter - and it generalises to whatever the next QA account is
+  // called, which an explicit list of junk spellings would not.
+  function stutter(name) {
+    const esc = reEscape(name);
+    return esc + '(?:' + reEscape(name[name.length - 1]) + ')*';
+  }
+  const FIRST_ALT = REAL_FIRSTS.filter((e) => !AMBIGUOUS_FIRSTS[e[0].toLowerCase()]).map((e) => stutter(e[0])).join('|');
   const SPACE = '[ \\t\\u00A0\\u2007\\u202F]{1,3}';
 
   // "MM" -> the identity it belongs to, filled in only when a FULL name is
@@ -777,7 +793,14 @@ function sanitize(config) {
 
     // 4. A first name standing on its own, but only the unambiguous ones.
     if (FIRST_ALT) {
-      n += replaceEverywhere(bounded(FIRST_ALT, 'gi'), (m) => applyCase(m, FIRST_INDEX[m.toLowerCase()].first));
+      n += replaceEverywhere(bounded(FIRST_ALT, 'gi'), (m) => {
+        // A stuttered match ("Nathannn") is not itself a roster key, so trim the
+        // repeated tail back to the name before looking the identity up.
+        let k = m.toLowerCase();
+        while (k.length > 1 && !FIRST_INDEX[k] && k[k.length - 1] === k[k.length - 2]) k = k.slice(0, -1);
+        const id = FIRST_INDEX[k];
+        return id ? applyCase(m, id.first) : m;
+      });
     }
 
     // 4b. An ambiguous first name, but only where the text node holds nothing
