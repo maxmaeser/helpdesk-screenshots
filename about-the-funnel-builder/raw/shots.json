@@ -1,5 +1,5 @@
 {
-  "revision": 0,
+  "revision": 1,
   "shots": {
     "funnel-analytics-page-drilldown.png": {
       "cursor": {
@@ -13,7 +13,9 @@
       "note": "",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787739983605
     },
     "funnel-analytics-panel.png": {
       "cursor": {

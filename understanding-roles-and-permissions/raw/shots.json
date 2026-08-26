@@ -1,5 +1,5 @@
 {
-  "revision": 61,
+  "revision": 62,
   "shots": {
     "brand-team-role-list-v2.png": {
       "status": "proposed",
@@ -113,7 +113,9 @@
       "note": "NEW shot, agent-captured 2026-08-14, resolves reshoot mark rm-1786691977069-0cb4 (\"When you invite someone, the Has Billing Access? toggle decides whether they can see invoices and manage payment methods.\"). Organization Settings > Members > Invite members modal: Emails field, Role dropdown (Member), and the Billing Access toggle switched ON with its 'Can see invoices and manage payment methods' description, plus the 1-week invite validity note. Fills the \"Billing access is separate\" section, which previously had no image. dom-sanitize freshenDates:false (no dates on this modal). 2x. No cursor -- the toggle state itself is the subject, called out with a highlight instead.",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787739975169
     },
     "team-access-nav.png": {
       "highlights": [
