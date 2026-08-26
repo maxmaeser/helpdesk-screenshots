@@ -1,5 +1,5 @@
 {
-  "revision": 1,
+  "revision": 4,
   "shots": {
     "statuses-create-form.png": {
       "status": "superseded",
@@ -14,6 +14,24 @@
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0
+    },
+    "statuses-change-from-detail.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787756695273
+    },
+    "statuses-change-from-table.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787756697153
     }
   }
 }

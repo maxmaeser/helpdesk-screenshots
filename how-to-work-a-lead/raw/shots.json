@@ -1,5 +1,5 @@
 {
-  "revision": 0,
+  "revision": 10,
   "shots": {
     "lead-actions-menu.png": {
       "cursor": {
@@ -13,7 +13,9 @@
       "note": "",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787756317103
     },
     "lead-activity.png": {
       "cursor": {
@@ -27,7 +29,9 @@
       "note": "",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787756927411
     },
     "lead-assets.png": {
       "cursor": {
@@ -41,7 +45,9 @@
       "note": "",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787756324389
     },
     "lead-assign-rep.png": {
       "cursor": {
@@ -55,14 +61,18 @@
       "note": "",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787756331983
     },
     "lead-chat.png": {
       "status": "proposed",
       "note": "",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787756340883
     },
     "lead-deal-tab-empty.png": {
       "cursor": {
@@ -83,7 +93,9 @@
       "note": "",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787756349817
     },
     "lead-panel-details.png": {
       "cursor": {
@@ -97,7 +109,9 @@
       "note": "",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787756357570
     },
     "lead-segments.png": {
       "cursor": {
@@ -111,7 +125,9 @@
       "note": "",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787756365470
     },
     "lead-status-change.png": {
       "cursor": {
@@ -125,7 +141,9 @@
       "note": "",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787756373950
     },
     "lead-tasks.png": {
       "cursor": {
@@ -139,7 +157,9 @@
       "note": "",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787756380746
     },
     "lead-panel-activity-fdd-email.png": {
       "status": "proposed",

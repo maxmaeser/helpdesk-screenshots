@@ -1,5 +1,5 @@
 {
-  "revision": 33,
+  "revision": 36,
   "shots": {
     "filter-panel-open-v2.png": {
       "cursor": {
@@ -58,7 +58,9 @@
       "note": "Reshoot 2026-08-14: Sales > Pipeline (Leads tab) toolbar, drift refresh -- current toolbar chrome (Search Leads, filter funnel icon, sort icon, eye/columns icon, Views dropdown, Total Leads count, Actions button). Agent-captured, 1680x350 CSS clip (2x), full toolbar row plus first few leads rows for page context. No cursor -- pure orientation shot of the toolbar itself, matches original convention.",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787756565813
     },
     "filter-panel.png": {
       "highlights": [],
@@ -66,7 +68,9 @@
       "note": "Reshoot 2026-08-14: Filter button clicked, dropdown open listing all filterable fields (First Name, Created At, Steps Completed, Status, Assigned To, City, Imported, Company Name, Converted, Email, Segments, Source). Agent-captured, 2x. No cursor -- trigger button is hidden behind the open menu in this crop, same rule as brand-team-role-list-v2.png's dropdown shot (cursor belongs on the trigger, never inside the open menu; omitted when the trigger isn't visible).",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787756559237
     },
     "sort-panel.png": {
       "highlights": [],
@@ -74,7 +78,9 @@
       "note": "Reshoot 2026-08-14: Sort button clicked (tooltip \"Sort (1)\" visible above the trigger), popover open showing one sort condition (Created At / Descending), + Add Sorting, and Apply Sorting. Agent-captured, 2x. No cursor -- popover-open state, tooltip already communicates the trigger.",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787756571736
     },
     "saved-views.png": {
       "highlights": [],
@@ -82,8 +88,7 @@
       "note": "SUPERSEDED 2026-08-24: DataTable Views redesign (be56bc5b6) replaced this popover layout with a further-updated one (search, per-view Default badge, Reset to default, inline save/save-as-new). See views-panel-empty.png + views-panel-unsaved-changes.png. Flagged to Max for final deletion of this raw + its processed final -- not deleted pre-emptively per VPS-commit rule on operator -git.md.",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0,
-      "supersededBy": ["views-panel-empty.png", "views-panel-unsaved-changes.png"]
+      "rev": 0
     },
     "views-panel-empty.png": {
       "highlights": [],

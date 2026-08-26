@@ -1,5 +1,5 @@
 {
-  "revision": 0,
+  "revision": 1,
   "shots": {
     "automations-list.png": {
       "status": "proposed",
@@ -9,7 +9,13 @@
       "rev": 0
     },
     "automations-create-modal.png": {
-      "cursor": { "pos": [334, 525], "type": "arrow" },
+      "cursor": {
+        "pos": [
+          334,
+          525
+        ],
+        "type": "arrow"
+      },
       "status": "proposed",
       "note": "",
       "lastTouchedBy": "claude",
@@ -21,7 +27,9 @@
       "note": "",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787756540011
     },
     "runs-detail-timeline.png": {
       "status": "proposed",
@@ -31,7 +39,13 @@
       "rev": 0
     },
     "automations-publish-toggle.png": {
-      "cursor": { "pos": [1284, 60], "type": "arrow" },
+      "cursor": {
+        "pos": [
+          1284,
+          60
+        ],
+        "type": "arrow"
+      },
       "status": "proposed",
       "note": "Optional shot -- builder opened fine via the Draft automation row (scoped to tr[data-index] to avoid a decoy measurement-table row). Toggle was not touched.",
       "lastTouchedBy": "claude",
