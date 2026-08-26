@@ -775,6 +775,36 @@ test('a surname with its last letter held down is masked too', async (page) => {
   assert.ok(!/Maeser/i.test(await page.locator('.c').innerText()));
 });
 
+
+test('a same-origin iframe is sanitized too', async (page) => {
+  await page.setContent(`<div>
+      <h3 class="subj">Maximilian welcome to our Fast-Track Program</h3>
+      <iframe class="prev" srcdoc="&lt;p id=body&gt;Hi Maximilian, Max Maeser will be in touch. max.maeser@franchisesystems.ai&lt;/p&gt;"></iframe>
+    </div>`);
+  await page.waitForTimeout(300);
+  const counts = await page.evaluate(sanitize, {});
+  const subj = await page.locator('.subj').innerText();
+  const body = await page.frameLocator('.prev').locator('#body').innerText();
+  assert.ok(!/Maximilian/.test(subj), `subject not masked: ${subj}`);
+  assert.ok(!/Maximilian/.test(body),
+    `an email preview renders in an iframe - the walker used to stop at the frame boundary: ${body}`);
+  assert.ok(!/Maeser/i.test(body), `real name survived inside the frame: ${body}`);
+  assert.ok(!/franchisesystems/i.test(body), `real address survived inside the frame: ${body}`);
+  assert.ok(counts.names >= 2, `frame replacements should be counted: ${counts.names}`);
+});
+
+test('a cross-origin frame is skipped without throwing', async (page) => {
+  await page.setContent(`<div>
+      <p class="t">Max Maeser</p>
+      <iframe class="x" src="https://example.com/"></iframe>
+    </div>`);
+  await page.waitForTimeout(500);
+  const counts = await page.evaluate(sanitize, {});
+  assert.ok(!/Maeser/.test(await page.locator('.t').innerText()),
+    'the top document must still be sanitized when a frame is unreachable');
+  assert.ok(counts.names >= 1);
+});
+
 (async () => {
   const browser = await chromium.launch();
   const page = await browser.newPage();

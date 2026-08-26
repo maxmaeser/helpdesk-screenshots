@@ -222,15 +222,47 @@ function sanitize(config) {
   // eyeball before the shot ships.
   let skipped = 0;
 
+  // Every DOM read below goes through docs(), not `document`. An email-template
+  // preview renders inside a same-origin <iframe>, and a walker rooted at the top
+  // document walks straight past it: a live preview shipped reading "Hi
+  // Maximilian," while the subject line beside it was correctly masked. The gate
+  // missed it for the same reason - document.body.innerText stops at the frame
+  // boundary - so the frame looked clean twice over.
+  //
+  // Cross-origin frames throw on access and are skipped; there is nothing this
+  // code can do about them, and a capture that needs one has to be gated in the
+  // shot spec instead.
+  function docs() {
+    const out = [document];
+    const seen = [];
+    for (let i = 0; i < out.length && out.length < 40; i++) {
+      let frames;
+      try { frames = out[i].querySelectorAll('iframe, frame'); } catch (e) { continue; }
+      Array.prototype.forEach.call(frames, (fr) => {
+        let d = null;
+        try { d = fr.contentDocument; } catch (e) { d = null; }
+        if (d && d.body && seen.indexOf(d) === -1) { seen.push(d); out.push(d); }
+      });
+    }
+    return out;
+  }
+
   function textNodes() {
     const nodes = [];
-    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-    let n;
-    while ((n = walker.nextNode())) nodes.push(n);
+    docs().forEach((doc) => {
+      if (!doc.body) return;
+      const walker = doc.createTreeWalker(doc.body, NodeFilter.SHOW_TEXT);
+      let n;
+      while ((n = walker.nextNode())) nodes.push(n);
+    });
     return nodes;
   }
   function fields() {
-    return Array.prototype.slice.call(document.querySelectorAll('input, textarea'));
+    let out = [];
+    docs().forEach((doc) => {
+      out = out.concat(Array.prototype.slice.call(doc.querySelectorAll('input, textarea')));
+    });
+    return out;
   }
 
   // ---- text RUNS: values split across adjacent text nodes -------------------
@@ -272,16 +304,21 @@ function sanitize(config) {
 
   function textRuns() {
     const runs = [];
+    docs().forEach((doc) => { if (doc.body) collectRuns(doc, runs); });
+    return runs;
+  }
+
+  // Walks ONE document and appends its runs. The walker reports an element when
+  // it ENTERS it, which is exactly when a block boundary starts.
+  function collectRuns(doc, runs) {
     let run = [];
     let len = 0;
     function flush() { if (run.length) runs.push(run); run = []; len = 0; }
-    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT);
+    const walker = doc.createTreeWalker(doc.body, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT);
     let prev = null;
     let n;
     while ((n = walker.nextNode())) {
       if (n.nodeType === 1) {
-        // The walker reports an element when it ENTERS it, which is exactly when a
-        // block boundary starts. Entering an inline element is not a boundary.
         if (!INLINE_TAGS[n.tagName]) { flush(); prev = null; }
         continue;
       }
@@ -291,7 +328,6 @@ function sanitize(config) {
       prev = n;
     }
     flush();
-    return runs;
   }
 
   // Runs `re` + `replacer` across ONE run as if it were a single string, then
