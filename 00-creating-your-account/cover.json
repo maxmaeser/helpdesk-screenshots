@@ -1,92 +1,178 @@
 {
-  "revision": 43,
+  "revision": 45,
   "cover": {
     "v": 2,
-    "background": "ember",
+    "background": "white-solid",
     "title": null,
-    "scale": 106,
+    "exportPreset": "opener-wide",
+    "scale": 100,
     "positionX": 0,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
         "role": "foreground",
-        "x": -80,
-        "y": -45,
-        "w": 1200,
-        "h": 630,
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
         "preset": "bare",
         "layout": "free",
         "children": [
           {
-            "id": "poster-eyebrow",
-            "type": "text",
+            "id": "gridField-5bbb8-1",
+            "type": "gridField",
             "props": {
-              "variant": "posterEyebrow",
-              "value": "PATH TO OWNERSHIP"
+              "width": 1696,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
             },
             "offset": [
-              148,
-              214
+              0,
+              0
             ]
           },
           {
-            "id": "poster-title",
+            "id": "text-5bbb8-2",
             "type": "text",
             "props": {
-              "variant": "poster",
-              "value": "Account"
+              "variant": "flowEyebrow",
+              "value": "FRANCHISEE PORTAL",
+              "color": "#A03220"
             },
             "offset": [
-              140,
-              246
+              300,
+              226
             ]
           },
           {
-            "id": "journey",
-            "type": "journeyArc",
+            "id": "text-5bbb8-3",
+            "type": "text",
             "props": {
-              "width": 820,
-              "height": 560,
-              "rise": 262,
-              "bow": 52,
-              "nodeSize": 66,
-              "nodes": [
-                {
-                  "label": "ACCEPT INVITATION",
-                  "state": "invite",
-                  "shade": 0.05
-                },
-                {
-                  "label": "CONTINUE",
-                  "state": "step",
-                  "shade": 0.4
-                },
-                {
-                  "label": "CREATE ACCOUNT",
-                  "state": "step",
-                  "shade": 0.68
-                },
-                {
-                  "label": "HOME",
-                  "state": "payoff",
-                  "shade": 1
-                }
-              ]
+              "variant": "flowTitle",
+              "value": "Creating Your\nAccount",
+              "size": 88
             },
             "offset": [
-              350,
-              30
+              300,
+              282
+            ]
+          },
+          {
+            "id": "text-5bbb8-4",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "Accept your invite and set up your login."
+            },
+            "offset": [
+              300,
+              495
+            ]
+          },
+          {
+            "id": "flowNode-5bbb8-5",
+            "type": "flowNode",
+            "props": {
+              "label": "Accept the invite",
+              "meta": "the email from your brand",
+              "icon": "mail",
+              "tint": "terracotta",
+              "emphasized": false,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              174
+            ]
+          },
+          {
+            "id": "flowConnector-5bbb8-6",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 44,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1162,
+              264
+            ]
+          },
+          {
+            "id": "flowNode-5bbb8-7",
+            "type": "flowNode",
+            "props": {
+              "label": "Choose a password",
+              "meta": "10 characters, checklist",
+              "icon": "shield",
+              "tint": "terracotta",
+              "emphasized": false,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              326
+            ]
+          },
+          {
+            "id": "flowConnector-5bbb8-8",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 44,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1162,
+              416
+            ]
+          },
+          {
+            "id": "flowNode-5bbb8-9",
+            "type": "flowNode",
+            "props": {
+              "label": "Verify your email",
+              "meta": "lands you on Home",
+              "icon": "check",
+              "tint": "terracotta",
+              "emphasized": true,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              478
             ]
           }
         ]
       }
     ],
-    "status": "approved",
-    "note": "",
-    "lastTouchedBy": "max",
+    "status": "proposed",
+    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=franchisee-portal-101 -> eyebrow \"FRANCHISEE PORTAL\", hue #A03220, tint terracotta. type=task -> vertical 3-node run, arrowed, final node emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 88.",
+    "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 40,
-    "updatedAt": 1787158141586
+    "rev": 41,
+    "updatedAt": 1787747807235
   }
 }

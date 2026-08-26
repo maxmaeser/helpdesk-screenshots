@@ -1,105 +1,179 @@
 {
-  "revision": 26,
+  "revision": 28,
   "cover": {
     "v": 2,
-    "background": "ember",
+    "background": "white-solid",
     "grain": false,
     "title": null,
-    "scale": 106,
+    "exportPreset": "opener-wide",
+    "scale": 100,
     "positionX": 0,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
         "role": "foreground",
-        "x": -80,
-        "y": -45,
-        "w": 1200,
-        "h": 630,
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
         "preset": "bare",
         "layout": "free",
         "children": [
           {
-            "id": "poster-eyebrow",
-            "type": "text",
+            "id": "gridField-b668b-1",
+            "type": "gridField",
             "props": {
-              "variant": "posterEyebrow",
-              "value": "DONE AND COUNTED"
+              "width": 1696,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
             },
             "offset": [
-              146,
-              200
+              0,
+              0
             ]
           },
           {
-            "id": "poster-title",
+            "id": "text-b668b-2",
             "type": "text",
             "props": {
-              "variant": "poster",
-              "value": "Tasks"
+              "variant": "flowEyebrow",
+              "value": "FRANCHISEE PORTAL",
+              "color": "#A03220"
             },
             "offset": [
-              139,
-              233
+              300,
+              210
             ]
           },
           {
-            "id": "check-run",
-            "type": "checkRun",
+            "id": "text-b668b-3",
+            "type": "text",
             "props": {
-              "height": 630,
-              "items": [
-                {
-                  "label": "Accept your Grand Opening Sprint plan",
-                  "off": 0,
-                  "tone": "light",
-                  "state": "checked"
-                },
-                {
-                  "label": "Give your space a final once-over",
-                  "off": 40,
-                  "tone": "light",
-                  "state": "checked"
-                },
-                {
-                  "label": "Confirm your opening team contacts",
-                  "off": 80,
-                  "tone": "mid",
-                  "state": "checked"
-                },
-                {
-                  "label": "Document your finished build-out",
-                  "off": 120,
-                  "tone": "mid",
-                  "state": "checked"
-                },
-                {
-                  "label": "Confirm your opening details",
-                  "off": 160,
-                  "tone": "deep",
-                  "state": "checked"
-                },
-                {
-                  "label": "Confirm your grand opening date",
-                  "off": 200,
-                  "tone": "deep",
-                  "state": "active"
-                }
-              ]
+              "variant": "flowTitle",
+              "value": "Completing\na Task",
+              "size": 104
             },
             "offset": [
-              -17,
-              -57
+              300,
+              266
+            ]
+          },
+          {
+            "id": "text-b668b-4",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "Seven task types, one panel each."
+            },
+            "offset": [
+              300,
+              512
+            ]
+          },
+          {
+            "id": "flowNode-b668b-5",
+            "type": "flowNode",
+            "props": {
+              "label": "Open the task",
+              "meta": "its type and due date",
+              "icon": "doc",
+              "tint": "terracotta",
+              "emphasized": false,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              174
+            ]
+          },
+          {
+            "id": "flowConnector-b668b-6",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 44,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1162,
+              264
+            ]
+          },
+          {
+            "id": "flowNode-b668b-7",
+            "type": "flowNode",
+            "props": {
+              "label": "Do what it asks",
+              "meta": "form, video, signature",
+              "icon": "pen",
+              "tint": "terracotta",
+              "emphasized": false,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              326
+            ]
+          },
+          {
+            "id": "flowConnector-b668b-8",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 44,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1162,
+              416
+            ]
+          },
+          {
+            "id": "flowNode-b668b-9",
+            "type": "flowNode",
+            "props": {
+              "label": "Mark complete",
+              "meta": "a green Done badge",
+              "icon": "check",
+              "tint": "terracotta",
+              "emphasized": true,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              478
             ]
           }
         ]
       }
     ],
-    "status": "approved",
-    "note": "",
-    "lastTouchedBy": "max",
+    "status": "proposed",
+    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=franchisee-portal-101 -> eyebrow \"FRANCHISEE PORTAL\", hue #A03220, tint terracotta. type=task -> vertical 3-node run, arrowed, final node emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 104.",
+    "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 23,
-    "updatedAt": 1787158148662
+    "rev": 24,
+    "updatedAt": 1787747807385
   }
 }

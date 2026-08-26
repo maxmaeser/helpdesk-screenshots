@@ -1,111 +1,142 @@
 {
-  "revision": 17,
+  "revision": 19,
   "cover": {
     "v": 2,
-    "background": "ember",
+    "background": "white-solid",
     "title": null,
-    "scale": 106,
+    "exportPreset": "opener-wide",
+    "scale": 100,
     "positionX": 0,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
         "role": "foreground",
-        "x": -80,
-        "y": -45,
-        "w": 1200,
-        "h": 630,
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
         "preset": "bare",
         "layout": "free",
         "children": [
           {
-            "id": "dawn",
-            "type": "dawnField",
+            "id": "gridField-3a50f-1",
+            "type": "gridField",
             "props": {
-              "width": 900,
-              "height": 660,
-              "discSize": 500,
-              "discX": 470,
-              "discY": 250,
-              "rings": 3,
-              "horizon": true
+              "width": 1696,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
             },
             "offset": [
-              500,
-              -30
+              0,
+              0
             ]
           },
           {
-            "id": "poster-eyebrow",
+            "id": "text-3a50f-2",
             "type": "text",
             "props": {
-              "variant": "posterEyebrow",
-              "value": "A NEW DAY"
+              "variant": "flowEyebrow",
+              "value": "FRANCHISEE PORTAL",
+              "color": "#A03220"
             },
             "offset": [
-              147,
-              214
+              300,
+              208
             ]
           },
           {
-            "id": "poster-title",
+            "id": "text-3a50f-3",
             "type": "text",
             "props": {
-              "variant": "poster",
-              "value": "Welcome"
+              "variant": "flowTitle",
+              "value": "Welcome to\nYour Franchisee\nPortal",
+              "size": 72
             },
             "offset": [
-              139,
-              246
+              300,
+              262
             ]
           },
           {
-            "id": "greet-eyebrow",
+            "id": "text-3a50f-4",
             "type": "text",
             "props": {
-              "variant": "eyebrow",
-              "value": "MONDAY, JULY 13",
-              "color": "#7d8a97"
+              "variant": "flowSub",
+              "value": "Run your day to day business in one place."
             },
             "offset": [
-              151,
-              430
+              300,
+              513
             ]
           },
           {
-            "id": "greet-line",
-            "type": "text",
+            "id": "flowNode-3a50f-5",
+            "type": "flowNode",
             "props": {
-              "variant": "display",
-              "value": "Good afternoon, Creed.",
-              "color": "#22384E"
+              "label": "Your brand",
+              "meta": "standards and training",
+              "icon": "building",
+              "tint": "slate",
+              "emphasized": false,
+              "width": 500,
+              "height": 404,
+              "anchorTop": true
             },
             "offset": [
-              147,
-              462
+              950,
+              178
             ]
           },
           {
-            "id": "greet-sub",
-            "type": "text",
+            "id": "flowNode-3a50f-6",
+            "type": "flowNode",
             "props": {
-              "variant": "portalH3",
-              "value": "Welcome to Lumon Fresh",
-              "color": "#6a7886"
+              "label": "Your portal",
+              "meta": "the sidebar, end to end",
+              "icon": "layout",
+              "tint": "terracotta",
+              "emphasized": false,
+              "width": 428,
+              "height": 268,
+              "anchorTop": true
             },
             "offset": [
-              149,
-              520
+              986,
+              290
+            ]
+          },
+          {
+            "id": "flowNode-3a50f-7",
+            "type": "flowNode",
+            "props": {
+              "label": "Home",
+              "meta": "start every day here",
+              "icon": "pin",
+              "tint": "terracotta",
+              "emphasized": true,
+              "width": 356,
+              "height": 124,
+              "anchorTop": true
+            },
+            "offset": [
+              1022,
+              418
             ]
           }
         ]
       }
     ],
-    "status": "approved",
-    "note": "",
-    "lastTouchedBy": "max",
+    "status": "proposed",
+    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=franchisee-portal-101 -> eyebrow \"FRANCHISEE PORTAL\", hue #A03220, tint terracotta. type=concept -> 3 overlapping anchorTop cards, no connectors, innermost emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 72.",
+    "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 13,
-    "updatedAt": 1787158145517
+    "rev": 14,
+    "updatedAt": 1787747807991
   }
 }

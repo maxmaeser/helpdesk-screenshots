@@ -1,130 +1,142 @@
 {
-  "revision": 21,
+  "revision": 23,
   "cover": {
     "v": 2,
-    "background": "ember",
+    "background": "white-solid",
     "title": null,
-    "scale": 106,
+    "exportPreset": "opener-wide",
+    "scale": 100,
     "positionX": 0,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
         "role": "foreground",
-        "x": -80,
-        "y": -45,
-        "w": 1200,
-        "h": 630,
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
         "preset": "bare",
         "layout": "free",
         "children": [
           {
-            "id": "poster-eyebrow",
+            "id": "gridField-4e2b9-1",
+            "type": "gridField",
+            "props": {
+              "width": 1696,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-4e2b9-2",
             "type": "text",
             "props": {
-              "variant": "posterEyebrow",
-              "value": "READY TO USE"
+              "variant": "flowEyebrow",
+              "value": "FRANCHISEE PORTAL",
+              "color": "#A03220"
             },
             "offset": [
-              146,
-              212
+              300,
+              261
             ]
           },
           {
-            "id": "poster-title",
+            "id": "text-4e2b9-3",
             "type": "text",
             "props": {
-              "variant": "poster",
-              "value": "Assets"
+              "variant": "flowTitle",
+              "value": "Assets",
+              "size": 104
             },
             "offset": [
-              139,
-              245
+              300,
+              317
             ]
           },
           {
-            "id": "tile-4",
-            "type": "assetGridItem",
+            "id": "text-4e2b9-4",
+            "type": "text",
             "props": {
-              "title": "local-store-marketing-playbook.pdf",
-              "badgeLabel": "PDF",
-              "badgeTone": "gray",
-              "icon": "notebook",
-              "tone": "light",
-              "scale": 0.95,
-              "blur": 5,
-              "dim": 0.5,
-              "tiltDeg": 16
+              "variant": "flowSub",
+              "value": "Your brand's file library, ready to download."
             },
             "offset": [
-              1063,
-              104
+              300,
+              461
             ]
           },
           {
-            "id": "tile-3",
-            "type": "assetGridItem",
+            "id": "flowNode-4e2b9-5",
+            "type": "flowNode",
             "props": {
-              "title": "grand-opening-flyer-EDITABLE.pdf",
-              "badgeLabel": "PDF",
-              "badgeTone": "gray",
-              "icon": "notebook",
-              "tone": "light",
-              "scale": 1.08,
-              "blur": 3.6,
-              "dim": 0.36,
-              "tiltDeg": 11
+              "label": "Collections",
+              "meta": "grouped by your brand",
+              "icon": "folder",
+              "tint": "terracotta",
+              "emphasized": false,
+              "width": 460,
+              "height": 116,
+              "anchorTop": false
             },
             "offset": [
-              966,
-              157
+              950,
+              178
             ]
           },
           {
-            "id": "tile-2",
-            "type": "assetGridItem",
+            "id": "flowNode-4e2b9-6",
+            "type": "flowNode",
             "props": {
-              "title": "brand-logo-reveal-720p.mp4",
-              "badgeLabel": "MP4",
-              "badgeTone": "purple",
-              "icon": "playCircle",
-              "tone": "mid",
-              "scale": 1.22,
-              "blur": 1.8,
-              "dim": 0.18,
-              "tiltDeg": 6
+              "label": "Files",
+              "meta": "every asset in one list",
+              "icon": "doc",
+              "tint": "terracotta",
+              "emphasized": false,
+              "width": 460,
+              "height": 116,
+              "anchorTop": false
             },
             "offset": [
-              854,
-              215
+              950,
+              322
             ]
           },
           {
-            "id": "tile-front",
-            "type": "assetGridItem",
+            "id": "flowNode-4e2b9-7",
+            "type": "flowNode",
             "props": {
-              "title": "social-launch-post-1080.png",
-              "badgeLabel": "PNG",
-              "badgeTone": "blue",
-              "icon": "colorSwatch",
-              "tone": "deep",
-              "scale": 1.4,
-              "tiltDeg": -3,
-              "meta": "PNG · Uploaded by Max Maeser"
+              "label": "Download",
+              "meta": "the approved format",
+              "icon": "import",
+              "tint": "terracotta",
+              "emphasized": true,
+              "width": 460,
+              "height": 116,
+              "anchorTop": false
             },
             "offset": [
-              721,
-              278
+              950,
+              466
             ]
           }
         ]
       }
     ],
-    "status": "approved",
-    "note": "",
-    "lastTouchedBy": "max",
+    "status": "proposed",
+    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=franchisee-portal-101 -> eyebrow \"FRANCHISEE PORTAL\", hue #A03220, tint terracotta. type=surface -> 3 stacked cards, no connectors, last card emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 104.",
+    "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 17,
-    "updatedAt": 1787158155411
+    "rev": 18,
+    "updatedAt": 1787747809348
   }
 }

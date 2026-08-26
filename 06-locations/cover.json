@@ -1,96 +1,142 @@
 {
-  "revision": 11,
+  "revision": 13,
   "cover": {
     "v": 2,
-    "background": "ember",
+    "background": "white-solid",
     "title": null,
-    "scale": 106,
+    "exportPreset": "opener-wide",
+    "scale": 100,
     "positionX": 0,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
         "role": "foreground",
-        "x": -80,
-        "y": -45,
-        "w": 1200,
-        "h": 630,
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
         "preset": "bare",
         "layout": "free",
         "children": [
           {
-            "id": "poster-eyebrow",
-            "type": "text",
+            "id": "gridField-df5d0-1",
+            "type": "gridField",
             "props": {
-              "variant": "posterEyebrow",
-              "value": "PORTFOLIO"
-            },
-            "offset": [
-              146,
-              200
-            ]
-          },
-          {
-            "id": "poster-title",
-            "type": "text",
-            "props": {
-              "variant": "poster",
-              "value": "Locations"
-            },
-            "offset": [
-              139,
-              233
-            ]
-          },
-          {
-            "id": "pin-map",
-            "type": "pinMap",
-            "props": {
-              "width": 1080,
-              "height": 620,
+              "width": 1696,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
               "showGrid": true,
-              "route": true,
-              "pins": [
-                {
-                  "name": "Lumon Fresh Hotchkiss",
-                  "place": "Hotchkiss, Colorado",
-                  "status": "Open",
-                  "tone": "deep",
-                  "x": 258,
-                  "y": 448,
-                  "size": 1.2
-                },
-                {
-                  "name": "LF - Aspen",
-                  "place": "Aspen, Colorado",
-                  "status": "Developing",
-                  "tone": "mid",
-                  "x": 588,
-                  "y": 206,
-                  "size": 1.02
-                },
-                {
-                  "ghost": true,
-                  "tone": "light",
-                  "x": 878,
-                  "y": 322,
-                  "size": 0.9
-                }
-              ]
+              "maskX": 78,
+              "maskY": 50
             },
             "offset": [
-              374,
-              -30
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-df5d0-2",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "FRANCHISEE PORTAL",
+              "color": "#A03220"
+            },
+            "offset": [
+              300,
+              261
+            ]
+          },
+          {
+            "id": "text-df5d0-3",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "Locations",
+              "size": 104
+            },
+            "offset": [
+              300,
+              317
+            ]
+          },
+          {
+            "id": "text-df5d0-4",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "The live record of every unit you operate."
+            },
+            "offset": [
+              300,
+              461
+            ]
+          },
+          {
+            "id": "flowNode-df5d0-5",
+            "type": "flowNode",
+            "props": {
+              "label": "The list",
+              "meta": "name, address, status",
+              "icon": "pin",
+              "tint": "terracotta",
+              "emphasized": false,
+              "width": 460,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              178
+            ]
+          },
+          {
+            "id": "flowNode-df5d0-6",
+            "type": "flowNode",
+            "props": {
+              "label": "A location",
+              "meta": "record, team, history",
+              "icon": "building",
+              "tint": "terracotta",
+              "emphasized": false,
+              "width": 460,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              322
+            ]
+          },
+          {
+            "id": "flowNode-df5d0-7",
+            "type": "flowNode",
+            "props": {
+              "label": "Five statuses",
+              "meta": "developing to closed",
+              "icon": "flag",
+              "tint": "terracotta",
+              "emphasized": true,
+              "width": 460,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              466
             ]
           }
         ]
       }
     ],
-    "status": "approved",
-    "note": "",
-    "lastTouchedBy": "max",
+    "status": "proposed",
+    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=franchisee-portal-101 -> eyebrow \"FRANCHISEE PORTAL\", hue #A03220, tint terracotta. type=surface -> 3 stacked cards, no connectors, last card emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 104.",
+    "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 7,
-    "updatedAt": 1787158149726
+    "rev": 8,
+    "updatedAt": 1787747808447
   }
 }

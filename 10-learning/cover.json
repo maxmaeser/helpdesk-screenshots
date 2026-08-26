@@ -1,128 +1,142 @@
 {
-  "revision": 30,
+  "revision": 32,
   "cover": {
     "v": 2,
-    "background": "ember",
+    "background": "white-solid",
     "title": null,
+    "exportPreset": "opener-wide",
     "scale": 100,
     "positionX": 0,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
-        "role": "background",
-        "x": 0,
-        "y": 0,
-        "w": 620,
-        "h": 630,
+        "role": "foreground",
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
         "preset": "bare",
         "layout": "free",
         "children": [
           {
-            "id": "poster-eyebrow",
-            "type": "text",
+            "id": "gridField-78bec-1",
+            "type": "gridField",
             "props": {
-              "variant": "posterEyebrow",
-              "value": "KEEP YOUR EDGE"
-            },
-            "offset": [
-              41,
-              60
-            ]
-          },
-          {
-            "id": "poster-title",
-            "type": "text",
-            "props": {
-              "variant": "poster",
-              "value": "Learning"
-            },
-            "offset": [
-              34,
-              93
-            ]
-          },
-          {
-            "id": "table-learn-courses",
-            "type": "table",
-            "props": {
-              "columns": [
-                "Course",
-                "Status"
-              ],
-              "rows": [
-                {
-                  "id": "1",
-                  "primary": "New Owner Foundations",
-                  "secondary": "4 Chapters · 12 Lessons · 1 Hr · New Franchisee Training",
-                  "badgeLabel": "In Progress",
-                  "badgeColor": "#1f54de"
-                },
-                {
-                  "id": "2",
-                  "primary": "Cooking Playbook",
-                  "secondary": "4 Chapters · 16 Lessons",
-                  "badgeLabel": "Not Started",
-                  "badgeColor": "#6f6f6f"
-                },
-                {
-                  "id": "3",
-                  "primary": "Selling our Bowls",
-                  "secondary": "5 Lessons",
-                  "badgeLabel": "Completed",
-                  "badgeColor": "#0c6f14"
-                },
-                {
-                  "id": "4",
-                  "primary": "POS Mastery",
-                  "secondary": "12 Lessons",
-                  "badgeLabel": "Overdue",
-                  "badgeColor": "#930a1e"
-                }
-              ],
-              "radius": 16
+              "width": 1696,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
             },
             "offset": [
               0,
-              266
+              0
             ]
-          }
-        ]
-      },
-      {
-        "id": "b",
-        "role": "foreground",
-        "x": 629,
-        "y": 70,
-        "w": 380,
-        "h": 400,
-        "children": [
-          {
-            "id": "contentCard-67248",
-            "type": "contentCard",
-            "props": {
-              "title": "New Owner Foundations",
-              "progress": 17,
-              "status": "in_progress",
-              "coverSrc": "/api/stock/learning-course-hero.png"
-            }
           },
           {
-            "id": "button-77501",
-            "type": "button",
+            "id": "text-78bec-2",
+            "type": "text",
             "props": {
-              "label": "Continue Course",
-              "variant": "primary"
-            }
+              "variant": "flowEyebrow",
+              "value": "FRANCHISEE PORTAL",
+              "color": "#A03220"
+            },
+            "offset": [
+              300,
+              261
+            ]
+          },
+          {
+            "id": "text-78bec-3",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "Learning",
+              "size": 104
+            },
+            "offset": [
+              300,
+              317
+            ]
+          },
+          {
+            "id": "text-78bec-4",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "Courses and training from your brand."
+            },
+            "offset": [
+              300,
+              461
+            ]
+          },
+          {
+            "id": "flowNode-78bec-5",
+            "type": "flowNode",
+            "props": {
+              "label": "Courses",
+              "meta": "the full catalog",
+              "icon": "folder",
+              "tint": "terracotta",
+              "emphasized": false,
+              "width": 460,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              178
+            ]
+          },
+          {
+            "id": "flowNode-78bec-6",
+            "type": "flowNode",
+            "props": {
+              "label": "Learning paths",
+              "meta": "courses taken in order",
+              "icon": "branch",
+              "tint": "terracotta",
+              "emphasized": false,
+              "width": 460,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              322
+            ]
+          },
+          {
+            "id": "flowNode-78bec-7",
+            "type": "flowNode",
+            "props": {
+              "label": "Certificates",
+              "meta": "what you have finished",
+              "icon": "badge",
+              "tint": "terracotta",
+              "emphasized": true,
+              "width": 460,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              466
+            ]
           }
         ]
       }
     ],
-    "status": "approved",
-    "note": "Repair pass: Frame A badges mixed to 4 distinct real states (In Progress/Not Started/Completed/Overdue) - Completed and Overdue pulled from verified real UI vocabulary (platform COURSE_STATUS + the red Overdue pill on learning-course-card.png, shortened from its full 'Overdue: Jul 3, 2026' form to fit the table's fixed 120px badge column - no fabricated text) and reapplied to Selling our Bowls / POS Mastery (both confirmed real course names via Learning full page.png) to diversify badges without duplicating course/status pairs; not asserting those two are literally in that state in prod right now. Frame B: contentZoom 1.4 was clipping the contentCard's right edge (title padding + card corner) because the card always fills 100% of frame.w and the scale transform is top-left anchored inside a frame that clips at its own unscaled w/h - dropped zoom to 1 and enlarged frame b (w 300->380, h 470->400) to keep hero prominence without any clip risk.",
-    "lastTouchedBy": "max",
+    "status": "proposed",
+    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=franchisee-portal-101 -> eyebrow \"FRANCHISEE PORTAL\", hue #A03220, tint terracotta. type=surface -> 3 stacked cards, no connectors, last card emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 104.",
+    "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 27,
-    "updatedAt": 1787158153569
+    "rev": 28,
+    "updatedAt": 1787747809048
   }
 }

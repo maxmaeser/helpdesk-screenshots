@@ -1,100 +1,178 @@
 {
-  "revision": 32,
+  "revision": 34,
   "cover": {
     "v": 2,
-    "background": "ember",
+    "background": "white-solid",
     "title": null,
-    "scale": 106,
+    "exportPreset": "opener-wide",
+    "scale": 100,
     "positionX": 0,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
         "role": "foreground",
-        "x": -80,
-        "y": -45,
-        "w": 1200,
-        "h": 630,
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
         "preset": "bare",
         "layout": "free",
         "children": [
           {
-            "id": "poster-eyebrow",
-            "type": "text",
+            "id": "gridField-813b5-1",
+            "type": "gridField",
             "props": {
-              "variant": "posterEyebrow",
-              "value": "OUT FOR SIGN-OFF"
+              "width": 1696,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
             },
             "offset": [
-              469,
-              116
+              0,
+              0
             ]
           },
           {
-            "id": "poster-title",
+            "id": "text-813b5-2",
             "type": "text",
             "props": {
-              "variant": "poster",
-              "value": "Approvals"
+              "variant": "flowEyebrow",
+              "value": "FRANCHISEE PORTAL",
+              "color": "#A03220"
             },
             "offset": [
-              373,
-              150
+              300,
+              226
             ]
           },
           {
-            "id": "relay",
-            "type": "relayFlow",
+            "id": "text-813b5-3",
+            "type": "text",
             "props": {
-              "width": 900,
-              "showNames": true,
-              "terminalCheck": true,
-              "items": [
-                {
-                  "name": "Mark Scout",
-                  "initials": "MS",
-                  "tone": "purple",
-                  "state": "pending"
-                },
-                {
-                  "name": "Helly Riggs",
-                  "initials": "HR",
-                  "tone": "blue",
-                  "state": "pending"
-                },
-                {
-                  "name": "Irving Bailiff",
-                  "initials": "IB",
-                  "tone": "gray",
-                  "state": "pending"
-                },
-                {
-                  "name": "Max Maeser",
-                  "initials": "MM",
-                  "tone": "purple",
-                  "state": "pending"
-                },
-                {
-                  "name": "Creed Smith",
-                  "initials": "CS",
-                  "tone": "gray",
-                  "state": "pending"
-                }
-              ]
+              "variant": "flowTitle",
+              "value": "Working with\nApprovers",
+              "size": 88
             },
             "offset": [
-              228,
-              400
+              300,
+              282
+            ]
+          },
+          {
+            "id": "text-813b5-4",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "Finished work waits on a sign-off."
+            },
+            "offset": [
+              300,
+              495
+            ]
+          },
+          {
+            "id": "flowNode-813b5-5",
+            "type": "flowNode",
+            "props": {
+              "label": "Finish the task",
+              "meta": "you are Responsible",
+              "icon": "user",
+              "tint": "terracotta",
+              "emphasized": false,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              174
+            ]
+          },
+          {
+            "id": "flowConnector-813b5-6",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 44,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1162,
+              264
+            ]
+          },
+          {
+            "id": "flowNode-813b5-7",
+            "type": "flowNode",
+            "props": {
+              "label": "Awaiting approval",
+              "meta": "a Pending badge each",
+              "icon": "flag",
+              "tint": "terracotta",
+              "emphasized": false,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              326
+            ]
+          },
+          {
+            "id": "flowConnector-813b5-8",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 44,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1162,
+              416
+            ]
+          },
+          {
+            "id": "flowNode-813b5-9",
+            "type": "flowNode",
+            "props": {
+              "label": "They sign off",
+              "meta": "approve or reject",
+              "icon": "check",
+              "tint": "terracotta",
+              "emphasized": true,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              478
             ]
           }
         ]
       }
     ],
-    "status": "approved",
-    "note": "",
-    "lastTouchedBy": "max",
+    "status": "proposed",
+    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=franchisee-portal-101 -> eyebrow \"FRANCHISEE PORTAL\", hue #A03220, tint terracotta. type=task -> vertical 3-node run, arrowed, final node emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 88.",
+    "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 31,
-    "updatedAt": 1784377485746
+    "rev": 32,
+    "updatedAt": 1787747807540
   }
 }

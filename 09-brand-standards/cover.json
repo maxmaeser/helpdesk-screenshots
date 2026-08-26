@@ -1,99 +1,142 @@
 {
-  "revision": 46,
+  "revision": 48,
   "cover": {
     "v": 2,
-    "background": "ember",
+    "background": "white-solid",
     "title": null,
-    "scale": 106,
+    "exportPreset": "opener-wide",
+    "scale": 100,
     "positionX": 0,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
         "role": "foreground",
-        "x": -80,
-        "y": -45,
-        "w": 1200,
-        "h": 630,
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
         "preset": "bare",
         "layout": "free",
         "children": [
           {
-            "id": "poster-eyebrow",
-            "type": "text",
+            "id": "gridField-bc40c-1",
+            "type": "gridField",
             "props": {
-              "variant": "posterEyebrow",
-              "value": "THIS IS US"
+              "width": 1696,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
             },
             "offset": [
-              146,
-              215
+              0,
+              0
             ]
           },
           {
-            "id": "poster-title",
+            "id": "text-bc40c-2",
             "type": "text",
             "props": {
-              "variant": "poster",
-              "value": "Identity"
+              "variant": "flowEyebrow",
+              "value": "FRANCHISEE PORTAL",
+              "color": "#A03220"
             },
             "offset": [
-              139,
-              248
+              300,
+              210
             ]
           },
           {
-            "id": "brand-specimen",
-            "type": "specimenSheet",
+            "id": "text-bc40c-3",
+            "type": "text",
             "props": {
-              "wordmark": "Lumon Fresh",
-              "tag": "EST. 1894",
-              "markFill": "#0C1B2A",
-              "markGlyph": "droplet",
-              "wordmarkColor": "#15395E",
-              "columns": 2,
-              "size": 1.18,
-              "swatches": [
-                {
-                  "name": "Lumon Blue",
-                  "hex": "#15395E"
-                },
-                {
-                  "name": "Refinement Teal",
-                  "hex": "#4FB3A0"
-                },
-                {
-                  "name": "Eagan Ink",
-                  "hex": "#0C1B2A"
-                },
-                {
-                  "name": "Kier Bronze",
-                  "hex": "#B08D57"
-                },
-                {
-                  "name": "Cold Fluorescent",
-                  "hex": "#DCE4E8"
-                },
-                {
-                  "name": "Severed White",
-                  "hex": "#F4F6F7"
-                }
-              ],
-              "lockupAlign": "end"
+              "variant": "flowTitle",
+              "value": "Brand\nStandards",
+              "size": 104
             },
             "offset": [
-              543,
-              77
+              300,
+              266
+            ]
+          },
+          {
+            "id": "text-bc40c-4",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "Your read only identity reference."
+            },
+            "offset": [
+              300,
+              512
+            ]
+          },
+          {
+            "id": "flowNode-bc40c-5",
+            "type": "flowNode",
+            "props": {
+              "label": "Identity",
+              "meta": "logos, colors, type",
+              "icon": "brand",
+              "tint": "terracotta",
+              "emphasized": false,
+              "width": 460,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              178
+            ]
+          },
+          {
+            "id": "flowNode-bc40c-6",
+            "type": "flowNode",
+            "props": {
+              "label": "Voice and style",
+              "meta": "how the brand speaks",
+              "icon": "pen",
+              "tint": "terracotta",
+              "emphasized": false,
+              "width": 460,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              322
+            ]
+          },
+          {
+            "id": "flowNode-bc40c-7",
+            "type": "flowNode",
+            "props": {
+              "label": "Brand kit",
+              "meta": "download and use it",
+              "icon": "import",
+              "tint": "terracotta",
+              "emphasized": true,
+              "width": 460,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              466
             ]
           }
         ]
       }
     ],
-    "status": "approved",
-    "note": "",
-    "lastTouchedBy": "max",
+    "status": "proposed",
+    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=franchisee-portal-101 -> eyebrow \"FRANCHISEE PORTAL\", hue #A03220, tint terracotta. type=surface -> 3 stacked cards, no connectors, last card emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 104.",
+    "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 43,
-    "updatedAt": 1787158152581
+    "rev": 44,
+    "updatedAt": 1787747808901
   }
 }

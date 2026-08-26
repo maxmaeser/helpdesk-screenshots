@@ -1,148 +1,142 @@
 {
-  "revision": 36,
+  "revision": 38,
   "cover": {
     "v": 2,
-    "background": "ember",
+    "background": "white-solid",
     "title": null,
-    "scale": 106,
+    "exportPreset": "opener-wide",
+    "scale": 100,
     "positionX": 0,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
         "role": "foreground",
-        "x": -80,
-        "y": -45,
-        "w": 1200,
-        "h": 630,
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
         "preset": "bare",
         "layout": "free",
         "children": [
           {
-            "id": "poster-eyebrow",
-            "type": "text",
+            "id": "gridField-160a4-1",
+            "type": "gridField",
             "props": {
-              "variant": "posterEyebrow",
-              "value": "WHO YOU CALL"
+              "width": 1696,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
             },
             "offset": [
-              146,
-              210
+              0,
+              0
             ]
           },
           {
-            "id": "poster-title",
+            "id": "text-160a4-2",
             "type": "text",
             "props": {
-              "variant": "poster",
-              "value": "Vendors"
+              "variant": "flowEyebrow",
+              "value": "FRANCHISEE PORTAL",
+              "color": "#A03220"
             },
             "offset": [
-              139,
-              243
+              300,
+              261
             ]
           },
           {
-            "id": "vendor-orbit",
-            "type": "orbitField",
+            "id": "text-160a4-3",
+            "type": "text",
             "props": {
-              "hubLabel": "Lumon Fresh Hotchkiss",
-              "hubInitials": "LF",
-              "hubGlyph": "pin",
-              "size": 1,
-              "rings": [
-                210,
-                272,
-                390
-              ],
-              "items": [
-                {
-                  "name": "PepsiCo",
-                  "initials": "PC",
-                  "icon": "coffee",
-                  "chip": "Beverages",
-                  "angle": -68,
-                  "radius": 204,
-                  "shade": 0
-                },
-                {
-                  "name": "Octopus Energy",
-                  "initials": "OE",
-                  "icon": "lightning",
-                  "chip": "Electricity",
-                  "angle": -24,
-                  "radius": 264,
-                  "shade": 0.25
-                },
-                {
-                  "name": "Anthropic",
-                  "initials": "AN",
-                  "icon": "monitor",
-                  "chip": "Technology",
-                  "angle": 24,
-                  "radius": 264,
-                  "shade": 0.5
-                },
-                {
-                  "name": "Beer Wholesale",
-                  "initials": "BW",
-                  "icon": "beerStein",
-                  "chip": "Alcohol",
-                  "angle": 66,
-                  "radius": 210,
-                  "shade": 0.75
-                },
-                {
-                  "name": "Lobio Lovers",
-                  "initials": "LL",
-                  "icon": "carrot",
-                  "chip": "Ingredients",
-                  "angle": 113,
-                  "radius": 210,
-                  "shade": 1
-                },
-                {
-                  "name": "Toast",
-                  "initials": "TO",
-                  "icon": "creditCard",
-                  "chip": "POS",
-                  "angle": 158,
-                  "radius": 272,
-                  "shade": 0.75
-                },
-                {
-                  "name": "Tortilla Supplier",
-                  "initials": "TS",
-                  "icon": "grains",
-                  "chip": "Tortillas",
-                  "angle": 208,
-                  "radius": 272,
-                  "shade": 0.5
-                },
-                {
-                  "name": "Premium East Coast",
-                  "initials": "PE",
-                  "icon": "cow",
-                  "chip": "Meat",
-                  "angle": 247,
-                  "radius": 204,
-                  "shade": 0.25
-                }
-              ]
+              "variant": "flowTitle",
+              "value": "Vendors",
+              "size": 104
             },
             "offset": [
-              268,
-              -213
+              300,
+              317
+            ]
+          },
+          {
+            "id": "text-160a4-4",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "The brand approved partners you order from."
+            },
+            "offset": [
+              300,
+              461
+            ]
+          },
+          {
+            "id": "flowNode-160a4-5",
+            "type": "flowNode",
+            "props": {
+              "label": "The vendor list",
+              "meta": "required to optional",
+              "icon": "folder",
+              "tint": "terracotta",
+              "emphasized": false,
+              "width": 460,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              178
+            ]
+          },
+          {
+            "id": "flowNode-160a4-6",
+            "type": "flowNode",
+            "props": {
+              "label": "Vendor detail",
+              "meta": "contacts, manuals, assets",
+              "icon": "doc",
+              "tint": "terracotta",
+              "emphasized": false,
+              "width": 460,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              322
+            ]
+          },
+          {
+            "id": "flowNode-160a4-7",
+            "type": "flowNode",
+            "props": {
+              "label": "Setup status",
+              "meta": "tracked per location",
+              "icon": "check",
+              "tint": "terracotta",
+              "emphasized": true,
+              "width": 460,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              466
             ]
           }
         ]
       }
     ],
-    "status": "approved",
-    "note": "",
-    "lastTouchedBy": "max",
+    "status": "proposed",
+    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=franchisee-portal-101 -> eyebrow \"FRANCHISEE PORTAL\", hue #A03220, tint terracotta. type=surface -> 3 stacked cards, no connectors, last card emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 104.",
+    "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 33,
-    "updatedAt": 1787158151467
+    "rev": 34,
+    "updatedAt": 1787747808601
   }
 }

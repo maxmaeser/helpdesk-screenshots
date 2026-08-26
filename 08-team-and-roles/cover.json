@@ -1,94 +1,142 @@
 {
-  "revision": 14,
+  "revision": 16,
   "cover": {
     "v": 2,
-    "background": "ember",
+    "background": "white-solid",
     "title": null,
-    "scale": 106,
+    "exportPreset": "opener-wide",
+    "scale": 100,
     "positionX": 0,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
         "role": "foreground",
-        "x": -80,
-        "y": -45,
-        "w": 1200,
-        "h": 630,
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
         "preset": "bare",
         "layout": "free",
         "children": [
           {
-            "id": "poster-eyebrow",
-            "type": "text",
+            "id": "gridField-653f1-1",
+            "type": "gridField",
             "props": {
-              "variant": "posterEyebrow",
-              "value": "WHO DOES WHAT"
+              "width": 1696,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
             },
             "offset": [
-              146,
-              200
+              0,
+              0
             ]
           },
           {
-            "id": "poster-title",
+            "id": "text-653f1-2",
             "type": "text",
             "props": {
-              "variant": "poster",
-              "value": "Team"
+              "variant": "flowEyebrow",
+              "value": "FRANCHISEE PORTAL",
+              "color": "#A03220"
             },
             "offset": [
-              139,
-              233
+              300,
+              210
             ]
           },
           {
-            "id": "roster",
-            "type": "rosterColumn",
+            "id": "text-653f1-3",
+            "type": "text",
             "props": {
-              "height": 630,
-              "spine": true,
-              "members": [
-                {
-                  "name": "Creed Smith",
-                  "initials": "CS",
-                  "role": "Primary",
-                  "tone": "deep",
-                  "primary": true
-                },
-                {
-                  "name": "Max Mifflin",
-                  "initials": "MM",
-                  "role": "Active",
-                  "tone": "mid"
-                },
-                {
-                  "name": "Pending teammate",
-                  "role": "Awaiting approval",
-                  "tone": "light",
-                  "pending": true
-                },
-                {
-                  "name": "Pending teammate",
-                  "role": "Awaiting approval",
-                  "tone": "light",
-                  "pending": true
-                }
-              ]
+              "variant": "flowTitle",
+              "value": "Team and\nRoles",
+              "size": 104
             },
             "offset": [
-              505,
-              -18
+              300,
+              266
+            ]
+          },
+          {
+            "id": "text-653f1-4",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "The people who operate your location."
+            },
+            "offset": [
+              300,
+              512
+            ]
+          },
+          {
+            "id": "flowNode-653f1-5",
+            "type": "flowNode",
+            "props": {
+              "label": "The roster",
+              "meta": "name, email, status",
+              "icon": "user",
+              "tint": "terracotta",
+              "emphasized": false,
+              "width": 460,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              178
+            ]
+          },
+          {
+            "id": "flowNode-653f1-6",
+            "type": "flowNode",
+            "props": {
+              "label": "Invite a teammate",
+              "meta": "they set up their login",
+              "icon": "userPlus",
+              "tint": "terracotta",
+              "emphasized": false,
+              "width": 460,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              322
+            ]
+          },
+          {
+            "id": "flowNode-653f1-7",
+            "type": "flowNode",
+            "props": {
+              "label": "Primary, Consulted",
+              "meta": "who owns the unit",
+              "icon": "badge",
+              "tint": "terracotta",
+              "emphasized": true,
+              "width": 460,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              466
             ]
           }
         ]
       }
     ],
-    "status": "approved",
-    "note": "",
-    "lastTouchedBy": "max",
+    "status": "proposed",
+    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=franchisee-portal-101 -> eyebrow \"FRANCHISEE PORTAL\", hue #A03220, tint terracotta. type=surface -> 3 stacked cards, no connectors, last card emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 104.",
+    "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 10,
-    "updatedAt": 1787158150891
+    "rev": 11,
+    "updatedAt": 1787747808750
   }
 }

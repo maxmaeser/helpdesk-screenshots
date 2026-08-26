@@ -1,126 +1,178 @@
 {
-  "revision": 8,
+  "revision": 10,
   "cover": {
     "v": 2,
-    "background": "ember",
+    "background": "white-solid",
     "title": null,
-    "scale": 106,
+    "exportPreset": "opener-wide",
+    "scale": 100,
     "positionX": 0,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
         "role": "foreground",
-        "x": -80,
-        "y": -45,
-        "w": 1200,
-        "h": 630,
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
         "preset": "bare",
         "layout": "free",
         "children": [
           {
-            "id": "poster-eyebrow",
+            "id": "gridField-d8f1d-1",
+            "type": "gridField",
+            "props": {
+              "width": 1696,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-d8f1d-2",
             "type": "text",
             "props": {
-              "variant": "posterEyebrow",
-              "value": "HELP ON THE WAY"
+              "variant": "flowEyebrow",
+              "value": "FRANCHISEE PORTAL",
+              "color": "#A03220"
             },
             "offset": [
-              146,
-              230
+              300,
+              210
             ]
           },
           {
-            "id": "poster-title",
+            "id": "text-d8f1d-3",
             "type": "text",
             "props": {
-              "variant": "poster",
-              "value": "Tickets"
+              "variant": "flowTitle",
+              "value": "Submitting\na Ticket",
+              "size": 104
             },
             "offset": [
-              139,
-              263
+              300,
+              266
             ]
           },
           {
-            "id": "msg-open",
-            "type": "threadCard",
+            "id": "text-d8f1d-4",
+            "type": "text",
             "props": {
-              "role": "sent",
-              "title": "Freezer down",
-              "meta": "You",
-              "chip": "Open",
-              "lines": 2,
-              "tone": "light",
-              "width": 480,
-              "tiltDeg": -1.2
+              "variant": "flowSub",
+              "value": "Send your brand team a request, then track it."
             },
             "offset": [
-              580,
-              38
+              300,
+              512
             ]
           },
           {
-            "id": "msg-progress",
-            "type": "threadCard",
+            "id": "flowNode-d8f1d-5",
+            "type": "flowNode",
             "props": {
-              "role": "reply",
-              "title": "",
-              "meta": "Lumon Fresh",
-              "chip": "In progress",
-              "lines": 2,
-              "tone": "mid",
-              "width": 455,
-              "tiltDeg": 0.8
+              "label": "Need help?",
+              "meta": "top right of the portal",
+              "icon": "chat",
+              "tint": "terracotta",
+              "emphasized": false,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
             },
             "offset": [
-              640,
-              225
+              950,
+              174
             ]
           },
           {
-            "id": "msg-waiting",
-            "type": "threadCard",
+            "id": "flowConnector-d8f1d-6",
+            "type": "flowConnector",
             "props": {
-              "role": "sent",
-              "title": "",
-              "chip": "Waiting on you",
-              "lines": 0,
-              "tone": "mid",
-              "width": 340,
-              "tiltDeg": -0.8
+              "dx": 0,
+              "dy": 44,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
             },
             "offset": [
-              690,
-              387
+              1162,
+              264
             ]
           },
           {
-            "id": "msg-resolved",
-            "type": "threadCard",
+            "id": "flowNode-d8f1d-7",
+            "type": "flowNode",
             "props": {
-              "role": "reply",
-              "title": "",
-              "meta": "Brand team",
-              "chip": "Resolved",
-              "lines": 0,
-              "tone": "deep",
-              "width": 375,
-              "tiltDeg": 1
+              "label": "Submit a ticket",
+              "meta": "type, details, attachments",
+              "icon": "pen",
+              "tint": "terracotta",
+              "emphasized": false,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
             },
             "offset": [
-              712,
-              532
+              950,
+              326
+            ]
+          },
+          {
+            "id": "flowConnector-d8f1d-8",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 44,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1162,
+              416
+            ]
+          },
+          {
+            "id": "flowNode-d8f1d-9",
+            "type": "flowNode",
+            "props": {
+              "label": "My tickets",
+              "meta": "every reply in one thread",
+              "icon": "inbox",
+              "tint": "terracotta",
+              "emphasized": true,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              478
             ]
           }
         ]
       }
     ],
-    "status": "approved",
-    "note": "Support thread archetype, Sol revision: one down-right cascade, spatial order = status order = rose ramp light to deep; Resolved endcap carries a modest bottom bleed.",
-    "lastTouchedBy": "max",
+    "status": "proposed",
+    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=franchisee-portal-101 -> eyebrow \"FRANCHISEE PORTAL\", hue #A03220, tint terracotta. type=task -> vertical 3-node run, arrowed, final node emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 104.",
+    "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 7,
-    "updatedAt": 1787158157512
+    "rev": 8,
+    "updatedAt": 1787747807840
   }
 }

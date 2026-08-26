@@ -1,97 +1,178 @@
 {
-  "revision": 40,
+  "revision": 42,
   "cover": {
     "v": 2,
-    "background": "ember",
+    "background": "white-solid",
     "title": null,
-    "scale": 106,
+    "exportPreset": "opener-wide",
+    "scale": 100,
     "positionX": 0,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
         "role": "foreground",
-        "x": -80,
-        "y": -45,
-        "w": 1200,
-        "h": 630,
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
         "preset": "bare",
         "layout": "free",
         "children": [
           {
-            "id": "poster-eyebrow",
-            "type": "text",
+            "id": "gridField-847bb-1",
+            "type": "gridField",
             "props": {
-              "variant": "posterEyebrow",
-              "value": "REGAIN ACCESS"
+              "width": 1696,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
             },
             "offset": [
-              137,
-              215
+              0,
+              0
             ]
           },
           {
-            "id": "poster-title",
+            "id": "text-847bb-2",
             "type": "text",
             "props": {
-              "variant": "poster",
-              "value": "Password"
+              "variant": "flowEyebrow",
+              "value": "FRANCHISEE PORTAL",
+              "color": "#A03220"
             },
             "offset": [
-              130,
-              248
+              300,
+              235
             ]
           },
           {
-            "id": "w-link",
+            "id": "text-847bb-3",
             "type": "text",
             "props": {
-              "variant": "body",
-              "value": "Forgot Password? Reset here.",
-              "color": "#C24E68"
+              "variant": "flowTitle",
+              "value": "Resetting Your\nPassword",
+              "size": 80
             },
             "offset": [
-              620,
-              96
+              300,
+              290
             ]
           },
           {
-            "id": "w-mail",
+            "id": "text-847bb-4",
             "type": "text",
             "props": {
-              "variant": "body",
-              "value": "johnsmith@example.com",
-              "color": "#8A8F98"
+              "variant": "flowSub",
+              "value": "Reset it yourself from the Log In page."
             },
             "offset": [
-              690,
-              475
+              300,
+              486
             ]
           },
           {
-            "id": "hero",
-            "type": "heroCta",
+            "id": "flowNode-847bb-5",
+            "type": "flowNode",
             "props": {
-              "label": "Reset Password",
-              "fill": "#C21C4C",
-              "size": 0.82,
-              "tiltDeg": -3,
-              "caption": "Please remember to check your spam folder.",
-              "echo": 2
+              "label": "Forgot Password?",
+              "meta": "on the Log In page",
+              "icon": "user",
+              "tint": "terracotta",
+              "emphasized": false,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
             },
             "offset": [
-              593,
-              215
+              950,
+              174
+            ]
+          },
+          {
+            "id": "flowConnector-847bb-6",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 44,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1162,
+              264
+            ]
+          },
+          {
+            "id": "flowNode-847bb-7",
+            "type": "flowNode",
+            "props": {
+              "label": "Open the email",
+              "meta": "from your brand's sender",
+              "icon": "mail",
+              "tint": "terracotta",
+              "emphasized": false,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              326
+            ]
+          },
+          {
+            "id": "flowConnector-847bb-8",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 44,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1162,
+              416
+            ]
+          },
+          {
+            "id": "flowNode-847bb-9",
+            "type": "flowNode",
+            "props": {
+              "label": "Set a new one",
+              "meta": "then sign back in",
+              "icon": "check",
+              "tint": "terracotta",
+              "emphasized": true,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              478
             ]
           }
         ]
       }
     ],
-    "status": "approved",
-    "note": "",
-    "lastTouchedBy": "max",
+    "status": "proposed",
+    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=franchisee-portal-101 -> eyebrow \"FRANCHISEE PORTAL\", hue #A03220, tint terracotta. type=task -> vertical 3-node run, arrowed, final node emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 80.",
+    "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 37,
-    "updatedAt": 1787158156682
+    "rev": 38,
+    "updatedAt": 1787747807690
   }
 }

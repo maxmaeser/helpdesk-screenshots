@@ -1,124 +1,142 @@
 {
-  "revision": 14,
+  "revision": 16,
   "cover": {
     "v": 2,
-    "background": "ember",
+    "background": "white-solid",
     "title": null,
-    "scale": 106,
+    "exportPreset": "opener-wide",
+    "scale": 100,
     "positionX": 0,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
         "role": "foreground",
-        "x": -80,
-        "y": -45,
-        "w": 1200,
-        "h": 630,
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
         "preset": "bare",
         "layout": "free",
         "children": [
           {
-            "id": "poster-eyebrow",
-            "type": "text",
+            "id": "gridField-2c88b-1",
+            "type": "gridField",
             "props": {
-              "variant": "posterEyebrow",
-              "value": "DAILY SNAPSHOT"
+              "width": 1696,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
             },
             "offset": [
-              146,
-              200
+              0,
+              0
             ]
           },
           {
-            "id": "poster-title",
+            "id": "text-2c88b-2",
             "type": "text",
             "props": {
-              "variant": "poster",
-              "value": "Home"
+              "variant": "flowEyebrow",
+              "value": "FRANCHISEE PORTAL",
+              "color": "#A03220"
             },
             "offset": [
-              139,
-              233
+              300,
+              261
             ]
           },
           {
-            "id": "module-mosaic",
-            "type": "moduleMosaic",
+            "id": "text-2c88b-3",
+            "type": "text",
             "props": {
-              "width": 820,
-              "height": 600,
-              "tiles": [
-                {
-                  "label": "YOUR TASKS",
-                  "sub": "50 items to move forward this week",
-                  "tone": "deep",
-                  "x": 53,
-                  "y": 148,
-                  "w": 372,
-                  "h": 220,
-                  "hero": true
-                },
-                {
-                  "label": "CHAT",
-                  "sub": "All caught up",
-                  "tone": "mid",
-                  "x": 8,
-                  "y": 392,
-                  "w": 224,
-                  "h": 150
-                },
-                {
-                  "label": "TEAM",
-                  "sub": "2 members · 2 pending invites",
-                  "tone": "light",
-                  "x": 250,
-                  "y": 410,
-                  "w": 236,
-                  "h": 140
-                },
-                {
-                  "label": "BRAND FEED",
-                  "sub": "1 new post",
-                  "tone": "light",
-                  "x": 436,
-                  "y": 34,
-                  "w": 232,
-                  "h": 134
-                },
-                {
-                  "label": "MANUALS",
-                  "sub": "2 bookmarks · 3 recently read",
-                  "tone": "mid",
-                  "x": 416,
-                  "y": 198,
-                  "w": 254,
-                  "h": 166
-                },
-                {
-                  "label": "ASSETS",
-                  "sub": "Showing 4 latest",
-                  "tone": "deep",
-                  "x": 494,
-                  "y": 366,
-                  "w": 330,
-                  "h": 162
-                }
-              ]
+              "variant": "flowTitle",
+              "value": "Home",
+              "size": 104
             },
             "offset": [
-              366,
-              54
+              300,
+              317
+            ]
+          },
+          {
+            "id": "text-2c88b-4",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "The snapshot you land on when you log in."
+            },
+            "offset": [
+              300,
+              461
+            ]
+          },
+          {
+            "id": "flowNode-2c88b-5",
+            "type": "flowNode",
+            "props": {
+              "label": "Messages",
+              "meta": "your latest threads",
+              "icon": "chat",
+              "tint": "terracotta",
+              "emphasized": false,
+              "width": 460,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              178
+            ]
+          },
+          {
+            "id": "flowNode-2c88b-6",
+            "type": "flowNode",
+            "props": {
+              "label": "Tasks",
+              "meta": "active, upcoming, due",
+              "icon": "check",
+              "tint": "terracotta",
+              "emphasized": false,
+              "width": 460,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              322
+            ]
+          },
+          {
+            "id": "flowNode-2c88b-7",
+            "type": "flowNode",
+            "props": {
+              "label": "Quick links",
+              "meta": "shortcuts into the portal",
+              "icon": "layout",
+              "tint": "terracotta",
+              "emphasized": true,
+              "width": 460,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              466
             ]
           }
         ]
       }
     ],
-    "status": "approved",
-    "note": "",
-    "lastTouchedBy": "max",
+    "status": "proposed",
+    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=franchisee-portal-101 -> eyebrow \"FRANCHISEE PORTAL\", hue #A03220, tint terracotta. type=surface -> 3 stacked cards, no connectors, last card emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 104.",
+    "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 11,
-    "updatedAt": 1787158146700
+    "rev": 12,
+    "updatedAt": 1787747808293
   }
 }

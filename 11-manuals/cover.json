@@ -1,112 +1,142 @@
 {
-  "revision": 25,
+  "revision": 27,
   "cover": {
     "v": 2,
-    "background": "ember",
+    "background": "white-solid",
     "title": null,
-    "scale": 106,
+    "exportPreset": "opener-wide",
+    "scale": 100,
     "positionX": 0,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
         "role": "foreground",
-        "x": -80,
-        "y": -45,
-        "w": 1200,
-        "h": 630,
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
         "preset": "bare",
         "layout": "free",
         "children": [
           {
-            "id": "poster-eyebrow",
+            "id": "gridField-d22ba-1",
+            "type": "gridField",
+            "props": {
+              "width": 1696,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-d22ba-2",
             "type": "text",
             "props": {
-              "variant": "posterEyebrow",
-              "value": "LOOK IT UP"
+              "variant": "flowEyebrow",
+              "value": "FRANCHISEE PORTAL",
+              "color": "#A03220"
             },
             "offset": [
-              139,
-              212
+              300,
+              261
             ]
           },
           {
-            "id": "poster-title",
+            "id": "text-d22ba-3",
             "type": "text",
             "props": {
-              "variant": "poster",
-              "value": "Manuals"
+              "variant": "flowTitle",
+              "value": "Manuals",
+              "size": 104
             },
             "offset": [
-              132,
-              245
+              300,
+              317
             ]
           },
           {
-            "id": "sheet-back",
-            "type": "manualSheet",
+            "id": "text-d22ba-4",
+            "type": "text",
             "props": {
-              "title": "Local Store Marketing Playbook",
-              "tone": "light",
-              "width": 420,
-              "lines": 3,
-              "blur": 3.4,
-              "dim": 0.34,
-              "tiltDeg": 6
+              "variant": "flowSub",
+              "value": "Playbooks and SOPs to look up on the job."
             },
             "offset": [
-              883,
-              -37
+              300,
+              461
             ]
           },
           {
-            "id": "sheet-mid",
-            "type": "manualSheet",
+            "id": "flowNode-d22ba-5",
+            "type": "flowNode",
             "props": {
-              "title": "Royalty Reporting Procedure",
-              "tag": "Operations 101",
-              "tone": "mid",
-              "width": 440,
-              "lines": 4,
-              "blur": 1.4,
-              "dim": 0.14,
-              "tiltDeg": 3
+              "label": "Browse",
+              "meta": "categories and My List",
+              "icon": "folder",
+              "tint": "terracotta",
+              "emphasized": false,
+              "width": 460,
+              "height": 116,
+              "anchorTop": false
             },
             "offset": [
-              690,
-              89
+              950,
+              178
             ]
           },
           {
-            "id": "sheet-front",
-            "type": "manualSheet",
+            "id": "flowNode-d22ba-6",
+            "type": "flowNode",
             "props": {
-              "title": "Daily Opening Procedures",
-              "tag": "Operations 101",
-              "readTime": "4 min",
-              "tone": "deep",
-              "width": 472,
-              "chapters": [
-                "Phase 1: Arrival and First Prep Window",
-                "Phase 2: Equipment Power-On",
-                "Phase 3: Temperature Checks Before the First Build",
-                "Phase 4: Line and Build-Station Setup",
-                "Phase 5: Toast POS and Registers Online"
-              ]
+              "label": "Read a manual",
+              "meta": "with a table of contents",
+              "icon": "doc",
+              "tint": "terracotta",
+              "emphasized": false,
+              "width": 460,
+              "height": 116,
+              "anchorTop": false
             },
             "offset": [
-              541,
-              245
+              950,
+              322
+            ]
+          },
+          {
+            "id": "flowNode-d22ba-7",
+            "type": "flowNode",
+            "props": {
+              "label": "Search",
+              "meta": "across the whole library",
+              "icon": "filter",
+              "tint": "terracotta",
+              "emphasized": true,
+              "width": 460,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              466
             ]
           }
         ]
       }
     ],
-    "status": "approved",
-    "note": "",
-    "lastTouchedBy": "max",
+    "status": "proposed",
+    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=franchisee-portal-101 -> eyebrow \"FRANCHISEE PORTAL\", hue #A03220, tint terracotta. type=surface -> 3 stacked cards, no connectors, last card emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 104.",
+    "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 21,
-    "updatedAt": 1787158154567
+    "rev": 22,
+    "updatedAt": 1787747809201
   }
 }
