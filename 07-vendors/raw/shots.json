@@ -3,14 +3,14 @@
   "shots": {
     "vendors-detail.png": {
       "status": "proposed",
-      "note": "",
+      "note": "Franchisee portal > Vendors > PepsiCo detail panel, Details tab (viewport 1680x1050 @2x, clip 334,0 1337x950 CSS). Reshot 2026-08-26: order@pepsico.com and the Business Information phone masked. No cursor.",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0
     },
     "vendors-grid.png": {
       "status": "proposed",
-      "note": "",
+      "note": "Franchisee portal > Vendors, vendor table (viewport 1680x1050 @2x, clip 240,0 1430x911 CSS). Reshot 2026-08-26: vendor emails and phones masked by dom-sanitize; three digit runs the bare-phone branch cannot reach (065123445 = 9 digits, 1211123123122123 = 16 digits, 098665441122 = label 5 ancestors up) masked by explicit per-shot replacements. No cursor.",
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0

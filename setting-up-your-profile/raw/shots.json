@@ -196,6 +196,13 @@
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0
+    },
+    "profile-details.png": {
+      "status": "proposed",
+      "note": "Brand dashboard > Settings > Profile > Details, field grid only (viewport 1146x900 @2x, clip 273,451 840x300 CSS). Reshot 2026-08-26 to remove real PII from the v1 final: name/email/phone replaced via dom-sanitize (synthetic identity Jordan Avery / jordan.avery@example.com / 720 555 0142). No cursor.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0
     }
   }
 }
