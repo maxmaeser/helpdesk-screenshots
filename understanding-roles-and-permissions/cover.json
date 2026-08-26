@@ -1,5 +1,5 @@
 {
-  "revision": 5,
+  "revision": 6,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -84,7 +84,7 @@
             },
             "offset": [
               920.047,
-              165.86
+              183.534
             ]
           },
           {
@@ -96,7 +96,7 @@
             },
             "offset": [
               1328.047,
-              165.86
+              183.534
             ]
           },
           {
@@ -114,7 +114,7 @@
             },
             "offset": [
               1204.047,
-              279.86
+              297.534
             ]
           },
           {
@@ -132,7 +132,7 @@
             },
             "offset": [
               1204.047,
-              467.86
+              480.883
             ]
           },
           {
@@ -150,7 +150,7 @@
             },
             "offset": [
               868.047,
-              221.86
+              239.535
             ]
           },
           {
@@ -168,7 +168,7 @@
             },
             "offset": [
               868.047,
-              409.86
+              422.884
             ]
           },
           {
@@ -186,7 +186,7 @@
             },
             "offset": [
               1264.047,
-              221.86
+              239.535
             ]
           },
           {
@@ -204,7 +204,7 @@
             },
             "offset": [
               1264.047,
-              409.86
+              422.884
             ]
           },
           {
@@ -222,7 +222,7 @@
             },
             "offset": [
               916.047,
-              617.86
+              607.628
             ]
           }
         ]
@@ -230,9 +230,9 @@
     ],
     "status": "flagged",
     "note": "Two-column map: the two access levels mapped to brand team roles they hold; billing detached below as its own toggle. Labels verbatim.",
-    "lastTouchedBy": "max",
+    "lastTouchedBy": "claude-banner-recompose",
     "editing": false,
-    "rev": 4,
-    "updatedAt": 1787735908163
+    "rev": 5,
+    "updatedAt": 1787739728168
   }
 }

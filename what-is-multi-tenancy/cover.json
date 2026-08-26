@@ -1,5 +1,5 @@
 {
-  "revision": 7,
+  "revision": 8,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -90,7 +90,7 @@
             },
             "offset": [
               956.047,
-              141.86
+              158.14
             ]
           },
           {
@@ -108,7 +108,7 @@
             },
             "offset": [
               1000.047,
-              241.86
+              258.139
             ]
           },
           {
@@ -126,7 +126,7 @@
             },
             "offset": [
               1000.047,
-              241.86
+              258.139
             ]
           },
           {
@@ -144,7 +144,7 @@
             },
             "offset": [
               992.047,
-              361.86
+              378.14
             ]
           },
           {
@@ -162,7 +162,7 @@
             },
             "offset": [
               1368.047,
-              361.86
+              378.14
             ]
           },
           {
@@ -180,7 +180,7 @@
             },
             "offset": [
               1020.047,
-              529.86
+              546.14
             ]
           },
           {
@@ -198,7 +198,7 @@
             },
             "offset": [
               1396.047,
-              529.86
+              546.14
             ]
           }
         ]
@@ -206,9 +206,9 @@
     ],
     "status": "approved",
     "note": "Nested twin containment: one Organization branching to two equal isolated Brands.",
-    "lastTouchedBy": "max",
+    "lastTouchedBy": "claude-banner-recompose",
     "editing": false,
-    "rev": 6,
-    "updatedAt": 1787735908193
+    "rev": 7,
+    "updatedAt": 1787739729647
   }
 }

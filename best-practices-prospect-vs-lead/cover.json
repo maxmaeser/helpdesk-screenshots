@@ -1,5 +1,5 @@
 {
-  "revision": 5,
+  "revision": 6,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -80,7 +80,7 @@
             "type": "flowConnector",
             "props": {
               "dx": -116,
-              "dy": 92,
+              "dy": 83.442,
               "route": "vhv",
               "thickness": 5,
               "color": "#1F54DE",
@@ -90,7 +90,7 @@
             },
             "offset": [
               1074.047,
-              205.86
+              268.883
             ]
           },
           {
@@ -98,7 +98,7 @@
             "type": "flowConnector",
             "props": {
               "dx": 116,
-              "dy": 92,
+              "dy": 83.442,
               "route": "vhv",
               "thickness": 5,
               "color": "#1F54DE",
@@ -108,7 +108,7 @@
             },
             "offset": [
               1390.047,
-              205.86
+              268.883
             ]
           },
           {
@@ -116,7 +116,7 @@
             "type": "flowConnector",
             "props": {
               "dx": 0,
-              "dy": 76,
+              "dy": 67.584,
               "route": "line",
               "thickness": 5,
               "color": "#1F54DE",
@@ -126,7 +126,7 @@
             },
             "offset": [
               1074.047,
-              465.86
+              519.581
             ]
           },
           {
@@ -134,7 +134,7 @@
             "type": "flowConnector",
             "props": {
               "dx": 0,
-              "dy": 76,
+              "dy": 67.584,
               "route": "line",
               "thickness": 5,
               "color": "#1F54DE",
@@ -144,7 +144,7 @@
             },
             "offset": [
               1506.047,
-              465.86
+              519.581
             ]
           },
           {
@@ -162,7 +162,7 @@
             },
             "offset": [
               1290.047,
-              305.86
+              359.581
             ]
           },
           {
@@ -170,7 +170,7 @@
             "type": "flowConnector",
             "props": {
               "dx": 0,
-              "dy": 240,
+              "dy": 230.698,
               "route": "line",
               "thickness": 3,
               "color": "#D9DDE4",
@@ -180,7 +180,7 @@
             },
             "offset": [
               1290.047,
-              425.86
+              479.581
             ]
           },
           {
@@ -193,7 +193,7 @@
             },
             "offset": [
               1282.047,
-              381.86
+              435.581
             ]
           },
           {
@@ -211,7 +211,7 @@
             },
             "offset": [
               1076.047,
-              93.86
+              156.884
             ]
           },
           {
@@ -229,7 +229,7 @@
             },
             "offset": [
               914.047,
-              321.86
+              375.581
             ]
           },
           {
@@ -247,7 +247,7 @@
             },
             "offset": [
               1346.047,
-              321.86
+              375.581
             ]
           },
           {
@@ -265,7 +265,7 @@
             },
             "offset": [
               914.047,
-              565.86
+              610.279
             ]
           },
           {
@@ -283,7 +283,7 @@
             },
             "offset": [
               1346.047,
-              565.86
+              610.279
             ]
           }
         ]
@@ -291,9 +291,9 @@
     ],
     "status": "approved",
     "note": "Decision split with article-verbatim interest rule, parallel columns, vs divider, separated stems. Sol rev 1.",
-    "lastTouchedBy": "max",
+    "lastTouchedBy": "claude-banner-recompose",
     "editing": false,
-    "rev": 4,
-    "updatedAt": 1787735908080
+    "rev": 5,
+    "updatedAt": 1787739727418
   }
 }

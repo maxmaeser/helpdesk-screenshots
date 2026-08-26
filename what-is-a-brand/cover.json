@@ -1,5 +1,5 @@
 {
-  "revision": 7,
+  "revision": 8,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -90,7 +90,7 @@
             },
             "offset": [
               972.047,
-              253.86
+              297.813
             ]
           },
           {
@@ -108,7 +108,7 @@
             },
             "offset": [
               977.047,
-              421.86
+              465.813
             ]
           },
           {
@@ -126,7 +126,7 @@
             },
             "offset": [
               1422.047,
-              253.86
+              297.813
             ]
           },
           {
@@ -144,7 +144,7 @@
             },
             "offset": [
               1422.047,
-              421.86
+              465.813
             ]
           },
           {
@@ -162,7 +162,7 @@
             },
             "offset": [
               788.047,
-              133.86
+              177.814
             ]
           },
           {
@@ -180,7 +180,7 @@
             },
             "offset": [
               1332.047,
-              133.86
+              177.814
             ]
           },
           {
@@ -198,7 +198,7 @@
             },
             "offset": [
               798.047,
-              525.86
+              569.814
             ]
           },
           {
@@ -216,7 +216,7 @@
             },
             "offset": [
               1332.047,
-              525.86
+              569.814
             ]
           },
           {
@@ -234,7 +234,7 @@
             },
             "offset": [
               1098.047,
-              309.86
+              353.814
             ]
           }
         ]
@@ -242,9 +242,9 @@
     ],
     "status": "approved",
     "note": "Center spine: Brand dead-center, the four holdings every brand gets radiating left and right. Labels verbatim from the article.",
-    "lastTouchedBy": "max",
+    "lastTouchedBy": "claude-banner-recompose",
     "editing": false,
-    "rev": 6,
-    "updatedAt": 1787735908175
+    "rev": 7,
+    "updatedAt": 1787739728912
   }
 }

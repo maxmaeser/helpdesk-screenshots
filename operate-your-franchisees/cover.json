@@ -1,5 +1,5 @@
 {
-  "revision": 5,
+  "revision": 6,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -90,7 +90,7 @@
             },
             "offset": [
               1310.047,
-              259.86
+              245.907
             ]
           },
           {
@@ -108,7 +108,7 @@
             },
             "offset": [
               1322.047,
-              513.86
+              499.907
             ]
           },
           {
@@ -126,7 +126,7 @@
             },
             "offset": [
               886.047,
-              315.86
+              301.907
             ]
           },
           {
@@ -144,7 +144,7 @@
             },
             "offset": [
               886.047,
-              259.86
+              245.907
             ]
           },
           {
@@ -162,7 +162,7 @@
             },
             "offset": [
               974.047,
-              201.86
+              187.907
             ]
           },
           {
@@ -180,7 +180,7 @@
             },
             "offset": [
               1350.047,
-              381.86
+              367.907
             ]
           },
           {
@@ -198,7 +198,7 @@
             },
             "offset": [
               974.047,
-              561.86
+              547.907
             ]
           }
         ]
@@ -206,9 +206,9 @@
     ],
     "status": "flagged",
     "note": "Ported from tools/opener-gen (shipped -opener-v2) into editable studio primitives.",
-    "lastTouchedBy": "max",
+    "lastTouchedBy": "claude-banner-recompose",
     "editing": false,
-    "rev": 4,
-    "updatedAt": 1787735908122
+    "rev": 5,
+    "updatedAt": 1787739731857
   }
 }

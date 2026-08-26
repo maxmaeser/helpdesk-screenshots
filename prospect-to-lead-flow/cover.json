@@ -1,5 +1,5 @@
 {
-  "revision": 5,
+  "revision": 6,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -90,7 +90,7 @@
             },
             "offset": [
               1282.047,
-              227.86
+              252.046
             ]
           },
           {
@@ -108,7 +108,7 @@
             },
             "offset": [
               1106.047,
-              337.86
+              362.046
             ]
           },
           {
@@ -126,7 +126,7 @@
             },
             "offset": [
               1282.047,
-              539.86
+              564.046
             ]
           },
           {
@@ -144,7 +144,7 @@
             },
             "offset": [
               946.047,
-              169.86
+              194.047
             ]
           },
           {
@@ -162,7 +162,7 @@
             },
             "offset": [
               1378.047,
-              205.86
+              230.047
             ]
           },
           {
@@ -180,7 +180,7 @@
             },
             "offset": [
               946.047,
-              481.86
+              506.047
             ]
           },
           {
@@ -198,7 +198,7 @@
             },
             "offset": [
               1378.047,
-              517.86
+              542.047
             ]
           }
         ]
@@ -206,9 +206,9 @@
     ],
     "status": "approved",
     "note": "Relay as stepped serpentine: Prospect, Marketing, Conversion, Lead. Sol rev 1: house lockup structure, stage labels, no orphan wraps.",
-    "lastTouchedBy": "max",
+    "lastTouchedBy": "claude-banner-recompose",
     "editing": false,
-    "rev": 4,
-    "updatedAt": 1787735908136
+    "rev": 5,
+    "updatedAt": 1787739732602
   }
 }
