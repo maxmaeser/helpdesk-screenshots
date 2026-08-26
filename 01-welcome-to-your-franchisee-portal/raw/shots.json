@@ -1,5 +1,5 @@
 {
-  "revision": 0,
+  "revision": 3,
   "shots": {
     "welcome-avatar-menu.png": {
       "cursor": {
@@ -13,7 +13,9 @@
       "note": "",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787752248867
     },
     "welcome-help-menu.png": {
       "cursor": {
@@ -27,14 +29,18 @@
       "note": "",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787752256199
     },
     "welcome-sidebar.png": {
       "status": "proposed",
       "note": "",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787752266616
     }
   }
 }

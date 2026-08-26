@@ -1,19 +1,23 @@
 {
-  "revision": 0,
+  "revision": 3,
   "shots": {
     "home-overview.png": {
       "status": "proposed",
       "note": "",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787752239842
     },
     "home-panels.png": {
       "status": "proposed",
       "note": "",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787752230736
     },
     "home-task-open.png": {
       "cursor": {
@@ -27,7 +31,9 @@
       "note": "",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787752219387
     },
     "home-tasks.png": {
       "status": "proposed",

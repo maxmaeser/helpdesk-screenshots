@@ -1,12 +1,14 @@
 {
-  "revision": 0,
+  "revision": 1,
   "shots": {
     "manuals-document.png": {
       "status": "proposed",
       "note": "",
       "lastTouchedBy": "claude",
       "editing": false,
-      "rev": 0
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787752275440
     },
     "manuals-home.png": {
       "status": "proposed",
