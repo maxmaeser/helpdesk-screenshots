@@ -1,5 +1,5 @@
 {
-  "revision": 15,
+  "revision": 1,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -20,7 +20,7 @@
         "layout": "free",
         "children": [
           {
-            "id": "gridField-d269d-1",
+            "id": "gridField-c6196-1",
             "type": "gridField",
             "props": {
               "width": 1696,
@@ -38,7 +38,7 @@
             ]
           },
           {
-            "id": "text-d269d-2",
+            "id": "text-c6196-2",
             "type": "text",
             "props": {
               "variant": "flowEyebrow",
@@ -47,41 +47,41 @@
             },
             "offset": [
               300,
-              171
+              210
             ]
           },
           {
-            "id": "text-d269d-3",
+            "id": "text-c6196-3",
             "type": "text",
             "props": {
               "variant": "flowTitle",
-              "value": "About\nAutomations\nand Runs",
-              "size": 96
+              "value": "About\nSegments",
+              "size": 104
             },
             "offset": [
               300,
-              227
+              266
             ]
           },
           {
-            "id": "text-d269d-4",
+            "id": "text-c6196-4",
             "type": "text",
             "props": {
               "variant": "flowSub",
-              "value": "Workflows that fire on an event."
+              "value": "Leads grouped so you can act at once."
             },
             "offset": [
               300,
-              550
+              512
             ]
           },
           {
-            "id": "flowNode-d269d-5",
+            "id": "flowNode-c6196-5",
             "type": "flowNode",
             "props": {
-              "label": "Workflows",
-              "meta": "Sales → Workflows",
-              "icon": "branch",
+              "label": "Pipeline",
+              "meta": "Sales → Pipeline",
+              "icon": "filter",
               "tint": "slate",
               "emphasized": false,
               "width": 500,
@@ -94,12 +94,12 @@
             ]
           },
           {
-            "id": "flowNode-d269d-6",
+            "id": "flowNode-c6196-6",
             "type": "flowNode",
             "props": {
-              "label": "An automation",
-              "meta": "a trigger, then steps",
-              "icon": "flag",
+              "label": "Segments tab",
+              "meta": "built-in, tags, statuses",
+              "icon": "userPlus",
               "tint": "green",
               "emphasized": false,
               "width": 428,
@@ -112,12 +112,12 @@
             ]
           },
           {
-            "id": "flowNode-d269d-7",
+            "id": "flowNode-c6196-7",
             "type": "flowNode",
             "props": {
-              "label": "Runs",
-              "meta": "every time it fired",
-              "icon": "doc",
+              "label": "A tagged group",
+              "meta": "your own segment",
+              "icon": "badge",
               "tint": "green",
               "emphasized": true,
               "width": 356,
@@ -133,10 +133,10 @@
       }
     ],
     "status": "proposed",
-    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=sales -> eyebrow \"SALES\", hue #16A34A, tint green. type=concept -> 3 overlapping anchorTop cards, no connectors, innermost emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 96.",
+    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=sales -> eyebrow \"SALES\", hue #16A34A, tint green. type=concept -> 3 overlapping anchorTop cards, no connectors, innermost emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 104.",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 14,
-    "updatedAt": 1787742840959
+    "rev": 1,
+    "updatedAt": 1787742840448
   }
 }

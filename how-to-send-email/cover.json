@@ -1,0 +1,178 @@
+{
+  "revision": 1,
+  "cover": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "opener-wide",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-6559e-1",
+            "type": "gridField",
+            "props": {
+              "width": 1696,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-6559e-2",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "MARKETING AND EMAIL",
+              "color": "#7C3AED"
+            },
+            "offset": [
+              300,
+              218
+            ]
+          },
+          {
+            "id": "text-6559e-3",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "How to Send\nan Email",
+              "size": 96
+            },
+            "offset": [
+              300,
+              274
+            ]
+          },
+          {
+            "id": "text-6559e-4",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "Newsletters and sequences, one flow."
+            },
+            "offset": [
+              300,
+              503
+            ]
+          },
+          {
+            "id": "flowNode-6559e-5",
+            "type": "flowNode",
+            "props": {
+              "label": "Pick the audience",
+              "meta": "a segment of your leads",
+              "icon": "userPlus",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              174
+            ]
+          },
+          {
+            "id": "flowConnector-6559e-6",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 44,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1162,
+              264
+            ]
+          },
+          {
+            "id": "flowNode-6559e-7",
+            "type": "flowNode",
+            "props": {
+              "label": "Set the schedule",
+              "meta": "window, hours, timezone",
+              "icon": "calendar",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              326
+            ]
+          },
+          {
+            "id": "flowConnector-6559e-8",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 44,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1162,
+              416
+            ]
+          },
+          {
+            "id": "flowNode-6559e-9",
+            "type": "flowNode",
+            "props": {
+              "label": "Send",
+              "meta": "newsletter or sequence",
+              "icon": "send",
+              "tint": "purple",
+              "emphasized": true,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              478
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=marketing-emails -> eyebrow \"MARKETING AND EMAIL\", hue #7C3AED, tint purple. type=task -> vertical 3-node run, arrowed, final node emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 96.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 1,
+    "updatedAt": 1787742842966
+  }
+}

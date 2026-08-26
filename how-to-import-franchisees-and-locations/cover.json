@@ -1,0 +1,178 @@
+{
+  "revision": 1,
+  "cover": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "opener-wide",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-62a1f-1",
+            "type": "gridField",
+            "props": {
+              "width": 1696,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-62a1f-2",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "OPERATIONS",
+              "color": "#D87203"
+            },
+            "offset": [
+              300,
+              196
+            ]
+          },
+          {
+            "id": "text-62a1f-3",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "How to Import\nFranchisees\nand Locations",
+              "size": 80
+            },
+            "offset": [
+              300,
+              250
+            ]
+          },
+          {
+            "id": "text-62a1f-4",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "Bring both in from a CSV in bulk."
+            },
+            "offset": [
+              300,
+              526
+            ]
+          },
+          {
+            "id": "flowNode-62a1f-5",
+            "type": "flowNode",
+            "props": {
+              "label": "Upload a CSV",
+              "meta": "or start from the template",
+              "icon": "import",
+              "tint": "amber",
+              "emphasized": false,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              174
+            ]
+          },
+          {
+            "id": "flowConnector-62a1f-6",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 44,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1162,
+              264
+            ]
+          },
+          {
+            "id": "flowNode-62a1f-7",
+            "type": "flowNode",
+            "props": {
+              "label": "Map your columns",
+              "meta": "standard and custom fields",
+              "icon": "filter",
+              "tint": "amber",
+              "emphasized": false,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              326
+            ]
+          },
+          {
+            "id": "flowConnector-62a1f-8",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 44,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1162,
+              416
+            ]
+          },
+          {
+            "id": "flowNode-62a1f-9",
+            "type": "flowNode",
+            "props": {
+              "label": "Review and import",
+              "meta": "fix anything flagged",
+              "icon": "check",
+              "tint": "amber",
+              "emphasized": true,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              478
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=operations -> eyebrow \"OPERATIONS\", hue #D87203, tint amber. type=task -> vertical 3-node run, arrowed, final node emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 80.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 1,
+    "updatedAt": 1787742842464
+  }
+}

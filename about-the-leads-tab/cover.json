@@ -1,5 +1,5 @@
 {
-  "revision": 15,
+  "revision": 1,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -20,7 +20,7 @@
         "layout": "free",
         "children": [
           {
-            "id": "gridField-d269d-1",
+            "id": "gridField-4ffe3-1",
             "type": "gridField",
             "props": {
               "width": 1696,
@@ -38,7 +38,7 @@
             ]
           },
           {
-            "id": "text-d269d-2",
+            "id": "text-4ffe3-2",
             "type": "text",
             "props": {
               "variant": "flowEyebrow",
@@ -47,46 +47,46 @@
             },
             "offset": [
               300,
-              171
+              210
             ]
           },
           {
-            "id": "text-d269d-3",
+            "id": "text-4ffe3-3",
             "type": "text",
             "props": {
               "variant": "flowTitle",
-              "value": "About\nAutomations\nand Runs",
-              "size": 96
+              "value": "About the\nLeads Tab",
+              "size": 104
             },
             "offset": [
               300,
-              227
+              266
             ]
           },
           {
-            "id": "text-d269d-4",
+            "id": "text-4ffe3-4",
             "type": "text",
             "props": {
               "variant": "flowSub",
-              "value": "Workflows that fire on an event."
+              "value": "Analytics for brands running a funnel."
             },
             "offset": [
               300,
-              550
+              512
             ]
           },
           {
-            "id": "flowNode-d269d-5",
+            "id": "flowNode-4ffe3-5",
             "type": "flowNode",
             "props": {
-              "label": "Workflows",
-              "meta": "Sales → Workflows",
-              "icon": "branch",
-              "tint": "slate",
+              "label": "Leads Over Time",
+              "meta": "bar or line",
+              "icon": "chart",
+              "tint": "green",
               "emphasized": false,
-              "width": 500,
-              "height": 404,
-              "anchorTop": true
+              "width": 460,
+              "height": 116,
+              "anchorTop": false
             },
             "offset": [
               950,
@@ -94,49 +94,49 @@
             ]
           },
           {
-            "id": "flowNode-d269d-6",
+            "id": "flowNode-4ffe3-6",
             "type": "flowNode",
             "props": {
-              "label": "An automation",
-              "meta": "a trigger, then steps",
-              "icon": "flag",
+              "label": "Leads By Source",
+              "meta": "donut and table",
+              "icon": "filter",
               "tint": "green",
               "emphasized": false,
-              "width": 428,
-              "height": 268,
-              "anchorTop": true
+              "width": 460,
+              "height": 116,
+              "anchorTop": false
             },
             "offset": [
-              986,
-              290
+              950,
+              322
             ]
           },
           {
-            "id": "flowNode-d269d-7",
+            "id": "flowNode-4ffe3-7",
             "type": "flowNode",
             "props": {
-              "label": "Runs",
-              "meta": "every time it fired",
-              "icon": "doc",
+              "label": "Calls Booked",
+              "meta": "from your funnel",
+              "icon": "calendar",
               "tint": "green",
               "emphasized": true,
-              "width": 356,
-              "height": 124,
-              "anchorTop": true
+              "width": 460,
+              "height": 116,
+              "anchorTop": false
             },
             "offset": [
-              1022,
-              418
+              950,
+              466
             ]
           }
         ]
       }
     ],
     "status": "proposed",
-    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=sales -> eyebrow \"SALES\", hue #16A34A, tint green. type=concept -> 3 overlapping anchorTop cards, no connectors, innermost emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 96.",
+    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=sales -> eyebrow \"SALES\", hue #16A34A, tint green. type=surface -> 3 stacked cards, no connectors, last card emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 104.",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 14,
-    "updatedAt": 1787742840959
+    "rev": 1,
+    "updatedAt": 1787742840799
   }
 }
