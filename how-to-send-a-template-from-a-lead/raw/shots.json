@@ -1,5 +1,5 @@
 {
-  "revision": 46,
+  "revision": 49,
   "shots": {
     "lead-actions-send-email.png": {
       "cursor": {
@@ -35,6 +35,24 @@
       "renderedRev": 22,
       "updatedAt": 1786984029392,
       "renderedAt": 1786984032704
+    },
+    "send-email-pick-template.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787757551842
+    },
+    "send-email-template-preview.png": {
+      "status": "proposed",
+      "note": "",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0,
+      "renderedRev": 0,
+      "renderedAt": 1787757556977
     }
   }
 }
