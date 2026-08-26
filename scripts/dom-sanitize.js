@@ -699,7 +699,17 @@ function sanitize(config) {
   // a stale timestamp is cosmetic, a corrupted sentence is a wrong screenshot
   // that nobody will re-read. They are still masked as part of a full name and
   // still resolve an email local part, where the shape leaves no ambiguity.
-  const AMBIGUOUS_FIRSTS = { max: 1, bill: 1, claude: 1, will: 1, grant: 1, art: 1, mark: 1, josh: 1 };
+  // These are masked only when a text node holds NOTHING BUT the name - an avatar
+  // chip, a table cell, a legend label. That is the shape a person's name takes;
+  // "Max file size is 25 MB" and "Bill of materials" are sentences and survive.
+  // The whole-node rule is the same discriminator the initials pass uses, and for
+  // the same reason: it cannot reach inside a sentence, so it cannot corrupt copy.
+  // Residual limit, on the record: an ambiguous first name INSIDE a sentence is
+  // left alone by design, so "Any word on that Bill?" in a chat bubble survives.
+  // "josh" is deliberately NOT here - it is a real handle in this staging data
+  // ("Any word on that Josh?") and the verb "to josh" does not appear in a
+  // franchise product UI.
+  const AMBIGUOUS_FIRSTS = { max: 1, bill: 1, claude: 1, will: 1, grant: 1, art: 1, mark: 1 };
   // Full names whose SURNAME is not itself real, so the surname rules cannot see
   // them. "Smith" is far too common to mask on its own.
   const REAL_FULL_NAMES = [['Creed Smith', 'avery']];
@@ -769,6 +779,22 @@ function sanitize(config) {
     if (FIRST_ALT) {
       n += replaceEverywhere(bounded(FIRST_ALT, 'gi'), (m) => applyCase(m, FIRST_INDEX[m.toLowerCase()].first));
     }
+
+    // 4b. An ambiguous first name, but only where the text node holds nothing
+    //     else. A team card renders its members as bare first names - the corpus
+    //     had a row reading "Creed  Max" - so skipping these leaves one teammate
+    //     masked and the one beside him real, which is both a leak and obviously
+    //     wrong to look at.
+    textNodes().forEach((node) => {
+      const v = node.nodeValue;
+      if (!v) return;
+      const t = v.trim();
+      if (!t || !AMBIGUOUS_FIRSTS[t.toLowerCase()]) return;
+      const id = FIRST_INDEX[t.toLowerCase()];
+      if (!id) return;
+      node.nodeValue = v.replace(t, applyCase(t, id.first));
+      n++;
+    });
 
     // 5. Avatar initials, for identities that were actually named on this page.
     //    An avatar chip is its own text node holding exactly two capitals, so an

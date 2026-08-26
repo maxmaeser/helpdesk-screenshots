@@ -658,6 +658,42 @@ test('an address already at example.com is left exactly as it is', async (page) 
     'a reserved-domain address is already safe and must not churn');
 });
 
+
+test('a bare ambiguous first name is masked when it is the whole node', async (page) => {
+  await page.setContent(`<div class="team">
+      <div class="m1">Creed</div><div class="m2">Max</div><div class="m3">Bill</div>
+    </div>`);
+  const counts = await page.evaluate(sanitize, {});
+  assert.notStrictEqual(await page.locator('.m2').innerText(), 'Max',
+    'a team card renders members as bare first names - masking one and not the next is a leak');
+  assert.notStrictEqual(await page.locator('.m3').innerText(), 'Bill');
+  assert.notStrictEqual(await page.locator('.m1').innerText(), 'Creed');
+  assert.strictEqual(counts.names, 3);
+});
+
+test('an ambiguous first name inside a sentence still survives', async (page) => {
+  await page.setContent(`<div>
+      <p class="s1">Max file size is 25 MB</p>
+      <p class="s2">Bill of materials</p>
+      <p class="s3">Claude Code integration</p>
+      <p class="s4">Grant access to the vendor portal</p>
+    </div>`);
+  const counts = await page.evaluate(sanitize, {});
+  assert.strictEqual(await page.locator('.s1').innerText(), 'Max file size is 25 MB');
+  assert.strictEqual(await page.locator('.s2').innerText(), 'Bill of materials');
+  assert.strictEqual(await page.locator('.s3').innerText(), 'Claude Code integration');
+  assert.strictEqual(await page.locator('.s4').innerText(), 'Grant access to the vendor portal');
+  assert.strictEqual(counts.names, 0);
+});
+
+test('a bare Josh is masked - it is a real handle in this data, not a verb', async (page) => {
+  await page.setContent(`<p class="c">Any word on that Josh?</p>`);
+  const counts = await page.evaluate(sanitize, {});
+  const t = await page.locator('.c').innerText();
+  assert.ok(!/Josh/.test(t), `real handle survived in a chat bubble: ${t}`);
+  assert.strictEqual(counts.names, 1);
+});
+
 (async () => {
   const browser = await chromium.launch();
   const page = await browser.newPage();
