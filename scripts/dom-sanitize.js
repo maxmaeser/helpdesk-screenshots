@@ -707,6 +707,12 @@ function sanitize(config) {
     morgan: { key: 'morgan', first: 'Taylor', last: 'Morgan', initials: 'TM' },
     brooks: { key: 'brooks', first: 'Casey', last: 'Brooks', initials: 'CB' },
     pratt: { key: 'pratt', first: 'Devon', last: 'Pratt', initials: 'DP' },
+    // Added 2026-08-26 after a reshoot found three more real accounts in staging,
+    // each with a real @franchisesystems.ai address and a real photograph. The
+    // synthetic names are the ones already baked into the captures that found
+    // them, so they are fixed for the same reason the originals are.
+    rivera: { key: 'rivera', first: 'Sam', last: 'Rivera', initials: 'SR' },
+    ellis: { key: 'ellis', first: 'Morgan', last: 'Ellis', initials: 'ME' },
   };
   // Real surnames, longest-first so "Radin-Grant" wins over "Radin". The
   // near-miss spellings are in the staging seed data as separate accounts for the
@@ -723,6 +729,7 @@ function sanitize(config) {
     // page as "Jordan Mäser -- Demo", first name masked and surname intact, which
     // is the exact half-masked shape that makes a leak invisible.
     ['Maeser', 'avery'], ['M\u00e4ser', 'avery'], ['Maser', 'avery'],
+    ['Hooper', 'rivera'], ['Skousen', 'ellis'],
     ['Mifflin', 'avery'], ['Bratton', 'avery'],
   ];
   // Real first names. Used to resolve a FULL name and an email local part always;
@@ -733,6 +740,7 @@ function sanitize(config) {
     ['Nathan', 'brooks'],
     ['William', 'chen'], ['Bill', 'chen'],
     ['Jonathan', 'pratt'],
+    ['Erin', 'rivera'], ['Jake', 'ellis'],
   ];
   // First names that are ALSO ordinary words in this product's UI. Masking these
   // on their own would rewrite the product's copy - "Max file size", "Bill of
@@ -753,7 +761,20 @@ function sanitize(config) {
   const AMBIGUOUS_FIRSTS = { max: 1, bill: 1, claude: 1, will: 1, grant: 1, art: 1, mark: 1 };
   // Full names whose SURNAME is not itself real, so the surname rules cannot see
   // them. "Smith" is far too common to mask on its own.
-  const REAL_FULL_NAMES = [['Creed Smith', 'avery']];
+  // "Smith" is far too common to mask on its own, so the real people who carry it
+  // are listed as whole names. "Billy Smith" and "Bill Smith" are the same real
+  // account (real@franchisesystems.ai, billysmith1998@live.com) under the two
+  // spellings staging uses, and they share Bill Schmit's identity.
+  const REAL_FULL_NAMES = [
+    ['Creed Smith', 'avery'],
+    ['Billy Smith', 'chen'], ['Bill Smith', 'chen'],
+    // The synthetic-first-name-plus-real-surname hybrid a split name cell
+    // produces: an avatar cell renders "Bill" and "Smith" as separate nodes, the
+    // whole-node rule masks the first half to "Riley", and "Riley Smith" is left
+    // standing with the real surname on screen. Masking the hybrid closes it
+    // wherever the run-joiner cannot reach across the two cells.
+    ['Riley Smith', 'chen'],
+  ];
 
   const SURNAME_INDEX = {};
   REAL_SURNAMES.forEach((e) => { SURNAME_INDEX[e[0].toLowerCase()] = IDENTITIES[e[1]]; });

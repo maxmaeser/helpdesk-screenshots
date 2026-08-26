@@ -805,6 +805,35 @@ test('a cross-origin frame is skipped without throwing', async (page) => {
   assert.ok(counts.names >= 1);
 });
 
+
+test('the three real accounts found in the 2026-08-26 reshoot are masked', async (page) => {
+  await page.setContent(`<ul>
+      <li class="a">Erin Hooper</li>
+      <li class="b">Jake Skousen</li>
+      <li class="c">Billy Smith</li>
+      <li class="d">Bill Smith</li>
+      <li class="e">erin@franchisesystems.ai</li>
+      <li class="f">Hooper</li>
+    </ul>`);
+  const counts = await page.evaluate(sanitize, {});
+  const body = await page.locator('body').innerText();
+  ['Hooper', 'Skousen', 'Billy Smith', 'Bill Smith', 'franchisesystems']
+    .forEach((s) => assert.ok(!body.includes(s), `real account survived: ${s}\n${body}`));
+  assert.ok(counts.names >= 5);
+});
+
+test('a split name cell cannot leave a real surname beside a synthetic first name', async (page) => {
+  // An avatar cell renders the two halves as separate table cells, which the
+  // run-joiner deliberately will not join. The first half masks on its own, and
+  // without this rule the result reads "Riley Smith" - synthetic first name,
+  // real surname, and a frame that looks handled.
+  await page.setContent(`<table><tr><td class="f">Bill</td><td class="l">Smith</td></tr></table>
+    <p class="j">Riley Smith</p>`);
+  await page.evaluate(sanitize, {});
+  assert.strictEqual(await page.locator('.j').innerText(), 'Riley Chen',
+    'the hybrid must not survive');
+});
+
 (async () => {
   const browser = await chromium.launch();
   const page = await browser.newPage();
