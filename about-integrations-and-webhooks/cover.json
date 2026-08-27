@@ -1,5 +1,5 @@
 {
-  "revision": 1,
+  "revision": 3,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -80,7 +80,7 @@
             "type": "flowNode",
             "props": {
               "label": "Connections Page",
-              "meta": "settings under brand profile",
+              "meta": "under brand profile",
               "icon": "building",
               "tint": "slate",
               "emphasized": false,
@@ -98,7 +98,7 @@
             "type": "flowNode",
             "props": {
               "label": "Integrations",
-              "meta": "connect third-party apps",
+              "meta": "connect other apps",
               "icon": "card",
               "tint": "slate",
               "emphasized": false,
@@ -116,7 +116,7 @@
             "type": "flowNode",
             "props": {
               "label": "Webhooks",
-              "meta": "https endpoint, signing secret",
+              "meta": "endpoint and secret",
               "icon": "send",
               "tint": "slate",
               "emphasized": true,
@@ -136,7 +136,7 @@
     "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=users-settings -> eyebrow \"USERS AND SETTINGS\", hue #475569, tint slate. type=concept -> 3 overlapping anchorTop cards, no connectors, innermost emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 64.",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 1,
-    "updatedAt": 1787833043863
+    "rev": 3,
+    "updatedAt": 1787833392835
   }
 }

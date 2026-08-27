@@ -1,5 +1,5 @@
 {
-  "revision": 1,
+  "revision": 3,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -80,7 +80,7 @@
             "type": "flowNode",
             "props": {
               "label": "UTM Parameters",
-              "meta": "source, medium, campaign tags",
+              "meta": "source, medium, name",
               "icon": "pin",
               "tint": "purple",
               "emphasized": false,
@@ -98,7 +98,7 @@
             "type": "flowNode",
             "props": {
               "label": "Capture and Snippet",
-              "meta": "website to portal attribution",
+              "meta": "website to portal hop",
               "icon": "branch",
               "tint": "purple",
               "emphasized": false,
@@ -116,7 +116,7 @@
             "type": "flowNode",
             "props": {
               "label": "Pipeline Data",
-              "meta": "prospect to lead attribution",
+              "meta": "prospect to lead",
               "icon": "chart",
               "tint": "purple",
               "emphasized": true,
@@ -136,7 +136,7 @@
     "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=marketing-emails -> eyebrow \"MARKETING AND EMAIL\", hue #7C3AED, tint purple. type=concept -> 3 overlapping anchorTop cards, no connectors, innermost emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 72.",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 1,
-    "updatedAt": 1787833042509
+    "rev": 3,
+    "updatedAt": 1787833391435
   }
 }

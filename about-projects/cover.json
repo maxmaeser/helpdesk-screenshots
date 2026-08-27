@@ -1,5 +1,5 @@
 {
-  "revision": 1,
+  "revision": 3,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -80,7 +80,7 @@
             "type": "flowNode",
             "props": {
               "label": "Projects Table",
-              "meta": "status, progress, due date",
+              "meta": "status, progress, due",
               "icon": "layout",
               "tint": "blue",
               "emphasized": false,
@@ -98,7 +98,7 @@
             "type": "flowNode",
             "props": {
               "label": "Create Project",
-              "meta": "blank or from a template",
+              "meta": "blank or a template",
               "icon": "folder",
               "tint": "blue",
               "emphasized": false,
@@ -116,7 +116,7 @@
             "type": "flowNode",
             "props": {
               "label": "Project Detail",
-              "meta": "tasks, phases, and timeline",
+              "meta": "tasks and phases",
               "icon": "chart",
               "tint": "blue",
               "emphasized": true,
@@ -136,7 +136,7 @@
     "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=platform-introduction -> eyebrow \"GETTING STARTED\", hue #1F54DE, tint blue. type=concept -> 3 overlapping anchorTop cards, no connectors, innermost emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 104.",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 1,
-    "updatedAt": 1787833042809
+    "rev": 3,
+    "updatedAt": 1787833391743
   }
 }

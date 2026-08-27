@@ -1,5 +1,5 @@
 {
-  "revision": 1,
+  "revision": 3,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -97,8 +97,8 @@
             "id": "flowNode-d8661-6",
             "type": "flowNode",
             "props": {
-              "label": "Generate and Manage",
-              "meta": "shown once, copy immediately",
+              "label": "Generate",
+              "meta": "shown once, copy it",
               "icon": "badge",
               "tint": "slate",
               "emphasized": false,
@@ -115,8 +115,8 @@
             "id": "flowNode-d8661-7",
             "type": "flowNode",
             "props": {
-              "label": "Keep Keys Secure",
-              "meta": "revoke instantly if exposed",
+              "label": "Keep Secure",
+              "meta": "revoke if exposed",
               "icon": "shield",
               "tint": "slate",
               "emphasized": true,
@@ -136,7 +136,7 @@
     "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=users-settings -> eyebrow \"USERS AND SETTINGS\", hue #475569, tint slate. type=concept -> 3 overlapping anchorTop cards, no connectors, innermost emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 64.",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 1,
-    "updatedAt": 1787833044013
+    "rev": 3,
+    "updatedAt": 1787833392989
   }
 }

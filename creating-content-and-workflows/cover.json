@@ -1,5 +1,5 @@
 {
-  "revision": 1,
+  "revision": 3,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -172,7 +172,7 @@
     "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=marketing-emails -> eyebrow \"MARKETING AND EMAIL\", hue #7C3AED, tint purple. type=task -> vertical 3-node run, arrowed, final node emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 72.",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 1,
-    "updatedAt": 1787833042059
+    "rev": 3,
+    "updatedAt": 1787833390965
   }
 }

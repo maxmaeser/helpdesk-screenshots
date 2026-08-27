@@ -1,5 +1,5 @@
 {
-  "revision": 1,
+  "revision": 3,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -136,7 +136,7 @@
     "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=platform-introduction -> eyebrow \"GETTING STARTED\", hue #1F54DE, tint blue. type=surface -> 3 stacked cards, no connectors, last card emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 104.",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 1,
-    "updatedAt": 1787833043111
+    "rev": 3,
+    "updatedAt": 1787833392057
   }
 }

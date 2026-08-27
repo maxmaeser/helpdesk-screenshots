@@ -1,5 +1,5 @@
 {
-  "revision": 1,
+  "revision": 3,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -80,7 +80,7 @@
             "type": "flowNode",
             "props": {
               "label": "Email Types",
-              "meta": "cold outreach vs warm contacts",
+              "meta": "cold versus warm",
               "icon": "mail",
               "tint": "purple",
               "emphasized": false,
@@ -98,7 +98,7 @@
             "type": "flowNode",
             "props": {
               "label": "Domain Purpose",
-              "meta": "isolates sender reputation",
+              "meta": "isolates reputation",
               "icon": "shield",
               "tint": "purple",
               "emphasized": false,
@@ -116,7 +116,7 @@
             "type": "flowNode",
             "props": {
               "label": "Sending Methods",
-              "meta": "bulk sends and automations",
+              "meta": "bulk and automated",
               "icon": "send",
               "tint": "purple",
               "emphasized": true,
@@ -136,7 +136,7 @@
     "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=marketing-emails -> eyebrow \"MARKETING AND EMAIL\", hue #7C3AED, tint purple. type=concept -> 3 overlapping anchorTop cards, no connectors, innermost emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 96.",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 1,
-    "updatedAt": 1787833041607
+    "rev": 3,
+    "updatedAt": 1787833390495
   }
 }

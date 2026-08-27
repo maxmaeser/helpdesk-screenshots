@@ -1,5 +1,5 @@
 {
-  "revision": 1,
+  "revision": 3,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -80,7 +80,7 @@
             "type": "flowNode",
             "props": {
               "label": "Template List",
-              "meta": "name, type, department, sent",
+              "meta": "name, type, department",
               "icon": "layout",
               "tint": "purple",
               "emphasized": false,
@@ -98,7 +98,7 @@
             "type": "flowNode",
             "props": {
               "label": "Portal Notifications",
-              "meta": "auto-sent, active or inactive",
+              "meta": "auto-sent, on or off",
               "icon": "mail",
               "tint": "purple",
               "emphasized": false,
@@ -115,8 +115,8 @@
             "id": "flowNode-32484-7",
             "type": "flowNode",
             "props": {
-              "label": "Campaign Editor",
-              "meta": "write, preview, and deploy",
+              "label": "Campaigns",
+              "meta": "write and deploy",
               "icon": "send",
               "tint": "purple",
               "emphasized": true,
@@ -136,7 +136,7 @@
     "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=marketing-emails -> eyebrow \"MARKETING AND EMAIL\", hue #7C3AED, tint purple. type=concept -> 3 overlapping anchorTop cards, no connectors, innermost emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 96.",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 1,
-    "updatedAt": 1787833041757
+    "rev": 3,
+    "updatedAt": 1787833390651
   }
 }

@@ -1,5 +1,5 @@
 {
-  "revision": 1,
+  "revision": 3,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -80,7 +80,7 @@
             "type": "flowNode",
             "props": {
               "label": "What Is a Domain",
-              "meta": "the part after the @ symbol",
+              "meta": "the part after the @",
               "icon": "mail",
               "tint": "purple",
               "emphasized": false,
@@ -98,7 +98,7 @@
             "type": "flowNode",
             "props": {
               "label": "Domain Purposes",
-              "meta": "sales, cold, transactional",
+              "meta": "sales, cold, or system",
               "icon": "filter",
               "tint": "purple",
               "emphasized": false,
@@ -116,7 +116,7 @@
             "type": "flowNode",
             "props": {
               "label": "Domain Health",
-              "meta": "score, status, DNS records",
+              "meta": "score, status, DNS",
               "icon": "shield",
               "tint": "purple",
               "emphasized": true,
@@ -136,7 +136,7 @@
     "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=marketing-emails -> eyebrow \"MARKETING AND EMAIL\", hue #7C3AED, tint purple. type=concept -> 3 overlapping anchorTop cards, no connectors, innermost emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 64.",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 1,
-    "updatedAt": 1787833041455
+    "rev": 3,
+    "updatedAt": 1787833390339
   }
 }
