@@ -1,0 +1,178 @@
+{
+  "revision": 1,
+  "cover": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "opener-wide",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-b45ce-1",
+            "type": "gridField",
+            "props": {
+              "width": 1696,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-b45ce-2",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "USERS AND SETTINGS",
+              "color": "#475569"
+            },
+            "offset": [
+              300,
+              229
+            ]
+          },
+          {
+            "id": "text-b45ce-3",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "How to Set Up\nYour Notifications",
+              "size": 64
+            },
+            "offset": [
+              300,
+              284
+            ]
+          },
+          {
+            "id": "text-b45ce-4",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "Each notification type can be configured independently."
+            },
+            "offset": [
+              300,
+              448
+            ]
+          },
+          {
+            "id": "flowNode-b45ce-5",
+            "type": "flowNode",
+            "props": {
+              "label": "Open Notifications",
+              "meta": "profile menu > settings",
+              "icon": "pin",
+              "tint": "slate",
+              "emphasized": false,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              174
+            ]
+          },
+          {
+            "id": "flowConnector-b45ce-6",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 44,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1162,
+              264
+            ]
+          },
+          {
+            "id": "flowNode-b45ce-7",
+            "type": "flowNode",
+            "props": {
+              "label": "Set In-App and Email",
+              "meta": "toggle each type separately",
+              "icon": "check",
+              "tint": "slate",
+              "emphasized": false,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              326
+            ]
+          },
+          {
+            "id": "flowConnector-b45ce-8",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 44,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1162,
+              416
+            ]
+          },
+          {
+            "id": "flowNode-b45ce-9",
+            "type": "flowNode",
+            "props": {
+              "label": "Stay In Control",
+              "meta": "only hear what matters",
+              "icon": "flag",
+              "tint": "slate",
+              "emphasized": true,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              478
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=users-settings -> eyebrow \"USERS AND SETTINGS\", hue #475569, tint slate. type=task -> vertical 3-node run, arrowed, final node emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 64.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 1,
+    "updatedAt": 1787833044163
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "revision": 1,
+  "cover": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "opener-wide",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-154ca-1",
+            "type": "gridField",
+            "props": {
+              "width": 1696,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-154ca-2",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "GETTING STARTED",
+              "color": "#1F54DE"
+            },
+            "offset": [
+              300,
+              229
+            ]
+          },
+          {
+            "id": "text-154ca-3",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "How to Build Your\nFunnel in Lite",
+              "size": 64
+            },
+            "offset": [
+              300,
+              284
+            ]
+          },
+          {
+            "id": "text-154ca-4",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "Templates replace your existing questions and emails."
+            },
+            "offset": [
+              300,
+              448
+            ]
+          },
+          {
+            "id": "flowNode-154ca-5",
+            "type": "flowNode",
+            "props": {
+              "label": "Choose Template",
+              "meta": "starter, complete, advanced",
+              "icon": "layout",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              174
+            ]
+          },
+          {
+            "id": "flowConnector-154ca-6",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 44,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1162,
+              264
+            ]
+          },
+          {
+            "id": "flowNode-154ca-7",
+            "type": "flowNode",
+            "props": {
+              "label": "Set Qualification",
+              "meta": "auto-qualifies applicants",
+              "icon": "filter",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              326
+            ]
+          },
+          {
+            "id": "flowConnector-154ca-8",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 44,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1162,
+              416
+            ]
+          },
+          {
+            "id": "flowNode-154ca-9",
+            "type": "flowNode",
+            "props": {
+              "label": "Match Your Brand",
+              "meta": "colors, fonts, and buttons",
+              "icon": "brand",
+              "tint": "blue",
+              "emphasized": true,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              478
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=getting-started -> eyebrow \"GETTING STARTED\", hue #1F54DE, tint blue. type=task -> vertical 3-node run, arrowed, final node emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 64.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 1,
+    "updatedAt": 1787833040844
+  }
+}

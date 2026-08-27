@@ -1,0 +1,142 @@
+{
+  "revision": 1,
+  "cover": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "opener-wide",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-72142-1",
+            "type": "gridField",
+            "props": {
+              "width": 1696,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-72142-2",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "GETTING STARTED",
+              "color": "#1F54DE"
+            },
+            "offset": [
+              300,
+              188
+            ]
+          },
+          {
+            "id": "text-72142-3",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "About the\nBrand Page",
+              "size": 104
+            },
+            "offset": [
+              300,
+              244
+            ]
+          },
+          {
+            "id": "text-72142-4",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "Manage a brand's public identity: story, news, and style."
+            },
+            "offset": [
+              300,
+              490
+            ]
+          },
+          {
+            "id": "flowNode-72142-5",
+            "type": "flowNode",
+            "props": {
+              "label": "Overview",
+              "meta": "brand profile at a glance",
+              "icon": "layout",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 460,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              178
+            ]
+          },
+          {
+            "id": "flowNode-72142-6",
+            "type": "flowNode",
+            "props": {
+              "label": "News",
+              "meta": "coverage and mentions",
+              "icon": "doc",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 460,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              322
+            ]
+          },
+          {
+            "id": "flowNode-72142-7",
+            "type": "flowNode",
+            "props": {
+              "label": "Identity",
+              "meta": "logo, colors, and fonts",
+              "icon": "brand",
+              "tint": "blue",
+              "emphasized": true,
+              "width": 460,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              466
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=platform-introduction -> eyebrow \"GETTING STARTED\", hue #1F54DE, tint blue. type=surface -> 3 stacked cards, no connectors, last card emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 104.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 1,
+    "updatedAt": 1787833042962
+  }
+}

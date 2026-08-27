@@ -1,0 +1,142 @@
+{
+  "revision": 1,
+  "cover": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "opener-wide",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-584c0-1",
+            "type": "gridField",
+            "props": {
+              "width": 1696,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-584c0-2",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "MARKETING AND EMAIL",
+              "color": "#7C3AED"
+            },
+            "offset": [
+              300,
+              243
+            ]
+          },
+          {
+            "id": "text-584c0-3",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "Understanding\nUTM Parameters",
+              "size": 72
+            },
+            "offset": [
+              300,
+              297
+            ]
+          },
+          {
+            "id": "text-584c0-4",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "UTM tags track where website traffic originates."
+            },
+            "offset": [
+              300,
+              478
+            ]
+          },
+          {
+            "id": "flowNode-584c0-5",
+            "type": "flowNode",
+            "props": {
+              "label": "UTM Parameters",
+              "meta": "source, medium, campaign tags",
+              "icon": "pin",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 500,
+              "height": 404,
+              "anchorTop": true
+            },
+            "offset": [
+              950,
+              178
+            ]
+          },
+          {
+            "id": "flowNode-584c0-6",
+            "type": "flowNode",
+            "props": {
+              "label": "Capture and Snippet",
+              "meta": "website to portal attribution",
+              "icon": "branch",
+              "tint": "purple",
+              "emphasized": false,
+              "width": 428,
+              "height": 268,
+              "anchorTop": true
+            },
+            "offset": [
+              986,
+              290
+            ]
+          },
+          {
+            "id": "flowNode-584c0-7",
+            "type": "flowNode",
+            "props": {
+              "label": "Pipeline Data",
+              "meta": "prospect to lead attribution",
+              "icon": "chart",
+              "tint": "purple",
+              "emphasized": true,
+              "width": 356,
+              "height": 124,
+              "anchorTop": true
+            },
+            "offset": [
+              1022,
+              418
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=marketing-emails -> eyebrow \"MARKETING AND EMAIL\", hue #7C3AED, tint purple. type=concept -> 3 overlapping anchorTop cards, no connectors, innermost emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 72.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 1,
+    "updatedAt": 1787833042509
+  }
+}

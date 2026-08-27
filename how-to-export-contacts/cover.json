@@ -1,0 +1,178 @@
+{
+  "revision": 1,
+  "cover": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "opener-wide",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-5a16b-1",
+            "type": "gridField",
+            "props": {
+              "width": 1696,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-5a16b-2",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "AUDIENCES AND CONTACTS",
+              "color": "#0D9488"
+            },
+            "offset": [
+              300,
+              210
+            ]
+          },
+          {
+            "id": "text-5a16b-3",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "Export\nContacts",
+              "size": 104
+            },
+            "offset": [
+              300,
+              266
+            ]
+          },
+          {
+            "id": "text-5a16b-4",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "Download prospects or leads as a CSV file."
+            },
+            "offset": [
+              300,
+              512
+            ]
+          },
+          {
+            "id": "flowNode-5a16b-5",
+            "type": "flowNode",
+            "props": {
+              "label": "Select Contacts",
+              "meta": "checkboxes, or none for all",
+              "icon": "userPlus",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              174
+            ]
+          },
+          {
+            "id": "flowConnector-5a16b-6",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 44,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1162,
+              264
+            ]
+          },
+          {
+            "id": "flowNode-5a16b-7",
+            "type": "flowNode",
+            "props": {
+              "label": "Open Actions",
+              "meta": "click export in the toolbar",
+              "icon": "folder",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              326
+            ]
+          },
+          {
+            "id": "flowConnector-5a16b-8",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 44,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1162,
+              416
+            ]
+          },
+          {
+            "id": "flowNode-5a16b-9",
+            "type": "flowNode",
+            "props": {
+              "label": "CSV Downloads",
+              "meta": "ready for spreadsheets",
+              "icon": "doc",
+              "tint": "blue",
+              "emphasized": true,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              478
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=audiences-contacts -> eyebrow \"AUDIENCES AND CONTACTS\", hue #0D9488, tint blue. type=task -> vertical 3-node run, arrowed, final node emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 104.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 1,
+    "updatedAt": 1787833040236
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "revision": 1,
+  "cover": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "opener-wide",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-cea35-1",
+            "type": "gridField",
+            "props": {
+              "width": 1696,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-cea35-2",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "GETTING STARTED",
+              "color": "#1F54DE"
+            },
+            "offset": [
+              300,
+              229
+            ]
+          },
+          {
+            "id": "text-cea35-3",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "Troubleshooting\nLogin and Access",
+              "size": 64
+            },
+            "offset": [
+              300,
+              284
+            ]
+          },
+          {
+            "id": "text-cea35-4",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "Sign-in problems rarely come from your account itself."
+            },
+            "offset": [
+              300,
+              448
+            ]
+          },
+          {
+            "id": "flowNode-cea35-5",
+            "type": "flowNode",
+            "props": {
+              "label": "Sign In Page",
+              "meta": "email, password, sign in",
+              "icon": "user",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              174
+            ]
+          },
+          {
+            "id": "flowConnector-cea35-6",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 44,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1162,
+              264
+            ]
+          },
+          {
+            "id": "flowNode-cea35-7",
+            "type": "flowNode",
+            "props": {
+              "label": "Try Incognito",
+              "meta": "isolates extension conflicts",
+              "icon": "shield",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              326
+            ]
+          },
+          {
+            "id": "flowConnector-cea35-8",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 44,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1162,
+              416
+            ]
+          },
+          {
+            "id": "flowNode-cea35-9",
+            "type": "flowNode",
+            "props": {
+              "label": "Clear Cache",
+              "meta": "cookies and hard refresh",
+              "icon": "check",
+              "tint": "blue",
+              "emphasized": true,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              478
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=getting-started -> eyebrow \"GETTING STARTED\", hue #1F54DE, tint blue. type=task -> vertical 3-node run, arrowed, final node emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 64.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 1,
+    "updatedAt": 1787833041303
+  }
+}

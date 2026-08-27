@@ -1,0 +1,142 @@
+{
+  "revision": 1,
+  "cover": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "opener-wide",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-851bb-1",
+            "type": "gridField",
+            "props": {
+              "width": 1696,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-851bb-2",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "USERS AND SETTINGS",
+              "color": "#475569"
+            },
+            "offset": [
+              300,
+              204
+            ]
+          },
+          {
+            "id": "text-851bb-3",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "Your Account\nSettings",
+              "size": 88
+            },
+            "offset": [
+              300,
+              260
+            ]
+          },
+          {
+            "id": "text-851bb-4",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "Holds your profile details and notification preferences."
+            },
+            "offset": [
+              300,
+              474
+            ]
+          },
+          {
+            "id": "flowNode-851bb-5",
+            "type": "flowNode",
+            "props": {
+              "label": "Profile Details",
+              "meta": "name, email, phone",
+              "icon": "user",
+              "tint": "slate",
+              "emphasized": false,
+              "width": 460,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              178
+            ]
+          },
+          {
+            "id": "flowNode-851bb-6",
+            "type": "flowNode",
+            "props": {
+              "label": "Edit Mode",
+              "meta": "update name and phone",
+              "icon": "pen",
+              "tint": "slate",
+              "emphasized": false,
+              "width": 460,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              322
+            ]
+          },
+          {
+            "id": "flowNode-851bb-7",
+            "type": "flowNode",
+            "props": {
+              "label": "Notification Prefs",
+              "meta": "in-app and email toggles",
+              "icon": "flag",
+              "tint": "slate",
+              "emphasized": true,
+              "width": 460,
+              "height": 116,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              466
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=users-settings -> eyebrow \"USERS AND SETTINGS\", hue #475569, tint slate. type=surface -> 3 stacked cards, no connectors, last card emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 88.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 1,
+    "updatedAt": 1787833043562
+  }
+}

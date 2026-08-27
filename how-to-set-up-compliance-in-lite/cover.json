@@ -1,0 +1,178 @@
+{
+  "revision": 1,
+  "cover": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "opener-wide",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-eba4c-1",
+            "type": "gridField",
+            "props": {
+              "width": 1696,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-eba4c-2",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "GETTING STARTED",
+              "color": "#1F54DE"
+            },
+            "offset": [
+              300,
+              251
+            ]
+          },
+          {
+            "id": "text-eba4c-3",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "How to Set Up\nCompliance in Lite",
+              "size": 64
+            },
+            "offset": [
+              300,
+              305
+            ]
+          },
+          {
+            "id": "text-eba4c-4",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "FS Ai tracks your FDD and franchising states."
+            },
+            "offset": [
+              300,
+              470
+            ]
+          },
+          {
+            "id": "flowNode-eba4c-5",
+            "type": "flowNode",
+            "props": {
+              "label": "Upload Your FDD",
+              "meta": "add your disclosure document",
+              "icon": "doc",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              174
+            ]
+          },
+          {
+            "id": "flowConnector-eba4c-6",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 44,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1162,
+              264
+            ]
+          },
+          {
+            "id": "flowNode-eba4c-7",
+            "type": "flowNode",
+            "props": {
+              "label": "Mark States",
+              "meta": "actively franchising status",
+              "icon": "pin",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              326
+            ]
+          },
+          {
+            "id": "flowConnector-eba4c-8",
+            "type": "flowConnector",
+            "props": {
+              "dx": 0,
+              "dy": 44,
+              "route": "line",
+              "thickness": 5,
+              "color": "#1F54DE",
+              "cornerRadius": 24,
+              "arrow": true,
+              "mid": 0.5
+            },
+            "offset": [
+              1162,
+              416
+            ]
+          },
+          {
+            "id": "flowNode-eba4c-9",
+            "type": "flowNode",
+            "props": {
+              "label": "Prepare eSignature",
+              "meta": "place fields, attach states",
+              "icon": "pen",
+              "tint": "blue",
+              "emphasized": true,
+              "width": 460,
+              "height": 108,
+              "anchorTop": false
+            },
+            "offset": [
+              950,
+              478
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=getting-started -> eyebrow \"GETTING STARTED\", hue #1F54DE, tint blue. type=task -> vertical 3-node run, arrowed, final node emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 64.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 1,
+    "updatedAt": 1787833041147
+  }
+}

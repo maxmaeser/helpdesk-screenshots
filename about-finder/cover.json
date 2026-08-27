@@ -1,0 +1,142 @@
+{
+  "revision": 1,
+  "cover": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "opener-wide",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-a6e56-1",
+            "type": "gridField",
+            "props": {
+              "width": 1696,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 50
+            },
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "text-a6e56-2",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "AUDIENCES AND CONTACTS",
+              "color": "#0D9488"
+            },
+            "offset": [
+              300,
+              188
+            ]
+          },
+          {
+            "id": "text-a6e56-3",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "About\nFinder",
+              "size": 104
+            },
+            "offset": [
+              300,
+              244
+            ]
+          },
+          {
+            "id": "text-a6e56-4",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "Finder sources prospects that match your criteria."
+            },
+            "offset": [
+              300,
+              490
+            ]
+          },
+          {
+            "id": "flowNode-a6e56-5",
+            "type": "flowNode",
+            "props": {
+              "label": "New Search",
+              "meta": "set criteria, run a search",
+              "icon": "filter",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 500,
+              "height": 404,
+              "anchorTop": true
+            },
+            "offset": [
+              950,
+              178
+            ]
+          },
+          {
+            "id": "flowNode-a6e56-6",
+            "type": "flowNode",
+            "props": {
+              "label": "Results Table",
+              "meta": "matched vs unmatched prospects",
+              "icon": "check",
+              "tint": "blue",
+              "emphasized": false,
+              "width": 428,
+              "height": 268,
+              "anchorTop": true
+            },
+            "offset": [
+              986,
+              290
+            ]
+          },
+          {
+            "id": "flowNode-a6e56-7",
+            "type": "flowNode",
+            "props": {
+              "label": "Review and Import",
+              "meta": "brings prospects into fs ai",
+              "icon": "userPlus",
+              "tint": "blue",
+              "emphasized": true,
+              "width": 356,
+              "height": 124,
+              "anchorTop": true
+            },
+            "offset": [
+              1022,
+              418
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=audiences-contacts -> eyebrow \"AUDIENCES AND CONTACTS\", hue #0D9488, tint blue. type=concept -> 3 overlapping anchorTop cards, no connectors, innermost emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 104.",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 1,
+    "updatedAt": 1787833039918
+  }
+}
