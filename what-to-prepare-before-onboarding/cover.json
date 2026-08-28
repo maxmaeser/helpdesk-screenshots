@@ -1,0 +1,138 @@
+{
+  "revision": 1,
+  "cover": {
+    "v": 2,
+    "background": "white-solid",
+    "title": null,
+    "exportPreset": "opener-wide",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
+        "preset": "bare",
+        "layout": "free",
+        "children": [
+          {
+            "id": "gridField-probe-0",
+            "type": "gridField",
+            "props": {
+              "width": 1696,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
+              "frameLine": true,
+              "showGrid": true,
+              "maskX": 78,
+              "maskY": 78
+            },
+            "x": 0,
+            "y": 0,
+            "w": 1696,
+            "h": 760
+          },
+          {
+            "id": "sidebar-probe-1",
+            "type": "sidebar",
+            "props": {
+              "header": "Operations",
+              "items": [
+                "Home",
+                "Locations",
+                "Vendors",
+                "Manuals",
+                "Team"
+              ],
+              "activeIndex": 1
+            },
+            "x": 880,
+            "y": 140,
+            "w": 240,
+            "h": 420
+          },
+          {
+            "id": "table-probe-2",
+            "type": "table",
+            "props": {
+              "radius": 16,
+              "columns": [
+                "Location",
+                "Status"
+              ],
+              "rows": [
+                {
+                  "id": "1",
+                  "primary": "Aspen United",
+                  "secondary": "Colorado",
+                  "badgeLabel": "Open",
+                  "badgeColor": "#16A34A"
+                },
+                {
+                  "id": "2",
+                  "primary": "Bridge Street",
+                  "secondary": "Hotchkiss",
+                  "badgeLabel": "Planned",
+                  "badgeColor": "#D87203"
+                }
+              ]
+            },
+            "x": 1150,
+            "y": 140,
+            "w": 440,
+            "h": 200
+          },
+          {
+            "id": "listRow-probe-3",
+            "type": "listRow",
+            "props": {
+              "label": "Invite the franchisee",
+              "sublabel": "they set up their login",
+              "trailing": "Pending",
+              "highlighted": true
+            },
+            "x": 1150,
+            "y": 370,
+            "w": 440,
+            "h": 90
+          },
+          {
+            "id": "dropdown-probe-4",
+            "type": "dropdown",
+            "props": {
+              "title": "Assign to",
+              "search": true,
+              "items": [
+                {
+                  "label": "Jordan Avery",
+                  "avatarInitials": "JA",
+                  "highlighted": true
+                },
+                {
+                  "label": "Riley Chen",
+                  "avatarInitials": "RC"
+                }
+              ],
+              "footer": "2 teammates"
+            },
+            "x": 1150,
+            "y": 480,
+            "w": 440,
+            "h": 180
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 1,
+    "updatedAt": 1787898288527
+  }
+}
