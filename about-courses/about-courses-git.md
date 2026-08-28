@@ -1,6 +1,6 @@
 Courses let you build training content and track how your team and franchisees move through it.
 
-Franchise Systems Ai (FS Ai) organizes courses, enrollments, and results in one place under **Operations → Courses**.
+Franchise Systems Ai (FS Ai) organizes courses, enrollments, and results in one place under **Operations > Courses**.
 
 ### Stat tiles
 

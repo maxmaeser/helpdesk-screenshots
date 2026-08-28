@@ -1,4 +1,4 @@
-If your brand runs a funnel instead of an applicant portal, **Sales → Analytics** looks different from the standard Overview page.
+If your brand runs a funnel instead of an applicant portal, **Sales > Analytics** looks different from the standard Overview page.
 
 Funnel brands land on a **Leads** tab instead, built around the outcomes your funnel produces: leads coming in, where they land, and how far they get toward becoming franchisees.
 
@@ -6,9 +6,9 @@ For the portal version of this page, see *[About Sales Analytics]*. For how lead
 
 ### Who sees this tab
 
-Analytics composes its tabs per brand. Brands running a funnel (built in **Studio → Funnel**) see **Leads** and **Emails**. Brands with a standard applicant portal see **Overview**, **Portal Steps**, and **Emails** instead.
+Analytics composes its tabs per brand. Brands running a funnel (built in **Studio > Funnel**) see **Leads** and **Emails**. Brands with a standard applicant portal see **Overview**, **Portal Steps**, and **Emails** instead.
 
-Switch brands with the brand selector at the top of the page to check which set you get. This selector is independent of the one on **Sales → Pipeline**.
+Switch brands with the brand selector at the top of the page to check which set you get. This selector is independent of the one on **Sales > Pipeline**.
 
 ### Setting your range
 

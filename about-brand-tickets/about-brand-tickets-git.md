@@ -4,7 +4,7 @@ When a franchisee submits a ticket to your brand, it appears here for your team 
 
 ### Where to find it
 
-Go to **Operations → Tickets**.
+Go to **Operations > Tickets**.
 
 If no franchisee has submitted a ticket yet, the page shows an empty state: "No tickets yet." Franchisees' tickets to this brand appear here once submitted.
 

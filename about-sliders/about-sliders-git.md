@@ -4,7 +4,7 @@ Sliders is where you build slide decks for branded presentations in Franchise Sy
 
 ### Where to find it
 
-Go to **Studio → Sliders**.
+Go to **Studio > Sliders**.
 
 If your brand has no decks yet, the page shows an empty state: "No Sliders Yet." Create your first slider deck to start building branded presentations.
 

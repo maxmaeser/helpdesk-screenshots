@@ -4,7 +4,7 @@ Franchise Systems Ai (FS Ai) gives you one place to write, organize, and publish
 
 ### Finding your manuals
 
-Go to **Operations → Manuals** to see every manual in your organization.
+Go to **Operations > Manuals** to see every manual in your organization.
 
 The page opens in a table with these columns: **Title**, **Category**, **Status**, **Est. Reading Time**, **Created By**, and **Last Updated**.
 
