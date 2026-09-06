@@ -23,6 +23,7 @@
 //   phones:        false | string,        // literal replacement, e.g. '(720) 555-0142'
 //   phonesBare:    false | 'context' | 'all',  // bare national-format numbers, see below
 //   names:         false | true | { initials: false },  // real personal names, see below
+//   avatars:       false | true | { srcPattern },  // profile PHOTOGRAPHS, see below
 //   freshenDates:  false | 'auto' | 'auto-all' | [{ find, replace }],
 // }
 //
@@ -50,9 +51,22 @@
 //      document.body.innerText plus every input/textarea value and REFUSES to
 //      write the PNG while a forbidden string survives. The roster narrows what
 //      you have to think about; the assertion is what actually stops a leak.
-// Avatar PHOTOGRAPHS are also PII and are deliberately out of scope here: the
-// replacement is the app's own person-glyph fallback markup, which only the shot
-// spec knows how to donate. Handle them there, behind an assertDom gate.
+//
+// avatars values:
+//   (omitted) / true    Replace every profile PHOTOGRAPH with the app's own
+//                       no-photo fallback: the initials div it renders for a
+//                       member who never uploaded a picture, carrying the
+//                       initials of the already-masked synthetic name. Matched by
+//                       src (a user profile-picture path), so brand logos and the
+//                       app's generic person drawing are left alone.
+//                       ON BY DEFAULT since 2026-09-06. Before that this file
+//                       declared avatars out of scope and deferred them to the
+//                       shot spec; no spec ever donated the markup, and
+//                       managing-your-brand-team/brand-team-list.png shipped
+//                       eleven real faces to a public repo.
+//   { srcPattern }      Same, with a different src regex for a surface that
+//                       stores avatars somewhere else.
+//   false               Leave photographs alone.
 //
 // phonesBare values:
 //   (omitted) / 'context'  Mask a BARE national-format run (no country code, 10-14
@@ -713,6 +727,10 @@ function sanitize(config) {
     // them, so they are fixed for the same reason the originals are.
     rivera: { key: 'rivera', first: 'Sam', last: 'Rivera', initials: 'SR' },
     ellis: { key: 'ellis', first: 'Morgan', last: 'Ellis', initials: 'ME' },
+    // Added 2026-09-06 by the brand-team reshoot: the two accounts in that
+    // roster the list still could not see. Fixed pairings, same law as above.
+    vance: { key: 'vance', first: 'Emery', last: 'Vance', initials: 'EV' },
+    delaney: { key: 'delaney', first: 'Quinn', last: 'Delaney', initials: 'QD' },
   };
   // Real surnames, longest-first so "Radin-Grant" wins over "Radin". The
   // near-miss spellings are in the staging seed data as separate accounts for the
@@ -731,6 +749,16 @@ function sanitize(config) {
     ['Maeser', 'avery'], ['M\u00e4ser', 'avery'], ['Maser', 'avery'],
     ['Hooper', 'rivera'], ['Skousen', 'ellis'],
     ['Mifflin', 'avery'], ['Bratton', 'avery'],
+    // 2026-09-06, from the /settings/brands brand-team roster and the Deals
+    // table. "Teser" is not a substring of "Tester", so the two never collide.
+    // "Tester" is the surname of a family of QA accounts here - "Joshua Tester"
+    // in the brand team, "Bill Tester" and "Tester Testing import" among the
+    // leads - so it identifies a person in every observed instance. It is a real
+    // English word, which is why it sat out until now, but the letter-boundary
+    // guard means only the standalone word matches: "Testing", "Testers" and
+    // "tested" all survive, and the dashboard has no standalone "Tester" of its
+    // own.
+    ['Teser', 'vance'], ['Tester', 'delaney'],
   ];
   // Real first names. Used to resolve a FULL name and an email local part always;
   // used STANDING ALONE only when the name is not also an ordinary UI word.
@@ -741,6 +769,7 @@ function sanitize(config) {
     ['William', 'chen'], ['Bill', 'chen'],
     ['Jonathan', 'pratt'],
     ['Erin', 'rivera'], ['Jake', 'ellis'],
+    ['Dennis', 'vance'],
   ];
   // First names that are ALSO ordinary words in this product's UI. Masking these
   // on their own would rewrite the product's copy - "Max file size", "Bill of
@@ -928,7 +957,64 @@ function sanitize(config) {
     return n;
   }
 
-  const counts = { emails: 0, emailsSkipped: 0, phones: 0, phonesBare: 0, phonesBareSkipped: 0, names: 0, dates: 0, datesSkipped: 0, custom: 0 };
+  // ---- avatar photographs --------------------------------------------------
+  // A profile photograph identifies a person exactly as surely as their name
+  // does, and no text rule can ever reach it. Until 2026-09-06 this file declared
+  // avatars out of scope and left them to the shot spec; nothing ever donated the
+  // markup, and managing-your-brand-team/brand-team-list.png shipped eleven real
+  // faces to a public repo.
+  //
+  // The replacement is the app's OWN no-photo fallback - the initials div it
+  // renders for a member who never uploaded a picture - not a blur, a black box
+  // or a doctored image. The frame still looks like the product, so nothing has
+  // to be explained to a reader, and the box keeps its own classes so the layout
+  // does not move.
+  //
+  // Scoped by src, deliberately. Only an image the app serves from a user
+  // profile-picture path is a person. A brand logo, a product illustration and
+  // the app's own generic person drawing are not people, and swapping those would
+  // corrupt the shot - about-deals/deals-entity-members-add.png is a frame whose
+  // avatars are exactly that generic drawing and must survive untouched. Override
+  // with { srcPattern: '...' } on a surface that stores avatars somewhere else.
+  const AVATAR_SRC_RE = /profile[_-]?pictures?|\/avatars?\//i;
+  const AVATAR_FALLBACK_CLASS = 'w-full h-full flex items-center justify-center uppercase';
+
+  // Initials for the row the avatar belongs to. This runs AFTER maskNames, so the
+  // name it reads is already synthetic and the initials cannot leak the real one.
+  function initialsNear(box) {
+    let el = box.parentElement;
+    for (let i = 0; i < 6 && el; i++, el = el.parentElement) {
+      const t = (el.innerText || '').trim();
+      if (!t) continue;
+      const line = t.split('\n')[0].trim();
+      const words = line.split(/\s+/).filter((w) => /^[A-Za-z]/.test(w));
+      if (words.length >= 2) return (words[0][0] + words[1][0]).toUpperCase();
+      if (words.length === 1) return words[0].slice(0, 2).toUpperCase();
+    }
+    return '';
+  }
+
+  function maskAvatars(opts) {
+    const re = opts && opts.srcPattern ? new RegExp(opts.srcPattern, 'i') : AVATAR_SRC_RE;
+    let n = 0;
+    docs().forEach((doc) => {
+      Array.prototype.slice.call(doc.querySelectorAll('img')).forEach((img) => {
+        if (!re.test(img.getAttribute('src') || '')) return;
+        const box = img.parentElement;
+        if (!box) return;
+        const glyph = doc.createElement('div');
+        glyph.className = AVATAR_FALLBACK_CLASS;
+        // Read the name BEFORE the swap: an <img> contributes nothing to
+        // innerText, so the row still reads as just the (already masked) name.
+        glyph.textContent = initialsNear(box);
+        box.replaceChild(glyph, img);
+        n++;
+      });
+    });
+    return n;
+  }
+
+  const counts = { emails: 0, emailsSkipped: 0, phones: 0, phonesBare: 0, phonesBareSkipped: 0, names: 0, avatars: 0, dates: 0, datesSkipped: 0, custom: 0 };
 
   if (config.emails !== false) {
     const pattern = typeof config.emails === 'string' ? config.emails : '{first}.{last}@example.com';
@@ -954,6 +1040,12 @@ function sanitize(config) {
   // on the same page would end up as two different people.
   if (config.names !== false) {
     counts.names = maskNames(typeof config.names === 'object' && config.names ? config.names : {});
+  }
+
+  // Avatars run AFTER names so the fallback initials are derived from the
+  // synthetic name rather than the real one.
+  if (config.avatars !== false) {
+    counts.avatars = maskAvatars(typeof config.avatars === 'object' && config.avatars ? config.avatars : {});
   }
 
   if (config.freshenDates === false) {
