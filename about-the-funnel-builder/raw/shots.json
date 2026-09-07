@@ -1,5 +1,5 @@
 {
-  "revision": 1,
+  "revision": 10,
   "shots": {
     "funnel-analytics-page-drilldown.png": {
       "cursor": {
@@ -102,11 +102,29 @@
       "rev": 0
     },
     "funnel-structure-panel-scrolled.png": {
-      "status": "proposed",
+      "highlights": [
+        {
+          "rect": [
+            26,
+            1434,
+            415,
+            138
+          ],
+          "style": "lens",
+          "lensZoom": 1.4,
+          "lensRadius": 44,
+          "lensRefraction": 65,
+          "color": "blue"
+        }
+      ],
+      "status": "adjusted",
       "note": "",
-      "lastTouchedBy": "claude",
+      "lastTouchedBy": "max",
       "editing": false,
-      "rev": 0
+      "rev": 4,
+      "renderedRev": 4,
+      "updatedAt": 1788741159657,
+      "renderedAt": 1788741160523
     },
     "funnel-theme-panel.png": {
       "status": "proposed",
