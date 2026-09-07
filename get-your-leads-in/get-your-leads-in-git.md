@@ -1,12 +1,12 @@
 This is the stage where your account stops being empty and starts holding real people.
 
-You have your team and brand set up, and now you bring in the contacts you already have and get them organized so the rest of the funnel has something to work with.
-
-Everything below starts at **Marketing → Audiences**, which opens on the **Prospects** tab: your list of marketing contacts, each with a segment, an email, and a verification status.
-
 ![get-your-leads-in opener](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/get-your-leads-in/get-your-leads-in-opener-v4.png)
 
 ![get-your-leads-in overview](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/get-your-leads-in/get-your-leads-in-overview.png)
+
+You have your team and brand set up, and now you bring in the contacts you already have and get them organized so the rest of the funnel has something to work with.
+
+Everything below starts at **Marketing → Audiences**, which opens on the **Prospects** tab: your list of marketing contacts, each with a segment, an email, and a verification status.
 
 ### What to do
 
@@ -18,7 +18,7 @@ Everything below starts at **Marketing → Audiences**, which opens on the **Pro
 
 4. *[How to Export Contacts]*: pull your prospects or leads back out as a CSV for reporting, backup, or outside tools.
 
-5. *[Best Practices: Prospect vs. Lead]*: decide which list a contact belongs in so your pipeline and automations stay accurate.
+5. *[Best Practices: Prospect vs. Lead]*: decide which list a contact belongs in so your pipeline and workflows stay accurate.
 
 6. *[Prospect to Lead Flow]*: see how someone moves from a marketing prospect to a working sales lead, automatically or by hand.
 
@@ -28,4 +28,4 @@ Everything below starts at **Marketing → Audiences**, which opens on the **Pro
 
 Once your contacts are in and sorted, you are ready to start reaching them.
 
-**Next up:** *[Reach Out and Nurture]*, where you warm up your audience with email, sequences, and automations.
+**Next up:** *[Reach Out and Nurture]*, where you warm up your audience with email and workflows.

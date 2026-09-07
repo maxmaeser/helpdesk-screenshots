@@ -10,7 +10,7 @@ Your sidebar has eight tabs, in this order:
 - **Compliance**: your franchising states and Franchise Disclosure Document (FDD).
 - **Emails**: your email templates.
 - **Funnel**: your application funnel and portal builder.
-- **Workflows**: automations that run on your leads.
+- **Workflows**: the workflows that run on your leads.
 - **Analytics**: your sales performance metrics.
 - **Library**: your documents and files.
 - **Settings**: your account, organization, and brand settings.

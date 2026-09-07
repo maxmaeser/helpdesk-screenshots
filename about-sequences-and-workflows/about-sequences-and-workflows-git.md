@@ -1,70 +1,42 @@
-A sequence is an ordered run of emails with waiting time built in between them.
+A workflow is one thing that runs on its own in Franchise Systems Ai (FS Ai): a trigger, then the steps you connect to it.
 
-You use one to send the same series to a whole group of people: a welcome series, a newsletter run, a bulk invite to the portal.
+Sequences and automations used to be two separate tools. They are one object now, on one list.
 
-![Manually Triggered sequence with Send Email, Wait, and Send Email steps in the builder canvas](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-sequences-and-workflows/sequence-builder-canvas.png)
-
-Sequences live on the **Sequences** tab of **Marketing → Workflows**, **Sales → Workflows**, and **Operations → Workflows**. Each department keeps its own.
-
-![Sequences tab under a department's Workflows page](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-sequences-and-workflows/sequences-list.png)
+Go to **Sales → Workflows**, **Marketing → Workflows**, or **Operations → Workflows**. Each department keeps its own workflows and its own email templates, and nothing is shared between them.
 
 > **Prerequisite:** At least one email template on the **Content** tab, and a verified sending domain for the purpose you plan to send under. See *[About Domains and Domain Health]*.
 
-### What a sequence is made of
+### The page
 
-A sequence is a single straight line of steps. There are three kinds:
+The page has two tabs.
 
-- **Send Email**: sends one of your email templates.
-- **Wait**: holds the sequence for a set period before the next step.
-- **Send SMS**: shown in the step menu but not currently available.
+**Workflows**: every workflow in the department, one row each.
 
-![Add-step menu on the builder canvas showing Send Email, Send SMS (unavailable), and Wait](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-sequences-and-workflows/sequence-add-step-menu.png)
+**Content**: the department's email templates, each row showing how that email performed.
 
-You cannot place two **Wait** steps back to back.
+### The workflow list
 
-Sequences do not branch. There are no conditions, no yes and no paths, and no steps for tagging, changing a status, or creating a task.
+Each row carries a **Trigger** badge, a **Kind** badge with the step count beside it, a **Status**, the number of **Runs**, how many are **Running**, and a **Goal rate**.
 
-Those belong to the **Automations** tab on the same page. See *[About Automations and Runs]*.
+**Kind** is worked out from the trigger and the steps: Campaign, Drip, Single send, Recovery, Bulk action, Alert, Task automation, Portal automation, Handover, Cleanup, or Automation. A **Campaign** is a workflow you enroll people into rather than one that fires by itself.
 
-### Build a sequence
+**Status** reads **Active** once the workflow is published, **Draft** while you are still building it or if it is paused, and **Archived** if it has been retired.
 
-1. Open the **Sequences** tab and click **+ Create Workflow**. A panel opens on the right.
-2. Enter a **Title**, add a **Description** if you want one, and save.
-3. Click **Edit Workflow** to open the builder.
-4. Click **Add Trigger** and pick the event from the **Select** list.
-5. Click a **+** on the line to add a step, then choose **Send Email** or **Wait**.
-6. Open each **Send Email** step and choose the template it sends.
-7. Click **Save And Exit**.
+Use **Search Workflows...** to find one by name, description, status, or trigger. The filter menu narrows by **Published** or **Draft**, by Kind, and by whether a workflow ran in the period or has a goal.
 
-### Trigger options
+Select one or more rows to **Duplicate** or **Delete** them.
 
-The events on offer depend on which department you are in.
+### Build a workflow
 
-- Every department: **Manually Triggered**, plus one entry per brand tag, listed as "Tag Name" Tag Applied.
-- Sales: **New Sales Lead**, **Invite to Portal**.
-- Marketing: **Abandoned Signup**, **Prospect Imported**.
-- Operations: **Converted To Franchisee**, **Franchisee Signs Up**.
+1. Click **+ Create Workflow**.
+2. Pick a path: **Create from Template** starts from a pre-built workflow, **Campaign Builder** assembles a campaign from your existing email templates, and **Create from Scratch** opens an empty canvas.
+3. Set the trigger on the trigger node. Some triggers then ask for one detail, such as which status or which segment.
+4. Add steps from the palette. They are grouped as **Flow Control** (Condition, Delay), **Communication** (Send Email, Send Notification), **Lead Management** (Create Task, Add Tag, Remove Tag, Update Status), and **Portal** (Lock Portal Steps, Unlock Portal Steps).
+5. Set a **Goal** on the Goal card: the event that counts as this workflow having worked.
+6. Switch the toggle from **Draft** to **Published**. It refuses while a trigger is missing or a step is incomplete, and it names the issue.
 
-Every event trigger except **Manually Triggered** needs a verified domain for its sending purpose.
+### Enrolling an audience
 
-If a trigger is greyed out in the list, hover it. The tooltip tells you which kind of domain is missing. Connect that domain and the trigger becomes selectable. See *[About Domains and Domain Health]*.
+A workflow on an enrollment trigger shows an **Enroll Audience** button in the builder toolbar. It asks for the audience, when it sends, and how it sends. If the workflow is still a draft, confirming publishes it first.
 
-![Trigger event picker open on the sequence builder canvas](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/creating-content-and-workflows/workflows-trigger-picker-v2.png)
-
-### Turn a sequence on
-
-Click the sequence in the list to open its panel. The panel shows the title, description, trigger, total duration, who created it, and the date it was created.
-
-Switch **Active?** on. The list then shows the sequence as **Active** instead of **Inactive**.
-
-Those are the only two states. There is no draft, paused, or archived status on a sequence.
-
-![Sequence detail panel with the Active toggle](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/creating-content-and-workflows/workflows-activate-toggle-v2.png)
-
-### Send a sequence to a group
-
-A sequence set to **Manually Triggered** shows a **Schedule Campaign** button in its panel. That is how you send it to a segment on a schedule you choose.
-
-You can also start from the audience side and pick the sequence there. See *[How to Send a Sequence to Tagged Leads]*.
-
-The recipient list is fixed the moment you schedule the send, so finish building your audience first. For how segments are built, see *[About Segments]*.
+Delays and conditions do not count toward the step count shown on the list. For where runs and per-workflow numbers live, see *[About Workflow Runs and Performance]*.

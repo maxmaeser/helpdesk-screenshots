@@ -7,20 +7,20 @@ All three open the same place, your funnel builder. This article walks through e
 ![Getting Started checklist, Required setup section, Choose your funnel template item](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-your-funnel-in-lite/lite-getting-started-required.png)
 ### Choose your funnel template
 
-Open your funnel builder at **Studio → Funnel** (just **Funnel** in the sidebar if your organization is all Lite), then open the **Automations** panel.
+Open your funnel builder at **Studio → Funnel** (just **Funnel** in the sidebar if your organization is all Lite), then open the **Workflows** panel.
 
-If you haven't set anything up yet, you'll see **No automations yet**. Click **Apply a setup template**.
+If you haven't set anything up yet, you'll see **No workflows yet**. Select **Apply a setup template**.
 
-![Automations panel empty state with Apply a setup template button](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-your-funnel-in-lite/lite-funnel-automations-apply-template.png)
+![Workflows panel empty state with Apply a setup template button](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-your-funnel-in-lite/lite-funnel-automations-apply-template.png)
 This opens **Funnel Templates**, with three options:
 
 - **Starter Funnel**: a short pre-qualifier and a lean application. 6 questions, 2 emails.
-- **Complete Funnel**: the full franchise funnel, including qualification logic and every email automation. 11 questions, 3 emails.
+- **Complete Funnel**: the full franchise funnel, including qualification logic and every email. 11 questions, 3 emails.
 - **Advanced Funnel**: everything in Complete, plus deeper financial vetting and questions about involvement, ownership, and sourcing. 17 questions, 3 emails.
 
 Click **Preview** on any template to see its steps before committing. When you've picked one, click **Use Template**.
 
-> **This replaces your current questions.** Applying a template swaps out your existing pre-qualifier and application questions for the template's own. It also writes your funnel's email automations in your brand voice, so review each one before you turn it on.
+> **This replaces your current questions.** Applying a template swaps out your existing pre-qualifier and application questions for the template's own. It also writes your funnel's email workflows in your brand voice, so review each one before you turn it on.
 
 ![Funnel Templates modal showing Starter, Complete, and Advanced cards](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-your-funnel-in-lite/lite-funnel-templates-modal.png)
 ### Set your qualification rule

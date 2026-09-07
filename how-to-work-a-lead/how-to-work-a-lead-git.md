@@ -8,8 +8,9 @@ Go to **Sales → Pipeline** and click any lead in the table. Their detail panel
 
 The panel opens on the **Details** tab, and you can switch between **Details**, **Chat**, **Tasks**, **Activity**, **Deal**, and **Assets** using the tabs below the header.
 
-![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-work-a-lead/lead-panel-details.png)
 The panel stays layered over your pipeline, so closing it (the **X** in the top left) drops you right back where you were.
+
+![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-work-a-lead/lead-panel-details.png)
 
 ### Reviewing and editing details
 
@@ -24,19 +25,22 @@ The **Details** tab also holds everything you know about the lead:
 - **Lead Generation**: the source and UTM data the lead came in with.
 - Any additional groups your brand collects through the applicant portal forms, such as onboarding questions.
 
-![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-work-a-lead/lead-assign-rep.png)
 Most fields are editable in place. Click a field, type your change, and click away to save.
 
 If the lead has signed documents on file, **View Signed FDD** and **View Signed Franchise Agreement** buttons appear at the top of this tab.
+
+![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-work-a-lead/lead-assign-rep.png)
 
 ### Changing status and segments
 
 The status shown next to the lead's name (for example, **Investigating** or **Fast-Track**) is clickable. Select it to move the lead to a different stage.
 
+On the right side of the header, use the **Segments** area to add or remove segment tags, which is how you group leads for filtering and for enrolling into workflows.
+
 ![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-work-a-lead/lead-status-change.png)
-On the right side of the header, use the **Segments** area to add or remove segment tags, which is how you group leads for filtering and automations.
 
 ![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-work-a-lead/lead-segments.png)
+
 ### Messaging the lead
 
 The **Chat** tab is a live message thread with the lead. Type in the **Write a message** box and click **Send**.
@@ -46,6 +50,7 @@ You can attach files, add emoji, and record voice messages using the icons in th
 The full back-and-forth stays here for anyone on your team who opens the lead.
 
 ![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-work-a-lead/lead-chat.png)
+
 ### Tracking tasks
 
 The **Tasks** tab lists the to-dos tied to this lead, with columns for the task, status, who is responsible, and the due date.
@@ -53,6 +58,7 @@ The **Tasks** tab lists the to-dos tied to this lead, with columns for the task,
 Click **+ Create Task** to add a new one so nothing slips between calls.
 
 ![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-work-a-lead/lead-tasks.png)
+
 ### Reviewing activity
 
 The **Activity** tab is a timeline of everything that has happened with the lead: emails delivered, chat messages, notes, videos watched, and signup events.
@@ -61,10 +67,12 @@ Use **Log Activity** to add a note recording a call or a next step.
 
 Sort the timeline with the dropdown at the top left.
 
-![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-work-a-lead/lead-activity.png)
 When an FDD goes out for signature, the **FDD Sent** entry on the timeline carries the actual email. Click its tag to preview it, including the from and reply-to address the lead saw.
 
-![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-work-a-lead/lead-panel-activity-fdd-email.png)
+![The FDD Sent activity entry with a tag that opens a preview of the sent disclosure email](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-work-a-lead/lead-panel-activity-fdd-email.png)
+
+![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-work-a-lead/lead-activity.png)
+
 ### Reviewing assets
 
 The **Assets** tab holds the documents attached to this lead, such as a signed FDD.
@@ -72,19 +80,22 @@ The **Assets** tab holds the documents attached to this lead, such as a signed F
 Search by name, filter by file type with the icons above the list, or use the **Actions** menu to upload or share a document.
 
 ![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-work-a-lead/lead-assets.png)
+
 ### Handing off to a deal
 
 The **Deal** tab shows the lead's deal without leaving the panel.
 
 If no deal exists yet, you'll see a **No Deal Created** message explaining that deals are created automatically after an applicant completes a step in the portal, or manually with the **Create Deal** button.
 
-![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-work-a-lead/lead-deal-tab-empty.png)
 Once a deal exists, this tab shows the deal overview in place, where you manage its details.
 
-![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-work-a-lead/lead-deal-tab-overview.png)
 If the deal hasn't been converted yet, a **Convert To Franchisee** button appears so you can move it forward without leaving the lead panel.
 
 For a full walkthrough of deals, see *[About Deals]*.
+
+![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-work-a-lead/lead-deal-tab-empty.png)
+
+![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-work-a-lead/lead-deal-tab-overview.png)
 
 ### Quick actions
 

@@ -13,15 +13,15 @@ Add a document or video from your Library, or upload one straight from the edito
 ![Resources end screen editor with document and video cards](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-publish-your-funnel/funnel-resources-end-screen.png)
 ### Turn on your funnel emails
 
-FS Ai can follow up your leads automatically with email automations built for your funnel.
+FS Ai can follow up your leads automatically with email workflows built for your funnel.
 
-In the funnel builder, click the **Automations** icon in the top toolbar to open the panel.
+In the funnel builder, select the **Workflows** icon in the top toolbar to open the panel.
 
-If none are set up yet, apply a setup template to create your funnel's email automations, or build your own on the **Marketing → Workflows** page.
+If none are set up yet, apply a setup template to create your funnel's email workflows, or build your own on the **Sales → Workflows** page.
 
-Expand a card to read its email and see when it sends. A toggle switches each automation on, but it stays off until the email has content and your sending domain is verified.
+Expand a card to read its email and see when it sends. A toggle switches each workflow on, but it stays off until the email has content and your sending domain is verified.
 
-![Automations panel in the funnel builder](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-publish-your-funnel/funnel-automations-panel.png)
+![Workflows panel in the funnel builder](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-publish-your-funnel/funnel-automations-panel.png)
 ### Publish your funnel
 
 Click the **Publish** pill in the top right of the funnel builder, then select **Publish now** in the popover.

@@ -2,33 +2,33 @@ A Franchise Disclosure Document (FDD) is a legal document that franchisors are r
 
 ### Prerequisites
 
-- You need **Sales write** permission to send FDDs for signature.
+- You need Sales write permission to send FDDs for signature. In the Roles screen that permission is shown as **Edit**.
 - FDDs are uploaded as assets in the library. You must have write access to the asset to mark it as an FDD.
-- Your brand must have e-signature configured.
+- The document has to be a PDF. Nothing else can be marked as an FDD.
 
 ### Preparing a document for e-signature
 
 Before a document can be marked as an FDD, it needs to be prepared as a signable document.
 
 1. Upload your FDD document to the **Library** (see *[How to Upload and Manage Assets]* for details).
-2. Open the asset's detail view.
-3. Use the **Prepare eSignature** option in the asset's menu to create a signing template. This sets up the document with signature fields.
+2. Open the row's menu in the Library.
+3. Open the **eSignature** submenu and choose **Prepare eSignature** to create a signing template. This sets up the document with signature fields.
 4. Once prepared, the asset will have a signable template linked to it.
 
 ![Prepare eSignature in an asset's menu](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-manage-fdds/fdd-prepare-esignature-menu-v2.png)
 
-This preparation step uses the same e-signature system as other signable documents in the platform. There is no FDD-specific signing interface - the standard document signing flow applies.
+Preparing a document turns off **Update Version** for it: "Version control is not available for esignature docs". Upload the final draft rather than one you still expect to revise.
 
 ### Marking an asset as an FDD
 
 Once a document is prepared for e-signature, you can mark it as a Franchise Disclosure Document.
 
-1. Open the asset's detail view.
-2. Toggle the **is FDD** flag. This toggle stays disabled until the asset has been prepared for e-signature.
+1. Open the row's menu in the Library.
+2. Choose **Set is FDD**. The same menu item reads **Set is not FDD** once the asset is marked.
 
 ![Set is FDD in an asset's menu](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-manage-fdds/fdd-toggle-menu-v2.png)
 
-You can also update the FDD flag when editing an asset's metadata by updating the title, description, and FDD status together.
+The item stays disabled until two things are true, and hovering it tells you which one is missing: "Must be prepared for esignature", or "Only PDFs can be FDDs".
 
 ### Assigning FDDs to states
 
@@ -42,20 +42,19 @@ Franchise regulations vary by state, and you may need different FDD versions for
 
 ![Assigning an FDD to selected states](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-manage-fdds/fdd-bulk-assign-states.png)
 
-Each state record tracks:
+Open a state to see what it tracks. The assigned FDD appears as a document card with **View Document** and **Replace Document**, alongside:
 
-- **FDD ID**: which FDD document is assigned
-- **Filing required**: whether the state requires FDD filing
-- **Filing status**: Not Filed, Filed, or Filed and Registered, depending on what the state requires
-- **Filing date**: when the FDD was filed
-- **Filing duration**: how many days the filing process took
-- **Renewal deadline**: when the FDD filing needs to be renewed
+- **FDD Filing Required**: whether the state requires an FDD filing
+- **FDD Filing Date**: when the FDD was filed
+- **Submit FDD Renewal**: the renewal the state is next due for
+
+> **Note:** If your compliance is handled by an outside legal team rather than in-house, this panel looks different and carries extra fields. Everything here describes a brand that manages its own compliance.
 
 ### Tracking filing status
 
-The states list on the Compliance page shows what each state requires: **No Registration**, **Filing Only**, or **Registration Required**.
+Every state row on the Compliance page carries a registration status badge. There are six: **Registered**, **Filed**, **Filing Only**, **Registration Required**, **Expired**, and **No Registration**. See *[About the Compliance Page]* for what each one means.
 
-Open a state's record to update its actual filing status. Click the status badge at the top of the panel, and the available options depend on what that state requires:
+Open a state's record to update its actual filing status. Select the status badge at the top of the panel, and the available options depend on what that state requires:
 
 - **Filing-only states**: **FDD Not Filed** or **FDD Filed**
 - **Registration states**: **Not Filed Or Registered**, **FDD Filed But Not Registered**, or **FDD Filed and Registered**
@@ -66,7 +65,7 @@ Open a state's record to update its actual filing status. Click the status badge
 
 Once an FDD is prepared for signature, you can send it to an applicant.
 
-For applicants who signed up through the Applicant Portal, open their deal or applicant record and use the **Send FDD for signature** action (**Send FDD to sign** on FS Ai Lite). Enter the recipient's email address, then select the FDD to send, or let the system match it to their state.
+For applicants who signed up through the Applicant Portal, open their deal or applicant record and use the **Send FDD for signature** action. The recipient's address is filled in for you and shown as **Email to:**, so there is nothing to type. Select the FDD to send, or let the platform match it to their state.
 
 ![Send FDD for signature on a deal's entity members](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-manage-fdds/fdd-send-for-signature.png)
 

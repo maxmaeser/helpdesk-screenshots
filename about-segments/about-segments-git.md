@@ -24,14 +24,15 @@ To create your own segment, tag a lead.
 2. In the **Segments** area of the panel header, click the **+** button to open the Manage tags popover.
 3. Select an existing tag, or click **Create New Tag**, name it, and save.
 
-![The Manage tags popover open on a lead's detail panel](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-segments/segments-manage-tags.png)
-
-![Creating a new tag from the Manage tags popover](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-segments/segments-create-tag.png)
 The moment a tag exists on a lead, it shows up on the Segments tab as a segment.
 
 To tag several leads at once, select them with the checkboxes in the **Leads** table and apply a tag from the bulk toolbar.
 
 Removing a tag from a lead removes that lead from the segment.
+
+![The Manage tags popover open on a lead's detail panel](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-segments/segments-manage-tags.png)
+
+![Creating a new tag from the Manage tags popover](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-segments/segments-create-tag.png)
 
 ### Read the Segments tab
 
@@ -53,6 +54,6 @@ Click any segment that has at least one lead to open the send flow. From there y
 
 Tagging a lead can also start a sequence automatically, since sequences can trigger off a tag.
 
-For how to build one, see *[About Sequences and Workflows]*.
+For how to build one, see *[About Workflows]*.
 
 You can also filter the **Leads** table by segment to narrow your pipeline to a single group. For working an individual lead, see *[How to Work a Lead]*.

@@ -36,7 +36,7 @@ Verified and Pending leads show a plain badge with no popover. There's nothing t
 
 ## How verification affects sending
 
-Sending to an unverified lead doesn't block the email, but what happens next depends on whether you're sending one-to-one or through a sequence.
+Sending to an unverified lead doesn't block the email, but what happens next depends on whether you're sending one-to-one or through a workflow.
 
 ### One-to-one sends
 
@@ -44,10 +44,12 @@ Sending a template or a composed email to a single lead from their detail panel 
 
 Click **Send anyway** to send it. The dialog only warns. It never blocks the send.
 
-### Sequences and automations
+### Automated sends
 
-Automated sends triggered from a sequence or workflow wait instead of warning. If a lead isn't Verified when their step in the sequence runs, FS Ai holds that email and waits up to 24 hours for verification to finish.
+An email sent by a workflow waits instead of warning. If a lead isn't Verified when their Send Email step runs, FS Ai holds that email and waits up to 24 hours for verification to finish.
 
-If verification succeeds within that window, the email goes out as scheduled. If it fails, or the 24 hours run out first, FS Ai skips that email for that lead and moves on to the rest of the sequence. Other leads in the same send aren't affected.
+If verification succeeds within that window, the email goes out as scheduled. If it fails, or the 24 hours run out first, FS Ai skips that email for that lead and carries on with the rest of the workflow. Other leads in the same enrollment aren't affected.
 
-See *[How to Send a Sequence to Tagged Leads]* for the full sequence-sending flow, and *[How to Send a Template from a Lead]* for one-to-one sends.
+Portal leads are already verified and never wait.
+
+See *[How to Send a Campaign to Tagged Leads]* for the full enrollment flow, and *[How to Send a Template from a Lead]* for one-to-one sends.

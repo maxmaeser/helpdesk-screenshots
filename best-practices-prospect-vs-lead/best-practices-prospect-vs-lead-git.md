@@ -1,4 +1,4 @@
-Prospects and leads serve different purposes in your franchise sales funnel. Understanding when to use each helps you keep your pipeline organized and your automations running correctly.
+Prospects and leads serve different purposes in your franchise sales funnel. Understanding when to use each helps you keep your pipeline organized and your workflows running correctly.
 
 ### When to Add Someone as a Prospect
 
@@ -12,6 +12,7 @@ Add someone as a **prospect** when you are reaching out to them and they have no
 Prospects live in the **Marketing → Audiences** table and are designed for marketing workflows: email campaigns, drip sequences, and audience segmentation. You can run email verification on prospects to maintain list quality before sending.
 
 ![Marketing Audiences table showing prospect records](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/best-practices-prospect-vs-lead/marketing-audiences-prospects.png)
+
 ### When to Add Someone as a Lead
 
 Add someone as a **lead** when they have engaged with your franchise opportunity and should enter your sales pipeline. Typical lead sources include:
@@ -24,6 +25,7 @@ Add someone as a **lead** when they have engaged with your franchise opportunity
 Leads live in the **Sales → Pipeline** table, where they can be assigned to a sales rep, given a lead status, tracked through onboarding steps, and managed through deals.
 
 ![Sales Pipeline table showing lead records](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/best-practices-prospect-vs-lead/sales-pipeline-leads.png)
+
 ### How Conversion Works
 
 There are two ways a prospect becomes a lead: portal signup (automatic) and manual conversion.
@@ -38,7 +40,6 @@ When someone begins signing up through your applicant portal (enters their email
 2. Select one or more prospects using the checkboxes.
 3. Click **Convert** in the action bar. To convert all prospects matching your current filters, use **Convert All**.
 
-![Selected prospects with the Convert action open in the bulk toolbar](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/best-practices-prospect-vs-lead/convert-action-dropdown-v2.png)
 When a prospect is converted (either automatically or manually):
 
 - A new lead record is created in the sales pipeline with the prospect's contact details and custom field data.
@@ -46,6 +47,8 @@ When a prospect is converted (either automatically or manually):
 - The prospect record is removed from the marketing table.
 - Scheduled marketing emails for that prospect are cancelled.
 - The **New Sales Lead** sequence triggers for the newly created lead.
+
+![Selected prospects with the Convert action open in the bulk toolbar](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/best-practices-prospect-vs-lead/convert-action-dropdown-v2.png)
 
 ### What Happens When a Prospect Signs Up Through the Portal
 

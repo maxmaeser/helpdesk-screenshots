@@ -1,12 +1,13 @@
 Franchise Systems Ai (FS Ai) is a franchise management platform that helps you manage sales, marketing, operations, and applicant engagement across one or more franchise brands, all from one place.
 
+![getting-started-with-franchise-systems-ai opener](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/getting-started-with-franchise-systems-ai/getting-started-with-franchise-systems-ai-opener-v4.png)
+
 The platform has two main parts: the **Brand Dashboard** (where you and your team work) and the **Applicant Portal** (where prospective franchisees interact with your brand).
 
 This article walks you through the key concepts and first steps.
 
 It opens the Getting Started series that carries you through the rest of the platform.
 
-![getting-started-with-franchise-systems-ai opener](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/getting-started-with-franchise-systems-ai/getting-started-with-franchise-systems-ai-opener-v4.png)
 ### How the platform is structured
 
 FS Ai is organized into three levels:
@@ -28,12 +29,14 @@ The brand dashboard is divided into several areas, accessible from the left side
 - **Studio**: build and customize your applicant and franchisee portals, forms, link tracking, and more.
 - **Library**: store and organize documents and files.
 
-![Brand dashboard home page showing the left sidebar with Home, Marketing, Sales, Operations, Projects, Brand, Studio, and Library, plus the brand selector bar and Overview tab](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/getting-started-with-franchise-systems-ai/dashboard-sidebar.png)
 > **Where is Settings?** Settings is not a sidebar item: open it by clicking your profile picture at the bottom of the sidebar.
 
 Settings is grouped into **Account** (your profile, notifications, and calendar), **Organization** (members, brands, API keys, and billing), and **Brand** (each brand's profile, appearance, scheduling, team, and connections).
 
+![Brand dashboard home page showing the left sidebar with Home, Marketing, Sales, Operations, Projects, Brand, Studio, and Library, plus the brand selector bar and Overview tab](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/getting-started-with-franchise-systems-ai/dashboard-sidebar.png)
+
 ![Settings page showing the Account, Organization, and Brand groups in the left navigation, with the Profile page open on the right](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/getting-started-with-franchise-systems-ai/settings-scopes.png)
+
 ### Your first steps
 
 When you sign up, a guided setup walks you through the essentials: setting up your profile, creating your organization, adding your first brand, inviting team members, and confirming your subscription. You also finalize your brand identity (logo, colors, description, and social links) along the way.
@@ -63,7 +66,7 @@ It moves you from an empty account through to franchisees you are actively opera
 
 1. *[Set Up Your Brand and Team]*: invite your team, set notifications and billing, and shape your portal and forms.
 2. *[Get Your Leads In]*: import and organize your prospects and leads so your pipeline has people in it.
-3. *[Reach Out and Nurture]*: build emails, sequences, and automations that keep prospects engaged.
+3. *[Reach Out and Nurture]*: build the emails and workflows that keep prospects engaged.
 4. *[Work Your Pipeline]*: assign leads, create custom statuses, and move each one through your sales process.
 5. *[Close the Deal]*: manage deals, send FDDs, and collect signatures to convert leads into franchisees.
 6. *[Operate Your Franchisees]*: manage locations and get your assets into the hands of signed franchisees.
