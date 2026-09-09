@@ -57,5 +57,5 @@ Brand configuration lives under **Brand** in your settings, split into five page
 
 **Connections** is where domain sending, campaign attribution tracking, app integrations, and webhooks live.
 
-![Brand settings nav showing Profile, Appearance, Scheduling, Team & Access, and Connections, with the Connections page open showing Domains & sending, Campaign attribution, Integrations, and Webhooks cards](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/what-is-a-brand/brand-settings-connections.png)
+![Brand settings nav showing Profile, Appearance, Scheduling, Team & Access, and Connections, with the Connections page open showing Sending identities, Campaign attribution, Integrations, and Webhooks cards](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/what-is-a-brand/brand-settings-connections.png)
 Organizations on the Lite plan see a shorter Brand nav: only **Profile** and **Appearance**. Lite's Profile page swaps **Associated organizations** for **Campaign attribution**, since Lite brands don't share across organizations the way Full plan brands can.

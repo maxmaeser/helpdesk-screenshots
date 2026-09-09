@@ -18,8 +18,8 @@ The **Details** tab holds your core profile fields:
 - **First name** and **Last name**: how your name appears throughout the platform.
 - **Email**: the address tied to your account. This is set during sign-up and cannot be changed here.
 - **Phone**: your contact number.
-- **LinkedIn URL**: a link to your LinkedIn profile.
-- **Primary job title**: your role or position (for example, "Franchise Development Manager").
+- **LinkedIn**: a link to your LinkedIn profile.
+- **Job title**: your role or position (for example, "Franchise Development Manager").
 - **Profile picture**: your avatar in the sidebar, chat, assignments, and team views. Click your avatar to upload a new image or remove the current one.
 
 Edit any field by clicking it, making your change, and clicking away. Changes save automatically.
@@ -41,7 +41,7 @@ The **Sales Assignability** tab controls how you receive leads from the applican
 ![Sales Assignability tab listing each brand with Automatic, Manual, and Off options](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/setting-up-your-profile/profile-assignability-v2.png)
 ### Preferences
 
-The **Preferences** tab sets your **time format** (12-hour or 24-hour) and your **theme** (System, Light, or Dark).
+The **Preferences** tab sets your **Time notation** (12-hour or 24-hour) and your **theme** (System, Light, or Dark).
 
 ![Preferences tab with Time notation and Theme controls](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/setting-up-your-profile/profile-preferences.png)
 ### Security

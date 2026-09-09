@@ -22,7 +22,7 @@ The right side is a calendar sidebar. It lists your upcoming events grouped by d
 The Tasks tab shows a table of your tasks: what the task is, what it's linked to, its status, who's assigned, when it's due, and when it was created.
 
 ![Home Tasks tab showing the task table with cursor on the Create Task button](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-the-home-page/home-tasks.png)
-Completed tasks are hidden by default. Toggle **Show completed** to bring them back into the table.
+Completed tasks are hidden by default. Toggle **Show completed tasks** to bring them back into the table.
 
 Click **+ Create Task** to open the quick task form.
 

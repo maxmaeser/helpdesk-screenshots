@@ -14,7 +14,7 @@ You can apply multiple filters at the same time. All filters must be satisfied f
 ![Filter dropdown open showing available filter fields](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-filter-and-sort/filter-panel.png)
 **To add a filter:**
 
-1. Click the **Filters** button in the toolbar.
+1. Click the **Filter** button in the toolbar.
 2. Select a field to filter on.
 3. Choose an operator (for example, "Contains", "Equals", "Is Before", "Is One Of").
 4. Enter or select the filter value.
@@ -28,7 +28,7 @@ You can apply multiple filters at the same time. All filters must be satisfied f
 - **Email Verification Status**: is, is not (Verified, Unverified, Invalid, Unknown, etc.)
 - **City**: contains, equals, is not equal to
 - **Imported**: is imported, is not imported
-- **Segments (Tags)**: is one of, is not one of
+- **Segments**: is one of, is not one of
 - **Created At**: date comparisons (before, after, on, etc.)
 - **Invited At**: date comparisons
 - **LinkedIn URL**: has URL, has no URL
@@ -45,7 +45,7 @@ You can sort the table by one or more fields to control the display order.
 ![Sort panel open with Created At descending](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-filter-and-sort/sort-panel.png)
 **To apply a sort:**
 
-1. Click the **Sorting** button in the toolbar.
+1. Click the **Sort** button in the toolbar.
 2. Select a field (for example, Created At, First Name, Last Name, or Imported).
 3. Choose **Ascending** or **Descending**.
 4. Add additional sort conditions if needed. The table sorts by your first condition first, then breaks ties with subsequent conditions.

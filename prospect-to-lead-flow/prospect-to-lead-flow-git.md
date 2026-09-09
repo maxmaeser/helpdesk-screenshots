@@ -33,7 +33,7 @@ Whether conversion happens automatically through portal signup or manually from 
 - Scheduled marketing emails for that prospect are cancelled.
 - UTM parameters and source tracking data are preserved on the lead record.
 - If auto-assignment is enabled, the new lead is assigned to the next available rep through round-robin.
-- If a welcome sequence is configured, it triggers for the newly created lead.
+- If a welcome workflow is configured, it triggers for the newly created lead.
 
 ### After Conversion
 

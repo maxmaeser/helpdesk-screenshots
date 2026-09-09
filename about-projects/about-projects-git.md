@@ -42,7 +42,7 @@ Click the paperclip icon to switch to the **Artifacts** view, which shows files 
 
 ![Project Artifacts view showing one artifact per task with file-type badges instead of status columns](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-projects/project-detail-artifacts.png)
 
-Filter and sort the task list from the toolbar, and toggle **Show completed** to include finished tasks.
+Filter and sort the task list from the toolbar, and toggle **Show completed tasks** to include finished tasks.
 
 ### Where project tasks show up elsewhere
 

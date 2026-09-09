@@ -7,8 +7,8 @@ Franchise Systems Ai (FS Ai) organizes courses, enrollments, and results in one 
 Four stat tiles sit at the top of the page and stay visible across every tab:
 
 - **Total Courses**
-- **Published**
-- **Enrollments**
+- **Published Courses**
+- **Total Enrollments**
 - **Completion Rate**
 
 ### Courses tab
@@ -45,7 +45,7 @@ The **Enrollments** tab tracks who has been assigned to what. It lists each enro
 
 The **Analytics** tab breaks down performance across three sub-tabs: **Overview**, **Course**, and **Franchisee**.
 
-Across these sub-tabs you'll find cards covering **Enrolments**, **Completion Rate**, **Active Learners**, **Learning Hours**, **Quiz Performance**, and **Course Library**.
+Across these sub-tabs you'll find cards covering **Total Enrolments**, **Completion Rate**, **Active Learners**, **Learning Hours**, **Quiz Performance**, and **Course Library**.
 
 Use this tab to see how your training is landing, both across your whole program and broken down by individual course or franchisee.
 

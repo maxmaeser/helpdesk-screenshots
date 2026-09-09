@@ -12,7 +12,7 @@ Each prospect record stores contact details (name, email, phone), location infor
 
 ### Leads
 
-A lead is someone who has entered your sales pipeline. The primary path for creating leads is through the applicant portal: when someone completes the signup process (sets a password and confirms their email), the platform automatically converts them from a prospect to a lead. You can also create leads by importing contacts directly into the sales pipeline or by manually converting prospects from the marketing table (select prospects in **Marketing → Audiences**, then click **Convert** or **Convert All**).
+A lead is someone who has entered your sales pipeline. The primary path for creating leads is through the applicant portal: when someone completes the signup process (sets a password and confirms their email), the platform automatically converts them from a prospect to a lead. You can also create leads by importing contacts directly into the sales pipeline or by manually converting prospects from the marketing table (select prospects in **Marketing → Audiences**, then click **Convert (N)** or **Convert All**).
 
 Leads appear in the **Sales → Pipeline** table. They carry more data than prospects, including application progress, assigned sales rep, lead status, completed onboarding steps, and deal information.
 

@@ -11,7 +11,7 @@ When you open a deal, the **Overview** tab shows the core details:
 - **Deal ID**: a unique number assigned automatically
 - **Deal Type**: Single Unit Development, Multi Unit Development, or Area Developer
 - **Date Created**: when the deal was created
-- **Status**: Open, In Review, Won, or Lost (with a bell icon toggle to receive notifications on status changes)
+- **Status**: Open, In Review, Deal Won, or Deal Lost (with a bell icon toggle to receive notifications on status changes)
 - **FDD Disclosure Date**: when the Franchise Disclosure Document was disclosed to the applicant
 - **Date Agreement Signed**: when the franchise agreement was signed
 - **Notes**: free-text notes about the deal
@@ -22,8 +22,8 @@ When you open a deal, the **Overview** tab shows the core details:
 
 - **Open**: the deal is active and in progress
 - **In Review**: the deal is being evaluated
-- **Won**: the deal has been closed successfully, set automatically when converted to a franchisee
-- **Lost**: the deal did not move forward
+- **Deal Won**: the deal has been closed successfully, set automatically when converted to a franchisee
+- **Deal Lost**: the deal did not move forward
 
 You can update a deal's status from the deal detail view or use bulk actions from the Deals table.
 
@@ -108,7 +108,7 @@ When a deal is ready to close, you can convert it into a franchisee. This action
 1. Creates a new franchisee organization with the legal entity details from the deal.
 2. Creates franchisee user accounts for each entity member.
 3. Marks the lead as converted.
-4. Sets the deal status to **Won** and records the conversion date.
+4. Sets the deal status to **Deal Won** and records the conversion date.
 5. Moves proposed deal locations into the Operations department as actual location records.
 6. Sends notifications to the new franchisee if the portal is enabled.
 

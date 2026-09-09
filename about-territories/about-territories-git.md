@@ -12,7 +12,7 @@ The Compliance page has three tabs:
 
 A "Connect legal team" button in the top right of the Compliance page opens a request to Franchise Systems Ai's legal partners. You may also see a dismissible banner above the page offering the same connection.
 
-If your brand's compliance is handled by an outside legal team instead of managed in-platform, the **FDDs** tab is replaced by a **Legal** tab, a "Managed by" badge appears next to the page title, and the "Connect legal team" button and banner don't show, since you already have a legal team connected.
+If your brand's compliance is handled by an outside legal team instead of managed in-platform, the **FDDs** tab is replaced by a **Legal team** tab, a "Managed by" badge appears next to the page title, and the "Connect legal team" button and banner don't show, since you already have a legal team connected.
 
 ### State Management
 

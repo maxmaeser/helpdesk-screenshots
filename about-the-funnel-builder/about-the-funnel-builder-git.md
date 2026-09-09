@@ -72,9 +72,9 @@ Two more groups score the Application section a second time, specifically for th
 
 Below the four rule groups, **Branch routing** decides which path each downstream section sits on. **Compliance**, **FDD Request**, **Book A Call**, and **Resources** each get a selector: **Qualified only**, **Needs review only**, or **Both paths**.
 
-Change a selector and the **Qualified path** and **Needs review path** previews below it update to show the resulting flow, section by section, through your funnel.
+Change a selector and the **Qualified** and **Needs review** previews below it update to show the resulting flow, section by section, through your funnel.
 
-![Branch routing selectors and the Qualified/Needs review path previews](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-the-funnel-builder/funnel-logic-branch-routing.png)
+![Branch routing selectors and the Qualified/Needs review previews](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-the-funnel-builder/funnel-logic-branch-routing.png)
 ### Previewing your funnel
 
 Switch the **Edit / Preview** control at the top of the builder to **Preview** to walk the entire funnel as an applicant would, screen by screen, with a step counter and a desktop/mobile toggle. A **Preview as Qualified / Needs review** switch lets you see both outcomes without submitting real answers.
