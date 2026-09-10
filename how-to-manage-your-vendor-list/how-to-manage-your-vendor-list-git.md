@@ -56,7 +56,7 @@ Click a vendor row to open its detail panel. It has five tabs:
 
 Assigning vendors to locations one at a time does not scale past a handful of units. The **Assignment Templates** tab groups a set of vendors together so you can apply the whole group to many locations at once.
 
-Select **Create Assignment Template**, name it, and add the vendors it should include. From a location's vendor list, use **Apply Assignment Template** to assign every vendor in the template in one action.
+From a location's vendor list, use **Apply Assignment Template** to assign every vendor in the template in one action.
 
 ![Assignment Templates tab with Name, Vendors Assigned, and Created At columns](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-manage-your-vendor-list/vendor-assignment-templates-tab.png)
 Franchisees see the results of all of this on their own read-only *[Vendors]* page: the same usage badges, categories, and vendor details you set here.

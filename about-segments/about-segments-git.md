@@ -1,6 +1,6 @@
 A segment is a group of leads in Franchise Systems Ai (FS Ai) that share something in common, such as a tag you have applied, their activity level, or their stage in your pipeline.
 
-You use segments to act on many leads at once: send them an email, enroll them in a sequence, or filter your pipeline down to just that group.
+You use segments to act on many leads at once: send them an email, enroll them in a workflow, or filter your pipeline down to just that group.
 
 Find them under **Sales → Pipeline** on the **Segments** tab.
 
@@ -10,7 +10,7 @@ You don't create segments by hand. That's why the Segments tab has no create but
 
 Each segment appears on its own as you work your pipeline. A segment comes from one of three places:
 
-- **Built-in groups**: FS Ai maintains these for you. They include All Sales Leads, In Applicant Portal, Not In Applicant Portal, and No Activity in 7, 30, or 90 Days.
+- **Built-in groups**: FS Ai maintains these for you. Alongside All Sales Leads and No Activity in 7, 30, or 90 Days, there are built-in groups for leads that arrived through an import and leads that did not, and for leads part-way through your funnel and leads who finished it.
 - **Tags**: every tag you create becomes its own segment. This is how you build custom segments.
 - **Custom statuses**: every custom lead status you define also appears as a segment.
 
@@ -21,8 +21,8 @@ The built-in segments are there from the start, even before a brand has any lead
 To create your own segment, tag a lead.
 
 1. Go to **Sales → Pipeline** and click a lead to open its detail panel.
-2. In the **Segments** area of the panel header, click the **+** button to open the Manage tags popover.
-3. Select an existing tag, or click **Create New Tag**, name it, and save.
+2. In the **Segments** area of the panel header, click the **+** button.
+3. Select an existing tag, or add a new one, name it, and save.
 
 The moment a tag exists on a lead, it shows up on the Segments tab as a segment.
 
@@ -50,9 +50,9 @@ Use **Search Segments**, the filter, and the sort controls to find a segment. **
 Click any segment that has at least one lead to open the send flow. From there you can:
 
 - Send the whole segment a one-off email from a template.
-- Enroll the whole segment in a multi-step sequence with timed delays between messages.
+- Enroll the whole segment in a multi-step workflow with timed delays between messages.
 
-Tagging a lead can also start a sequence automatically, since sequences can trigger off a tag.
+Tagging a lead can also start a workflow automatically, since workflows can trigger off a tag.
 
 For how to build one, see *[About Workflows]*.
 

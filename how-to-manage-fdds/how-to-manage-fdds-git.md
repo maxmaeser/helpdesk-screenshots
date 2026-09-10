@@ -2,7 +2,7 @@ A Franchise Disclosure Document (FDD) is a legal document that franchisors are r
 
 ### Prerequisites
 
-- You need Sales write permission to send FDDs for signature. In the Roles screen that permission is shown as **Edit**.
+- You need Sales write permission to send FDDs for signature.
 - FDDs are uploaded as assets in the library. You must have write access to the asset to mark it as an FDD.
 - The document has to be a PDF. Nothing else can be marked as an FDD.
 

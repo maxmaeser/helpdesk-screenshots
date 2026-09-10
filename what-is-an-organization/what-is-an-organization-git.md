@@ -9,8 +9,6 @@ Every organization includes:
 - **Billing**: subscription management, payment methods, and invoicing are handled at the organization level.
 - **Settings**: organization-wide preferences such as name, logo, timezone, and security policies (including two-factor authentication requirements).
 
-![Organization Details page showing the organization avatar, name, email, phone number, and timezone](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/what-is-an-organization/org-details.png)
-
 ### Access levels
 
 When a team member joins an organization, they are assigned one of two access levels:

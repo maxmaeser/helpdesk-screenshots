@@ -24,7 +24,7 @@ This choice applies to both the Qualified and Needs review versions. There's no 
 
 Below the title and subtitle, the editor holds a row of resource cards: documents or videos an applicant can open while they wait. These cards are shared across both versions of the screen, they aren't set per lane.
 
-Each card shows a title, a short description, and a type badge like **PDF · 15 min read** or **Video · 6 min**, pulled from the file's Library metadata.
+Each card shows a title, a short description, and a type badge pulled from the file's Library metadata.
 
 Click a card's title or description to edit it inline. Use **Replace** to swap the card's underlying file for a different one, or **Remove** to take the card off the screen.
 

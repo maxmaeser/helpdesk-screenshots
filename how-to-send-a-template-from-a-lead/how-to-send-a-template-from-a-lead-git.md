@@ -24,7 +24,7 @@ The send flow previews the email with that lead's details already merged in, so 
 ![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-send-a-template-from-a-lead/send-email-template-preview.png)
 ### Set the purpose and send
 
-1. Choose a **Purpose**. For a lead you have two options: **General Sales (Consensual)** and **Sales Newsletter (Consensual)**. The purpose decides which of your verified domains sends the email, and the panel below the dropdown names the exact address it will come from.
+1. Choose a **Purpose**. For a lead the only option is **Outreach (Consensual)**. The purpose decides which of your verified domains sends the email, and the panel below the dropdown names the exact address it will come from.
 2. Leave **Send Immediately** on to send it now, or turn it off and set a date and time under **Schedule For**.
 3. Click **Send Email**.
 
@@ -56,11 +56,11 @@ The same flow exists on prospects.
 Go to **Marketing → Audiences**, click a prospect to open their panel, then use the three-dot **Actions** button and select **Send Email**.
 
 ![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-send-a-template-from-a-lead/prospect-actions-send-email.png)
-Everything after that is identical, except the **Purpose** options are the marketing ones: **Cold Outreach (Non-Consensual)** and **General Marketing (Consensual)**.
+Everything after that is identical, except the **Purpose** options are the marketing ones: **Cold Outreach (Non-Consensual)** and **Outreach (Consensual)**.
 
 ### Sending to more than one lead
 
-You cannot select several rows in the **Leads** table and send them a template. The bulk toolbar that appears when you check rows offers **Apply Status**, **Apply Tag**, **Remove Tag**, and **Assign To Agent**, with delete under **More**.
+You cannot select several rows in the **Leads** table and send them a template. The bulk toolbar that appears when you check rows offers **Apply Status**, **Apply Tag**, **Remove Tag**, and **Assign To Agent**.
 
 To send one template to a group of leads, use a segment instead. Go to **Sales → Pipeline**, open the **Segments** tab, and click the segment you want to reach.
 

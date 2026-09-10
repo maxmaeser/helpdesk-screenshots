@@ -25,4 +25,4 @@ FS Ai provides two ways to send email:
 
 See *[How to Send Email]* for the bulk send walkthrough, *[About Workflows]* for building them, and *[About Workflow Runs and Performance]* for watching them run.
 
-![Marketing Workflows page showing the Sequences, Automations, Runs, Content, and Analytics tabs](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-email-in-fs-ai/email-sending-methods-v2.png)
+![Marketing Workflows page showing the Workflows and Content tabs](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-email-in-fs-ai/email-sending-methods-v2.png)

@@ -1,4 +1,4 @@
-Send a single email template as a newsletter or deploy a multi-email sequence to a segment. Both use the same step-by-step send flow.
+Send a single email template as a newsletter or send a multi-email campaign to a segment. Both use the same step-by-step send flow.
 
 > **Prerequisite:** At least one verified domain with an appropriate purpose enabled. See *[About Domains and Domain Health]* for setup.
 
@@ -27,16 +27,19 @@ A newsletter sends a single email template to a segment of your audience.
 6. On the **Review** step, confirm your settings and click **Send Newsletter**.
 
 ![Review step showing send summary with subject, segment, purpose, schedule, domains, and Send Newsletter button](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-send-email/send-email-newsletter-schedule.png)
-### Sending a Sequence to a Segment
+### Sending a Campaign to a Segment
 
-A sequence sends multiple emails in order with delays between each one. You deploy a sequence the same way you send a newsletter.
+A campaign is a workflow you can send to an entire segment at once. The send flow is available from **Workflows** under any department (Marketing, Sales, or Operations).
 
-1. Go to **Marketing → Workflows** and open the sequence you want to send.
-2. Click **Send** in the actions menu.
-3. Follow the same steps: select the audience segment, choose the send purpose, and set the schedule.
-4. On the review step, click **Schedule Campaign**.
+The campaign path has five steps: **Configure**, **Select**, **Audience**, **Timing**, and **Sending**.
 
-The sequence sends each email in order, respecting the delay intervals you configured when building the sequence. The send flow is available from **Workflows** under any department (Marketing, Sales, or Operations).
+1. On **Configure**, set up the send.
+2. On **Select**, choose the campaign. Everyone in this segment enters the campaign at its start and receives each message on the campaign's own schedule.
+3. On **Audience**, confirm the segment being enrolled.
+4. On **Timing**, set when enrollment starts.
+5. On **Sending**, set the sending options and confirm. The confirm button reads **Enroll** with the contact count, or **Publish and enroll** if the campaign is still a draft, because confirming publishes it first.
+
+The campaign sends each email in order, respecting the delay intervals you configured when building it.
 
 ### After You Send
 

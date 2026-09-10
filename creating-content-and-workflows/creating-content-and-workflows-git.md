@@ -1,6 +1,6 @@
 The **Workflows** page in Franchise Systems Ai (FS Ai) holds two things that are easy to mix up: the workflows that do the sending, and the email content they send.
 
-![Workflows page showing the five tabs](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/creating-content-and-workflows/workflows-tabs-v2.png)
+![Workflows page showing the Workflows and Content tabs](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/creating-content-and-workflows/workflows-tabs-v2.png)
 
 Go to **Marketing → Workflows**, **Sales → Workflows**, or **Operations → Workflows**.
 

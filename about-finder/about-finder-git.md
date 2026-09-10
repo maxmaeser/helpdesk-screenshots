@@ -26,9 +26,11 @@ An **Actions** menu and a **Review & import** button sit alongside the filters.
 
 Each result row includes: Name, Status, Criteria, Email, Position, Location, URL, and Created.
 
-Results come in two kinds:
+Results come in three kinds:
 
 **Matched**: results that meet your search criteria.
+
+**Partial match**: results that meet some but not all of your search criteria.
 
 **Unmatched**: results that were sourced but didn't meet your criteria.
 

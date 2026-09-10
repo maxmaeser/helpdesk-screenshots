@@ -1,6 +1,6 @@
-The Connections page under Brand in your settings holds four cards: Domains, Campaign attribution, Integrations, and Webhooks.
+The Connections page under Brand in your settings holds five cards: Sending identities, Sending window, Campaign attribution, Integrations, and Webhooks.
 
-Domains and Campaign attribution are covered in *[About Domains and Domain Health]*. This article covers Integrations and Webhooks.
+Sending identities, Sending window, and Campaign attribution are covered in *[About Domains and Domain Health]*. This article covers Integrations and Webhooks.
 
 To get there, click your profile picture at the bottom of the sidebar, select **Settings**, and open the **Connections** page under Brand.
 

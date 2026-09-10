@@ -26,14 +26,11 @@ Assets can be linked to locations, deals, vendors, franchisee organizations, men
 ![Upload Assets dialog with a file selected, ready to upload](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-upload-and-manage-assets/assets-upload-modal.png)
 ### Creating a document (some accounts)
 
-On accounts with the document editor enabled, the **Library** also has a **Create Document** option alongside Upload. This opens a native, collaborative document editor instead of requiring a file upload, and edits save as new versions like any other asset.
+On accounts with the document editor enabled, the **Library** also has a **New Document** option alongside Upload. This opens a native, collaborative document editor instead of requiring a file upload, and edits save as new versions like any other asset.
 
 ### Asset versioning
 
-When you need to update a document, you have two choices:
-
-- **Update Version**: Upload a new version of the same asset. This keeps the full version history intact and increments the version number. The new version becomes the current version, but all previous versions remain accessible. New versions must be the same file type as the original.
-- **Upload a new document**: Create an entirely separate asset record. Use this when the new file is a different document rather than an update to the existing one.
+To update a document, use **Update Version** to upload a new version of the same asset. This keeps the full version history intact and increments the version number. The new version becomes the current version, but all previous versions remain accessible. New versions must be the same file type as the original.
 
 To restore a previous version, open the asset detail view, browse the version history, and select the version you want to restore. The platform marks that version as current without deleting any other versions.
 
@@ -44,14 +41,14 @@ Assets use a layered permission system:
 
 **Agent-level permissions**: Share an asset with specific team members and control what they can do:
 
-- **Read**: view and download the asset
-- **Write**: edit metadata, upload new versions
+- **View**: view and download the asset
+- **Edit**: edit metadata, upload new versions
 - **Delete**: remove the asset
 - **Share**: grant access to other agents, departments, or applicants
 
 The person who uploaded an asset automatically has full permissions on it.
 
-**Department-level permissions**: Share an asset with an entire department (Sales, Marketing, or Operations) within your brand. Department permissions also use the read, write, delete, and share levels. Any agent with the corresponding department access in their role can then access the asset.
+**Department-level permissions**: Share an asset with an entire department (Sales, Marketing, or Operations) within your brand. Department permissions also use the view, edit, delete, and share levels. Any agent with the corresponding department access in their role can then access the asset.
 
 **Application-level access**: Link an asset to a specific applicant's application to give them read access through their portal.
 
@@ -61,7 +58,7 @@ The person who uploaded an asset automatically has full permissions on it.
 To update permissions on multiple assets at once:
 
 1. Select the assets you want to update in the library.
-2. Use the **Bulk Share** action.
+2. Use the **Share** action.
 3. Choose the agents, departments, or applicants you want to grant access to, along with the permission levels.
 4. Confirm the changes.
 

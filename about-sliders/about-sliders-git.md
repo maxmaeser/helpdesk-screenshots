@@ -16,7 +16,7 @@ A **New Slider** button appears both in the page header and in the center of the
 
 Click **New Slider** to open the deck editor.
 
-The editor opens full screen with the deck titled "Untitled Slides." **Save** and **Exit** buttons sit at the top.
+The editor opens full screen with the deck titled "Untitled Slides." Double-click the title to rename the deck right there. A single **Save and Exit** button sits at the top left; the menu beside it also holds **Exit without saving**, for closing without keeping your changes. Closing any other way while you have unsaved changes prompts you to confirm you want to lose them.
 
 From here you build out your branded presentation deck within FS Ai, rather than assembling slides in a separate tool.
 

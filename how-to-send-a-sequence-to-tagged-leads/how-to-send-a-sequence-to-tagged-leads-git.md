@@ -23,14 +23,14 @@ If you tick the checkbox in the table header instead, the tag is applied to ever
 ### Tag a single lead
 
 1. Go to **Sales → Pipeline** and select a lead to open its detail panel.
-2. In the **Segments** area of the panel, add a tag.
+2. Add a tag.
 3. Pick an existing tag, or create one, name it, and save.
 
 Removing a tag here takes that lead back out of the segment.
 
 For the rest of the detail panel, see *[How to Work a Lead]*.
 
-![The Manage tags popover open on a lead's detail panel](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-send-a-sequence-to-tagged-leads/lead-panel-manage-tags.png)
+![Adding a tag from a lead's detail panel](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-send-a-sequence-to-tagged-leads/lead-panel-manage-tags.png)
 
 ### Find the segment your tag created
 
@@ -51,7 +51,7 @@ A campaign is a workflow you enroll people into rather than one that fires by it
 1. Go to **Sales → Workflows** and open the campaign, or click **+ Create Workflow** and take the **Campaign Builder** path to assemble one from your email templates.
 2. In the builder toolbar, click **Enroll Audience**.
 3. Choose your segment as the audience.
-4. Set when it starts: **Immediate**, or **On a date**.
+4. Set when it starts: **As soon as possible**, or **On a date**.
 5. Set the sending options: the sending domains, the timezone, and whether to **Exclude weekends**.
 6. Confirm. If the workflow is still a draft, confirming publishes it first.
 

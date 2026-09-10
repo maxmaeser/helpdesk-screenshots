@@ -8,9 +8,9 @@ You find it under **Sales → Analytics**.
 
 The tab set depends on how the brand is set up.
 
-Brands with a full applicant portal see three tabs: **Overview** (default), **Portal Steps**, and **Emails**.
+Brands with a full applicant portal see two tabs: **Overview** (default) and **Portal Steps**.
 
-Brands running a funnel instead of a portal see **Leads** (default) and **Emails**. The Leads tab has its own chart set, different from Overview: see *[About the Leads Tab]*.
+Brands running a funnel instead of a portal see **Leads** instead. The Leads tab has its own chart set, different from Overview: see *[About the Leads Tab]*.
 
 This article covers the portal version: **Overview** and **Portal Steps**.
 
@@ -70,7 +70,7 @@ Below the tiles is the funnel list.
 Each row is one onboarding step and shows:
 
 - **Step**: the step name and the section it belongs to.
-- **Type**: what the applicant does on that step, such as Watch Video, Complete Form, Sign a Document, Schedule Call, or Slides.
+- **Type**: what the applicant does on that step, such as Watch Video, Complete Form, Sign a Document, Schedule Call, or View Slides.
 - **Completions**: how many applicants finished that step.
 - **Rate**: completions as a percentage of the sample size.
 
@@ -98,8 +98,4 @@ Some insights include a shortcut button that takes you straight to the related a
 
 Click **Generate Insights** to run it.
 
-Both **Generate Report** and **Generate Insights** are Overview-only. Neither appears on Portal Steps, Leads, or Emails.
-
-### Email performance
-
-Every brand, portal or funnel, also gets an **Emails** tab: stat tiles for Total Audience, Templates, and Total Emails Sent, then a searchable list of your email templates with Sent, Delivered, Clicks, Bounced, and Complained for each.
+Both **Generate Report** and **Generate Insights** are Overview-only. Neither appears on Portal Steps or Leads.

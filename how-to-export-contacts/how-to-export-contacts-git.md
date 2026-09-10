@@ -8,15 +8,15 @@ You can export your prospects or leads as a CSV file for reporting, backup, or u
 4. A CSV file downloads to your computer.
 
 ![Audiences table with three prospects selected and the Actions menu open showing Export (3)](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-export-contacts/audiences-export-selected-v2.png)
-**Exported prospect fields:**
+**Exported prospect fields (CSV column headers):**
 
-- First name
-- Last name
-- Email
-- Phone
-- Date added
-- Brand name
-- Source (UTM source, if available)
+- `first_name`
+- `last_name`
+- `email`
+- `phone`
+- `date_added`
+- `brand_name`
+- `source`
 
 ### Exporting Leads
 
@@ -26,28 +26,28 @@ You can export your prospects or leads as a CSV file for reporting, backup, or u
 4. A CSV file downloads to your computer.
 
 ![Pipeline table with three leads selected and the Actions menu open showing Export (3)](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-export-contacts/pipeline-export-selected-v2.png)
-**Exported lead fields:**
+**Exported lead fields (CSV column headers):**
 
-- First name
-- Last name
-- Email
-- Phone
-- City
-- State
-- Country
-- Company name
-- Timeframe to launch
-- UTM source
-- Created date
-- Completed steps
-- Lead status
-- Brand name
-- Assigned agent
-- Converted (Yes/No)
-- Imported (Yes/No)
-- Current brands
-- Units owned
-- Interested markets
+- `first_name`
+- `last_name`
+- `email`
+- `phone`
+- `city`
+- `state_id`
+- `country_id`
+- `company_name`
+- `timeframe_to_launch`
+- `utm_source`
+- `created_at`
+- `completed_steps`
+- `converted` (Yes/No)
+- `is_imported` (Yes/No)
+- `current_brands`
+- `units_owned`
+- `interested_markets`
+- `lead_status`
+- `brand_name`
+- `assigned_agent`
 
 ### Tips
 

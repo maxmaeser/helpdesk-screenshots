@@ -16,7 +16,7 @@ Typing narrows this list, and it matches on more than the page name. Type "deals
 
 ### Searching your records
 
-Type at least two characters and FS Ai searches across every brand you have access to, then groups what it finds by type: Prospects, Leads, Franchisees, Locations, Vendors, Franchisee Entities, Deals, Tasks, Projects, Team Members, Courses, Territories, Tracking Links, Assets, and Helpdesk Articles.
+Type at least two characters and FS Ai searches across every brand you have access to, then groups what it finds by type: Prospects, Leads, Franchisees, Locations, Vendors, Franchisee Entities, Workflows, Deal Zones, Deals, Tasks, Projects, Team Members, Courses, Territories, Tracking Links, Assets, and Helpdesk Articles.
 
 ![The command palette with denver typed, showing results grouped under Leads, Locations, and Territories](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-search-and-jump-anywhere-with-cmd-k/cmdk-search-results.png)
 Each group shows up to five matches, with a second line for context: a lead's email address, a location's street address, the applicant behind a deal. You only see records you already have permission to open.

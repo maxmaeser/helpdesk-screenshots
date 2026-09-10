@@ -13,11 +13,11 @@ Every template is one of two types, and each opens into a different editor.
 
 Portal Notification templates are system-authored emails FS Ai sends automatically, like new chat messages or deal updates.
 
-Each one is either **Active** or **Inactive**.
+In the template list, the Type column marks an inactive one as **Portal Notification · Inactive**.
 
 Opening one shows an inbox-style preview of the email. You can edit:
 
-- **Subject**
+- **Subject Line**
 - **Title**
 - **Description**
 - **Button Text**
@@ -28,7 +28,7 @@ Click **Save** to apply your changes.
 ![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-email-templates/email-template-portal.png)
 ### Campaign Email templates
 
-Campaign Email templates are the emails you write and send yourself, as a single deploy or as part of a sequence.
+Campaign Email templates are the emails you write and send yourself, as a single deploy or as part of a Workflow.
 
 Opening one puts you in the campaign editor, with:
 
@@ -43,8 +43,8 @@ The editor gives you three actions: **Save and Exit**, **Preview**, and **Deploy
 
 Two warning banners can appear at the top of the Email Templates page, depending on your brand's setup:
 
-- **Missing CAN-SPAM brand information**: your brand profile is missing details required for compliant campaign email
-- **No connected portal domain**: your brand has no domain connected to send from
+- **Missing required brand information**: your brand profile is missing details required for compliant campaign email
+- A prompt to connect a verified sending domain to send your own marketing emails; automatic funnel emails use the built-in sender until then
 
 Neither banner blocks you from viewing or editing templates.
 

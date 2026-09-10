@@ -2,9 +2,9 @@ If your brand runs on Franchise Systems Ai (FS Ai) Lite, your **Getting Started*
 
 All three open the same place, your funnel builder. This article walks through each one.
 
-> **Where these live on your checklist:** **Choose your funnel template** is under **Required setup**. **Set your qualification rule** and **Make it feel like your brand** are under **Recommended**. An open item shows a **Continue** button that jumps straight to the builder; a finished one shows a green **Done** badge instead.
+> **Where these live on your checklist:** All three items open the same funnel builder. An open item shows a **Continue** button that jumps straight to the builder; a finished one shows a green **Done** badge instead.
 
-![Getting Started checklist, Required setup section, Choose your funnel template item](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-your-funnel-in-lite/lite-getting-started-required.png)
+![Getting Started checklist, Choose your funnel template item](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-your-funnel-in-lite/lite-getting-started-required.png)
 ### Choose your funnel template
 
 Open your funnel builder at **Studio → Funnel** (just **Funnel** in the sidebar if your organization is all Lite), then open the **Workflows** panel.

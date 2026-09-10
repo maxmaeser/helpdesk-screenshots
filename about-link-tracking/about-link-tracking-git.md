@@ -72,7 +72,7 @@ Click any row to open the link's detail panel, with its own overview, performanc
 ![link-tracking-detail-panel](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-link-tracking/link-tracking-detail-panel.png)
 ### QR Templates
 
-The **QR Templates** tab holds reusable QR code styles, including a Brand Default, so your printed codes share one look.
+The **QR Templates** tab holds reusable QR code styles, so your printed codes share one look.
 
 ![link-tracking-qr-templates](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-link-tracking/link-tracking-qr-templates.png)
 A template stores colors and an optional logo. You then apply a template when you generate a QR code for a specific link from that link's detail panel.
@@ -83,10 +83,10 @@ The **Analytics** tab rolls up performance across all of a brand's links.
 
 It defaults to the trailing 30 days, and you can change the date range and switch the view between Hourly, Daily, Weekly, and Monthly.
 
-Four tiles give you the headline numbers: **Total Clicks**, **Unique Visitors**, **Total Links**, and **Avg. Clicks per Link**.
+Four tiles give you the headline numbers: **Total Clicks**, **Unique Visitors**, **Total Links**, and **Avg. Clicks/Link**.
 
 ![link-tracking-analytics](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-link-tracking/link-tracking-analytics.png)
-Below them, the **Total Clicks Over Time** chart plots activity across your range, with a Bar and Line toggle.
+Below them, the **Total Clicks Over Time** chart plots activity across your range.
 
 Alongside it are breakdowns by device, browser, referrer, and country.
 

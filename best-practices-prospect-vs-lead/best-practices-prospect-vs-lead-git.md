@@ -9,7 +9,7 @@ Add someone as a **prospect** when you are reaching out to them and they have no
 - Website interest forms
 - Cold outreach targets
 
-Prospects live in the **Marketing → Audiences** table and are designed for marketing workflows: email campaigns, drip sequences, and audience segmentation. You can run email verification on prospects to maintain list quality before sending.
+Prospects live in the **Marketing → Audiences** table and are designed for marketing workflows: email campaigns, drip workflows, and audience segmentation. You can run email verification on prospects to maintain list quality before sending.
 
 ![Marketing Audiences table showing prospect records](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/best-practices-prospect-vs-lead/marketing-audiences-prospects.png)
 
@@ -46,7 +46,7 @@ When a prospect is converted (either automatically or manually):
 - Any notes attached to the prospect are transferred to the new lead.
 - The prospect record is removed from the marketing table.
 - Scheduled marketing emails for that prospect are cancelled.
-- The **New Sales Lead** sequence triggers for the newly created lead.
+- Any workflow built on the **Prospect converts to applicant** trigger fires for the newly created lead.
 
 ![Selected prospects with the Convert action open in the bulk toolbar](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/best-practices-prospect-vs-lead/convert-action-dropdown-v2.png)
 
@@ -62,7 +62,7 @@ During conversion:
 - The prospect's contact details and custom field values are transferred to the lead record.
 - The prospect record is removed from the marketing table.
 - Scheduled marketing emails for that prospect are cancelled.
-- The **New Sales Lead** sequence triggers for the newly created lead.
+- Any workflow built on the **Prospect converts to applicant** trigger fires for the newly created lead.
 
 This merge only happens if the email addresses match exactly.
 
@@ -72,7 +72,7 @@ If you imported someone directly as a lead (bypassing the prospect stage) and th
 
 ### Recommended Workflow
 
-1. **Import cold contacts as prospects.** Use marketing campaigns and sequences to nurture them.
+1. **Import cold contacts as prospects.** Use marketing campaigns and workflows to nurture them.
 2. **Let warm contacts come through the portal.** Portal signups automatically become leads once they complete the signup process (email confirmed, password set).
 3. **Convert engaged prospects to leads** when they respond to outreach or express interest. Use the Convert action in the prospects table.
 4. **Tag your contacts** at import time so you can trace where each person came from and measure which sources produce the best results.

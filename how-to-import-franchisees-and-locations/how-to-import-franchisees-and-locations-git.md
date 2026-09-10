@@ -13,7 +13,7 @@ Both importers work the same way: upload a CSV, map your columns to FS Ai's fiel
 ![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-import-franchisees-and-locations/import-franchisee-entities-modal.png)
 This opens the import flow. Click **Click to upload your csv file** to select your file, or drag and drop it onto the drop zone.
 
-If you don't have a file ready, click **Download** next to **CSV Import Template** first. The template's columns are **Business Name**, **Business Entity**, **Date Of Incorporation**, **Email**, **Phone**, **Street Address**, **Line 2**, **City**, **Zip Code**, **Country**, and **State/Province**.
+If you don't have a file ready, click **Download** next to **CSV Import Template** first.
 
 ![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-import-franchisees-and-locations/import-upload-step.png)
 The import flow has four steps:

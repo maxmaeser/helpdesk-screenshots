@@ -15,9 +15,9 @@ If you've already added someone as a franchisee, whether through a deal conversi
 3. In the banner under their name, click **Send Invitation**.
 
 ![Franchisee detail panel banner showing the Not Invited status, with Copy Invite Link and Send Invitation buttons](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-invite-a-franchisee-to-their-portal/franchisee-banner-not-invited.png)
-That banner also shows their current status: **Not Invited**, **Invite Pending**, or **Portal Access**. If you'd rather send the link yourself instead of triggering an email, click **Copy Invite Link** in the same banner.
+That banner also shows their current status: **Not Invited**, **Pending**, **Expired**, or **Active**. If you'd rather send the link yourself instead of triggering an email, click **Copy Invite Link** in the same banner.
 
-![Franchisee detail panel banner showing the Portal Access status once the franchisee already has an account](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-invite-a-franchisee-to-their-portal/franchisee-banner-portal-access.png)
+![Franchisee detail panel banner showing the Active status once the franchisee already has an account](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-invite-a-franchisee-to-their-portal/franchisee-banner-portal-access.png)
 
 ### Adding a new franchisee and inviting them
 
@@ -49,7 +49,7 @@ If you have a batch of franchisees who were imported but never invited, open the
 
 ### What the franchisee sees
 
-They get an email titled "Your Invite to the [Brand] Franchisee Dashboard." Opening it takes them straight to account creation with their email already filled in.
+They get an invite email that takes them straight to account creation with their email already filled in.
 
 From there they set a name, phone number, and password, verify their email, and land on their portal Home already logged in.
 
