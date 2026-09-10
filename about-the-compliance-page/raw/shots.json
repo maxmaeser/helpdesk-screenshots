@@ -1,0 +1,51 @@
+{
+  "revision": 1,
+  "shots": {
+    "compliance-states-map.png": {
+      "status": "proposed",
+      "note": "Sales -> Compliance on Staging Test Brand, States tab. Brand chip, title, the orange issues chip, three tabs, panel and map. Spadea promo banner cropped out by the clip.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0,
+      "updatedAt": 1789023768103
+    },
+    "compliance-fdds-tab.png": {
+      "status": "proposed",
+      "note": "The FDDs tab: needs-attention band, Active FDDs, the Prepared badge. The document title is replaced per-shot ('Testing FDD is the best FDD' -> '2025 Franchise Disclosure Document'); the staging name is not fit for a customer-facing frame.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0,
+      "updatedAt": 1789023768103,
+      "cursor": {
+        "pos": [
+          331,
+          172
+        ],
+        "type": "arrow"
+      }
+    },
+    "compliance-deadlines-tab.png": {
+      "status": "proposed",
+      "note": "The Deadlines tab, two overdue registrations grouped under Overdue.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0,
+      "updatedAt": 1789023768103,
+      "cursor": {
+        "pos": [
+          611,
+          172
+        ],
+        "type": "arrow"
+      }
+    },
+    "compliance-bulk-bar.png": {
+      "status": "proposed",
+      "note": "Two state rows checked, raising Set Status and Assign FDD. No cursor: the selection tells the story.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0,
+      "updatedAt": 1789023768103
+    }
+  }
+}

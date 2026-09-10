@@ -51,6 +51,44 @@
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0
+    },
+    "workflow-runs-list.png": {
+      "status": "proposed",
+      "note": "The Runs view of [DEMO] Lead Follow Ups (Lumon Fresh), 25 runs. Entity names masked by the sanitizer roster plus two per-shot replacements (Max Zeno -> Dana Reyes, Jordan Ellis -> Rowan Blake).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0,
+      "updatedAt": 1789023768102,
+      "cursor": {
+        "pos": [
+          1393,
+          68
+        ],
+        "type": "arrow"
+      }
+    },
+    "workflow-run-timeline.png": {
+      "status": "proposed",
+      "note": "A Completed run's detail panel and its four-step execution timeline. Deliberately NOT a Failed run: no failed run in staging has a step-level error populated, so there is no View error link to show (same finding as runs-detail-timeline.png).",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0,
+      "updatedAt": 1789023768102
+    },
+    "workflow-performance.png": {
+      "status": "proposed",
+      "note": "The Performance view. Cropped above the 'Scheduled and sent by day' chart. This workflow has no goal set, so no goal block appears, which matches the article.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0,
+      "updatedAt": 1789023768102,
+      "cursor": {
+        "pos": [
+          1554,
+          68
+        ],
+        "type": "arrow"
+      }
     }
   }
 }

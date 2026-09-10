@@ -17,7 +17,10 @@
     },
     "sequence-add-step-menu.png": {
       "cursor": {
-        "pos": [861, 512],
+        "pos": [
+          861,
+          512
+        ],
         "type": "arrow"
       },
       "status": "proposed",
@@ -25,6 +28,52 @@
       "lastTouchedBy": "claude",
       "editing": false,
       "rev": 0
+    },
+    "workflows-list.png": {
+      "status": "proposed",
+      "note": "Sales -> Workflows on the Lumon Fresh staging brand, analytics row hidden and the table expanded so the Goal rate column is on screen. Cropped below the tab strip and right of the sidebar: staging ships the split Workflows/Content pages, production still ships the two-tab page the article describes.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0,
+      "updatedAt": 1789023768102
+    },
+    "workflows-create-paths.png": {
+      "status": "proposed",
+      "note": "The Create Workflow modal, three paths. Clip is the dialog plus 40px.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0,
+      "updatedAt": 1789023768102,
+      "cursor": {
+        "pos": [
+          560,
+          400
+        ],
+        "type": "arrow"
+      }
+    },
+    "workflows-step-palette.png": {
+      "status": "proposed",
+      "note": "The add-step palette on the draft workflow 'Josh Tests' (Staging Test Brand), opened from the round + under the last node. Shows all four groups. Note the palette also carries Send SMS, which the article's Communication list omits.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0,
+      "updatedAt": 1789023768102,
+      "cursor": {
+        "pos": [
+          480,
+          718
+        ],
+        "type": "arrow"
+      }
+    },
+    "workflows-builder-goal.png": {
+      "status": "proposed",
+      "note": "The builder on the same draft: trigger, delay, two sends, the Goal card, the Cancellation card, and the Draft/Published toggle. No cursor, it is a state not a click.",
+      "lastTouchedBy": "claude",
+      "editing": false,
+      "rev": 0,
+      "updatedAt": 1789023768102
     }
   }
 }
