@@ -1,5 +1,5 @@
 {
-  "revision": 4,
+  "revision": 5,
   "cover": {
     "v": 2,
     "background": "cloud",
@@ -72,7 +72,7 @@
             "id": "dd-1",
             "type": "dropdown",
             "props": {
-              "title": "Sales",
+              "title": "Steps",
               "search": false,
               "scale": 1.25,
               "items": [
@@ -100,7 +100,7 @@
     "note": "STYLE B s12 card-stage: the cover is one big floating portal card on a tinted field, lockup inside it, with a real status-picker popover overlapping the card. [style-b s12-card-stage, task, gate PASS]",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 4,
-    "updatedAt": 1788998345493
+    "rev": 5,
+    "updatedAt": 1788998675017
   }
 }

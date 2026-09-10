@@ -1,5 +1,5 @@
 {
-  "revision": 4,
+  "revision": 5,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -105,7 +105,7 @@
     "note": "STYLE B s03 auth-gate: the auth-split shell full bleed; lockup in the form pane; a white sign-in card straddling the seam. Reserved for the sign-in, password and invite family. [style-b s03-auth-gate, task, gate PASS]",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 4,
-    "updatedAt": 1788998343673
+    "rev": 5,
+    "updatedAt": 1788998669030
   }
 }

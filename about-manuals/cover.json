@@ -1,5 +1,5 @@
 {
-  "revision": 4,
+  "revision": 5,
   "cover": {
     "v": 2,
     "background": "gray-solid",
@@ -61,7 +61,7 @@
             "type": "table",
             "props": {
               "columns": [
-                "Operations",
+                "Term",
                 "Part"
               ],
               "radius": 16,
@@ -98,7 +98,7 @@
     "note": "STYLE B s08 table-wide: lockup on top; the platform table stretched across the full safe width as one wide data block on portal page gray. [style-b s08-table-wide, concept, gate PASS]",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 4,
-    "updatedAt": 1788998342968
+    "rev": 5,
+    "updatedAt": 1788998666731
   }
 }

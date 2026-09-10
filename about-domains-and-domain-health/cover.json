@@ -1,5 +1,5 @@
 {
-  "revision": 6,
+  "revision": 7,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -137,7 +137,7 @@
     "note": "STYLE B s05 tile-fan: the real Assets grid tile fanned as a depth stack, sharp front tile and two blurred sheets receding off the right edge. [style-b s05-tile-fan, concept, gate PASS]",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 6,
-    "updatedAt": 1788998341110
+    "rev": 7,
+    "updatedAt": 1788998660741
   }
 }

@@ -1,5 +1,5 @@
 {
-  "revision": 3,
+  "revision": 4,
   "cover": {
     "v": 2,
     "background": "gray-solid",
@@ -122,7 +122,7 @@
     "note": "STYLE B s10 column-right: portal page gray; one tall white panel pinned to the right, bleeding off the bottom, carrying a cluster of list rows, a progress state and a heading. [style-b s10-column-right, task, gate PASS]",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 3,
-    "updatedAt": 1788998347173
+    "rev": 4,
+    "updatedAt": 1788998680547
   }
 }

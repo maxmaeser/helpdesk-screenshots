@@ -1,5 +1,5 @@
 {
-  "revision": 6,
+  "revision": 7,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -113,7 +113,7 @@
     "note": "STYLE B s01 portal-window: a real portal-shell frame entering from the right and bleeding off the bottom; lockup left on the grid field. [style-b s01-portal-window, surface, gate PASS]",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 6,
-    "updatedAt": 1788998338442
+    "rev": 7,
+    "updatedAt": 1788998651990
   }
 }

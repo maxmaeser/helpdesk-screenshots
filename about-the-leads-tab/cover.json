@@ -1,5 +1,5 @@
 {
-  "revision": 4,
+  "revision": 5,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -93,7 +93,7 @@
     "note": "STYLE B s11 rail-left: composition flipped, the portal nav rail pinned to the LEFT edge and bleeding off the bottom, lockup on the right. Hue from Sales. [style-b s11-rail-left, surface, gate PASS]",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 4,
-    "updatedAt": 1788998345073
+    "rev": 5,
+    "updatedAt": 1788998673635
   }
 }

@@ -1,5 +1,5 @@
 {
-  "revision": 10,
+  "revision": 11,
   "cover": {
     "v": 2,
     "background": "sand",
@@ -60,7 +60,6 @@
             "id": "hero-1",
             "type": "pageHero",
             "props": {
-              "eyebrow": "GETTING STARTED",
               "title": "Manage locations, assets, and documents.",
               "tone": "library",
               "metrics": [
@@ -86,7 +85,7 @@
     "note": "STYLE B s04 hero-band: warm tinted ground; lockup on top; the real pageHero banner with its metric row as one wide short band across the full safe width. [style-b s04-hero-band, hub, gate PASS]",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 9,
-    "updatedAt": 1788998479652
+    "rev": 10,
+    "updatedAt": 1788998656595
   }
 }
