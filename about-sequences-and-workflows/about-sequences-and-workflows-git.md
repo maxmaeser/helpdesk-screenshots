@@ -26,6 +26,8 @@ Use **Search Workflows...** to find one by name, description, status, or trigger
 
 Select one or more rows to **Duplicate** or **Delete** them.
 
+![The workflow list, one row per workflow, with the table expanded so every column is on screen](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-sequences-and-workflows/workflows-list.png)
+
 ### Build a workflow
 
 1. Click **+ Create Workflow**.
@@ -35,8 +37,14 @@ Select one or more rows to **Duplicate** or **Delete** them.
 5. Set a **Goal** on the Goal card: the event that counts as this workflow having worked.
 6. Switch the toggle from **Draft** to **Published**. It refuses while a trigger is missing or a step is incomplete, and it names the issue.
 
+![The Create Workflow modal, offering Create from Template, Campaign Builder and Create from Scratch](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-sequences-and-workflows/workflows-create-paths.png)
+
+![The step palette open on the canvas, grouped as Flow Control, Communication, Lead Management and Portal](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-sequences-and-workflows/workflows-step-palette.png)
+
 ### Enrolling an audience
 
 A workflow on an enrollment trigger shows an **Enroll Audience** button in the builder toolbar. It asks for the audience, when it sends, and how it sends. If the workflow is still a draft, confirming publishes it first.
+
+![The builder toolbar with the Build, Runs and Performance views, the Enroll Audience button and the Draft toggle, above the canvas and the Goal card](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-sequences-and-workflows/workflows-builder-goal.png)
 
 Delays and conditions do not count toward the step count shown on the list. For where runs and per-workflow numbers live, see *[About Workflow Runs and Performance]*.

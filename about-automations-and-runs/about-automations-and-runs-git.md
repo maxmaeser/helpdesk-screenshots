@@ -26,6 +26,8 @@ Use **Search Runs...** to find one, filter by status, and sort by date invoked.
 
 To stop runs that are still in progress, select them and choose **Cancel Runs**. Cancelling stops the remaining steps and cannot be undone.
 
+![The Runs view, one row per contact, with the Status, Entity, Started, Duration and Steps columns](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-automations-and-runs/workflow-runs-list.png)
+
 ### Reading a run
 
 When someone asks "why didn't my lead get that email," this is where you find out.
@@ -34,11 +36,15 @@ Select a run to open its detail panel. The panel shows the trigger that started 
 
 Each step in the timeline carries its own outcome. A failed step shows a **View error** link with the reason. Read the timeline top to bottom to see where the run stopped or which path it followed.
 
+![A run's detail panel: the trigger, the record it acted on, and the execution timeline of all four steps](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-automations-and-runs/workflow-run-timeline.png)
+
 ### The Performance view
 
 **Performance** is the report for the whole workflow, or for one enrollment if it is a campaign.
 
 It covers how the runs ended (Completed, Still running, Stopped early, Failed), how the emails did (Scheduled, Sent, Delivered, Waiting to send, Held back, Bounced), and how the workflow performed against its goal (Goal reached, Completion rate, Median time to goal).
+
+![The Performance view: contacts enrolled, the email stages, and contacts by outcome](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-automations-and-runs/workflow-performance.png)
 
 A workflow with no goal set reports no goal rate. Set the goal on the **Goal** card in the Build view first. See *[About Workflows]*.
 
