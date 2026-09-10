@@ -1,0 +1,106 @@
+{
+  "revision": 1,
+  "cover": {
+    "v": 2,
+    "background": "cloud",
+    "title": null,
+    "exportPreset": "opener-wide",
+    "scale": 100,
+    "positionX": 0,
+    "positionY": 0,
+    "frames": [
+      {
+        "id": "a",
+        "role": "foreground",
+        "x": -208,
+        "y": -54,
+        "w": 1456,
+        "h": 648,
+        "preset": "plain",
+        "layout": "free",
+        "children": [
+          {
+            "id": "text-0fab9-1",
+            "type": "text",
+            "props": {
+              "variant": "flowEyebrow",
+              "value": "CALENDAR",
+              "color": "#B7101B"
+            },
+            "offset": [
+              140,
+              128
+            ]
+          },
+          {
+            "id": "text-0fab9-2",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "How to Set Up\nGroup Scheduling",
+              "size": 60
+            },
+            "offset": [
+              140,
+              178
+            ]
+          },
+          {
+            "id": "text-0fab9-3",
+            "type": "text",
+            "props": {
+              "variant": "flowSub",
+              "value": "One booking link across several\nagents."
+            },
+            "offset": [
+              140,
+              338.8
+            ]
+          }
+        ]
+      },
+      {
+        "id": "b",
+        "role": "foreground",
+        "x": 562,
+        "y": 84,
+        "w": 460,
+        "h": 380,
+        "preset": "bare",
+        "children": [
+          {
+            "id": "dd-1",
+            "type": "dropdown",
+            "props": {
+              "title": "Steps",
+              "search": false,
+              "scale": 1.25,
+              "items": [
+                {
+                  "label": "Create Event",
+                  "color": "#B7101B",
+                  "highlighted": true
+                },
+                {
+                  "label": "Set Availability",
+                  "highlighted": false
+                },
+                {
+                  "label": "Add Agents",
+                  "highlighted": false
+                }
+              ],
+              "footer": "Settings, Brand page"
+            }
+          }
+        ]
+      }
+    ],
+    "status": "proposed",
+    "note": "STYLE B s12 card-stage: the cover is one big floating portal card on a tinted field, lockup inside it, with a real status-picker popover overlapping the card. [style-b s12-card-stage, task, gate PASS]",
+    "lastTouchedBy": "claude",
+    "editing": false,
+    "rev": 1,
+    "updatedAt": 1789021668435
+  }
+}

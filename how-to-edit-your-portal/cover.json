@@ -1,5 +1,5 @@
 {
-  "revision": 8,
+  "revision": 1,
   "cover": {
     "v": 2,
     "background": "gray-solid",
@@ -20,7 +20,7 @@
         "layout": "free",
         "children": [
           {
-            "id": "text-4e57a-1",
+            "id": "text-2b110-1",
             "type": "text",
             "props": {
               "variant": "flowEyebrow",
@@ -33,12 +33,12 @@
             ]
           },
           {
-            "id": "text-4e57a-2",
+            "id": "text-2b110-2",
             "type": "text",
             "props": {
               "variant": "flowTitle",
-              "value": "How to\nManage FDDs",
-              "size": 88
+              "value": "How to Edit\nYour Portal",
+              "size": 104
             },
             "offset": [
               250,
@@ -46,15 +46,15 @@
             ]
           },
           {
-            "id": "text-4e57a-3",
+            "id": "text-2b110-3",
             "type": "text",
             "props": {
               "variant": "flowSub",
-              "value": "Assign and track FDDs across states."
+              "value": "Build the pages your applicants see."
             },
             "offset": [
               250,
-              468.24
+              503.92
             ]
           }
         ]
@@ -80,8 +80,8 @@
             "id": "lr-1",
             "type": "listRow",
             "props": {
-              "label": "Upload an FDD",
-              "sublabel": "toggle the FDD flag",
+              "label": "Open the Editor",
+              "sublabel": "Studio, Applicant Portal",
               "trailing": "1",
               "highlighted": true
             }
@@ -90,8 +90,8 @@
             "id": "lr-2",
             "type": "listRow",
             "props": {
-              "label": "Prepare for Signature",
-              "sublabel": "powered by DocuSeal",
+              "label": "Sections and Steps",
+              "sublabel": "eight step types",
               "trailing": "2",
               "highlighted": false
             }
@@ -100,8 +100,8 @@
             "id": "lr-3",
             "type": "listRow",
             "props": {
-              "label": "Send FDD",
-              "sublabel": "email with a link to sign",
+              "label": "Theme and Style",
+              "sublabel": "colors, fonts, layout",
               "trailing": "3",
               "highlighted": false
             }
@@ -122,7 +122,7 @@
     "note": "STYLE B s10 column-right: portal page gray; one tall white panel pinned to the right, bleeding off the bottom, carrying a cluster of list rows, a progress state and a heading. [style-b s10-column-right, task, gate PASS]",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 6,
-    "updatedAt": 1789021461334
+    "rev": 1,
+    "updatedAt": 1789021668141
   }
 }

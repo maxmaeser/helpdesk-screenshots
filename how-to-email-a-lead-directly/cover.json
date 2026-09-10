@@ -1,5 +1,5 @@
 {
-  "revision": 8,
+  "revision": 1,
   "cover": {
     "v": 2,
     "background": "gray-solid",
@@ -20,12 +20,12 @@
         "layout": "free",
         "children": [
           {
-            "id": "text-4e57a-1",
+            "id": "text-f240c-1",
             "type": "text",
             "props": {
               "variant": "flowEyebrow",
-              "value": "OPERATIONS",
-              "color": "#D87203"
+              "value": "SALES",
+              "color": "#16A34A"
             },
             "offset": [
               250,
@@ -33,11 +33,11 @@
             ]
           },
           {
-            "id": "text-4e57a-2",
+            "id": "text-f240c-2",
             "type": "text",
             "props": {
               "variant": "flowTitle",
-              "value": "How to\nManage FDDs",
+              "value": "How to Email\na Lead Directly",
               "size": 88
             },
             "offset": [
@@ -46,11 +46,11 @@
             ]
           },
           {
-            "id": "text-4e57a-3",
+            "id": "text-f240c-3",
             "type": "text",
             "props": {
               "variant": "flowSub",
-              "value": "Assign and track FDDs across states."
+              "value": "One email to one lead, no sequence."
             },
             "offset": [
               250,
@@ -80,8 +80,8 @@
             "id": "lr-1",
             "type": "listRow",
             "props": {
-              "label": "Upload an FDD",
-              "sublabel": "toggle the FDD flag",
+              "label": "Open the Lead",
+              "sublabel": "Sales, then Pipeline",
               "trailing": "1",
               "highlighted": true
             }
@@ -90,8 +90,8 @@
             "id": "lr-2",
             "type": "listRow",
             "props": {
-              "label": "Prepare for Signature",
-              "sublabel": "powered by DocuSeal",
+              "label": "Template or Compose",
+              "sublabel": "preview with merge tags",
               "trailing": "2",
               "highlighted": false
             }
@@ -100,8 +100,8 @@
             "id": "lr-3",
             "type": "listRow",
             "props": {
-              "label": "Send FDD",
-              "sublabel": "email with a link to sign",
+              "label": "Send",
+              "sublabel": "now or scheduled",
               "trailing": "3",
               "highlighted": false
             }
@@ -112,7 +112,7 @@
             "props": {
               "value": 66,
               "label": "Progress",
-              "color": "#D87203"
+              "color": "#16A34A"
             }
           }
         ]
@@ -122,7 +122,7 @@
     "note": "STYLE B s10 column-right: portal page gray; one tall white panel pinned to the right, bleeding off the bottom, carrying a cluster of list rows, a progress state and a heading. [style-b s10-column-right, task, gate PASS]",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 6,
-    "updatedAt": 1789021461334
+    "rev": 1,
+    "updatedAt": 1789021668288
   }
 }

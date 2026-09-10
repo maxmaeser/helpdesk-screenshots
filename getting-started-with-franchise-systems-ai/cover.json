@@ -1,142 +1,91 @@
 {
-  "revision": 4,
+  "revision": 6,
   "cover": {
     "v": 2,
-    "background": "white-solid",
+    "background": "sand",
     "title": null,
     "exportPreset": "opener-wide",
-    "scale": 86,
-    "positionX": 53,
+    "scale": 100,
+    "positionX": 0,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
         "role": "foreground",
-        "x": -572.047,
-        "y": -171.86,
-        "w": 1972.093,
-        "h": 883.721,
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
         "preset": "bare",
         "layout": "free",
         "children": [
           {
-            "id": "gridField-hubport-1",
-            "type": "gridField",
-            "props": {
-              "width": 1972.093,
-              "height": 883.721,
-              "gridSize": 93.023,
-              "cornerRadius": 65.116,
-              "frameLine": true,
-              "showGrid": true,
-              "maskX": 78,
-              "maskY": 50,
-              "lineScale": 1.16279
-            },
-            "offset": [
-              0,
-              0
-            ]
-          },
-          {
-            "id": "text-hubport-2",
+            "id": "text-bc8f8-1",
             "type": "text",
             "props": {
               "variant": "flowEyebrow",
-              "value": "GETTING STARTED"
+              "value": "GETTING STARTED",
+              "color": "#1F54DE"
             },
             "offset": [
-              412.047,
-              258.86
+              250,
+              166
             ]
           },
           {
-            "id": "text-hubport-3",
+            "id": "text-bc8f8-2",
             "type": "text",
             "props": {
               "variant": "flowTitle",
-              "value": "Getting Started\nwith Franchise\nSystems Ai",
-              "size": 74
+              "value": "Getting Started with Franchise Systems Ai",
+              "size": 54
             },
             "offset": [
-              412.047,
-              314.86
+              250,
+              206
             ]
-          },
+          }
+        ]
+      },
+      {
+        "id": "b",
+        "role": "foreground",
+        "x": -88,
+        "y": 202,
+        "w": 1216,
+        "h": 280,
+        "preset": "bare",
+        "children": [
           {
-            "id": "text-hubport-4",
-            "type": "text",
+            "id": "hero-1",
+            "type": "pageHero",
             "props": {
-              "variant": "flowSub",
-              "value": "Three levels: organization, brand, agent."
-            },
-            "offset": [
-              412.047,
-              580.86
-            ]
-          },
-          {
-            "id": "flowNode-hubport-5",
-            "type": "flowNode",
-            "props": {
-              "label": "Organization",
-              "meta": "brands · team · billing",
-              "icon": "building",
-              "tint": "slate",
-              "emphasized": false,
-              "width": 680,
-              "height": 512,
-              "anchorTop": true
-            },
-            "offset": [
-              1102.047,
-              185.721
-            ]
-          },
-          {
-            "id": "flowNode-hubport-6",
-            "type": "flowNode",
-            "props": {
-              "label": "Brand",
-              "meta": "pipeline · portal",
-              "icon": "brand",
-              "tint": "purple",
-              "emphasized": false,
-              "width": 552,
-              "height": 344,
-              "anchorTop": true
-            },
-            "offset": [
-              1166.047,
-              305.721
-            ]
-          },
-          {
-            "id": "flowNode-hubport-7",
-            "type": "flowNode",
-            "props": {
-              "label": "Agent",
-              "meta": "logs in · your access",
-              "icon": "user",
-              "tint": "blue",
-              "emphasized": true,
-              "width": 424,
-              "height": 184,
-              "anchorTop": true
-            },
-            "offset": [
-              1230.047,
-              433.721
-            ]
+              "title": "Three levels: organization, brand, agent.",
+              "tone": "library",
+              "metrics": [
+                {
+                  "value": "1",
+                  "label": "Organization"
+                },
+                {
+                  "value": "2",
+                  "label": "Brand"
+                },
+                {
+                  "value": "3",
+                  "label": "Agent"
+                }
+              ]
+            }
           }
         ]
       }
     ],
     "status": "proposed",
-    "note": "Ported from tools/opener-gen (shipped -opener-v2) into editable studio primitives.",
-    "lastTouchedBy": "claude-banner-recompose",
+    "note": "STYLE B s04 hero-band: warm tinted ground; lockup on top; the real pageHero banner with its metric row as one wide short band across the full safe width. [style-b s04-hero-band, hub, gate PASS]",
+    "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 4,
-    "updatedAt": 1787739731116
+    "rev": 5,
+    "updatedAt": 1789021460331
   }
 }

@@ -1,37 +1,36 @@
 {
-  "revision": 5,
+  "revision": 7,
   "cover": {
     "v": 2,
     "background": "white-solid",
     "title": null,
     "exportPreset": "opener-wide",
-    "scale": 86,
-    "positionX": 48,
+    "scale": 100,
+    "positionX": 0,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
         "role": "foreground",
-        "x": -562.047,
-        "y": -171.86,
-        "w": 1972.093,
-        "h": 883.721,
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
         "preset": "bare",
         "layout": "free",
         "children": [
           {
-            "id": "gridField-high9-1",
+            "id": "gridField-1",
             "type": "gridField",
             "props": {
-              "width": 1972.093,
-              "height": 883.721,
-              "gridSize": 93.023,
-              "cornerRadius": 65.116,
+              "width": 1696,
+              "height": 760,
+              "gridSize": 80,
+              "cornerRadius": 56,
               "frameLine": true,
               "showGrid": true,
               "maskX": 78,
-              "maskY": 50,
-              "lineScale": 1.16279
+              "maskY": 50
             },
             "offset": [
               0,
@@ -39,240 +38,106 @@
             ]
           },
           {
-            "id": "text-high9-2",
+            "id": "text-ec3b1-1",
             "type": "text",
             "props": {
               "variant": "flowEyebrow",
-              "value": "OPERATIONS"
+              "value": "OPERATIONS",
+              "color": "#D87203"
             },
             "offset": [
-              402.047,
-              299.86
+              250,
+              190
             ]
           },
           {
-            "id": "text-high9-3",
+            "id": "text-ec3b1-2",
             "type": "text",
             "props": {
               "variant": "flowTitle",
               "value": "About Sequences\nand Workflows",
-              "size": 72
+              "size": 54
             },
             "offset": [
-              402.047,
-              355.86
+              250,
+              246
             ]
           },
           {
-            "id": "text-high9-4",
+            "id": "text-ec3b1-3",
             "type": "text",
             "props": {
               "variant": "flowSub",
-              "value": "A trigger fires and actions execute in order."
+              "value": "A trigger fires and actions execute\nin order."
             },
             "offset": [
-              402.047,
-              539.86
+              250,
+              393.92
             ]
           },
           {
-            "id": "flowConnector-high9-5",
-            "type": "flowConnector",
+            "id": "tile-3",
+            "type": "assetGridItem",
             "props": {
-              "dx": 0,
-              "dy": 40,
-              "route": "line",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 24,
-              "arrow": true,
-              "mid": 0.5
+              "title": "Create Task",
+              "icon": "notebook",
+              "tone": "light",
+              "width": 300,
+              "scale": 0.95,
+              "blur": 3.2,
+              "dim": 0.14,
+              "tiltDeg": -9
             },
             "offset": [
-              1238.047,
-              233.86
+              1230,
+              128
             ]
           },
           {
-            "id": "flowConnector-high9-6",
-            "type": "flowConnector",
+            "id": "tile-2",
+            "type": "assetGridItem",
             "props": {
-              "dx": 0,
-              "dy": 40,
-              "route": "line",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 24,
-              "arrow": true,
-              "mid": 0.5
+              "title": "Email",
+              "icon": "pencilEdit",
+              "tone": "mid",
+              "width": 330,
+              "scale": 1,
+              "blur": 1.4,
+              "dim": 0.06,
+              "tiltDeg": 5
             },
             "offset": [
-              1238.047,
-              389.86
+              1090,
+              306
             ]
           },
           {
-            "id": "flowConnector-high9-7",
-            "type": "flowConnector",
+            "id": "tile-1",
+            "type": "assetGridItem",
             "props": {
-              "dx": -94,
-              "dy": 76,
-              "route": "vhv",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 24,
-              "arrow": true,
-              "mid": 0.5
-            },
-            "offset": [
-              1034.047,
-              545.86
-            ]
-          },
-          {
-            "id": "flowConnector-high9-8",
-            "type": "flowConnector",
-            "props": {
-              "dx": 94,
-              "dy": 76,
-              "route": "vhv",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 24,
-              "arrow": true,
-              "mid": 0.5
-            },
-            "offset": [
-              1348.047,
-              545.86
-            ]
-          },
-          {
-            "id": "text-high9-9",
-            "type": "text",
-            "props": {
-              "variant": "flowEyebrow",
-              "value": "Yes",
-              "size": 22,
-              "color": "#8A8F98"
-            },
-            "offset": [
-              966.047,
-              583.86
-            ]
-          },
-          {
-            "id": "text-high9-10",
-            "type": "text",
-            "props": {
-              "variant": "flowEyebrow",
-              "value": "No",
-              "size": 22,
-              "color": "#8A8F98"
-            },
-            "offset": [
-              1482.047,
-              583.86
-            ]
-          },
-          {
-            "id": "flowNode-high9-11",
-            "type": "flowNode",
-            "props": {
-              "label": "Trigger",
+              "title": "Trigger",
               "meta": "deal moves to a new stage",
-              "icon": "flag",
-              "tint": "purple",
-              "emphasized": false,
-              "width": 440,
-              "height": 116,
-              "anchorTop": false
+              "badgeLabel": "Live",
+              "badgeTone": "green",
+              "icon": "folders",
+              "tone": "deep",
+              "width": 380,
+              "scale": 1.12,
+              "tiltDeg": -3
             },
             "offset": [
-              1034.047,
-              133.86
-            ]
-          },
-          {
-            "id": "flowNode-high9-12",
-            "type": "flowNode",
-            "props": {
-              "label": "Email",
-              "meta": "your email templates",
-              "icon": "mail",
-              "tint": "blue",
-              "emphasized": false,
-              "width": 440,
-              "height": 116,
-              "anchorTop": false
-            },
-            "offset": [
-              1034.047,
-              289.86
-            ]
-          },
-          {
-            "id": "flowNode-high9-13",
-            "type": "flowNode",
-            "props": {
-              "label": "Condition",
-              "meta": "two paths: yes and no",
-              "icon": "branch",
-              "tint": "blue",
-              "emphasized": true,
-              "width": 440,
-              "height": 116,
-              "anchorTop": false
-            },
-            "offset": [
-              1034.047,
-              445.86
-            ]
-          },
-          {
-            "id": "flowNode-high9-14",
-            "type": "flowNode",
-            "props": {
-              "label": "Add Tag",
-              "meta": "records that match",
-              "icon": "badge",
-              "tint": "amber",
-              "emphasized": false,
-              "width": 400,
-              "height": 116,
-              "anchorTop": false
-            },
-            "offset": [
-              850.047,
-              637.86
-            ]
-          },
-          {
-            "id": "flowNode-high9-15",
-            "type": "flowNode",
-            "props": {
-              "label": "Create Task",
-              "meta": "records that do not",
-              "icon": "calendar",
-              "tint": "slate",
-              "emphasized": false,
-              "width": 400,
-              "height": 116,
-              "anchorTop": false
-            },
-            "offset": [
-              1258.047,
-              637.86
+              880,
+              182
             ]
           }
         ]
       }
     ],
-    "status": "approved",
-    "note": "Branching flow from the article: trigger-action pattern with a condition node splitting into yes and no paths. All labels verbatim from About Sequences and Workflows. Rev 2: distinct yes/no stems with quiet gray branch labels per Sol QA.",
-    "lastTouchedBy": "max",
+    "status": "proposed",
+    "note": "STYLE B s05 tile-fan: the real Assets grid tile fanned as a depth stack, sharp front tile and two blurred sheets receding off the right edge. [style-b s05-tile-fan, concept, gate PASS]",
+    "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 4,
-    "updatedAt": 1787735908070
+    "rev": 5,
+    "updatedAt": 1789021461048
   }
 }

@@ -1,214 +1,91 @@
 {
-  "revision": 4,
+  "revision": 6,
   "cover": {
     "v": 2,
-    "background": "white-solid",
+    "background": "sand",
     "title": null,
     "exportPreset": "opener-wide",
-    "scale": 86,
-    "positionX": 10,
+    "scale": 100,
+    "positionX": 0,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
         "role": "foreground",
-        "x": -486.047,
-        "y": -171.86,
-        "w": 1972.093,
-        "h": 883.721,
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
         "preset": "bare",
         "layout": "free",
         "children": [
           {
-            "id": "gridField-hubport-19",
-            "type": "gridField",
-            "props": {
-              "width": 1972.093,
-              "height": 883.721,
-              "gridSize": 93.023,
-              "cornerRadius": 65.116,
-              "frameLine": true,
-              "showGrid": true,
-              "maskX": 78,
-              "maskY": 50,
-              "lineScale": 1.16279
-            },
-            "offset": [
-              0,
-              0
-            ]
-          },
-          {
-            "id": "text-hubport-20",
+            "id": "text-2a6cd-1",
             "type": "text",
             "props": {
               "variant": "flowEyebrow",
-              "value": "GETTING STARTED · CHAPTER 2"
+              "value": "GETTING STARTED",
+              "color": "#1F54DE"
             },
             "offset": [
-              326.047,
-              269.86
+              250,
+              166
             ]
           },
           {
-            "id": "text-hubport-21",
+            "id": "text-2a6cd-2",
             "type": "text",
             "props": {
               "variant": "flowTitle",
-              "value": "Get Your\nLeads In",
-              "size": 104
+              "value": "Get Your Leads In",
+              "size": 76
             },
             "offset": [
-              326.047,
-              325.86
+              250,
+              206
             ]
-          },
+          }
+        ]
+      },
+      {
+        "id": "b",
+        "role": "foreground",
+        "x": -88,
+        "y": 202,
+        "w": 1216,
+        "h": 280,
+        "preset": "bare",
+        "children": [
           {
-            "id": "text-hubport-22",
-            "type": "text",
+            "id": "hero-1",
+            "type": "pageHero",
             "props": {
-              "variant": "flowSub",
-              "value": "Bring contacts in and organize them."
-            },
-            "offset": [
-              326.047,
-              569.86
-            ]
-          },
-          {
-            "id": "flowConnector-hubport-23",
-            "type": "flowConnector",
-            "props": {
-              "dx": 72,
-              "dy": 0,
-              "route": "line",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 24,
-              "arrow": true,
-              "mid": 0.5
-            },
-            "offset": [
-              1248.047,
-              283.86
-            ]
-          },
-          {
-            "id": "flowConnector-hubport-24",
-            "type": "flowConnector",
-            "props": {
-              "dx": -432,
-              "dy": 136,
-              "route": "vhv",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 28,
-              "arrow": true,
-              "mid": 0.53
-            },
-            "offset": [
-              1072.047,
-              357.86
-            ]
-          },
-          {
-            "id": "flowConnector-hubport-25",
-            "type": "flowConnector",
-            "props": {
-              "dx": 72,
-              "dy": 0,
-              "route": "line",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 24,
-              "arrow": true,
-              "mid": 0.5
-            },
-            "offset": [
-              1248.047,
-              575.86
-            ]
-          },
-          {
-            "id": "flowNode-hubport-26",
-            "type": "flowNode",
-            "props": {
-              "label": "Import",
-              "meta": "CSV upload",
-              "icon": "import",
-              "tint": "blue",
-              "emphasized": false,
-              "width": 352,
-              "height": 148,
-              "anchorTop": false
-            },
-            "offset": [
-              912.047,
-              225.86
-            ]
-          },
-          {
-            "id": "flowNode-hubport-27",
-            "type": "flowNode",
-            "props": {
-              "label": "Prospects",
-              "meta": "segment · verified",
-              "icon": "userPlus",
-              "tint": "purple",
-              "emphasized": false,
-              "width": 352,
-              "height": 148,
-              "anchorTop": false
-            },
-            "offset": [
-              1344.047,
-              225.86
-            ]
-          },
-          {
-            "id": "flowNode-hubport-28",
-            "type": "flowNode",
-            "props": {
-              "label": "Organize",
-              "meta": "filter · sort",
-              "icon": "filter",
-              "tint": "amber",
-              "emphasized": false,
-              "width": 352,
-              "height": 148,
-              "anchorTop": false
-            },
-            "offset": [
-              912.047,
-              517.86
-            ]
-          },
-          {
-            "id": "flowNode-hubport-29",
-            "type": "flowNode",
-            "props": {
-              "label": "Leads",
-              "meta": "sales-ready",
-              "icon": "check",
-              "tint": "blue",
-              "emphasized": true,
-              "width": 352,
-              "height": 148,
-              "anchorTop": false
-            },
-            "offset": [
-              1344.047,
-              517.86
-            ]
+              "title": "Bring contacts in and organize them.",
+              "tone": "library",
+              "metrics": [
+                {
+                  "value": "1",
+                  "label": "Import"
+                },
+                {
+                  "value": "2",
+                  "label": "Prospects"
+                },
+                {
+                  "value": "3",
+                  "label": "Leads"
+                }
+              ]
+            }
           }
         ]
       }
     ],
-    "status": "approved",
-    "note": "Ported from tools/opener-gen (shipped -opener-v2) into editable studio primitives.",
-    "lastTouchedBy": "max",
+    "status": "proposed",
+    "note": "STYLE B s04 hero-band: warm tinted ground; lockup on top; the real pageHero banner with its metric row as one wide short band across the full safe width. [style-b s04-hero-band, hub, gate PASS]",
+    "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 3,
-    "updatedAt": 1787735908095
+    "rev": 4,
+    "updatedAt": 1789021460188
   }
 }

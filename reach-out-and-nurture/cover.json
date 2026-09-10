@@ -1,214 +1,91 @@
 {
-  "revision": 4,
+  "revision": 6,
   "cover": {
     "v": 2,
-    "background": "white-solid",
+    "background": "sand",
     "title": null,
     "exportPreset": "opener-wide",
-    "scale": 86,
-    "positionX": 14,
+    "scale": 100,
+    "positionX": 0,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
         "role": "foreground",
-        "x": -494.047,
-        "y": -171.86,
-        "w": 1972.093,
-        "h": 883.721,
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
         "preset": "bare",
         "layout": "free",
         "children": [
           {
-            "id": "gridField-hubport-30",
-            "type": "gridField",
-            "props": {
-              "width": 1972.093,
-              "height": 883.721,
-              "gridSize": 93.023,
-              "cornerRadius": 65.116,
-              "frameLine": true,
-              "showGrid": true,
-              "maskX": 78,
-              "maskY": 50,
-              "lineScale": 1.16279
-            },
-            "offset": [
-              0,
-              0
-            ]
-          },
-          {
-            "id": "text-hubport-31",
+            "id": "text-26d37-1",
             "type": "text",
             "props": {
               "variant": "flowEyebrow",
-              "value": "GETTING STARTED · CHAPTER 3"
+              "value": "GETTING STARTED",
+              "color": "#1F54DE"
             },
             "offset": [
-              334.047,
-              275.86
+              250,
+              166
             ]
           },
           {
-            "id": "text-hubport-32",
+            "id": "text-26d37-2",
             "type": "text",
             "props": {
               "variant": "flowTitle",
-              "value": "Reach Out\nand Nurture",
-              "size": 96
+              "value": "Reach Out and Nurture",
+              "size": 76
             },
             "offset": [
-              334.047,
-              331.86
+              250,
+              206
             ]
-          },
+          }
+        ]
+      },
+      {
+        "id": "b",
+        "role": "foreground",
+        "x": -88,
+        "y": 202,
+        "w": 1216,
+        "h": 280,
+        "preset": "bare",
+        "children": [
           {
-            "id": "text-hubport-33",
-            "type": "text",
+            "id": "hero-1",
+            "type": "pageHero",
             "props": {
-              "variant": "flowSub",
-              "value": "Send email sequences and track results."
-            },
-            "offset": [
-              334.047,
-              563.86
-            ]
-          },
-          {
-            "id": "flowConnector-hubport-34",
-            "type": "flowConnector",
-            "props": {
-              "dx": 72,
-              "dy": 0,
-              "route": "line",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 24,
-              "arrow": true,
-              "mid": 0.5
-            },
-            "offset": [
-              1256.047,
-              283.86
-            ]
-          },
-          {
-            "id": "flowConnector-hubport-35",
-            "type": "flowConnector",
-            "props": {
-              "dx": -432,
-              "dy": 136,
-              "route": "vhv",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 28,
-              "arrow": true,
-              "mid": 0.53
-            },
-            "offset": [
-              1080.047,
-              357.86
-            ]
-          },
-          {
-            "id": "flowConnector-hubport-36",
-            "type": "flowConnector",
-            "props": {
-              "dx": 72,
-              "dy": 0,
-              "route": "line",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 24,
-              "arrow": true,
-              "mid": 0.5
-            },
-            "offset": [
-              1256.047,
-              575.86
-            ]
-          },
-          {
-            "id": "flowNode-hubport-37",
-            "type": "flowNode",
-            "props": {
-              "label": "Domains",
-              "meta": "verified sending",
-              "icon": "shield",
-              "tint": "green",
-              "emphasized": false,
-              "width": 352,
-              "height": 148,
-              "anchorTop": false
-            },
-            "offset": [
-              920.047,
-              225.86
-            ]
-          },
-          {
-            "id": "flowNode-hubport-38",
-            "type": "flowNode",
-            "props": {
-              "label": "Build Email",
-              "meta": "template · merge",
-              "icon": "mail",
-              "tint": "blue",
-              "emphasized": false,
-              "width": 352,
-              "height": 148,
-              "anchorTop": false
-            },
-            "offset": [
-              1352.047,
-              225.86
-            ]
-          },
-          {
-            "id": "flowNode-hubport-39",
-            "type": "flowNode",
-            "props": {
-              "label": "Sequences",
-              "meta": "auto follow-up",
-              "icon": "branch",
-              "tint": "blue",
-              "emphasized": true,
-              "width": 352,
-              "height": 148,
-              "anchorTop": false
-            },
-            "offset": [
-              920.047,
-              517.86
-            ]
-          },
-          {
-            "id": "flowNode-hubport-40",
-            "type": "flowNode",
-            "props": {
-              "label": "Track",
-              "meta": "UTM · links",
-              "icon": "chart",
-              "tint": "amber",
-              "emphasized": false,
-              "width": 352,
-              "height": 148,
-              "anchorTop": false
-            },
-            "offset": [
-              1352.047,
-              517.86
-            ]
+              "title": "Send email sequences and track results.",
+              "tone": "library",
+              "metrics": [
+                {
+                  "value": "1",
+                  "label": "Domains"
+                },
+                {
+                  "value": "2",
+                  "label": "Build Email"
+                },
+                {
+                  "value": "3",
+                  "label": "Track"
+                }
+              ]
+            }
           }
         ]
       }
     ],
-    "status": "approved",
-    "note": "Ported from tools/opener-gen (shipped -opener-v2) into editable studio primitives.",
-    "lastTouchedBy": "max",
+    "status": "proposed",
+    "note": "STYLE B s04 hero-band: warm tinted ground; lockup on top; the real pageHero banner with its metric row as one wide short band across the full safe width. [style-b s04-hero-band, hub, gate PASS]",
+    "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 3,
-    "updatedAt": 1787735908147
+    "rev": 4,
+    "updatedAt": 1789021460476
   }
 }

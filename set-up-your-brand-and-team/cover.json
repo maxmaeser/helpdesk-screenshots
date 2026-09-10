@@ -1,214 +1,91 @@
 {
-  "revision": 6,
+  "revision": 8,
   "cover": {
     "v": 2,
-    "background": "white-solid",
+    "background": "sand",
     "title": null,
     "exportPreset": "opener-wide",
-    "scale": 86,
-    "positionX": -1,
+    "scale": 100,
+    "positionX": 0,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
         "role": "foreground",
-        "x": -464.047,
-        "y": -171.86,
-        "w": 1972.093,
-        "h": 883.721,
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
         "preset": "bare",
         "layout": "free",
         "children": [
           {
-            "id": "gridField-hubport-8",
-            "type": "gridField",
-            "props": {
-              "width": 1972.093,
-              "height": 883.721,
-              "gridSize": 93.023,
-              "cornerRadius": 65.116,
-              "frameLine": true,
-              "showGrid": true,
-              "maskX": 78,
-              "maskY": 50,
-              "lineScale": 1.16279
-            },
-            "offset": [
-              0,
-              0
-            ]
-          },
-          {
-            "id": "text-hubport-9",
+            "id": "text-cf0dd-1",
             "type": "text",
             "props": {
               "variant": "flowEyebrow",
-              "value": "GETTING STARTED · CHAPTER 1"
+              "value": "GETTING STARTED",
+              "color": "#1F54DE"
             },
             "offset": [
-              304.047,
-              236.86
+              250,
+              166
             ]
           },
           {
-            "id": "text-hubport-10",
+            "id": "text-cf0dd-2",
             "type": "text",
             "props": {
               "variant": "flowTitle",
-              "value": "Set Up Your\nBrand and\nTeam",
-              "size": 90
+              "value": "Set Up Your Brand and Team",
+              "size": 76
             },
             "offset": [
-              304.047,
-              292.86
+              250,
+              206
             ]
-          },
+          }
+        ]
+      },
+      {
+        "id": "b",
+        "role": "foreground",
+        "x": -88,
+        "y": 202,
+        "w": 1216,
+        "h": 280,
+        "preset": "bare",
+        "children": [
           {
-            "id": "text-hubport-11",
-            "type": "text",
+            "id": "hero-1",
+            "type": "pageHero",
             "props": {
-              "variant": "flowSub",
-              "value": "Add your team, billing, and brand details."
-            },
-            "offset": [
-              304.047,
-              602.86
-            ]
-          },
-          {
-            "id": "flowConnector-hubport-12",
-            "type": "flowConnector",
-            "props": {
-              "dx": 64,
-              "dy": 174,
-              "route": "hv",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 20,
-              "arrow": true,
-              "mid": 0.5
-            },
-            "offset": [
-              1308.047,
-              237.79
-            ]
-          },
-          {
-            "id": "flowConnector-hubport-13",
-            "type": "flowConnector",
-            "props": {
-              "dx": 64,
-              "dy": 0,
-              "route": "line",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 24,
-              "arrow": true,
-              "mid": 0.5
-            },
-            "offset": [
-              1308.047,
-              425.79
-            ]
-          },
-          {
-            "id": "flowConnector-hubport-14",
-            "type": "flowConnector",
-            "props": {
-              "dx": 64,
-              "dy": -174,
-              "route": "hv",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 20,
-              "arrow": true,
-              "mid": 0.5
-            },
-            "offset": [
-              1308.047,
-              439.79
-            ]
-          },
-          {
-            "id": "flowNode-hubport-15",
-            "type": "flowNode",
-            "props": {
-              "label": "Team",
-              "meta": "invite users",
-              "icon": "userPlus",
-              "tint": "blue",
-              "emphasized": false,
-              "width": 352,
-              "height": 148,
-              "anchorTop": false
-            },
-            "offset": [
-              972.047,
-              179.791
-            ]
-          },
-          {
-            "id": "flowNode-hubport-16",
-            "type": "flowNode",
-            "props": {
-              "label": "Billing",
-              "meta": "payment · invoices",
-              "icon": "card",
-              "tint": "amber",
-              "emphasized": false,
-              "width": 352,
-              "height": 148,
-              "anchorTop": false
-            },
-            "offset": [
-              972.047,
-              367.791
-            ]
-          },
-          {
-            "id": "flowNode-hubport-17",
-            "type": "flowNode",
-            "props": {
-              "label": "Portal",
-              "meta": "steps · forms",
-              "icon": "layout",
-              "tint": "purple",
-              "emphasized": false,
-              "width": 352,
-              "height": 148,
-              "anchorTop": false
-            },
-            "offset": [
-              972.047,
-              555.791
-            ]
-          },
-          {
-            "id": "flowNode-hubport-18",
-            "type": "flowNode",
-            "props": {
-              "label": "Ready",
-              "meta": "account set up",
-              "icon": "check",
-              "tint": "blue",
-              "emphasized": true,
-              "width": 352,
-              "height": 148,
-              "anchorTop": false
-            },
-            "offset": [
-              1400.047,
-              367.791
-            ]
+              "title": "Add your team, billing, and brand details.",
+              "tone": "library",
+              "metrics": [
+                {
+                  "value": "1",
+                  "label": "Team"
+                },
+                {
+                  "value": "2",
+                  "label": "Billing"
+                },
+                {
+                  "value": "3",
+                  "label": "Ready"
+                }
+              ]
+            }
           }
         ]
       }
     ],
-    "status": "approved",
-    "note": "Ported from tools/opener-gen (shipped -opener-v2) into editable studio primitives.",
-    "lastTouchedBy": "claude-banner-recompose",
+    "status": "proposed",
+    "note": "STYLE B s04 hero-band: warm tinted ground; lockup on top; the real pageHero banner with its metric row as one wide short band across the full safe width. [style-b s04-hero-band, hub, gate PASS]",
+    "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 5,
-    "updatedAt": 1787739733312
+    "rev": 6,
+    "updatedAt": 1789021460621
   }
 }

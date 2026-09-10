@@ -1,214 +1,91 @@
 {
-  "revision": 5,
+  "revision": 7,
   "cover": {
     "v": 2,
-    "background": "white-solid",
+    "background": "sand",
     "title": null,
     "exportPreset": "opener-wide",
-    "scale": 86,
-    "positionX": 54,
+    "scale": 100,
+    "positionX": 0,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
         "role": "foreground",
-        "x": -574.047,
-        "y": -171.86,
-        "w": 1972.093,
-        "h": 883.721,
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
         "preset": "bare",
         "layout": "free",
         "children": [
           {
-            "id": "gridField-hubport-41",
-            "type": "gridField",
-            "props": {
-              "width": 1972.093,
-              "height": 883.721,
-              "gridSize": 93.023,
-              "cornerRadius": 65.116,
-              "frameLine": true,
-              "showGrid": true,
-              "maskX": 78,
-              "maskY": 50,
-              "lineScale": 1.16279
-            },
-            "offset": [
-              0,
-              0
-            ]
-          },
-          {
-            "id": "text-hubport-42",
+            "id": "text-4ab52-1",
             "type": "text",
             "props": {
               "variant": "flowEyebrow",
-              "value": "GETTING STARTED · CHAPTER 4"
+              "value": "GETTING STARTED",
+              "color": "#1F54DE"
             },
             "offset": [
-              414.047,
-              269.86
+              250,
+              166
             ]
           },
           {
-            "id": "text-hubport-43",
+            "id": "text-4ab52-2",
             "type": "text",
             "props": {
               "variant": "flowTitle",
-              "value": "Work Your\nPipeline",
-              "size": 104
+              "value": "Work Your Pipeline",
+              "size": 76
             },
             "offset": [
-              414.047,
-              325.86
+              250,
+              206
             ]
-          },
+          }
+        ]
+      },
+      {
+        "id": "b",
+        "role": "foreground",
+        "x": -88,
+        "y": 202,
+        "w": 1216,
+        "h": 280,
+        "preset": "bare",
+        "children": [
           {
-            "id": "text-hubport-44",
-            "type": "text",
+            "id": "hero-1",
+            "type": "pageHero",
             "props": {
-              "variant": "flowSub",
-              "value": "Route, track, and move each lead forward."
-            },
-            "offset": [
-              414.047,
-              569.86
-            ]
-          },
-          {
-            "id": "flowConnector-hubport-45",
-            "type": "flowConnector",
-            "props": {
-              "dx": 0,
-              "dy": 24,
-              "route": "line",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 24,
-              "arrow": true,
-              "mid": 0.5
-            },
-            "offset": [
-              1442.047,
-              264.325
-            ]
-          },
-          {
-            "id": "flowConnector-hubport-46",
-            "type": "flowConnector",
-            "props": {
-              "dx": 0,
-              "dy": 24,
-              "route": "line",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 24,
-              "arrow": true,
-              "mid": 0.5
-            },
-            "offset": [
-              1442.047,
-              412.325
-            ]
-          },
-          {
-            "id": "flowConnector-hubport-47",
-            "type": "flowConnector",
-            "props": {
-              "dx": 0,
-              "dy": 24,
-              "route": "line",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 24,
-              "arrow": true,
-              "mid": 0.5
-            },
-            "offset": [
-              1442.047,
-              560.325
-            ]
-          },
-          {
-            "id": "flowNode-hubport-48",
-            "type": "flowNode",
-            "props": {
-              "label": "New Lead",
-              "meta": "assigned to a rep",
-              "icon": "inbox",
-              "tint": "blue",
-              "emphasized": false,
-              "width": 440,
-              "height": 116,
-              "anchorTop": false
-            },
-            "offset": [
-              1238.047,
-              164.326
-            ]
-          },
-          {
-            "id": "flowNode-hubport-49",
-            "type": "flowNode",
-            "props": {
-              "label": "Status",
-              "meta": "your custom stages",
-              "icon": "flag",
-              "tint": "purple",
-              "emphasized": false,
-              "width": 440,
-              "height": 116,
-              "anchorTop": false
-            },
-            "offset": [
-              1238.047,
-              312.326
-            ]
-          },
-          {
-            "id": "flowNode-hubport-50",
-            "type": "flowNode",
-            "props": {
-              "label": "Working",
-              "meta": "tasks · messages",
-              "icon": "chat",
-              "tint": "amber",
-              "emphasized": false,
-              "width": 440,
-              "height": 116,
-              "anchorTop": false
-            },
-            "offset": [
-              1238.047,
-              460.326
-            ]
-          },
-          {
-            "id": "flowNode-hubport-51",
-            "type": "flowNode",
-            "props": {
-              "label": "Qualified",
-              "meta": "ready for a deal",
-              "icon": "check",
-              "tint": "blue",
-              "emphasized": true,
-              "width": 440,
-              "height": 116,
-              "anchorTop": false
-            },
-            "offset": [
-              1238.047,
-              608.326
-            ]
+              "title": "Route, track, and move each lead forward.",
+              "tone": "library",
+              "metrics": [
+                {
+                  "value": "1",
+                  "label": "New Lead"
+                },
+                {
+                  "value": "2",
+                  "label": "Status"
+                },
+                {
+                  "value": "3",
+                  "label": "Qualified"
+                }
+              ]
+            }
           }
         ]
       }
     ],
-    "status": "approved",
-    "note": "Ported from tools/opener-gen (shipped -opener-v2) into editable studio primitives.",
-    "lastTouchedBy": "claude-banner-recompose",
+    "status": "proposed",
+    "note": "STYLE B s04 hero-band: warm tinted ground; lockup on top; the real pageHero banner with its metric row as one wide short band across the full safe width. [style-b s04-hero-band, hub, gate PASS]",
+    "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 4,
-    "updatedAt": 1787739730385
+    "rev": 5,
+    "updatedAt": 1789021460905
   }
 }
