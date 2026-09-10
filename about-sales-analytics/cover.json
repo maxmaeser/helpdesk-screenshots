@@ -1,5 +1,5 @@
 {
-  "revision": 1,
+  "revision": 4,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -20,7 +20,7 @@
         "layout": "free",
         "children": [
           {
-            "id": "gridField-51dc3-1",
+            "id": "gridField-1",
             "type": "gridField",
             "props": {
               "width": 1696,
@@ -38,7 +38,7 @@
             ]
           },
           {
-            "id": "text-51dc3-2",
+            "id": "text-51dc3-1",
             "type": "text",
             "props": {
               "variant": "flowEyebrow",
@@ -46,97 +46,98 @@
               "color": "#16A34A"
             },
             "offset": [
-              300,
-              218
+              250,
+              190
+            ]
+          },
+          {
+            "id": "text-51dc3-2",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "About Sales\nAnalytics",
+              "size": 82
+            },
+            "offset": [
+              250,
+              246
             ]
           },
           {
             "id": "text-51dc3-3",
             "type": "text",
             "props": {
-              "variant": "flowTitle",
-              "value": "About Sales\nAnalytics",
-              "size": 96
-            },
-            "offset": [
-              300,
-              274
-            ]
-          },
-          {
-            "id": "text-51dc3-4",
-            "type": "text",
-            "props": {
               "variant": "flowSub",
               "value": "Reporting for one brand at a time."
             },
             "offset": [
-              300,
-              503
+              250,
+              455.36
             ]
           },
           {
-            "id": "flowNode-51dc3-5",
-            "type": "flowNode",
+            "id": "tile-3",
+            "type": "assetGridItem",
             "props": {
-              "label": "Analytics",
+              "title": "Date range",
+              "icon": "notebook",
+              "tone": "light",
+              "width": 300,
+              "scale": 0.95,
+              "blur": 3.2,
+              "dim": 0.14,
+              "tiltDeg": -9
+            },
+            "offset": [
+              1230,
+              128
+            ]
+          },
+          {
+            "id": "tile-2",
+            "type": "assetGridItem",
+            "props": {
+              "title": "Overview",
+              "icon": "pencilEdit",
+              "tone": "mid",
+              "width": 330,
+              "scale": 1,
+              "blur": 1.4,
+              "dim": 0.06,
+              "tiltDeg": 5
+            },
+            "offset": [
+              1090,
+              306
+            ]
+          },
+          {
+            "id": "tile-1",
+            "type": "assetGridItem",
+            "props": {
+              "title": "Analytics",
               "meta": "Sales → Analytics",
-              "icon": "chart",
-              "tint": "slate",
-              "emphasized": false,
-              "width": 500,
-              "height": 404,
-              "anchorTop": true
+              "badgeLabel": "Live",
+              "badgeTone": "green",
+              "icon": "saleTag",
+              "tone": "deep",
+              "width": 380,
+              "scale": 1.12,
+              "tiltDeg": -3
             },
             "offset": [
-              950,
-              178
-            ]
-          },
-          {
-            "id": "flowNode-51dc3-6",
-            "type": "flowNode",
-            "props": {
-              "label": "Overview",
-              "meta": "leads, sources, portal steps",
-              "icon": "layout",
-              "tint": "green",
-              "emphasized": false,
-              "width": 428,
-              "height": 268,
-              "anchorTop": true
-            },
-            "offset": [
-              986,
-              290
-            ]
-          },
-          {
-            "id": "flowNode-51dc3-7",
-            "type": "flowNode",
-            "props": {
-              "label": "Date range",
-              "meta": "every chart obeys it",
-              "icon": "calendar",
-              "tint": "green",
-              "emphasized": true,
-              "width": 356,
-              "height": 124,
-              "anchorTop": true
-            },
-            "offset": [
-              1022,
-              418
+              880,
+              182
             ]
           }
         ]
       }
     ],
     "status": "proposed",
-    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=sales -> eyebrow \"SALES\", hue #16A34A, tint green. type=concept -> 3 overlapping anchorTop cards, no connectors, innermost emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 96.",
+    "note": "STYLE B s05 tile-fan: the real Assets grid tile fanned as a depth stack, sharp front tile and two blurred sheets receding off the right edge. [style-b s05-tile-fan, concept, gate PASS]",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 1,
-    "updatedAt": 1787742840269
+    "rev": 4,
+    "updatedAt": 1788998344515
   }
 }

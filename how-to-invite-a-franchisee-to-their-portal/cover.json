@@ -1,5 +1,5 @@
 {
-  "revision": 1,
+  "revision": 4,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -12,33 +12,15 @@
       {
         "id": "a",
         "role": "foreground",
-        "x": -328,
-        "y": -110,
-        "w": 1696,
-        "h": 760,
-        "preset": "bare",
+        "x": -348,
+        "y": -130,
+        "w": 1736,
+        "h": 800,
+        "preset": "auth-split",
         "layout": "free",
         "children": [
           {
-            "id": "gridField-379c5-1",
-            "type": "gridField",
-            "props": {
-              "width": 1696,
-              "height": 760,
-              "gridSize": 80,
-              "cornerRadius": 56,
-              "frameLine": true,
-              "showGrid": true,
-              "maskX": 78,
-              "maskY": 50
-            },
-            "offset": [
-              0,
-              0
-            ]
-          },
-          {
-            "id": "text-379c5-2",
+            "id": "text-379c5-1",
             "type": "text",
             "props": {
               "variant": "flowEyebrow",
@@ -46,12 +28,12 @@
               "color": "#D87203"
             },
             "offset": [
-              300,
-              183
+              270,
+              190
             ]
           },
           {
-            "id": "text-379c5-3",
+            "id": "text-379c5-2",
             "type": "text",
             "props": {
               "variant": "flowTitle",
@@ -59,120 +41,71 @@
               "size": 88
             },
             "offset": [
-              300,
-              239
+              270,
+              242
             ]
           },
           {
-            "id": "text-379c5-4",
+            "id": "text-379c5-3",
             "type": "text",
             "props": {
               "variant": "flowSub",
               "value": "Give a franchisee their own login."
             },
             "offset": [
-              300,
-              538
+              270,
+              550.48
             ]
-          },
+          }
+        ]
+      },
+      {
+        "id": "b",
+        "role": "foreground",
+        "x": 638,
+        "y": 126,
+        "w": 430,
+        "h": 296,
+        "preset": "plain",
+        "children": [
           {
-            "id": "flowNode-379c5-5",
-            "type": "flowNode",
+            "id": "ff-1",
+            "type": "formField",
             "props": {
               "label": "Open Audiences",
-              "meta": "Operations → Audiences",
-              "icon": "building",
-              "tint": "amber",
-              "emphasized": false,
-              "width": 460,
-              "height": 108,
-              "anchorTop": false
-            },
-            "offset": [
-              950,
-              174
-            ]
+              "placeholder": "Operations → Audiences",
+              "type": "text",
+              "required": true,
+              "scale": 1.25
+            }
           },
           {
-            "id": "flowConnector-379c5-6",
-            "type": "flowConnector",
-            "props": {
-              "dx": 0,
-              "dy": 44,
-              "route": "line",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 24,
-              "arrow": true,
-              "mid": 0.5
-            },
-            "offset": [
-              1162,
-              264
-            ]
-          },
-          {
-            "id": "flowNode-379c5-7",
-            "type": "flowNode",
+            "id": "ff-2",
+            "type": "formField",
             "props": {
               "label": "Pick the franchisee",
-              "meta": "Members or Entities tab",
-              "icon": "user",
-              "tint": "amber",
-              "emphasized": false,
-              "width": 460,
-              "height": 108,
-              "anchorTop": false
-            },
-            "offset": [
-              950,
-              326
-            ]
+              "placeholder": "Members or Entities tab",
+              "type": "text",
+              "required": true,
+              "scale": 1.25
+            }
           },
           {
-            "id": "flowConnector-379c5-8",
-            "type": "flowConnector",
-            "props": {
-              "dx": 0,
-              "dy": 44,
-              "route": "line",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 24,
-              "arrow": true,
-              "mid": 0.5
-            },
-            "offset": [
-              1162,
-              416
-            ]
-          },
-          {
-            "id": "flowNode-379c5-9",
-            "type": "flowNode",
+            "id": "btn-1",
+            "type": "button",
             "props": {
               "label": "Send Invitation",
-              "meta": "or copy the invite link",
-              "icon": "send",
-              "tint": "amber",
-              "emphasized": true,
-              "width": 460,
-              "height": 108,
-              "anchorTop": false
-            },
-            "offset": [
-              950,
-              478
-            ]
+              "variant": "primary"
+            }
           }
         ]
       }
     ],
     "status": "proposed",
-    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=operations -> eyebrow \"OPERATIONS\", hue #D87203, tint amber. type=task -> vertical 3-node run, arrowed, final node emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 88.",
+    "note": "STYLE B s03 auth-gate: the auth-split shell full bleed; lockup in the form pane; a white sign-in card straddling the seam. Reserved for the sign-in, password and invite family. [style-b s03-auth-gate, task, gate PASS]",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 1,
-    "updatedAt": 1787742842643
+    "rev": 4,
+    "updatedAt": 1788998343673
   }
 }

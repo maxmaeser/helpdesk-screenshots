@@ -1,8 +1,8 @@
 {
-  "revision": 1,
+  "revision": 4,
   "cover": {
     "v": 2,
-    "background": "white-solid",
+    "background": "gray-solid",
     "title": null,
     "exportPreset": "opener-wide",
     "scale": 100,
@@ -20,25 +20,7 @@
         "layout": "free",
         "children": [
           {
-            "id": "gridField-6559e-1",
-            "type": "gridField",
-            "props": {
-              "width": 1696,
-              "height": 760,
-              "gridSize": 80,
-              "cornerRadius": 56,
-              "frameLine": true,
-              "showGrid": true,
-              "maskX": 78,
-              "maskY": 50
-            },
-            "offset": [
-              0,
-              0
-            ]
-          },
-          {
-            "id": "text-6559e-2",
+            "id": "text-6559e-1",
             "type": "text",
             "props": {
               "variant": "flowEyebrow",
@@ -46,133 +28,101 @@
               "color": "#7C3AED"
             },
             "offset": [
-              300,
-              218
+              250,
+              190
+            ]
+          },
+          {
+            "id": "text-6559e-2",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "How to Send\nan Email",
+              "size": 104
+            },
+            "offset": [
+              250,
+              246
             ]
           },
           {
             "id": "text-6559e-3",
             "type": "text",
             "props": {
-              "variant": "flowTitle",
-              "value": "How to Send\nan Email",
-              "size": 96
-            },
-            "offset": [
-              300,
-              274
-            ]
-          },
-          {
-            "id": "text-6559e-4",
-            "type": "text",
-            "props": {
               "variant": "flowSub",
               "value": "Newsletters and sequences, one flow."
             },
             "offset": [
-              300,
-              503
+              250,
+              503.92
             ]
+          }
+        ]
+      },
+      {
+        "id": "b",
+        "role": "foreground",
+        "x": 622,
+        "y": 46,
+        "w": 470,
+        "h": 700,
+        "preset": "plain",
+        "children": [
+          {
+            "id": "h3-1",
+            "type": "text",
+            "props": {
+              "variant": "portalH3",
+              "value": "Steps"
+            }
           },
           {
-            "id": "flowNode-6559e-5",
-            "type": "flowNode",
+            "id": "lr-1",
+            "type": "listRow",
             "props": {
               "label": "Pick the audience",
-              "meta": "a segment of your leads",
-              "icon": "userPlus",
-              "tint": "purple",
-              "emphasized": false,
-              "width": 460,
-              "height": 108,
-              "anchorTop": false
-            },
-            "offset": [
-              950,
-              174
-            ]
+              "sublabel": "a segment of your leads",
+              "trailing": "1",
+              "highlighted": true
+            }
           },
           {
-            "id": "flowConnector-6559e-6",
-            "type": "flowConnector",
-            "props": {
-              "dx": 0,
-              "dy": 44,
-              "route": "line",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 24,
-              "arrow": true,
-              "mid": 0.5
-            },
-            "offset": [
-              1162,
-              264
-            ]
-          },
-          {
-            "id": "flowNode-6559e-7",
-            "type": "flowNode",
+            "id": "lr-2",
+            "type": "listRow",
             "props": {
               "label": "Set the schedule",
-              "meta": "window, hours, timezone",
-              "icon": "calendar",
-              "tint": "purple",
-              "emphasized": false,
-              "width": 460,
-              "height": 108,
-              "anchorTop": false
-            },
-            "offset": [
-              950,
-              326
-            ]
+              "sublabel": "window, hours, timezone",
+              "trailing": "2",
+              "highlighted": false
+            }
           },
           {
-            "id": "flowConnector-6559e-8",
-            "type": "flowConnector",
-            "props": {
-              "dx": 0,
-              "dy": 44,
-              "route": "line",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 24,
-              "arrow": true,
-              "mid": 0.5
-            },
-            "offset": [
-              1162,
-              416
-            ]
-          },
-          {
-            "id": "flowNode-6559e-9",
-            "type": "flowNode",
+            "id": "lr-3",
+            "type": "listRow",
             "props": {
               "label": "Send",
-              "meta": "newsletter or sequence",
-              "icon": "send",
-              "tint": "purple",
-              "emphasized": true,
-              "width": 460,
-              "height": 108,
-              "anchorTop": false
-            },
-            "offset": [
-              950,
-              478
-            ]
+              "sublabel": "newsletter or sequence",
+              "trailing": "3",
+              "highlighted": false
+            }
+          },
+          {
+            "id": "pb-1",
+            "type": "progressBar",
+            "props": {
+              "value": 66,
+              "label": "Progress",
+              "color": "#7C3AED"
+            }
           }
         ]
       }
     ],
     "status": "proposed",
-    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=marketing-emails -> eyebrow \"MARKETING AND EMAIL\", hue #7C3AED, tint purple. type=task -> vertical 3-node run, arrowed, final node emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 96.",
+    "note": "STYLE B s10 column-right: portal page gray; one tall white panel pinned to the right, bleeding off the bottom, carrying a cluster of list rows, a progress state and a heading. [style-b s10-column-right, task, gate PASS]",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 1,
-    "updatedAt": 1787742842966
+    "rev": 4,
+    "updatedAt": 1788998342403
   }
 }

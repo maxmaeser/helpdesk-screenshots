@@ -1,5 +1,5 @@
 {
-  "revision": 3,
+  "revision": 6,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -20,7 +20,7 @@
         "layout": "free",
         "children": [
           {
-            "id": "gridField-ed608-1",
+            "id": "gridField-1",
             "type": "gridField",
             "props": {
               "width": 1696,
@@ -38,7 +38,7 @@
             ]
           },
           {
-            "id": "text-ed608-2",
+            "id": "text-ed608-1",
             "type": "text",
             "props": {
               "variant": "flowEyebrow",
@@ -46,97 +46,74 @@
               "color": "#1F54DE"
             },
             "offset": [
-              300,
-              188
+              250,
+              190
+            ]
+          },
+          {
+            "id": "text-ed608-2",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "About the\nHome Page",
+              "size": 76
+            },
+            "offset": [
+              250,
+              246
             ]
           },
           {
             "id": "text-ed608-3",
             "type": "text",
             "props": {
-              "variant": "flowTitle",
-              "value": "About the\nHome Page",
-              "size": 104
-            },
-            "offset": [
-              300,
-              244
-            ]
-          },
-          {
-            "id": "text-ed608-4",
-            "type": "text",
-            "props": {
               "variant": "flowSub",
-              "value": "Home has four tabs: Overview, Tasks, Chat, and Calendar."
+              "value": "Home has four tabs:\nOverview, Tasks, Chat, and\nCalendar."
             },
             "offset": [
-              300,
-              490
+              250,
+              442.48
             ]
-          },
+          }
+        ]
+      },
+      {
+        "id": "b",
+        "role": "foreground",
+        "x": 372,
+        "y": 0,
+        "w": 756,
+        "h": 700,
+        "preset": "portal-shell",
+        "children": [
           {
-            "id": "flowNode-ed608-5",
-            "type": "flowNode",
+            "id": "hm-1",
+            "type": "homeModuleCard",
             "props": {
-              "label": "Overview",
-              "meta": "your notification inbox",
-              "icon": "inbox",
-              "tint": "blue",
-              "emphasized": false,
-              "width": 460,
-              "height": 116,
-              "anchorTop": false
-            },
-            "offset": [
-              950,
-              178
-            ]
-          },
-          {
-            "id": "flowNode-ed608-6",
-            "type": "flowNode",
-            "props": {
-              "label": "Tasks",
-              "meta": "create and assign work",
-              "icon": "check",
-              "tint": "blue",
-              "emphasized": false,
-              "width": 460,
-              "height": 116,
-              "anchorTop": false
-            },
-            "offset": [
-              950,
-              322
-            ]
-          },
-          {
-            "id": "flowNode-ed608-7",
-            "type": "flowNode",
-            "props": {
-              "label": "Calendar",
-              "meta": "month, week, or day view",
-              "icon": "calendar",
-              "tint": "blue",
-              "emphasized": true,
-              "width": 460,
-              "height": 116,
-              "anchorTop": false
-            },
-            "offset": [
-              950,
-              466
-            ]
+              "icon": "homeDoor",
+              "tone": "blue",
+              "eyebrow": "GETTING STARTED",
+              "title": "Overview",
+              "rows": [
+                {
+                  "title": "Tasks",
+                  "sub": "create and assign work"
+                },
+                {
+                  "title": "Calendar",
+                  "sub": "month, week, or day view"
+                }
+              ]
+            }
           }
         ]
       }
     ],
     "status": "proposed",
-    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=platform-introduction -> eyebrow \"GETTING STARTED\", hue #1F54DE, tint blue. type=surface -> 3 stacked cards, no connectors, last card emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 104.",
+    "note": "STYLE B s01 portal-window: a real portal-shell frame entering from the right and bleeding off the bottom; lockup left on the grid field. [style-b s01-portal-window, surface, gate PASS]",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 3,
-    "updatedAt": 1787833392057
+    "rev": 6,
+    "updatedAt": 1788998338583
   }
 }

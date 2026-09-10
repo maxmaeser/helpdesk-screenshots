@@ -1,8 +1,8 @@
 {
-  "revision": 3,
+  "revision": 6,
   "cover": {
     "v": 2,
-    "background": "white-solid",
+    "background": "cloud",
     "title": null,
     "exportPreset": "opener-wide",
     "scale": 100,
@@ -12,33 +12,15 @@
       {
         "id": "a",
         "role": "foreground",
-        "x": -328,
-        "y": -110,
-        "w": 1696,
-        "h": 760,
-        "preset": "bare",
+        "x": -208,
+        "y": -54,
+        "w": 1456,
+        "h": 648,
+        "preset": "plain",
         "layout": "free",
         "children": [
           {
-            "id": "gridField-2a4d2-1",
-            "type": "gridField",
-            "props": {
-              "width": 1696,
-              "height": 760,
-              "gridSize": 80,
-              "cornerRadius": 56,
-              "frameLine": true,
-              "showGrid": true,
-              "maskX": 78,
-              "maskY": 50
-            },
-            "offset": [
-              0,
-              0
-            ]
-          },
-          {
-            "id": "text-2a4d2-2",
+            "id": "text-2a4d2-1",
             "type": "text",
             "props": {
               "variant": "flowEyebrow",
@@ -46,133 +28,79 @@
               "color": "#0D9488"
             },
             "offset": [
-              300,
-              210
+              140,
+              128
+            ]
+          },
+          {
+            "id": "text-2a4d2-2",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "Import\nAudiences",
+              "size": 90
+            },
+            "offset": [
+              140,
+              178
             ]
           },
           {
             "id": "text-2a4d2-3",
             "type": "text",
             "props": {
-              "variant": "flowTitle",
-              "value": "Import\nAudiences",
-              "size": 104
-            },
-            "offset": [
-              300,
-              266
-            ]
-          },
-          {
-            "id": "text-2a4d2-4",
-            "type": "text",
-            "props": {
               "variant": "flowSub",
-              "value": "Add contacts one at a time or in bulk via CSV."
+              "value": "Add contacts one at a time or in bulk\nvia CSV."
             },
             "offset": [
-              300,
-              512
+              140,
+              405.2
             ]
-          },
+          }
+        ]
+      },
+      {
+        "id": "b",
+        "role": "foreground",
+        "x": 562,
+        "y": 84,
+        "w": 460,
+        "h": 380,
+        "preset": "bare",
+        "children": [
           {
-            "id": "flowNode-2a4d2-5",
-            "type": "flowNode",
+            "id": "dd-1",
+            "type": "dropdown",
             "props": {
-              "label": "Open Actions",
-              "meta": "audiences or pipeline toolbar",
-              "icon": "folder",
-              "tint": "blue",
-              "emphasized": false,
-              "width": 460,
-              "height": 108,
-              "anchorTop": false
-            },
-            "offset": [
-              950,
-              174
-            ]
-          },
-          {
-            "id": "flowConnector-2a4d2-6",
-            "type": "flowConnector",
-            "props": {
-              "dx": 0,
-              "dy": 44,
-              "route": "line",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 24,
-              "arrow": true,
-              "mid": 0.5
-            },
-            "offset": [
-              1162,
-              264
-            ]
-          },
-          {
-            "id": "flowNode-2a4d2-7",
-            "type": "flowNode",
-            "props": {
-              "label": "Upload or Enter",
-              "meta": "single contact or CSV file",
-              "icon": "import",
-              "tint": "blue",
-              "emphasized": false,
-              "width": 460,
-              "height": 108,
-              "anchorTop": false
-            },
-            "offset": [
-              950,
-              326
-            ]
-          },
-          {
-            "id": "flowConnector-2a4d2-8",
-            "type": "flowConnector",
-            "props": {
-              "dx": 0,
-              "dy": 44,
-              "route": "line",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 24,
-              "arrow": true,
-              "mid": 0.5
-            },
-            "offset": [
-              1162,
-              416
-            ]
-          },
-          {
-            "id": "flowNode-2a4d2-9",
-            "type": "flowNode",
-            "props": {
-              "label": "Confirm Import",
-              "meta": "duplicates are skipped",
-              "icon": "check",
-              "tint": "blue",
-              "emphasized": true,
-              "width": 460,
-              "height": 108,
-              "anchorTop": false
-            },
-            "offset": [
-              950,
-              478
-            ]
+              "title": "Audiences and Contacts",
+              "search": false,
+              "scale": 1.25,
+              "items": [
+                {
+                  "label": "Open Actions",
+                  "color": "#0D9488",
+                  "highlighted": true
+                },
+                {
+                  "label": "Upload or Enter",
+                  "highlighted": false
+                },
+                {
+                  "label": "Confirm Import",
+                  "highlighted": false
+                }
+              ],
+              "footer": "audiences or pipeline toolbar"
+            }
           }
         ]
       }
     ],
     "status": "proposed",
-    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=audiences-contacts -> eyebrow \"AUDIENCES AND CONTACTS\", hue #0D9488, tint blue. type=task -> vertical 3-node run, arrowed, final node emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 104.",
+    "note": "STYLE B s12 card-stage: the cover is one big floating portal card on a tinted field, lockup inside it, with a real status-picker popover overlapping the card. [style-b s12-card-stage, task, gate PASS]",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 3,
-    "updatedAt": 1787833389246
+    "rev": 6,
+    "updatedAt": 1788998338022
   }
 }

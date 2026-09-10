@@ -1,5 +1,5 @@
 {
-  "revision": 6,
+  "revision": 3,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -20,7 +20,7 @@
         "layout": "free",
         "children": [
           {
-            "id": "text-cea35-1",
+            "id": "text-7b963-1",
             "type": "text",
             "props": {
               "variant": "flowEyebrow",
@@ -33,12 +33,12 @@
             ]
           },
           {
-            "id": "text-cea35-2",
+            "id": "text-7b963-2",
             "type": "text",
             "props": {
               "variant": "flowTitle",
-              "value": "Troubleshooting\nLogin and Access",
-              "size": 72
+              "value": "Setting Up\nYour Profile",
+              "size": 96
             },
             "offset": [
               270,
@@ -46,15 +46,15 @@
             ]
           },
           {
-            "id": "text-cea35-3",
+            "id": "text-7b963-3",
             "type": "text",
             "props": {
               "variant": "flowSub",
-              "value": "Sign-in problems rarely come from your\naccount itself."
+              "value": "Personal details that identify you across FS\nAi."
             },
             "offset": [
               270,
-              429.56
+              482.08
             ]
           }
         ]
@@ -72,8 +72,8 @@
             "id": "ff-1",
             "type": "formField",
             "props": {
-              "label": "Sign In Page",
-              "placeholder": "email, password, sign in",
+              "label": "Details tab",
+              "placeholder": "name, phone, job title",
               "type": "text",
               "required": true,
               "scale": 1.25
@@ -83,8 +83,8 @@
             "id": "ff-2",
             "type": "formField",
             "props": {
-              "label": "Try Incognito",
-              "placeholder": "isolates extension conflicts",
+              "label": "Security tab",
+              "placeholder": "password, 2FA, API key",
               "type": "text",
               "required": true,
               "scale": 1.25
@@ -94,7 +94,7 @@
             "id": "btn-1",
             "type": "button",
             "props": {
-              "label": "Clear Cache",
+              "label": "Assignability",
               "variant": "primary"
             }
           }
@@ -105,7 +105,7 @@
     "note": "STYLE B s03 auth-gate: the auth-split shell full bleed; lockup in the form pane; a white sign-in card straddling the seam. Reserved for the sign-in, password and invite family. [style-b s03-auth-gate, task, gate PASS]",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 6,
-    "updatedAt": 1788998340407
+    "rev": 3,
+    "updatedAt": 1788998340267
   }
 }

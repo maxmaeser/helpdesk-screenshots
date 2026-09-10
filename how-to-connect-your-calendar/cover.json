@@ -1,5 +1,5 @@
 {
-  "revision": 6,
+  "revision": 3,
   "cover": {
     "v": 2,
     "background": "gray-solid",
@@ -20,12 +20,12 @@
         "layout": "free",
         "children": [
           {
-            "id": "text-7ee18-1",
+            "id": "text-0e321-1",
             "type": "text",
             "props": {
               "variant": "flowEyebrow",
-              "value": "SALES",
-              "color": "#16A34A"
+              "value": "CALENDAR",
+              "color": "#B7101B"
             },
             "offset": [
               250,
@@ -33,12 +33,12 @@
             ]
           },
           {
-            "id": "text-7ee18-2",
+            "id": "text-0e321-2",
             "type": "text",
             "props": {
               "variant": "flowTitle",
-              "value": "How to Set Up\nFunnel Automations",
-              "size": 64
+              "value": "How to Connect\nYour Calendar",
+              "size": 80
             },
             "offset": [
               250,
@@ -46,15 +46,15 @@
             ]
           },
           {
-            "id": "text-7ee18-3",
+            "id": "text-0e321-3",
             "type": "text",
             "props": {
               "variant": "flowSub",
-              "value": "Manage funnel emails without leaving the\nbuilder."
+              "value": "Manage events without leaving the\ndashboard."
             },
             "offset": [
               250,
-              415.72
+              451.4
             ]
           }
         ]
@@ -80,8 +80,8 @@
             "id": "lr-1",
             "type": "listRow",
             "props": {
-              "label": "Open Automations",
-              "sublabel": "robot icon in toolbar",
+              "label": "Connect",
+              "sublabel": "Google or Office 365",
               "trailing": "1",
               "highlighted": true
             }
@@ -90,8 +90,8 @@
             "id": "lr-2",
             "type": "listRow",
             "props": {
-              "label": "Apply a Template",
-              "sublabel": "creates emails automatically",
+              "label": "Calendar tab",
+              "sublabel": "Month, Week, Day views",
               "trailing": "2",
               "highlighted": false
             }
@@ -100,8 +100,8 @@
             "id": "lr-3",
             "type": "listRow",
             "props": {
-              "label": "Turn It On",
-              "sublabel": "live once ready to send",
+              "label": "Create Event",
+              "sublabel": "title, time, guests",
               "trailing": "3",
               "highlighted": false
             }
@@ -112,7 +112,7 @@
             "props": {
               "value": 66,
               "label": "Progress",
-              "color": "#16A34A"
+              "color": "#B7101B"
             }
           }
         ]
@@ -122,7 +122,7 @@
     "note": "STYLE B s10 column-right: portal page gray; one tall white panel pinned to the right, bleeding off the bottom, carrying a cluster of list rows, a progress state and a heading. [style-b s10-column-right, task, gate PASS]",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 6,
-    "updatedAt": 1788998345636
+    "rev": 3,
+    "updatedAt": 1788998338162
   }
 }

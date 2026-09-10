@@ -1,238 +1,104 @@
 {
-  "revision": 6,
+  "revision": 9,
   "cover": {
     "v": 2,
-    "background": "white-solid",
+    "background": "gray-solid",
     "title": null,
     "exportPreset": "opener-wide",
-    "scale": 86,
-    "positionX": 7,
+    "scale": 100,
+    "positionX": 0,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
         "role": "foreground",
-        "x": -480.047,
-        "y": -171.86,
-        "w": 1972.093,
-        "h": 883.721,
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
         "preset": "bare",
         "layout": "free",
         "children": [
           {
-            "id": "gridField-rail9-14",
-            "type": "gridField",
-            "props": {
-              "width": 1972.093,
-              "height": 883.721,
-              "gridSize": 93.023,
-              "cornerRadius": 65.116,
-              "frameLine": true,
-              "showGrid": true,
-              "maskX": 78,
-              "maskY": 50,
-              "lineScale": 1.16279
-            },
-            "offset": [
-              0,
-              0
-            ]
-          },
-          {
-            "id": "text-rail9-15",
+            "id": "text-71908-1",
             "type": "text",
             "props": {
               "variant": "flowEyebrow",
-              "value": "USERS AND SETTINGS"
+              "value": "USERS AND SETTINGS",
+              "color": "#475569"
             },
             "offset": [
-              320.047,
-              255.86
+              250,
+              172
             ]
           },
           {
-            "id": "text-rail9-16",
+            "id": "text-71908-2",
             "type": "text",
             "props": {
               "variant": "flowTitle",
-              "value": "Understanding\nRoles and\nPermissions",
-              "size": 76
+              "value": "Understanding Roles and Permissions",
+              "size": 62
             },
             "offset": [
-              320.047,
-              311.86
+              250,
+              216
             ]
-          },
+          }
+        ]
+      },
+      {
+        "id": "b",
+        "role": "foreground",
+        "x": -88,
+        "y": 212,
+        "w": 1216,
+        "h": 280,
+        "preset": "bare",
+        "children": [
           {
-            "id": "text-rail9-17",
-            "type": "text",
+            "id": "tbl-1",
+            "type": "table",
             "props": {
-              "variant": "flowSub",
-              "value": "What each team member can see and do."
-            },
-            "offset": [
-              320.047,
-              583.86
-            ]
-          },
-          {
-            "id": "text-rail9-18",
-            "type": "text",
-            "props": {
-              "variant": "flowEyebrow",
-              "value": "ACCESS LEVELS"
-            },
-            "offset": [
-              920.047,
-              183.534
-            ]
-          },
-          {
-            "id": "text-rail9-19",
-            "type": "text",
-            "props": {
-              "variant": "flowEyebrow",
-              "value": "BRAND TEAM ROLES"
-            },
-            "offset": [
-              1328.047,
-              183.534
-            ]
-          },
-          {
-            "id": "flowConnector-rail9-20",
-            "type": "flowConnector",
-            "props": {
-              "dx": 44,
-              "dy": 0,
-              "route": "line",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 24,
-              "arrow": true,
-              "mid": 0.5
-            },
-            "offset": [
-              1204.047,
-              297.534
-            ]
-          },
-          {
-            "id": "flowConnector-rail9-21",
-            "type": "flowConnector",
-            "props": {
-              "dx": 44,
-              "dy": 0,
-              "route": "line",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 24,
-              "arrow": true,
-              "mid": 0.5
-            },
-            "offset": [
-              1204.047,
-              480.883
-            ]
-          },
-          {
-            "id": "flowNode-rail9-22",
-            "type": "flowNode",
-            "props": {
-              "label": "Admin",
-              "meta": "full permissions",
-              "icon": "shield",
-              "tint": "blue",
-              "emphasized": true,
-              "width": 352,
-              "height": 148,
-              "anchorTop": false
-            },
-            "offset": [
-              868.047,
-              239.535
-            ]
-          },
-          {
-            "id": "flowNode-rail9-23",
-            "type": "flowNode",
-            "props": {
-              "label": "Member",
-              "meta": "limited permissions",
-              "icon": "user",
-              "tint": "slate",
-              "emphasized": false,
-              "width": 352,
-              "height": 148,
-              "anchorTop": false
-            },
-            "offset": [
-              868.047,
-              422.884
-            ]
-          },
-          {
-            "id": "flowNode-rail9-24",
-            "type": "flowNode",
-            "props": {
-              "label": "Finance Liaison",
-              "meta": "finance slots in projects",
-              "icon": "chart",
-              "tint": "purple",
-              "emphasized": false,
-              "width": 436,
-              "height": 148,
-              "anchorTop": false
-            },
-            "offset": [
-              1264.047,
-              239.535
-            ]
-          },
-          {
-            "id": "flowNode-rail9-25",
-            "type": "flowNode",
-            "props": {
-              "label": "Real Estate Manager",
-              "meta": "fills RACI slots",
-              "icon": "pin",
-              "tint": "purple",
-              "emphasized": false,
-              "width": 436,
-              "height": 148,
-              "anchorTop": false
-            },
-            "offset": [
-              1264.047,
-              422.884
-            ]
-          },
-          {
-            "id": "flowNode-rail9-26",
-            "type": "flowNode",
-            "props": {
-              "label": "Billing",
-              "meta": "its own toggle",
-              "icon": "card",
-              "tint": "amber",
-              "emphasized": false,
-              "width": 300,
-              "height": 120,
-              "anchorTop": false
-            },
-            "offset": [
-              916.047,
-              607.628
-            ]
+              "columns": [
+                "Users and Settings",
+                "Part"
+              ],
+              "radius": 16,
+              "scale": 1.3,
+              "rows": [
+                {
+                  "id": "1",
+                  "primary": "Admin",
+                  "secondary": "full permissions",
+                  "badgeLabel": "1",
+                  "badgeColor": "#475569"
+                },
+                {
+                  "id": "2",
+                  "primary": "Member",
+                  "secondary": "limited permissions",
+                  "badgeLabel": "2",
+                  "badgeColor": "#475569"
+                },
+                {
+                  "id": "3",
+                  "primary": "Billing",
+                  "secondary": "its own toggle",
+                  "badgeLabel": "3",
+                  "badgeColor": "#475569"
+                }
+              ]
+            }
           }
         ]
       }
     ],
-    "status": "flagged",
-    "note": "Two-column map: the two access levels mapped to brand team roles they hold; billing detached below as its own toggle. Labels verbatim.",
-    "lastTouchedBy": "claude-banner-recompose",
+    "status": "proposed",
+    "note": "STYLE B s08 table-wide: lockup on top; the platform table stretched across the full safe width as one wide data block on portal page gray. [style-b s08-table-wide, concept, gate PASS]",
+    "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 5,
-    "updatedAt": 1787739728168
+    "rev": 8,
+    "updatedAt": 1788998347730
   }
 }

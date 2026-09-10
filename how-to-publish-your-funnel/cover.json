@@ -1,8 +1,8 @@
 {
-  "revision": 3,
+  "revision": 6,
   "cover": {
     "v": 2,
-    "background": "white-solid",
+    "background": "cloud",
     "title": null,
     "exportPreset": "opener-wide",
     "scale": 100,
@@ -12,33 +12,15 @@
       {
         "id": "a",
         "role": "foreground",
-        "x": -328,
-        "y": -110,
-        "w": 1696,
-        "h": 760,
-        "preset": "bare",
+        "x": -208,
+        "y": -54,
+        "w": 1456,
+        "h": 648,
+        "preset": "plain",
         "layout": "free",
         "children": [
           {
-            "id": "gridField-a24af-1",
-            "type": "gridField",
-            "props": {
-              "width": 1696,
-              "height": 760,
-              "gridSize": 80,
-              "cornerRadius": 56,
-              "frameLine": true,
-              "showGrid": true,
-              "maskX": 78,
-              "maskY": 50
-            },
-            "offset": [
-              0,
-              0
-            ]
-          },
-          {
-            "id": "text-a24af-2",
+            "id": "text-a24af-1",
             "type": "text",
             "props": {
               "variant": "flowEyebrow",
@@ -46,133 +28,79 @@
               "color": "#1F54DE"
             },
             "offset": [
-              300,
-              213
+              140,
+              128
+            ]
+          },
+          {
+            "id": "text-a24af-2",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "How to Publish\nYour Funnel",
+              "size": 74
+            },
+            "offset": [
+              140,
+              178
             ]
           },
           {
             "id": "text-a24af-3",
             "type": "text",
             "props": {
-              "variant": "flowTitle",
-              "value": "How to Publish\nYour Funnel",
-              "size": 80
-            },
-            "offset": [
-              300,
-              268
-            ]
-          },
-          {
-            "id": "text-a24af-4",
-            "type": "text",
-            "props": {
               "variant": "flowSub",
-              "value": "Publishing is required before your funnel can go live."
+              "value": "Publishing is required before your\nfunnel can go live."
             },
             "offset": [
-              300,
-              465
+              140,
+              370.52
             ]
-          },
+          }
+        ]
+      },
+      {
+        "id": "b",
+        "role": "foreground",
+        "x": 562,
+        "y": 84,
+        "w": 460,
+        "h": 380,
+        "preset": "bare",
+        "children": [
           {
-            "id": "flowNode-a24af-5",
-            "type": "flowNode",
+            "id": "dd-1",
+            "type": "dropdown",
             "props": {
-              "label": "Add Resources",
-              "meta": "docs and videos on end screen",
-              "icon": "folder",
-              "tint": "blue",
-              "emphasized": false,
-              "width": 460,
-              "height": 108,
-              "anchorTop": false
-            },
-            "offset": [
-              950,
-              174
-            ]
-          },
-          {
-            "id": "flowConnector-a24af-6",
-            "type": "flowConnector",
-            "props": {
-              "dx": 0,
-              "dy": 44,
-              "route": "line",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 24,
-              "arrow": true,
-              "mid": 0.5
-            },
-            "offset": [
-              1162,
-              264
-            ]
-          },
-          {
-            "id": "flowNode-a24af-7",
-            "type": "flowNode",
-            "props": {
-              "label": "Turn On Emails",
-              "meta": "follow-up automations",
-              "icon": "mail",
-              "tint": "blue",
-              "emphasized": false,
-              "width": 460,
-              "height": 108,
-              "anchorTop": false
-            },
-            "offset": [
-              950,
-              326
-            ]
-          },
-          {
-            "id": "flowConnector-a24af-8",
-            "type": "flowConnector",
-            "props": {
-              "dx": 0,
-              "dy": 44,
-              "route": "line",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 24,
-              "arrow": true,
-              "mid": 0.5
-            },
-            "offset": [
-              1162,
-              416
-            ]
-          },
-          {
-            "id": "flowNode-a24af-9",
-            "type": "flowNode",
-            "props": {
-              "label": "Publish Funnel",
-              "meta": "goes live, staged to draft",
-              "icon": "send",
-              "tint": "blue",
-              "emphasized": true,
-              "width": 460,
-              "height": 108,
-              "anchorTop": false
-            },
-            "offset": [
-              950,
-              478
-            ]
+              "title": "Getting Started",
+              "search": false,
+              "scale": 1.25,
+              "items": [
+                {
+                  "label": "Add Resources",
+                  "color": "#1F54DE",
+                  "highlighted": true
+                },
+                {
+                  "label": "Turn On Emails",
+                  "highlighted": false
+                },
+                {
+                  "label": "Publish Funnel",
+                  "highlighted": false
+                }
+              ],
+              "footer": "docs and videos on end screen"
+            }
           }
         ]
       }
     ],
     "status": "proposed",
-    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=getting-started -> eyebrow \"GETTING STARTED\", hue #1F54DE, tint blue. type=task -> vertical 3-node run, arrowed, final node emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 80.",
+    "note": "STYLE B s12 card-stage: the cover is one big floating portal card on a tinted field, lockup inside it, with a real status-picker popover overlapping the card. [style-b s12-card-stage, task, gate PASS]",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 3,
-    "updatedAt": 1787833389868
+    "rev": 6,
+    "updatedAt": 1788998339422
   }
 }

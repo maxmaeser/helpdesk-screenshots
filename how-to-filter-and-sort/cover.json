@@ -1,5 +1,5 @@
 {
-  "revision": 4,
+  "revision": 3,
   "cover": {
     "v": 2,
     "background": "cloud",
@@ -20,12 +20,12 @@
         "layout": "free",
         "children": [
           {
-            "id": "text-62a1f-1",
+            "id": "text-d0819-1",
             "type": "text",
             "props": {
               "variant": "flowEyebrow",
-              "value": "OPERATIONS",
-              "color": "#D87203"
+              "value": "AUDIENCES AND CONTACTS",
+              "color": "#0D9488"
             },
             "offset": [
               140,
@@ -33,12 +33,12 @@
             ]
           },
           {
-            "id": "text-62a1f-2",
+            "id": "text-d0819-2",
             "type": "text",
             "props": {
               "variant": "flowTitle",
-              "value": "How to Import\nFranchisees\nand Locations",
-              "size": 82
+              "value": "How to Filter,\nSort, and Search\nYour Contacts",
+              "size": 66
             },
             "offset": [
               140,
@@ -46,15 +46,15 @@
             ]
           },
           {
-            "id": "text-62a1f-3",
+            "id": "text-d0819-3",
             "type": "text",
             "props": {
               "variant": "flowSub",
-              "value": "Bring both in from a CSV in bulk."
+              "value": "Narrow a long list down to what you\nneed."
             },
             "offset": [
               140,
-              467.72
+              417.36
             ]
           }
         ]
@@ -72,25 +72,25 @@
             "id": "dd-1",
             "type": "dropdown",
             "props": {
-              "title": "Operations",
+              "title": "Audiences and Contacts",
               "search": false,
               "scale": 1.25,
               "items": [
                 {
-                  "label": "Upload a CSV",
-                  "color": "#D87203",
+                  "label": "Search bar",
+                  "color": "#0D9488",
                   "highlighted": true
                 },
                 {
-                  "label": "Map your columns",
+                  "label": "Add a filter",
                   "highlighted": false
                 },
                 {
-                  "label": "Review and import",
+                  "label": "Sort",
                   "highlighted": false
                 }
               ],
-              "footer": "or start from the template"
+              "footer": "top of the table"
             }
           }
         ]
@@ -100,7 +100,7 @@
     "note": "STYLE B s12 card-stage: the cover is one big floating portal card on a tinted field, lockup inside it, with a real status-picker popover overlapping the card. [style-b s12-card-stage, task, gate PASS]",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 4,
-    "updatedAt": 1788998343532
+    "rev": 3,
+    "updatedAt": 1788998337878
   }
 }

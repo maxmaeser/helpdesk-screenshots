@@ -1,8 +1,8 @@
 {
-  "revision": 1,
+  "revision": 4,
   "cover": {
     "v": 2,
-    "background": "white-solid",
+    "background": "cloud",
     "title": null,
     "exportPreset": "opener-wide",
     "scale": 100,
@@ -12,33 +12,15 @@
       {
         "id": "a",
         "role": "foreground",
-        "x": -328,
-        "y": -110,
-        "w": 1696,
-        "h": 760,
-        "preset": "bare",
+        "x": -208,
+        "y": -54,
+        "w": 1456,
+        "h": 648,
+        "preset": "plain",
         "layout": "free",
         "children": [
           {
-            "id": "gridField-87584-1",
-            "type": "gridField",
-            "props": {
-              "width": 1696,
-              "height": 760,
-              "gridSize": 80,
-              "cornerRadius": 56,
-              "frameLine": true,
-              "showGrid": true,
-              "maskX": 78,
-              "maskY": 50
-            },
-            "offset": [
-              0,
-              0
-            ]
-          },
-          {
-            "id": "text-87584-2",
+            "id": "text-87584-1",
             "type": "text",
             "props": {
               "variant": "flowEyebrow",
@@ -46,133 +28,79 @@
               "color": "#D87203"
             },
             "offset": [
-              300,
-              196
+              140,
+              128
+            ]
+          },
+          {
+            "id": "text-87584-2",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "How to Upload\nand Manage\nAssets",
+              "size": 82
+            },
+            "offset": [
+              140,
+              178
             ]
           },
           {
             "id": "text-87584-3",
             "type": "text",
             "props": {
-              "variant": "flowTitle",
-              "value": "How to Upload\nand Manage\nAssets",
-              "size": 80
-            },
-            "offset": [
-              300,
-              250
-            ]
-          },
-          {
-            "id": "text-87584-4",
-            "type": "text",
-            "props": {
               "variant": "flowSub",
               "value": "Store files and share them once."
             },
             "offset": [
-              300,
-              526
+              140,
+              467.72
             ]
-          },
+          }
+        ]
+      },
+      {
+        "id": "b",
+        "role": "foreground",
+        "x": 562,
+        "y": 84,
+        "w": 460,
+        "h": 380,
+        "preset": "bare",
+        "children": [
           {
-            "id": "flowNode-87584-5",
-            "type": "flowNode",
+            "id": "dd-1",
+            "type": "dropdown",
             "props": {
-              "label": "Upload a file",
-              "meta": "PDFs, images, video",
-              "icon": "import",
-              "tint": "amber",
-              "emphasized": false,
-              "width": 460,
-              "height": 108,
-              "anchorTop": false
-            },
-            "offset": [
-              950,
-              174
-            ]
-          },
-          {
-            "id": "flowConnector-87584-6",
-            "type": "flowConnector",
-            "props": {
-              "dx": 0,
-              "dy": 44,
-              "route": "line",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 24,
-              "arrow": true,
-              "mid": 0.5
-            },
-            "offset": [
-              1162,
-              264
-            ]
-          },
-          {
-            "id": "flowNode-87584-7",
-            "type": "flowNode",
-            "props": {
-              "label": "Set visibility",
-              "meta": "who it is shared with",
-              "icon": "shield",
-              "tint": "amber",
-              "emphasized": false,
-              "width": 460,
-              "height": 108,
-              "anchorTop": false
-            },
-            "offset": [
-              950,
-              326
-            ]
-          },
-          {
-            "id": "flowConnector-87584-8",
-            "type": "flowConnector",
-            "props": {
-              "dx": 0,
-              "dy": 44,
-              "route": "line",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 24,
-              "arrow": true,
-              "mid": 0.5
-            },
-            "offset": [
-              1162,
-              416
-            ]
-          },
-          {
-            "id": "flowNode-87584-9",
-            "type": "flowNode",
-            "props": {
-              "label": "Update version",
-              "meta": "history stays intact",
-              "icon": "doc",
-              "tint": "amber",
-              "emphasized": true,
-              "width": 460,
-              "height": 108,
-              "anchorTop": false
-            },
-            "offset": [
-              950,
-              478
-            ]
+              "title": "Operations",
+              "search": false,
+              "scale": 1.25,
+              "items": [
+                {
+                  "label": "Upload a file",
+                  "color": "#D87203",
+                  "highlighted": true
+                },
+                {
+                  "label": "Set visibility",
+                  "highlighted": false
+                },
+                {
+                  "label": "Update version",
+                  "highlighted": false
+                }
+              ],
+              "footer": "PDFs, images, video"
+            }
           }
         ]
       }
     ],
     "status": "proposed",
-    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=operations -> eyebrow \"OPERATIONS\", hue #D87203, tint amber. type=task -> vertical 3-node run, arrowed, final node emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 80.",
+    "note": "STYLE B s12 card-stage: the cover is one big floating portal card on a tinted field, lockup inside it, with a real status-picker popover overlapping the card. [style-b s12-card-stage, task, gate PASS]",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 1,
-    "updatedAt": 1787742842806
+    "rev": 4,
+    "updatedAt": 1788998344093
   }
 }

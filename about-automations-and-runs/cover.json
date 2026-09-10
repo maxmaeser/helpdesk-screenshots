@@ -1,8 +1,8 @@
 {
-  "revision": 15,
+  "revision": 18,
   "cover": {
     "v": 2,
-    "background": "white-solid",
+    "background": "gray-solid",
     "title": null,
     "exportPreset": "opener-wide",
     "scale": 100,
@@ -20,25 +20,7 @@
         "layout": "free",
         "children": [
           {
-            "id": "gridField-d269d-1",
-            "type": "gridField",
-            "props": {
-              "width": 1696,
-              "height": 760,
-              "gridSize": 80,
-              "cornerRadius": 56,
-              "frameLine": true,
-              "showGrid": true,
-              "maskX": 78,
-              "maskY": 50
-            },
-            "offset": [
-              0,
-              0
-            ]
-          },
-          {
-            "id": "text-d269d-2",
+            "id": "text-d269d-1",
             "type": "text",
             "props": {
               "variant": "flowEyebrow",
@@ -46,97 +28,77 @@
               "color": "#16A34A"
             },
             "offset": [
-              300,
-              171
+              250,
+              172
             ]
           },
           {
-            "id": "text-d269d-3",
+            "id": "text-d269d-2",
             "type": "text",
             "props": {
               "variant": "flowTitle",
-              "value": "About\nAutomations\nand Runs",
-              "size": 96
+              "value": "About Automations and Runs",
+              "size": 78
             },
             "offset": [
-              300,
-              227
+              250,
+              216
             ]
-          },
+          }
+        ]
+      },
+      {
+        "id": "b",
+        "role": "foreground",
+        "x": -88,
+        "y": 212,
+        "w": 1216,
+        "h": 280,
+        "preset": "bare",
+        "children": [
           {
-            "id": "text-d269d-4",
-            "type": "text",
+            "id": "tbl-1",
+            "type": "table",
             "props": {
-              "variant": "flowSub",
-              "value": "Workflows that fire on an event."
-            },
-            "offset": [
-              300,
-              550
-            ]
-          },
-          {
-            "id": "flowNode-d269d-5",
-            "type": "flowNode",
-            "props": {
-              "label": "Workflows",
-              "meta": "Sales → Workflows",
-              "icon": "branch",
-              "tint": "slate",
-              "emphasized": false,
-              "width": 500,
-              "height": 404,
-              "anchorTop": true
-            },
-            "offset": [
-              950,
-              178
-            ]
-          },
-          {
-            "id": "flowNode-d269d-6",
-            "type": "flowNode",
-            "props": {
-              "label": "An automation",
-              "meta": "a trigger, then steps",
-              "icon": "flag",
-              "tint": "green",
-              "emphasized": false,
-              "width": 428,
-              "height": 268,
-              "anchorTop": true
-            },
-            "offset": [
-              986,
-              290
-            ]
-          },
-          {
-            "id": "flowNode-d269d-7",
-            "type": "flowNode",
-            "props": {
-              "label": "Runs",
-              "meta": "every time it fired",
-              "icon": "doc",
-              "tint": "green",
-              "emphasized": true,
-              "width": 356,
-              "height": 124,
-              "anchorTop": true
-            },
-            "offset": [
-              1022,
-              418
-            ]
+              "columns": [
+                "Sales",
+                "Part"
+              ],
+              "radius": 16,
+              "scale": 1.3,
+              "rows": [
+                {
+                  "id": "1",
+                  "primary": "Workflows",
+                  "secondary": "Sales → Workflows",
+                  "badgeLabel": "1",
+                  "badgeColor": "#16A34A"
+                },
+                {
+                  "id": "2",
+                  "primary": "An automation",
+                  "secondary": "a trigger, then steps",
+                  "badgeLabel": "2",
+                  "badgeColor": "#16A34A"
+                },
+                {
+                  "id": "3",
+                  "primary": "Runs",
+                  "secondary": "every time it fired",
+                  "badgeLabel": "3",
+                  "badgeColor": "#16A34A"
+                }
+              ]
+            }
           }
         ]
       }
     ],
     "status": "proposed",
-    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=sales -> eyebrow \"SALES\", hue #16A34A, tint green. type=concept -> 3 overlapping anchorTop cards, no connectors, innermost emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 96.",
+    "note": "STYLE B s08 table-wide: lockup on top; the platform table stretched across the full safe width as one wide data block on portal page gray. [style-b s08-table-wide, concept, gate PASS]",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 14,
-    "updatedAt": 1787742840959
+    "rev": 17,
+    "updatedAt": 1788998344233
   }
 }

@@ -1,5 +1,5 @@
 {
-  "revision": 6,
+  "revision": 3,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -38,12 +38,12 @@
             ]
           },
           {
-            "id": "text-60018-1",
+            "id": "text-d9dbb-1",
             "type": "text",
             "props": {
               "variant": "flowEyebrow",
-              "value": "GETTING STARTED",
-              "color": "#1F54DE"
+              "value": "SALES",
+              "color": "#16A34A"
             },
             "offset": [
               250,
@@ -51,12 +51,12 @@
             ]
           },
           {
-            "id": "text-60018-2",
+            "id": "text-d9dbb-2",
             "type": "text",
             "props": {
               "variant": "flowTitle",
-              "value": "About the\nLite Dashboard",
-              "size": 54
+              "value": "About the\nCompliance\nPage",
+              "size": 68
             },
             "offset": [
               250,
@@ -64,15 +64,15 @@
             ]
           },
           {
-            "id": "text-60018-3",
+            "id": "text-d9dbb-3",
             "type": "text",
             "props": {
               "variant": "flowSub",
-              "value": "Lite trims the sidebar to\neight flat tabs."
+              "value": "Where you can sell, and\nwhat's due for renewal."
             },
             "offset": [
               250,
-              393.92
+              491.28
             ]
           }
         ]
@@ -90,18 +90,18 @@
             "id": "hm-1",
             "type": "homeModuleCard",
             "props": {
-              "icon": "homeDoor",
+              "icon": "saleTag",
               "tone": "blue",
-              "eyebrow": "GETTING STARTED",
-              "title": "Sidebar Tabs",
+              "eyebrow": "SALES",
+              "title": "States tab",
               "rows": [
                 {
-                  "title": "Sign-In Routing",
-                  "sub": "based on setup progress"
+                  "title": "FDDs tab",
+                  "sub": "documents by state"
                 },
                 {
-                  "title": "Getting Started",
-                  "sub": "required and recommended"
+                  "title": "Deadlines tab",
+                  "sub": "overdue, then by month"
                 }
               ]
             }
@@ -113,7 +113,7 @@
     "note": "STYLE B s01 portal-window: a real portal-shell frame entering from the right and bleeding off the bottom; lockup left on the grid field. [style-b s01-portal-window, surface, gate PASS]",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 6,
-    "updatedAt": 1788998338722
+    "rev": 3,
+    "updatedAt": 1788998344794
   }
 }

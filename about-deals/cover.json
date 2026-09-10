@@ -1,5 +1,5 @@
 {
-  "revision": 6,
+  "revision": 3,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -38,12 +38,12 @@
             ]
           },
           {
-            "id": "text-b80c7-1",
+            "id": "text-43fd3-1",
             "type": "text",
             "props": {
               "variant": "flowEyebrow",
-              "value": "MARKETING AND EMAIL",
-              "color": "#7C3AED"
+              "value": "SALES",
+              "color": "#16A34A"
             },
             "offset": [
               250,
@@ -51,11 +51,11 @@
             ]
           },
           {
-            "id": "text-b80c7-2",
+            "id": "text-43fd3-2",
             "type": "text",
             "props": {
               "variant": "flowTitle",
-              "value": "About Link\nTracking",
+              "value": "About\nDeals",
               "size": 82
             },
             "offset": [
@@ -64,11 +64,11 @@
             ]
           },
           {
-            "id": "text-b80c7-3",
+            "id": "text-43fd3-3",
             "type": "text",
             "props": {
               "variant": "flowSub",
-              "value": "Trackable links show which\ncampaigns drive portal traffic."
+              "value": "Tracks progress from applicant to\nfranchisee."
             },
             "offset": [
               250,
@@ -79,7 +79,7 @@
             "id": "tile-3",
             "type": "assetGridItem",
             "props": {
-              "title": "Analytics Tab",
+              "title": "Convert",
               "icon": "notebook",
               "tone": "light",
               "width": 300,
@@ -97,7 +97,7 @@
             "id": "tile-2",
             "type": "assetGridItem",
             "props": {
-              "title": "QR Templates",
+              "title": "Entity Members",
               "icon": "pencilEdit",
               "tone": "mid",
               "width": 330,
@@ -115,11 +115,11 @@
             "id": "tile-1",
             "type": "assetGridItem",
             "props": {
-              "title": "Links Tab",
-              "meta": "create and copy URLs",
+              "title": "Overview tab",
+              "meta": "type, status, dates",
               "badgeLabel": "Live",
               "badgeTone": "green",
-              "icon": "displayStudio",
+              "icon": "saleTag",
               "tone": "deep",
               "width": 380,
               "scale": 1.12,
@@ -137,7 +137,7 @@
     "note": "STYLE B s05 tile-fan: the real Assets grid tile fanned as a depth stack, sharp front tile and two blurred sheets receding off the right edge. [style-b s05-tile-fan, concept, gate PASS]",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 6,
-    "updatedAt": 1788998341825
+    "rev": 3,
+    "updatedAt": 1788998346196
   }
 }

@@ -1,214 +1,92 @@
 {
-  "revision": 6,
+  "revision": 10,
   "cover": {
     "v": 2,
-    "background": "white-solid",
+    "background": "sand",
     "title": null,
     "exportPreset": "opener-wide",
-    "scale": 86,
-    "positionX": 13,
+    "scale": 100,
+    "positionX": 0,
     "positionY": 0,
     "frames": [
       {
         "id": "a",
         "role": "foreground",
-        "x": -492.047,
-        "y": -171.86,
-        "w": 1972.093,
-        "h": 883.721,
+        "x": -328,
+        "y": -110,
+        "w": 1696,
+        "h": 760,
         "preset": "bare",
         "layout": "free",
         "children": [
           {
-            "id": "gridField-hubport-63",
-            "type": "gridField",
-            "props": {
-              "width": 1972.093,
-              "height": 883.721,
-              "gridSize": 93.023,
-              "cornerRadius": 65.116,
-              "frameLine": true,
-              "showGrid": true,
-              "maskX": 78,
-              "maskY": 50,
-              "lineScale": 1.16279
-            },
-            "offset": [
-              0,
-              0
-            ]
-          },
-          {
-            "id": "text-hubport-64",
+            "id": "text-e2f9b-1",
             "type": "text",
             "props": {
               "variant": "flowEyebrow",
-              "value": "GETTING STARTED · CHAPTER 6"
+              "value": "GETTING STARTED",
+              "color": "#1F54DE"
             },
             "offset": [
-              332.047,
-              281.86
+              250,
+              166
             ]
           },
           {
-            "id": "text-hubport-65",
+            "id": "text-e2f9b-2",
             "type": "text",
             "props": {
               "variant": "flowTitle",
-              "value": "Operate Your\nFranchisees",
-              "size": 90
+              "value": "Operate Your Franchisees",
+              "size": 76
             },
             "offset": [
-              332.047,
-              337.86
+              250,
+              206
             ]
-          },
+          }
+        ]
+      },
+      {
+        "id": "b",
+        "role": "foreground",
+        "x": -88,
+        "y": 202,
+        "w": 1216,
+        "h": 280,
+        "preset": "bare",
+        "children": [
           {
-            "id": "text-hubport-66",
-            "type": "text",
+            "id": "hero-1",
+            "type": "pageHero",
             "props": {
-              "variant": "flowSub",
-              "value": "Manage locations, assets,\nand documents."
-            },
-            "offset": [
-              332.047,
-              557.86
-            ]
-          },
-          {
-            "id": "flowConnector-hubport-67",
-            "type": "flowConnector",
-            "props": {
-              "dx": 168,
-              "dy": 94,
-              "route": "hv",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 80,
-              "arrow": true,
-              "mid": 0.5
-            },
-            "offset": [
-              1310.047,
-              245.907
-            ]
-          },
-          {
-            "id": "flowConnector-hubport-68",
-            "type": "flowConnector",
-            "props": {
-              "dx": -156,
-              "dy": 106,
-              "route": "vh",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 52,
-              "arrow": true,
-              "mid": 0.5
-            },
-            "offset": [
-              1322.047,
-              499.907
-            ]
-          },
-          {
-            "id": "flowConnector-hubport-69",
-            "type": "flowConnector",
-            "props": {
-              "dx": -72,
-              "dy": -270,
-              "route": "hv",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 28,
-              "arrow": false,
-              "mid": 0.5
-            },
-            "offset": [
-              886.047,
-              301.907
-            ]
-          },
-          {
-            "id": "flowConnector-hubport-70",
-            "type": "flowConnector",
-            "props": {
-              "dx": 60,
-              "dy": -56,
-              "route": "vh",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 28,
-              "arrow": true,
-              "mid": 0.5
-            },
-            "offset": [
-              886.047,
-              245.907
-            ]
-          },
-          {
-            "id": "flowNode-hubport-71",
-            "type": "flowNode",
-            "props": {
-              "label": "Locations",
-              "meta": "track every site",
-              "icon": "pin",
-              "tint": "purple",
-              "emphasized": false,
-              "width": 352,
-              "height": 148,
-              "anchorTop": false
-            },
-            "offset": [
-              974.047,
-              187.907
-            ]
-          },
-          {
-            "id": "flowNode-hubport-72",
-            "type": "flowNode",
-            "props": {
-              "label": "Assets",
-              "meta": "versioned library",
-              "icon": "folder",
-              "tint": "amber",
-              "emphasized": false,
-              "width": 352,
-              "height": 148,
-              "anchorTop": false
-            },
-            "offset": [
-              1350.047,
-              367.907
-            ]
-          },
-          {
-            "id": "flowNode-hubport-73",
-            "type": "flowNode",
-            "props": {
-              "label": "Share",
-              "meta": "reach the field",
-              "icon": "send",
-              "tint": "blue",
-              "emphasized": true,
-              "width": 352,
-              "height": 148,
-              "anchorTop": false
-            },
-            "offset": [
-              974.047,
-              547.907
-            ]
+              "eyebrow": "GETTING STARTED",
+              "title": "Manage locations, assets, and documents.",
+              "tone": "library",
+              "metrics": [
+                {
+                  "value": "1",
+                  "label": "Locations"
+                },
+                {
+                  "value": "2",
+                  "label": "Assets"
+                },
+                {
+                  "value": "3",
+                  "label": "Share"
+                }
+              ]
+            }
           }
         ]
       }
     ],
-    "status": "flagged",
-    "note": "Ported from tools/opener-gen (shipped -opener-v2) into editable studio primitives.",
-    "lastTouchedBy": "claude-banner-recompose",
+    "status": "proposed",
+    "note": "STYLE B s04 hero-band: warm tinted ground; lockup on top; the real pageHero banner with its metric row as one wide short band across the full safe width. [style-b s04-hero-band, hub, gate PASS]",
+    "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 5,
-    "updatedAt": 1787739731857
+    "rev": 9,
+    "updatedAt": 1788998479652
   }
 }

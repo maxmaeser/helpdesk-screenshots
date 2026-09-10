@@ -1,5 +1,5 @@
 {
-  "revision": 3,
+  "revision": 6,
   "cover": {
     "v": 2,
     "background": "white-solid",
@@ -20,7 +20,7 @@
         "layout": "free",
         "children": [
           {
-            "id": "gridField-61037-1",
+            "id": "gridField-1",
             "type": "gridField",
             "props": {
               "width": 1696,
@@ -38,105 +38,62 @@
             ]
           },
           {
-            "id": "text-61037-2",
+            "id": "text-61037-1",
             "type": "text",
             "props": {
               "variant": "flowEyebrow",
-              "value": "GETTING STARTED",
-              "color": "#1F54DE"
+              "value": "USERS AND SETTINGS",
+              "color": "#475569"
             },
             "offset": [
-              300,
-              188
+              700,
+              190
+            ]
+          },
+          {
+            "id": "text-61037-2",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "Multi-Brand\nView",
+              "size": 96
+            },
+            "offset": [
+              700,
+              246
             ]
           },
           {
             "id": "text-61037-3",
             "type": "text",
             "props": {
-              "variant": "flowTitle",
-              "value": "Multi-Brand\nView",
-              "size": 104
-            },
-            "offset": [
-              300,
-              244
-            ]
-          },
-          {
-            "id": "text-61037-4",
-            "type": "text",
-            "props": {
               "variant": "flowSub",
-              "value": "Switch between brands or view data across brands."
+              "value": "Switch between brands or view data\nacross brands."
             },
             "offset": [
-              300,
-              490
-            ]
-          },
-          {
-            "id": "flowNode-61037-5",
-            "type": "flowNode",
-            "props": {
-              "label": "Multiple Brands",
-              "meta": "one org, many brands",
-              "icon": "building",
-              "tint": "blue",
-              "emphasized": false,
-              "width": 460,
-              "height": 116,
-              "anchorTop": false
-            },
-            "offset": [
-              950,
-              178
-            ]
-          },
-          {
-            "id": "flowNode-61037-6",
-            "type": "flowNode",
-            "props": {
-              "label": "Brand Selector",
-              "meta": "single or multi-brand pages",
-              "icon": "filter",
-              "tint": "blue",
-              "emphasized": false,
-              "width": 460,
-              "height": 116,
-              "anchorTop": false
-            },
-            "offset": [
-              950,
-              322
-            ]
-          },
-          {
-            "id": "flowNode-61037-7",
-            "type": "flowNode",
-            "props": {
-              "label": "Switch or View All",
-              "meta": "per-section, remembered",
-              "icon": "check",
-              "tint": "blue",
-              "emphasized": true,
-              "width": 460,
-              "height": 116,
-              "anchorTop": false
-            },
-            "offset": [
-              950,
-              466
+              700,
+              486.08
             ]
           }
         ]
+      },
+      {
+        "id": "b",
+        "role": "foreground",
+        "x": -78,
+        "y": -110,
+        "w": 252,
+        "h": 800,
+        "preset": "portal-shell",
+        "presetVariant": "sidebar-only",
+        "children": []
       }
     ],
     "status": "proposed",
-    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=platform-introduction -> eyebrow \"GETTING STARTED\", hue #1F54DE, tint blue. type=surface -> 3 stacked cards, no connectors, last card emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 104.",
+    "note": "STYLE B s11 rail-left: composition flipped, the portal nav rail pinned to the LEFT edge and bleeding off the bottom, lockup on the right. Hue from Users and Settings. [style-b s11-rail-left, surface, gate PASS]",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 3,
-    "updatedAt": 1787833392211
+    "rev": 6,
+    "updatedAt": 1788998347590
   }
 }

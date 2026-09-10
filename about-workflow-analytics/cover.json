@@ -1,5 +1,5 @@
 {
-  "revision": 10,
+  "revision": 3,
   "cover": {
     "v": 2,
     "background": "gray-solid",
@@ -20,12 +20,12 @@
         "layout": "free",
         "children": [
           {
-            "id": "text-3d266-1",
+            "id": "text-eaa0f-1",
             "type": "text",
             "props": {
               "variant": "flowEyebrow",
-              "value": "GETTING STARTED",
-              "color": "#1F54DE"
+              "value": "MARKETING AND EMAIL",
+              "color": "#7C3AED"
             },
             "offset": [
               250,
@@ -33,11 +33,11 @@
             ]
           },
           {
-            "id": "text-3d266-2",
+            "id": "text-eaa0f-2",
             "type": "text",
             "props": {
               "variant": "flowTitle",
-              "value": "What Is an Organization?",
+              "value": "About Email Performance",
               "size": 78
             },
             "offset": [
@@ -61,7 +61,7 @@
             "type": "table",
             "props": {
               "columns": [
-                "Getting Started",
+                "Marketing and Email",
                 "Part"
               ],
               "radius": 16,
@@ -69,24 +69,24 @@
               "rows": [
                 {
                   "id": "1",
-                  "primary": "Organization",
-                  "secondary": "top-level container",
+                  "primary": "Summary tiles",
+                  "secondary": "3 tiles at the top",
                   "badgeLabel": "1",
-                  "badgeColor": "#1F54DE"
+                  "badgeColor": "#7C3AED"
                 },
                 {
                   "id": "2",
-                  "primary": "Brands",
-                  "secondary": "operating independently",
+                  "primary": "Template table",
+                  "secondary": "sent, delivered, more",
                   "badgeLabel": "2",
-                  "badgeColor": "#1F54DE"
+                  "badgeColor": "#7C3AED"
                 },
                 {
                   "id": "3",
-                  "primary": "Billing",
-                  "secondary": "payment methods",
+                  "primary": "Event log",
+                  "secondary": "one row per send",
                   "badgeLabel": "3",
-                  "badgeColor": "#1F54DE"
+                  "badgeColor": "#7C3AED"
                 }
               ]
             }
@@ -98,7 +98,7 @@
     "note": "STYLE B s08 table-wide: lockup on top; the platform table stretched across the full safe width as one wide data block on portal page gray. [style-b s08-table-wide, concept, gate PASS]",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 9,
-    "updatedAt": 1788998340690
+    "rev": 3,
+    "updatedAt": 1788998341970
   }
 }

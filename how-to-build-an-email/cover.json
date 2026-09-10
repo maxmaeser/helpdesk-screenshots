@@ -1,8 +1,8 @@
 {
-  "revision": 3,
+  "revision": 6,
   "cover": {
     "v": 2,
-    "background": "white-solid",
+    "background": "gray-solid",
     "title": null,
     "exportPreset": "opener-wide",
     "scale": 100,
@@ -20,25 +20,7 @@
         "layout": "free",
         "children": [
           {
-            "id": "gridField-06b11-1",
-            "type": "gridField",
-            "props": {
-              "width": 1696,
-              "height": 760,
-              "gridSize": 80,
-              "cornerRadius": 56,
-              "frameLine": true,
-              "showGrid": true,
-              "maskX": 78,
-              "maskY": 50
-            },
-            "offset": [
-              0,
-              0
-            ]
-          },
-          {
-            "id": "text-06b11-2",
+            "id": "text-06b11-1",
             "type": "text",
             "props": {
               "variant": "flowEyebrow",
@@ -46,133 +28,101 @@
               "color": "#7C3AED"
             },
             "offset": [
-              300,
-              196
+              250,
+              190
+            ]
+          },
+          {
+            "id": "text-06b11-2",
+            "type": "text",
+            "props": {
+              "variant": "flowTitle",
+              "value": "How to Build\nan Email",
+              "size": 104
+            },
+            "offset": [
+              250,
+              246
             ]
           },
           {
             "id": "text-06b11-3",
             "type": "text",
             "props": {
-              "variant": "flowTitle",
-              "value": "How to Build\nan Email",
-              "size": 96
+              "variant": "flowSub",
+              "value": "Compose, preview, and save your email in\none editor."
             },
             "offset": [
-              300,
-              252
+              250,
+              503.92
             ]
-          },
+          }
+        ]
+      },
+      {
+        "id": "b",
+        "role": "foreground",
+        "x": 622,
+        "y": 46,
+        "w": 470,
+        "h": 700,
+        "preset": "plain",
+        "children": [
           {
-            "id": "text-06b11-4",
+            "id": "h3-1",
             "type": "text",
             "props": {
-              "variant": "flowSub",
-              "value": "Compose, preview, and save your email in one editor."
-            },
-            "offset": [
-              300,
-              482
-            ]
+              "variant": "portalH3",
+              "value": "Steps"
+            }
           },
           {
-            "id": "flowNode-06b11-5",
-            "type": "flowNode",
+            "id": "lr-1",
+            "type": "listRow",
             "props": {
               "label": "Open the Builder",
-              "meta": "content tab, pick a template",
-              "icon": "doc",
-              "tint": "purple",
-              "emphasized": false,
-              "width": 460,
-              "height": 108,
-              "anchorTop": false
-            },
-            "offset": [
-              950,
-              174
-            ]
+              "sublabel": "content tab, pick a template",
+              "trailing": "1",
+              "highlighted": true
+            }
           },
           {
-            "id": "flowConnector-06b11-6",
-            "type": "flowConnector",
-            "props": {
-              "dx": 0,
-              "dy": 44,
-              "route": "line",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 24,
-              "arrow": true,
-              "mid": 0.5
-            },
-            "offset": [
-              1162,
-              264
-            ]
-          },
-          {
-            "id": "flowNode-06b11-7",
-            "type": "flowNode",
+            "id": "lr-2",
+            "type": "listRow",
             "props": {
               "label": "Add Blocks and Content",
-              "meta": "drag blocks, use merge tags",
-              "icon": "layout",
-              "tint": "purple",
-              "emphasized": false,
-              "width": 460,
-              "height": 108,
-              "anchorTop": false
-            },
-            "offset": [
-              950,
-              326
-            ]
+              "sublabel": "drag blocks, use merge tags",
+              "trailing": "2",
+              "highlighted": false
+            }
           },
           {
-            "id": "flowConnector-06b11-8",
-            "type": "flowConnector",
-            "props": {
-              "dx": 0,
-              "dy": 44,
-              "route": "line",
-              "thickness": 5,
-              "color": "#1F54DE",
-              "cornerRadius": 24,
-              "arrow": true,
-              "mid": 0.5
-            },
-            "offset": [
-              1162,
-              416
-            ]
-          },
-          {
-            "id": "flowNode-06b11-9",
-            "type": "flowNode",
+            "id": "lr-3",
+            "type": "listRow",
             "props": {
               "label": "Preview and Save",
-              "meta": "desktop, mobile, save and exit",
-              "icon": "check",
-              "tint": "purple",
-              "emphasized": true,
-              "width": 460,
-              "height": 108,
-              "anchorTop": false
-            },
-            "offset": [
-              950,
-              478
-            ]
+              "sublabel": "desktop, mobile, save and exit",
+              "trailing": "3",
+              "highlighted": false
+            }
+          },
+          {
+            "id": "pb-1",
+            "type": "progressBar",
+            "props": {
+              "value": 66,
+              "label": "Progress",
+              "color": "#7C3AED"
+            }
           }
         ]
       }
     ],
     "status": "proposed",
-    "note": "Derived cover (COVER-SYSTEM-PROPOSAL section 5). category=marketing-emails -> eyebrow \"MARKETING AND EMAIL\", hue #7C3AED, tint purple. type=task -> vertical 3-node run, arrowed, final node emphasized. Canonical opener recipe (scale 100, frame -328,-110 1696x760) so offsets are export px; every text primitive gated with isSafe() against safeZone(). Title size 96.",
+    "note": "STYLE B s10 column-right: portal page gray; one tall white panel pinned to the right, bleeding off the bottom, carrying a cluster of list rows, a progress state and a heading. [style-b s10-column-right, task, gate PASS]",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 3,
-    "updatedAt": 1787833391121
+    "rev": 6,
+    "updatedAt": 1788998342262
   }
 }

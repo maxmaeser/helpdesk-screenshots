@@ -1,8 +1,8 @@
 {
-  "revision": 1,
+  "revision": 4,
   "cover": {
     "v": 2,
-    "background": "white-solid",
+    "background": "gray-solid",
     "title": null,
     "exportPreset": "opener-wide",
     "scale": 100,
@@ -20,119 +20,85 @@
         "layout": "free",
         "children": [
           {
-            "id": "gridField-probe-0",
-            "type": "gridField",
+            "id": "text-ad563-1",
+            "type": "text",
             "props": {
-              "width": 1696,
-              "height": 760,
-              "gridSize": 80,
-              "cornerRadius": 56,
-              "frameLine": true,
-              "showGrid": true,
-              "maskX": 78,
-              "maskY": 78
+              "variant": "flowEyebrow",
+              "value": "GETTING STARTED",
+              "color": "#1F54DE"
             },
-            "x": 0,
-            "y": 0,
-            "w": 1696,
-            "h": 760
+            "offset": [
+              250,
+              172
+            ]
           },
           {
-            "id": "sidebar-probe-1",
-            "type": "sidebar",
+            "id": "text-ad563-2",
+            "type": "text",
             "props": {
-              "header": "Operations",
-              "items": [
-                "Home",
-                "Locations",
-                "Vendors",
-                "Manuals",
-                "Team"
-              ],
-              "activeIndex": 1
+              "variant": "flowTitle",
+              "value": "What to Prepare Before Onboarding",
+              "size": 62
             },
-            "x": 880,
-            "y": 140,
-            "w": 240,
-            "h": 420
-          },
+            "offset": [
+              250,
+              216
+            ]
+          }
+        ]
+      },
+      {
+        "id": "b",
+        "role": "foreground",
+        "x": -88,
+        "y": 212,
+        "w": 1216,
+        "h": 280,
+        "preset": "bare",
+        "children": [
           {
-            "id": "table-probe-2",
+            "id": "tbl-1",
             "type": "table",
             "props": {
-              "radius": 16,
               "columns": [
-                "Location",
-                "Status"
+                "Getting Started",
+                "Part"
               ],
+              "radius": 16,
+              "scale": 1.3,
               "rows": [
                 {
                   "id": "1",
-                  "primary": "Aspen United",
-                  "secondary": "Colorado",
-                  "badgeLabel": "Open",
-                  "badgeColor": "#16A34A"
+                  "primary": "Brand basics",
+                  "secondary": "logo, colors, socials",
+                  "badgeLabel": "1",
+                  "badgeColor": "#1F54DE"
                 },
                 {
                   "id": "2",
-                  "primary": "Bridge Street",
-                  "secondary": "Hotchkiss",
-                  "badgeLabel": "Planned",
-                  "badgeColor": "#D87203"
-                }
-              ]
-            },
-            "x": 1150,
-            "y": 140,
-            "w": 440,
-            "h": 200
-          },
-          {
-            "id": "listRow-probe-3",
-            "type": "listRow",
-            "props": {
-              "label": "Invite the franchisee",
-              "sublabel": "they set up their login",
-              "trailing": "Pending",
-              "highlighted": true
-            },
-            "x": 1150,
-            "y": 370,
-            "w": 440,
-            "h": 90
-          },
-          {
-            "id": "dropdown-probe-4",
-            "type": "dropdown",
-            "props": {
-              "title": "Assign to",
-              "search": true,
-              "items": [
-                {
-                  "label": "Jordan Avery",
-                  "avatarInitials": "JA",
-                  "highlighted": true
+                  "primary": "Locations",
+                  "secondary": "address, sqft, status",
+                  "badgeLabel": "2",
+                  "badgeColor": "#1F54DE"
                 },
                 {
-                  "label": "Riley Chen",
-                  "avatarInitials": "RC"
+                  "id": "3",
+                  "primary": "Team to invite",
+                  "secondary": "name, email, role",
+                  "badgeLabel": "3",
+                  "badgeColor": "#1F54DE"
                 }
-              ],
-              "footer": "2 teammates"
-            },
-            "x": 1150,
-            "y": 480,
-            "w": 440,
-            "h": 180
+              ]
+            }
           }
         ]
       }
     ],
     "status": "proposed",
-    "note": "",
+    "note": "STYLE B s08 table-wide: lockup on top; the platform table stretched across the full safe width as one wide data block on portal page gray. [style-b s08-table-wide, concept, gate PASS]",
     "lastTouchedBy": "claude",
     "editing": false,
-    "rev": 1,
-    "updatedAt": 1787898288527
+    "rev": 4,
+    "updatedAt": 1788998340830
   }
 }
