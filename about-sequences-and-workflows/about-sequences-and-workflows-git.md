@@ -39,8 +39,6 @@ Select one or more rows to **Duplicate** or **Delete** them.
 
 ![The Create Workflow modal, offering Create from Template, Campaign Builder and Create from Scratch](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-sequences-and-workflows/workflows-create-paths.png)
 
-![The step palette open on the canvas, grouped as Flow Control, Communication, Lead Management and Portal](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-sequences-and-workflows/workflows-step-palette.png)
-
 ### Enrolling an audience
 
 A workflow on an enrollment trigger shows an **Enroll Audience** button in the builder toolbar. It asks for the audience, when it sends, and how it sends. If the workflow is still a draft, confirming publishes it first.
