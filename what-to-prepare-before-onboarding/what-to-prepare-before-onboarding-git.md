@@ -10,7 +10,7 @@ These details flow into your applicant portal and into every message sent on beh
 
 If you run more than one concept, prepare this set for each brand.
 
-![Brand Identity tab, showing logo and color palette](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/what-to-prepare-before-onboarding/prep-brand-identity.png)
+![Brand Identity tab, showing logo and color palette](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/what-to-prepare-before-onboarding/prep-brand-identity.png)
 
 ### Your locations
 
@@ -28,7 +28,7 @@ You do not have to enter these one at a time. Locations import in bulk, and exis
 
 FS Ai supports a wide range of location fields beyond the basics above, including lease, construction, insurance, and compliance details, plus custom fields your brand can define for anything not covered by default. See *[About Locations]* for the complete field list.
 
-![Locations list, showing status, franchisee entity, and store ID columns](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/what-to-prepare-before-onboarding/prep-locations.png)
+![Locations list, showing status, franchisee entity, and store ID columns](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/what-to-prepare-before-onboarding/prep-locations.png)
 
 ### Team members to invite
 

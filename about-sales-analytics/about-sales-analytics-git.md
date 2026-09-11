@@ -29,7 +29,7 @@ Set the reporting window with the controls on the Overview tab:
 
 Every widget on the Overview tab respects these settings.
 
-![Overview tab: brand tabs, Generate Report, date range, Generate Insights panel, and the five stat tiles](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-sales-analytics/sales-analytics-overview-top-v3.png)
+![Overview tab: brand tabs, Generate Report, date range, Generate Insights panel, and the five stat tiles](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-sales-analytics/sales-analytics-overview-top-v3.png)
 ### Reading the Overview
 
 At the top are five stat tiles giving you headline numbers for the selected range: **Average Unique Visitors**, **New Portal Sessions**, **Returning Portal Sessions**, **Form Submissions**, and **Steps Completed**.
@@ -44,7 +44,7 @@ Below the tiles are charts covering three areas.
 - **Leads By State**: lead volume by state, with a **Map** and **List** toggle.
 - **Leads By Source**: a donut chart plus a table breaking leads down by source, with counts and percentages. The **Include Organic Leads?** toggle controls whether leads with no attributed source are counted. Turn it off to see only leads that carry a known campaign or UTM source.
 
-![Leads By Source donut chart and table with the Include Organic Leads toggle](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-sales-analytics/sales-analytics-leads-by-source-v2.png)
+![Leads By Source donut chart and table with the Include Organic Leads toggle](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-sales-analytics/sales-analytics-leads-by-source-v2.png)
 **Applicant portal engagement:**
 
 - **Unique Portal Visits** and **Applicant Portal Form Submissions**: traffic and form activity in the portal.
@@ -78,7 +78,7 @@ Use the search box to find a step by name, the filter icon to narrow by type or 
 
 The range dropdown (defaulting to **All time**) sets the window this funnel is measured over.
 
-![Portal Steps tab with the Sample Size and Avg Completed tiles above the step-by-step funnel table](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-sales-analytics/sales-analytics-portal-steps-v3.png)
+![Portal Steps tab with the Sample Size and Avg Completed tiles above the step-by-step funnel table](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-sales-analytics/sales-analytics-portal-steps-v3.png)
 ### Generating a report
 
 Click **Generate Report** to open the reports panel.
@@ -89,7 +89,7 @@ To create a new one, choose **Generate New Report**, confirm the date range and 
 
 FS Ai builds a PDF covering an executive summary of key metrics, detailed analytics tables and trends, and lead geography and source performance, ready to share.
 
-![Generate New Report dialog with the date range and a summary of what the PDF includes](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-sales-analytics/sales-analytics-generate-report.png)
+![Generate New Report dialog with the date range and a summary of what the PDF includes](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-sales-analytics/sales-analytics-generate-report.png)
 ### Generating insights
 
 The **Generate Insights** panel near the top of the page runs the AI Engine over your sales data and returns written findings: recommendations, trends, and key observations.

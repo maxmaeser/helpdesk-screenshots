@@ -1,7 +1,5 @@
 The **Workflows** page in Franchise Systems Ai (FS Ai) holds two things that are easy to mix up: the workflows that do the sending, and the email content they send.
 
-![Workflows page showing the Workflows and Content tabs](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/creating-content-and-workflows/workflows-tabs-v2.png)
-
 Go to **Marketing → Workflows**, **Sales → Workflows**, or **Operations → Workflows**.
 
 Each department keeps its own workflows and its own templates. Nothing is shared between them.
@@ -27,7 +25,7 @@ A template with no subject line cannot be selected in a send, so fill that in be
 
 The same template can be used by any number of workflows, so you write it once and reuse it.
 
-![Content tab showing the email template list](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/creating-content-and-workflows/workflows-content-v2.png)
+![Content tab showing the email template list](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/creating-content-and-workflows/workflows-content-v2.png)
 
 ### Then build the workflow
 

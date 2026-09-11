@@ -15,14 +15,14 @@ You can connect one calendar account at a time. To switch providers, disconnect 
 2. Under the **Account** group, open **Calendar & Scheduling**.
 3. On the **Calendars** tab, click **Connect Google Calendar** or **Connect Office 365 Calendar**.
 
-![Connect a calendar dialog on the Calendars tab, listing Google Calendar and Office 365 as provider options](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-connect-your-calendar/calendar-connect-provider-modal.png)
+![Connect a calendar dialog on the Calendars tab, listing Google Calendar and Office 365 as provider options](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-connect-your-calendar/calendar-connect-provider-modal.png)
 
 4. A popup window opens asking you to sign in and authorize access.
 5. Complete the authorization in the popup. The calendar connects automatically once approved.
 
 Booking events that prospects use to schedule meetings with you live on the **Event types** tab of the same page.
 
-![Event types tab on the Calendar & Scheduling page, listing the booking events available under this calendar](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-connect-your-calendar/calendar-settings-event-types-tab.png)
+![Event types tab on the Calendar & Scheduling page, listing the booking events available under this calendar](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-connect-your-calendar/calendar-settings-event-types-tab.png)
 ### Calendar Views
 
 Once connected, the Calendar tab on your Home page displays your events in three views:
@@ -69,7 +69,7 @@ On the Home page **Overview** tab, a sidebar shows your upcoming events for the 
 1. Click your profile picture at the bottom of the sidebar and select **Settings**.
 2. Under the **Account** group, open **Calendar & Scheduling**. Your connected account email and provider are displayed.
 
-![Calendars tab showing a connected Google Calendar account with its email, Primary and Connected badges, and the Manage control](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-connect-your-calendar/calendar-settings-connected.png)
+![Calendars tab showing a connected Google Calendar account with its email, Primary and Connected badges, and the Manage control](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-connect-your-calendar/calendar-settings-connected.png)
 
 3. Click to manage the connection and choose **Disconnect calendar**.
 4. Confirm the disconnection in the dialog that appears.

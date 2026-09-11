@@ -10,7 +10,7 @@ To sign in, enter your **email** and **password**, then click **Sign In**.
 
 If you are not sure your password is correct, click **Forgot Password?** below the password field to reset it, then try again with the new password.
 
-![FS Ai brand dashboard sign-in page, showing the email field, password field, Forgot Password link, and Sign In button](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/troubleshooting-login-and-access/signin-full-page.png)
+![FS Ai brand dashboard sign-in page, showing the email field, password field, Forgot Password link, and Sign In button](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/troubleshooting-login-and-access/signin-full-page.png)
 
 ### If nothing happens when you click Sign In
 
@@ -52,7 +52,7 @@ If you started connecting a calendar during setup but did not finish, here's how
 2. Under the **Account** group, open **Calendar & Scheduling**.
 3. On the **Calendars** tab, check whether your calendar shows as **Connected**.
 
-![Calendars tab on the Calendar & Scheduling page, showing a connected calendar with the Primary and Connected badges](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/troubleshooting-login-and-access/calendars-connected.png)
+![Calendars tab on the Calendar & Scheduling page, showing a connected calendar with the Primary and Connected badges](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/troubleshooting-login-and-access/calendars-connected.png)
 
 4. If it does not, click **Connect calendar** and complete the authorization in the popup that opens.
 

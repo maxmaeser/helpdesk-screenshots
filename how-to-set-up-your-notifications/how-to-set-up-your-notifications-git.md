@@ -5,7 +5,7 @@ Notification preferences let you control how and when you receive alerts about a
 1. Click your profile picture at the bottom of the sidebar and select **Settings**.
 2. Under **Account**, go to the **Notifications** page.
 
-![Profile menu open with the cursor on the Settings option](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-set-up-your-notifications/notifications-profile-menu.png)
+![Profile menu open with the cursor on the Settings option](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-set-up-your-notifications/notifications-profile-menu.png)
 ### How Notifications Work
 
 Notification types are grouped into cards: **Applicants & Sales**, **Tasks**, **Projects & Workflows**, and **Team**.
@@ -18,7 +18,7 @@ At the top of each card, an **All [Group]** row toggles every notification type 
 
 If both In-App and Email are off for a notification type, you will not receive that alert at all.
 
-![Applicants & Sales notification card with the master In-App/Email toggle at top and individual toggles per event below it](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-set-up-your-notifications/notifications-group-card.png)
+![Applicants & Sales notification card with the master In-App/Email toggle at top and individual toggles per event below it](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-set-up-your-notifications/notifications-group-card.png)
 ### Available Notification Types
 
 You can configure preferences for the following events, grouped the same way they appear on the page.

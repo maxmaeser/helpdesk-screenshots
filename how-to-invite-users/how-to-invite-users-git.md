@@ -8,7 +8,7 @@ Franchise Systems Ai (FS Ai) lets you invite team members to your organization v
 2. Under **Organization**, go to the **Members** page.
 3. Click **Invite members** in the top right.
 
-![Members page in organization settings with the invite button in the top right](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-invite-users/invite-nav-members-v2.png)
+![Members page in organization settings with the invite button in the top right](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-invite-users/invite-nav-members-v2.png)
 
 4. In the **Emails** field, type an address and press Enter to add it. Each address becomes a chip you can remove.
 5. Repeat for anyone else you want to invite. You can also paste several addresses separated by commas and they are split for you.
@@ -18,7 +18,7 @@ Franchise Systems Ai (FS Ai) lets you invite team members to your organization v
 7. Turn on **Billing access** if these users should be able to see invoices and manage payment methods.
 8. Click **Send invite**. If you added more than one address, the button counts them, for example **Send 3 invites**.
 
-![Invite dialog in organization settings](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-invite-users/invite-modal-v2.png)
+![Invite dialog in organization settings](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-invite-users/invite-modal-v2.png)
 
 The **Invite** item in your profile picture menu is a shortcut into organization settings, but it does not open the invite dialog and usually lands on the **Details** page. Select **Members** from the settings sidebar if you land anywhere else.
 

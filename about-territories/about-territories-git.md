@@ -26,7 +26,7 @@ Each state record shows:
 
 Select where you're actively franchising by checking the states where you sell franchises, then use Set Status to mark them Actively Franchising.
 
-![States tab with the state list, filter row, and interactive coverage map](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-territories/territories-states-filters.png)
+![States tab with the state list, filter row, and interactive coverage map](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-territories/territories-states-filters.png)
 Filtering only narrows the list. The map always shows full coverage.
 
 Use the **Search States** box to find a state by name, or the filter row above the list to narrow further:
@@ -70,14 +70,14 @@ Deadlines are grouped by urgency first, then by month:
 - **Overdue**: anything past its date, always shown first
 - Every other deadline falls under its due month, soonest month first
 
-![Compliance page Deadlines tab with a grouped list of upcoming and overdue deadlines beside the map](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-territories/territories-deadlines.png)
+![Compliance page Deadlines tab with a grouped list of upcoming and overdue deadlines beside the map](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-territories/territories-deadlines.png)
 Each row shows the state, whether it's a **Registration expires** or **FDD renewal due** deadline, the due date, and a badge counting down the days left.
 
 A deadline due within 30 days gets an orange badge; anything overdue gets a red one. Click any row to open that state's record.
 
 A deadline only appears once you've set a registration expiration or FDD renewal date for that state. Until then, the tab reads "No deadlines yet."
 
-![Compliance page Deadlines tab in its empty state, reading "No deadlines yet" beside the map](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-territories/territories-deadlines-empty.png)
+![Compliance page Deadlines tab in its empty state, reading "No deadlines yet" beside the map](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-territories/territories-deadlines-empty.png)
 If your brand's compliance is handled by an outside legal team, the tab reads "Handled for you" instead, since your legal partner tracks these dates for you. It also adds a **Recent activity** list below the deadlines showing your legal team's filing updates, newest first.
 
 ## Deal Zones
@@ -99,7 +99,7 @@ Zones follow whichever brands you have selected at the top of the Pipeline page,
 
 Use **Search Deal Zones** above the list to find one by name, and the filter icon beside it to narrow further. The **Select All** checkbox selects the whole list for bulk actions.
 
-![Territories tab on the Pipeline page: the deal zone list on the left and the coverage map on the right](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-territories/territories-deal-zones-v2.png)
+![Territories tab on the Pipeline page: the deal zone list on the left and the coverage map on the right](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-territories/territories-deal-zones-v2.png)
 
 ### Map View
 
@@ -123,4 +123,4 @@ Draw the area, then click **Save Deal Zone**. The dialog that opens asks for fou
 
 The dialog also reports the area you drew in square miles. Click **Create Deal Zone** to save it.
 
-![Draw Deal Zone dialog with the zone name, brand, Max Locations and Link to Deal fields](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-territories/territories-draw-deal-zone.png)
+![Draw Deal Zone dialog with the zone name, brand, Max Locations and Link to Deal fields](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-territories/territories-draw-deal-zone.png)
