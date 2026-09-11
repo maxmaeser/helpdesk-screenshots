@@ -1,5 +1,5 @@
 {
-  "revision": 126,
+  "revision": 195,
   "shots": {
     "brand-overview.png": {
       "crop": [
@@ -204,11 +204,62 @@
         3360,
         2100
       ],
-      "status": "proposed",
+      "cursor": {
+        "pos": [
+          3101,
+          1353
+        ],
+        "type": "arrow"
+      },
+      "highlights": [
+        {
+          "rect": [
+            1001,
+            431,
+            390,
+            223
+          ],
+          "style": "lens",
+          "lensZoom": 1.4,
+          "lensRadius": 44,
+          "lensRefraction": 65,
+          "color": "blue"
+        },
+        {
+          "rect": [
+            3011,
+            1231,
+            228,
+            228
+          ],
+          "style": "lens",
+          "lensZoom": 1.4,
+          "lensRadius": 44,
+          "lensRefraction": 65,
+          "color": "blue"
+        },
+        {
+          "rect": [
+            489,
+            1216,
+            882,
+            245
+          ],
+          "style": "lens",
+          "lensZoom": 1.4,
+          "lensRadius": 44,
+          "lensRefraction": 65,
+          "color": "blue"
+        }
+      ],
+      "status": "approved",
       "note": "Agent-captured: Lumon Fresh > Identity tab. Shows the Full Logo / Small Logo cards and the start of the Color Palette (Lumon Blue, Refinement Teal, Severed White, Eagan Ink swatches with hex/RGBA values) -- the style guide the article describes. Identity Guidelines (below the fold) not in frame. No cursor: read-only reference view (cursor heuristic). Covers the Identity tab intro and logo/color portion of the style guide.",
-      "lastTouchedBy": "claude",
+      "lastTouchedBy": "max",
       "editing": false,
-      "rev": 1
+      "rev": 9,
+      "renderedRev": 9,
+      "updatedAt": 1789096545135,
+      "renderedAt": 1789096534984
     },
     "brand-voice-style.png": {
       "crop": [
@@ -224,11 +275,55 @@
         ],
         "type": "arrow"
       },
-      "status": "proposed",
+      "highlights": [
+        {
+          "rect": [
+            3016,
+            545,
+            228,
+            228
+          ],
+          "style": "lens",
+          "lensZoom": 1.4,
+          "lensRadius": 44,
+          "lensRefraction": 65,
+          "color": "blue"
+        },
+        {
+          "rect": [
+            1224,
+            431,
+            413,
+            226
+          ],
+          "style": "lens",
+          "lensZoom": 1.4,
+          "lensRadius": 44,
+          "lensRefraction": 65,
+          "color": "blue"
+        },
+        {
+          "rect": [
+            536,
+            753,
+            768,
+            242
+          ],
+          "style": "lens",
+          "lensZoom": 1.4,
+          "lensRadius": 44,
+          "lensRefraction": 65,
+          "color": "blue"
+        }
+      ],
+      "status": "adjusted",
       "note": "Agent-captured: Lumon Fresh > Voice & style tab. Honest empty state -- checked Lumon Fresh, Kharcho Kings, and Circada, all show 'No brand voice added yet' / 'Nothing added yet' under every subsection, so this is universal, not Lumon-specific. Still shows the full structural layout the article's 'Voice & Style Guidelines' paragraph describes: Voice Of The Brand, then Voice & Style Guidelines broken into Voice Principles / Tone By Channel / Rules / Do's & Don'ts / Best Practices / Usage Guidelines. Arrow cursor on the edit-pencil icon for 'Voice Of The Brand' (button, per heuristic). Flagging for Max: seeding this section on one brand would make for a much livelier shot. Covers the Voice & style tab section.",
-      "lastTouchedBy": "claude",
+      "lastTouchedBy": "max",
       "editing": false,
-      "rev": 1
+      "rev": 10,
+      "renderedRev": 10,
+      "updatedAt": 1789096594411,
+      "renderedAt": 1789096597458
     },
     "brand-gallery.png": {
       "crop": [
@@ -237,12 +332,58 @@
         3360,
         2100
       ],
-      "status": "proposed",
+      "cursor": {
+        "pos": [
+          3170,
+          901
+        ],
+        "type": "arrow"
+      },
+      "highlights": [
+        {
+          "rect": [
+            1508,
+            432,
+            337,
+            228
+          ],
+          "style": "lens",
+          "lensZoom": 1.7,
+          "lensRadius": 44,
+          "lensRefraction": 65,
+          "color": "blue",
+          "dimStrength": 6,
+          "feather": 7,
+          "contactShadow": true,
+          "spotlightRadius": 28,
+          "thickness": 3,
+          "cornerRadius": 22,
+          "glowSize": 12,
+          "blurRadius": 8,
+          "maskFeather": 12
+        },
+        {
+          "rect": [
+            2749,
+            792,
+            573,
+            227
+          ],
+          "style": "lens",
+          "lensZoom": 1.7,
+          "lensRadius": 44,
+          "lensRefraction": 65,
+          "color": "blue"
+        }
+      ],
+      "status": "adjusted",
       "note": "Agent-captured: Lumon Fresh > Gallery tab. Shows the asset grid grouped by category (Logos group fully visible: pixel logo, background-removed PNG, two SVG globe marks, wordmark; Brand Assets group starting below) with file-type badges and a Download Assets action per group -- the 'mockup assets, images and renders' the article describes. No cursor: read-only grid browse (cursor heuristic). Covers the Gallery tab section.",
-      "lastTouchedBy": "claude",
+      "lastTouchedBy": "max",
       "editing": false,
-      "rev": 1
+      "rev": 14,
+      "renderedRev": 14,
+      "updatedAt": 1789096678419,
+      "renderedAt": 1789096681628
     }
   }
 }
-
