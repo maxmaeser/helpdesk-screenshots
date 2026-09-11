@@ -28,12 +28,12 @@ The organization is the parent container. It handles billing and team management
 
 Each brand under it manages its own day-to-day franchise operations. An organization can hold multiple brands, and each brand's data stays isolated from the others.
 
-![Diagram of one organization holding two brands. The organization handles billing, team, and brands; each brand holds its own pipeline, portal, library, and settings](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/what-is-a-brand/org-owns-brands.png)
+![Diagram of one organization holding two brands. The organization handles billing, team, and brands; each brand holds its own pipeline, portal, library, and settings](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/what-is-a-brand/org-owns-brands.png)
 ### Switching between brands
 
 If you have access to more than one brand, you can switch between them from the dashboard. Your view, data, and settings update to reflect the selected brand. The brands you see depend on the permissions your organization admin has granted you.
 
-![Home page brand selector bar showing several brands available to this agent, with Lumon Fresh selected](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/what-is-a-brand/brand-switcher.png)
+![Home page brand selector bar showing several brands available to this agent, with Lumon Fresh selected](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/what-is-a-brand/brand-switcher.png)
 ### Brand setup
 
 When you add a new brand (either during onboarding or later), you go through a brand identity setup process where you configure:
@@ -46,16 +46,17 @@ When you add a new brand (either during onboarding or later), you go through a b
 
 These details appear across the applicant portal and in communications sent on behalf of the brand.
 
-![Brand Information page showing Name, Public Name, Company, Industry, Email, Phone, Website, and Address fields, with Brand voice and Associated organizations cards below it](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/what-is-a-brand/brand-profile.png)
+![Brand Information page showing Name, Public Name, Company, Industry, Email, Phone, Website, and Address fields, with Brand voice and Associated organizations cards below it](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/what-is-a-brand/brand-profile.png)
 ### Where to find brand settings
 
 You can open settings from any screen. Click your profile picture at the bottom of the sidebar, then choose **Settings**.
 
+![Side by side: the profile menu open at the bottom of the sidebar with Settings highlighted, and the settings screen it opens on, with Brand > Profile selected](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/what-is-a-brand/where-to-find-settings.png)
 Brand configuration lives under **Brand** in your settings, split into five pages: **Profile**, **Appearance**, **Scheduling**, **Team & Access**, and **Connections**.
 
 **Profile** holds your brand's identity fields (name, industry, contact email, phone, website, address). Below that sit **Brand voice**, which teaches the AI how to write emails on your behalf, and **Associated organizations**, the organizations this brand is shared with.
 
 **Connections** is where domain sending, campaign attribution tracking, app integrations, and webhooks live.
 
-![Brand settings nav showing Profile, Appearance, Scheduling, Team & Access, and Connections, with the Connections page open showing Sending identities, Campaign attribution, Integrations, and Webhooks cards](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/what-is-a-brand/brand-settings-connections.png)
+![Brand settings nav showing Profile, Appearance, Scheduling, Team & Access, and Connections, with the Connections page open showing Sending identities, Campaign attribution, Integrations, and Webhooks cards](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/what-is-a-brand/brand-settings-connections.png)
 Organizations on the Lite plan see a shorter Brand nav: only **Profile** and **Appearance**. Lite's Profile page swaps **Associated organizations** for **Campaign attribution**, since Lite brands don't share across organizations the way Full plan brands can.
