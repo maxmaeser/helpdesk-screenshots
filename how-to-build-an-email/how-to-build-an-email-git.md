@@ -6,22 +6,38 @@ The email builder is a visual editor where you compose email content, set subjec
 2. Switch to the **Content** tab.
 3. Click on an existing email template to edit it, or create a new one.
 
-![Content tab under Marketing Workflows showing the template list with Name, Type, Used in, Sent, Delivered, Bounced, Complained, and Last Updated columns](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-an-email/workflows-content-tab.png)
+![Content tab under Marketing Workflows showing the template list](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-an-email/workflows-content-tab.png)
 
 The editor opens in a full-screen view with the editing canvas on the left and a settings sidebar on the right.
 
-![Email builder editor open, showing the canvas and Details sidebar](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-an-email/email-builder-overview.png)
+![Email builder editor open, showing the canvas and the sidebar](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-an-email/email-builder-overview.png)
 
 ### Using the Blocks Tab
 
 The sidebar on the right has three tabs: **Blocks**, **Theme**, and **Details**. The **Blocks** tab is where you drag and drop elements onto the canvas.
 
-Blocks are grouped into two sections:
+Blocks come in two groups, and the group tells you what kind of thing you are adding.
 
-- **Basic**: Text, Heading 1, Heading 2, Heading 3, Bulleted List, Numbered List, Blockquote
-- **Insert**: Divider, Button, Image, Two Columns, Merge Tags, Brand Logo, Footer
+**Basic** is text. Seven blocks, each one a paragraph-level element you then type into:
 
-![Blocks tab open in the sidebar, showing the Basic and Insert block groups](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-an-email/email-builder-blocks-tab.png)
+- **Text**: an ordinary paragraph. This is the one you will use most.
+- **Heading 1**, **Heading 2**, **Heading 3**: three heading levels, styled by your theme rather than set per block.
+- **Bulleted List** and **Numbered List**: both drop in with one list item ready to type into. Press Enter for the next item.
+- **Blockquote**: an indented quote block.
+
+![Blocks tab open with the Basic group, a block mid-drag onto the canvas](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-an-email/email-builder-blocks-basic.png)
+
+**Insert** is everything that is not text. Seven blocks, and these are the ones worth knowing before you build:
+
+- **Divider**: a horizontal rule between sections.
+- **Button**: a linked call to action. Drops in reading "Button"; click it to set the label and the link.
+- **Image**: drops in a placeholder you then click to upload over. See **Editing an Image** below for what you can do to it afterwards.
+- **Two Columns**: a side-by-side pair of empty columns. Drag other blocks into either side.
+- **Merge Tags**: inserts a personalization tag inline. Same tags as the subject line.
+- **Brand Logo**: pulls the logo straight from your brand settings, so it stays right when the brand changes.
+- **Footer**: your unsubscribe and address block. It can only be added once, and once it is on the canvas the block greys out in the sidebar. Hover the row for a **Footer Settings** action to edit what it says.
+
+![Blocks tab open with the Insert group and a Two Columns, Button and Brand Logo block placed on the canvas](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-an-email/email-builder-blocks-insert.png)
 
 Drag a block from the sidebar and drop it into the canvas at the position you want. This works alongside slash commands, so you can build your layout with whichever method is faster for what you are adding.
 
@@ -45,7 +61,9 @@ Merge tags work in both the email body and the subject line. When the email is s
 
 ### Setting the Subject Line
 
-The subject line editor sits above the email canvas. It supports merge tags for personalization and shows a character count with a recommended limit of 72 characters. Subject lines over 72 characters may get truncated in some email clients.
+The subject line sits in its own row above the canvas, labeled **Subject:**. It takes merge tags the same way the body does.
+
+To its right is a counter reading your length over 72, the recommended limit. Go past 72 and the number turns orange. Nothing stops you sending a longer subject, but some email clients will truncate it.
 
 ![Subject line field with a merge tag chip and the character counter reading 39/72](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-an-email/email-builder-subject-line.png)
 
@@ -70,6 +88,8 @@ Click any image in the canvas to bring up its toolbar. From there you can:
 - **Set border radius** to round the corners
 - **Set outline width and color** to add a border around the image
 
+![Image selected in the canvas with its toolbar open, showing alignment, the aspect ratio lock, change, delete, link, border radius and outline controls](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-an-email/email-builder-image-toolbar.png)
+
 Drag the handles on the image's corners to resize it. With the aspect ratio lock on, resizing keeps the width and height proportional.
 
 ### Customizing the Theme
@@ -80,16 +100,18 @@ The sidebar includes theme options for styling your email. You can adjust colors
 
 ### Previewing Your Email
 
-Click the **Preview** button in the top toolbar to see a rendered version of your email. The preview mode offers two views:
+Next to the template name in the top bar is a control with **Edit** and **Preview** on it, plus **Performance** once the template has been saved. Switch it to **Preview** to see the email rendered.
 
-- **Desktop**: Shows how the email appears in a standard desktop email client
-- **Mobile**: Displays the email in a narrower mobile layout
+A second toggle appears beside it while you are in Preview, with two views:
+
+- **Desktop**: the email at full width, as a desktop client shows it
+- **Mobile**: the same email in a narrower column
 
 ![Preview mode showing the Desktop view](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-an-email/email-builder-preview-desktop.png)
 
 ![Preview mode showing the Mobile view](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-an-email/email-builder-preview-mobile.png)
 
-Click **Preview** again to return to the editing view.
+Switch the control back to **Edit** to keep working.
 
 ### Saving Your Work
 

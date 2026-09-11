@@ -88,22 +88,39 @@ This tab is available on full-plan brands. If your selected brands are all on th
 
 ### Zone List
 
-The left panel lists your deal zones. Each zone shows:
+The left panel lists your deal zones. Each row shows:
 
-- **Brand**: which brand the zone belongs to
-- **State flags**: the state(s) the zone covers (zones can span multiple states)
-- **Zone name**: the label you gave the zone
-- **Assigned entity**: the business entity responsible for that zone, or "Unassigned" if none is set
-- **Deal count**: displayed as X/Y, where X is the number of deals currently used and Y is the total deal capacity for that zone
+- **A state flag**, for the state the zone sits in. Zones can span more than one state.
+- **The brand logo and the zone name**, side by side, so a multi-brand list stays readable.
+- **Who the zone belongs to**, below the name: the franchisee group if the zone has one, otherwise the deal it is linked to, otherwise **Unassigned**.
+- **Locations used out of Max Locations**, on the right, as X/Y. This counts locations, not deals.
 
 Zones follow whichever brands you have selected at the top of the Pipeline page, so selecting multiple brands lists zones from all of them together.
 
-You can search zones by name and use the filter icon to narrow the list. The **Select All** checkbox lets you select multiple zones for bulk actions.
+Use **Search Deal Zones** above the list to find one by name, and the filter icon beside it to narrow further. The **Select All** checkbox selects the whole list for bulk actions.
+
+![Territories tab on the Pipeline page: the deal zone list on the left and the coverage map on the right](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-territories/territories-deal-zones-v2.png)
 
 ### Map View
 
 The right panel shows an interactive map of the United States. Deal zones are displayed as highlighted regions on the map, giving you a visual overview of your geographic coverage and any gaps.
 
+There is a **Search for an address** box on the map itself, which is the fastest way to get to the part of the country you want before you draw.
+
 ### Creating a Deal Zone
 
-Click **Draw Deal Zone** in the top right to create a new zone. Choose which brand the zone belongs to, define its geographic boundaries, assign it to a business entity, and set its deal capacity.
+Click **Draw Deal Zone** in the top right of the map and pick how you want to define the area:
+
+- **Pin a Radius**: drop a pin and set a radius in miles.
+- **Draw a Polygon**: trace the boundary yourself.
+
+Draw the area, then click **Save Deal Zone**. The dialog that opens asks for four things:
+
+1. **Deal Zone Name**, required.
+2. **Brand**, shown only when you have more than one brand selected.
+3. **Max Locations**, the cap this zone is measured against in the list.
+4. **Link to Deal**, optional. Leave it on **No Deal** and the zone lists as Unassigned.
+
+The dialog also reports the area you drew in square miles. Click **Create Deal Zone** to save it.
+
+![Draw Deal Zone dialog with the zone name, brand, Max Locations and Link to Deal fields](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-territories/territories-draw-deal-zone.png)

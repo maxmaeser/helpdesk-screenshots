@@ -49,7 +49,7 @@ Admins can:
 
 - Access all organization settings
 - Invite and remove team members
-- Manage billing, but only if their **Billing access** toggle is also turned on
+- Manage billing. An admin reaches the Billing page whether or not the **Billing access** toggle is on
 - Access brand features
 
 Members can:

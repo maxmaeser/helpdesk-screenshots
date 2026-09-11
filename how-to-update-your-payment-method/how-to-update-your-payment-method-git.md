@@ -1,6 +1,6 @@
 Franchise Systems Ai (FS Ai) uses Stripe to handle billing and payment processing. You can update your payment method directly from the dashboard.
 
-> **Prerequisite:** You must have **Billing access** turned on for your account to manage payment methods. It's a separate toggle from organization Admin, either an Admin or a Member can have it.
+> **Prerequisite:** You need to be an organization **Admin**, or have **Billing access** turned on for your account. Billing access is a separate toggle from Admin, and either an Admin or a Member can be given it.
 
 ### How to Update Your Payment Method
 
@@ -22,7 +22,9 @@ Franchise Systems Ai (FS Ai) uses Stripe to handle billing and payment processin
 
 ### Who Can Manage Payments
 
-Only users with **Billing access** turned on can access the Billing settings page and manage payment methods. If you do not see the Billing option in your settings, contact your organization admin to request billing access.
+Organization admins reach the Billing page without needing anything extra. Everyone else needs the **Billing access** toggle turned on for their account.
+
+If **Billing** does not appear in your settings sidebar at all, you have neither, and your organization admin can grant you billing access from the Members page.
 
 ### Payment Method Requirements
 

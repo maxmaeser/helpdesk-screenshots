@@ -1,6 +1,6 @@
 Email domains control how your outbound emails appear to recipients and affect whether those emails land in inboxes or spam folders. Setting up and maintaining healthy domains is essential for effective email communication across your franchise.
 
-> You need the **Workspace Settings** permission to add, edit, or remove domains.
+> You need to be a **brand admin** on the brand you are working in to add, edit, or remove domains. Without it the domain controls are read only.
 
 ### What Is an Email Domain?
 

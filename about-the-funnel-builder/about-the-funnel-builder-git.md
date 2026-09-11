@@ -16,7 +16,16 @@ The steps you add, under Pre-Qualify and Application, hold your own questions. C
 Some section headers carry a status badge: **Qualified** or **Needs review**. These show where an applicant lands once the qualification logic below routes them.
 
 ![Structure panel scrolled to show all sections, including locked steps and status badges](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-the-funnel-builder/funnel-structure-panel-scrolled.png)
-The Compliance section also carries an **Add disclosure questions** button next to its **Add Step** control, visible in the screenshot above. Click it once and it adds a step, A Few Disclosure Questions, pre-filled with four screening questions: your total initial investment, whether the business has run five years at a given net worth, whether the applicant has spent two years as an officer, director, or manager of your brand, and whether franchise sales will stay a small share of their total volume. Edit the numbers to match your brand before publishing.
+The Compliance section also carries an **Add disclosure questions** button next to its **Add Step** control, visible in the screenshot above.
+
+Click it once and it adds a step, A Few Disclosure Questions, pre-filled with four screening questions:
+
+- Your total initial investment.
+- Whether the business has run five years at a given net worth.
+- Whether the applicant has spent two years as an officer, director, or manager of your brand.
+- Whether franchise sales will stay a small share of their total volume.
+
+Edit the numbers to match your brand before publishing.
 
 Switch the Structure panel between two views:
 
