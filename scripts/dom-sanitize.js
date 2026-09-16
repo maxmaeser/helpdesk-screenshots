@@ -11,8 +11,9 @@
 // 1 week" when the product says "7 days".
 //
 // Usage A (Node/Playwright):
-//   const { sanitize } = require('.../dom-sanitize.js');
+//   const { sanitize, assertClean } = require('.../dom-sanitize.js');
 //   const counts = await page.evaluate(sanitize, config); // => {emails,phones,dates,custom}
+//   await assertClean(page, config);                      // throws if a rule still matches
 //
 // Usage B (paste-in): copy the body of sanitize() into any page.evaluate:
 //   await page.evaluate((config) => { /* body of sanitize() */ }, config);
@@ -26,7 +27,10 @@
 //   avatars:       false | true | { srcPattern },  // profile PHOTOGRAPHS, see below
 //   ips:           false | true | { v4, v6 },      // IP addresses, see below
 //   browsers:      false | string,        // browser builds + user-agent strings, see below
+//   codes:         false | true,          // one-time codes / 2FA codes, see below
+//   secrets:       false | true,          // API keys, tokens, tokenized URLs, see below
 //   freshenDates:  false | 'auto' | 'auto-all' | [{ find, replace }],
+//   mode:          'mask' (default) | 'assert',  // see the pre-shutter assertion below
 // }
 //
 // ips values (added 2026-10-11, audit N7):
@@ -81,10 +85,13 @@
 // "7 days". So an unknown real name in seeded data reaches the frame unmasked.
 // Two things compensate, and both are mandatory, not optional:
 //   1. Put the unknown name in `replacements` for that shot.
-//   2. Keep the capture runner's pre-shutter assertion, which reads back
-//      document.body.innerText plus every input/textarea value and REFUSES to
-//      write the PNG while a forbidden string survives. The roster narrows what
+//   2. Keep the pre-shutter assertion (assertClean, below), which re-scans the
+//      live DOM through these same rules immediately before the shutter and
+//      REFUSES to write the PNG while a match survives. The roster narrows what
 //      you have to think about; the assertion is what actually stops a leak.
+//      Before 2026-09-17 this paragraph described an assertion that did not
+//      exist anywhere in scripts/: shoot.js masked and shot, and nothing checked
+//      that the mask took. Four leaks reached live images behind healthy counts.
 //
 // avatars values:
 //   (omitted) / true    Replace every profile PHOTOGRAPH with the app's own
@@ -122,6 +129,48 @@
 // digit run this branch deliberately left alone - worth an eyeball. It counts
 // EVERY declined candidate, including ones declined on length; before 2026-08-26
 // those returned early and the count silently under-reported.
+//
+// codes values:
+//   (omitted) / true    Mask a 6-8 digit run that a CODE LABEL vouches for: a
+//                       one-time password, a 2FA / MFA code, a verification or
+//                       confirmation code, a passcode, or an <input> the platform
+//                       itself declares with autocomplete="one-time-code".
+//                       ON BY DEFAULT since 2026-09-17: a 2FA code shown in the UI
+//                       was one of the four values that reached live images in the
+//                       2026-09-06 sweep, and no rule here could see it.
+//   false               Do not run the code branch at all.
+//   Shape alone never fires. 6-8 digits is also an order number, a member id, a
+//   ZIP+4 and a row count, so - exactly like the bare-phone branch - a label has
+//   to vouch for the value, and a NEGATIVE label ("postal code", "order number",
+//   "promo code") vetoes it outright even when a positive one is also in range.
+//   The bare word "code" is deliberately not a positive label. Read
+//   counts.codesSkipped: non-zero means the page held a 6-8 digit run this branch
+//   deliberately left alone.
+//
+// secrets values:
+//   (omitted) / true    Mask credentials: prefixed API keys (sk_/pk_/rk_/whsec_,
+//                       gh*_, xox*-, AKIA..., AIza...), JWTs, "Bearer <token>",
+//                       long hex digests, secrets carried in a query string
+//                       (?token=, &api_key=, &signature=), webhook URLs that carry
+//                       their secret in the path (Slack, Discord), invite / reset /
+//                       verify URLs with an embedded token, and - label-gated - any
+//                       20+ character mixed value sitting under an "API key",
+//                       "secret" or "token" label.
+//   false               Do not run the secret branch at all.
+//   The prefixed shapes fire on shape alone: each prefix is issued by exactly one
+//   service and nothing in a product UI shares it. The generic shape (a long mixed
+//   run with no prefix) is label-gated for the same reason the bare-phone branch
+//   is, and a dashed UUID is excluded from it by hand because this product renders
+//   those as ordinary record ids. Read counts.secretsSkipped.
+//
+// mode values:
+//   (omitted) / 'mask'  Mask the page and return a count report. The normal call.
+//   'assert'            THE PRE-SHUTTER ASSERTION. Mutates nothing. Runs the
+//                       detectors only and returns a list of findings - what the
+//                       masking pass promised to remove and did not. Call it
+//                       through the exported assertClean(page, config), which
+//                       throws on a non-empty list. See the long note on
+//                       assertScan() below for what is and is not asserted.
 //
 // freshenDates values:
 //   (omitted) / 'auto'  Freshen ONLY durations that read as a relative timestamp,
@@ -239,6 +288,127 @@ function sanitize(config) {
   // Separate RegExp object with the same source, used only for counting, so the
   // scan can never share lastIndex with the pass that is rewriting.
   const BARE_PHONE_SCAN_RE = new RegExp(BARE_PHONE_RE.source, 'g');
+
+  // ---- one-time codes and 2FA codes ----------------------------------------
+  // Added 2026-09-17. Four PII values reached live images in the 2026-09-06
+  // sweep and the sanitizer caught none of them; one was a one-time code sitting
+  // in a verification dialog, a class no rule in this file could see.
+  //
+  // A 6-8 digit run is the shape of a one-time code AND the shape of an order
+  // number, a member id, a ZIP+4, a row count and a short invoice number. So this
+  // branch is CONTEXT-GATED exactly like the bare-phone branch above: shape alone
+  // never fires, a positive label has to vouch for the value, and a negative
+  // label vetoes it. Precision beats recall for the same reason it does there - a
+  // code this branch misses costs one reshoot, a masked order number corrupts
+  // every capture that shows a table.
+  //
+  // The guards are lookarounds rather than \b, so a 6-8 digit window can never be
+  // carved out of a longer digit run, a decimal, a hyphenated ZIP+4 or a price.
+  // The trailing guard is (?!\.\d) and NOT (?!\.): a period only disqualifies the
+  // run when a digit follows it, i.e. when this is the whole-number half of a
+  // decimal. Refusing every trailing period instead cost the most common shape
+  // there is - "Your code is 274819." at the end of a sentence matched nothing.
+  const CODE_RE = /(?<![\w.$€£-])\d{6,8}(?!\.\d)(?![\w-])/g;
+  // A fixed synthetic code, sliced to the length of whatever it replaces, so the
+  // frame keeps its exact layout and a reader sees a plausible code rather than a
+  // row of zeros that reads as a rendering bug. Fixed, not random: re-running the
+  // sanitizer on an already-masked page has to be a no-op.
+  const CODE_REPLACEMENT_DIGITS = '48291375';
+  // Labels that mean "this number is a credential". The bare word "code" is NOT
+  // here on purpose: this product renders location codes, promo codes, product
+  // codes and postal codes, and "code" on its own would mask all of them. Every
+  // alternative below either names a credential or is a presentation phrase that
+  // only a credential gets ("your code is", "enter the code").
+  const CODE_LABEL_RE = new RegExp(
+    '(?<![A-Za-z])(?:' + [
+      'one[\\s-]?time(?:[\\s-]?(?:code|password|passcode|pin))?',
+      'otp', '2fa', 'mfa', 'two[\\s-]?factor',
+      '(?:verification|verify|security|confirmation|authentication|auth|access|login|sign[\\s-]?in|recovery|backup)[\\s-]?code',
+      'passcode', 'authenticator',
+      '\\d[\\s-]?digit\\s+code',
+      // Presentation phrases. "Your code is 483920" carries no credential noun at
+      // all, and it is the single most common way a product shows one.
+      '(?:your|the|this|new)\\s+code',
+      '(?:enter|type|paste|use)\\s+(?:the\\s+|your\\s+)?code',
+      'code\\s+(?:is|was)',
+    ].join('|') + ')(?![A-Za-z])', 'i');
+  // Labels that mean "this number is NOT a credential", checked FIRST and
+  // absolute. A container can hold both ("Enter the code we sent" in a panel that
+  // also shows a Postal code field), and in that case the safe answer is to leave
+  // the number alone.
+  const CODE_NEGATIVE_LABEL_RE = /(?<![A-Za-z])(?:zip|postal|post|area|country|dial|calling|product|promo|promotional|coupon|discount|referral|affiliate|sku|item|order|invoice|receipt|account|routing|location|store|branch|site|unit|currency|iso|swift|bank|tax|ein|vat|serial|tracking|shipment|employee|badge|member|membership|license|licence|ticket|case|job|run|record|row|total|amount|price|qty|quantity)[\s-]?(?:code|number|no\.?|#|id)(?![A-Za-z])/i;
+  // Same attribute set the phone gate reads, different words. autocomplete
+  // ="one-time-code" is the platform's own declaration and counts as proof.
+  const CODE_LABEL_ATTRS = PHONE_LABEL_ATTRS;
+  // A code and its label share a small container, and a toast body ("We sent a
+  // verification code to your email. Enter 483920 to continue.") is longer than a
+  // field row, so the character budget is wider than the phone gate's 160.
+  const CODE_CONTEXT_LEVELS = 6;
+  const CODE_CONTEXT_MAX_CHARS = 220;
+
+  // ---- API keys, tokens and tokenized URLs ---------------------------------
+  // Added 2026-09-17, same sweep. Unlike a code, most credentials carry their own
+  // proof: each prefix below is issued by exactly one service and nothing else in
+  // a product UI has that shape, so these fire with no label required.
+  //
+  // Each rule keeps capture group 1 verbatim (the prefix, the query-parameter
+  // name, the webhook path - the part that tells a reader what they are looking
+  // at) and replaces the rest with same-length, same-character-class filler, so
+  // the frame does not reflow and the value is unmistakably not real.
+  const SECRET_RULES = [
+    // Stripe-style prefixed keys: sk_live_, sk_test_, pk_live_, rk_, whsec_.
+    { name: 'stripe-key', re: /(?<![\w-])((?:sk|pk|rk|whsec|ak)_(?:live_|test_)?)[A-Za-z0-9]{12,}(?![\w-])/g },
+    // GitHub tokens: ghp_ gho_ ghu_ ghs_ ghr_ and the fine-grained github_pat_.
+    { name: 'github-token', re: /(?<![\w-])(gh[pousr]_|github_pat_)[A-Za-z0-9_]{16,}(?![\w-])/g },
+    // Slack tokens: xoxb- xoxp- xoxa- xoxr- xoxs- and app-level xapp-.
+    { name: 'slack-token', re: /(?<![\w-])(xox[baprs]-|xapp-)[A-Za-z0-9-]{10,}(?![\w-])/g },
+    // AWS access key id. The four prefixes are the ones a UI ever shows.
+    { name: 'aws-key-id', re: /(?<![\w-])(AKIA|ASIA|AIDA|AROA)[0-9A-Z]{16}(?![\w-])/g },
+    // Google API key.
+    { name: 'google-api-key', re: /(?<![\w-])(AIza)[A-Za-z0-9_-]{35}(?![\w-])/g },
+    // A JWT: three base64url segments whose header starts "eyJ" - that is the
+    // base64 of '{"', which every JWT header begins with.
+    { name: 'jwt', re: /(?<![\w-])(eyJ)[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}(?![\w-])/g },
+    // An Authorization header pasted into the UI. The digit lookahead keeps this
+    // off ordinary prose: "Bearer authentication is required" has no digit in the
+    // word after "Bearer", a real token effectively always does.
+    { name: 'bearer', re: /((?<![A-Za-z])(?:Bearer|Token)\s+)(?=[A-Za-z0-9._~+/=-]*\d)[A-Za-z0-9._~+/=-]{16,}(?![\w-])/g },
+    // A 40- or 64-character hex run: a SHA-1 / SHA-256 digest, a signing secret or
+    // a raw key. 32 is deliberately NOT here - that is a UUID with its dashes
+    // stripped, and this product renders those as ordinary record ids.
+    { name: 'hex-secret', re: /(?<![\w-])()(?:[0-9a-f]{40}|[0-9a-f]{64})(?![\w-])/gi },
+    // A secret carried in a query string. [?&] before the name is load-bearing:
+    // it keeps "sortKey=name" and "barcode=123" out, because the character before
+    // the parameter name has to be the start of a parameter.
+    { name: 'url-token-param', re: /([?&](?:token|api[_-]?key|apikey|access[_-]?token|refresh[_-]?token|id[_-]?token|auth|secret|client[_-]?secret|signature|sig|key|code|invite|invitation|password|pwd)=)[A-Za-z0-9._~%+/=-]{8,}/gi },
+    // Slack's incoming-webhook URL carries its secret in the PATH, where no
+    // query-string rule can see it.
+    { name: 'webhook-url', re: /(https?:\/\/hooks\.slack\.com\/services\/)[A-Za-z0-9/_-]{12,}/g },
+    // Discord's the same shape: /api/webhooks/<id>/<token>.
+    { name: 'webhook-url', re: /(https?:\/\/(?:[\w.-]*\.)?discord(?:app)?\.com\/api\/webhooks\/\d+\/)[A-Za-z0-9._-]{12,}/g },
+    // An invite, reset, verify or webhook URL with the token in the path - this
+    // product's own shape. The digit lookahead is what separates a token from a
+    // slug: "/verify/email-address-change" is 20 characters of ordinary words and
+    // has no digit, a token effectively always does.
+    { name: 'tokenized-url', re: /((?:^|[\s"'(<])(?:https?:\/\/[\w.:-]+)?\/(?:invite|invites|invitation|invitations|accept|accept-invite|accept-invitation|activate|activation|verify|verification|confirm|confirmation|reset|reset-password|set-password|magic|magic-link|token|tokens|webhook|webhooks|hook|hooks)\/)(?=[A-Za-z0-9._-]*\d)[A-Za-z0-9._-]{16,}(?![\w-])/gi },
+  ];
+  // The generic, LABEL-GATED shape: a 20+ character run mixing letters and digits
+  // sitting under an "API key" / "secret" / "token" label. This is the shape the
+  // about-organization-api-keys surface shows, where the key carries no
+  // recognizable prefix at all. Gated for the same reason the bare-phone branch
+  // is: unlabelled, this shape is also a record id, a file hash in a filename and
+  // a build number.
+  const SECRET_LABEL_RE = /(?<![A-Za-z])(?:api[\s-]?keys?|secret[\s-]?keys?|client[\s-]?secret|private[\s-]?key|publishable[\s-]?key|access[\s-]?token|refresh[\s-]?token|auth[\s-]?token|api[\s-]?token|bearer[\s-]?token|personal[\s-]?access[\s-]?token|webhook[\s-]?secret|signing[\s-]?secret|app[\s-]?secret|shared[\s-]?secret|secrets?|tokens?|credentials?)(?![A-Za-z])/i;
+  // A dashed UUID is excluded by hand: it matches this shape exactly, and in this
+  // product a UUID under a "Key" column is a record id, not a credential.
+  const SECRET_VALUE_RE = /(?<![\w-])(?![0-9a-f]{8}-[0-9a-f]{4}-)(?=[A-Za-z0-9_-]*\d)(?=[A-Za-z0-9_-]*[A-Za-z])[A-Za-z0-9_-]{20,}(?![\w-])/g;
+  const SECRET_CONTEXT_LEVELS = 6;
+  const SECRET_CONTEXT_MAX_CHARS = 220;
+
+  // Elements whose text never reaches the frame. Only the ASSERTION walks past
+  // <body> (see textRuns), so only the assertion needs to refuse these - without
+  // it an inlined <script> bundle would report a "leak" on every single page.
+  const NON_RENDERED_TAGS = { SCRIPT: 1, STYLE: 1, NOSCRIPT: 1, TEMPLATE: 1, HEAD: 1, TITLE: 1, META: 1, LINK: 1 };
   // Matches "N unit" WITHOUT requiring a trailing "ago" in the same node. Some UIs
   // (e.g. an activity feed) render a chip as split sibling text nodes -
   // <span>・{"4 months"}{" ago"}</span> is really 3 separate text nodes: "・",
@@ -295,11 +465,28 @@ function sanitize(config) {
     return out;
   }
 
-  function textNodes() {
+  // opts.wide walks documentElement instead of body, refusing the subtrees whose
+  // text never reaches the frame. ONLY the assertion passes it: a portal, a
+  // <dialog> or a toast layer can mount outside <body>, and an assertion that
+  // cannot see one is the exact blind spot the assertion exists to close. The
+  // masking passes keep the body-rooted walk they have always had, so widening
+  // the root cannot change what any existing capture masks.
+  function walkRoot(doc, opts) {
+    if (opts && opts.wide) return doc.documentElement || doc.body;
+    return doc.body;
+  }
+  function rejectNonRendered(opts) {
+    if (!opts || !opts.wide) return null;
+    return { acceptNode: (n) => (n.nodeType === 1 && NON_RENDERED_TAGS[n.tagName]
+      ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT) };
+  }
+
+  function textNodes(opts) {
     const nodes = [];
     docs().forEach((doc) => {
-      if (!doc.body) return;
-      const walker = doc.createTreeWalker(doc.body, NodeFilter.SHOW_TEXT);
+      const root = walkRoot(doc, opts);
+      if (!root) return;
+      const walker = doc.createTreeWalker(root, NodeFilter.SHOW_TEXT, rejectNonRendered(opts));
       let n;
       while ((n = walker.nextNode())) nodes.push(n);
     });
@@ -350,19 +537,20 @@ function sanitize(config) {
     return /\s$/.test(a.nodeValue || '') || /^\s/.test(b.nodeValue || '');
   }
 
-  function textRuns() {
+  function textRuns(opts) {
     const runs = [];
-    docs().forEach((doc) => { if (doc.body) collectRuns(doc, runs); });
+    docs().forEach((doc) => { if (walkRoot(doc, opts)) collectRuns(doc, runs, opts); });
     return runs;
   }
 
   // Walks ONE document and appends its runs. The walker reports an element when
   // it ENTERS it, which is exactly when a block boundary starts.
-  function collectRuns(doc, runs) {
+  function collectRuns(doc, runs, opts) {
     let run = [];
     let len = 0;
     function flush() { if (run.length) runs.push(run); run = []; len = 0; }
-    const walker = doc.createTreeWalker(doc.body, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT);
+    const walker = doc.createTreeWalker(
+      walkRoot(doc, opts), NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT, rejectNonRendered(opts));
     let prev = null;
     let n;
     while ((n = walker.nextNode())) {
@@ -1115,7 +1303,457 @@ function sanitize(config) {
     return n - kept;
   }
 
-  const counts = { emails: 0, emailsSkipped: 0, phones: 0, phonesBare: 0, phonesBareSkipped: 0, ips: 0, browsers: 0, names: 0, avatars: 0, dates: 0, datesSkipped: 0, custom: 0 };
+  // ---- one-time codes: the gate --------------------------------------------
+  // Same three-source shape as the phone gate: the element's own attributes, a
+  // bounded walk up to a labelling ancestor, and - for a field - its <label>. The
+  // difference is the VETO: a negative label anywhere in range stops the walk and
+  // returns false, because "leave the number alone" is always the safe answer.
+  function elementSaysCode(el) {
+    if (!el || el.nodeType !== 1) return false;
+    if (String(el.getAttribute('autocomplete') || '').toLowerCase() === 'one-time-code') return true;
+    for (let i = 0; i < CODE_LABEL_ATTRS.length; i++) {
+      const v = el.getAttribute(CODE_LABEL_ATTRS[i]);
+      if (!v) continue;
+      if (CODE_NEGATIVE_LABEL_RE.test(v)) return false;
+      if (CODE_LABEL_RE.test(v)) return true;
+    }
+    return false;
+  }
+
+  function hasCodeContext(node) {
+    const own = node.nodeValue || '';
+    if (CODE_NEGATIVE_LABEL_RE.test(own)) return false;
+    if (CODE_LABEL_RE.test(own)) return true;
+    let el = node.parentElement || (node.parentNode && node.parentNode.nodeType === 1 ? node.parentNode : null);
+    for (let i = 0; el && i < CODE_CONTEXT_LEVELS; i++) {
+      if (elementSaysCode(el)) return true;
+      const t = separatedText(el, CODE_CONTEXT_MAX_CHARS);
+      if (t.length > CODE_CONTEXT_MAX_CHARS) break;
+      if (countCodeCandidates(t) > 1) break;
+      if (CODE_NEGATIVE_LABEL_RE.test(t)) return false;
+      if (CODE_LABEL_RE.test(t)) return true;
+      el = el.parentElement;
+    }
+    return false;
+  }
+
+  function fieldHasCodeContext(el) {
+    if (elementSaysCode(el)) return true;
+    const labels = el.labels ? Array.prototype.slice.call(el.labels) : [];
+    for (let i = 0; i < labels.length; i++) {
+      const t = labels[i].textContent || '';
+      if (CODE_NEGATIVE_LABEL_RE.test(t)) return false;
+      if (CODE_LABEL_RE.test(t)) return true;
+    }
+    let node = el.parentElement;
+    for (let i = 0; node && i < CODE_CONTEXT_LEVELS; i++) {
+      if (elementSaysCode(node)) return true;
+      // Same one-field constraint the phone gate uses: as soon as a container
+      // holds a second field, a "verification code" label in it belongs to one of
+      // them and there is no way to tell which.
+      if (node.querySelectorAll('input, textarea').length !== 1) break;
+      const t = separatedText(node, CODE_CONTEXT_MAX_CHARS);
+      if (t.length > CODE_CONTEXT_MAX_CHARS) break;
+      if (countCodeCandidates(t) > 1) break;
+      if (CODE_NEGATIVE_LABEL_RE.test(t)) return false;
+      if (CODE_LABEL_RE.test(t)) return true;
+      node = node.parentElement;
+    }
+    return false;
+  }
+
+  function codeReplacement(n) { return CODE_REPLACEMENT_DIGITS.slice(0, n); }
+
+  // How many code-shaped runs a chunk of text holds. Same job as
+  // countPhoneCandidates: it tells "one field" from "a list", so a
+  // "Verification code" column header in a small table cannot vouch for the
+  // six-digit value sitting in the column NEXT to it.
+  const CODE_SCAN_RE = new RegExp(CODE_RE.source, 'g');
+  function countCodeCandidates(text) {
+    let n = 0;
+    String(text).replace(CODE_SCAN_RE, (m) => { n++; return m; });
+    return n;
+  }
+  const SECRET_SCAN_RE = new RegExp(SECRET_VALUE_RE.source, 'g');
+  function countSecretCandidates(text) {
+    let n = 0;
+    String(text).replace(SECRET_SCAN_RE, (m) => { n++; return m; });
+    return n;
+  }
+
+  // Runs a CONTEXT-GATED rule across every text run and every field, and reports
+  // what it replaced AND what it declined.
+  //
+  // Run-based, not node-based. The bare-phone pass above walks single text nodes,
+  // which is a documented miss there and would be one here too: <span>88</span>
+  // renders "88" and "2914" as two text nodes under one parent, and a node-at-a
+  // -time pass walks straight past the code they spell. The gate is asked about
+  // the node holding the START of the match, which is the node the replacement
+  // lands in, and the answer is memoized per node so a long run costs one DOM
+  // walk per node rather than one per match.
+  //
+  // opts: { preMasked(match), replacement(match), nodeContext(node), fieldContext(el) }
+  function replaceGated(re, opts) {
+    let replaced = 0;
+    let skipped = 0;
+    textRuns().forEach((run) => {
+      const values = run.map((n) => n.nodeValue || '');
+      const starts = [];
+      let acc = 0;
+      values.forEach((v) => { starts.push(acc); acc += v.length; });
+      function nodeIndexAt(idx) {
+        let i = run.length - 1;
+        while (i > 0 && starts[i] > idx) i--;
+        return i;
+      }
+      const memo = [];
+      // CODE_RE and SECRET_VALUE_RE carry no capture groups, so the replacer is
+      // called (match, offset, wholeString) on both of replaceInRun's paths. Its
+      // return value is ignored: it counts matches, and this counts decisions.
+      replaceInRun(run, re, function (match, offset) {
+        if (opts.preMasked(match)) return match;
+        const i = nodeIndexAt(offset);
+        if (memo[i] === undefined) memo[i] = !!opts.nodeContext(run[i]);
+        if (!memo[i]) { skipped++; return match; }
+        replaced++;
+        return opts.replacement(match);
+      });
+    });
+    fields().forEach((el) => {
+      const v = el.value;
+      if (!v) return;
+      let ctx = null;
+      const next = v.replace(re, (match) => {
+        if (opts.preMasked(match)) return match;
+        if (ctx === null) ctx = !!opts.fieldContext(el);
+        if (!ctx) { skipped++; return match; }
+        replaced++;
+        return opts.replacement(match);
+      });
+      if (next !== v) el.value = next;
+    });
+    return { replaced, skipped };
+  }
+
+  // The code pass. A non-zero skip count is the signal that the page held a
+  // code-shaped run this branch deliberately left alone - worth an eyeball.
+  function replaceCodes() {
+    return replaceGated(CODE_RE, {
+      // Already masked, by an earlier pass or by the defensive second call the
+      // capture runner makes. Not a replacement and not a skip.
+      preMasked: (m) => m === codeReplacement(m.length),
+      replacement: (m) => codeReplacement(m.length),
+      nodeContext: hasCodeContext,
+      fieldContext: fieldHasCodeContext,
+    });
+  }
+
+  // ---- secrets: the masker -------------------------------------------------
+  // Same length, same character classes, fixed content. The frame keeps its exact
+  // layout, the value is unmistakably not real, and the transform is idempotent -
+  // filler('x0X') is 'x0X' - which is what lets the assertion below tell an
+  // already-masked value from a live one.
+  function filler(str) {
+    let out = '';
+    for (let i = 0; i < str.length; i++) {
+      const c = str.charAt(i);
+      if (c >= '0' && c <= '9') out += '0';
+      else if (c >= 'a' && c <= 'z') out += 'x';
+      else if (c >= 'A' && c <= 'Z') out += 'X';
+      else out += c;
+    }
+    return out;
+  }
+  // Every SECRET_RULES entry anchors its prefix in capture group 1, so the part a
+  // reader needs ("sk_live_", "?token=", the webhook path) survives and only the
+  // credential is filled.
+  function secretReplacer(match, g1) {
+    const prefix = g1 === undefined || g1 === null ? '' : String(g1);
+    return prefix + filler(String(match).slice(prefix.length));
+  }
+  function alreadyFilled(match, g1) { return secretReplacer(match, g1) === String(match); }
+  // The prefixed rules OWN the values they shape, and the generic label-gated
+  // pass below must not come along behind them and fill the prefix too: an
+  // already-masked "sk_live_xxxx0000" would read "xx_xxxx_xxxx0000", throwing
+  // away the one part of the value a reader needed to know what it was.
+  const SECRET_RULE_TESTS = SECRET_RULES.map((r) => new RegExp(r.re.source, r.re.flags.replace('g', '')));
+  function coveredBySecretRule(text) {
+    for (let i = 0; i < SECRET_RULE_TESTS.length; i++) {
+      if (SECRET_RULE_TESTS[i].test(text)) return true;
+    }
+    return false;
+  }
+
+  function elementSaysSecret(el) {
+    if (!el || el.nodeType !== 1) return false;
+    for (let i = 0; i < PHONE_LABEL_ATTRS.length; i++) {
+      const v = el.getAttribute(PHONE_LABEL_ATTRS[i]);
+      if (v && SECRET_LABEL_RE.test(v)) return true;
+    }
+    return false;
+  }
+  function hasSecretContext(node) {
+    if (SECRET_LABEL_RE.test(node.nodeValue || '')) return true;
+    let el = node.parentElement || (node.parentNode && node.parentNode.nodeType === 1 ? node.parentNode : null);
+    for (let i = 0; el && i < SECRET_CONTEXT_LEVELS; i++) {
+      if (elementSaysSecret(el)) return true;
+      const t = separatedText(el, SECRET_CONTEXT_MAX_CHARS);
+      if (t.length > SECRET_CONTEXT_MAX_CHARS) break;
+      if (countSecretCandidates(t) > 1) break;
+      if (SECRET_LABEL_RE.test(t)) return true;
+      el = el.parentElement;
+    }
+    return false;
+  }
+  function fieldHasSecretContext(el) {
+    if (elementSaysSecret(el)) return true;
+    const labels = el.labels ? Array.prototype.slice.call(el.labels) : [];
+    for (let i = 0; i < labels.length; i++) {
+      if (SECRET_LABEL_RE.test(labels[i].textContent || '')) return true;
+    }
+    let node = el.parentElement;
+    for (let i = 0; node && i < SECRET_CONTEXT_LEVELS; i++) {
+      if (elementSaysSecret(node)) return true;
+      if (node.querySelectorAll('input, textarea').length !== 1) break;
+      const t = separatedText(node, SECRET_CONTEXT_MAX_CHARS);
+      if (t.length > SECRET_CONTEXT_MAX_CHARS) break;
+      if (countSecretCandidates(t) > 1) break;
+      if (SECRET_LABEL_RE.test(t)) return true;
+      node = node.parentElement;
+    }
+    return false;
+  }
+
+  function maskSecrets() {
+    let replaced = 0;
+    const skipped = 0;
+    // The self-evident shapes first, through the same run-based replacer every
+    // other PII rule uses, so a credential split across sibling text nodes is
+    // still seen.
+    SECRET_RULES.forEach((rule) => {
+      rule.re.lastIndex = 0;
+      replaced += replaceEverywhere(rule.re, secretReplacer);
+    });
+    // Then the label-gated generic shape, through the same gated run walker the
+    // code pass uses, so the gate can see where the value actually sits.
+    const gen = replaceGated(SECRET_VALUE_RE, {
+      // filler() is idempotent, so filler(v) === v means this is already our own
+      // mask. coveredBySecretRule keeps this pass off a value one of the prefixed
+      // rules above has already shaped.
+      preMasked: (m) => filler(m) === m || coveredBySecretRule(m),
+      replacement: filler,
+      nodeContext: hasSecretContext,
+      fieldContext: fieldHasSecretContext,
+    });
+    return { replaced: replaced + gen.replaced, skipped: skipped + gen.skipped };
+  }
+
+  // ---- the pre-shutter assertion -------------------------------------------
+  // A leak report that quotes the leak is itself a leak: the message lands in a
+  // capture log, a CI record and a JSON line. So a finding carries the value with
+  // its middle held down, plus the selector path, which is what an operator
+  // actually needs to go and look at the element.
+  function maskForReport(str) {
+    const v = String(str);
+    if (v.length <= 2) return '*'.repeat(v.length);
+    return v.charAt(0) + '*'.repeat(Math.min(v.length - 2, 12)) + v.charAt(v.length - 1);
+  }
+
+  function selectorPath(node) {
+    let el = node && node.nodeType === 1 ? node : (node && node.parentElement) || null;
+    const parts = [];
+    for (let i = 0; el && el.tagName && i < 6; i++) {
+      let seg = el.tagName.toLowerCase();
+      if (el.id) { parts.unshift(seg + '#' + el.id); break; }
+      // className is an SVGAnimatedString on an SVG element, not a string.
+      const cn = typeof el.className === 'string' ? el.className : '';
+      const cls = cn.split(/\s+/).filter(Boolean).slice(0, 2).join('.');
+      if (cls) seg += '.' + cls;
+      const parent = el.parentElement;
+      if (parent) {
+        const sibs = Array.prototype.filter.call(parent.children, (c) => c.tagName === el.tagName);
+        if (sibs.length > 1) seg += ':nth-of-type(' + (Array.prototype.indexOf.call(sibs, el) + 1) + ')';
+      }
+      parts.unshift(seg);
+      el = parent;
+    }
+    return parts.join(' > ') || '<detached>';
+  }
+
+  // WHAT IS AND IS NOT ASSERTED.
+  // Only rules the masking pass applies UNCONDITIONALLY are asserted, so the
+  // assertion can never fire on a value the sanitizer deliberately declined:
+  //   - a bare phone the context gate left alone is NOT a finding;
+  //   - a 6-8 digit run with no code label is NOT a finding;
+  //   - an ambiguous first name inside a sentence ("Max file size") is NOT one;
+  //   - an address already on a reserved domain is NOT one;
+  //   - a value already carrying this file's own replacement is NOT one.
+  // Everything the masker PROMISES to remove and did not, is. That distinction is
+  // the whole design: an assertion that fires on a documented decline gets turned
+  // off within a week, and then it is not there on the day it matters.
+  //
+  // The scan walks WIDE (documentElement, minus the never-rendered subtrees), so
+  // a dialog, toast or popover mounted in a portal outside <body> is covered -
+  // the masking pass cannot see one of those, which is precisely the kind of gap
+  // this is here to catch.
+  function assertScan(cfg) {
+    const findings = [];
+    const seen = {};
+    const MAX_FINDINGS = 25;
+    function add(rule, match, node, where) {
+      if (findings.length >= MAX_FINDINGS) return;
+      const selector = selectorPath(node);
+      const key = rule + '|' + match + '|' + selector + '|' + where;
+      if (seen[key]) return;
+      seen[key] = 1;
+      findings.push({ rule: rule, match: maskForReport(match), selector: selector, where: where });
+    }
+
+    // Runs joined exactly the way the masking pass joins them, so the assertion
+    // sees a value split across sibling text nodes the same way the masker does.
+    const runs = textRuns({ wide: true });
+    const fieldEls = fields();
+    function eachTarget(cb) {
+      runs.forEach((run) => {
+        const values = run.map((n) => n.nodeValue || '');
+        const starts = [];
+        let acc = 0;
+        values.forEach((v) => { starts.push(acc); acc += v.length; });
+        cb(values.join(''), (idx) => {
+          let i = run.length - 1;
+          while (i > 0 && starts[i] > idx) i--;
+          return run[i];
+        }, 'text');
+      });
+      fieldEls.forEach((el) => { if (el.value) cb(el.value, () => el, 'field'); });
+    }
+    function eachMatch(text, re, cb) {
+      const g = new RegExp(re.source, re.flags.indexOf('g') === -1 ? re.flags + 'g' : re.flags);
+      let m;
+      while ((m = g.exec(text)) !== null) {
+        if (m[0] === '') { g.lastIndex++; continue; }
+        cb(m);
+      }
+    }
+
+    // 1. An address on a domain that is not reserved. The masker replaces every
+    //    one of these outright.
+    if (cfg.emails !== false) {
+      eachTarget((text, nodeAt, where) => {
+        eachMatch(text, EMAIL_RE, (m) => {
+          if (SAFE_EMAIL_DOMAIN_RE.test(m[0].slice(m[0].indexOf('@') + 1))) return;
+          add('email', m[0], nodeAt(m.index), where);
+        });
+      });
+    }
+
+    // 2. A self-evidently formatted phone that is not this run's replacement.
+    //    BARE runs are not asserted - those are context-gated by design.
+    if (cfg.phones !== false) {
+      const replacementDigits = String(typeof cfg.phones === 'string' ? cfg.phones : '(720) 555-0142').replace(/\D/g, '');
+      eachTarget((text, nodeAt, where) => {
+        eachMatch(text, PHONE_RE, (m) => {
+          if (m[0].replace(/\D/g, '') === replacementDigits) return;
+          add('phone', m[0], nodeAt(m.index), where);
+        });
+      });
+    }
+
+    // 3. A roster name. Only the shapes the masker takes unconditionally: a real
+    //    surname anywhere, an unambiguous real first name standing alone, a
+    //    first-name-glued-to-surname handle, and the explicit full names whose
+    //    surname is too common to list on its own.
+    if (cfg.names !== false) {
+      const nameRules = [];
+      REAL_FULL_NAMES.forEach((e) => {
+        const parts = e[0].split(/\s+/);
+        nameRules.push(bounded(reEscape(parts[0]) + SPACE + reEscape(parts[1]), 'gi'));
+      });
+      if (SURNAME_ALT) nameRules.push(bounded(SURNAME_ALT, 'gi'));
+      if (FIRST_ALT) nameRules.push(bounded(FIRST_ALT, 'gi'));
+      if (SURNAME_ALT && FIRST_ANY_ALT) {
+        nameRules.push(new RegExp('(?<![A-Za-z])(?:' + FIRST_ANY_ALT + ')(?:' + SURNAME_ALT + ')(?![A-Za-z])', 'gi'));
+      }
+      eachTarget((text, nodeAt, where) => {
+        nameRules.forEach((re) => {
+          eachMatch(text, re, (m) => add('name', m[0], nodeAt(m.index), where));
+        });
+      });
+      // The whole-node ambiguous first name - the one shape of an ambiguous name
+      // the masker does take unconditionally.
+      textNodes({ wide: true }).forEach((node) => {
+        const t = String(node.nodeValue || '').trim();
+        if (t && AMBIGUOUS_FIRSTS[t.toLowerCase()] && FIRST_INDEX[t.toLowerCase()]) {
+          add('name', t, node, 'text');
+        }
+      });
+    }
+
+    // 4. A code the gate WOULD have taken. Per node, through the same gate the
+    //    masking pass uses, so a declined candidate stays declined here too.
+    if (cfg.codes !== false) {
+      textNodes({ wide: true }).forEach((node) => {
+        const v = node.nodeValue;
+        if (!v || !/\d/.test(v)) return;
+        eachMatch(v, CODE_RE, (m) => {
+          if (m[0] === codeReplacement(m[0].length)) return;
+          if (!hasCodeContext(node)) return;
+          add('code', m[0], node, 'text');
+        });
+      });
+      fieldEls.forEach((el) => {
+        const v = el.value;
+        if (!v || !/\d/.test(v)) return;
+        eachMatch(v, CODE_RE, (m) => {
+          if (m[0] === codeReplacement(m[0].length)) return;
+          if (!fieldHasCodeContext(el)) return;
+          add('code', m[0], el, 'field');
+        });
+      });
+    }
+
+    // 5. A credential. The self-evident shapes anywhere, and the generic shape
+    //    where a label vouches for it. An already-filled value is not a finding -
+    //    filler() is idempotent, so filler(v) === v means this is our own mask.
+    if (cfg.secrets !== false) {
+      eachTarget((text, nodeAt, where) => {
+        SECRET_RULES.forEach((rule) => {
+          eachMatch(text, rule.re, (m) => {
+            if (alreadyFilled(m[0], m[1])) return;
+            add('secret:' + rule.name, m[0], nodeAt(m.index), where);
+          });
+        });
+      });
+      textNodes({ wide: true }).forEach((node) => {
+        const v = node.nodeValue;
+        if (!v || v.length < 20) return;
+        eachMatch(v, SECRET_VALUE_RE, (m) => {
+          if (filler(m[0]) === m[0]) return;
+          if (coveredBySecretRule(m[0])) return;
+          if (!hasSecretContext(node)) return;
+          add('secret:labelled', m[0], node, 'text');
+        });
+      });
+      fieldEls.forEach((el) => {
+        const v = el.value;
+        if (!v || v.length < 20) return;
+        eachMatch(v, SECRET_VALUE_RE, (m) => {
+          if (filler(m[0]) === m[0]) return;
+          if (coveredBySecretRule(m[0])) return;
+          if (!fieldHasSecretContext(el)) return;
+          add('secret:labelled', m[0], el, 'field');
+        });
+      });
+    }
+
+    return findings;
+  }
+
+  // mode:'assert' is a PURE detection pass and must sit exactly here: after every
+  // rule constant above is bound, and before the first mutation below.
+  if (config.mode === 'assert') return assertScan(config);
+
+  const counts = { emails: 0, emailsSkipped: 0, phones: 0, phonesBare: 0, phonesBareSkipped: 0, ips: 0, browsers: 0, names: 0, avatars: 0, dates: 0, datesSkipped: 0, custom: 0, codes: 0, codesSkipped: 0, secrets: 0, secretsSkipped: 0 };
 
   // Browser builds and IPs run BEFORE phones: a dotted IPv4 like
   // "192.168.100.123" is a 12-digit run in the bare-phone band, and a build like
@@ -1160,6 +1798,22 @@ function sanitize(config) {
     counts.avatars = maskAvatars(typeof config.avatars === 'object' && config.avatars ? config.avatars : {});
   }
 
+  // Codes and secrets run after names and before the date freshener. Order is
+  // not load-bearing between them - neither shape can be produced or destroyed by
+  // the other - but they must run before freshenDates, whose 'auto-all' mode
+  // rewrites bare "<n> <unit>" runs and has no business touching a masked code.
+  if (config.codes !== false) {
+    const c = replaceCodes();
+    counts.codes = c.replaced;
+    counts.codesSkipped = c.skipped;
+  }
+
+  if (config.secrets !== false) {
+    const sec = maskSecrets();
+    counts.secrets = sec.replaced;
+    counts.secretsSkipped = sec.skipped;
+  }
+
   if (config.freshenDates === false) {
     // skip
   } else if (config.freshenDates === 'auto-all') {
@@ -1185,4 +1839,42 @@ function sanitize(config) {
   return counts;
 }
 
-if (typeof module !== 'undefined') module.exports = { sanitize };
+// ---- the pre-shutter assertion, Node side ----------------------------------
+// THE GAP THIS CLOSES. The capture flow masks and then shoots, and until
+// 2026-09-17 nothing between the two checked that the mask had taken. Every leak
+// in the 2026-09-06 sweep had a sanitize() call in front of it reporting a
+// healthy count: React re-rendered a row after the pass, a dialog mounted in a
+// portal the body-rooted walker never reached, a rule declined a value it should
+// have taken - and the PNG was written anyway.
+//
+//   await assertClean(page, shot.sanitize || {});   // immediately before the shutter
+//
+// Runs sanitize's detectors with mode:'assert', which mutates nothing, and
+// throws if anything the masker promised to remove is still on the page. The
+// error message carries, per finding, the rule that matched, the offending value
+// with its middle held down, and the selector path to the element. err.findings
+// holds the same list structured.
+//
+// Nothing may touch the DOM between this call and page.screenshot(). Put it
+// after the clip is measured, not before.
+//
+// It takes a Playwright `page`, not a DOM root, because the page is what the
+// caller has and because the throw has to reach the Node side to stop the write.
+// The in-page equivalent, for a caller that has already inlined this file into
+// the document (the video recorder does), is:
+//
+//   const findings = sanitize(Object.assign({}, cfg, { mode: 'assert' }));
+async function assertClean(page, config) {
+  const cfg = Object.assign({}, config || {}, { mode: 'assert' });
+  const findings = await page.evaluate(sanitize, cfg);
+  if (findings && findings.length) {
+    const lines = findings.map((f) => `  ${f.rule}  ${f.match}  [${f.where}]  ${f.selector}`);
+    const err = new Error(
+      `pre-shutter assertion failed: ${findings.length} value(s) the sanitizer should have masked are still on the page\n${lines.join('\n')}`);
+    err.findings = findings;
+    throw err;
+  }
+  return findings || [];
+}
+
+if (typeof module !== 'undefined') module.exports = { sanitize, assertClean };

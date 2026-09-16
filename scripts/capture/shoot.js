@@ -25,6 +25,7 @@
  *       settle:   1200,                         // optional extra ms
  *       prepare:  async (page) => {},           // clicks / fills / seeding
  *       sanitize: { emails: '...', ... },       // dom-sanitize config, or false
+ *       assertClean: false,                     // opt out of the pre-shutter check
  *       clip:     { x, y, width, height }       // CSS px, viewport-relative
  *              |  { selector: '[role=dialog]', pad: 40 }
  *              |  undefined                     // whole viewport
@@ -57,7 +58,7 @@ const path = require('path');
 
 const { getContext, closeAll } = require('./session.js');
 const routes = require('./routes.js');
-const { sanitize } = require('../dom-sanitize.js');
+const { sanitize, assertClean } = require('../dom-sanitize.js');
 
 const SCALE = 2; // helpdesk raws are 2x, always
 
@@ -241,6 +242,28 @@ async function main() {
         ? await measureCallouts(page, shot, clip)
         : null;
       const route = (() => { const u = new URL(page.url()); return u.pathname + u.search; })();
+
+      // PRE-SHUTTER ASSERTION. Until 2026-09-17 this runner masked, then shot,
+      // and nothing in between checked that the mask had taken. Every leak in the 2026-09-06
+      // sweep had a sanitize() call in front of it reporting a healthy count.
+      //
+      // It sits HERE, after the clip and the callout boxes are measured, because
+      // measuring is the last thing that touches the page. Nothing may go between this and the shutter.
+      //
+      // A throw lands in this shot's catch below, so it aborts THIS capture and
+      // the loop moves on to the next one - no PNG is written for the offending
+      // shot, and the run still exits non-zero at the end because the record is
+      // marked !ok. That is the runner's existing per-shot failure behavior; the
+      // assertion does not change it.
+      //
+      // Skipped when the shot opted out of sanitizing altogether (`sanitize:
+      // false` says the surface holds nothing to mask) or set `assertClean:
+      // false`. Both are per-shot, explicit, and visible in the spec.
+      if (shot.sanitize !== false && shot.assertClean !== false) {
+        rec.asserted = true;
+        await assertClean(page, shot.sanitize || {});
+      }
+
       await page.screenshot({ path: dest, clip });
 
       const size = pngSize(dest);

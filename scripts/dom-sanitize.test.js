@@ -24,9 +24,25 @@
 const assert = require('assert');
 const path = require('path');
 
-const PLAYWRIGHT_PATH = process.env.PLAYWRIGHT_PATH || '/home/max/.dev-browser/node_modules/playwright';
-const { chromium } = require(PLAYWRIGHT_PATH);
-const { sanitize } = require(path.join(__dirname, 'dom-sanitize.js'));
+// This file runs on two machines and they install Playwright in different
+// places, so the path resolves rather than being hard-coded: PLAYWRIGHT_PATH if
+// it is set, then Leo's dev-browser install, then the VPS app's node_modules.
+// Before 2026-09-17 the default was Leo's path alone, so on the VPS - the
+// machine that holds the canonical corpus - the whole suite died on require().
+const LEO_PLAYWRIGHT = '/home/max/.dev-browser/node_modules/playwright';
+const VPS_PLAYWRIGHT = '/opt/helpdesk-studio/app/node_modules/playwright';
+function loadPlaywright() {
+  if (process.env.PLAYWRIGHT_PATH) return require(process.env.PLAYWRIGHT_PATH);
+  for (const p of [LEO_PLAYWRIGHT, VPS_PLAYWRIGHT]) {
+    try { return require(p); } catch (e) { /* try the next machine */ }
+  }
+  throw new Error(`playwright not found: set PLAYWRIGHT_PATH, or install it at ${LEO_PLAYWRIGHT} (Leo) or ${VPS_PLAYWRIGHT} (VPS)`);
+}
+const { chromium } = loadPlaywright();
+const { sanitize, assertClean } = require(path.join(__dirname, 'dom-sanitize.js'));
+
+// Fake Stripe-shaped fixture, split into parts so secret scanners do not flag it.
+const FAKE_SK = 'sk_' + 'live_' + '51H8xQ2KZvNmLpQr7TdYw3Xc9';
 
 // Fixture A: the how-to-invite-users invite dialog. The footer sentence is
 // product copy. "7 days" here is a policy, not a timestamp, and must survive.
@@ -936,6 +952,353 @@ test('ips: false and browsers: false disable the new passes', async (page) => {
   assert.ok(body.includes('84.17.46.122') && body.includes('Chrome Headless 141.0.7390.37'));
   assert.strictEqual(counts.ips, 0);
   assert.strictEqual(counts.browsers, 0);
+});
+
+// ---------------------------------------------------------------------------
+// one-time codes, secrets, and the pre-shutter assertion   (added 2026-09-17)
+// ---------------------------------------------------------------------------
+// Four PII values reached live images in the 2026-09-06 sweep and the sanitizer
+// caught none of them. One was a one-time code shown in the UI; nothing in this
+// file could see a credential of any kind; and nothing anywhere verified that a
+// mask had actually taken before the shutter fired. These tests pin all three.
+//
+// The negatives matter as much as the positives here, and there are more of them
+// on purpose: a code this branch misses costs one reshoot, a masked order number
+// corrupts every future capture that shows a table.
+
+// ---- one-time codes: positives --------------------------------------------
+
+test('a verification code in a dialog is masked', async (page) => {
+  await page.setContent(`<div role="dialog">
+      <h2>Check your email</h2>
+      <p>Enter the verification code we sent to you.</p>
+      <div class="code">903472</div>
+    </div>`);
+  const counts = await page.evaluate(sanitize, {});
+  assert.ok(!/903472/.test(await page.locator('body').innerText()),
+    'a 2FA code in a verification dialog must not reach the frame');
+  assert.strictEqual(counts.codes, 1);
+});
+
+test('an input the platform declares as a one-time code is masked', async (page) => {
+  await page.setContent(`<form><input id="otp" autocomplete="one-time-code" value="558214" /></form>`);
+  await page.evaluate(sanitize, {});
+  assert.notStrictEqual(await page.locator('#otp').inputValue(), '558214',
+    'autocomplete="one-time-code" is the platform\'s own declaration and needs no other label');
+});
+
+test('a code in a toast is masked', async (page) => {
+  await page.setContent(`<div role="status" class="toast">Your code is 274819. It expires in 10 minutes.</div>`);
+  await page.evaluate(sanitize, {});
+  const t = await page.locator('.toast').innerText();
+  assert.ok(!/274819/.test(t), `code survived in a toast: ${t}`);
+  assert.ok(/expires in 10 minutes/.test(t), `the copy around the code must survive: ${t}`);
+});
+
+test('an 8-digit one-time passcode is masked and keeps its length', async (page) => {
+  await page.setContent(`<div class="row"><span>One-time passcode</span><span class="v">40592837</span></div>`);
+  await page.evaluate(sanitize, {});
+  const v = await page.locator('.v').innerText();
+  assert.ok(!/40592837/.test(v), `8-digit code survived: ${v}`);
+  assert.strictEqual(v.length, 8, `the replacement must keep the frame's layout: ${v}`);
+});
+
+test('a 2FA field labelled by aria-label is masked', async (page) => {
+  await page.setContent(`<input class="c" aria-label="Two-factor code" value="661903" />`);
+  await page.evaluate(sanitize, {});
+  assert.notStrictEqual(await page.locator('.c').inputValue(), '661903');
+});
+
+test('a code split across sibling nodes in a labelled row is still masked', async (page) => {
+  await page.setContent(`<div class="row"><label>Security code</label><span class="v">88<!-- -->2914</span></div>`);
+  await page.evaluate(sanitize, {});
+  const v = await page.locator('.v').innerText();
+  assert.ok(!/882914/.test(v), `a split code survived: ${v}`);
+});
+
+// ---- one-time codes: the false positives that must NOT be masked ----------
+
+test('a postal code is not masked', async (page) => {
+  await page.setContent(`<div class="row"><span>Postal code</span><span class="v">1234567</span></div>`);
+  const counts = await page.evaluate(sanitize, {});
+  assert.strictEqual(await page.locator('.v').innerText(), '1234567',
+    'a negative label vetoes the code branch outright');
+  assert.strictEqual(counts.codes, 0);
+  assert.ok(counts.codesSkipped >= 1, 'a declined candidate must still be counted');
+});
+
+test('an order number and an order total are not masked', async (page) => {
+  await page.setContent(`<ul>
+      <li class="a">Order number 4059283</li>
+      <li class="b">Total $123,456.00</li>
+      <li class="c">Invoice no. 8812340</li>
+    </ul>`);
+  const counts = await page.evaluate(sanitize, {});
+  assert.ok(/4059283/.test(await page.locator('.a').innerText()), 'an order number is not a credential');
+  assert.ok(/123,456\.00/.test(await page.locator('.b').innerText()), 'a total is not a credential');
+  assert.ok(/8812340/.test(await page.locator('.c').innerText()), 'an invoice number is not a credential');
+  assert.strictEqual(counts.codes, 0);
+});
+
+test('an id column in a table is not masked', async (page) => {
+  await page.setContent(`<table>
+      <thead><tr><th>Member ID</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td class="a">903472</td><td>Active</td></tr>
+        <tr><td class="b">903473</td><td>Active</td></tr>
+      </tbody>
+    </table>`);
+  const counts = await page.evaluate(sanitize, {});
+  assert.strictEqual(await page.locator('.a').innerText(), '903472');
+  assert.strictEqual(await page.locator('.b').innerText(), '903473');
+  assert.strictEqual(counts.codes, 0);
+});
+
+test('the bare word "code" does not vouch for a number', async (page) => {
+  await page.setContent(`<ul>
+      <li class="a">Location code 220419</li>
+      <li class="b">Promo code 771820</li>
+      <li class="c">Product code 4429107</li>
+    </ul>`);
+  const counts = await page.evaluate(sanitize, {});
+  assert.ok(/220419/.test(await page.locator('.a').innerText()), 'a location code is product data');
+  assert.ok(/771820/.test(await page.locator('.b').innerText()), 'a promo code is product data');
+  assert.ok(/4429107/.test(await page.locator('.c').innerText()), 'a product code is product data');
+  assert.strictEqual(counts.codes, 0);
+});
+
+test('a code label in one table row cannot vouch for the row beside it', async (page) => {
+  // The candidate-count guard: as soon as an ancestor is wide enough to hold a
+  // second code-shaped run, a label inside it belongs to a neighbour.
+  await page.setContent(`<table><tbody>
+      <tr><td>Verification code</td><td class="a">903472</td></tr>
+      <tr><td>Seats purchased</td><td class="b">551203</td></tr>
+    </tbody></table>`);
+  await page.evaluate(sanitize, {});
+  assert.strictEqual(await page.locator('.b').innerText(), '551203',
+    'the header of another row must not mask this value');
+});
+
+test('a phone number is not taken by the code branch', async (page) => {
+  await page.setContent(`<div class="row"><span>Phone</span><span class="v">(303) 555-1212</span></div>`);
+  const counts = await page.evaluate(sanitize, {});
+  assert.strictEqual(counts.codes, 0, 'the phone branch owns phone-shaped values');
+  assert.ok(!/555-1212/.test(await page.locator('.v').innerText()));
+});
+
+// ---- secrets: positives ----------------------------------------------------
+
+test('a prefixed API key is masked and keeps its prefix and its length', async (page) => {
+  await page.setContent(`<code class="k">${FAKE_SK}</code>`);
+  const counts = await page.evaluate(sanitize, {});
+  const k = await page.locator('.k').innerText();
+  assert.ok(!/51H8xQ2KZvNmLpQr7TdYw3Xc9/.test(k), `a live secret key survived: ${k}`);
+  assert.ok(/^sk_live_/.test(k), `the prefix tells the reader what it is and must survive: ${k}`);
+  assert.strictEqual(k.length, FAKE_SK.length, 'the frame must not reflow');
+  assert.ok(counts.secrets >= 1);
+});
+
+test('a JWT, a bearer header and a long hex digest are masked', async (page) => {
+  await page.setContent(`<ul>
+      <li class="a">eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjM0NTY3ODkwIn0.dBjftJeZ4CVPmB92K27uhbUJU1p1r_wW1gFWFOEjXk</li>
+      <li class="b">Authorization: Bearer ya29.a0AfH6SMBx7Qk3Lp9RtVw2Zm</li>
+      <li class="c">da39a3ee5e6b4b0d3255bfef95601890afd80709</li>
+    </ul>`);
+  await page.evaluate(sanitize, {});
+  const body = await page.locator('body').innerText();
+  assert.ok(!/dBjftJeZ4CVPmB92K27uhbUJU1p1r_wW1gFWFOEjXk/.test(body), `JWT survived:\n${body}`);
+  assert.ok(!/ya29\.a0AfH6SMBx7Qk3Lp9RtVw2Zm/.test(body), `bearer token survived:\n${body}`);
+  assert.ok(!/da39a3ee5e6b4b0d3255bfef95601890afd80709/.test(body), `hex digest survived:\n${body}`);
+  assert.ok(/^Bearer /.test((await page.locator('.b').innerText()).replace('Authorization: ', '')),
+    'the "Bearer " prefix survives so the reader still sees what the value is');
+});
+
+test('a token in a query string is masked and the parameter name survives', async (page) => {
+  await page.setContent(`<a class="u" href="#">https://app.fsai.test/accept?token=9fj20dkSl3mQz8xR1vBn4P</a>`);
+  await page.evaluate(sanitize, {});
+  const u = await page.locator('.u').innerText();
+  assert.ok(!/9fj20dkSl3mQz8xR1vBn4P/.test(u), `a query-string token survived: ${u}`);
+  assert.ok(/\?token=/.test(u), `the parameter name must survive: ${u}`);
+});
+
+test('a Slack webhook URL is masked', async (page) => {
+  await page.setContent(`<div class="w">https://hooks.slack.com/services/T024BE7LD/B0GKR2PQ8/G8xN1mQ7vZpL4kRs2Wd9Yb</div>`);
+  await page.evaluate(sanitize, {});
+  const w = await page.locator('.w').innerText();
+  assert.ok(!/G8xN1mQ7vZpL4kRs2Wd9Yb/.test(w), `a webhook secret survived: ${w}`);
+  assert.ok(/hooks\.slack\.com\/services\//.test(w), `the host must survive so the shot still reads: ${w}`);
+});
+
+test('an invite URL with an embedded token is masked', async (page) => {
+  await page.setContent(`<p class="i">Send them https://portal.fsai.test/invite/7Kd2Xm9Qp4Rt6Vw8Zb1Nc3 to join.</p>`);
+  await page.evaluate(sanitize, {});
+  const i = await page.locator('.i').innerText();
+  assert.ok(!/7Kd2Xm9Qp4Rt6Vw8Zb1Nc3/.test(i), `an invite token survived: ${i}`);
+  assert.ok(/\/invite\//.test(i), `the path must survive: ${i}`);
+});
+
+test('an unprefixed key under an API-key label is masked', async (page) => {
+  // The about-organization-api-keys shape: the key carries no recognizable
+  // prefix at all, so only the label can vouch for it.
+  await page.setContent(`<div class="row"><span class="label">API key</span><span class="v">a83f9c2e7b14d05f6a9b2c3d</span></div>`);
+  const counts = await page.evaluate(sanitize, {});
+  assert.ok(!/a83f9c2e7b14d05f6a9b2c3d/.test(await page.locator('.v').innerText()),
+    'an organization API key must not reach the frame');
+  assert.ok(counts.secrets >= 1);
+});
+
+// ---- secrets: the false positives that must NOT be masked -----------------
+
+test('a dashed UUID is not masked, even under a Key label', async (page) => {
+  await page.setContent(`<div class="row"><span>Key</span><span class="v">550e8400-e29b-41d4-a716-446655440000</span></div>`);
+  const counts = await page.evaluate(sanitize, {});
+  assert.strictEqual(await page.locator('.v').innerText(), '550e8400-e29b-41d4-a716-446655440000',
+    'this product renders UUIDs as ordinary record ids');
+  assert.strictEqual(counts.secrets, 0);
+});
+
+test('a 32-character hex run is not masked - that is a UUID with its dashes stripped', async (page) => {
+  await page.setContent(`<div class="v">550e8400e29b41d4a716446655440000</div>`);
+  const counts = await page.evaluate(sanitize, {});
+  assert.strictEqual(await page.locator('.v').innerText(), '550e8400e29b41d4a716446655440000');
+  assert.strictEqual(counts.secrets, 0);
+});
+
+test('prose about bearer authentication is not masked', async (page) => {
+  await page.setContent(`<p class="p">Bearer authentication is required for every request.</p>`);
+  const counts = await page.evaluate(sanitize, {});
+  assert.strictEqual(await page.locator('.p').innerText(),
+    'Bearer authentication is required for every request.');
+  assert.strictEqual(counts.secrets, 0);
+});
+
+test('a word-slug URL and an ordinary query parameter are not masked', async (page) => {
+  await page.setContent(`<ul>
+      <li class="a">https://app.fsai.test/verify/email-address-change-request</li>
+      <li class="b">https://app.fsai.test/leads?sortKey=createdAt&amp;barcode=90210554</li>
+    </ul>`);
+  const counts = await page.evaluate(sanitize, {});
+  assert.ok(/email-address-change-request/.test(await page.locator('.a').innerText()),
+    'a hyphenated word slug is not a token - it carries no digit');
+  assert.ok(/sortKey=createdAt/.test(await page.locator('.b').innerText()),
+    'the [?&] guard keeps "sortKey" out of the "key=" rule');
+  assert.strictEqual(counts.secrets, 0);
+});
+
+test('masking a page twice changes nothing the second time', async (page) => {
+  await page.setContent(`<ul>
+      <li class="a">${FAKE_SK}</li>
+      <li class="b">Your code is 274819</li>
+      <li class="c">Max Maeser</li>
+    </ul>`);
+  await page.evaluate(sanitize, {});
+  const once = await page.locator('body').innerText();
+  await page.evaluate(sanitize, {});
+  assert.strictEqual(await page.locator('body').innerText(), once,
+    'the capture runner sanitizes twice on purpose; the second pass must be a no-op');
+});
+
+// ---- the pre-shutter assertion --------------------------------------------
+
+test('assertClean passes on a page that is actually clean', async (page) => {
+  await page.setContent(`<div>
+      <p>Jordan Avery</p>
+      <p>jordan.avery@example.com</p>
+      <p>(720) 555-0142</p>
+      <p>Invites are valid for 7 days.</p>
+    </div>`);
+  const findings = await assertClean(page, {});
+  assert.deepStrictEqual(findings, [], `a clean page must not produce findings: ${JSON.stringify(findings)}`);
+});
+
+test('assertClean throws on a real name the mask did not take', async (page) => {
+  await page.setContent(`<div class="wrap"><p class="who">Max Maeser</p></div>`);
+  let err = null;
+  try { await assertClean(page, {}); } catch (e) { err = e; }
+  assert.ok(err, 'a roster surname on the page must abort the capture');
+  assert.ok(/pre-shutter assertion failed/.test(err.message), err.message);
+  assert.ok(/name/.test(err.message), `the rule that matched must be named: ${err.message}`);
+  assert.ok(/p\.who/.test(err.message), `the selector path must be in the message: ${err.message}`);
+  assert.ok(!/Maeser/.test(err.message),
+    `a leak report that quotes the leak is itself a leak: ${err.message}`);
+  assert.ok(err.findings && err.findings.length >= 1, 'findings must also come back structured');
+});
+
+test('assertClean throws on an unmasked address, code and secret', async (page) => {
+  await page.setContent(`<div>
+      <p class="e">real.person@franchisesystems.ai</p>
+      <p class="c">Your verification code is 903472</p>
+      <p class="k">${FAKE_SK}</p>
+    </div>`);
+  let err = null;
+  try { await assertClean(page, {}); } catch (e) { err = e; }
+  assert.ok(err, 'three live values must abort the capture');
+  const rules = err.findings.map((f) => f.rule);
+  assert.ok(rules.includes('email'), `email not reported: ${rules}`);
+  assert.ok(rules.includes('code'), `code not reported: ${rules}`);
+  assert.ok(rules.some((r) => r.indexOf('secret:') === 0), `secret not reported: ${rules}`);
+});
+
+test('assertClean does NOT fire on a value the sanitizer deliberately declined', async (page) => {
+  // This is the whole design. An assertion that fires on a documented decline
+  // gets switched off within a week, and then it is not there on the day it
+  // matters. None of these four is a finding.
+  await page.setContent(`<div>
+      <p>Order number 4059283</p>
+      <p>Max file size is 25 MB</p>
+      <p>team@example.com</p>
+      <p>Reference 07717325656 in the audit log</p>
+    </div>`);
+  const findings = await assertClean(page, {});
+  assert.deepStrictEqual(findings, [],
+    `declines must not be findings: ${JSON.stringify(findings)}`);
+});
+
+test('assertClean passes immediately after sanitize on a page that held everything', async (page) => {
+  await page.setContent(`<div>
+      <p>Max Maeser</p>
+      <p>max.maeser@franchisesystems.ai</p>
+      <p>(303) 555-1212</p>
+      <div class="row"><span>Verification code</span><span>903472</span></div>
+      <p>${FAKE_SK}</p>
+      <p>https://hooks.slack.com/services/T024BE7LD/B0GKR2PQ8/G8xN1mQ7vZpL4kRs2Wd9Yb</p>
+    </div>`);
+  await page.evaluate(sanitize, {});
+  const findings = await assertClean(page, {});
+  assert.deepStrictEqual(findings, [],
+    `the masker and the assertion must agree: ${JSON.stringify(findings)}`);
+});
+
+test('assertClean sees a node mounted outside <body>, which the masker cannot', async (page) => {
+  // A portal can mount its dialog outside <body>. The masking passes are
+  // body-rooted and walk straight past one; the assertion walks documentElement
+  // precisely so that gap cannot ship.
+  await page.setContent(`<p>nothing to see</p>`);
+  await page.evaluate(() => {
+    const d = document.createElement('div');
+    d.id = 'portal';
+    d.textContent = 'Max Maeser';
+    document.documentElement.appendChild(d);
+  });
+  await page.evaluate(sanitize, {});
+  let err = null;
+  try { await assertClean(page, {}); } catch (e) { err = e; }
+  assert.ok(err, 'a value outside <body> must still abort the capture');
+  assert.ok(/#portal/.test(err.message), `the selector must point at the portal: ${err.message}`);
+});
+
+test('assertClean does not report an inlined script bundle as a leak', async (page) => {
+  await page.setContent(`<p>clean</p><script>var user = { name: "Max Maeser" };</script>`);
+  const findings = await assertClean(page, {});
+  assert.deepStrictEqual(findings, [],
+    `<script> text never reaches the frame and must not fire the assertion: ${JSON.stringify(findings)}`);
+});
+
+test('assertClean honors the config: a family switched off is not asserted', async (page) => {
+  await page.setContent(`<p class="who">Max Maeser</p>`);
+  const findings = await assertClean(page, { names: false });
+  assert.deepStrictEqual(findings, [],
+    'a shot that turned names off has said it does not want them masked or asserted');
 });
 
 (async () => {
