@@ -850,6 +850,89 @@ test('a split name cell cannot leave a real surname beside a synthetic first nam
     'the hybrid must not survive');
 });
 
+// 2026-10-11 Sales capture regressions.
+test('Sanad Mashgari shares one roster identity across the lead list and panel', async (page) => {
+  await page.setContent(`<table><thead><tr><th>Name</th><th>Email</th></tr></thead><tbody>
+    <tr><td class="list">Sanad Mashgari</td><td class="email">lead@realcorp.com</td></tr>
+    </tbody></table><h2 data-testid="lead-title" class="panel">Sanad Mashgari</h2>`);
+  await page.evaluate(sanitize, {});
+  const name = await page.locator('.list').innerText();
+  assert.strictEqual(name, 'Jordan Avery');
+  assert.strictEqual(await page.locator('.panel').innerText(), name);
+  assertPair({ name, email: await page.locator('.email').innerText() });
+  assert.deepStrictEqual(await assertClean(page, {}), []);
+});
+
+test('Max Zeno and unknown names in person fields use distinct roster identities', async (page) => {
+  await page.setContent(`<div role="grid"><div role="row"><span role="columnheader">Lead</span></div>
+    <div role="row"><span role="gridcell" class="max">Max<!-- --> Zeno</span></div></div>
+    <h2 data-testid="lead-title" class="title">Max Zeno</h2>
+    <span data-slot="avatar-label" class="other">Priya Ramaswamy</span>
+    <span data-testid="account-name" class="account">Aisha Okafor</span>`);
+  await page.evaluate(sanitize, {});
+  assert.strictEqual(await page.locator('.max').innerText(), 'Jordan Avery');
+  assert.strictEqual(await page.locator('.title').innerText(), 'Jordan Avery');
+  assert.strictEqual(await page.locator('.other').innerText(), 'Riley Chen');
+  assert.strictEqual(await page.locator('.account').innerText(), 'Taylor Morgan');
+});
+
+test('ellipsis gari in a blurred name cell reuses the full lead identity', async (page) => {
+  await page.setContent(`<div style="filter:blur(3px)"><table><thead><tr><th>Name</th></tr></thead>
+    <tbody><tr><td class="fragment">...gari</td></tr></tbody></table></div>
+    <div role="dialog"><h2 data-testid="lead-title" class="full">Sanad Mashgari</h2></div>`);
+  await page.evaluate(sanitize, {});
+  assert.strictEqual(await page.locator('.full').innerText(), 'Jordan Avery');
+  assert.strictEqual(await page.locator('.fragment').innerText(), 'avery');
+  assert.ok(!/gari/i.test(await page.locator('body').innerText()));
+});
+
+test('known names and ellipsis surname fragments mask without DOM labels', async (page) => {
+  await page.setContent('<p>...gari</p><p>Sanad Mashgari</p><p>Max Zeno</p>');
+  await page.evaluate(sanitize, {});
+  assert.deepStrictEqual(await page.locator('p').allInnerTexts(), ['avery', 'Jordan Avery', 'Riley Chen']);
+});
+
+test('Claude Maeser and a bare Maeser in the account menu are masked', async (page) => {
+  await page.setContent(`<div role="menu"><p class="full">Claude<!-- --> <span>Maeser</span></p>
+    <p class="last">Maeser</p><button>Account Settings</button></div>`);
+  await page.evaluate(sanitize, {});
+  assert.strictEqual(await page.locator('.full').innerText(), 'Jordan Avery');
+  assert.strictEqual(await page.locator('.last').innerText(), 'Avery');
+  assert.strictEqual(await page.locator('button').innerText(), 'Account Settings');
+});
+
+test('status labels brands headers and buttons survive person context detection', async (page) => {
+  const html = `<table><thead><tr><th>Name</th><th>Status</th><th>Brand</th></tr></thead><tbody>
+    <tr><td><span role="status">In Progress</span><button>Send Invites</button></td>
+    <td>Qualified</td><td>Lumon Cafe</td></tr><tr><td>Lumon Cafe</td><td>Active</td><td>Lumon Cafe</td></tr>
+    </tbody></table><div role="dialog"><h2>Brand Standards</h2></div>`;
+  await page.setContent(html);
+  const before = await page.locator('body').innerText();
+  const counts = await page.evaluate(sanitize, {});
+  assert.strictEqual(await page.locator('body').innerText(), before);
+  assert.strictEqual(counts.names, 0);
+});
+
+test('all roster names including numbered identities survive repeated contextual masking', async (page) => {
+  const names = ['Jordan Avery', 'Riley Chen', 'Taylor Morgan', 'Casey Brooks', 'Devon Pratt',
+    'Sam Rivera', 'Morgan Ellis', 'Emery Vance', 'Quinn Delaney', 'Jordan Avery2'];
+  await page.setContent(names.map((name) => `<p data-field="name">${name}</p>`).join('') +
+    '<h2 data-testid="lead-title">Max Zeno</h2>');
+  await page.evaluate(sanitize, {});
+  assert.deepStrictEqual(await page.locator('p').allInnerTexts(), names);
+  const once = await page.locator('body').innerText();
+  const counts = await page.evaluate(sanitize, {});
+  assert.strictEqual(await page.locator('body').innerText(), once);
+  assert.strictEqual(counts.names, 0);
+});
+
+test('assertClean rejects an unknown person field before masking', async (page) => {
+  await page.setContent('<h2 data-testid="lead-title">Priya Ramaswamy</h2>');
+  await assert.rejects(() => assertClean(page, {}), /pre-shutter assertion failed/);
+  await page.evaluate(sanitize, {});
+  assert.deepStrictEqual(await assertClean(page, {}), []);
+});
+
 // Person identity regressions: the row email wins over address/name tokens.
 function memberRow(name, email) {
   return `<div class="row"><span class="name">${name}</span><span class="email">${email}</span></div>`;

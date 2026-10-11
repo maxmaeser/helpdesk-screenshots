@@ -73,16 +73,12 @@
 //                       before that, so every capture showing a user list, an
 //                       activity feed, an assignee or an avatar shipped a real
 //                       surname to a public repo.
-//   { initials: false } Roster names only, leave two-letter avatar chips alone.
+//   { initials: false } Mask names, leave two-letter avatar chips alone.
 //   false               Do not mask names at all.
 //
-// WHAT NAME MASKING CANNOT DO. The roster is a LIST, not a detector. There is no
-// safe way to recognise "this capitalised pair is a person" in a product UI:
-// "Brand Standards", "Sales Analytics" and "Send Invites" have the identical
-// shape, and a detector that masked them would silently corrupt the product's own
-// words in every future capture - the same class of defect as the pre-2026-08-26
-// date sweep, which shipped "Invites are valid for 1 week" over the product's
-// "7 days". So an unknown real name in seeded data reaches the frame unmasked.
+// Unknown names are also detected in person-labelled fields and name columns.
+// Capitalisation alone is not evidence: unlabelled prose and generic headings
+// still cannot safely distinguish people from product copy or brand names.
 // Two things compensate, and both are mandatory, not optional:
 //   1. Put the unknown name in `replacements` for that shot.
 //   2. Keep the pre-shutter assertion (assertClean, below), which re-scans the
@@ -921,7 +917,7 @@ function sanitize(config) {
     // umlaut it was never given - "Maximilian Mäser -- Demo" came back from a live
     // page as "Jordan Mäser -- Demo", first name masked and surname intact, which
     // is the exact half-masked shape that makes a leak invisible.
-    'Maeser', 'M\u00e4ser', 'Maser',
+    'Maeser', 'M\u00e4ser', 'Maser', 'Mashgari',
     'Hooper', 'Skousen',
     'Mifflin', 'Bratton',
     // 2026-09-06, from the /settings/brands brand-team roster and the Deals
@@ -971,6 +967,7 @@ function sanitize(config) {
   // spellings staging uses. Nearby email addresses determine whether names alias.
   const REAL_FULL_NAMES = [
     'Creed Smith',
+    'Max Zeno', // fallback for capture DOMs without personal field labels
     'Billy Smith', 'Bill Smith',
     // The synthetic-first-name-plus-real-surname hybrid a split name cell
     // produces: an avatar cell renders "Bill" and "Smith" as separate nodes, the
@@ -1049,12 +1046,20 @@ function sanitize(config) {
   // Share one detector between indexing and masking. Keep the roster's existing
   // boundaries, split-node support, handles, stutters and product-copy exclusions.
   const FULL_NAME_SRC = REAL_FULL_NAMES.map((e) => e.split(/\s+/).map(reEscape).join(SPACE)).join('|');
+  // Literal truncation of a known surname still identifies that person. Do not
+  // match bare suffixes (ordinary words); require an ellipsis and four letters.
+  const SURNAME_SUFFIXES = [...new Set(REAL_SURNAMES.flatMap((name) =>
+    Array.from({ length: Math.max(0, name.length - 3) }, (_, i) => name.slice(i))))];
+  const FRAGMENT_SRC = '(?:\\.\\.\\.|…)(?:' + SURNAME_SUFFIXES.map(reEscape).join('|') + ')';
   const NAME_RE = bounded(
-    FULL_NAME_SRC + '|[A-Za-z][A-Za-z\'\u2019]{0,20}' + SPACE + '(?:' + SURNAME_ALT + ')' +
+    FRAGMENT_SRC + '|' + FULL_NAME_SRC + '|[A-Za-z][A-Za-z\'\u2019]{0,20}' + SPACE + '(?:' + SURNAME_ALT + ')' +
     '|(?:' + FIRST_ANY_ALT + ')(?:' + SURNAME_ALT + ')' +
     '|(?:' + SURNAME_ALT + ')|(?:' + REAL_FIRSTS.map((e) => stutter(e)).join('|') + ')', 'gi');
   const GLUED_NAME_RE = new RegExp('^(' + FIRST_ANY_ALT + ')(' + SURNAME_ALT + ')$', 'i');
   function nameParts(match, whole) {
+    if (/^(?:\.\.\.|…)/.test(match)) {
+      return { key: match.replace(/^(?:\.\.\.|…)/, '').toLowerCase(), part: 'last' };
+    }
     const glued = GLUED_NAME_RE.exec(match);
     const parts = glued ? glued.slice(1) : match.split(/\s+/);
     if (parts.length === 2) {
@@ -1072,6 +1077,58 @@ function sanitize(config) {
     const first = unstutter(match, FIRST_INDEX);
     if (!first || (AMBIGUOUS_FIRSTS[first] && whole.trim() !== match)) return null;
     return { key: first, part: 'first' };
+  }
+
+  // Only an explicitly personal value can extend the roster detector. Never
+  // infer a person from a generic dialog, menu, heading or capitalised pair.
+  const PERSON_LABEL_RE = /^(?:(?:lead|contact|applicant|user|account|person|full|first|last|assignee|owner)[ -]?)?name$|^(?:lead|contact|applicant|assignee|owner|assigned to)$/i;
+  const PERSON_SLOT_RE = /^(?:(?:lead|contact|applicant)[ -](?:name|title)|(?:account|user)[ -]name|avatar[ -]label)$/i;
+  const NAME_VALUE_RE = /^(?:[\p{L}][\p{L}'’.-]*(?:[ \t]+[\p{L}][\p{L}'’.-]*){0,3}|(?:\.\.\.|…)[\p{L}]{4,})$/u;
+  const NON_PERSON_VALUE_RE = /\b(?:active|inactive|pending|qualified|unqualified|new lead|in progress|unassigned|unknown|name|status|settings|sign out|log out|add|edit|delete|save|cancel|cafe|café|brand|company|inc|llc|standards|analytics)\b/i;
+  function syntheticName(value) {
+    return identityPool.some((id) => new RegExp('^(?:' + id.first + '(?: ' + id.last + '\\d*)?|' + id.last + '\\d*)$', 'i').test(value));
+  }
+  function personContext(node) {
+    const el = node.nodeType === 1 ? node : node.parentElement;
+    if (!el || el.closest('th, [role="columnheader"], button, [role="button"], [role="status"], label')) return false;
+    const cell = el.closest('td, [role="cell"], [role="gridcell"]');
+    if (cell) {
+      const row = cell.closest('tr, [role="row"]');
+      const table = cell.closest('table, [role="table"], [role="grid"]');
+      const heads = table && table.querySelectorAll('thead th, [role="columnheader"]');
+      const index = cell.getAttribute('aria-colindex');
+      const head = heads && row && (index ? Array.from(heads).find((h, i) => (h.getAttribute('aria-colindex') || String(i + 1)) === index) : heads[Array.from(row.children).indexOf(cell)]);
+      if (head && PERSON_LABEL_RE.test(head.textContent.trim())) return true;
+    }
+    for (let cur = el, depth = 0; cur && depth < 3; cur = cur.parentElement, depth++) {
+      if (['aria-label', 'data-field', 'data-label', 'name', 'autocomplete'].some((attr) => PERSON_LABEL_RE.test(cur.getAttribute(attr) || ''))) return true;
+      if (['data-testid', 'data-slot', 'id'].some((attr) => PERSON_SLOT_RE.test(cur.getAttribute(attr) || ''))) return true;
+      if (cur.matches('td, tr, [role="row"], [role="menu"], [role="dialog"], body')) break;
+    }
+    return false;
+  }
+  function contextualParts(value, node) {
+    const text = value.trim();
+    if (!NAME_VALUE_RE.test(text) || NON_PERSON_VALUE_RE.test(text) || syntheticName(text) || !personContext(node)) return null;
+    const known = Array.from(text.matchAll(NAME_RE));
+    if (known.length === 1 && known[0][0] === text) return nameParts(text, text);
+    const words = text.toLowerCase().split(/\s+/);
+    if (/^(?:\.\.\.|…)/.test(text)) return { key: text.replace(/^(?:\.\.\.|…)/, '').toLowerCase(), part: 'last' };
+    if (words.length === 1) return { key: words[0], part: 'first' };
+    return { key: words.join(' '), first: words[0], last: words.slice(1).join(' ') };
+  }
+  function namePattern(value, node, run) {
+    if (contextualParts(value, node)) return /\S(?:[\s\S]*\S)?/g;
+    // A text run can join several fields, for example a lead title and the
+    // avatar label beside it. Match each person field inside the run whole.
+    const own = [];
+    (run || []).forEach((n) => {
+      const t = (n.nodeValue || '').trim();
+      if (t && contextualParts(t, n)) own.push(reEscape(t));
+    });
+    if (!own.length) return NAME_RE;
+    own.sort((a, b) => b.length - a.length);
+    return new RegExp(own.join('|') + '|' + NAME_RE.source, 'gi');
   }
 
   const nameEmails = new Map();
@@ -1108,14 +1165,14 @@ function sanitize(config) {
   }
   function indexPeople() {
     const occurrences = [];
-    function scan(value, nodeAt) {
+    function scan(value, nodeAt, run) {
       const emails = Array.from(value.matchAll(EMAIL_RE));
       const found = emails.map((m) => ({ offset: m.index, node: nodeAt(m.index), key: 'email:' + m[0].toLowerCase(),
         safe: SAFE_EMAIL_DOMAIN_RE.test(m[0].split('@')[1]) }));
       if (config.names !== false) {
-        for (const m of value.matchAll(NAME_RE)) {
+        for (const m of value.matchAll(namePattern(value, nodeAt(value.search(/\S/)), run))) {
           if (emails.some((e) => m.index < e.index + e[0].length && m.index + m[0].length > e.index)) continue;
-          const parts = nameParts(m[0], nodeAt(m.index).nodeValue || value);
+          const parts = contextualParts(m[0], nodeAt(m.index)) || nameParts(m[0], nodeAt(m.index).nodeValue || value);
           if (parts) found.push({ offset: m.index, node: nodeAt(m.index), parts });
         }
       }
@@ -1129,7 +1186,7 @@ function sanitize(config) {
         let i = run.length - 1;
         while (i > 0 && starts[i] > offset) i--;
         return run[i];
-      });
+      }, run);
     });
     fields().forEach((el) => scan(el.value || '', () => el));
     // Input values participate in the same document order as text nodes.
@@ -1157,6 +1214,8 @@ function sanitize(config) {
       const key = personKey(o.parts, o.node);
       addAlias(shortNames, o.parts.first, key);
       addAlias(shortNames, o.parts.last, key);
+      // Explicit ellipsis fragments can reuse a unique full surname on the page.
+      for (let i = 0; i <= o.parts.last.length - 4; i++) addAlias(shortNames, o.parts.last.slice(i), key);
     });
     // Reserve already synthetic names, including prior passes' numbered names.
     const allText = textRuns().map((run) => run.map((n) => n.nodeValue).join('')).concat(fields().map((el) => el.value)).join('\n');
@@ -1183,7 +1242,7 @@ function sanitize(config) {
       // emails:false and reserved addresses must not have their local parts
       // rewritten by a name rule.
       if (Array.from(whole.matchAll(EMAIL_RE)).some((e) => offset < e.index + e[0].length && offset + m.length > e.index)) return m;
-      const parts = nameParts(m, node.nodeValue || whole);
+      const parts = contextualParts(m, node) || nameParts(m, node.nodeValue || whole);
       if (!parts) return m;
       const key = personKey(parts, node);
       const id = identityFor(key);
@@ -1196,13 +1255,14 @@ function sanitize(config) {
       const starts = [];
       let size = 0;
       run.forEach((node) => { starts.push(size); size += node.nodeValue.length; });
-      replaceInRun(run, NAME_RE, (m, offset, whole) => {
+      const value = run.map((n) => n.nodeValue).join('');
+      replaceInRun(run, namePattern(value, run.find((n) => /\S/.test(n.nodeValue)) || run[0], run), (m, offset, whole) => {
         let i = run.length - 1;
         while (i > 0 && starts[i] > offset) i--;
         return replace(run[i], m, offset, whole);
       });
     });
-    fields().forEach((el) => { el.value = el.value.replace(NAME_RE, (m, offset, whole) => replace(el, m, offset, whole)); });
+    fields().forEach((el) => { el.value = el.value.replace(namePattern(el.value, el), (m, offset, whole) => replace(el, m, offset, whole)); });
     if (!(opts && opts.initials === false)) {
       textNodes().forEach((node) => {
         const t = (node.nodeValue || '').trim();
@@ -1703,7 +1763,7 @@ function sanitize(config) {
     //    first-name-glued-to-surname handle, and the explicit full names whose
     //    surname is too common to list on its own.
     if (cfg.names !== false) {
-      const nameRules = [];
+      const nameRules = [bounded(FRAGMENT_SRC, 'gi')];
       REAL_FULL_NAMES.forEach((e) => {
         const parts = e.split(/\s+/);
         nameRules.push(bounded(reEscape(parts[0]) + SPACE + reEscape(parts[1]), 'gi'));
@@ -1714,6 +1774,8 @@ function sanitize(config) {
         nameRules.push(new RegExp('(?<![A-Za-z])(?:' + FIRST_ANY_ALT + ')(?:' + SURNAME_ALT + ')(?![A-Za-z])', 'gi'));
       }
       eachTarget((text, nodeAt, where) => {
+        const offset = text.search(/\S/);
+        if (offset >= 0 && contextualParts(text, nodeAt(offset))) add('name', text.trim(), nodeAt(offset), where);
         nameRules.forEach((re) => {
           eachMatch(text, re, (m) => add('name', m[0], nodeAt(m.index), where));
         });
