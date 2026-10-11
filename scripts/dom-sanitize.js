@@ -644,55 +644,17 @@ function sanitize(config) {
     return count;
   }
 
-  // Until 2026-08-26 this PRESERVED the real local part: it documented itself as
-  // keeping "a name-ish local part", so max.maeser@franchisesystems.ai became
-  // max.maeser@example.com. The domain was hidden and the identity was kept,
-  // which for PII is worse than doing nothing - the address LOOKS sanitized, so
-  // nobody re-reads it. Two of those shipped to live articles.
-  //
-  // Now the local part is replaced outright. {first}/{last} still work, but they
-  // resolve to the SYNTHETIC identity, never the real one:
-  //   - if any token of the real local part is a roster name, that person's fixed
-  //     synthetic identity is used, so the address and the display name on the
-  //     same page agree and the same person reads the same way in every shot;
-  //   - otherwise the address is assigned the next unused name from EMAIL_POOL,
-  //     stable per address for the life of the call, so two mentions of one
-  //     address do not become two people.
-  // An address already on a reserved domain (example.com and friends, RFC 2606)
-  // is left EXACTLY as it is: it is already safe, re-masking it would churn
-  // previously-cleaned captures, and leaving it makes the pass idempotent.
+  // Reserved addresses remain untouched. All other emails use the same
+  // per-person allocation as names; address tokens are never identity guesses.
   const SAFE_EMAIL_DOMAIN_RE = /(?:^|\.)(?:example\.(?:com|org|net)|example|invalid|test|localhost)$/i;
-  const EMAIL_POOL = ['alex.rivera', 'sam.okafor', 'robin.ellis', 'dana.reyes', 'priya.raman', 'jamie.fox', 'morgan.diaz', 'kai.lindqvist'];
-  const emailAssigned = {};
-  let emailPoolIdx = 0;
   let emailsSkipped = 0;
-
   function emailReplacer(pattern) {
     return function (match) {
-      const at = match.indexOf('@');
-      if (SAFE_EMAIL_DOMAIN_RE.test(match.slice(at + 1))) { emailsSkipped++; return match; }
-      const key = match.toLowerCase();
-      if (emailAssigned[key]) return emailAssigned[key];
-      // The +tag is dropped before resolution: "max+762134@..." is still Max.
-      const tokens = match.slice(0, at).replace(/\+.*$/, '').split(/[._-]+/).filter(Boolean);
-      let id = null;
-      for (let i = 0; i < tokens.length && !id; i++) id = SURNAME_INDEX[tokens[i].toLowerCase()] || null;
-      for (let i = 0; i < tokens.length && !id; i++) id = FIRST_INDEX[tokens[i].toLowerCase()] || null;
-      let first;
-      let last;
-      if (id) {
-        first = id.first.toLowerCase();
-        last = id.last.toLowerCase();
-      } else {
-        const n = emailPoolIdx++;
-        const pooled = EMAIL_POOL[n % EMAIL_POOL.length].split('.');
-        const suffix = n >= EMAIL_POOL.length ? String(Math.floor(n / EMAIL_POOL.length) + 1) : '';
-        first = pooled[0];
-        last = pooled[1] + suffix;
-      }
-      const out = pattern.replace(/\{first\}/g, first).replace(/\{last\}/g, last).replace(/[._-]+@/, '@');
-      emailAssigned[key] = out;
-      return out;
+      if (SAFE_EMAIL_DOMAIN_RE.test(match.split('@')[1])) { emailsSkipped++; return match; }
+      const id = identityFor('email:' + match.toLowerCase());
+      if (pattern === '{first}.{last}@example.com') return id.email;
+      return pattern.replace(/\{first\}/g, id.first.toLowerCase())
+        .replace(/\{last\}/g, id.last.toLowerCase()).replace(/[._-]+@/, '@');
     };
   }
 
@@ -932,25 +894,16 @@ function sanitize(config) {
   }
 
   // ---- real personal names -------------------------------------------------
-  // THE ROSTER. Each identity is one real person (or one seeded demo account that
-  // stands for one) and the synthetic identity that replaces them everywhere.
-  // These pairings are FIXED and must not be re-rolled: a reader following an
-  // article across six screenshots has to see the same person each time, and a
-  // previously-cleaned capture already on GitHub used these exact names.
+  // The roster supplies unique synthetic identities in encounter order, not
+  // fixed real-to-fake pairings. Exhaustion appends a number to the surname.
   const IDENTITIES = {
     avery: { key: 'avery', first: 'Jordan', last: 'Avery', initials: 'JA' },
     chen: { key: 'chen', first: 'Riley', last: 'Chen', initials: 'RC' },
     morgan: { key: 'morgan', first: 'Taylor', last: 'Morgan', initials: 'TM' },
     brooks: { key: 'brooks', first: 'Casey', last: 'Brooks', initials: 'CB' },
     pratt: { key: 'pratt', first: 'Devon', last: 'Pratt', initials: 'DP' },
-    // Added 2026-08-26 after a reshoot found three more real accounts in staging,
-    // each with a real @franchisesystems.ai address and a real photograph. The
-    // synthetic names are the ones already baked into the captures that found
-    // them, so they are fixed for the same reason the originals are.
     rivera: { key: 'rivera', first: 'Sam', last: 'Rivera', initials: 'SR' },
     ellis: { key: 'ellis', first: 'Morgan', last: 'Ellis', initials: 'ME' },
-    // Added 2026-09-06 by the brand-team reshoot: the two accounts in that
-    // roster the list still could not see. Fixed pairings, same law as above.
     vance: { key: 'vance', first: 'Emery', last: 'Vance', initials: 'EV' },
     delaney: { key: 'delaney', first: 'Quinn', last: 'Delaney', initials: 'QD' },
   };
@@ -959,18 +912,18 @@ function sanitize(config) {
   // same people ("Maser", "Raidin", "Minkhorst"), and they identify the person
   // just as well as the correct spelling does.
   const REAL_SURNAMES = [
-    ['Radin-Grant', 'morgan'], ['Raidin', 'morgan'], ['Radin', 'morgan'],
-    ['Monkhirst', 'brooks'], ['Minkhorst', 'brooks'],
-    ['Whiteside', 'pratt'], ['Whiteman', 'pratt'],
-    ['Schmidt', 'chen'], ['Schmit', 'chen'],
+    'Radin-Grant', 'Raidin', 'Radin',
+    'Monkhirst', 'Minkhorst',
+    'Whiteside', 'Whiteman',
+    'Schmidt', 'Schmit',
     // "Mäser" is a SEPARATE entry, not a fold of "Maser". The staging seed data
     // spells the same account both ways and a literal alternation cannot match an
     // umlaut it was never given - "Maximilian Mäser -- Demo" came back from a live
     // page as "Jordan Mäser -- Demo", first name masked and surname intact, which
     // is the exact half-masked shape that makes a leak invisible.
-    ['Maeser', 'avery'], ['M\u00e4ser', 'avery'], ['Maser', 'avery'],
-    ['Hooper', 'rivera'], ['Skousen', 'ellis'],
-    ['Mifflin', 'avery'], ['Bratton', 'avery'],
+    'Maeser', 'M\u00e4ser', 'Maser',
+    'Hooper', 'Skousen',
+    'Mifflin', 'Bratton',
     // 2026-09-06, from the /settings/brands brand-team roster and the Deals
     // table. "Teser" is not a substring of "Tester", so the two never collide.
     // "Tester" is the surname of a family of QA accounts here - "Joshua Tester"
@@ -980,25 +933,25 @@ function sanitize(config) {
     // guard means only the standalone word matches: "Testing", "Testers" and
     // "tested" all survive, and the dashboard has no standalone "Tester" of its
     // own.
-    ['Teser', 'vance'], ['Tester', 'delaney'],
+    'Teser', 'Tester',
   ];
-  // Real first names. Used to resolve a FULL name and an email local part always;
+  // Real first names. Used to detect full names and handles;
   // used STANDING ALONE only when the name is not also an ordinary UI word.
   const REAL_FIRSTS = [
-    ['Maximilian', 'avery'], ['Max', 'avery'], ['Creed', 'avery'], ['Claude', 'avery'],
-    ['Joshua', 'morgan'], ['Josh', 'morgan'],
-    ['Nathan', 'brooks'],
-    ['William', 'chen'], ['Bill', 'chen'],
-    ['Jonathan', 'pratt'],
-    ['Erin', 'rivera'], ['Jake', 'ellis'],
-    ['Dennis', 'vance'],
+    'Maximilian', 'Max', 'Creed', 'Claude',
+    'Joshua', 'Josh',
+    'Nathan',
+    'William', 'Bill',
+    'Jonathan',
+    'Erin', 'Jake',
+    'Dennis',
   ];
   // First names that are ALSO ordinary words in this product's UI. Masking these
   // on their own would rewrite the product's copy - "Max file size", "Bill of
   // materials", "Claude Code" - which is the failure mode that matters most here:
   // a stale timestamp is cosmetic, a corrupted sentence is a wrong screenshot
   // that nobody will re-read. They are still masked as part of a full name and
-  // still resolve an email local part, where the shape leaves no ambiguity.
+  // in handles, where the shape leaves no ambiguity.
   // These are masked only when a text node holds NOTHING BUT the name - an avatar
   // chip, a table cell, a legend label. That is the shape a person's name takes;
   // "Max file size is 25 MB" and "Bill of materials" are sentences and survive.
@@ -1015,22 +968,22 @@ function sanitize(config) {
   // "Smith" is far too common to mask on its own, so the real people who carry it
   // are listed as whole names. "Billy Smith" and "Bill Smith" are the same real
   // account (real@franchisesystems.ai, billysmith1998@live.com) under the two
-  // spellings staging uses, and they share Bill Schmit's identity.
+  // spellings staging uses. Nearby email addresses determine whether names alias.
   const REAL_FULL_NAMES = [
-    ['Creed Smith', 'avery'],
-    ['Billy Smith', 'chen'], ['Bill Smith', 'chen'],
+    'Creed Smith',
+    'Billy Smith', 'Bill Smith',
     // The synthetic-first-name-plus-real-surname hybrid a split name cell
     // produces: an avatar cell renders "Bill" and "Smith" as separate nodes, the
     // whole-node rule masks the first half to "Riley", and "Riley Smith" is left
     // standing with the real surname on screen. Masking the hybrid closes it
     // wherever the run-joiner cannot reach across the two cells.
-    ['Riley Smith', 'chen'],
+    'Riley Smith',
   ];
 
   const SURNAME_INDEX = {};
-  REAL_SURNAMES.forEach((e) => { SURNAME_INDEX[e[0].toLowerCase()] = IDENTITIES[e[1]]; });
+  REAL_SURNAMES.forEach((e) => { SURNAME_INDEX[e.toLowerCase()] = e.toLowerCase(); });
   const FIRST_INDEX = {};
-  REAL_FIRSTS.forEach((e) => { FIRST_INDEX[e[0].toLowerCase()] = IDENTITIES[e[1]]; });
+  REAL_FIRSTS.forEach((e) => { FIRST_INDEX[e.toLowerCase()] = e.toLowerCase(); });
 
   function reEscape(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
   // Letter-only boundaries, not \b, for the same reason PHONE_LABEL_RE uses them:
@@ -1061,24 +1014,162 @@ function sanitize(config) {
   // called "Joshuaaaaaa Raidinnn" came back masked as "Taylor Raidinnn" - first
   // name replaced, REAL SURNAME still on screen. Half-masked is the worst state
   // there is: the frame looks handled, so nobody looks again.
-  const SURNAME_ALT = REAL_SURNAMES.map((e) => stutter(e[0])).join('|');
-  const FIRST_ALT = REAL_FIRSTS.filter((e) => !AMBIGUOUS_FIRSTS[e[0].toLowerCase()]).map((e) => stutter(e[0])).join('|');
+  const SURNAME_ALT = REAL_SURNAMES.map((e) => stutter(e)).join('|');
+  const FIRST_ALT = REAL_FIRSTS.filter((e) => !AMBIGUOUS_FIRSTS[e.toLowerCase()]).map((e) => stutter(e)).join('|');
   // A handle glues the two halves together: a lead record held
   // "https://www.linkedin.com/in/maxmaeser/" in a field, and the letter-boundary
   // guard (correctly) refused to match "maeser" with an "x" in front of it, so a
   // real person's real LinkedIn profile sat in the frame. Glued to a real surname
   // there is no ambiguity left, so EVERY first name qualifies here, the ordinary
   // ones included - "maxmaeser" cannot be a sentence about a maximum.
-  const FIRST_ANY_ALT = REAL_FIRSTS.map((e) => reEscape(e[0])).join('|');
+  const FIRST_ANY_ALT = REAL_FIRSTS.map((e) => reEscape(e)).join('|');
   const SPACE = '[ \\t\\u00A0\\u2007\\u202F]{1,3}';
 
-  // "MM" -> the identity it belongs to, filled in only when a FULL name is
-  // actually matched on this page. That gate is what makes the initials pass safe:
-  // a page with a "MM" cell and nobody named Maeser on it is left alone.
-  const initialsSeen = {};
+  const identityPool = Object.values(IDENTITIES);
+  const assigned = new Map();
+  const usedNames = new Set();
+  let poolIndex = 0;
+  function identityFor(key) {
+    if (!assigned.has(key)) {
+      let id;
+      do {
+        const n = poolIndex++;
+        const base = identityPool[n % identityPool.length];
+        const suffix = n >= identityPool.length ? String(Math.floor(n / identityPool.length) + 1) : '';
+        id = { ...base, last: base.last + suffix };
+        id.name = id.first + ' ' + id.last;
+        id.email = (id.first + '.' + id.last).toLowerCase() + '@example.com';
+      } while (usedNames.has(id.name.toLowerCase()));
+      usedNames.add(id.name.toLowerCase());
+      assigned.set(key, id);
+    }
+    return assigned.get(key);
+  }
 
-  // ALL CAPS in, ALL CAPS out; all lower in, all lower out; anything else keeps
-  // the synthetic name's own capitalisation.
+  // Share one detector between indexing and masking. Keep the roster's existing
+  // boundaries, split-node support, handles, stutters and product-copy exclusions.
+  const FULL_NAME_SRC = REAL_FULL_NAMES.map((e) => e.split(/\s+/).map(reEscape).join(SPACE)).join('|');
+  const NAME_RE = bounded(
+    FULL_NAME_SRC + '|[A-Za-z][A-Za-z\'\u2019]{0,20}' + SPACE + '(?:' + SURNAME_ALT + ')' +
+    '|(?:' + FIRST_ANY_ALT + ')(?:' + SURNAME_ALT + ')' +
+    '|(?:' + SURNAME_ALT + ')|(?:' + REAL_FIRSTS.map((e) => stutter(e)).join('|') + ')', 'gi');
+  const GLUED_NAME_RE = new RegExp('^(' + FIRST_ANY_ALT + ')(' + SURNAME_ALT + ')$', 'i');
+  function nameParts(match, whole) {
+    const glued = GLUED_NAME_RE.exec(match);
+    const parts = glued ? glued.slice(1) : match.split(/\s+/);
+    if (parts.length === 2) {
+      // Lowercase prose before a surname is not a first name.
+      if (!glued && !REAL_FULL_NAMES.some((e) => e.toLowerCase() === match.toLowerCase()) &&
+          !/^[A-Z]/.test(parts[0])) {
+        return { key: unstutter(parts[1], SURNAME_INDEX), part: 'last', prefix: parts[0] + match.slice(parts[0].length, -parts[1].length) };
+      }
+      const first = unstutter(parts[0], FIRST_INDEX) || parts[0].toLowerCase();
+      const last = unstutter(parts[1], SURNAME_INDEX) || parts[1].toLowerCase();
+      return { key: first + ' ' + last, first, last, glued: !!glued };
+    }
+    const last = unstutter(match, SURNAME_INDEX);
+    if (last) return { key: last, part: 'last' };
+    const first = unstutter(match, FIRST_INDEX);
+    if (!first || (AMBIGUOUS_FIRSTS[first] && whole.trim() !== match)) return null;
+    return { key: first, part: 'first' };
+  }
+
+  const nameEmails = new Map();
+  const shortNames = new Map();
+  const nearbyEmails = new WeakMap();
+  function addAlias(map, alias, key) {
+    if (!map.has(alias)) map.set(alias, new Set());
+    map.get(alias).add(key);
+  }
+  function unique(map, key) {
+    const values = map.get(key);
+    return values && values.size === 1 ? values.values().next().value : null;
+  }
+  function personKey(parts, node) {
+    return nearbyEmails.get(node) || unique(nameEmails, parts.key) ||
+      (parts.part && unique(shortNames, parts.key)) || 'name:' + parts.key;
+  }
+
+  // Index before any DOM writes: otherwise the email pass destroys the real
+  // row key before the name pass can read it. Stop at row/list boundaries and
+  // reject containers with multiple addresses instead of guessing a neighbour.
+  function emailNear(node, emailOccurrences, nameOccurrences) {
+    let el = node.nodeType === 1 ? node : node.parentElement;
+    for (let depth = 0; el && depth < 6 && !el.matches('body, html'); depth++, el = el.parentElement) {
+      if ((el.textContent || '').length > 500) break;
+      const keys = new Set(emailOccurrences.filter((e) => el.contains(e.node)).map((e) => e.key));
+      if (keys.size > 1) break;
+      const names = new Set(nameOccurrences.filter((o) => el.contains(o.node) && !o.parts.part).map((o) => o.parts.key));
+      if (names.size > 1) break;
+      if (keys.size === 1) return keys.values().next().value;
+      if (el.matches('tr, [role="row"], li, .row')) break;
+    }
+    return null;
+  }
+  function indexPeople() {
+    const occurrences = [];
+    function scan(value, nodeAt) {
+      const emails = Array.from(value.matchAll(EMAIL_RE));
+      const found = emails.map((m) => ({ offset: m.index, node: nodeAt(m.index), key: 'email:' + m[0].toLowerCase(),
+        safe: SAFE_EMAIL_DOMAIN_RE.test(m[0].split('@')[1]) }));
+      if (config.names !== false) {
+        for (const m of value.matchAll(NAME_RE)) {
+          if (emails.some((e) => m.index < e.index + e[0].length && m.index + m[0].length > e.index)) continue;
+          const parts = nameParts(m[0], nodeAt(m.index).nodeValue || value);
+          if (parts) found.push({ offset: m.index, node: nodeAt(m.index), parts });
+        }
+      }
+      occurrences.push(...found.sort((a, b) => a.offset - b.offset));
+    }
+    textRuns().forEach((run) => {
+      const starts = [];
+      let size = 0;
+      run.forEach((node) => { starts.push(size); size += node.nodeValue.length; });
+      scan(run.map((n) => n.nodeValue).join(''), (offset) => {
+        let i = run.length - 1;
+        while (i > 0 && starts[i] > offset) i--;
+        return run[i];
+      });
+    });
+    fields().forEach((el) => scan(el.value || '', () => el));
+    // Input values participate in the same document order as text nodes.
+    occurrences.sort((a, b) => {
+      if (a.node === b.node) return a.offset - b.offset;
+      const position = a.node.compareDocumentPosition(b.node);
+      if (position & 1) return 0; // preserve traversal order across documents
+      return position & 4 ? -1 : 1;
+    });
+    const emails = occurrences.filter((o) => o.key && !o.safe);
+    const names = occurrences.filter((o) => o.parts);
+    names.forEach((o) => {
+      const key = emailNear(o.node, emails, names);
+      if (key) {
+        nearbyEmails.set(o.node, key);
+        addAlias(nameEmails, o.parts.key, key);
+      }
+    });
+    textNodes().forEach((node) => {
+      if (!/^[A-Z]{2}$/.test((node.nodeValue || '').trim())) return;
+      const key = emailNear(node, emails, names);
+      if (key) nearbyEmails.set(node, key);
+    });
+    occurrences.filter((o) => o.parts && !o.parts.part).forEach((o) => {
+      const key = personKey(o.parts, o.node);
+      addAlias(shortNames, o.parts.first, key);
+      addAlias(shortNames, o.parts.last, key);
+    });
+    // Reserve already synthetic names, including prior passes' numbered names.
+    const allText = textRuns().map((run) => run.map((n) => n.nodeValue).join('')).concat(fields().map((el) => el.value)).join('\n');
+    identityPool.forEach((id) => {
+      const re = new RegExp('\\b' + id.first + '[ .]' + id.last + '\\d*\\b', 'gi');
+      for (const m of allText.matchAll(re)) usedNames.add(m[0].replace('.', ' ').toLowerCase());
+    });
+    occurrences.forEach((o) => {
+      if (o.parts) identityFor(personKey(o.parts, o.node));
+      else if (!o.safe && config.emails !== false) identityFor(o.key);
+    });
+  }
+
   function applyCase(sample, out) {
     if (/[A-Z]/.test(sample) && !/[a-z]/.test(sample)) return out.toUpperCase();
     if (/[a-z]/.test(sample) && !/[A-Z]/.test(sample)) return out.toLowerCase();
@@ -1086,97 +1177,45 @@ function sanitize(config) {
   }
 
   function maskNames(opts) {
-    let n = 0;
-    const wantInitials = !(opts && opts.initials === false);
-
-    // 1. Explicit full names first, so "Creed Smith" cannot be picked apart into
-    //    a bare first name by rule 4 below.
-    REAL_FULL_NAMES.forEach((entry) => {
-      const id = IDENTITIES[entry[1]];
-      const parts = entry[0].split(/\s+/);
-      const re = bounded(reEscape(parts[0]) + SPACE + reEscape(parts[1]), 'gi');
-      n += replaceEverywhere(re, (m) => {
-        initialsSeen[(parts[0][0] + parts[1][0]).toUpperCase()] = id;
-        return applyCase(m, id.first + ' ' + id.last);
+    let count = 0;
+    const initialsSeen = new Map();
+    const replace = (node, m, offset, whole) => {
+      // emails:false and reserved addresses must not have their local parts
+      // rewritten by a name rule.
+      if (Array.from(whole.matchAll(EMAIL_RE)).some((e) => offset < e.index + e[0].length && offset + m.length > e.index)) return m;
+      const parts = nameParts(m, node.nodeValue || whole);
+      if (!parts) return m;
+      const key = personKey(parts, node);
+      const id = identityFor(key);
+      count++;
+      if (parts.part) return (parts.prefix || '') + applyCase(m, id[parts.part]);
+      addAlias(initialsSeen, (parts.first[0] + parts.last[0]).toUpperCase(), key);
+      return applyCase(m, id.first + (parts.glued ? '' : ' ') + id.last);
+    };
+    textRuns().forEach((run) => {
+      const starts = [];
+      let size = 0;
+      run.forEach((node) => { starts.push(size); size += node.nodeValue.length; });
+      replaceInRun(run, NAME_RE, (m, offset, whole) => {
+        let i = run.length - 1;
+        while (i > 0 && starts[i] > offset) i--;
+        return replace(run[i], m, offset, whole);
       });
     });
-
-    // 2. "<Firstname> <RealSurname>" as a unit, whatever the first name is - the
-    //    seed data pairs these surnames with a dozen different first names. When
-    //    the preceding word is not capitalised it is ordinary prose ("the Maeser
-    //    account"), so only the surname is replaced.
-    if (SURNAME_ALT) {
-      const full = new RegExp('(?<![A-Za-z])([A-Za-z][A-Za-z\'\u2019]{0,20})(' + SPACE + ')(' + SURNAME_ALT + ')(?![A-Za-z])', 'gi');
-      n += replaceEverywhere(full, (m, first, sp, sur) => {
-        const id = unstutter(sur, SURNAME_INDEX);
-        if (!id) return m;
-        if (!/^[A-Z]/.test(first)) return first + sp + applyCase(sur, id.last);
-        initialsSeen[(first[0] + sur[0]).toUpperCase()] = id;
-        return applyCase(sur, id.first + ' ' + id.last);
-      });
-
-      // 3. A surname standing on its own ("Owner: Maeser", "Radin-Grant Holdings").
-      n += replaceEverywhere(bounded(SURNAME_ALT, 'gi'), (m) => {
-        const id = unstutter(m, SURNAME_INDEX);
-        return id ? applyCase(m, id.last) : m;
-      });
-    }
-
-    // 4. A first name standing on its own, but only the unambiguous ones.
-    if (FIRST_ALT) {
-      n += replaceEverywhere(bounded(FIRST_ALT, 'gi'), (m) => {
-        // A stuttered match ("Nathannn") is not itself a roster key, so trim the
-        // repeated tail back to the name before looking the identity up.
-        const id = unstutter(m, FIRST_INDEX);
-        return id ? applyCase(m, id.first) : m;
-      });
-    }
-
-    // 3b. A first name and a surname run together, as in a handle or a profile URL.
-    //     Resolved on the SURNAME, so "maxmaeser" and "claudemaeser" both land on
-    //     the same synthetic identity as the spaced spelling does.
-    if (SURNAME_ALT && FIRST_ANY_ALT) {
-      const glued = new RegExp('(?<![A-Za-z])(' + FIRST_ANY_ALT + ')(' + SURNAME_ALT + ')(?![A-Za-z])', 'gi');
-      n += replaceEverywhere(glued, (m, first, sur) => {
-        const id = unstutter(sur, SURNAME_INDEX);
-        if (!id) return m;
-        initialsSeen[(first[0] + sur[0]).toUpperCase()] = id;
-        return applyCase(m, id.first + id.last);
-      });
-    }
-
-    // 4b. An ambiguous first name, but only where the text node holds nothing
-    //     else. A team card renders its members as bare first names - the corpus
-    //     had a row reading "Creed  Max" - so skipping these leaves one teammate
-    //     masked and the one beside him real, which is both a leak and obviously
-    //     wrong to look at.
-    textNodes().forEach((node) => {
-      const v = node.nodeValue;
-      if (!v) return;
-      const t = v.trim();
-      if (!t || !AMBIGUOUS_FIRSTS[t.toLowerCase()]) return;
-      const id = FIRST_INDEX[t.toLowerCase()];
-      if (!id) return;
-      node.nodeValue = v.replace(t, applyCase(t, id.first));
-      n++;
-    });
-
-    // 5. Avatar initials, for identities that were actually named on this page.
-    //    An avatar chip is its own text node holding exactly two capitals, so an
-    //    exact whole-node match is enough and cannot reach into a sentence.
-    if (wantInitials) {
+    fields().forEach((el) => { el.value = el.value.replace(NAME_RE, (m, offset, whole) => replace(el, m, offset, whole)); });
+    if (!(opts && opts.initials === false)) {
       textNodes().forEach((node) => {
-        const v = node.nodeValue;
-        if (!v) return;
-        const t = v.trim();
-        if (t.length !== 2 || !/^[A-Z]{2}$/.test(t)) return;
-        const id = initialsSeen[t];
-        if (!id) return;
-        node.nodeValue = v.replace(t, id.initials);
-        n++;
+        const t = (node.nodeValue || '').trim();
+        if (!/^[A-Z]{2}$/.test(t) || !initialsSeen.has(t)) return;
+        const keys = initialsSeen.get(t);
+        const nearby = nearbyEmails.get(node);
+        const key = keys.has(nearby) ? nearby : unique(initialsSeen, t);
+        if (!key) return;
+        node.nodeValue = node.nodeValue.replace(t, identityFor(key).initials);
+        count++;
       });
     }
-    return n;
+    return count;
   }
 
   // ---- avatar photographs --------------------------------------------------
@@ -1666,7 +1705,7 @@ function sanitize(config) {
     if (cfg.names !== false) {
       const nameRules = [];
       REAL_FULL_NAMES.forEach((e) => {
-        const parts = e[0].split(/\s+/);
+        const parts = e.split(/\s+/);
         nameRules.push(bounded(reEscape(parts[0]) + SPACE + reEscape(parts[1]), 'gi'));
       });
       if (SURNAME_ALT) nameRules.push(bounded(SURNAME_ALT, 'gi'));
@@ -1753,6 +1792,8 @@ function sanitize(config) {
   // rule constant above is bound, and before the first mutation below.
   if (config.mode === 'assert') return assertScan(config);
 
+  indexPeople();
+
   const counts = { emails: 0, emailsSkipped: 0, phones: 0, phonesBare: 0, phonesBareSkipped: 0, ips: 0, browsers: 0, names: 0, avatars: 0, dates: 0, datesSkipped: 0, custom: 0, codes: 0, codesSkipped: 0, secrets: 0, secretsSkipped: 0 };
 
   // Browser builds and IPs run BEFORE phones: a dotted IPv4 like
@@ -1786,8 +1827,7 @@ function sanitize(config) {
 
   // Names run AFTER emails on purpose. Masking "maeser" first would rewrite the
   // local part of max.maeser@... to max.avery@..., and the email pass would then
-  // no longer recognise whose address it is, so the display name and the address
-  // on the same page would end up as two different people.
+  // no longer match the original email key indexed before any mutations.
   if (config.names !== false) {
     counts.names = maskNames(typeof config.names === 'object' && config.names ? config.names : {});
   }

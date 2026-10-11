@@ -531,8 +531,8 @@ test('a masked email no longer carries the real name in its local part', async (
 
 test('one person maps to one synthetic identity across name and email', async (page) => {
   await page.setContent(`<div>
-      <p class="n">Max Maeser</p>
-      <p class="e">max.maeser@franchisesystems.ai</p>
+      <div class="row"><p class="n">Max Maeser</p>
+      <p class="e">max.maeser@franchisesystems.ai</p></div>
       <p class="e2">creed.smith@franchisesystems.ai</p>
     </div>`);
   await page.evaluate(sanitize, {});
@@ -542,7 +542,7 @@ test('one person maps to one synthetic identity across name and email', async (p
   const local = mail.slice(0, mail.indexOf('@')).split(/[._-]/);
   assert.ok(name.toLowerCase().includes(local[0]) && name.toLowerCase().includes(local[1]),
     `the masked name ${name} and the masked address ${mail} are different people`);
-  assert.strictEqual(mail2, mail, 'the same person under two seed names got two identities');
+  assert.notStrictEqual(mail2, mail, 'different real addresses must get different identities');
 });
 
 test('a name split across sibling text nodes is masked', async (page) => {
@@ -846,8 +846,124 @@ test('a split name cell cannot leave a real surname beside a synthetic first nam
   await page.setContent(`<table><tr><td class="f">Bill</td><td class="l">Smith</td></tr></table>
     <p class="j">Riley Smith</p>`);
   await page.evaluate(sanitize, {});
-  assert.strictEqual(await page.locator('.j').innerText(), 'Riley Chen',
+  assert.ok(!/Smith/.test(await page.locator('.j').innerText()),
     'the hybrid must not survive');
+});
+
+// Person identity regressions: the row email wins over address/name tokens.
+function memberRow(name, email) {
+  return `<div class="row"><span class="name">${name}</span><span class="email">${email}</span></div>`;
+}
+async function readPeople(page) {
+  return page.locator('.row').evaluateAll((rows) => rows.map((row) => ({
+    name: row.querySelector('.name').textContent,
+    email: row.querySelector('.email').textContent,
+  })));
+}
+function assertPair(person) {
+  assert.strictEqual(person.email, person.name.toLowerCase().replace(/\s+/g, '.') + '@example.com');
+}
+
+test('row name and email match even when the address suggests a different roster person', async (page) => {
+  await page.setContent(memberRow('Dennis Teser', 'bill.schmit@realcorp.com'));
+  await page.evaluate(sanitize, {});
+  const [person] = await readPeople(page);
+  assertPair(person);
+  assert.strictEqual(person.name, 'Jordan Avery', 'first person gets first roster entry');
+});
+
+test('different real people formerly sharing a roster entry get distinct names', async (page) => {
+  await page.setContent(memberRow('Max Maeser', 'max@realcorp.com') +
+    memberRow('Dunder Mifflin', 'dunder@realcorp.com') + memberRow('Creed Bratton', 'creed@realcorp.com'));
+  await page.evaluate(sanitize, {});
+  const people = await readPeople(page);
+  people.forEach(assertPair);
+  assert.strictEqual(new Set(people.map((p) => p.name)).size, 3);
+});
+
+test('repeated person reuses its identity including a name-only mention before the row', async (page) => {
+  await page.setContent('<p class="mention">Dennis Teser</p>' +
+    memberRow('Dennis Teser', 'opaque.account@realcorp.com') +
+    memberRow('Dennis Teser', 'OPAQUE.ACCOUNT@realcorp.com'));
+  await page.evaluate(sanitize, {});
+  const people = await readPeople(page);
+  assert.deepStrictEqual(people[0], people[1]);
+  assertPair(people[0]);
+  assert.strictEqual(await page.locator('.mention').innerText(), people[0].name);
+});
+
+test('pool exhaustion numbers both names and matching emails without collisions', async (page) => {
+  await page.setContent(Array.from({ length: 24 }, (_, i) =>
+    memberRow('Person Maeser', `account${i}@realcorp.com`)).join(''));
+  await page.evaluate(sanitize, {});
+  const people = await readPeople(page);
+  people.forEach(assertPair);
+  assert.strictEqual(new Set(people.map((p) => p.name)).size, 24);
+  assert.strictEqual(new Set(people.map((p) => p.email)).size, 24);
+  assert.strictEqual(people[9].name, 'Jordan Avery2');
+});
+
+test('without nearby email distinct full names remain distinct and repeated names agree', async (page) => {
+  await page.setContent('<ul><li>Max Maeser</li><li>Claude Maeser</li><li>Max Maeser</li><li>Creed Bratton</li></ul>');
+  await page.evaluate(sanitize, {});
+  const names = await page.locator('li').allInnerTexts();
+  assert.strictEqual(names[0], names[2]);
+  assert.strictEqual(new Set(names).size, 3);
+});
+
+test('table rows and split text names pair with email input values', async (page) => {
+  await page.setContent(`<table><tr><td class="name">Dennis<!-- --> <!-- -->Teser</td>
+    <td><input value="bill.schmit@realcorp.com"></td></tr>
+    <tr><td class="name">Max Maeser</td><td><input value="someone@realcorp.com"></td></tr></table>`);
+  await page.evaluate(sanitize, {});
+  const names = await page.locator('.name').allInnerTexts();
+  const emails = await page.locator('input').evaluateAll((els) => els.map((el) => el.value));
+  names.forEach((name, i) => assertPair({ name, email: emails[i] }));
+  assert.notStrictEqual(names[0], names[1]);
+});
+
+test('an email-less row does not borrow the adjacent row email', async (page) => {
+  await page.setContent(memberRow('Max Maeser', '') + memberRow('Creed Bratton', 'creed@realcorp.com'));
+  await page.evaluate(sanitize, {});
+  const people = await readPeople(page);
+  assert.notStrictEqual(people[0].name, people[1].name);
+  assertPair(people[1]);
+});
+
+test('an already masked identity is reserved when another person is added', async (page) => {
+  await page.setContent(memberRow('Dennis Teser', 'one@realcorp.com'));
+  await page.evaluate(sanitize, {});
+  const [before] = await readPeople(page);
+  await page.locator('body').evaluate((el, html) => el.insertAdjacentHTML('beforeend', html),
+    memberRow('Max Maeser', 'two@realcorp.com'));
+  await page.evaluate(sanitize, {});
+  const people = await readPeople(page);
+  assert.deepStrictEqual(people[0], before);
+  assert.notStrictEqual(people[0].name, people[1].name);
+  people.forEach(assertPair);
+});
+
+test('different displayed names with the same email share one identity', async (page) => {
+  await page.setContent(memberRow('Bill Smith', 'person@realcorp.com') +
+    memberRow('William Schmit', 'person@realcorp.com'));
+  await page.evaluate(sanitize, {});
+  const people = await readPeople(page);
+  assert.deepStrictEqual(people[0], people[1]);
+  assertPair(people[0]);
+});
+
+test('avatar initials follow their own row when real initials are identical', async (page) => {
+  await page.setContent(`<div class="row"><span class="avatar">MM</span>
+    <span class="name">Max Maeser</span><span class="email">one@realcorp.com</span></div>
+    <div class="row"><span class="avatar">MM</span>
+    <span class="name">Max Mifflin</span><span class="email">two@realcorp.com</span></div>`);
+  await page.evaluate(sanitize, {});
+  const people = await readPeople(page);
+  const initials = await page.locator('.avatar').allInnerTexts();
+  people.forEach((person, i) => {
+    assertPair(person);
+    assert.strictEqual(initials[i], person.name.split(' ').map((s) => s[0]).join(''));
+  });
 });
 
 // ---- IP addresses and browser builds (audit N7, 2026-10-11) ----------------
