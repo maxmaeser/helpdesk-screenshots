@@ -9,6 +9,7 @@ and declarative shot specs are Phase 3 (see the capture-library proposal).
 
 | File | Role |
 |---|---|
+| `shoot.js` | Declarative shot runner: runs `shots/<article>.js`, strips standing chrome, sanitizes, writes 2x raws and `.callouts/` sidecars (see "Measured callout boxes"). |
 | `session.js` | Log in once, persist `storageState`, hand back an authenticated 2x Playwright context. CLI: `verify` / `refresh` / `info`. |
 | `routes.brand.json` | Generated brand-dashboard route map (name -> path/params/static), sourced from fsai-codebase `routes.ts`. |
 | `routes.portal.json` | Generated franchisee/applicant-portal route map, sourced from fsai-codebase `apps/applicant-portal/src/utils/routes.ts`. |
@@ -141,6 +142,58 @@ Other selectors already proven stable on the brand dashboard:
 | Listbox options (HeadlessUI) | `[role=option]` — never native `<select>`/`<option>` |
 | Data table rows | `tr[data-index]` — never bare `tbody tr` (DataTables render a decoy measurement table) |
 | Brand selection | localStorage `fsai-selected-brands-multi` = JSON array of brand ids |
+
+## Measured callout boxes (`shoot.js` + spec `callouts`)
+
+`shoot.js` runs a declarative shot spec (`shots/<article>.js`, format in the
+header of `shoot.js`). A shot may carry an optional `callouts` array, one entry
+per walkthrough step:
+
+```js
+callouts: [
+  { step: 2, label: 'Click Invite Members', side: 'left',            // left|right|above|below
+    target: { role: 'button', name: 'Invite members', exact: true } }, // role + name (preferred)
+  { step: 4, label: 'Choose A Role', side: 'above',
+    target: { css: 'div:has(> label:text-is("Role")) > button', within: '[role=dialog]' } }, // CSS fallback
+]
+```
+
+`target` is a role + accessible name (`getByRole`), a `{ css }` selector, or
+any Playwright selector string. `within` scopes either form to a container.
+Use CSS only when the element has no stable accessible name (the Role picker's
+name is its selected value) or the target is a group rather than one control.
+
+After `prepare` and the sanitize passes, immediately before the shutter, each
+target is resolved on the live page. The shot fails loudly, with no sidecar,
+when a target matches zero or more than one visible element, has an empty box,
+or does not sit fully inside the saved frame. After the PNG is saved, the
+boxes are converted to raw-image pixels (clip origin subtracted, scaled by the
+saved PNG's size over the clip's CSS size) and written next to the raw:
+
+```
+<out>/.callouts/<png-filename>.json
+{ "shot": "<png-filename>", "raw": [W, H], "capturedAt": "<ISO>", "route": "<path + query>",
+  "callouts": [ { "step": 1, "label": "Title Case Label", "side": "left|right|above|below",
+                  "target": "<selector or role+name used>", "rect": [x, y, w, h] } ] }
+```
+
+`rect` uses the same raw-pixel space as `ShotHighlight.rect` in
+`studio/src/server/types.ts`, so the walkthrough clip template and highlights
+can consume it directly. No box is ever placed by eye.
+
+The scale comes from the saved PNG, not `window.devicePixelRatio`: on the
+2026-10-11 pilot the page reported 1 while the context rendered at 2x.
+
+`--suffix <s>` inserts `<s>` before `.png` in every output name, so a pilot or
+test capture can be written into an article's `raw/` without touching the
+approved raws:
+
+```bash
+nice -n 15 ionice -c3 node shoot.js shots/how-to-invite-users.js \
+  --out ../../how-to-invite-users/raw --suffix -callout-pilot
+```
+
+`shoot.js` never writes `raw/shots.json`; the studio owns it.
 
 ## Not done yet (Phase 3)
 

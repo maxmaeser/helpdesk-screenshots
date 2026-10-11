@@ -10,6 +10,12 @@
  * neither needs seeded data or a query-param deep link.
  *
  *   node ../shoot.js shots/how-to-invite-users.js --out /tmp/shots
+ *
+ * Callouts: the 5 steps of the walkthrough clip (Open Members, Click Invite
+ * Members, Add Each Email, Choose A Role, Click Send Invite). shoot.js measures
+ * each target on the live DOM and writes raw-pixel boxes to
+ * <out>/.callouts/<png>.json. Targets were picked from a DOM recon on staging
+ * 2026-10-11; role + name wherever the element has an accessible name.
  */
 
 const MEMBERS_SECTION = '?section=organization-members';
@@ -29,6 +35,15 @@ module.exports = {
       ready: 'text=Invite members',
       settle: 2500,
       clip: MEMBERS_CLIP,
+      callouts: [
+        // The Members card header (title + member count line). CSS, because a
+        // role locator can only reach the <h2>, and the step is the section,
+        // not the word. The sidebar "Members" link is outside MEMBERS_CLIP.
+        { step: 1, label: 'Open Members', side: 'below',
+          target: { css: 'div:has(> h2:text-is("Members"))' } },
+        { step: 2, label: 'Click Invite Members', side: 'left',
+          target: { role: 'button', name: 'Invite members', exact: true } },
+      ],
       // Staging personas are already *.example.com, but run anyway: the member
       // list is live data and a real address can appear at any time.
       // freshenDates MUST be false -- see the note on the modal shot.
@@ -63,6 +78,18 @@ module.exports = {
       // Dialog bounding box + 40px so the darkened page backdrop reads as page
       // context, per the framing standard.
       clip: { selector: '[role=dialog]', pad: 40 },
+      callouts: [
+        // The email input (its <label for> gives it the name "Emails").
+        { step: 3, label: 'Add Each Email', side: 'above',
+          target: { role: 'textbox', name: 'Emails', within: '[role=dialog]' } },
+        // The Role picker. Its accessible name is the SELECTED value ("Member"),
+        // which changes with state, so it is found by its "Role" label instead.
+        { step: 4, label: 'Choose A Role', side: 'above',
+          target: { css: 'div:has(> label:text-is("Role")) > button[aria-haspopup="listbox"]',
+                    within: '[role=dialog]' } },
+        { step: 5, label: 'Click Send Invite', side: 'above',
+          target: { role: 'button', name: 'Send invite', exact: true, within: '[role=dialog]' } },
+      ],
       // The member rows behind the dimmed backdrop fall inside the +40px pad,
       // so emails still have to be scrubbed here.
       //

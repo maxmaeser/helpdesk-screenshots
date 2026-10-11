@@ -24,8 +24,42 @@
 //   phonesBare:    false | 'context' | 'all',  // bare national-format numbers, see below
 //   names:         false | true | { initials: false },  // real personal names, see below
 //   avatars:       false | true | { srcPattern },  // profile PHOTOGRAPHS, see below
+//   ips:           false | true | { v4, v6 },      // IP addresses, see below
+//   browsers:      false | string,        // browser builds + user-agent strings, see below
 //   freshenDates:  false | 'auto' | 'auto-all' | [{ find, replace }],
 // }
+//
+// ips values (added 2026-10-11, audit N7):
+//   (omitted) / true    Replace every IPv4 address with 203.0.113.10 (RFC 5737)
+//                       and every IPv6 address with 2001:db8::1 (RFC 3849). The
+//                       Security tab's "Active sessions" list shows the capture
+//                       machine's public IP; until this pass existed it went
+//                       through sanitize untouched. Addresses already inside the
+//                       documentation ranges (192.0.2/24, 198.51.100/24,
+//                       203.0.113/24, 2001:db8::/32) are left alone, so the pass
+//                       is idempotent and counts.ips reports only real rewrites.
+//   { v4, v6 }          Same, with different replacement strings.
+//   false               Leave IP addresses alone.
+//   The IPv4 match needs four in-range octets with no digit, letter or dot glued
+//   to either end, so a version like "141.0.7390.37" or "v1.2.3.4" is not an IP.
+//   IPv6 needs either the full 8-group form or a "::" with at least two groups
+//   and at least one digit, so a clock time "07:40:57" never matches.
+//
+// browsers values (added 2026-10-11, audit N7):
+//   (omitted)           Replace a browser build ("Chrome Headless 141.0.7390.37",
+//                       "HeadlessChrome/141.0.0.0", "Firefox 128.0") with
+//                       "Chrome 131", and a full user-agent string
+//                       ("Mozilla/5.0 (...) ...") with the reduced Chrome 131
+//                       user agent. A headless build string both fingerprints the
+//                       capture machine and tells the reader a robot took the shot.
+//                       The OS word next to it ("· Linux") is not identifying
+//                       and is left alone. So is a bare major version with no
+//                       "Headless" ("Safari 17"): that shape is product copy
+//                       (a supported-browsers note), not a build.
+//   string              Replacement for the browser-build token instead of
+//                       "Chrome 131". Full user-agent strings still get the
+//                       reduced Chrome 131 user agent.
+//   false               Leave browser builds alone.
 //
 // names values:
 //   (omitted) / true    Mask every name on the ROSTER below - the real people who
@@ -1014,7 +1048,85 @@ function sanitize(config) {
     return n;
   }
 
-  const counts = { emails: 0, emailsSkipped: 0, phones: 0, phonesBare: 0, phonesBareSkipped: 0, names: 0, avatars: 0, dates: 0, datesSkipped: 0, custom: 0 };
+  // ---- IP addresses and browser builds (audit N7, 2026-10-11) ---------------
+  // The Settings > Profile > Security "Active sessions" card prints the capture
+  // machine's public IP and its browser build ("Chrome Headless 141.0.7390.37 ·
+  // Linux"). Neither was in scope before, so both survived sanitize.
+  const IPV4_OCTET = '(?:25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)';
+  const IPV4_BODY = `${IPV4_OCTET}(?:\\.${IPV4_OCTET}){3}`;
+  // No digit, letter, underscore or dot glued to either end. A trailing dot is
+  // allowed only when it ends a sentence (not followed by a digit). A product
+  // token's slash ("Chrome/131.0.0.0" - four in-range numbers) is not an IP
+  // either; a URL's "//1.2.3.4" still is.
+  const IPV4_RE = new RegExp(`(?<![\\w.])(?<![A-Za-z]\\/)${IPV4_BODY}(?![\\w]|\\.\\d)`, 'g');
+  const H16 = '[0-9A-Fa-f]{1,4}';
+  const IPV6_RE = new RegExp(
+    '(?<![\\w:.])(?:' +
+      `(?:${H16}:){7}${H16}` + // full form
+      `|(?:${H16}(?::${H16}){0,6})?::(?:${H16}(?::${H16}){0,6})?` + // "::" form
+    `)(?::${IPV4_BODY})?(?![\\w:]|\\.\\d)`,
+    'g'
+  );
+  const DOC_IPV4_RE = /^(?:192\.0\.2|198\.51\.100|203\.0\.113)\.\d{1,3}$/;
+  const DOC_IPV6_RE = /^2001:0?db8(?::|$)/i;
+  // A browser name glued to a version number, optionally with "Headless". The
+  // replacer only rewrites a DOTTED version ("141.0.7390.37") or a headless
+  // build; a bare major ("Safari 17") is product-copy shaped (a supported-
+  // browsers note) and identifies nobody, so it is left alone.
+  const BROWSER_BUILD_SRC = String.raw`(?<![A-Za-z])(?:Headless\s*)?(?:HeadlessChrome|Chromium|Chrome|Firefox|Safari|Edge|Edg|Opera|OPR|Brave|Vivaldi|SamsungBrowser)(?:\s+Headless)?(?:\s+|\/)v?\d+(?:\.\d+){0,3}(?!\w|\.\d)`;
+  // A whole user-agent string: "Mozilla/5.0 (" through the last product token.
+  const USER_AGENT_SRC = String.raw`Mozilla\/\d\.\d \([^)]*\)(?:\s+[A-Za-z]+\/[\w.]+(?:\s+\([^)]*\))?)*`;
+  // ONE alternation, so a scan that matches a whole user agent consumes it and
+  // the build tokens inside it ("Chrome/141.0.0.0 Safari/537.36") are not
+  // matched a second time.
+  const BROWSER_RE = new RegExp(`${USER_AGENT_SRC}|${BROWSER_BUILD_SRC}`, 'g');
+  const UA_REPLACEMENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36';
+
+  function maskIps(opts) {
+    const v4 = typeof opts.v4 === 'string' ? opts.v4 : '203.0.113.10';
+    const v6 = typeof opts.v6 === 'string' ? opts.v6 : '2001:db8::1';
+    let kept = 0;
+    // IPv6 first: an IPv4-mapped tail ("::ffff:192.0.2.1") belongs to the v6 match.
+    const n6 = replaceEverywhere(IPV6_RE, function (m) {
+      const groups = m.split(':').filter(Boolean);
+      // A "::" form needs two groups and a digit; "::1" and "dead::beef" are
+      // not worth masking and "::" alone is punctuation.
+      if (m.indexOf('::') !== -1 && (groups.length < 2 || !/\d/.test(m))) { kept++; return m; }
+      if (DOC_IPV6_RE.test(m)) { kept++; return m; }
+      return v6;
+    });
+    const n4 = replaceEverywhere(IPV4_RE, function (m) {
+      if (DOC_IPV4_RE.test(m)) { kept++; return m; }
+      return v4;
+    });
+    return n6 + n4 - kept;
+  }
+
+  function maskBrowsers(replacement) {
+    let kept = 0;
+    const n = replaceEverywhere(BROWSER_RE, function (m) {
+      if (/^Mozilla\//.test(m)) {
+        if (m === UA_REPLACEMENT) { kept++; return m; }
+        return UA_REPLACEMENT;
+      }
+      if (m === replacement || (!/\d\.\d/.test(m) && !/headless/i.test(m))) { kept++; return m; }
+      return replacement;
+    });
+    return n - kept;
+  }
+
+  const counts = { emails: 0, emailsSkipped: 0, phones: 0, phonesBare: 0, phonesBareSkipped: 0, ips: 0, browsers: 0, names: 0, avatars: 0, dates: 0, datesSkipped: 0, custom: 0 };
+
+  // Browser builds and IPs run BEFORE phones: a dotted IPv4 like
+  // "192.168.100.123" is a 12-digit run in the bare-phone band, and a build like
+  // "141.0.7390.37" is digits and dots too, so masking them first keeps the phone
+  // branches from claiming them as phone numbers.
+  if (config.browsers !== false) {
+    counts.browsers = maskBrowsers(typeof config.browsers === 'string' ? config.browsers : 'Chrome 131');
+  }
+  if (config.ips !== false) {
+    counts.ips = maskIps(typeof config.ips === 'object' && config.ips ? config.ips : {});
+  }
 
   if (config.emails !== false) {
     const pattern = typeof config.emails === 'string' ? config.emails : '{first}.{last}@example.com';

@@ -834,6 +834,110 @@ test('a split name cell cannot leave a real surname beside a synthetic first nam
     'the hybrid must not survive');
 });
 
+// ---- IP addresses and browser builds (audit N7, 2026-10-11) ----------------
+// Fixture F: Settings > Profile > Security, "Active sessions". The 2026-10-11
+// efficiency audit captured this card with the capture machine's public IP and
+// its headless browser build still in it after sanitize. The values below are
+// shaped like that capture (a real-looking public IPv4, a headless build), not
+// copied from it.
+const ACTIVE_SESSIONS = `
+  <section class="sessions">
+    <h3>Active sessions</h3>
+    <p>Where your account is signed in right now.</p>
+    <div class="session s1">
+      <p class="device">Chrome Headless 141.0.7390.37 &middot; Linux</p>
+      <p class="tag">This device</p>
+      <p class="where">84.17.46.122 &middot; Signed in 11/10/2026, 07:40:57</p>
+    </div>
+    <div class="session s2">
+      <p class="device">Firefox 128.0 &middot; macOS</p>
+      <p class="where">2a02:8109:9a40:1f00:5d2e:61ff:fe3c:4b11 &middot; Signed in 10/10/2026, 18:02:11</p>
+    </div>
+    <div class="session s3">
+      <p class="where">fe80::1c2b:3aff:fe4d:5e6f &middot; Signed in 09/10/2026, 09:15:00</p>
+    </div>
+    <input class="ua" value="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36" />
+  </section>`;
+
+test('an IPv4 address is replaced with the RFC 5737 documentation address', async (page) => {
+  await page.setContent(ACTIVE_SESSIONS);
+  const counts = await page.evaluate(sanitize, {});
+  const where = await page.locator('.s1 .where').innerText();
+  assert.ok(!where.includes('84.17.46.122'), `IPv4 survived: ${where}`);
+  assert.ok(where.startsWith('203.0.113.10 '), `IPv4 not replaced with 203.0.113.10: ${where}`);
+  assert.ok(where.includes('07:40:57'), `clock time was eaten: ${where}`);
+  assert.ok(counts.ips >= 1, `ips count: ${counts.ips}`);
+});
+
+test('full and compressed IPv6 addresses are replaced with 2001:db8::1', async (page) => {
+  await page.setContent(ACTIVE_SESSIONS);
+  const counts = await page.evaluate(sanitize, {});
+  const s2 = await page.locator('.s2 .where').innerText();
+  const s3 = await page.locator('.s3 .where').innerText();
+  assert.ok(s2.startsWith('2001:db8::1 '), `full IPv6 not replaced: ${s2}`);
+  assert.ok(s3.startsWith('2001:db8::1 '), `compressed IPv6 not replaced: ${s3}`);
+  assert.ok(s2.includes('18:02:11') && s3.includes('09:15:00'), 'clock times must survive');
+  assert.strictEqual(counts.ips, 3, `expected 1 IPv4 + 2 IPv6, got ${counts.ips}`);
+});
+
+test('a browser build and a user-agent string are replaced with Chrome 131', async (page) => {
+  await page.setContent(ACTIVE_SESSIONS);
+  const counts = await page.evaluate(sanitize, {});
+  const d1 = await page.locator('.s1 .device').innerText();
+  const d2 = await page.locator('.s2 .device').innerText();
+  const ua = await page.locator('.ua').inputValue();
+  assert.strictEqual(d1, 'Chrome 131 · Linux', `headless build survived: ${d1}`);
+  assert.strictEqual(d2, 'Chrome 131 · macOS', `dotted build survived: ${d2}`);
+  assert.ok(!/Headless|141\./.test(ua), `user agent survived: ${ua}`);
+  assert.ok(/Chrome\/131\.0\.0\.0/.test(ua), `user agent not replaced with the Chrome 131 UA: ${ua}`);
+  assert.strictEqual(counts.browsers, 3);
+});
+
+test('IP and browser masking is idempotent and counts only real rewrites', async (page) => {
+  await page.setContent(ACTIVE_SESSIONS);
+  await page.evaluate(sanitize, {});
+  const before = await page.locator('body').innerHTML();
+  const counts = await page.evaluate(sanitize, {});
+  assert.strictEqual(counts.ips, 0, `second pass rewrote IPs: ${counts.ips}`);
+  assert.strictEqual(counts.browsers, 0, `second pass rewrote builds: ${counts.browsers}`);
+  assert.strictEqual(await page.locator('body').innerHTML(), before);
+});
+
+test('version numbers, clock times and product copy are not IPs or builds', async (page) => {
+  await page.setContent(`
+    <p class="a">Release 1.24.3 shipped. Build 141.0.7390.37 is out.</p>
+    <p class="b">Meeting at 07:40:57, ratio 3:2, see std::vector.</p>
+    <p class="c">Works best in Safari 17 or Chrome 120.</p>
+    <p class="d">Order 1234567890 and version v1.2.3.4</p>`);
+  const counts = await page.evaluate(sanitize, {});
+  assert.strictEqual(await page.locator('.a').innerText(), 'Release 1.24.3 shipped. Build 141.0.7390.37 is out.');
+  assert.strictEqual(await page.locator('.b').innerText(), 'Meeting at 07:40:57, ratio 3:2, see std::vector.');
+  assert.strictEqual(await page.locator('.c').innerText(), 'Works best in Safari 17 or Chrome 120.');
+  assert.strictEqual(await page.locator('.d').innerText(), 'Order 1234567890 and version v1.2.3.4');
+  assert.strictEqual(counts.ips, 0);
+  assert.strictEqual(counts.browsers, 0);
+});
+
+test('an IP in a sentence and a phone-labelled row is not claimed as a phone', async (page) => {
+  await page.setContent(`<div class="row"><span>Phone</span> <span class="v">192.168.100.123</span></div>
+    <p class="s">Last login from 10.0.0.12.</p>
+    <p class="u">Webhook: http://84.17.46.122:8080/hook</p>`);
+  const counts = await page.evaluate(sanitize, {});
+  assert.strictEqual(await page.locator('.v').innerText(), '203.0.113.10');
+  assert.strictEqual(await page.locator('.s').innerText(), 'Last login from 203.0.113.10.');
+  assert.strictEqual(await page.locator('.u').innerText(), 'Webhook: http://203.0.113.10:8080/hook');
+  assert.strictEqual(counts.phonesBare, 0, 'the IP must not be counted as a phone');
+});
+
+test('ips: false and browsers: false disable the new passes', async (page) => {
+  await page.setContent(ACTIVE_SESSIONS);
+  const counts = await page.evaluate(sanitize, { ips: false, browsers: false });
+  const body = await page.locator('body').innerText();
+  assert.ok(body.includes('84.17.46.122') && body.includes('Chrome Headless 141.0.7390.37'));
+  assert.strictEqual(counts.ips, 0);
+  assert.strictEqual(counts.browsers, 0);
+});
+
 (async () => {
   const browser = await chromium.launch();
   const page = await browser.newPage();
