@@ -1,12 +1,22 @@
 {
-  "revision": 0,
+  "revision": 2,
   "shots": {
     "lite-guide-checklist.png": {
-      "status": "proposed",
+      "cursor": {
+        "pos": [
+          1253,
+          631
+        ],
+        "type": "arrow"
+      },
+      "status": "adjusted",
       "note": "",
-      "lastTouchedBy": "claude",
+      "lastTouchedBy": "max",
       "editing": false,
-      "rev": 0
+      "rev": 1,
+      "renderedRev": 1,
+      "updatedAt": 1791962454143,
+      "renderedAt": 1791962456390
     }
   }
 }
