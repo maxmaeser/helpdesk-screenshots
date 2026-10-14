@@ -1,10 +1,12 @@
-> **[VIDEO EMBED: Module 11 — Manuals]**
+> **[VIDEO EMBED: Module 11: Manuals]**
 
 Manuals is your operating reference: the brand's playbooks, SOPs, and standards. Learning is where you learn a new skill through sequenced courses. Manuals is where you look something up on the job. Two surfaces, two different jobs.
 
 ## Browsing and categories
 
-Manuals opens on tabs across the top: **Browse**, **My List**, **Recommended**, **Recently Viewed**, and **Recently Updated**. Browse is the library itself, and any manuals you've bookmarked surface first there in a "Pick up where you left off" row.
+Manuals opens on up to five tabs across the top: **Browse**, **My list**, **Recommended**, **Recently viewed**, and **Recently updated**. **My list** appears when you have bookmarks, and **Recommended** appears when your brand has recommendations.
+
+Browse is the library itself, and any manuals you've bookmarked surface first there in a "Pick up where you left off" row.
 
 ![Manuals home showing tabs for Browse, My List, Recommended, and more, with category filter pills](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/11-manuals/manuals-home.png)
 Below that sits a row of category pills, whatever categories your brand has set up. Pick one and the library filters down to it. There's also an **All categories** dropdown in the toolbar next to sort and the Grid/Cards view toggle, if you'd rather filter from there.

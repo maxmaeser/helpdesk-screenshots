@@ -71,4 +71,4 @@ Checking one or more states raises a bar at the bottom of the panel with **Set S
 
 ![Two states checked, raising the bar with Set Status and Assign FDD](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-the-compliance-page/compliance-bulk-bar.png)
 
-Setting compliance up for the first time is walked through in *[How to Set Up Compliance in Lite]*.
+Setting compliance up for the first time is walked through in *[How to Set Up Compliance in FranDev]*.

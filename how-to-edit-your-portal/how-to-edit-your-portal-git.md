@@ -27,7 +27,7 @@ Your portal is organized into **sections** (collapsible groups) containing **ste
 - **Visit Link**: Direct the applicant to an external URL
 - **Upload Documents**: Request a file upload from the applicant
 
-To add a step, click **Add Step** at the bottom of a section. Select the step type in **Step Action**, fill in the title and description, then configure the action-specific fields.
+To add a step, click **Add Step** at the bottom of a section. Select the step type in **Step Action\***, fill in the title and description, then configure the action-specific fields.
 
 ![The Step Action list open, showing Watch Video, Schedule Call, Sign a Document, Complete Form, View Slides, Visit Link, Upload Documents, and Slides (FSAI Studio)](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-edit-your-portal/portal-add-step-2026-03-13.png)
 

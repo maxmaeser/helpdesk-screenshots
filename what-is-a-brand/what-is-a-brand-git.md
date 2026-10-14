@@ -7,16 +7,16 @@ What's included depends on your organization's plan.
 Every brand, on any plan, has its own:
 
 - **Sales pipeline**: track and manage franchise applicants through your sales process.
-- **Applicant portal**: a dedicated portal where prospective franchisees learn about the brand, submit applications, and interact with your team.
+- **Applicant portal** or **Funnel**: the application experience depends on the brand. FranDev (Recruitment Funnel) brands use a funnel where prospective franchisees learn about the brand and apply.
 - **Library**: store brand-specific documents and files.
-- **Settings**: brand-level configuration for identity, appearance, scheduling, team access, and connections (domains, integrations, webhooks).
+- **Settings**: brand-level configuration. Full OS brands have identity, appearance, scheduling, team access, and connections settings. FranDev brands have a shorter settings surface.
 
-Organizations on the Full plan also get:
+Organizations on Full OS also get:
 
 - **Marketing audiences**: build and segment marketing lists, run automated marketing workflows.
 - **Operations**: manage franchisee audiences, locations, vendors, catalog items, manuals, and courses.
 
-Organizations on the Lite plan are focused on franchise development. They don't include Marketing audiences or Operations, since those modules manage franchisees after they've already opened.
+Organizations on FranDev are focused on franchise development. They don't include Marketing audiences or Operations, since those modules manage franchisees after they've already opened.
 
 If you're not sure which plan your organization is on, ask your organization admin.
 
@@ -52,11 +52,11 @@ These details appear across the applicant portal and in communications sent on b
 You can open settings from any screen. Click your profile picture at the bottom of the sidebar, then choose **Settings**.
 
 ![Side by side: the profile menu open at the bottom of the sidebar with Settings highlighted, and the settings screen it opens on, with Brand > Profile selected](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/what-is-a-brand/where-to-find-settings.png)
-Brand configuration lives under **Brand** in your settings, split into five pages: **Profile**, **Appearance**, **Scheduling**, **Team & Access**, and **Connections**.
+For Full OS brands, configuration lives under **Brand** in your settings, split into five pages: **Profile**, **Appearance**, **Scheduling**, **Team & Access**, and **Connections**.
 
-**Profile** holds your brand's identity fields (name, industry, contact email, phone, website, address). Below that sit **Brand voice**, which teaches the AI how to write emails on your behalf, and **Associated organizations**, the organizations this brand is shared with.
+**Profile** holds your brand's identity fields (name, industry, contact email, phone, website, address). Below that sit **Brand voice**, where you manage named voices and choose the default used when writing on your behalf, and **Associated organizations**, the organizations this brand is shared with.
 
-**Connections** is where domain sending, campaign attribution tracking, app integrations, and webhooks live.
+**Connections** is where **Sending identities**, campaign attribution tracking, **Ad tracking**, app integrations, **Email Importing**, and webhooks live.
 
-![Brand settings nav showing Profile, Appearance, Scheduling, Team & Access, and Connections, with the Connections page open showing Sending identities, Campaign attribution, Integrations, and Webhooks cards](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/what-is-a-brand/brand-settings-connections.png)
-Organizations on the Lite plan see a shorter Brand nav: only **Profile** and **Appearance**. Lite's Profile page swaps **Associated organizations** for **Campaign attribution**, since Lite brands don't share across organizations the way Full plan brands can.
+![Brand settings nav showing Profile, Appearance, Scheduling, Team & Access, and Connections, with the Connections page open showing Sending identities, Campaign attribution, Integrations, and Webhooks cards](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/what-is-a-brand/brand-settings-connections-r2026-10.png)
+Organizations on FranDev see a shorter Brand nav: only **Profile** and **Appearance**. FranDev's Profile page includes **Campaign attribution** and **Ad tracking** instead of **Associated organizations**, since FranDev brands don't share across organizations the way Full OS brands can. FranDev brands manage sending domains from **Emails**.

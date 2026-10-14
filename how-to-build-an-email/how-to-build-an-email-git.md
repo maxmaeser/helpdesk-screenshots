@@ -1,20 +1,21 @@
 The email builder is a visual editor where you compose email content, set subject lines, and preview how your emails look before sending. Every email template you create can be reused across campaigns and workflows.
 
+![How to Build an Email walkthrough](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-an-email/how-to-build-an-email-walkthrough.gif)
+
 ### Opening the Email Builder
 
-1. Navigate to the **Workflows** section under Marketing, Sales, or Operations.
-2. Switch to the **Content** tab.
-3. Click on an existing email template to edit it, or create a new one.
+1. Navigate to **Content** under Marketing, Sales, or Operations.
+2. Click on an existing email template to edit it, or create a new one.
 
-![Content tab under Marketing Workflows showing the template list](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-build-an-email/workflows-content-tab.png)
+![Content tab under Marketing Workflows showing the template list](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-an-email/workflows-content-tab-r2026-10.png)
 
 The editor opens in a full-screen view with the editing canvas on the left and a settings sidebar on the right.
 
-![Email builder editor open, showing the canvas and the sidebar](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-build-an-email/email-builder-overview.png)
+![Email builder editor open, showing the canvas and the sidebar](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-an-email/email-builder-overview-r2026-10.png)
 
-### Using the Blocks Tab
+### Using the Blocks Tool
 
-The sidebar on the right has three tabs: **Blocks**, **Theme**, and **Details**. The **Blocks** tab is where you drag and drop elements onto the canvas.
+Use the **Blocks**, **Theme**, and **Details** buttons in the toolbar to open their panels on the right. The **Blocks** panel is where you drag and drop elements onto the canvas.
 
 Blocks come in two groups, and the group tells you what kind of thing you are adding.
 
@@ -65,7 +66,7 @@ The subject line sits in its own row above the canvas, labeled **Subject:**. It 
 
 To its right is a counter reading your length over 72, the recommended limit. Go past 72 and the number turns orange. Nothing stops you sending a longer subject, but some email clients will truncate it.
 
-![Subject line field with a merge tag chip and the character counter reading 39/72](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-build-an-email/email-builder-subject-line.png)
+![Subject line field with a merge tag chip and the character counter reading 39/72](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-an-email/email-builder-subject-line-r2026-10.png)
 
 ### Adding Images
 
@@ -96,22 +97,22 @@ Drag the handles on the image's corners to resize it. With the aspect ratio lock
 
 The sidebar includes theme options for styling your email. You can adjust colors, fonts, and layout settings to match your brand identity. If your portal has a primary brand color configured, it appears as a selectable option in the editor.
 
-![Theme tab open with Typography and Body font controls expanded](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-build-an-email/email-builder-theme.png)
+![Theme tab open with Typography and Body font controls expanded](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-an-email/email-builder-theme-r2026-10.png)
 
 ### Previewing Your Email
 
-Next to the template name in the top bar is a control with **Edit** and **Preview** on it, plus **Performance** once the template has been saved. Switch it to **Preview** to see the email rendered.
+Click **Preview** in the toolbar to see the email rendered. **Performance** is a separate toolbar action available once the template has been saved.
 
 A second toggle appears beside it while you are in Preview, with two views:
 
 - **Desktop**: the email at full width, as a desktop client shows it
 - **Mobile**: the same email in a narrower column
 
-![Preview mode showing the Desktop view](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-build-an-email/email-builder-preview-desktop.png)
+![Preview mode showing the Desktop view](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-an-email/email-builder-preview-desktop-r2026-10.png)
 
-![Preview mode showing the Mobile view](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-build-an-email/email-builder-preview-mobile.png)
+![Preview mode showing the Mobile view](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-an-email/email-builder-preview-mobile-r2026-10.png)
 
-Switch the control back to **Edit** to keep working.
+Click **Edit** to keep working.
 
 ### Saving Your Work
 
@@ -119,4 +120,4 @@ Switch the control back to **Edit** to keep working.
 - Use the dropdown arrow next to the button if you need to exit without saving.
 - The editor shows a **Last saved at** timestamp so you always know when your latest changes were preserved.
 
-![Save and Exit dropdown open, showing Exit without saving](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-build-an-email/email-builder-save-dropdown.png)
+![Save and Exit dropdown open, showing Exit without saving](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-an-email/email-builder-save-dropdown-r2026-10.png)

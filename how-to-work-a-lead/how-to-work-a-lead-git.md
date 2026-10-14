@@ -73,6 +73,14 @@ When an FDD goes out for signature, the **FDD Sent** entry on the timeline carri
 
 ![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-work-a-lead/lead-activity.png)
 
+The **Activity** timeline also records a contact entering a workflow, reaching its goal, completing it, stopping early, or failing. These events sit alongside the contact's email history.
+
+For a signed NDA, click the document chip on the timeline to open the signed copy. The chip becomes clickable once the signed file is available.
+
+![Lead activity timeline with a workflow event and a signed NDA document chip](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-work-a-lead/lead-workflow-nda-activity.png)
+
+This opens the document viewer without leaving the lead's activity history.
+
 ### Reviewing assets
 
 The **Assets** tab holds the documents attached to this lead, such as a signed FDD.
@@ -96,6 +104,18 @@ For a full walkthrough of deals, see *[About Deals]*.
 ![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-work-a-lead/lead-deal-tab-empty.png)
 
 ![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-work-a-lead/lead-deal-tab-overview.png)
+
+### Tasks and activity for prospects
+
+For a prospect who has not become a lead yet, go to **Marketing → Audiences** and click their row. The prospect panel has **Tasks** and **Activity** tabs too.
+
+![Prospect panel Tasks tab](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-work-a-lead/prospect-panel-tasks.png)
+
+Tasks here belong to the prospect, so you can track follow-up before conversion.
+
+![Prospect panel Activity tab](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-work-a-lead/prospect-panel-activity.png)
+
+Activity shows that prospect's history.
 
 ### Quick actions
 

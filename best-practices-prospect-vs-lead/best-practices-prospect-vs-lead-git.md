@@ -50,6 +50,18 @@ When a prospect is converted (either automatically or manually):
 
 ![Selected prospects with the Convert action open in the bulk toolbar](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/best-practices-prospect-vs-lead/convert-action-dropdown-v2.png)
 
+### Delete prospects
+
+Deleting prospects is permanent. Check your selection before confirming.
+
+1. Open **Audiences** under **Marketing** and select the prospects using their row checkboxes.
+2. Click **Delete** with the selected count, then review the confirmation and click **Yes, delete**.
+
+![Selected prospects and their bulk delete action](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/best-practices-prospect-vs-lead/marketing-prospects-bulk-delete-selected.png)
+The table's select-all control changes the action to **Delete All**. That applies to prospects matching your current filters and search, so check that scope before confirming.
+
+![Confirmation dialog before deleting selected prospects](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/best-practices-prospect-vs-lead/marketing-prospects-bulk-delete-confirm.png)
+
 ### What Happens When a Prospect Signs Up Through the Portal
 
 If someone already exists as a prospect in your marketing table and then signs up through your applicant portal using the same email address, the platform handles the two-step process the same way:

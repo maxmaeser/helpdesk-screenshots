@@ -37,6 +37,19 @@ Settings is grouped into **Account** (your profile, notifications, and calendar)
 
 ![Settings page showing the Account, Organization, and Brand groups in the left navigation, with the Profile page open on the right](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/getting-started-with-franchise-systems-ai/settings-scopes.png)
 
+### Send feedback
+
+Use **Send Feedback** to report a bug, share praise, or send another comment about the platform.
+
+1. From **Home**, click your profile picture at the bottom of the sidebar and select **Send Feedback**.
+2. Choose **Bug**, **Praise**, or **Other**, write your message, and click **Submit**.
+
+![Profile menu with Send Feedback](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/getting-started-with-franchise-systems-ai/profile-menu-send-feedback-menu.png)
+You can include an image or video with **Add files**, or capture the current page with **Screenshot**. Review what you include before submitting.
+
+![Feedback form with a category, message, and attachment controls](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/getting-started-with-franchise-systems-ai/profile-menu-send-feedback-form.png)
+A thank-you message confirms your feedback was sent.
+
 ### Your first steps
 
 When you sign up, a guided setup walks you through the essentials: setting up your profile, creating your organization, adding your first brand, inviting team members, and confirming your subscription. You also finalize your brand identity (logo, colors, description, and social links) along the way.

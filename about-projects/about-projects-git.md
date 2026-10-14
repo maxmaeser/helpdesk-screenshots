@@ -44,6 +44,39 @@ Click the paperclip icon to switch to the **Artifacts** view, which shows files 
 
 Filter and sort the task list from the toolbar, and toggle **Show completed tasks** to include finished tasks.
 
+### Saving and importing templates
+
+With project write access, open the project's top-right menu and choose **Save as Template**. Enter a **Template Name**, optionally add a **Description**, and click **Save Template**.
+
+![Project menu with Save as Template](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-projects/project-save-template-menu.png)
+The saved structure is available when you create another project from a template.
+
+![Save as Template dialog with name, description, and Save Template](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-projects/project-save-template-form.png)
+JSON import is restricted to platform administrators. If your account has that access, the **Create Project** chooser includes **Import template JSON**. Choose a project template JSON file and click **Import**.
+
+![Project template JSON import dialog](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-projects/project-import-template.png)
+The import creates a new reusable template for the brand.
+
+![Template launch picker with its template actions menu](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-projects/project-template-actions.png)
+Brand admins can remove a brand-owned template from the launch picker through its three-dot menu and **Delete template**. Review the confirmation before choosing **Yes, delete**.
+
+![Template deletion confirmation in the launch picker](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-projects/project-delete-template.png)
+Deleting a template also removes draft projects still being set up from it. Projects already launched from it are unaffected, and shared default templates cannot be deleted here.
+
+### Editing phases and several tasks at once
+
+![Phase actions menu with Rename phase and Delete phase](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-projects/project-phase-actions.png)
+A phase's three-dot menu offers **Rename phase** and **Delete phase**. Renaming opens a **Phase name** field and a **Save** button.
+
+![Rename phase dialog](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-projects/project-rename-phase.png)
+When deleting a phase that contains tasks, choose **Move tasks to Unassigned** to keep them, or choose the option to delete the phase and its tasks, then confirm with **Delete**.
+
+![Delete phase dialog with the keep-tasks and delete-tasks choices](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-projects/project-delete-phase.png)
+Select task rows with their checkboxes to show the bulk toolbar. Depending on your write access, it offers **Move to phase**, **Update status**, **Assign to**, **Visible to assigned franchisee**, **Internal eyes only**, and removal of the selected tasks.
+
+![Selected project tasks and their bulk actions](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-projects/project-task-bulk.png)
+Moving tasks changes their phase; the visibility actions control whether the assigned franchisee can see them.
+
 ### Where project tasks show up elsewhere
 
 Tasks that belong to a project also appear in your personal task list on the Home page. See *[About the Home Page]* for how the Tasks tab works.

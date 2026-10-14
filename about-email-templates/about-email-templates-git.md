@@ -2,6 +2,8 @@ Email templates are the reusable emails you send from Franchise Systems Ai (FS A
 
 Go to **Studio → Email Templates** to see and manage every template in your brand.
 
+In FranDev (Recruitment Funnel), open **Emails** instead. On Full OS, **Studio → Email Templates** appears on accounts with portal notifications enabled.
+
 ### The template list
 
 The page shows a **Total Templates** count, then a table with these columns: **Name**, **Type**, **Department**, **Emails Sent**, **Created By**, **Date Added**, and **Last Updated**.
@@ -9,6 +11,7 @@ The page shows a **Total Templates** count, then a table with these columns: **N
 Every template is one of two types, and each opens into a different editor.
 
 ![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-email-templates/email-templates-list.png)
+
 ### Portal Notification templates
 
 Portal Notification templates are system-authored emails FS Ai sends automatically, like new chat messages or deal updates.
@@ -26,6 +29,15 @@ Opening one shows an inbox-style preview of the email. You can edit:
 Click **Save** to apply your changes.
 
 ![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-email-templates/email-template-portal.png)
+
+### The FDD disclosure email
+
+Open **FDD Signature Request** to edit the email that asks a lead to review and sign their FDD. Alongside the usual subject, title, description, and button fields, it has a **Disclosure Notice** section.
+
+![FDD Signature Request editor showing Disclosure Notice and Save](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-email-templates/fdd-email-disclosure-notice.png)
+
+Edit **Notice Heading** and **Notice Paragraphs** there, separating paragraphs with a blank line. **Reset to default** restores the default notice; click **Save** to save your changes.
+
 ### Campaign Email templates
 
 Campaign Email templates are the emails you write and send yourself, as a single deploy or as part of a Workflow.
@@ -39,6 +51,15 @@ Opening one puts you in the campaign editor, with:
 The editor gives you three actions: **Save and Exit**, **Preview**, and **Deploy**.
 
 ![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-email-templates/email-campaign-editor.png)
+
+### Links for your brand's applicant surface
+
+The `funnel_url` and `portal_base_url` merge fields resolve to your brand's Recruitment Funnel or Applicant Portal address, depending on which surface it uses. Your brand needs that address configured for the fields to produce a destination.
+
+For a Recruitment Funnel brand, campaign email unsubscribe links open a shared unsubscribe page. An Applicant Portal brand uses its portal's unsubscribe page, with the shared page as a fallback if no portal domain is configured.
+
+Tracking short links use the same applicant-surface address, followed by `/t/` and the link's slug. Keeping that tracking URL in a template preserves the shared redirect to the link's destination.
+
 ### Warning banners
 
 Two warning banners can appear at the top of the Email Templates page, depending on your brand's setup:

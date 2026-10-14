@@ -8,7 +8,7 @@ Prospects live in the **Marketing → Audiences** table. You can add prospects b
 
 Each prospect record stores contact details (name, email, phone), location information, custom field values, and UTM tracking data. The platform can verify prospect email addresses to help you maintain list quality before sending campaigns.
 
-![Marketing Audiences table showing the Prospects tab with contact details](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/general-definitions/definitions-audiences-table.png)
+![Marketing Audiences table showing the Prospects tab with contact details](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/general-definitions/definitions-audiences-table-r2026-10.png)
 
 ### Leads
 
@@ -16,7 +16,7 @@ A lead is someone who has entered your sales pipeline. The primary path for crea
 
 Leads appear in the **Sales → Pipeline** table. They carry more data than prospects, including application progress, assigned sales rep, lead status, completed onboarding steps, and deal information.
 
-![Sales Pipeline table showing the Leads tab with status, progress, and assignment](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/general-definitions/definitions-pipeline-table-v2.png)
+![Sales Pipeline table showing the Leads tab with status, progress, and assignment](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/general-definitions/definitions-pipeline-table-v2-r2026-10.png)
 
 ### Tags
 
@@ -38,6 +38,6 @@ You find workflows on the **Workflows** page within Marketing, Sales, or Operati
 
 A workflow you enroll a segment into, rather than one that fires by itself, is badged **Campaign** in the **Kind** column. Large sends are paced by the platform's domain protection system, based on each sending domain's health, to protect your deliverability.
 
-The **Content** tab on the same Workflows page is where you create and manage the email templates that your workflows send.
+The **Content** page under Marketing, Sales, or Operations is where you create and manage the email templates that your workflows send.
 
 Sequences and automations were two separate objects until 2026-08-26. Both are workflows now.

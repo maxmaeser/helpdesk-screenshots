@@ -4,48 +4,52 @@ Getting them there starts with an invite you send from **Operations → Audience
 
 > **Prerequisite:** You need Operations write access on the brand to send invites.
 
+![How to Invite a Franchisee to Their Portal walkthrough](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-invite-a-franchisee-to-their-portal/how-to-invite-a-franchisee-to-their-portal-walkthrough.gif)
+
 ### Inviting a franchisee who's already in the system
 
 If you've already added someone as a franchisee, whether through a deal conversion or an earlier import, inviting them is a single click.
 
-![Members tab at Operations Audiences, showing a franchisee list with the cursor on a franchisee's name](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-invite-a-franchisee-to-their-portal/audiences-members-nav.png)
+![Members tab at Operations Audiences, showing a franchisee list with the cursor on a franchisee's name](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-invite-a-franchisee-to-their-portal/audiences-members-nav-r2026-10.png)
 
 1. Go to **Operations → Audiences** and select the **Members** tab.
 2. Click the franchisee's name to open their detail panel.
 3. In the banner under their name, click **Send Invitation**.
 
-![Franchisee detail panel banner showing the Not Invited status, with Copy Invite Link and Send Invitation buttons](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-invite-a-franchisee-to-their-portal/franchisee-banner-not-invited.png)
-That banner also shows their current status: **Not Invited**, **Pending**, **Expired**, or **Active**. If you'd rather send the link yourself instead of triggering an email, click **Copy Invite Link** in the same banner.
+![Franchisee detail panel banner showing the Not Invited status, with Copy Invite Link and Send Invitation buttons](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-invite-a-franchisee-to-their-portal/franchisee-banner-not-invited.png)
 
-![Franchisee detail panel banner showing the Active status once the franchisee already has an account](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-invite-a-franchisee-to-their-portal/franchisee-banner-portal-access.png)
+That banner also shows their current status: **Not Invited**, **Pending**, **Expired**, or **Active**. If you'd rather send the link yourself instead of triggering an email, click **Copy invite link** in the same banner.
+
+![Franchisee detail panel banner showing the Active status once the franchisee already has an account](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-invite-a-franchisee-to-their-portal/franchisee-banner-portal-access.png)
 
 ### Adding a new franchisee and inviting them
 
 If the person isn't in FS Ai yet, you can create their record and invite them in the same flow.
 
-![Entities tab at Operations Audiences, showing the entity list with the cursor on an entity name](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-invite-a-franchisee-to-their-portal/audiences-entities-nav.png)
+![Entities tab at Operations Audiences, showing the entity list with the cursor on an entity name](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-invite-a-franchisee-to-their-portal/audiences-entities-nav-r2026-10.png)
 
 1. Go to **Operations → Audiences** and select the **Entities** tab.
 2. Click into the entity for their location.
-3. Select the **Members** tab, then click **+ Add Franchisee**.
+3. Select the **Members** tab, then click **Add Franchisee**.
 
-![Entity detail panel Members tab with no members yet and the Add Franchisee button highlighted](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-invite-a-franchisee-to-their-portal/entity-members-add-franchisee.png)
+![Entity detail panel Members tab with no members yet and the Add Franchisee button highlighted](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-invite-a-franchisee-to-their-portal/entity-members-add-franchisee-r2026-10.png)
 
 4. Click **Add new franchisee** and enter their **First Name**, **Last Name**, and **Email**. **Phone** is optional.
 
-![Add new franchisee fields filled in with First Name, Last Name, and Email](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-invite-a-franchisee-to-their-portal/add-new-franchisee-fields.png)
+![Add new franchisee fields filled in with First Name, Last Name, and Email](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-invite-a-franchisee-to-their-portal/add-new-franchisee-fields.png)
 
-5. Click **Continue**, then set their **Access Level**, **Ownership Stake**, and **Role**.
-6. Leave **Send Portal Invites Immediately** switched on, then click **Add Member**.
+5. Click **Continue**, then set their **Access**, **Ownership Stake**, and **Role**. Under **Access**, choose **Admin** to manage the team, **Billing admin** to manage location subscriptions and payment methods, both, or neither.
+6. Leave **Send portal invites immediately** switched on, then click **Add Member**.
 
-![Set each member's details step with Access Level, Ownership Stake, Role, and the Send Portal Invites Immediately toggle on](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-invite-a-franchisee-to-their-portal/add-member-access-role.png)
+![Set each member's details step with Access Level, Ownership Stake, Role, and the Send Portal Invites Immediately toggle on](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-invite-a-franchisee-to-their-portal/add-member-access-role-r2026-10.png)
+
 The toggle is on by default, so the invite goes out the moment you add them. You can add more than one person to the roster before submitting, and each one gets their own invite.
 
 ### Inviting everyone at once
 
-If you have a batch of franchisees who were imported but never invited, open the **Members** tab at **Operations → Audiences**, click the **Actions** menu, and choose **Invite All Uninvited**. This sends the portal invite to every franchisee still marked **Not Invited**, brand-wide.
+If you have a batch of franchisees who were imported but never invited, open the **Members** tab at **Operations → Audiences**, click the **Actions** menu, and choose **Invite all Uninvited**. This sends the portal invite to every franchisee still marked **Not Invited**, brand-wide.
 
-![Actions menu open on the Members tab, showing the Invite All Uninvited option](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-invite-a-franchisee-to-their-portal/actions-invite-all-uninvited.png)
+![Actions menu open on the Members tab, showing the Invite All Uninvited option](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-invite-a-franchisee-to-their-portal/actions-invite-all-uninvited-r2026-10.png)
 
 ### What the franchisee sees
 
@@ -55,4 +59,4 @@ From there they set a name, phone number, and password, verify their email, and 
 
 ### Not the same as dashboard team invites
 
-This is a different invite than the one you send teammates on your own brand dashboard. For that flow, see *[How to Invite Users]*.
+This is a different invite than the one you send teammates on your own brand dashboard. For that flow, see [How to Invite Users](/helpdesk/how-to-invite-users).

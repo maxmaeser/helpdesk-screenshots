@@ -31,6 +31,17 @@ Publishing is staged into your draft. It only takes effect once you select **Sav
 Once live, the pill reads **Published** with a green dot, and the same popover lets you **Unpublish** if you need to take the funnel down.
 
 ![Publish popover showing a live funnel](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-publish-your-funnel/funnel-publish-popover.png)
+
+### Share your funnel link from Leads
+
+You can copy your public funnel link directly from the funnel leads table.
+
+1. Open **Pipeline** under **Sales**, or **Leads** in FranDev (Recruitment Funnel). Open **Actions** and select **Share Funnel Link**.
+2. Paste the copied link into the message or page where you want to share it.
+
+![Leads Actions menu with Share Funnel Link](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-publish-your-funnel/sales-leads-share-funnel-link-menu.png)
+This action appears when the selected brand uses the Recruitment Funnel and has a funnel URL. It copies the link to your clipboard; it does not publish the funnel or send a message.
+
 ### If your funnel needs a payment method first
 
 Some brands need an active payment method on the organization before their funnel can go live. Everything else in the dashboard stays free to set up either way.

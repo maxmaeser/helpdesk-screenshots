@@ -1,12 +1,12 @@
-The **Workflows** page in Franchise Systems Ai (FS Ai) holds two things that are easy to mix up: the workflows that do the sending, and the email content they send.
+The **Workflows** and **Content** pages in Franchise Systems Ai (FS Ai) hold two things that are easy to mix up: the workflows that do the sending, and the email content they send.
 
 Go to **Marketing → Workflows**, **Sales → Workflows**, or **Operations → Workflows**.
 
 Each department keeps its own workflows and its own templates. Nothing is shared between them.
 
-The page has two tabs: **Workflows** and **Content**.
+Each department has separate **Workflows** and **Content** pages.
 
-### What each tab is for
+### What each page is for
 
 - **Workflows**: build a workflow, publish it, and enroll an audience into it. See *[About Workflows]*.
 - **Content**: the department's email templates, each row showing how that email performed. See *[How to Build an Email]* and *[About Email Performance]*.
@@ -17,7 +17,7 @@ Sequences and automations used to be two separate tabs here, with Runs and Analy
 
 Every Send Email step asks you to pick a template that already exists. Write the email before you build the thing that sends it.
 
-1. Open the **Content** tab.
+1. Open **Marketing → Content**, **Sales → Content**, or **Operations → Content** for the department you are working in.
 2. Click **Create** and choose **Email**.
 3. Build the email and give it a subject line.
 
@@ -29,7 +29,7 @@ The same template can be used by any number of workflows, so you write it once a
 
 ### Then build the workflow
 
-Click **+ Create Workflow** on the **Workflows** tab and pick a path: **Create from Template**, **Campaign Builder**, or **Create from Scratch**.
+Click **Create Workflow** on the **Workflows** page and pick a path: **Create from Template**, **Campaign Builder**, or **Create from Scratch**.
 
 Set the trigger, add the steps, set a goal, then switch the workflow from **Draft** to **Published**. It stays a draft until you do.
 

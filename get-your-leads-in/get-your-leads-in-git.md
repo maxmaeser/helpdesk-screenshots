@@ -1,8 +1,8 @@
 This is the stage where your account stops being empty and starts holding real people.
 
-![get-your-leads-in opener](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/get-your-leads-in/get-your-leads-in-opener-v4.png)
+![get-your-leads-in opener](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/get-your-leads-in/get-your-leads-in-opener-v4.png)
 
-![get-your-leads-in overview](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/get-your-leads-in/get-your-leads-in-overview.png)
+![get-your-leads-in overview](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/get-your-leads-in/get-your-leads-in-overview-r2026-10.png)
 
 You have your team and brand set up, and now you bring in the contacts you already have and get them organized so the rest of the funnel has something to work with.
 
@@ -22,7 +22,7 @@ Everything below starts at **Marketing → Audiences**, which opens on the **Pro
 
 6. *[Prospect to Lead Flow]*: see how someone moves from a marketing prospect to a working sales lead, automatically or by hand.
 
-> **Importing into your prospect list is quiet.** No sequences fire, nobody gets auto-assigned to a rep, and imported contacts sit in your marketing audience until you act.
+> Importing into your prospect list does not enroll those contacts in a campaign. Review any configured workflows that may respond to changes to those contacts.
 
 > **Importing straight into sales leads works differently.** Nobody gets auto-assigned there either, but those contacts become real leads right away, and any workflow that triggers on a new lead runs for them too.
 

@@ -1,14 +1,14 @@
-The **Content** tab of the Workflows page is where Franchise Systems Ai (FS Ai) shows how your email is performing: what went out, how much of it was delivered, and what bounced.
+The **Content** page is where Franchise Systems Ai (FS Ai) shows how your email is performing: what went out, how much of it was delivered, and what bounced.
 
-Go to **Marketing → Workflows**, **Sales → Workflows**, or **Operations → Workflows**, then select the **Content** tab.
+Go to **Marketing → Content**, **Sales → Content**, or **Operations → Content**.
 
 Each department keeps its own templates and its own numbers. What you see here covers only the email that department sent.
 
-> **Note:** The Analytics tab on this page, and the Emails tab on **Sales → Analytics**, were both retired. Their numbers live here now.
+> **Note:** The former Analytics tab on Workflows, and the Emails tab on **Sales → Analytics**, were both retired. Their numbers live here now.
 
 ### The summary tiles
 
-Three tiles sit at the top of the tab:
+Three tiles sit at the top of the page:
 
 - **Total Audience**: the number of people in scope for this department's email. Prospects and applicants for Marketing and Sales, franchisees for Operations.
 - **Templates**: how many email templates exist in the department.
@@ -16,7 +16,7 @@ Three tiles sit at the top of the tab:
 
 The tiles update as new email goes out from the department.
 
-![Workflow Analytics tab showing the summary tiles and template performance table](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-workflow-analytics/workflows-analytics-overview.png)
+![Workflow Analytics tab showing the summary tiles and template performance table](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-workflow-analytics/workflows-analytics-overview-r2026-10.png)
 
 ### The template table
 
@@ -30,7 +30,7 @@ Select a template to open it in the editor. See *[How to Build an Email]*.
 
 ### All email events
 
-The tab has a second view: a log of every send event in the department, one row per event, showing the recipient, the event type, and the template.
+The page has a second view: a log of every send event in the department, one row per event, showing the recipient, the event type, and the template.
 
 Search it by recipient or template name, or filter by event type. Select **Content** at the top left to go back to the template table.
 
@@ -42,7 +42,7 @@ A brand new template shows zeros across the board until its first send goes out.
 
 ### Before you can send at all
 
-If your brand has no name and physical address on file, the tab shows a **Missing required brand information** banner and nothing sends. A brand name and a physical address are required for CAN-SPAM compliance. The banner links straight to your Brand Workspace Settings.
+If your brand has no name and physical address on file, the page shows a **Missing required brand information** banner and nothing sends. A brand name and a physical address are required for CAN-SPAM compliance. The banner links straight to your Brand Workspace Settings.
 
 Two more things lower the number delivered: contacts who have unsubscribed are dropped at send time, and an address that has not been verified is held back. See *[About Lead Email Verification]*.
 

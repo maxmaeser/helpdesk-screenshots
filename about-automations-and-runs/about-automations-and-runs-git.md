@@ -46,10 +46,20 @@ It covers how the runs ended (Completed, Still running, Stopped early, Failed), 
 
 ![The Performance view: contacts enrolled, the email stages, and contacts by outcome](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-automations-and-runs/workflow-performance.png)
 
-A workflow with no goal set reports no goal rate. Set the goal on the **Goal** card in the Build view first. See *[About Workflows]*.
+A workflow with no goal set reports no goal rate. Set the goal on the **Goal** card in the Build view first. See [About Workflows](/helpdesk/about-sequences-and-workflows).
+
+### Choosing a custom date range
+
+In **Performance**, choose **Custom range** from the period selector, then set **From** and **To** to the dates you want to review.
+
+![Workflow Performance report with Custom range, From, and To](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-automations-and-runs/workflow-report-custom-range.png)
+The **Workflows** list has its own **Custom range** option with two date inputs for the start and end dates. It updates the list's run and goal figures for that window.
+
+![Workflows list with a custom start and end date](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-automations-and-runs/workflow-list-custom-range.png)
+If the end date is before the start date, a validation message appears and the last valid range stays applied until you correct the dates.
 
 ### Where the old tabs went
 
 Sequences, Automations, Runs and Analytics were four separate tabs on the Workflows page until 2026-08-26. They are gone.
 
-The page has two tabs now, **Workflows** and **Content**. Run history and per-workflow numbers moved into the builder, as the two views above.
+**Workflows** and **Content** are separate sidebar pages under Sales, Marketing, and Operations. Run history and per-workflow numbers moved into the builder, as the two views above.

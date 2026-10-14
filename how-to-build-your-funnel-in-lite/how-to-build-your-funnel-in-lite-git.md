@@ -1,4 +1,4 @@
-If your brand runs on Franchise Systems Ai (FS Ai) Lite, your **Getting Started** checklist includes three items about your funnel: choosing a template, setting your qualification rule, and matching it to your brand.
+If your brand runs on FranDev (Recruitment Funnel), your **Getting Started** checklist includes three items about your funnel: choosing a template, setting your qualification rule, and matching it to your brand.
 
 All three open the same place, your funnel builder. This article walks through each one.
 
@@ -7,7 +7,7 @@ All three open the same place, your funnel builder. This article walks through e
 ![Getting Started checklist, Choose your funnel template item](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-your-funnel-in-lite/lite-getting-started-required.png)
 ### Choose your funnel template
 
-Open your funnel builder at **Studio → Funnel** (just **Funnel** in the sidebar if your organization is all Lite), then open the **Workflows** panel.
+Open your funnel builder at **Studio → Funnel** (just **Funnel** in the sidebar if your organization is all FranDev), then open the **Workflows** panel.
 
 If you haven't set anything up yet, you'll see **No workflows yet**. Select **Apply a setup template**.
 
@@ -25,7 +25,7 @@ Click **Preview** on any template to see its steps before committing. When you'v
 ![Funnel Templates modal showing Starter, Complete, and Advanced cards](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-build-your-funnel-in-lite/lite-funnel-templates-modal.png)
 ### Set your qualification rule
 
-The **Logic** icon in the builder's top toolbar opens the rules that decide which applicants qualify automatically. This works the same for Lite and full-plan funnels, so for the full walkthrough, see *[About the Funnel Builder]*.
+The **Logic** icon in the builder's top toolbar opens the rules that decide which applicants qualify automatically. This works the same for FranDev and Full OS funnels, so for the full walkthrough, see *[About the Funnel Builder]*.
 
 ### Make it feel like your brand
 

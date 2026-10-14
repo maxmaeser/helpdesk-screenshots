@@ -16,9 +16,9 @@ Keep these separate. Brand team membership alone doesn't change a person's permi
 
 Every member of your organization has one of two access levels.
 
-**Admin**: broad permissions across the organization, including inviting other users and managing organization settings. Billing access is a separate toggle, so an Admin does not automatically get it (see below).
+**Admin**: broad permissions across the organization, including inviting other users and managing organization settings. Admins also have billing access, including invoices and payment methods.
 
-**Member**: limited permissions. Members cannot invite other users or manage organization settings. An admin can grant a member specific brand permissions after they accept their invitation. The invitation steps are covered in *[How to Invite Users]*.
+**Member**: limited permissions. Members cannot invite other users or manage organization settings. An admin can grant a member specific brand permissions after they accept their invitation. The invitation steps are covered in [How to Invite Users](/helpdesk/how-to-invite-users).
 
 You set the access level when you invite someone, and you can change it at any time afterward.
 
@@ -30,33 +30,33 @@ Each row shows a Role control reading **Admin** or **Member**. Use it to change 
 
 A kebab menu on each row gives you **View profile** and **Remove from organization**. People you have invited but who have not yet joined show up in a separate Pending invites card below the list, with options to resend or revoke the invite.
 
-![Members page showing the flat member list with each row's Role control reading Admin or Member](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/understanding-roles-and-permissions/members-access-levels.png)
+![Members page showing the flat member list with each row's Role control reading Admin or Member](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/understanding-roles-and-permissions/members-access-levels.png)
 
-![Settings tab on a team member's profile panel showing the Brand Permissions matrix with Read, Write, and Chat toggles for each category under a specific brand](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/understanding-roles-and-permissions/member-brand-permissions.png)
+![Settings tab on a team member's profile panel showing the Brand Permissions matrix with Read, Write, and Chat toggles for each category under a specific brand](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/understanding-roles-and-permissions/member-brand-permissions.png)
 
-### Billing access is separate
+### Billing access
 
-Billing is controlled by its own toggle, not by the access level.
+Organization Admins have billing access automatically. Members can receive billing access through a separate toggle.
 
-When you invite someone, the **Billing access** toggle in the invite form decides whether they can see invoices and manage payment methods.
+When you invite a Member, the **Billing access** toggle in the invite form decides whether they can see invoices and manage payment methods.
 
-You can also turn billing access on or off later from the **Billing** toggle on their row on the Members page.
+You can also turn billing access for a Member on or off later from the **Billing** toggle on their row on the Members page.
 
-A person can be an Admin without billing access, or a Member with it. The two settings are independent.
+Both organization Admins and Members granted billing access can manage invoices and payment methods.
 
-![Invite members modal with the Billing Access toggle switched on, showing the "Can see invoices and manage payment methods" description](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/understanding-roles-and-permissions/invite-billing-access.png)
+![Invite members modal with the Billing Access toggle switched on, showing the "Can see invoices and manage payment methods" description](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/understanding-roles-and-permissions/invite-billing-access.png)
 
 ### Brand team and sales assignability
 
 Open the **Team & Access** page under Brand in your settings to see your Brand Team list.
 
-![Brand settings sidebar with Team & Access highlighted under the Brand group, landing on the Brand Team list](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/understanding-roles-and-permissions/team-access-nav.png)
+![Brand settings sidebar with Team & Access highlighted under the Brand group, landing on the Brand Team list](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/understanding-roles-and-permissions/team-access-nav.png)
 
 Each member's row shows a status tag, **Auto Assigned** or **Manually Assignable**, based on their sales assignability setting for that brand.
 
-![Brand Team list on the Team & Access page showing member rows with Google sign-in badges and Auto Assigned / Manually Assignable status tags, plus the Sales assignability section with its Automatic / Manual / Off toggle](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/understanding-roles-and-permissions/brand-team-role-list-v2.png)
+![Brand Team list on the Team & Access page showing member rows with Google sign-in badges and Auto Assigned / Manually Assignable status tags, plus the Sales assignability section with its Automatic / Manual / Off toggle](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/understanding-roles-and-permissions/brand-team-role-list-v2.png)
 
-The page also has a Sales assignability section showing whether each member is set to Automatic, Manual, or Off for that brand. This is the same setting a member chooses for themselves from their own profile. See *[Auto and Manual Lead Assignment]* for what each option controls.
+The page also has a Sales assignability section showing whether each member is set to Automatic, Manual, or Off for that brand. This is the same setting a member chooses for themselves from their own profile. See [Auto and Manual Lead Assignment](/helpdesk/auto-and-manual-lead-assignment-v5) for what each option controls.
 
 There is no invite button in this section. All invitations happen at the organization level.
 
@@ -74,6 +74,6 @@ To change what someone can access, adjust their access level, or ask an organiza
 
 ### Next steps
 
-- Add someone to your organization: *[How to Invite Users]*
-- Understand the structure behind these settings: *[What Is an Organization?]*, *[What Is a Brand?]*
-- See how brand access affects what you can view: *[Multi-Brand View]*
+- Add someone to your organization: [How to Invite Users](/helpdesk/how-to-invite-users)
+- Understand the structure behind these settings: *[What Is an Organization?]*, [What Is a Brand?](/helpdesk/what-is-a-brand)
+- See how brand access affects what you can view: [Multi-Brand View](/helpdesk/multi-brand-view)

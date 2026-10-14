@@ -14,8 +14,10 @@ Click your avatar at the bottom of the sidebar and select **Settings**. In the p
 
 You'll see a list covering everything from chat messages and task assignments to deal updates, location and vendor changes, and course or certificate milestones.
 
-Each notification type has two independent switches: **Notify Me In-App** and **Notify Me By Email**. Set either one to **Yes** or **No**, and your choice takes effect right away.
+Each notification type has two linked switches: **Notify Me In-App** and **Notify Me By Email**. Your choice takes effect right away.
 
-In-app and email are controlled separately, so you can get an email for something without an in-app alert, or the other way around.
+Set **Notify Me By Email** to **Yes** to receive both email and in-app alerts. Set it to **No** to keep in-app alerts without the email copy.
+
+Set **Notify Me In-App** to **No** to turn off both for that notification type.
 
 ![Notification Preferences table with Notify Me In-App and Notify Me By Email columns, radio switches set per row](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/16-your-notification-settings/notif-preferences-table.png)

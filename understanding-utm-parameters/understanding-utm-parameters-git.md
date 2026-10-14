@@ -28,7 +28,7 @@ Capture is automatic when someone reaches your applicant portal with the tags st
 
 If your ads point at your own marketing website first, the tags are usually lost on the hop from that site to your application form. A one-line tracking snippet closes that gap.
 
-You find it in the **Campaign attribution** section on the **Connections** page under Brand in your settings. On FS Ai Lite, the same section sits on the **Profile** page under Brand instead.
+You find it in the **Campaign attribution** section on the **Connections** page under Brand in your settings. On FranDev (Recruitment Funnel), the same section sits on the **Profile** page under Brand instead.
 
 The section shows a **Snippet** panel with a **Copy** button. Copy the line and paste it into your website builder's custom code or header scripts area, set to run on all pages.
 

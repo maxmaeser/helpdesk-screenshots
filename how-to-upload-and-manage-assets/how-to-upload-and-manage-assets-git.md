@@ -1,8 +1,11 @@
 Assets are files you store and share across your organization - PDFs, images, videos, and other documents. The asset library gives you version control, granular sharing permissions, and organizational tools to keep everything accessible to the right people.
 
-> **Note:** The **Library** in the sidebar shows all assets across your organization. Department-specific views like **Sales → Assets** display the same assets filtered to that department. Uploading or editing an asset in one view updates it everywhere.
+> **Note:** The **Library** in the sidebar is scoped to the brand you select. Department-specific views like **Sales → Assets** display the same assets filtered to that department. Uploading or editing an asset in one view updates it everywhere.
 
-![Library page showing the asset list for a brand](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-upload-and-manage-assets/assets-library-overview-v2.png)
+![Library page showing the asset list for a brand](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-upload-and-manage-assets/assets-library-overview-v2.png)
+
+![How to Upload and Manage Assets walkthrough](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-upload-and-manage-assets/how-to-upload-assets-walkthrough.gif)
+
 ### Supported file formats
 
 You can upload most common file types including:
@@ -17,13 +20,12 @@ Video uploads use the TUS resumable upload protocol, which means large video fil
 
 1. Navigate to the **Library** or the asset section of a location, deal, or vendor.
 2. Click **Upload** and select your file.
-3. Add a title and description.
-4. Set the visibility (public or private).
-5. Optionally assign sharing permissions and department access during upload.
+3. Open the uploaded asset to review its details and sharing permissions.
 
-Assets can be linked to locations, deals, vendors, franchisee organizations, menu items, and applicant applications at the time of upload or later.
+Share assets with people and applicants through the asset's sharing panel. Share assets with organizations, locations, and vendors through their libraries.
 
-![Upload Assets dialog with a file selected, ready to upload](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-upload-and-manage-assets/assets-upload-modal.png)
+![Upload Assets dialog with a file selected, ready to upload](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-upload-and-manage-assets/assets-upload-modal.png)
+
 ### Creating a document (some accounts)
 
 On accounts with the document editor enabled, the **Library** also has a **New Document** option alongside Upload. This opens a native, collaborative document editor instead of requiring a file upload, and edits save as new versions like any other asset.
@@ -34,8 +36,11 @@ To update a document, use **Update Version** to upload a new version of the same
 
 To restore a previous version, open the asset detail view, browse the version history, and select the version you want to restore. The platform marks that version as current without deleting any other versions.
 
-![Asset detail view, Versions tab, showing a version with Preview and Restore](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-upload-and-manage-assets/assets-version-history.png)
+![Asset detail view, Versions tab, showing a version with Preview and Restore](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-upload-and-manage-assets/assets-version-history.png)
+
 ### Sharing permissions
+
+Open an asset and choose **Share** to review who can access it. Changes take effect when you click **Save sharing**.
 
 Assets use a layered permission system:
 
@@ -52,7 +57,8 @@ The person who uploaded an asset automatically has full permissions on it.
 
 **Application-level access**: Link an asset to a specific applicant's application to give them read access through their portal.
 
-![Asset detail view, Share tab, showing the permissions matrix](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-upload-and-manage-assets/assets-sharing-permissions.png)
+![Asset detail view, Share tab, showing the permissions matrix](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-upload-and-manage-assets/assets-sharing-permissions.png)
+
 ### Bulk-updating sharing permissions
 
 To update permissions on multiple assets at once:
@@ -64,11 +70,12 @@ To update permissions on multiple assets at once:
 
 You can also use the **Share All** action to apply permission changes to every asset matching your current search and filter criteria.
 
-![Two assets selected in the library with the bulk actions menu open on Share](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-upload-and-manage-assets/assets-bulk-share-menu-v2.png)
+![Two assets selected in the library with the bulk actions menu open on Share](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-upload-and-manage-assets/assets-bulk-share-menu-v2.png)
+
 ### Collections
 
 Collections let you organize assets into named groups for easier browsing. You can create a collection, give it a name and description, and add assets to it.
 
-Collections are organizational - they help you group related assets together (for example, "Q1 Marketing Materials" or "Training Videos"). Permissions are still managed at the individual asset level, not at the collection level.
+Collections are organizational - they help you group related assets together (for example, "Q1 Marketing Materials" or "Training Videos"). Open a collection's menu and select **Sharing and Permissions** to manage its access. Click **Save & Close** to apply changes.
 
-![An opened collection showing its assets](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-upload-and-manage-assets/assets-collection-view-v2.png)
+![An opened collection showing its assets](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-upload-and-manage-assets/assets-collection-view-v2.png)

@@ -17,4 +17,8 @@ Your photo has its own controls above the fields: **Upload New Avatar** swaps it
 The second tab controls how you hear about activity in the portal: new chat messages, task assignments, reminders and status changes, project updates, vendor and location changes, and new manuals, among others.
 
 ![Notification Preferences table with Yes/No toggles](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/15-your-account-settings/account-settings-notifications.png)
-Each notification has two separate switches: **Notify Me In-App** and **Notify Me By Email**. Set either one to **Yes** or **No** on its own, so you can, for example, keep in-app task reminders on while turning off the email copy.
+Each notification has two linked switches: **Notify Me In-App** and **Notify Me By Email**.
+
+Set **Notify Me By Email** to **Yes** to receive both email and in-app alerts. Set it to **No** to keep in-app alerts without the email copy.
+
+Set **Notify Me In-App** to **No** to turn off both for that notification type.

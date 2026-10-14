@@ -6,6 +6,8 @@ E-Signature lets you send documents for electronic signing directly from Franchi
 
 Upload your document to the **Library**. From the document's row, open the menu and choose **eSignature**, then **Prepare eSignature** to create a signable template. FS Ai processes the document and gives you a field palette (Signature, Text, Date, and Number) to drop onto the pages for signers to complete.
 
+The editor opens full-screen and saves your changes as a draft automatically. Click **Publish** to use the prepared fields for new sends.
+
 ![eSignature field editor showing the field palette and a placed signature field on a document](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-use-e-signature/esig-prepare-fields.png)
 
 ### Generating a Public Signing Link

@@ -12,17 +12,17 @@ Mixing cold and warm on the same domain risks deliverability problems for both.
 
 Different email types carry different reputation risk. Assigning each domain a specific purpose isolates that risk. Your transactional and portal notification emails stay protected even if cold outreach encounters deliverability issues.
 
-See *[About Domains and Domain Health]* for how to add domains and configure purposes.
+See [About Domains and Domain Health](/helpdesk/about-domains-and-domain-health) for how to add domains and configure purposes.
 
-![Domain purposes panel showing Cold Outreach and consensual warm purposes with an isolation advisory](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-email-in-fs-ai/email-domain-purposes-v2.png)
+![Domain purposes panel showing Cold Outreach and consensual warm purposes with an isolation advisory](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-email-in-fs-ai/email-domain-purposes-v2.png)
 
 ### Sending Email in FS Ai
 
 FS Ai provides two ways to send email:
 
-1. **Bulk sends**: Deploy a single email template as a newsletter, or send a multi-email sequence to a segment. You choose the segment, schedule, and which domains to use.
-2. **Workflows**: trigger-based flows that send to individual contacts in response to events (new lead created, tag applied). These fire one at a time and are not bulk sends.
+1. **Bulk sends**: Deploy a single email template as a newsletter, or enroll a segment in a campaign workflow. You choose the segment, schedule, and which domains to use.
+2. **Workflows**: trigger-based flows that send to individual contacts in response to events (new lead created, tag applied), or to contacts enrolled together in a campaign. Each contact has a separate run.
 
-See *[How to Send Email]* for the bulk send walkthrough, *[About Workflows]* for building them, and *[About Workflow Runs and Performance]* for watching them run.
+See [How to Send Email](/helpdesk/how-to-send-email) for the bulk send walkthrough, [About Workflows](/helpdesk/about-sequences-and-workflows) for building them, and [About Workflow Runs and Performance](/helpdesk/about-automations-and-runs) for watching them run.
 
-![Marketing Workflows page showing the Workflows and Content tabs](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-email-in-fs-ai/email-sending-methods-v2.png)
+![Marketing Workflows page showing the Workflows and Content tabs](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-email-in-fs-ai/email-sending-methods-v2-r2026-10.png)

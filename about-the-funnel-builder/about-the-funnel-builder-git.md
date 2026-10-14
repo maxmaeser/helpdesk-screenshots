@@ -2,9 +2,10 @@ The funnel builder is where you build the multi-step application form your prosp
 
 It lives at **Studio → Funnel**, and it's the funnel-surface counterpart to the applicant portal editor: brands running the funnel use this builder instead of a portal.
 
-> **Note:** **Studio → Funnel** appears for brands on the funnel surface. Portal-surface brands see **Applicant Portal** or **Franchisee Portal** instead. See *[How to Edit Your Portal]*.
+> **Note:** **Studio → Funnel** appears for brands on the funnel surface. Portal-surface brands see **Applicant Portal** or **Franchisee Portal** instead. See [How to Edit Your Portal](/helpdesk/how-to-edit-your-portal-v2).
 
 ![The funnel builder, full view with the Structure panel and live preview](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-the-funnel-builder/funnel-builder-full-view.png)
+
 ### Structure: sections, steps, and questions
 
 Your funnel is organized into sections shown as headers in the left **Structure** panel: Pre-Qualify, Application, Compliance, FDD Request, Book a call, Resources. Each section holds one or more steps.
@@ -16,6 +17,7 @@ The steps you add, under Pre-Qualify and Application, hold your own questions. C
 Some section headers carry a status badge: **Qualified** or **Needs review**. These show where an applicant lands once the qualification logic below routes them.
 
 ![Structure panel scrolled to show all sections, including locked steps and status badges](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-the-funnel-builder/funnel-structure-panel-scrolled.png)
+
 The Compliance section also carries an **Add disclosure questions** button next to its **Add Step** control, visible in the screenshot above.
 
 Click it once and it adds a step, A Few Disclosure Questions, pre-filled with four screening questions:
@@ -37,6 +39,7 @@ Switch the Structure panel between two views:
 Every funnel's first step includes a locked **Contact details** block: First name, Last name, and Email, tagged **Auto-added**. The funnel always collects these to create the lead, so this block can't be removed. Required fields carry a red asterisk, and the email field is validated as an email.
 
 ![Contact details block on the live preview, Auto-added badge visible](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-the-funnel-builder/funnel-contact-details-block.png)
+
 ### Adding and editing questions
 
 The right side of the builder is a live preview of your actual funnel, styled in your brand's colors. Click a question to edit it inline, and your edit shows up in the preview immediately.
@@ -48,6 +51,14 @@ To add a question, click **Add question** below a step's existing questions and 
 If a step passes six questions, a warning banner appears on the Structure canvas as you edit, suggesting you split it into a new step. It is an editing hint, not something an applicant sees.
 
 ![A step's live preview showing a slider, a chip-select question, and a dropdown question](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-the-funnel-builder/funnel-financial-details-step.png)
+
+### Field width and phone capture
+
+When editing a question, turn on **Half width** to pair it with the adjacent half-width question on the same row. A half-width question without a half-width neighbor takes a full row.
+
+![Question editor with Half width and a Phone field](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-the-funnel-builder/funnel-field-layout-phone.png)
+A **Phone** question can sit on any editable step, outside the locked contact details block. It collects the lead's phone number with a country selector.
+
 ### The toolbar
 
 Six icons run left to right across the top of the builder: **Details**, **Logic**, **Theme**, **Workflows**, **Analytics**, and **Team chat**. The sections below cover them one at a time, in a different order.
@@ -61,22 +72,30 @@ Set light or dark **Mode**, a background pattern or image, and an accent color f
 Every change applies to the live preview immediately, the same as editing a question.
 
 ![Theme panel open, accent color swatches and the live preview updating](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-the-funnel-builder/funnel-theme-panel.png)
+
+Under **Theme**, open **Brand** and use **Logo style** to choose **Icon + name**, **App icon**, **Wordmark**, or **Hero**.
+
+![Theme Brand section with Logo style presets and custom sizing](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-the-funnel-builder/funnel-logo-presets.png)
+Choose **Custom** to adjust the logo's layout and image. The **Logo size** slider scales it relative to the card's width; tall logos are capped so they do not crowd the step.
+
 ### Qualification logic
 
 The **Logic** icon in the top toolbar opens the rules that decide which applicants qualify. Four rule groups exist:
 
-- **Pre-qualify — all must pass**: scores your Pre-Qualify section. Fail a rule here and the applicant sees a soft "we need a bit more information" message but still continues into the application.
-- **Application-qualify — all must pass**: scores your Application section. Fail a rule here and the applicant is routed to the FDD Request path instead of straight to Compliance and booking.
+- Pre-qualify (all must pass): scores your Pre-Qualify section. Fail a rule here and the applicant sees a soft "we need a bit more information" message but still continues into the application.
+- Application-qualify (all must pass): scores your Application section. Fail a rule here and the applicant is routed to the FDD Request path instead of straight to Compliance and booking.
 
 Each of these first two groups is an AND chain of question, comparison, and value, for example "total net worth is at least $250,000."
 
 ![Logic panel showing a Pre-qualify rule chain](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-the-funnel-builder/funnel-logic-panel.png)
+
 Two more groups score the Application section a second time, specifically for the FDD:
 
 - **FDD auto-qualifiers**: an applicant who meets every rule here gets their FDD automatically, with no rep review. Leave this group empty and every FDD request holds for a rep to approve.
 - **FDD disqualifiers**: the one OR group in the panel. Any single match holds the FDD for a rep to approve, instead of requiring every rule to fail.
 
 ![Logic panel scrolled to the FDD auto-qualifiers and FDD disqualifiers rule groups](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-the-funnel-builder/funnel-logic-fdd-qualifiers.png)
+
 ### Branch routing
 
 Below the four rule groups, **Branch routing** decides which path each downstream section sits on. **Compliance**, **FDD Request**, **Book A Call**, and **Resources** each get a selector: **Qualified only**, **Needs review only**, or **Both paths**.
@@ -84,27 +103,32 @@ Below the four rule groups, **Branch routing** decides which path each downstrea
 Change a selector and the **Qualified** and **Needs review** previews below it update to show the resulting flow, section by section, through your funnel.
 
 ![Branch routing selectors and the Qualified/Needs review previews](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-the-funnel-builder/funnel-logic-branch-routing.png)
+
 ### Previewing your funnel
 
 Switch the **Edit / Preview** control at the top of the builder to **Preview** to walk the entire funnel as an applicant would, screen by screen, with a step counter and a desktop/mobile toggle. A **Preview as Qualified / Needs review** switch lets you see both outcomes without submitting real answers.
 
 ![Preview mode showing the Qualified/Needs review toggle and step counter](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-the-funnel-builder/funnel-preview-mode.png)
+
 ### Details, saving, and publishing
 
-The **Details** icon opens your funnel's address and publish state: its slug on the shared funnel domain, an option to request a custom domain, the booking profile that powers the Book a Call step, and a **Published** toggle.
+The **Details** icon opens your funnel's address and publish state: its slug on the shared funnel domain, an option to request a custom domain, and a **Published** toggle.
+
+To configure booking, open the **Book a call** step on the canvas. Under **Booking event**, choose **Group call** or **Specific event type**, then select the group or the agent and event type applicants can book.
 
 The header carries the same controls at a glance. A status pill next to your brand switcher reads **Saving…**, **Unsaved changes**, or **All changes saved**, and a **Publish** button on the right opens the same publish or unpublish control as the Details panel's toggle.
 
-An unpublished funnel is invisible to applicants. Publishing, from either place, applies the next time you select **Save**. See *[How to Publish Your Funnel]* for the full walkthrough, including brands that need a payment method on file before they can go live.
+An unpublished funnel is invisible to applicants. Publishing, from either place, applies the next time you select **Save**. See [How to Publish Your Funnel](/helpdesk/how-to-publish-your-funnel) for the full walkthrough, including brands that need a payment method on file before they can go live.
 
-![Details panel showing Funnel slug, Booking profile, and Published toggle](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-the-funnel-builder/funnel-details-panel.png)
+![Details panel showing Funnel slug, Booking profile, and Published toggle](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-the-funnel-builder/funnel-details-panel-r2026-10.png)
+
 ### Workflows
 
 The **Workflows** icon opens the workflows scoped to this funnel: a card per workflow, expandable to see what it runs on, its steps, and a toggle to turn it on or off.
 
 These are ordinary sales workflows on funnel triggers, so a card can carry delay, notification, tag, task and status-update steps, not only email. A toggle stays off until its email has content and your sending domain is verified.
 
-See *[How to Set Up Funnel Workflows]* for the full walkthrough, including applying a setup template and writing each email.
+See [How to Set Up Funnel Workflows](/helpdesk/how-to-set-up-funnel-automations) for the full walkthrough, including applying a setup template and writing each email.
 
 ### Team chat
 
@@ -115,9 +139,11 @@ The **Team chat** icon opens a chat scoped to this funnel, for talking it throug
 The **Analytics** icon in the toolbar opens a summary right inside the builder: starts, completions, average time from start to booked, partial (email-only) leads, resume links sent, and completions recovered after a resume link, plus a section-by-section drop-off list.
 
 ![In-builder Analytics panel with drop-off list](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-the-funnel-builder/funnel-analytics-panel.png)
+
 Click a section name in the drop-off list to expand it. Pre-Qualify, Application, Compliance, and FDD Request break down into their individual pages, each with its own view count and a count of applicants who left on that page. Book a Call and Resources aren't expandable since they're single-page steps.
 
 ![A section expanded into a page-by-page breakdown of views and drop-off](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-the-funnel-builder/funnel-analytics-page-drilldown.png)
+
 Below the drop-off list, a **Partial leads** list shows applicants who left an email but didn't finish, each with a button to resend their resume link.
 
 Select **View Full Report** to open a bigger report as a full-screen dialog over the builder: a daily starts-vs-completions chart, a recent-leads list, and a button to export leads as a CSV.

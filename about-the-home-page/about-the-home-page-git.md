@@ -45,6 +45,15 @@ Assigning a work task means setting a due date and picking people for each RACI 
 
 Unlike quick tasks, work tasks can be assigned to franchisees.
 
+### Completing a checklist item
+
+Open a task from **Tasks** to see its details. For a to-do checklist item that does not require a file, click **Mark complete** once you have finished that item.
+
+![Task detail with a checklist item's Mark complete button](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-the-home-page/home-task-mark-complete.png)
+The button changes to **Completed · mark incomplete**, which lets you reopen the item. Items that require a file are completed through their upload control instead.
+
+This marks the checklist item, not an approval of the whole task.
+
 ### Chat tab
 
 The Chat tab is your messaging inbox. Switch between **All**, **Direct**, and **Groups** to filter your conversations.

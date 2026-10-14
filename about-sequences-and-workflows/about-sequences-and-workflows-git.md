@@ -4,11 +4,11 @@ Sequences and automations used to be two separate tools. They are one object now
 
 Go to **Sales → Workflows**, **Marketing → Workflows**, or **Operations → Workflows**. Each department keeps its own workflows and its own email templates, and nothing is shared between them.
 
-> **Prerequisite:** At least one email template on the **Content** tab, and a verified sending domain for the purpose you plan to send under. See *[About Domains and Domain Health]*.
+> **Prerequisite:** At least one email template on the department's **Content** page, and a verified sending domain for the purpose you plan to send under. See *[About Domains and Domain Health]*.
 
 ### The page
 
-The page has two tabs.
+Each department has separate **Workflows** and **Content** pages.
 
 **Workflows**: every workflow in the department, one row each.
 
@@ -30,7 +30,7 @@ Select one or more rows to **Duplicate** or **Delete** them.
 
 ### Build a workflow
 
-1. Click **+ Create Workflow**.
+1. Click **Create Workflow**.
 2. Pick a path: **Create from Template** starts from a pre-built workflow, **Campaign Builder** assembles a campaign from your existing email templates, and **Create from Scratch** opens an empty canvas.
 3. Set the trigger on the trigger node. Some triggers then ask for one detail, such as which status or which segment.
 4. Add steps from the palette. They are grouped as **Flow Control** (Condition, Delay), **Communication** (Send Email, Send Notification), **Lead Management** (Create Task, Add Tag, Remove Tag, Update Status), and **Portal** (Lock Portal Steps, Unlock Portal Steps).

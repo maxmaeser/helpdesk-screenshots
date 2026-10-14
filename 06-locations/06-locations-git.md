@@ -1,4 +1,4 @@
-> **[VIDEO EMBED: Module 6 — Locations]**
+> **[VIDEO EMBED: Module 6: Locations]**
 
 Locations is the live record of each unit you operate under your brand. The list view shows each unit by name, address, and current status, so you can see your portfolio at a glance and jump into the one you need. If you operate one unit, the sidebar reads **Location** and opens straight to that location's overview.
 
@@ -18,7 +18,9 @@ Click into a location and the detail view opens. You'll see the location record,
 
 ## Updating a status
 
-Status updates happen right from the detail view. Open the status dropdown, pick the new value, and the timeline records the change with a timestamp. Corporate sees the same update on their side.
+Status updates happen right from the detail view when your brand allows you to edit the location and its billing access is not locked or archived. Otherwise, the status dropdown is disabled.
+
+Open the status dropdown, pick the new value, and the timeline records the change with a timestamp. Corporate sees the same update on their side.
 
 ![Status dropdown open on a location's detail view](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/06-locations/locations-status.png)
 ## Adding a location

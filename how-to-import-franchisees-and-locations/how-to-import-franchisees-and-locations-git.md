@@ -8,14 +8,16 @@ Both importers work the same way: upload a CSV, map your columns to FS Ai's fiel
 2. Click **Actions** in the toolbar, then select **Import from CSV**.
 3. In the **Import Franchisee Entities** window, choose the brand you're importing into from the **Brand** dropdown, then click **Start Import**.
 
-![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-import-franchisees-and-locations/audiences-import-actions-menu.png)
+![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-import-franchisees-and-locations/audiences-import-actions-menu-r2026-10.png)
 
-![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-import-franchisees-and-locations/import-franchisee-entities-modal.png)
+![](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-import-franchisees-and-locations/import-franchisee-entities-modal.png)
+
 This opens the import flow. Click **Click to upload your csv file** to select your file, or drag and drop it onto the drop zone.
 
 If you don't have a file ready, click **Download** next to **CSV Import Template** first.
 
-![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-import-franchisees-and-locations/import-upload-step.png)
+![](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-import-franchisees-and-locations/import-upload-step.png)
+
 The import flow has four steps:
 
 - **Map Franchisee Entity Fields**: FS Ai auto-matches your CSV columns to its standard fields. Fix any mismatches using the dropdown next to each field, and hover over a mapped field to preview the data it will pull in.
@@ -25,24 +27,26 @@ The import flow has four steps:
 
 ### Importing locations
 
-The flow for locations is identical, just started from a different page.
+The flow for locations adds a step to link locations to franchisee entities and starts from a different page.
 
 1. Go to **Operations > Locations**.
 2. Click **Actions** in the toolbar, then select **Import From CSV**.
 3. In the **Import Locations** window, choose the brand and click **Start Import**.
 4. Upload your CSV, or download the CSV Import Template first to see the expected columns.
 
-![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-import-franchisees-and-locations/locations-import-actions-menu.png)
+![](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-import-franchisees-and-locations/locations-import-actions-menu.png)
 
-![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-import-franchisees-and-locations/import-map-fields.png)
-The location template covers far more ground than the franchisee entity one: address and store details, lease terms, construction dates and costs, insurance information, and contacts like the architect, project manager, and property manager. For what each of those fields means, see *[About Locations]*.
+![](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-import-franchisees-and-locations/import-map-fields.png)
 
-The same four steps apply: map the standard fields, map any custom fields, resolve validation issues on the review step, then import.
+The location template covers far more ground than the franchisee entity one: address and store details, lease terms, construction dates and costs, insurance information, and contacts like the architect, project manager, and property manager. For what each of those fields means, see [About Locations](/helpdesk/about-locations).
 
-![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-import-franchisees-and-locations/import-review.png)
+The location import flow has five steps: **Map Location Fields**, **Custom Fields**, **Review**, **Link To Franchisee Entities**, and **Import**. Map your fields, resolve validation issues, then link locations to franchisee entities before importing.
+
+![](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-import-franchisees-and-locations/import-review.png)
+
 Finished locations appear in **Operations > Locations**.
 
-If you only need to add a location one at a time, or want to pull existing sites in from Google Places instead of a CSV, use **Add Location** or **Find Existing Locations** from that same **Actions** menu. See *[About Locations]* for both.
+If you only need to add a location one at a time, or want to pull existing sites in from Google Places instead of a CSV, use **Add Location** or **Find Existing Locations** from that same **Actions** menu. See [About Locations](/helpdesk/about-locations) for both.
 
 ### Tips
 

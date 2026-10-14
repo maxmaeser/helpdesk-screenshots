@@ -1,12 +1,12 @@
 This is the stage where you start talking to the contacts you brought in.
 
-![reach-out-and-nurture opener](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/reach-out-and-nurture/reach-out-and-nurture-opener-v4.png)
+![reach-out-and-nurture opener](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/reach-out-and-nurture/reach-out-and-nurture-opener-v4.png)
 
-![reach-out-and-nurture overview](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/reach-out-and-nurture/reach-out-and-nurture-overview.png)
+![reach-out-and-nurture overview](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/reach-out-and-nurture/reach-out-and-nurture-overview-r2026-10.png)
 
 You have prospects and leads in the system, and now you turn them into conversations with email, workflows, and tracked links.
 
-Most of this work starts at **Marketing → Workflows**, which opens on your workflow list and carries a **Content** tab for your email templates.
+Most of this work starts at **Marketing → Workflows**, which opens on your workflow list. Your email templates live on **Marketing → Content**.
 
 Get your email foundation right first, then layer on the workflows that keep outreach running without you.
 
@@ -20,7 +20,7 @@ Get your email foundation right first, then layer on the workflows that keep out
 
 4. *[How to Send Email]*: send a single template as a newsletter, or enroll a segment into a campaign workflow.
 
-5. *[Creating Content and Workflows]*: get oriented on the Workflows page, where your email content and your workflows both live.
+5. *[Creating Content and Workflows]*: get oriented on the separate Content and Workflows pages.
 
 6. *[About Workflows]*: automate follow-up so a series of actions runs on its own when something happens.
 

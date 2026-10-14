@@ -7,13 +7,15 @@ Franchise Systems Ai (FS Ai) syncs with your Google Calendar or Office 365 calen
 - **Google Calendar**
 - **Office 365 Calendar**
 
-You can connect one calendar account at a time. To switch providers, disconnect your current calendar first, then connect the new one.
+You can connect multiple calendar accounts. Your default connection has a **Primary** badge.
+
+To change it, open another connection's menu and choose **Set as primary**. Use **Manage** to configure each connection.
 
 ### Connecting Your Calendar
 
 1. Click your profile picture at the bottom of the sidebar and select **Settings**.
 2. Under the **Account** group, open **Calendar & Scheduling**.
-3. On the **Calendars** tab, click **Connect Google Calendar** or **Connect Office 365 Calendar**.
+3. On the **Calendars** tab, click **Connect calendar**, then choose **Google Calendar** or **Office 365**.
 
 ![Connect a calendar dialog on the Calendars tab, listing Google Calendar and Office 365 as provider options](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-connect-your-calendar/calendar-connect-provider-modal.png)
 
@@ -23,6 +25,7 @@ You can connect one calendar account at a time. To switch providers, disconnect 
 Booking events that prospects use to schedule meetings with you live on the **Event types** tab of the same page.
 
 ![Event types tab on the Calendar & Scheduling page, listing the booking events available under this calendar](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-connect-your-calendar/calendar-settings-event-types-tab.png)
+
 ### Calendar Views
 
 Once connected, the Calendar tab on your Home page displays your events in three views:
@@ -42,10 +45,14 @@ The calendar toolbar includes a **timezone selector** on the right side. Changin
 1. Navigate to **Home** and select the **Calendar** tab.
 2. Click the **Create Event** button in the toolbar (top right). A panel slides open on the right side of the calendar.
 3. Fill in the event details:
-    - **Title** (required)
-    - **Date and Time**: pick a date from the date picker and set start/end times
-    - **Add Google Meet link**: toggle this on to generate a Google Meet link for the event
-    - **Attendees**: type an email address and click the add button to invite attendees
+
+- **Calendar**: choose the destination calendar for the event
+- **Title** (required)
+- **Date**: pick the event date
+- **Start** and **End**: set the start and end times
+- **Add Google Meet link**: toggle this on to generate a Google Meet link for the event
+- **Attendees**: type an email address and click the add button to invite attendees
+
 4. Click **Create event** to save.
 
 The event syncs to your connected calendar and attendees receive an invitation.
@@ -62,7 +69,7 @@ From the event detail view you can:
 
 ### The Calendar Sidebar
 
-On the Home page **Overview** tab, a sidebar shows your upcoming events for the next two weeks. This gives you a quick agenda-style snapshot without switching to the full Calendar tab. You can click any event in the sidebar to view its details, or click **Create New Event** at the top to add one.
+On the Home page **Overview** tab, a sidebar shows your upcoming events for the next two weeks. This gives you a quick agenda-style snapshot without switching to the full Calendar tab. You can click any event in the sidebar to view its details, or click **New event** at the top to add one.
 
 ### Disconnecting Your Calendar
 
@@ -71,10 +78,10 @@ On the Home page **Overview** tab, a sidebar shows your upcoming events for the 
 
 ![Calendars tab showing a connected Google Calendar account with its email, Primary and Connected badges, and the Manage control](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-connect-your-calendar/calendar-settings-connected.png)
 
-3. Click to manage the connection and choose **Disconnect calendar**.
+3. Open the menu beside the connection you want to remove and choose **Disconnect**.
 4. Confirm the disconnection in the dialog that appears.
 
-> **Note**: Disconnecting your calendar means leads can no longer book calls with you through scheduling links.
+> **Note**: Booking types using the disconnected calendar fall back to your primary calendar. Keep a working calendar connected so leads can continue booking calls.
 
 ### Reconnecting After Authorization Expires
 

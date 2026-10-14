@@ -16,17 +16,19 @@ Each domain can be assigned one or more purposes that determine which types of e
 
 Using separate domains for different purposes protects your sender reputation. For example, keeping cold outreach on a different domain than your transactional emails prevents deliverability issues from affecting critical account notifications.
 
-![Domain Management section showing a connected domain with Active, Verified, and All Purposes status](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-domains-and-domain-health/domains-management-overview.png)
+![Domain Management section showing a connected domain with Active, Verified, and All Purposes status](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-domains-and-domain-health/domains-management-overview-r2026-10.png)
+
 ### Adding a New Domain
 
-1. Click your profile picture at the bottom of the sidebar, select **Settings**, and open the **Connections** page under Brand. Scroll to **Domains**. On lite organizations, where Connections isn't available, Domains lives on the **Profile** page instead.
+1. Click your profile picture at the bottom of the sidebar, select **Settings**, and open the **Connections** page under Brand. Scroll to **Sending identities**. On FranDev (Recruitment Funnel) organizations, open **Emails** in the sidebar and select the **Domains** tab instead.
 2. Click **Connect Domain** and enter your domain name (e.g., `mail.yourbrand.com`).
 3. Select which purposes this domain should serve.
-4. Enter an **Email** value (the local part, the portion before the @) and a **display name** for the sending address.
+4. Enter an **Email** value (the local part, the portion before the @) and a **Display Name** for the sending address.
 5. Configure your **reply-to** settings (see below).
 6. Click **Create**. FS Ai registers the domain and provides DNS records you need to add.
 
-![Add your sending domain form with purposes, local part, display name, and reply-to strategy fields](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-domains-and-domain-health/domains-add-domain-form.png)
+![Add your sending domain form with purposes, local part, display name, and reply-to strategy fields](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-domains-and-domain-health/domains-add-domain-form-r2026-10.png)
+
 ### DNS Verification
 
 After creating a domain, you receive a set of DNS records (typically MX, TXT, and CNAME) that must be added to your domain's DNS provider. These records authenticate your domain so email providers trust messages sent from it.
@@ -55,7 +57,8 @@ When configuring a domain's email address, you choose a **reply-to strategy** th
 - **Static Email**: Replies go to a fixed email address you specify (e.g., `support@yourbrand.com`). Use this when you want all replies funneled to a shared inbox.
 - **Assigned Sales Rep**: Replies go to the email address of the sales rep or agent assigned to that contact. If the recipient is a lead, the system looks up their assigned rep. If they are a franchisee, it finds their assigned agent. This keeps conversations personal and routed to the right person.
 
-![Connected domain's Email Settings with the Assigned Sales Rep reply-to strategy active](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-domains-and-domain-health/domains-manage-detail.png)
+![Connected domain's Email Settings with the Assigned Sales Rep reply-to strategy active](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-domains-and-domain-health/domains-manage-detail-r2026-10.png)
+
 ### Managing Multiple Domains
 
 You can add as many domains as you need. Common setups include:

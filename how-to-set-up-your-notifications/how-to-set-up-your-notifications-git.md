@@ -6,9 +6,10 @@ Notification preferences let you control how and when you receive alerts about a
 2. Under **Account**, go to the **Notifications** page.
 
 ![Profile menu open with the cursor on the Settings option](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-set-up-your-notifications/notifications-profile-menu.png)
+
 ### How Notifications Work
 
-Notification types are grouped into cards: **Applicants & Sales**, **Tasks**, **Projects & Workflows**, and **Team**.
+Notification types are grouped into cards: **Applicants & Sales**, **Tasks**, **Projects & Workflows**, **Team**, and **Support Tickets**.
 
 Each card has two columns, **In-App** and **Email**, with a toggle for every notification type in that group.
 
@@ -19,6 +20,7 @@ At the top of each card, an **All [Group]** row toggles every notification type 
 If both In-App and Email are off for a notification type, you will not receive that alert at all.
 
 ![Applicants & Sales notification card with the master In-App/Email toggle at top and individual toggles per event below it](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-set-up-your-notifications/notifications-group-card.png)
+
 ### Available Notification Types
 
 You can configure preferences for the following events, grouped the same way they appear on the page.
@@ -56,6 +58,12 @@ You can configure preferences for the following events, grouped the same way the
 
 - **Franchisee Sends a Chat Message**: A franchisee sends you a chat message.
 - **Franchisee Team Invite Awaiting Approval**: A franchisee team invite is waiting on your approval.
+
+**Support Tickets**
+
+- **Franchisee Submits a Ticket**: A franchisee submits a support ticket.
+- **Assigned a Ticket**: A support ticket is assigned to you.
+- **My Ticket Status Changed**: A support ticket you are involved with changes status.
 
 ### Mobile Push Notifications
 

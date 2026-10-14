@@ -27,6 +27,13 @@ There are two ways to become part of an organization:
 
 ### Where to find it
 
-You can view and manage your organization by clicking your profile picture at the bottom of the sidebar, selecting **Settings**, and going to the **Details** page under Organization. This is where you see the organization name, linked brands, and current team members. Your associated organizations also appear on the **Organizations** tab of your Profile settings.
+You can view and manage your organization by clicking your profile picture at the bottom of the sidebar, selecting **Settings**, and going to the **Details** page under Organization. This is where you see the organization name. Under Organization, open **Brands** for linked brands and **Members** for current team members. Your associated organizations also appear on the **Organizations** tab of your Profile settings.
 
-![Home page brand selector bar showing the multiple brands this organization holds, with Lumon Fresh selected](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/what-is-an-organization/brand-switcher.png)
+### Reviewing linked brands
+
+The **Brands** page lists brands your organization owns or works with. Each row shows the brand name, team member count, and a **Brand Admin** or **Brand Member** badge.
+
+![Organization Brands section showing linked brands and access badges](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/what-is-an-organization/organization-linked-brands.png)
+Click a brand's name to open its settings.
+
+![Home page brand selector bar showing the multiple brands this organization holds, with Lumon Fresh selected](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/what-is-an-organization/brand-switcher.png)

@@ -1,8 +1,8 @@
-If your organization's brands are all on Franchise Systems Ai (FS Ai) Lite, you see a different dashboard than the full sidebar described elsewhere in this Getting Started series.
+If your organization's brands are all on FranDev (Recruitment Funnel), you see a different dashboard than the Full OS sidebar described elsewhere in this Getting Started series.
 
-Lite trims the dashboard down to eight tabs, laid out flat instead of grouped into sections. This article walks through what each tab does and how the dashboard behaves differently from the full plan.
+FranDev trims the dashboard down to eight tabs, laid out flat instead of grouped into sections. This article walks through what each tab does and how the dashboard behaves differently from Full OS.
 
-### The Lite sidebar
+### The FranDev sidebar
 
 Your sidebar has eight tabs, in this order:
 
@@ -17,7 +17,7 @@ Your sidebar has eight tabs, in this order:
 
 ### There's no Home tab
 
-Lite doesn't have a Home tab. When you sign in, FS Ai decides where to send you based on how far along your setup is.
+FranDev doesn't have a Home tab. When you sign in, FS Ai decides where to send you based on how far along your setup is.
 
 If you still have required setup steps left, signing in takes you to your **Getting Started** checklist. Once every required item is done, signing in takes you straight to **Leads** instead.
 
@@ -28,8 +28,29 @@ The checklist splits into **Required setup** and **Recommended** sections, and w
 ![Getting Started checklist with Required setup section open](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-the-lite-dashboard/lite-guide-checklist.png)
 It stays available even after you finish every item, unless you dismiss it. Each item's **Continue** button jumps you straight to where you complete it, and a green **Done** badge marks what's finished.
 
-For the individual walkthroughs, see *[How to Build Your Funnel in Lite]*, *[How to Set Up Compliance in Lite]*, and *[How to Publish Your Funnel]*.
+For the individual walkthroughs, see *[How to Build Your Funnel in FranDev]*, *[How to Set Up Compliance in FranDev]*, and *[How to Publish Your Funnel]*.
+
+### Business details and brand voice
+
+The checklist also includes **Add your business name & address**, which opens your brand settings for those email sender details. **Teach us your brand voice** opens the place to describe how your brand talks to candidates.
+
+![Getting Started checklist with business details and brand voice items](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-the-lite-dashboard/frandev-business-voice.png)
+Use each item's **Continue** button to open the relevant setup page.
+
+### Opening workflows
+
+Select **Workflows** in the sidebar to open your sales workflows. Click a workflow to open its builder, where **Build**, **Runs**, and **Performance** show its setup, individual runs, and results.
+
+![FranDev Workflows sidebar item and a workflow builder's views](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-the-lite-dashboard/frandev-workflow-views.png)
+These are the same sales workflows used by your funnel, rather than a separate set of email sequences.
 
 ### Settings works a little differently too
 
-On the full dashboard, you reach Settings through your profile picture at the bottom of the sidebar. In Lite, **Settings** is its own sidebar tab, and it opens straight to your account profile.
+On the Full OS dashboard, you reach Settings through your profile picture at the bottom of the sidebar. In FranDev, **Settings** is its own sidebar tab, and it opens straight to your account profile.
+
+### Available settings pages
+
+FranDev settings include **Profile**, **Notifications**, and **Calendar & Scheduling** under Account; **Members** and **Billing** under Organization; and **Profile** and **Appearance** under Brand. Access to billing still depends on your permissions.
+
+![FranDev settings navigation across Account, Organization, and Brand](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-the-lite-dashboard/frandev-settings-pages.png)
+Choose the page in the relevant group to update your personal, team, or brand settings.

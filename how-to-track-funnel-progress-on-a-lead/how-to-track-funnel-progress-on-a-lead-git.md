@@ -1,6 +1,6 @@
 For brands on the funnel surface, Franchise Systems Ai (FS Ai) shows exactly where each lead stands in your funnel: which step they've reached, whether they're still moving, and what happened when they stopped.
 
-> This applies to brands on the funnel surface (lite brands, and full-plan brands set to the funnel surface). Brands on the applicant portal surface see a Steps Completed field instead.
+> This applies to brands on the funnel surface (FranDev (Recruitment Funnel) brands, and Full OS brands set to the funnel surface). Brands on the applicant portal surface see a Steps Completed field instead.
 
 ### See a lead's step in the leads table
 

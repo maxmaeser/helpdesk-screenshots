@@ -2,6 +2,8 @@ You can assign or reassign a lead to any agent whose assignability is set to **A
 
 > Only agents whose assignability is set to **Automatic** or **Manual** appear in the assignment dropdown. If you do not see a team member listed, ask them to update their assignability on the **Sales Assignability** tab of the Profile page in their Account settings.
 
+![How to Assign Leads walkthrough](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-assign-leads/how-to-assign-leads-walkthrough.gif)
+
 ### Assigning a Lead to a Sales Rep
 
 ![Leads tab selected in Sales Pipeline, showing the leads table](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-assign-leads/leads-nav-tabs.png)

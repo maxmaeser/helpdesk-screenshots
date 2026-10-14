@@ -12,31 +12,31 @@ Every location has a status that reflects where it is in its lifecycle:
 
 You can update the status of one or multiple locations at a time using the bulk status action in the locations table.
 
-![Locations table showing status badges](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-locations/locations-overview-v2.png)
+![Locations table showing status badges](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-locations/locations-overview-v2.png)
 
 ### Adding a location manually
 
 1. Navigate to **Operations → Locations**.
-2. Click the **Add Location** button.
+2. Open **Actions** and select **Add Location**.
 3. Fill in the location details: name, address, city, state, zip code, and any other relevant fields.
 4. Assign the location to a territory and franchisee organization if applicable.
 5. Save the location.
 
 Each location stores detailed information including lease terms, construction dates, insurance details, business hours, and contact information for key parties like the architect, construction firm, and property manager.
 
-![Add a new location modal](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-locations/locations-add.png)
+![Add a new location modal](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-locations/locations-add.png)
 
 ### Discovering locations with Google Places
 
 You can search for existing franchise locations using Google Places instead of entering them one by one.
 
 1. Navigate to **Operations → Locations**.
-2. Use the **Discover Locations** feature.
+2. Open **Actions** and select **Find Existing Locations**.
 3. The platform searches Google Places using your brand name and returns matching results with address, phone number, business hours, and photos.
 4. You can filter by country or narrow results by proximity to a specific point.
 5. Select the locations you want to import, then confirm. The platform creates location records and downloads any available photos automatically.
 
-![Discover Locations search results from Google Places](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-locations/locations-discover.png)
+![Discover Locations search results from Google Places](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-locations/locations-discover.png)
 
 ### Favoriting locations
 
@@ -50,7 +50,7 @@ You can favorite locations to keep quick access to the ones you work with most. 
 
 **Franchisee organizations**: You can assign a franchisee organization to one or more locations. Use the bulk action in the locations table to assign the same franchisee organization to multiple locations at once.
 
-![Bulk action toolbar with two locations selected](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-locations/locations-bulk-actions-v2.png)
+![Bulk action toolbar with two locations selected](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-locations/locations-bulk-actions-v2.png)
 
 ### Social and Connections (some accounts)
 
@@ -60,7 +60,7 @@ On accounts with social posting enabled, each location's detail view also includ
 
 The locations table includes a map view powered by Mapbox. Locations with latitude and longitude coordinates appear as pins on the map, giving you a geographic overview of your franchise network.
 
-![Locations map view with pins](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-locations/locations-map-v2.png)
+![Locations map view with pins](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-locations/locations-map-v2.png)
 
 ### Location details
 
@@ -75,4 +75,4 @@ Each location record can hold a wide range of data:
 - **Compliance**: business license number, health permit, ADA compliance
 - **Custom fields**: your brand can define additional fields specific to your needs
 
-![Location detail view with Location fields](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-locations/locations-detail.png)
+![Location detail view with Location fields](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-locations/locations-detail.png)

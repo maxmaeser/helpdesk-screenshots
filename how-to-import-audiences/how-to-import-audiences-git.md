@@ -7,7 +7,7 @@ You can add contacts to the platform one at a time or in bulk via CSV. Imports g
 3. Fill in the contact details: at minimum, an **email address** is required.
 4. Click **Save**.
 
-![Actions menu on the Audiences page with Import expanded, showing Import from CSV and Import Single Prospect](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-import-audiences/audiences-import-menu.png)
+![Actions menu on the Audiences page with Import expanded, showing Import from CSV and Import Single Prospect](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-import-audiences/audiences-import-menu.png)
 
 The new prospect appears in your prospects table immediately.
 
@@ -31,7 +31,7 @@ After the import completes, you see a summary showing how many prospects were su
 3. Fill in the contact details: an **email address** is required.
 4. Click **Save**.
 
-![Actions menu on the Pipeline page with Import expanded, showing Import Single, Import from CSV, and Imports in Progress](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-import-audiences/import-dropdown-menu-v2.png)
+![Actions menu on the Pipeline page with Import expanded, showing Import Single, Import from CSV, and Imports in Progress](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-import-audiences/import-dropdown-menu-v2.png)
 
 The new lead is created directly in your sales pipeline.
 
@@ -42,10 +42,12 @@ The new lead is created directly in your sales pipeline.
 3. Optionally, select tags to apply to the imported leads.
 4. Confirm the import.
 
-Imported leads are created in the sales pipeline and can be assigned to reps, given a lead status, and included in sales sequences. If you leave the import flow before it finishes, reopen it from **Actions → Import → Imports in Progress**.
+Imported leads are created in the sales pipeline and can be assigned to reps, given a lead status, and enrolled in sales campaign workflows. If you leave the import flow before it finishes, reopen it from **Actions → Import → Imports in Progress**.
+
+See *[How to Send a Campaign to Tagged Leads]* for campaign enrollment.
 
 ### Tips
 
 - Clean your CSV before importing. Remove rows with missing email addresses to avoid failures.
 - Use tags during import to label the source of your contacts (for example, "Conference List" or "Purchased List") so you can filter and report on them later.
-- If you import someone as a prospect and they later sign up through the applicant portal with the same email address, the platform merges their data into a lead record. See *[Best Practice: Prospect vs Lead]* for details on how this works.
+- If you import someone as a prospect and they later sign up through the applicant portal with the same email address, the platform merges their data into a lead record. See *[Best Practices: Prospect vs. Lead]* for details on how this works.

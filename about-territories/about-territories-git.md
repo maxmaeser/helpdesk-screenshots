@@ -26,7 +26,8 @@ Each state record shows:
 
 Select where you're actively franchising by checking the states where you sell franchises, then use Set Status to mark them Actively Franchising.
 
-![States tab with the state list, filter row, and interactive coverage map](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-territories/territories-states-filters.png)
+![States tab with the state list, filter row, and interactive coverage map](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-territories/territories-states-filters-r2026-10.png)
+
 Filtering only narrows the list. The map always shows full coverage.
 
 Use the **Search States** box to find a state by name, or the filter row above the list to narrow further:
@@ -41,10 +42,10 @@ States that need attention, the ones the Needs attention sort brings to the top,
 
 ### Bulk Operations
 
-You can manage multiple states at once:
+Select multiple states to show the bulk actions:
 
-- **Bulk Assign FDD**: select multiple states and assign the same FDD document to all of them
-- **Bulk Status Update**: toggle active status across multiple states simultaneously
+- **Assign FDD**: select multiple states and assign the same FDD document to all of them
+- **Set Status**: toggle active status across multiple states simultaneously
 
 ### Assigning FDDs to States
 
@@ -71,6 +72,7 @@ Deadlines are grouped by urgency first, then by month:
 - Every other deadline falls under its due month, soonest month first
 
 ![Compliance page Deadlines tab with a grouped list of upcoming and overdue deadlines beside the map](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-territories/territories-deadlines.png)
+
 Each row shows the state, whether it's a **Registration expires** or **FDD renewal due** deadline, the due date, and a badge counting down the days left.
 
 A deadline due within 30 days gets an orange badge; anything overdue gets a red one. Click any row to open that state's record.
@@ -78,13 +80,14 @@ A deadline due within 30 days gets an orange badge; anything overdue gets a red 
 A deadline only appears once you've set a registration expiration or FDD renewal date for that state. Until then, the tab reads "No deadlines yet."
 
 ![Compliance page Deadlines tab in its empty state, reading "No deadlines yet" beside the map](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-territories/territories-deadlines-empty.png)
+
 If your brand's compliance is handled by an outside legal team, the tab reads "Handled for you" instead, since your legal partner tracks these dates for you. It also adds a **Recent activity** list below the deadlines showing your legal team's filing updates, newest first.
 
 ## Deal Zones
 
 Deal Zones let you define geographic zones and control how deals are distributed across your franchise territory. You manage them from **Sales → Pipeline**, on the **Territories** tab.
 
-This tab is available on full-plan brands. If your selected brands are all on the lite plan, the tab doesn't appear.
+This tab is available on Full OS brands. If your selected brands are all on FranDev (Recruitment Funnel), the tab doesn't appear.
 
 ### Zone List
 
@@ -100,6 +103,18 @@ Zones follow whichever brands you have selected at the top of the Pipeline page,
 Use **Search Deal Zones** above the list to find one by name, and the filter icon beside it to narrow further. The **Select All** checkbox selects the whole list for bulk actions.
 
 ![Territories tab on the Pipeline page: the deal zone list on the left and the coverage map on the right](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/about-territories/territories-deal-zones-v2.png)
+
+### Bulk deal-zone actions
+
+After selecting deal-zone checkboxes, open **Assign** and choose **Assign Franchisee Entity** or **Assign Deal**. Pick the record to assign the selected zones to.
+
+![Selected deal zones with the Assign menu open](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-territories/deal-zone-bulk-assign.png)
+Assignment requires zones from a single brand. With zones from multiple brands selected, those assignment options are disabled.
+
+The bulk toolbar also has **Delete**. Its confirmation removes the selected zones and unassigns them from linked deals or franchisee entities; this cannot be undone.
+
+![Delete deal zones confirmation](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/about-territories/deal-zone-bulk-delete.png)
+Review the selected zones before confirming.
 
 ### Map View
 

@@ -1,6 +1,6 @@
-> **[VIDEO EMBED: Module 3 — What Projects are]**
+> **[VIDEO EMBED: Module 3: What Projects are]**
 
-Projects is your collaborative project management workspace. You can create projects for you and your team, and you can have shared projects with corporate that you collaborate on together. A typical project covers a unit opening, a brand rollout, a campaign, anything with steps you and your team need to work through.
+Projects is your collaborative project management workspace. Projects appear here when corporate or your team creates them for your locations, so you can work through them together. A typical project covers a unit opening, a brand rollout, a campaign, anything with steps you and your team need to work through.
 
 ## Tasks
 
@@ -11,6 +11,7 @@ A project is made up of tasks: the steps you and your team need to complete. Ope
 The **Projects** page lists your projects in one view, with the name, status, next action, progress, and due date for each. Click a project to open it and see its tasks and progress inside.
 
 ![Projects index list showing project name, status, next action, progress, and due date](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/03-what-projects-are/projects-index.png)
+
 ![An open project with its task list grouped by status](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/03-what-projects-are/projects-detail.png)
 ## The project overview
 

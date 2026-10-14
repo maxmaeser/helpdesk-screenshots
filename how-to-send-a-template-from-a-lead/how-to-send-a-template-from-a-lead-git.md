@@ -9,7 +9,8 @@ The send flow previews the email with that lead's details already merged in, so 
 1. Go to **Sales → Pipeline** and click the lead in the table to open their detail panel.
 2. Click the three-dot **Actions** button in the top right of the panel and select **Send Email**.
 
-![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-send-a-template-from-a-lead/lead-actions-send-email.png)
+![](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-send-a-template-from-a-lead/lead-actions-send-email.png)
+
 ### Choose the template
 
 1. The window opens on the question "Choose how you'd like to send this email". Select **Use Template**.
@@ -17,20 +18,22 @@ The send flow previews the email with that lead's details already merged in, so 
 3. The right side of the window renders the email as this lead will receive it, subject line included. Pick a different template to swap the preview.
 4. Click **Continue**.
 
-![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-send-a-template-from-a-lead/send-email-choose-path.png)
+![](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-send-a-template-from-a-lead/send-email-choose-path.png)
 
-![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-send-a-template-from-a-lead/send-email-pick-template.png)
+![](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-send-a-template-from-a-lead/send-email-pick-template.png)
 
-![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-send-a-template-from-a-lead/send-email-template-preview.png)
+![](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-send-a-template-from-a-lead/send-email-template-preview.png)
+
 ### Set the purpose and send
 
 1. Choose a **Purpose**. For a lead the only option is **Outreach (Consensual)**. The purpose decides which of your verified domains sends the email, and the panel below the dropdown names the exact address it will come from.
 2. Leave **Send Immediately** on to send it now, or turn it off and set a date and time under **Schedule For**.
 3. Click **Send Email**.
 
-![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-send-a-template-from-a-lead/send-email-purpose.png)
+![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-send-a-template-from-a-lead/send-email-purpose-r2026-10.png)
 
-![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-send-a-template-from-a-lead/send-email-schedule.png)
+![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-send-a-template-from-a-lead/send-email-schedule-r2026-10.png)
+
 You land back on the lead panel. The email appears on the lead's **Activity** tab alongside the rest of their history, and delivery events like opens and clicks land there too as they happen.
 
 A scheduled email sits on the Activity tab until it goes out, with a **Cancel Email** action on the row if you change your mind.
@@ -43,7 +46,7 @@ Open that template in the email builder, give it a subject, and it becomes selec
 
 ### If the list is empty
 
-An empty list means the brand has no email templates yet. The window offers a **Create Template** button that drops you on the **Content** tab of **Sales → Workflows**.
+An empty list means the brand has no email templates yet. The window offers a **Create Template** button that drops you on **Sales → Content**.
 
 The list shows every email template that belongs to the brand, not only the ones built under Sales.
 
@@ -55,7 +58,8 @@ The same flow exists on prospects.
 
 Go to **Marketing → Audiences**, click a prospect to open their panel, then use the three-dot **Actions** button and select **Send Email**.
 
-![](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-send-a-template-from-a-lead/prospect-actions-send-email.png)
+![](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-send-a-template-from-a-lead/prospect-actions-send-email.png)
+
 Everything after that is identical, except the **Purpose** options are the marketing ones: **Cold Outreach (Non-Consensual)** and **Outreach (Consensual)**.
 
 ### Sending to more than one lead

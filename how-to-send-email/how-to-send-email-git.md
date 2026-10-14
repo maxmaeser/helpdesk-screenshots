@@ -4,9 +4,9 @@ There are two ways to send from Franchise Systems Ai (FS Ai). A **newsletter** i
 
 ### Adding Email Domains
 
-![Domain Management section showing Connect Domain button and a verified domain](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-send-email/send-email-connect-domain.png)
+![Domain Management section showing Connect Domain button and a verified domain](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-send-email/send-email-connect-domain-r2026-10.png)
 
-1. Click your profile picture at the bottom of the sidebar, select **Settings**, and open the **Connections** page under Brand. Scroll to **Domains**. On lite organizations, where Connections is not available, Domains lives on the **Profile** page instead.
+1. Click your profile picture at the bottom of the sidebar, select **Settings**, and open the **Connections** page under Brand. Scroll to **Sending identities**. On FranDev (Recruitment Funnel) organizations, open **Emails** in the sidebar and select the **Domains** tab instead.
 2. Click **Connect Domain** and enter your domain name.
 3. Select which purposes the domain should serve and configure your reply-to settings.
 4. Add the DNS records FS Ai provides to your DNS provider, then verify.
@@ -17,10 +17,10 @@ See *[About Domains and Domain Health]* for the full walkthrough.
 
 A newsletter sends a single template to one segment, once. It starts in the email builder.
 
-![Deploy menu in the email builder with Send as Newsletter selected](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-send-email/send-email-deploy-button.png)
+![Deploy menu in the email builder with Send as Newsletter selected](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/how-to-send-email/send-email-deploy-button-r2026-10.png)
 
 1. Open the template you want to send in the email builder.
-2. Click **Deploy** in the top toolbar and select **Send as Newsletter**. The **Deploy Newsletter** drawer opens with four steps: **Configure**, **Purpose**, **Schedule**, and **Review**. Lite organizations skip Purpose and see three.
+2. Click **Deploy** in the top toolbar and select **Send as Newsletter**. The **Deploy Newsletter** drawer opens with four steps: **Configure**, **Purpose**, **Schedule**, and **Review**. FranDev organizations skip Purpose and see three.
 3. On **Configure**, under "Who should receive this?", pick the **Audience segment** that should receive the email. Your subject line sits above the field so you can confirm you have the right template open.
 
 ![Deploy Newsletter drawer on the Configure step, asking who should receive this, with the audience segment picker](https://pub-0b63cab43f8b4fe4a9ede117b14f750c.r2.dev/how-to-send-email/send-email-configure-step.png)

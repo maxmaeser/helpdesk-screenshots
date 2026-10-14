@@ -2,6 +2,18 @@ Your profile holds the personal details that identify you across Franchise Syste
 
 This information appears in communications sent on your behalf, in task assignments, and when colleagues view your account. You can edit it at any time.
 
+### First-time profile setup
+
+The profile setup wizard starts with **Terms of Service**. Read the terms and scroll to the bottom of the terms panel to enable **Accept Terms of Service**. Select it to continue; this step cannot be skipped.
+
+![Profile wizard Terms of Service step with its acceptance button](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/setting-up-your-profile/profile-terms-step.png)
+The next step is choosing your avatar.
+
+At **Choose Avatar**, pick one of the supplied avatars or upload a PNG or JPEG. Select **Continue** to save your choice, or skip this optional step and update your profile picture later.
+
+![Choose Avatar step with supplied avatars, upload, Continue, and skip](https://raw.githubusercontent.com/maxmaeser/helpdesk-screenshots/master/setting-up-your-profile/profile-avatar-step.png)
+Your avatar represents you in the platform.
+
 ### Opening your profile
 
 1. Click your profile picture at the bottom of the sidebar and select **Settings**.
