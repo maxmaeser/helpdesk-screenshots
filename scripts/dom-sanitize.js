@@ -1084,7 +1084,7 @@ function sanitize(config) {
   const PERSON_LABEL_RE = /^(?:(?:lead|contact|applicant|user|account|person|full|first|last|assignee|owner)[ -]?)?name$|^(?:lead|contact|applicant|assignee|owner|assigned to)$/i;
   const PERSON_SLOT_RE = /^(?:(?:lead|contact|applicant)[ -](?:name|title)|(?:account|user)[ -]name|avatar[ -]label)$/i;
   const NAME_VALUE_RE = /^(?:[\p{L}][\p{L}'’.-]*(?:[ \t]+[\p{L}][\p{L}'’.-]*){0,3}|(?:\.\.\.|…)[\p{L}]{4,})$/u;
-  const NON_PERSON_VALUE_RE = /\b(?:active|inactive|pending|qualified|unqualified|new lead|in progress|unassigned|unknown|name|status|settings|sign out|log out|add|edit|delete|save|cancel|cafe|café|brand|company|inc|llc|standards|analytics)\b/i;
+  const NON_PERSON_VALUE_RE = /\b(?:active|inactive|pending|qualified|unqualified|new lead|in progress|unassigned|unknown|name|status|settings|sign out|log out|add|edit|delete|save|cancel|cafe|café|brand|company|inc|llc|standards|analytics|lumon)\b/i;
   function syntheticName(value) {
     return identityPool.some((id) => new RegExp('^(?:' + id.first + '(?: ' + id.last + '\\d*)?|' + id.last + '\\d*)$', 'i').test(value));
   }

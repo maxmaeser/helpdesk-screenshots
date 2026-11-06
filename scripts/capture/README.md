@@ -195,6 +195,56 @@ nice -n 15 ionice -c3 node shoot.js shots/how-to-invite-users.js \
 
 `shoot.js` never writes `raw/shots.json`; the studio owns it.
 
+## Recorded takes (`record.js` + `takes/<id>.js`)
+
+`record.js` films a real walkthrough on staging and writes a take per
+`tools/clip/TAKE.md`: `tools/clip/takes/<id>/take.json` + `raw.mp4`
+(2880x1620, 30 fps, H.264 yuv420p, CRF 16, built from CDP screencast frames
+with their real timing).
+
+```bash
+node record.js takes/invite-users.js --dry   # rehearse: stops before any write:true click
+node record.js takes/invite-users.js         # film it for real
+node record.js takes/_smoke-members.js       # recorder self-test, no writes; run after editing record.js
+```
+
+A take spec (copy `takes/invite-users.js`):
+
+```js
+module.exports = {
+  id: 'invite-users', article: 'how-to-invite-users', surface: 'brand',
+  brand: 'Lumon Cafe',                               // key of BRANDS in record.js
+  start: (r) => r.resolve('SETTINGS_ORGANISATION'),  // off-camera start page
+  ready: 'text=Members',
+  steps: [
+    { step: 1, label: 'Open Members', action: async (rec, page) => {
+        await rec.click({ role: 'link', name: 'Members', exact: true }, { transition: 'page' });
+        await rec.wait('text=Invite members', 'members section load');
+    } },
+  ],
+  outro: async (rec) => { await rec.hold(2000); },   // optional hold on the result
+};
+```
+
+`rec` verbs: `click(target, {transition, cursor, write})`, `type(target, text,
+{commit})`, `select(target)`, `wait(selector | fn | promise | ms, reason)`,
+`move(x, y)`, `hold(ms)`. Targets use the shoot.js callout forms (role + name,
+`{css, within}`, selector string, or a Locator) and must match exactly one
+visible element. The first click/type/select in an action carries the step
+and label; the recorder fails the take if a step logs none.
+
+What the recorder does for you: brand pre-select (init script, before app
+code), 1440x810 @ 2x, an eased mouse path logged as `move` events, 1.2 s dwell
+before every click and before typing, a pointer hit-test before each click,
+70 ms/key typing, rects measured after the dwell in video px, continuous
+sanitize + chrome strip on every DOM mutation (runs before paint, so no frame
+is unmasked), `assertClean` before every step, and TAKE.md validation of the
+output. Any typed email that is not `@example.com` throws. A failed take writes
+`take.failed.json` and keeps `frames/` for debugging.
+
+Brand gotcha: the capture account must be a member of the brand's org, and an
+**Admin** of it for org-admin flows (Invite members is hidden from Members).
+
 ## Not done yet (Phase 3)
 
 `index.js` (runner), `actions.js` (click/fill/select verbs), `framing.js` (clip
