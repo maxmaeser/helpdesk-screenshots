@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Cursor Placer</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #1a1a1a; color: #eee; display: flex; height: 100vh; overflow: hidden; }
+  .sidebar { width: 260px; background: #111; border-right: 1px solid #333; overflow-y: auto; padding: 12px; flex-shrink: 0; }
+  .sidebar h3 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin: 16px 0 8px; }
+  .sidebar h3:first-child { margin-top: 4px; }
+  .sidebar button { display: block; width: 100%; text-align: left; font-size: 13px; padding: 8px 10px; border-radius: 6px; border: none; background: transparent; color: #ccc; cursor: pointer; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .sidebar button:hover { background: #2a2a2a; }
+  .sidebar button.active { background: #3b82f6; color: #fff; }
+  .main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+  .controls { display: flex; gap: 12px; align-items: center; padding: 12px 16px; border-bottom: 1px solid #333; flex-wrap: wrap; }
+  .controls label { font-size: 13px; color: #aaa; }
+  .controls select, .controls button { font-size: 13px; padding: 5px 10px; border-radius: 6px; border: 1px solid #444; background: #2a2a2a; color: #eee; }
+  .controls button { cursor: pointer; }
+  .controls button.primary { background: #3b82f6; border-color: #3b82f6; font-weight: 500; }
+  .output { font-family: 'SF Mono', monospace; background: #000; padding: 6px 12px; border-radius: 6px; font-size: 13px; color: #4ade80; flex: 1; min-width: 200px; }
+  .canvas-area { flex: 1; overflow: auto; padding: 16px; }
+  canvas { cursor: crosshair; }
+  .empty { color: #555; text-align: center; margin-top: 40vh; font-size: 15px; }
+  #dropZone { border: 1px dashed #444; border-radius: 8px; padding: 20px; text-align: center; color: #555; font-size: 12px; margin-top: 8px; cursor: pointer; }
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+  <h3>Group Scheduling</h3>
+  <button onclick="load(this,'../how-to-set-up-group-scheduling/raw/group-nav-create-raw.png')">group-nav-create</button>
+  <button onclick="load(this,'../how-to-set-up-group-scheduling/raw/group-create-form-raw.png')">group-create-form</button>
+  <button onclick="load(this,'../how-to-set-up-group-scheduling/raw/group-availability-raw.png')">group-availability</button>
+  <button onclick="load(this,'../how-to-set-up-group-scheduling/raw/group-members-dropdown-raw.png')">group-members-dropdown</button>
+  <button onclick="load(this,'../how-to-set-up-group-scheduling/raw/group-event-row-raw.png')">group-event-row</button>
+  <h3>Filter and Sort</h3>
+  <button onclick="load(this,'../how-to-filter-and-sort/raw/leads-toolbar-raw.png')">leads-toolbar</button>
+  <button onclick="load(this,'../how-to-filter-and-sort/raw/filter-panel-raw.png')">filter-panel</button>
+  <button onclick="load(this,'../how-to-filter-and-sort/raw/sort-panel-raw.png')">sort-panel</button>
+  <button onclick="load(this,'../how-to-filter-and-sort/raw/saved-views-raw.png')">saved-views</button>
+  <h3>Drop Custom</h3>
+  <div id="dropZone" onclick="document.getElementById('fi').click()">
+    Drop PNG here
+    <input type="file" id="fi" accept="image/png" style="display:none" onchange="loadFile(this.files[0])">
+  </div>
+</div>
+
+<div class="main">
+  <div class="controls">
+    <label>Cursor:</label>
+    <select id="ctype" onchange="redraw()"><option value="arrow">Arrow</option><option value="hand">Hand</option></select>
+    <button onclick="cx=null;redraw()">Clear</button>
+    <button class="primary" onclick="copy()">Copy</button>
+    <div class="output" id="out">Select an image</div>
+  </div>
+  <div class="canvas-area" id="area"><div class="empty">Select an image from the sidebar</div></div>
+</div>
+
+<script>
+// Cursor assets - we'll load them as Image objects
+const CURSOR_CFG = {
+  arrow: { src: '../assets/cursor-arrow-macos.png', hx: 5, hy: 5, nw: 280, nh: 400, renderH: 200 },
+  hand:  { src: '../assets/cursor-hand-macos.png',  hx: 100, hy: 18, nw: 320, nh: 320, renderH: 200 }
+};
+
+const cursorImgs = {};
+for (const [k, v] of Object.entries(CURSOR_CFG)) {
+  const im = new Image(); im.src = v.src; cursorImgs[k] = im;
+}
+
+let rawImg = null;   // the loaded raw image
+let canvas = null;
+let ctx = null;
+let cx = null, cy = null;  // cursor position in raw pixels
+let activeBtn = null;
+let currentName = '';
+
+const out = document.getElementById('out');
+const area = document.getElementById('area');
+
+// Drop zone
+const dz = document.getElementById('dropZone');
+dz.ondragover = e => { e.preventDefault(); dz.style.borderColor = '#3b82f6'; };
+dz.ondragleave = () => dz.style.borderColor = '#444';
+dz.ondrop = e => { e.preventDefault(); dz.style.borderColor = '#444'; loadFile(e.dataTransfer.files[0]); };
+
+function loadFile(file) {
+  if (activeBtn) activeBtn.classList.remove('active');
+  activeBtn = null;
+  const url = URL.createObjectURL(file);
+  loadSrc(url, file.name);
+}
+
+function load(btn, src) {
+  if (activeBtn) activeBtn.classList.remove('active');
+  activeBtn = btn; btn.classList.add('active');
+  loadSrc(src, src.split('/').pop());
+}
+
+function loadSrc(src, name) {
+  currentName = name.replace('-raw.png', '');
+  const im = new Image();
+  im.onload = () => {
+    rawImg = im;
+    cx = null; cy = null;
+    // Canvas at 50% of raw (since raws are 2x, this = CSS pixel size)
+    const dw = Math.round(im.naturalWidth / 2);
+    const dh = Math.round(im.naturalHeight / 2);
+    area.innerHTML = '';
+    canvas = document.createElement('canvas');
+    canvas.width = dw; canvas.height = dh;
+    canvas.style.cursor = 'crosshair';
+    area.appendChild(canvas);
+    ctx = canvas.getContext('2d');
+    redraw();
+    out.textContent = `${name} (${im.naturalWidth}x${im.naturalHeight}) — click to place`;
+
+    canvas.onclick = (e) => {
+      const rect = canvas.getBoundingClientRect();
+      const scaleX = canvas.width / rect.width;
+      const scaleY = canvas.height / rect.height;
+      // Canvas pixel where user clicked
+      const canvasX = (e.clientX - rect.left) * scaleX;
+      const canvasY = (e.clientY - rect.top) * scaleY;
+      // Raw pixel = canvas pixel * 2
+      cx = Math.round(canvasX * 2);
+      cy = Math.round(canvasY * 2);
+      redraw();
+    };
+
+    canvas.onmousemove = (e) => {
+      const rect = canvas.getBoundingClientRect();
+      const scaleX = canvas.width / rect.width;
+      const scaleY = canvas.height / rect.height;
+      const canvasX = (e.clientX - rect.left) * scaleX;
+      const canvasY = (e.clientY - rect.top) * scaleY;
+      const rx = Math.round(canvasX * 2);
+      const ry = Math.round(canvasY * 2);
+      if (cx !== null) {
+        const type = document.getElementById('ctype').value;
+        const flag = type === 'hand' ? ' --hand' : '';
+        out.textContent = `--cursor ${cx},${cy}${flag}  |  hover: ${rx}, ${ry}`;
+      } else {
+        out.textContent = `${name}  |  ${rx}, ${ry}`;
+      }
+    };
+  };
+  im.onerror = () => { area.innerHTML = '<div class="empty">Failed to load. Try dropping the file.</div>'; };
+  im.src = src;
+}
+
+function redraw() {
+  if (!rawImg || !ctx) return;
+  const dw = canvas.width, dh = canvas.height;
+  ctx.clearRect(0, 0, dw, dh);
+  // Draw raw image scaled to 50%
+  ctx.drawImage(rawImg, 0, 0, dw, dh);
+
+  if (cx === null) return;
+
+  const type = document.getElementById('ctype').value;
+  const cfg = CURSOR_CFG[type];
+  const cImg = cursorImgs[type];
+  if (!cImg.complete) return;
+
+  // Cursor render size in raw pixels
+  const renderH = cfg.renderH;
+  const scale = renderH / cfg.nh;
+  const renderW = cfg.nw * scale;
+
+  // Hotspot in raw pixels
+  const hsXraw = cfg.hx * scale;
+  const hsYraw = cfg.hy * scale;
+
+  // Cursor top-left in raw pixels
+  const curLeftRaw = cx - hsXraw;
+  const curTopRaw = cy - hsYraw;
+
+  // Convert to canvas pixels (÷2)
+  const curLeft = curLeftRaw / 2;
+  const curTop = curTopRaw / 2;
+  const curW = renderW / 2;
+  const curH = renderH / 2;
+
+  ctx.drawImage(cImg, curLeft, curTop, curW, curH);
+
+  const flag = type === 'hand' ? ' --hand' : '';
+  const fname = currentName || '';
+  out.textContent = `${fname} --cursor ${cx},${cy}${flag}`;
+}
+
+function copy() {
+  if (cx === null) return;
+  navigator.clipboard.writeText(out.textContent.split('|')[0].trim()).then(() => {
+    const t = out.textContent; out.textContent = 'Copied!'; setTimeout(() => out.textContent = t, 800);
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Height Enforcement Review</title>
+<style>
+body { font-family: Inter, system-ui, sans-serif; max-width: 1200px; margin: 0 auto; padding: 40px 20px; background: #f5f5f5; }
+h1 { margin-bottom: 8px; }
+p.sub { color: #666; margin-top: 0; }
+.card { background: white; border-radius: 12px; padding: 24px; margin-bottom: 32px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.card h2 { margin-top: 0; font-size: 18px; }
+.card .meta { color: #888; font-size: 14px; margin-bottom: 16px; }
+.card img { max-width: 100%; border-radius: 8px; }
+.status { display: inline-block; padding: 2px 10px; border-radius: 99px; font-size: 13px; font-weight: 500; }
+.done { background: #d4edda; color: #155724; }
+.pending { background: #fff3cd; color: #856404; }
+.skipped { background: #f8d7da; color: #721c24; }
+.dims { font-size: 12px; color: #aaa; margin-left: 8px; }
+</style>
+</head>
+<body>
+<h1>Height Enforcement Pass</h1>
+<p class="sub">All images cropped to under 1000px. Review each and reply with the number for feedback.</p>
+
+<h2 style="color:#888; margin-top:40px;">Article: How to Create Custom Statuses</h2>
+
+<div class="card">
+  <h2>1. statuses-nav-pipeline <span class="status done">994px</span> <span class="dims">was 1064px</span></h2>
+  <div class="meta">Sidebar + leads table with Status column. No cursor.</div>
+  <img src="how-to-create-custom-statuses/statuses-nav-pipeline.png">
+</div>
+
+<div class="card">
+  <h2>2. statuses-change-from-table <span class="status done">994px</span> <span class="dims">was 1224px</span></h2>
+  <div class="meta">Table with Change Status dropdown open. Hand cursor on Qualified green dot.</div>
+  <img src="how-to-create-custom-statuses/statuses-change-from-table.png">
+</div>
+
+<div class="card">
+  <h2>3. statuses-change-from-detail <span class="status done">994px</span> <span class="dims">was 1344px</span></h2>
+  <div class="meta">Lead detail with Change Status dropdown. Hand cursor on Qualified badge.</div>
+  <img src="how-to-create-custom-statuses/statuses-change-from-detail.png">
+</div>
+
+<div class="card">
+  <h2>4. statuses-create-form <span class="status done">574px</span> <span class="dims">was 1846px, now --pair</span></h2>
+  <div class="meta">UPDATED: Side-by-side pair mode. Left: form with icons. Right: color picker. Full 1800px width.</div>
+  <img src="how-to-create-custom-statuses/statuses-create-form.png">
+</div>
+
+<h2 style="color:#888; margin-top:40px;">Article: How to Assign Leads</h2>
+
+<div class="card">
+  <h2>5. assign-leads-table <span class="status done">994px</span> <span class="dims">was 1504px</span></h2>
+  <div class="meta">Sidebar + leads table with Assigned To column. No cursor.</div>
+  <img src="how-to-assign-leads/assign-leads-table.png">
+</div>
+
+<div class="card">
+  <h2>6. assign-leads-dropdown <span class="status done">999px</span> <span class="dims">was 1124px</span></h2>
+  <div class="meta">UPDATED: Better crop (y=60) to show more dropdown. Hand cursor added.</div>
+  <img src="how-to-assign-leads/assign-leads-dropdown.png">
+</div>
+
+<h2 style="color:#888; margin-top:40px;">Article: Auto and Manual Assignment</h2>
+
+<div class="card">
+  <h2>7. assignment-manual-dropdown <span class="status done">984px</span> <span class="dims">was 1104px, recaptured</span></h2>
+  <div class="meta">RECAPTURED: Table with Name, City, Assigned To columns. Unassigned dropdown open showing team members.</div>
+  <img src="auto-and-manual-assignment/assignment-manual-dropdown-2026-03-15.png">
+</div>
+
+<h2 style="color:#888; margin-top:40px;">Article: How to Build a Form</h2>
+
+<div class="card">
+  <h2>8. form-nav-sidebar <span class="status done">994px</span> <span class="dims">was 1144px</span></h2>
+  <div class="meta">Sidebar with Forms highlighted. Needs arrow cursor on Forms (missing).</div>
+  <img src="how-to-build-a-form/form-nav-sidebar-2026-03-13.png">
+</div>
+
+<div class="card">
+  <h2>9. form-create-field <span class="status done">994px</span> <span class="dims">was 1738px</span></h2>
+  <div class="meta">Create New Field dialog. No cursor. Shows fields through Description label.</div>
+  <img src="how-to-build-a-form/form-create-field-2026-03-13.png">
+</div>
+
+<div class="card">
+  <h2>10. form-fields-library <span class="status done">984px</span> <span class="dims">was 1464px, recaptured wider</span></h2>
+  <div class="meta">RECAPTURED: Form canvas + Fields Library panel with field cards. Shows builder context.</div>
+  <img src="how-to-build-a-form/form-fields-library-2026-03-15.png">
+</div>
+
+<div class="card">
+  <h2>11. form-field-types <span class="status done">994px</span> <span class="dims">was 1078px</span></h2>
+  <div class="meta">Field type dropdown open. Needs hand cursor on Dropdown option (missing).</div>
+  <img src="how-to-build-a-form/form-field-types-2026-03-13.png">
+</div>
+
+<h2 style="color:#888; margin-top:40px;">Article: How to Edit Your Portal</h2>
+
+<div class="card">
+  <h2>12. portal-theme-typography <span class="status done">991px</span> <span class="dims">was 1748px</span></h2>
+  <div class="meta">Typography settings showing H1 and H2. No cursor.</div>
+  <img src="how-to-edit-your-portal/portal-theme-typography-2026-03-13.png">
+</div>
+
+<div class="card">
+  <h2>13. portal-theme-colors <span class="status done">995px</span> <span class="dims">was 1297px</span></h2>
+  <div class="meta">Theme color picker showing 8 themes (2 rows). Needs hand cursor on Blue (missing).</div>
+  <img src="how-to-edit-your-portal/portal-theme-colors-2026-03-13.png">
+</div>
+
+<div class="card">
+  <h2>14. portal-hide-toggle <span class="status done">994px</span> <span class="dims">was 1244px</span></h2>
+  <div class="meta">Step panel with Hide For Applicants toggle. Cropped from y=250 (lost Step header + Step Title). Needs hand cursor on toggle (missing).</div>
+  <img src="how-to-edit-your-portal/portal-hide-toggle-2026-03-13.png">
+</div>
+
+<div class="card">
+  <h2>15. portal-add-step <span class="status done">984px</span> <span class="dims">was 1164px, recaptured wider</span></h2>
+  <div class="meta">RECAPTURED: Portal steps + Step Action dropdown open showing all 8 options. Wider view.</div>
+  <img src="how-to-edit-your-portal/portal-add-step-2026-03-15.png">
+</div>
+
+</body>
+</html>
